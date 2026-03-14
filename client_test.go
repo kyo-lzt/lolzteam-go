@@ -53,22 +53,22 @@ func TestConfigDefaultsPreserveExplicit(t *testing.T) {
 }
 
 func TestForumClientDefaultBaseURL(t *testing.T) {
-	c, err := NewClient(Config{Token: "t", BaseURL: "https://api.lolz.live", RequestsPerMinute: 300})
+	c, err := NewClient(Config{Token: "t", BaseURL: "https://prod-api.lolz.live", RequestsPerMinute: 300})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
 	}
-	if c.baseURL != "https://api.lolz.live" {
-		t.Errorf("forum baseURL = %q, want %q", c.baseURL, "https://api.lolz.live")
+	if c.baseURL != "https://prod-api.lolz.live" {
+		t.Errorf("forum baseURL = %q, want %q", c.baseURL, "https://prod-api.lolz.live")
 	}
 }
 
 func TestMarketClientDefaultBaseURL(t *testing.T) {
-	c, err := NewClient(Config{Token: "t", BaseURL: "https://api.lzt.market", RequestsPerMinute: 120})
+	c, err := NewClient(Config{Token: "t", BaseURL: "https://prod-api.lzt.market", RequestsPerMinute: 120})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
 	}
-	if c.baseURL != "https://api.lzt.market" {
-		t.Errorf("market baseURL = %q, want %q", c.baseURL, "https://api.lzt.market")
+	if c.baseURL != "https://prod-api.lzt.market" {
+		t.Errorf("market baseURL = %q, want %q", c.baseURL, "https://prod-api.lzt.market")
 	}
 }
 
