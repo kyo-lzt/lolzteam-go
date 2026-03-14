@@ -1,0 +1,17 @@
+name: Publish
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Notify Go proxy
+        run: |
+          GOPROXY=https://proxy.golang.org
+          MODULE=$(head -1 go.mod | awk '{print $2}')
+          TAG=${GITHUB_REF#refs/tags/}
+          curl -s "https://proxy.golang.org/${MODULE}/@v/${TAG}.info"
