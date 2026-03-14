@@ -7,7 +7,7 @@ Fully typed Go API wrapper for [Lolzteam](https://lolz.live) Forum and Market AP
 ## Installation
 
 ```bash
-go get github.com/lolzteam/lolzteam-go
+go get github.com/kyo-lzt/lolzteam-go
 ```
 
 ## Quick Start
@@ -19,7 +19,7 @@ import (
 	"context"
 	"fmt"
 
-	lolzteam "github.com/lolzteam/lolzteam-go"
+	lolzteam "github.com/kyo-lzt/lolzteam-go"
 )
 
 func main() {

@@ -1,3 +1,3 @@
-module github.com/lolzteam/lolzteam-go
+module github.com/kyo-lzt/lolzteam-go
 
 go 1.23

@@ -40,7 +40,7 @@ market_*.go       — Generated Market client, types, and service files
 
 - Go 1.23+, stdlib only, zero external dependencies
 - Package name: `lolzteam`
-- Module: `github.com/lolzteam/lolzteam-go`
+- Module: `github.com/kyo-lzt/lolzteam-go`
 - All public API uses `context.Context` as first parameter
 - Optional params are pointer types with struct tags (`query:`, `form:`)
 - Error hierarchy: `LolzteamError` → `HttpError` → `RateLimitError`/`AuthError`/`NotFoundError`/`ServerError` + `NetworkError`
