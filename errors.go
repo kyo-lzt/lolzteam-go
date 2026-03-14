@@ -81,6 +81,15 @@ func (e *ServerError) Unwrap() error {
 	return &e.HttpError
 }
 
+// ConfigError indicates invalid client configuration.
+type ConfigError struct {
+	LolzteamError
+}
+
+func (e *ConfigError) Error() string {
+	return fmt.Sprintf("config error: %s", e.Message)
+}
+
 // NetworkError represents connection, DNS, or timeout failures.
 type NetworkError struct {
 	LolzteamError

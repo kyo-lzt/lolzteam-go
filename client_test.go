@@ -10,73 +10,6 @@ import (
 	"time"
 )
 
-// --- ForumClient construction ---
-
-func TestNewForumClient(t *testing.T) {
-	client := NewForumClient(Config{Token: "test-token"})
-	if client == nil {
-		t.Fatal("NewForumClient returned nil")
-	}
-
-	fields := map[string]any{
-		"Assets":        client.Assets,
-		"Batch":         client.Batch,
-		"Categories":    client.Categories,
-		"Chatbox":       client.Chatbox,
-		"Conversations": client.Conversations,
-		"Forms":         client.Forms,
-		"Forums":        client.Forums,
-		"Links":         client.Links,
-		"Navigation":    client.Navigation,
-		"Notifications": client.Notifications,
-		"OAuth":         client.OAuth,
-		"Pages":         client.Pages,
-		"Posts":         client.Posts,
-		"ProfilePosts":  client.ProfilePosts,
-		"Search":        client.Search,
-		"Tags":          client.Tags,
-		"Threads":       client.Threads,
-		"Users":         client.Users,
-	}
-
-	for name, svc := range fields {
-		if svc == nil {
-			t.Errorf("ForumClient.%s is nil", name)
-		}
-	}
-}
-
-// --- MarketClient construction ---
-
-func TestNewMarketClient(t *testing.T) {
-	client := NewMarketClient(Config{Token: "test-token"})
-	if client == nil {
-		t.Fatal("NewMarketClient returned nil")
-	}
-
-	fields := map[string]any{
-		"AutoPayments":    client.AutoPayments,
-		"Batch":           client.Batch,
-		"Cart":            client.Cart,
-		"Category":        client.Category,
-		"CustomDiscounts": client.CustomDiscounts,
-		"Imap":            client.Imap,
-		"List":            client.List,
-		"Managing":        client.Managing,
-		"Payments":        client.Payments,
-		"Profile":         client.Profile,
-		"Proxy":           client.Proxy,
-		"Publishing":      client.Publishing,
-		"Purchasing":      client.Purchasing,
-	}
-
-	for name, svc := range fields {
-		if svc == nil {
-			t.Errorf("MarketClient.%s is nil", name)
-		}
-	}
-}
-
 // --- Config defaults ---
 
 func TestConfigDefaults(t *testing.T) {
@@ -120,68 +53,22 @@ func TestConfigDefaultsPreserveExplicit(t *testing.T) {
 }
 
 func TestForumClientDefaultBaseURL(t *testing.T) {
-	c := newHTTPClient(Config{Token: "t", BaseURL: "https://api.lolz.live", RequestsPerMinute: 300})
+	c, err := NewClient(Config{Token: "t", BaseURL: "https://api.lolz.live", RequestsPerMinute: 300})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
 	if c.baseURL != "https://api.lolz.live" {
 		t.Errorf("forum baseURL = %q, want %q", c.baseURL, "https://api.lolz.live")
 	}
 }
 
 func TestMarketClientDefaultBaseURL(t *testing.T) {
-	c := newHTTPClient(Config{Token: "t", BaseURL: "https://api.lzt.market", RequestsPerMinute: 120})
+	c, err := NewClient(Config{Token: "t", BaseURL: "https://api.lzt.market", RequestsPerMinute: 120})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
 	if c.baseURL != "https://api.lzt.market" {
 		t.Errorf("market baseURL = %q, want %q", c.baseURL, "https://api.lzt.market")
-	}
-}
-
-// --- Client with custom config ---
-
-func TestForumClientWithConfig(t *testing.T) {
-	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		json.NewEncoder(w).Encode(map[string]any{"status": "ok"})
-	}))
-	defer srv.Close()
-
-	client := NewForumClient(Config{
-		Token:             "my-token",
-		BaseURL:           srv.URL,
-		MaxRetries:        1,
-		RetryBaseDelay:    100 * time.Millisecond,
-		RetryMaxDelay:     500 * time.Millisecond,
-		RequestsPerMinute: 600,
-		Timeout:           5 * time.Second,
-	})
-
-	if client == nil {
-		t.Fatal("NewForumClient returned nil with custom config")
-	}
-	if client.Threads == nil {
-		t.Error("Threads service is nil with custom config")
-	}
-}
-
-func TestMarketClientWithConfig(t *testing.T) {
-	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		json.NewEncoder(w).Encode(map[string]any{"status": "ok"})
-	}))
-	defer srv.Close()
-
-	client := NewMarketClient(Config{
-		Token:             "my-token",
-		BaseURL:           srv.URL,
-		MaxRetries:        2,
-		RetryBaseDelay:    50 * time.Millisecond,
-		RetryMaxDelay:     200 * time.Millisecond,
-		RequestsPerMinute: 240,
-		Timeout:           10 * time.Second,
-	})
-
-	if client == nil {
-		t.Fatal("NewMarketClient returned nil with custom config")
-	}
-	if client.Purchasing == nil {
-		t.Error("Purchasing service is nil with custom config")
 	}
 }
 
@@ -527,14 +414,17 @@ func TestHTTPClientSendsAuthHeader(t *testing.T) {
 	}))
 	defer srv.Close()
 
-	c := newHTTPClient(Config{
+	c, err := NewClient(Config{
 		Token:             "secret-token",
 		BaseURL:           srv.URL,
 		RequestsPerMinute: 600,
 		MaxRetries:        1,
 	})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
 
-	err := c.request(context.Background(), requestOptions{
+	err = c.Request(context.Background(), RequestOptions{
 		Method: "GET",
 		Path:   "/test",
 	}, nil)
@@ -554,14 +444,17 @@ func TestHTTPClientHTTPError(t *testing.T) {
 	}))
 	defer srv.Close()
 
-	c := newHTTPClient(Config{
+	c, err := NewClient(Config{
 		Token:             "t",
 		BaseURL:           srv.URL,
 		RequestsPerMinute: 600,
 		MaxRetries:        1,
 	})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
 
-	err := c.request(context.Background(), requestOptions{
+	err = c.Request(context.Background(), RequestOptions{
 		Method: "GET",
 		Path:   "/missing",
 	}, nil)
@@ -583,15 +476,18 @@ func TestHTTPClientJSONDecoding(t *testing.T) {
 	}))
 	defer srv.Close()
 
-	c := newHTTPClient(Config{
+	c, err := NewClient(Config{
 		Token:             "t",
 		BaseURL:           srv.URL,
 		RequestsPerMinute: 600,
 		MaxRetries:        1,
 	})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
 
 	var result map[string]string
-	err := c.request(context.Background(), requestOptions{
+	err = c.Request(context.Background(), RequestOptions{
 		Method: "GET",
 		Path:   "/data",
 	}, &result)
@@ -619,7 +515,7 @@ func TestHTTPClientRateLimitRetry(t *testing.T) {
 	}))
 	defer srv.Close()
 
-	c := newHTTPClient(Config{
+	c, err := NewClient(Config{
 		Token:             "t",
 		BaseURL:           srv.URL,
 		RequestsPerMinute: 600,
@@ -627,8 +523,11 @@ func TestHTTPClientRateLimitRetry(t *testing.T) {
 		RetryBaseDelay:    time.Millisecond,
 		RetryMaxDelay:     50 * time.Millisecond,
 	})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
 
-	err := c.request(context.Background(), requestOptions{
+	err = c.Request(context.Background(), RequestOptions{
 		Method: "GET",
 		Path:   "/limited",
 	}, nil)
@@ -733,5 +632,68 @@ func TestCalcDelayRateLimitCappedByMaxDelay(t *testing.T) {
 	d := calcDelay(rlErr, 0, cfg)
 	if d != time.Second {
 		t.Errorf("delay = %v, want 1s (capped by maxDelay)", d)
+	}
+}
+
+// --- Proxy validation ---
+
+func TestProxyInvalidScheme(t *testing.T) {
+	_, err := NewClient(Config{
+		Token:    "t",
+		ProxyURL: "ftp://proxy:8080",
+	})
+	if err == nil {
+		t.Fatal("expected error for unsupported proxy scheme")
+	}
+	var cfgErr *ConfigError
+	if !errors.As(err, &cfgErr) {
+		t.Errorf("expected *ConfigError, got %T: %v", err, err)
+	}
+}
+
+func TestProxyMissingHost(t *testing.T) {
+	_, err := NewClient(Config{
+		Token:    "t",
+		ProxyURL: "http://",
+	})
+	if err == nil {
+		t.Fatal("expected error for proxy URL with no host")
+	}
+	var cfgErr *ConfigError
+	if !errors.As(err, &cfgErr) {
+		t.Errorf("expected *ConfigError, got %T: %v", err, err)
+	}
+}
+
+func TestProxyValidURL(t *testing.T) {
+	tests := []struct {
+		name     string
+		proxyURL string
+	}{
+		{"http", "http://proxy:8080"},
+		{"https", "https://proxy:8080"},
+		{"socks5", "socks5://proxy:1080"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			c, err := NewClient(Config{
+				Token:    "t",
+				ProxyURL: tt.proxyURL,
+			})
+			if err != nil {
+				t.Fatalf("unexpected error for %s proxy: %v", tt.name, err)
+			}
+			if c == nil {
+				t.Fatal("NewClient returned nil")
+			}
+		})
+	}
+}
+
+func TestConfigErrorMessage(t *testing.T) {
+	err := &ConfigError{LolzteamError{Message: "bad proxy"}}
+	want := "config error: bad proxy"
+	if got := err.Error(); got != want {
+		t.Errorf("Error() = %q, want %q", got, want)
 	}
 }

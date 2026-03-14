@@ -26,13 +26,19 @@ func main() {
 	ctx := context.Background()
 
 	// Forum
-	forum := lolzteam.NewForumClient(lolzteam.Config{Token: "your_token"})
+	forum, err := lolzteam.NewForumClient(lolzteam.Config{Token: "your_token"})
+	if err != nil {
+		panic(err)
+	}
 
 	threads, _ := forum.Threads.List(ctx, &lolzteam.ThreadsListParams{ForumID: ptr(876)})
 	fmt.Println(threads.Threads[0].ThreadTitle)
 
 	// Market
-	market := lolzteam.NewMarketClient(lolzteam.Config{Token: "your_token"})
+	market, err := lolzteam.NewMarketClient(lolzteam.Config{Token: "your_token"})
+	if err != nil {
+		panic(err)
+	}
 
 	items, _ := market.Category.Steam(ctx, &lolzteam.CategorySteamParams{Pmin: ptr(100)})
 	fmt.Println(items.Items[0].Title)
@@ -57,28 +63,30 @@ func ptr[T any](v T) *T { return &v }
 ## Configuration
 
 ```go
-forum := lolzteam.NewForumClient(lolzteam.Config{
+forum, err := lolzteam.NewForumClient(lolzteam.Config{
 	// Required
 	Token: "your_bearer_token",
 
 	// Optional: custom base URL
 	BaseURL: "https://api.lolz.live",
 
-	// Optional: custom HTTP client (for proxy, timeouts, etc.)
-	HTTPClient: &http.Client{
-		Transport: &http.Transport{
-			Proxy: http.ProxyURL(proxyURL),
-		},
-	},
+	// Optional: proxy (http, https, socks5)
+	ProxyURL: "socks5://proxy:1080",
 
 	// Optional: retry config
-	MaxRetries: 5,      // default: 3
-	BaseDelay:  2000,    // default: 1000ms
-	MaxDelay:   60000,   // default: 30000ms
+	MaxRetries:     5,              // default: 3
+	RetryBaseDelay: 2 * time.Second,  // default: 1s
+	RetryMaxDelay:  60 * time.Second, // default: 30s
 
 	// Optional: rate limit override
 	RequestsPerMinute: 60,
+
+	// Optional: request timeout
+	Timeout: 15 * time.Second, // default: 30s
 })
+if err != nil {
+	log.Fatal(err)
+}
 ```
 
 ## Error Handling
