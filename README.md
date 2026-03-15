@@ -38,12 +38,13 @@ import (
 
 func main() {
     config := lolzteam.Config{Token: "your_token"}
-    client, _ := lolzteam.NewClient(config)
-    defer client.Close()
-
     ctx := context.Background()
-    threads, _ := forum.NewClient(client).Threads.List(ctx, nil)
-    items, _ := market.NewClient(client).CategorySearch.GetAll(ctx, nil)
+
+    forumClient, _ := forum.NewClient(config)
+    threads, _ := forumClient.Threads.List(ctx, nil)
+
+    marketClient, _ := market.NewClient(config)
+    items, _ := marketClient.Category.GetAll(ctx, nil)
 }
 ```
 
@@ -56,7 +57,8 @@ Market API groups: `AutoPayments`, `Batch`, `Cart`, `Category`, `CustomDiscounts
 ```go
 config := lolzteam.Config{
     Token:   "your_token",
-    Timeout: 30 * time.Second, // default: 30s
+    BaseURL: "https://prod-api.lolz.live", // default: per-client
+    Timeout: 30 * time.Second,             // default: 30s
     Proxy:   &lolzteam.ProxyConfig{URL: "socks5://127.0.0.1:1080"},
     Retry:   &lolzteam.RetryConfig{
         MaxRetries: 5,               // default: 3
@@ -64,7 +66,11 @@ config := lolzteam.Config{
         MaxDelay:   30 * time.Second, // default: 30s
     },
     RateLimit: &lolzteam.RateLimitConfig{
-        RequestsPerMinute: 200, // default: 300 (Forum), 120 (Market)
+        RequestsPerMinute:       200, // default: 300 (Forum), 120 (Market)
+        SearchRequestsPerMinute: 30,  // default: 0 (disabled); Market default: 20
+    },
+    OnRetry: func(info lolzteam.RetryInfo) {
+        fmt.Printf("Retry #%d for %s %s\n", info.Attempt, info.Method, info.Path)
     },
 }
 ```
