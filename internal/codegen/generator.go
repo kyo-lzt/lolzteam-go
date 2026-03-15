@@ -42,7 +42,9 @@ func Generate(outDir string, apis []APIConfig) error {
 		}
 		g.RawSpec = rawSpec
 
-		g.ParseOperations()
+		if err := g.ParseOperations(); err != nil {
+			return fmt.Errorf("parsing operations for %s: %w", api.Prefix, err)
+		}
 		g.GenerateNamedTypes()
 
 		lowerPrefix := strings.ToLower(api.Prefix)

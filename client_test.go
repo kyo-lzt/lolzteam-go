@@ -9,6 +9,7 @@ import (
 	"net/http/httptest"
 	"net/url"
 	"strings"
+	"sync/atomic"
 	"testing"
 	"time"
 )
@@ -812,6 +813,208 @@ func TestStructToFormBasic(t *testing.T) {
 	}
 	if vals.Get("content") != "world" {
 		t.Errorf("content = %q, want %q", vals.Get("content"), "world")
+	}
+}
+
+// --- Path parameter substitution ---
+
+func TestHTTPClientPathParam(t *testing.T) {
+	var gotPath string
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		gotPath = r.URL.Path
+		w.WriteHeader(http.StatusOK)
+		json.NewEncoder(w).Encode(map[string]int{"thread_id": 42})
+	}))
+	defer srv.Close()
+
+	c, err := NewClient(Config{
+		Token:             "t",
+		BaseURL:           srv.URL,
+		RequestsPerMinute: 600,
+		MaxRetries:        1,
+	})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
+
+	var result map[string]int
+	err = c.Request(context.Background(), RequestOptions{
+		Method: "GET",
+		Path:   "/threads/42",
+	}, &result)
+
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if gotPath != "/threads/42" {
+		t.Errorf("path = %q, want /threads/42", gotPath)
+	}
+	if result["thread_id"] != 42 {
+		t.Errorf("result = %v, want {thread_id: 42}", result)
+	}
+}
+
+// --- Query parameter passing ---
+
+func TestHTTPClientQueryParams(t *testing.T) {
+	var gotQuery url.Values
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		gotQuery = r.URL.Query()
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("{}"))
+	}))
+	defer srv.Close()
+
+	c, err := NewClient(Config{
+		Token:             "t",
+		BaseURL:           srv.URL,
+		RequestsPerMinute: 600,
+		MaxRetries:        1,
+	})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
+
+	err = c.Request(context.Background(), RequestOptions{
+		Method: "GET",
+		Path:   "/threads",
+		Query:  url.Values{"forum_id": {"5"}, "page": {"2"}},
+	}, nil)
+
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if gotQuery.Get("forum_id") != "5" {
+		t.Errorf("forum_id = %q, want 5", gotQuery.Get("forum_id"))
+	}
+	if gotQuery.Get("page") != "2" {
+		t.Errorf("page = %q, want 2", gotQuery.Get("page"))
+	}
+}
+
+// --- 502 retry via httptest ---
+
+func TestHTTPClient502Retry(t *testing.T) {
+	var calls int32
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		n := atomic.AddInt32(&calls, 1)
+		if n == 1 {
+			w.WriteHeader(http.StatusBadGateway)
+			w.Write([]byte("bad gateway"))
+			return
+		}
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("{}"))
+	}))
+	defer srv.Close()
+
+	c, err := NewClient(Config{
+		Token:             "t",
+		BaseURL:           srv.URL,
+		RequestsPerMinute: 600,
+		MaxRetries:        3,
+		RetryBaseDelay:    time.Millisecond,
+		RetryMaxDelay:     50 * time.Millisecond,
+	})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
+
+	err = c.Request(context.Background(), RequestOptions{
+		Method: "GET",
+		Path:   "/test",
+	}, nil)
+
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if atomic.LoadInt32(&calls) != 2 {
+		t.Errorf("calls = %d, want 2", atomic.LoadInt32(&calls))
+	}
+}
+
+// --- 403 returns AuthError ---
+
+func TestHTTPClient403AuthError(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusForbidden)
+		w.Write([]byte(`{"error":"forbidden"}`))
+	}))
+	defer srv.Close()
+
+	c, err := NewClient(Config{
+		Token:             "t",
+		BaseURL:           srv.URL,
+		RequestsPerMinute: 600,
+		MaxRetries:        1,
+	})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
+
+	err = c.Request(context.Background(), RequestOptions{
+		Method: "GET",
+		Path:   "/secret",
+	}, nil)
+
+	if err == nil {
+		t.Fatal("expected error for 403")
+	}
+
+	var authErr *AuthError
+	if !errors.As(err, &authErr) {
+		t.Errorf("expected *AuthError, got %T: %v", err, err)
+	}
+	if authErr.StatusCode != 403 {
+		t.Errorf("StatusCode = %d, want 403", authErr.StatusCode)
+	}
+}
+
+// --- RetryExhaustedError via httptest ---
+
+func TestHTTPClientRetryExhausted(t *testing.T) {
+	var calls int32
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		atomic.AddInt32(&calls, 1)
+		w.Header().Set("Retry-After", "0.001")
+		w.WriteHeader(http.StatusTooManyRequests)
+		w.Write([]byte("rate limited"))
+	}))
+	defer srv.Close()
+
+	c, err := NewClient(Config{
+		Token:             "t",
+		BaseURL:           srv.URL,
+		RequestsPerMinute: 600,
+		MaxRetries:        2,
+		RetryBaseDelay:    time.Millisecond,
+		RetryMaxDelay:     10 * time.Millisecond,
+	})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
+
+	err = c.Request(context.Background(), RequestOptions{
+		Method: "GET",
+		Path:   "/limited",
+	}, nil)
+
+	if err == nil {
+		t.Fatal("expected error after retry exhaustion")
+	}
+
+	var retryErr *RetryExhaustedError
+	if !errors.As(err, &retryErr) {
+		t.Fatalf("expected *RetryExhaustedError, got %T: %v", err, err)
+	}
+
+	var rlErr *RateLimitError
+	if !errors.As(retryErr.Err, &rlErr) {
+		t.Errorf("expected RetryExhaustedError to wrap *RateLimitError, got %T", retryErr.Err)
+	}
+
+	if atomic.LoadInt32(&calls) != 2 {
+		t.Errorf("calls = %d, want 2 (maxRetries)", atomic.LoadInt32(&calls))
 	}
 }
 

@@ -104,6 +104,20 @@ func (e *NetworkError) Unwrap() error {
 	return e.Err
 }
 
+// RetryExhaustedError indicates all retry attempts have been exhausted.
+type RetryExhaustedError struct {
+	Attempts int
+	Err      error
+}
+
+func (e *RetryExhaustedError) Error() string {
+	return fmt.Sprintf("request failed after %d attempts: %s", e.Attempts, e.Err)
+}
+
+func (e *RetryExhaustedError) Unwrap() error {
+	return e.Err
+}
+
 // newHttpError returns the appropriate typed error based on status code.
 func newHttpError(statusCode int, body []byte, retryAfter time.Duration) error {
 	base := HttpError{

@@ -604,7 +604,7 @@ func withRetry(ctx context.Context, cfg retryConfig, method, path string, fn fun
 		}
 	}
 
-	return lastErr
+	return &RetryExhaustedError{Attempts: cfg.maxRetries, Err: lastErr}
 }
 
 func isRetryable(err error) bool {

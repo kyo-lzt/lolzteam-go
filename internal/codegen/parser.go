@@ -167,7 +167,7 @@ type Generator struct {
 // Parsing
 // ---------------------------------------------------------------------------
 
-func (g *Generator) ParseOperations() {
+func (g *Generator) ParseOperations() error {
 	for path, methods := range g.Spec.Paths {
 		for httpMethod, rawOp := range methods {
 			if httpMethod == "parameters" {
@@ -197,7 +197,10 @@ func (g *Generator) ParseOperations() {
 
 			// Parse parameters
 			for _, rawParam := range op.Parameters {
-				param := g.ResolveParam(rawParam)
+					param, err := g.ResolveParam(rawParam)
+				if err != nil {
+					return fmt.Errorf("resolving param for %s %s: %w", httpMethod, path, err)
+				}
 				if param.In == "path" {
 					pp := PathParam{
 						Name:   param.Name,
@@ -231,7 +234,10 @@ func (g *Generator) ParseOperations() {
 
 			// Parse request body
 			if op.RequestBody != nil {
-				bodySchema, contentKind := g.ExtractBodySchema(op.RequestBody)
+				bodySchema, contentKind, err := g.ExtractBodySchema(op.RequestBody)
+				if err != nil {
+					return fmt.Errorf("extracting body schema for %s %s: %w", httpMethod, path, err)
+				}
 				parsed.ContentKind = contentKind
 				isMultipart := contentKind == ContentMultipart
 				resolved := g.ResolveSchemaRef(bodySchema)
@@ -324,7 +330,10 @@ func (g *Generator) ParseOperations() {
 				if code != "200" && code != "201" {
 					continue
 				}
-				respSchema := g.ExtractResponseSchema(rawResp)
+					respSchema, err := g.ExtractResponseSchema(rawResp)
+				if err != nil {
+					return fmt.Errorf("extracting response schema for %s %s: %w", httpMethod, path, err)
+				}
 				if respSchema.Ref != "" || len(respSchema.Properties) > 0 || respSchema.Items != nil {
 					parsed.ResponseSchema = respSchema
 					parsed.HasResponse = true
@@ -343,24 +352,27 @@ func (g *Generator) ParseOperations() {
 			return g.Groups[group][i].Method < g.Groups[group][j].Method
 		})
 	}
+	return nil
 }
 
-func (g *Generator) ResolveParam(raw json.RawMessage) ParamObj {
+func (g *Generator) ResolveParam(raw json.RawMessage) (ParamObj, error) {
 	var ref struct {
 		Ref string `json:"$ref"`
 	}
 	if err := json.Unmarshal(raw, &ref); err == nil && ref.Ref != "" {
 		name := RefName(ref.Ref)
 		if p, ok := g.Spec.Components.Parameters[name]; ok {
-			return p
+			return p, nil
 		}
 	}
 	var param ParamObj
-	json.Unmarshal(raw, &param)
-	return param
+	if err := json.Unmarshal(raw, &param); err != nil {
+		return ParamObj{}, fmt.Errorf("unmarshaling parameter: %w", err)
+	}
+	return param, nil
 }
 
-func (g *Generator) ExtractBodySchema(rb *RequestBodyObj) (SchemaObj, ContentKind) {
+func (g *Generator) ExtractBodySchema(rb *RequestBodyObj) (SchemaObj, ContentKind, error) {
 	_, hasForm := rb.Content["application/x-www-form-urlencoded"]
 	_, hasMultipart := rb.Content["multipart/form-data"]
 	_, hasJSON := rb.Content["application/json"]
@@ -385,16 +397,18 @@ func (g *Generator) ExtractBodySchema(rb *RequestBodyObj) (SchemaObj, ContentKin
 		picked = "application/json"
 		kind = ContentJSON
 	default:
-		return SchemaObj{}, ContentForm
+		return SchemaObj{}, ContentForm, nil
 	}
 
 	mt := rb.Content[picked]
 	var schema SchemaObj
-	json.Unmarshal(mt.Schema, &schema)
-	return schema, kind
+	if err := json.Unmarshal(mt.Schema, &schema); err != nil {
+		return SchemaObj{}, ContentForm, fmt.Errorf("unmarshaling body schema (%s): %w", picked, err)
+	}
+	return schema, kind, nil
 }
 
-func (g *Generator) ExtractResponseSchema(raw json.RawMessage) SchemaObj {
+func (g *Generator) ExtractResponseSchema(raw json.RawMessage) (SchemaObj, error) {
 	// Check if it's a $ref
 	var ref struct {
 		Ref string `json:"$ref"`
@@ -406,17 +420,21 @@ func (g *Generator) ExtractResponseSchema(raw json.RawMessage) SchemaObj {
 		}
 	}
 	var resp ResponseObj
-	json.Unmarshal(raw, &resp)
+	if err := json.Unmarshal(raw, &resp); err != nil {
+		return SchemaObj{}, fmt.Errorf("unmarshaling response: %w", err)
+	}
 	return g.ExtractResponseSchemaFromObj(resp)
 }
 
-func (g *Generator) ExtractResponseSchemaFromObj(resp ResponseObj) SchemaObj {
+func (g *Generator) ExtractResponseSchemaFromObj(resp ResponseObj) (SchemaObj, error) {
 	if mt, ok := resp.Content["application/json"]; ok {
 		var schema SchemaObj
-		json.Unmarshal(mt.Schema, &schema)
-		return schema
+		if err := json.Unmarshal(mt.Schema, &schema); err != nil {
+			return SchemaObj{}, fmt.Errorf("unmarshaling response schema: %w", err)
+		}
+		return schema, nil
 	}
-	return SchemaObj{}
+	return SchemaObj{}, nil
 }
 
 func (g *Generator) ResolveSchemaRef(s SchemaObj) SchemaObj {
