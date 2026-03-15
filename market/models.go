@@ -815,11 +815,11 @@ type ItemFromListModelSeller struct {
 // ItemListModel represents a component schema.
 type ItemListModel struct {
 	HasNextPage     bool                    `json:"hasNextPage,omitempty"`
-	Items           []any                   `json:"items,omitempty"`
+	Items           []ItemFromListModel     `json:"items,omitempty"`
 	Page            int64                   `json:"page,omitempty"`
 	PerPage         int64                   `json:"perPage,omitempty"`
 	SearchURL       string                  `json:"searchUrl,omitempty"`
-	StickyItems     []any                   `json:"stickyItems,omitempty"`
+	StickyItems     []ItemFromListModel     `json:"stickyItems,omitempty"`
 	SystemInfo      ItemListModelSystemInfo `json:"system_info,omitempty"`
 	TotalItems      int64                   `json:"totalItems,omitempty"`
 	TotalItemsPrice any                     `json:"totalItemsPrice,omitempty"`
