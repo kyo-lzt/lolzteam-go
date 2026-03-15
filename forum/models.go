@@ -6026,7 +6026,7 @@ type FormsCreateBody interface {
 type FormsCreateP2Ptrade struct {
 	Fields FormsCreateP2PtradeFields `json:"fields"`
 	// FormID - Default: 1
-	FormID int64 `json:"form_id"`
+	FormID *int64 `json:"form_id,omitempty" default:"1"`
 }
 
 func (FormsCreateP2Ptrade) formsCreateBody() {}
@@ -6035,7 +6035,7 @@ func (FormsCreateP2Ptrade) formsCreateBody() {}
 type FormsCreateComplaint struct {
 	Fields FormsCreateComplaintFields `json:"fields"`
 	// FormID - Default: 3
-	FormID int64 `json:"form_id"`
+	FormID *int64 `json:"form_id,omitempty" default:"3"`
 }
 
 func (FormsCreateComplaint) formsCreateBody() {}
@@ -6867,7 +6867,7 @@ type ThreadsCreateContestBody struct {
 	AllowAskHiddenContent *bool `json:"allow_ask_hidden_content,omitempty"`
 	CommentIgnoreGroup    *bool `json:"comment_ignore_group,omitempty"`
 	// ContestType - Default: "by_finish_date"
-	ContestType        string            `json:"contest_type"`
+	ContestType        *string           `json:"contest_type,omitempty" default:"by_finish_date"`
 	CountWinners       *int64            `json:"count_winners,omitempty"`
 	DontAlertFollowers *bool             `json:"dont_alert_followers,omitempty"`
 	HideContacts       *bool             `json:"hide_contacts,omitempty"`

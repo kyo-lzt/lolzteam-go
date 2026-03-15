@@ -708,6 +708,12 @@ func (g *Generator) SchemaToGoType(s SchemaObj) string {
 func (g *Generator) PrimitiveGoType(s SchemaObj) string {
 	typeStrs := SchemaTypeStrings(s)
 	if len(typeStrs) > 1 {
+		sorted := make([]string, len(typeStrs))
+		copy(sorted, typeStrs)
+		sort.Strings(sorted)
+		if len(sorted) == 2 && sorted[0] == "integer" && sorted[1] == "string" {
+			return "StringOrInt"
+		}
 		return "any"
 	}
 	if len(typeStrs) == 1 {
@@ -1541,7 +1547,7 @@ func WriteUnionDef(b *strings.Builder, ud *UnionDef, contentKind ContentKind) {
 			if bp.Default != "" {
 				fmt.Fprintf(b, "\t// %s - Default: %s\n", bp.GoName, bp.Default)
 			}
-			if bp.Required {
+			if bp.Required && bp.Default == "" {
 				fmt.Fprintf(b, "\t%s %s `%s:\"%s\"`\n", bp.GoName, goType, tagName, bp.Name)
 			} else {
 				ptrType := PtrWrap(goType)

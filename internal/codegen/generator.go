@@ -219,13 +219,17 @@ func (g *Generator) WriteTypesFile(outDir string) error {
 				fmt.Fprintf(&b, "// %s holds query parameters for %s.%s.\n", structName, groupName, op.Method)
 				fmt.Fprintf(&b, "type %s struct {\n", structName)
 				for _, qp := range op.QueryParams {
+					goType := qp.GoType
+					if rootPkgTypes[goType] {
+						goType = "lolzteam." + goType
+					}
 					if qp.Default != "" {
 						fmt.Fprintf(&b, "\t// %s - Default: %s\n", qp.GoName, qp.Default)
 					}
 					if qp.Required {
-						fmt.Fprintf(&b, "\t%s %s `query:\"%s\"`\n", qp.GoName, qp.GoType, qp.Name)
+						fmt.Fprintf(&b, "\t%s %s `query:\"%s\"`\n", qp.GoName, goType, qp.Name)
 					} else {
-						ptrType := PtrWrap(qp.GoType)
+						ptrType := PtrWrap(goType)
 						defaultTag := DefaultTag(qp.Default)
 						fmt.Fprintf(&b, "\t%s %s `query:\"%s\"%s`\n", qp.GoName, ptrType, qp.Name, defaultTag)
 					}
@@ -250,7 +254,7 @@ func (g *Generator) WriteTypesFile(outDir string) error {
 					if rootPkgTypes[goType] {
 						goType = "lolzteam." + goType
 					}
-					if bp.Required {
+					if bp.Required && bp.Default == "" {
 						if tagName == "json" {
 							fmt.Fprintf(&b, "\t%s %s `json:\"%s\"`\n", bp.GoName, goType, bp.Name)
 						} else {
@@ -307,6 +311,11 @@ func (g *Generator) TypesReferenceRootPkg() bool {
 	rootTypes := map[string]bool{"FileUpload": true, "StringOrInt": true}
 	for _, ops := range g.Groups {
 		for _, op := range ops {
+			for _, qp := range op.QueryParams {
+				if rootTypes[qp.GoType] {
+					return true
+				}
+			}
 			for _, bp := range op.BodyProps {
 				if rootTypes[bp.GoType] {
 					return true

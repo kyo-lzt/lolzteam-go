@@ -2,6 +2,10 @@
 
 package market
 
+import (
+	lolzteam "github.com/kyo-lzt/lolzteam-go"
+)
+
 // AgeVerified is an enum type.
 type AgeVerified string
 
@@ -21585,7 +21589,7 @@ type ListOrdersResponse struct {
 
 // ListStatesParams holds query parameters for List.States.
 type ListStatesParams struct {
-	UserID any `query:"user_id"`
+	UserID *lolzteam.StringOrInt `query:"user_id"`
 }
 
 // ListStatesResponse is the response for the endpoint.
