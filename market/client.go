@@ -34,6 +34,9 @@ func NewClient(config lolzteam.Config) (*Client, error) {
 	if config.RequestsPerMinute == 0 {
 		config.RequestsPerMinute = 120
 	}
+	if config.SearchRequestsPerMinute == 0 {
+		config.SearchRequestsPerMinute = 20
+	}
 	c, err := lolzteam.NewClient(config)
 	if err != nil {
 		return nil, err
@@ -68,7 +71,7 @@ func (s *AutoPaymentsService) Create(ctx context.Context, body *AutoPaymentsCrea
 		Path:   "/auto-payment",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -84,7 +87,7 @@ func (s *AutoPaymentsService) Delete(ctx context.Context, body *AutoPaymentsDele
 		Path:   "/auto-payment",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -137,7 +140,7 @@ func (s *CartService) Add(ctx context.Context, body *CartAddBody) (*CartAddRespo
 		Path:   "/cart",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -153,7 +156,7 @@ func (s *CartService) Delete(ctx context.Context, body *CartDeleteBody) (*CartDe
 		Path:   "/cart",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -186,8 +189,9 @@ type CategoryService struct {
 func (s *CategoryService) All(ctx context.Context, params *CategoryAllParams) (*CategoryAllResponse, error) {
 	var result CategoryAllResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/",
+		Method:   "GET",
+		Path:     "/",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -202,8 +206,9 @@ func (s *CategoryService) All(ctx context.Context, params *CategoryAllParams) (*
 func (s *CategoryService) BattleNet(ctx context.Context, params *CategoryBattleNetParams) (*CategoryBattleNetResponse, error) {
 	var result CategoryBattleNetResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/battlenet",
+		Method:   "GET",
+		Path:     "/battlenet",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -218,8 +223,9 @@ func (s *CategoryService) BattleNet(ctx context.Context, params *CategoryBattleN
 func (s *CategoryService) ChatGPT(ctx context.Context, params *CategoryChatGPTParams) (*CategoryChatGPTResponse, error) {
 	var result CategoryChatGPTResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/chatgpt",
+		Method:   "GET",
+		Path:     "/chatgpt",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -234,8 +240,9 @@ func (s *CategoryService) ChatGPT(ctx context.Context, params *CategoryChatGPTPa
 func (s *CategoryService) Discord(ctx context.Context, params *CategoryDiscordParams) (*CategoryDiscordResponse, error) {
 	var result CategoryDiscordResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/discord",
+		Method:   "GET",
+		Path:     "/discord",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -250,8 +257,9 @@ func (s *CategoryService) Discord(ctx context.Context, params *CategoryDiscordPa
 func (s *CategoryService) EA(ctx context.Context, params *CategoryEAParams) (*CategoryEAResponse, error) {
 	var result CategoryEAResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/ea",
+		Method:   "GET",
+		Path:     "/ea",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -266,8 +274,9 @@ func (s *CategoryService) EA(ctx context.Context, params *CategoryEAParams) (*Ca
 func (s *CategoryService) EpicGames(ctx context.Context, params *CategoryEpicGamesParams) (*CategoryEpicGamesResponse, error) {
 	var result CategoryEpicGamesResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/epicgames",
+		Method:   "GET",
+		Path:     "/epicgames",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -282,8 +291,9 @@ func (s *CategoryService) EpicGames(ctx context.Context, params *CategoryEpicGam
 func (s *CategoryService) EscapeFromTarkov(ctx context.Context, params *CategoryEscapeFromTarkovParams) (*CategoryEscapeFromTarkovResponse, error) {
 	var result CategoryEscapeFromTarkovResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/escape-from-tarkov",
+		Method:   "GET",
+		Path:     "/escape-from-tarkov",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -298,8 +308,9 @@ func (s *CategoryService) EscapeFromTarkov(ctx context.Context, params *Category
 func (s *CategoryService) Fortnite(ctx context.Context, params *CategoryFortniteParams) (*CategoryFortniteResponse, error) {
 	var result CategoryFortniteResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/fortnite",
+		Method:   "GET",
+		Path:     "/fortnite",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -314,8 +325,9 @@ func (s *CategoryService) Fortnite(ctx context.Context, params *CategoryFortnite
 func (s *CategoryService) Games(ctx context.Context, categoryName string) (*CategoryGamesResponse, error) {
 	var result CategoryGamesResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   fmt.Sprintf("/%s/games", categoryName),
+		Method:   "GET",
+		Path:     fmt.Sprintf("/%s/games", categoryName),
+		IsSearch: true,
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -327,8 +339,9 @@ func (s *CategoryService) Games(ctx context.Context, categoryName string) (*Cate
 func (s *CategoryService) Gifts(ctx context.Context, params *CategoryGiftsParams) (*CategoryGiftsResponse, error) {
 	var result CategoryGiftsResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/gifts",
+		Method:   "GET",
+		Path:     "/gifts",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -343,8 +356,9 @@ func (s *CategoryService) Gifts(ctx context.Context, params *CategoryGiftsParams
 func (s *CategoryService) Hytale(ctx context.Context, params *CategoryHytaleParams) (*CategoryHytaleResponse, error) {
 	var result CategoryHytaleResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/hytale",
+		Method:   "GET",
+		Path:     "/hytale",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -359,8 +373,9 @@ func (s *CategoryService) Hytale(ctx context.Context, params *CategoryHytalePara
 func (s *CategoryService) Instagram(ctx context.Context, params *CategoryInstagramParams) (*CategoryInstagramResponse, error) {
 	var result CategoryInstagramResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/instagram",
+		Method:   "GET",
+		Path:     "/instagram",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -375,8 +390,9 @@ func (s *CategoryService) Instagram(ctx context.Context, params *CategoryInstagr
 func (s *CategoryService) List(ctx context.Context, params *CategoryListParams) (*CategoryListResponse, error) {
 	var result CategoryListResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/category",
+		Method:   "GET",
+		Path:     "/category",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -391,8 +407,9 @@ func (s *CategoryService) List(ctx context.Context, params *CategoryListParams) 
 func (s *CategoryService) Mihoyo(ctx context.Context, params *CategoryMihoyoParams) (*CategoryMihoyoResponse, error) {
 	var result CategoryMihoyoResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/mihoyo",
+		Method:   "GET",
+		Path:     "/mihoyo",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -407,8 +424,9 @@ func (s *CategoryService) Mihoyo(ctx context.Context, params *CategoryMihoyoPara
 func (s *CategoryService) Minecraft(ctx context.Context, params *CategoryMinecraftParams) (*CategoryMinecraftResponse, error) {
 	var result CategoryMinecraftResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/minecraft",
+		Method:   "GET",
+		Path:     "/minecraft",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -423,8 +441,9 @@ func (s *CategoryService) Minecraft(ctx context.Context, params *CategoryMinecra
 func (s *CategoryService) Params(ctx context.Context, categoryName string) (*CategoryParamsResponse, error) {
 	var result CategoryParamsResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   fmt.Sprintf("/%s/params", categoryName),
+		Method:   "GET",
+		Path:     fmt.Sprintf("/%s/params", categoryName),
+		IsSearch: true,
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -436,8 +455,9 @@ func (s *CategoryService) Params(ctx context.Context, categoryName string) (*Cat
 func (s *CategoryService) Riot(ctx context.Context, params *CategoryRiotParams) (*CategoryRiotResponse, error) {
 	var result CategoryRiotResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/riot",
+		Method:   "GET",
+		Path:     "/riot",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -452,8 +472,9 @@ func (s *CategoryService) Riot(ctx context.Context, params *CategoryRiotParams) 
 func (s *CategoryService) Roblox(ctx context.Context, params *CategoryRobloxParams) (*CategoryRobloxResponse, error) {
 	var result CategoryRobloxResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/roblox",
+		Method:   "GET",
+		Path:     "/roblox",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -468,8 +489,9 @@ func (s *CategoryService) Roblox(ctx context.Context, params *CategoryRobloxPara
 func (s *CategoryService) SocialClub(ctx context.Context, params *CategorySocialClubParams) (*CategorySocialClubResponse, error) {
 	var result CategorySocialClubResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/socialclub",
+		Method:   "GET",
+		Path:     "/socialclub",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -484,8 +506,9 @@ func (s *CategoryService) SocialClub(ctx context.Context, params *CategorySocial
 func (s *CategoryService) Steam(ctx context.Context, params *CategorySteamParams) (*CategorySteamResponse, error) {
 	var result CategorySteamResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/steam",
+		Method:   "GET",
+		Path:     "/steam",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -500,8 +523,9 @@ func (s *CategoryService) Steam(ctx context.Context, params *CategorySteamParams
 func (s *CategoryService) Supercell(ctx context.Context, params *CategorySupercellParams) (*CategorySupercellResponse, error) {
 	var result CategorySupercellResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/supercell",
+		Method:   "GET",
+		Path:     "/supercell",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -516,8 +540,9 @@ func (s *CategoryService) Supercell(ctx context.Context, params *CategorySuperce
 func (s *CategoryService) Telegram(ctx context.Context, params *CategoryTelegramParams) (*CategoryTelegramResponse, error) {
 	var result CategoryTelegramResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/telegram",
+		Method:   "GET",
+		Path:     "/telegram",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -532,8 +557,9 @@ func (s *CategoryService) Telegram(ctx context.Context, params *CategoryTelegram
 func (s *CategoryService) TikTok(ctx context.Context, params *CategoryTikTokParams) (*CategoryTikTokResponse, error) {
 	var result CategoryTikTokResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/tiktok",
+		Method:   "GET",
+		Path:     "/tiktok",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -548,8 +574,9 @@ func (s *CategoryService) TikTok(ctx context.Context, params *CategoryTikTokPara
 func (s *CategoryService) Uplay(ctx context.Context, params *CategoryUplayParams) (*CategoryUplayResponse, error) {
 	var result CategoryUplayResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/uplay",
+		Method:   "GET",
+		Path:     "/uplay",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -564,8 +591,9 @@ func (s *CategoryService) Uplay(ctx context.Context, params *CategoryUplayParams
 func (s *CategoryService) VPN(ctx context.Context, params *CategoryVPNParams) (*CategoryVPNResponse, error) {
 	var result CategoryVPNResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/vpn",
+		Method:   "GET",
+		Path:     "/vpn",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -580,8 +608,9 @@ func (s *CategoryService) VPN(ctx context.Context, params *CategoryVPNParams) (*
 func (s *CategoryService) Warface(ctx context.Context, params *CategoryWarfaceParams) (*CategoryWarfaceResponse, error) {
 	var result CategoryWarfaceResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/warface",
+		Method:   "GET",
+		Path:     "/warface",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -596,8 +625,9 @@ func (s *CategoryService) Warface(ctx context.Context, params *CategoryWarfacePa
 func (s *CategoryService) Wot(ctx context.Context, params *CategoryWotParams) (*CategoryWotResponse, error) {
 	var result CategoryWotResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/world-of-tanks",
+		Method:   "GET",
+		Path:     "/world-of-tanks",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -612,8 +642,9 @@ func (s *CategoryService) Wot(ctx context.Context, params *CategoryWotParams) (*
 func (s *CategoryService) WotBlitz(ctx context.Context, params *CategoryWotBlitzParams) (*CategoryWotBlitzResponse, error) {
 	var result CategoryWotBlitzResponse
 	opts := lolzteam.RequestOptions{
-		Method: "GET",
-		Path:   "/wot-blitz",
+		Method:   "GET",
+		Path:     "/wot-blitz",
+		IsSearch: true,
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -637,7 +668,7 @@ func (s *CustomDiscountsService) Create(ctx context.Context, body *CustomDiscoun
 		Path:   "/custom-discounts",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -653,7 +684,7 @@ func (s *CustomDiscountsService) Delete(ctx context.Context, body *CustomDiscoun
 		Path:   "/custom-discounts",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -669,7 +700,7 @@ func (s *CustomDiscountsService) Edit(ctx context.Context, body *CustomDiscounts
 		Path:   "/custom-discounts",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -703,7 +734,7 @@ func (s *ImapService) Create(ctx context.Context, body *ImapCreateBody) (*ImapCr
 		Path:   "/imap",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -719,7 +750,7 @@ func (s *ImapService) Delete(ctx context.Context, body *ImapDeleteBody) (*ImapDe
 		Path:   "/imap",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -850,7 +881,7 @@ func (s *ManagingService) AutoBump(ctx context.Context, itemID int64, body *Mana
 		Path:   fmt.Sprintf("/%d/auto-bump", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -892,7 +923,7 @@ func (s *ManagingService) BulkGet(ctx context.Context, body *ManagingBulkGetBody
 		Path:   "/bulk/items",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -921,7 +952,7 @@ func (s *ManagingService) ChangePassword(ctx context.Context, itemID int64, body
 		Path:   fmt.Sprintf("/%d/change-password", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -963,7 +994,7 @@ func (s *ManagingService) CreateClaim(ctx context.Context, body *ManagingCreateC
 		Path:   "/claims",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -979,7 +1010,7 @@ func (s *ManagingService) DeclineVideoRecording(ctx context.Context, itemID int6
 		Path:   fmt.Sprintf("/%d/decline-video-recording", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -995,7 +1026,7 @@ func (s *ManagingService) Delete(ctx context.Context, itemID int64, body *Managi
 		Path:   fmt.Sprintf("/%d", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1011,7 +1042,7 @@ func (s *ManagingService) Edit(ctx context.Context, itemID int64, body *Managing
 		Path:   fmt.Sprintf("/%d/edit", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1101,7 +1132,7 @@ func (s *ManagingService) Note(ctx context.Context, itemID int64, body *Managing
 		Path:   fmt.Sprintf("/%d/note-save", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1130,7 +1161,7 @@ func (s *ManagingService) PublicTag(ctx context.Context, itemID int64, body *Man
 		Path:   fmt.Sprintf("/%d/public-tag", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1146,7 +1177,7 @@ func (s *ManagingService) PublicUntag(ctx context.Context, itemID int64, body *M
 		Path:   fmt.Sprintf("/%d/public-tag", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1255,7 +1286,7 @@ func (s *ManagingService) SteamSDA(ctx context.Context, itemID int64, body *Mana
 		Path:   fmt.Sprintf("/%d/confirm-sda", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1271,7 +1302,7 @@ func (s *ManagingService) SteamUpdateValue(ctx context.Context, itemID int64, bo
 		Path:   fmt.Sprintf("/%d/update-inventory", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1316,7 +1347,7 @@ func (s *ManagingService) Tag(ctx context.Context, itemID int64, body *ManagingT
 		Path:   fmt.Sprintf("/%d/tag", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1371,7 +1402,7 @@ func (s *ManagingService) Transfer(ctx context.Context, itemID int64, body *Mana
 		Path:   fmt.Sprintf("/%d/change-owner", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1413,7 +1444,7 @@ func (s *ManagingService) Untag(ctx context.Context, itemID int64, body *Managin
 		Path:   fmt.Sprintf("/%d/tag", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1434,7 +1465,7 @@ func (s *PaymentsService) BalanceExchange(ctx context.Context, body *PaymentsBal
 		Path:   "/balance/exchange",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1463,7 +1494,7 @@ func (s *PaymentsService) Cancel(ctx context.Context, body *PaymentsCancelBody) 
 		Path:   "/balance/transfer/cancel",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1524,7 +1555,7 @@ func (s *PaymentsService) InvoiceCreate(ctx context.Context, body *PaymentsInvoi
 		Path:   "/invoice",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1572,7 +1603,7 @@ func (s *PaymentsService) Payout(ctx context.Context, body *PaymentsPayoutBody) 
 		Path:   "/balance/payout",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1601,7 +1632,7 @@ func (s *PaymentsService) Transfer(ctx context.Context, body *PaymentsTransferBo
 		Path:   "/balance/transfer",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1638,7 +1669,7 @@ func (s *ProfileService) Edit(ctx context.Context, body *ProfileEditBody) (*Prof
 		Path:   "/me",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1675,7 +1706,7 @@ func (s *ProxyService) Add(ctx context.Context, body *ProxyAddBody) (*ProxyAddRe
 		Path:   "/proxy",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1691,7 +1722,7 @@ func (s *ProxyService) Delete(ctx context.Context, body *ProxyDeleteBody) (*Prox
 		Path:   "/proxy",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1725,7 +1756,7 @@ func (s *PublishingService) Add(ctx context.Context, body *PublishingAddBody) (*
 		Path:   "/item/add",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1741,7 +1772,7 @@ func (s *PublishingService) Check(ctx context.Context, itemID int64, body *Publi
 		Path:   fmt.Sprintf("/%d/goods/check", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1757,7 +1788,7 @@ func (s *PublishingService) External(ctx context.Context, itemID int64, body *Pu
 		Path:   fmt.Sprintf("/%d/external-account", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1773,7 +1804,7 @@ func (s *PublishingService) FastSell(ctx context.Context, body *PublishingFastSe
 		Path:   "/item/fast-sell",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1807,7 +1838,7 @@ func (s *PurchasingService) Confirm(ctx context.Context, itemID int64, body *Pur
 		Path:   fmt.Sprintf("/%d/confirm-buy", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1836,7 +1867,7 @@ func (s *PurchasingService) DiscountRequest(ctx context.Context, itemID int64, b
 		Path:   fmt.Sprintf("/%d/discount", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1852,7 +1883,7 @@ func (s *PurchasingService) FastBuy(ctx context.Context, itemID int64, body *Pur
 		Path:   fmt.Sprintf("/%d/fast-buy", itemID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err

@@ -99,12 +99,22 @@ type StructField struct {
 	Comment string
 }
 
+// ContentKind describes how the request body should be encoded.
+type ContentKind int
+
+const (
+	ContentForm      ContentKind = iota // application/x-www-form-urlencoded (default)
+	ContentJSON                         // application/json
+	ContentMultipart                    // multipart/form-data
+)
+
 type Operation struct {
 	Group          string
 	Method         string
 	HTTPMethod     string
 	Path           string
 	Summary        string
+	ContentKind    ContentKind
 	PathParams     []PathParam
 	QueryParams    []QueryParam
 	BodyProps      []BodyProp
@@ -221,8 +231,9 @@ func (g *Generator) ParseOperations() {
 
 			// Parse request body
 			if op.RequestBody != nil {
-				bodySchema, contentType := g.ExtractBodySchema(op.RequestBody)
-				isMultipart := contentType == "multipart/form-data"
+				bodySchema, contentKind := g.ExtractBodySchema(op.RequestBody)
+				parsed.ContentKind = contentKind
+				isMultipart := contentKind == ContentMultipart
 				resolved := g.ResolveSchemaRef(bodySchema)
 
 				// Check if body schema is an array type (e.g. batch endpoints)
@@ -349,15 +360,38 @@ func (g *Generator) ResolveParam(raw json.RawMessage) ParamObj {
 	return param
 }
 
-func (g *Generator) ExtractBodySchema(rb *RequestBodyObj) (SchemaObj, string) {
-	for _, contentType := range []string{"application/json", "multipart/form-data", "application/x-www-form-urlencoded"} {
-		if mt, ok := rb.Content[contentType]; ok {
-			var schema SchemaObj
-			json.Unmarshal(mt.Schema, &schema)
-			return schema, contentType
-		}
+func (g *Generator) ExtractBodySchema(rb *RequestBodyObj) (SchemaObj, ContentKind) {
+	_, hasForm := rb.Content["application/x-www-form-urlencoded"]
+	_, hasMultipart := rb.Content["multipart/form-data"]
+	_, hasJSON := rb.Content["application/json"]
+
+	// Priority: multipart (without form) > json (without form) > form
+	var picked string
+	var kind ContentKind
+	switch {
+	case hasMultipart && !hasForm:
+		picked = "multipart/form-data"
+		kind = ContentMultipart
+	case hasJSON && !hasForm:
+		picked = "application/json"
+		kind = ContentJSON
+	case hasForm:
+		picked = "application/x-www-form-urlencoded"
+		kind = ContentForm
+	case hasMultipart:
+		picked = "multipart/form-data"
+		kind = ContentMultipart
+	case hasJSON:
+		picked = "application/json"
+		kind = ContentJSON
+	default:
+		return SchemaObj{}, ContentForm
 	}
-	return SchemaObj{}, ""
+
+	mt := rb.Content[picked]
+	var schema SchemaObj
+	json.Unmarshal(mt.Schema, &schema)
+	return schema, kind
 }
 
 func (g *Generator) ExtractResponseSchema(raw json.RawMessage) SchemaObj {

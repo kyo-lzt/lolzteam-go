@@ -15,7 +15,7 @@ func main() {
 
 	apis := []codegen.APIConfig{
 		{SchemaFile: "schemas/forum.json", Prefix: "Forum", BaseURL: "https://prod-api.lolz.live", RPM: 300},
-		{SchemaFile: "schemas/market.json", Prefix: "Market", BaseURL: "https://prod-api.lzt.market", RPM: 120},
+		{SchemaFile: "schemas/market.json", Prefix: "Market", BaseURL: "https://prod-api.lzt.market", RPM: 120, SearchRPM: 20},
 	}
 
 	if err := codegen.Generate(outDir, apis); err != nil {

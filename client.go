@@ -3,18 +3,21 @@ package lolzteam
 import (
 	"bytes"
 	"context"
+	"crypto/tls"
 	"encoding/json"
 	"errors"
 	"fmt"
 	"io"
 	"math/rand/v2"
 	"mime/multipart"
+	"net"
 	"net/http"
 	"net/url"
 	"reflect"
 	"strconv"
 	"strings"
 	"sync"
+	"syscall"
 	"time"
 )
 
@@ -22,14 +25,15 @@ import (
 
 // Config holds settings for creating Forum/Market clients.
 type Config struct {
-	Token             string
-	BaseURL           string
-	ProxyURL          string        // optional, e.g. "http://proxy:8080" or "socks5://proxy:1080"
-	MaxRetries        int           // default: 3
-	RetryBaseDelay    time.Duration // default: 1s
-	RetryMaxDelay     time.Duration // default: 30s
-	RequestsPerMinute int           // default: per-client (Forum=300, Market=120)
-	Timeout           time.Duration // default: 30s
+	Token                    string
+	BaseURL                  string
+	ProxyURL                 string        // optional, e.g. "http://proxy:8080" or "socks5://proxy:1080"
+	MaxRetries               int           // default: 3
+	RetryBaseDelay           time.Duration // default: 1s
+	RetryMaxDelay            time.Duration // default: 30s
+	RequestsPerMinute        int           // default: per-client (Forum=300, Market=120)
+	SearchRequestsPerMinute  int           // default: 0 (disabled); for Market: 20
+	Timeout                  time.Duration // default: 30s
 }
 
 func (c Config) withDefaults() Config {
@@ -51,11 +55,12 @@ func (c Config) withDefaults() Config {
 // --- Client & Request ---
 
 type Client struct {
-	baseURL     string
-	token       string
-	httpClient  *http.Client
-	rateLimiter *rateLimiter
-	retryConfig retryConfig
+	baseURL            string
+	token              string
+	httpClient         *http.Client
+	rateLimiter        *rateLimiter
+	searchRateLimiter  *rateLimiter
+	retryConfig        retryConfig
 }
 
 // RequestOptions describes a single API call.
@@ -66,6 +71,7 @@ type RequestOptions struct {
 	Body      url.Values      // form-urlencoded body
 	Multipart *MultipartBody  // multipart/form-data body (for file uploads)
 	RawJSON   any             // JSON body (e.g. batch endpoints)
+	IsSearch  bool            // true for search endpoints (category group)
 }
 
 func NewClient(config Config) (*Client, error) {
@@ -101,6 +107,11 @@ func NewClient(config Config) (*Client, error) {
 		rpm = 300 // safe default
 	}
 
+	var searchRL *rateLimiter
+	if config.SearchRequestsPerMinute > 0 {
+		searchRL = newRateLimiter(config.SearchRequestsPerMinute)
+	}
+
 	return &Client{
 		baseURL: strings.TrimRight(config.BaseURL, "/"),
 		token:   config.Token,
@@ -108,7 +119,8 @@ func NewClient(config Config) (*Client, error) {
 			Transport: transport,
 			Timeout:   config.Timeout,
 		},
-		rateLimiter: newRateLimiter(rpm),
+		rateLimiter:       newRateLimiter(rpm),
+		searchRateLimiter: searchRL,
 		retryConfig: retryConfig{
 			maxRetries: config.MaxRetries,
 			baseDelay:  config.RetryBaseDelay,
@@ -122,6 +134,12 @@ func NewClient(config Config) (*Client, error) {
 func (c *Client) Request(ctx context.Context, opts RequestOptions, result any) error {
 	if err := c.rateLimiter.acquire(ctx); err != nil {
 		return err
+	}
+
+	if opts.IsSearch && c.searchRateLimiter != nil {
+		if err := c.searchRateLimiter.acquire(ctx); err != nil {
+			return err
+		}
 	}
 
 	// Pre-encode multipart body once, before retry loop
@@ -572,9 +590,61 @@ func isRetryable(err error) bool {
 
 	var networkErr *NetworkError
 	if errors.As(err, &networkErr) {
+		return isTransientNetworkError(networkErr.Err)
+	}
+
+	return false
+}
+
+// isTransientNetworkError returns true only for transient network errors
+// that are worth retrying (timeouts, connection resets, unexpected EOF).
+// Permanent errors like DNS resolution failures, connection refused,
+// and TLS handshake errors are not retried.
+func isTransientNetworkError(err error) bool {
+	if err == nil {
+		return false
+	}
+
+	// io.ErrUnexpectedEOF — connection dropped mid-response
+	if errors.Is(err, io.ErrUnexpectedEOF) {
 		return true
 	}
 
+	// syscall.ECONNRESET — connection reset by peer
+	if errors.Is(err, syscall.ECONNRESET) {
+		return true
+	}
+
+	// net.Error with Timeout() == true — request/dial timeout
+	var netErr net.Error
+	if errors.As(err, &netErr) && netErr.Timeout() {
+		return true
+	}
+
+	// Permanent errors — do not retry
+	var dnsErr *net.DNSError
+	if errors.As(err, &dnsErr) {
+		return false
+	}
+
+	var opErr *net.OpError
+	if errors.As(err, &opErr) {
+		if errors.Is(opErr.Err, syscall.ECONNREFUSED) {
+			return false
+		}
+	}
+
+	var tlsErr *tls.RecordHeaderError
+	if errors.As(err, &tlsErr) {
+		return false
+	}
+
+	var certErr *tls.CertificateVerificationError
+	if errors.As(err, &certErr) {
+		return false
+	}
+
+	// Unknown network error — don't retry to be safe
 	return false
 }
 

@@ -152,7 +152,7 @@ func (s *ChatboxService) DeleteIgnore(ctx context.Context, body *ChatboxDeleteIg
 		Path:   "/chatbox/ignore",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -168,7 +168,7 @@ func (s *ChatboxService) DeleteMessage(ctx context.Context, body *ChatboxDeleteM
 		Path:   "/chatbox/messages",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -184,7 +184,7 @@ func (s *ChatboxService) EditMessage(ctx context.Context, body *ChatboxEditMessa
 		Path:   "/chatbox/messages",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -277,7 +277,7 @@ func (s *ChatboxService) PostIgnore(ctx context.Context, body *ChatboxPostIgnore
 		Path:   "/chatbox/ignore",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -293,7 +293,7 @@ func (s *ChatboxService) PostMessage(ctx context.Context, body *ChatboxPostMessa
 		Path:   "/chatbox/messages",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -309,7 +309,7 @@ func (s *ChatboxService) Report(ctx context.Context, body *ChatboxReportBody) (*
 		Path:   "/chatbox/messages/report",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -372,7 +372,7 @@ func (s *ConversationsService) Create(ctx context.Context, body *ConversationsCr
 		Path:   "/conversations",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -388,7 +388,7 @@ func (s *ConversationsService) Delete(ctx context.Context, body *ConversationsDe
 		Path:   "/conversations",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -417,7 +417,7 @@ func (s *ConversationsService) Invite(ctx context.Context, conversationID int64,
 		Path:   fmt.Sprintf("/conversations/%d/invite", conversationID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -433,7 +433,7 @@ func (s *ConversationsService) Kick(ctx context.Context, conversationID int64, b
 		Path:   fmt.Sprintf("/conversations/%d/kick", conversationID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -465,7 +465,7 @@ func (s *ConversationsService) MessagesCreate(ctx context.Context, conversationI
 		Path:   fmt.Sprintf("/conversations/%d/messages", conversationID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -494,7 +494,7 @@ func (s *ConversationsService) MessagesEdit(ctx context.Context, conversationID 
 		Path:   fmt.Sprintf("/conversations/%d/messages/%d", conversationID, messageID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -591,7 +591,7 @@ func (s *ConversationsService) Save(ctx context.Context, body *ConversationsSave
 		Path:   "/conversations/save",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -607,7 +607,7 @@ func (s *ConversationsService) Search(ctx context.Context, body *ConversationsSe
 		Path:   "/conversations/search",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -636,7 +636,7 @@ func (s *ConversationsService) Start(ctx context.Context, body *ConversationsSta
 		Path:   "/conversations/start",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -665,7 +665,7 @@ func (s *ConversationsService) Update(ctx context.Context, body *ConversationsUp
 		Path:   "/conversations",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -686,7 +686,7 @@ func (s *FormsService) Create(ctx context.Context, body *FormsCreateBody) (*Form
 		Path:   "/forms/save",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -723,7 +723,7 @@ func (s *ForumsService) EditFeedOptions(ctx context.Context, body *ForumsEditFee
 		Path:   "/forums/feed/options",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -739,7 +739,7 @@ func (s *ForumsService) Follow(ctx context.Context, forumID int64, body *ForumsF
 		Path:   fmt.Sprintf("/forums/%d/followers", forumID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -938,7 +938,7 @@ func (s *NotificationsService) Read(ctx context.Context, body *NotificationsRead
 		Path:   "/notifications/read",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -959,7 +959,7 @@ func (s *OAuthService) Token(ctx context.Context, body *OAuthTokenBody) (*OAuthT
 		Path:   "/oauth/token",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.Multipart = lolzteam.StructToMultipart(body)
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1014,7 +1014,7 @@ func (s *PostsService) CommentsCreate(ctx context.Context, body *PostsCommentsCr
 		Path:   "/posts/comments",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1030,7 +1030,7 @@ func (s *PostsService) CommentsDelete(ctx context.Context, body *PostsCommentsDe
 		Path:   "/posts/comments",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1046,7 +1046,7 @@ func (s *PostsService) CommentsEdit(ctx context.Context, body *PostsCommentsEdit
 		Path:   "/posts/comments",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1078,7 +1078,7 @@ func (s *PostsService) CommentsReport(ctx context.Context, body *PostsCommentsRe
 		Path:   "/posts/comments/report",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1094,7 +1094,7 @@ func (s *PostsService) Create(ctx context.Context, body *PostsCreateBody) (*Post
 		Path:   "/posts",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1110,7 +1110,7 @@ func (s *PostsService) Delete(ctx context.Context, postID int64, body *PostsDele
 		Path:   fmt.Sprintf("/posts/%d", postID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1126,7 +1126,7 @@ func (s *PostsService) Edit(ctx context.Context, postID int64, body *PostsEditBo
 		Path:   fmt.Sprintf("/posts/%d", postID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1200,7 +1200,7 @@ func (s *PostsService) Report(ctx context.Context, postID int64, body *PostsRepo
 		Path:   fmt.Sprintf("/posts/%d/report", postID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1247,7 +1247,7 @@ func (s *ProfilePostsService) CommentsCreate(ctx context.Context, body *ProfileP
 		Path:   "/profile-posts/comments",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1263,7 +1263,7 @@ func (s *ProfilePostsService) CommentsDelete(ctx context.Context, body *ProfileP
 		Path:   "/profile-posts/comments",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1279,7 +1279,7 @@ func (s *ProfilePostsService) CommentsEdit(ctx context.Context, body *ProfilePos
 		Path:   "/profile-posts/comments",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1324,7 +1324,7 @@ func (s *ProfilePostsService) CommentsReport(ctx context.Context, commentID int6
 		Path:   fmt.Sprintf("/profile-posts/comments/%d/report", commentID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1340,7 +1340,7 @@ func (s *ProfilePostsService) Create(ctx context.Context, body *ProfilePostsCrea
 		Path:   "/profile-posts",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1372,7 +1372,7 @@ func (s *ProfilePostsService) Edit(ctx context.Context, profilePostID int64, bod
 		Path:   fmt.Sprintf("/profile-posts/%d", profilePostID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1443,7 +1443,7 @@ func (s *ProfilePostsService) Report(ctx context.Context, profilePostID int64, b
 		Path:   fmt.Sprintf("/profile-posts/%d/report", profilePostID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1516,7 +1516,7 @@ func (s *SearchService) All(ctx context.Context, body *SearchAllBody) (*SearchAl
 		Path:   "/search",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1532,7 +1532,7 @@ func (s *SearchService) Posts(ctx context.Context, body *SearchPostsBody) (*Sear
 		Path:   "/search/posts",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1548,7 +1548,7 @@ func (s *SearchService) ProfilePosts(ctx context.Context, body *SearchProfilePos
 		Path:   "/search/profile-posts",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1580,7 +1580,7 @@ func (s *SearchService) Tagged(ctx context.Context, body *SearchTaggedBody) (*Se
 		Path:   "/search/tagged",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1596,7 +1596,7 @@ func (s *SearchService) Threads(ctx context.Context, body *SearchThreadsBody) (*
 		Path:   "/search/threads",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1612,7 +1612,7 @@ func (s *SearchService) Users(ctx context.Context, body *SearchUsersBody) (*Sear
 		Path:   "/search/users",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1712,7 +1712,7 @@ func (s *ThreadsService) Claim(ctx context.Context, body *ThreadsClaimBody) (*Th
 		Path:   "/claims",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1728,7 +1728,7 @@ func (s *ThreadsService) Create(ctx context.Context, body *ThreadsCreateBody) (*
 		Path:   "/threads",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1744,7 +1744,7 @@ func (s *ThreadsService) CreateContest(ctx context.Context, body *ThreadsCreateC
 		Path:   "/contests",
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1760,7 +1760,7 @@ func (s *ThreadsService) Delete(ctx context.Context, threadID int64, body *Threa
 		Path:   fmt.Sprintf("/threads/%d", threadID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1776,7 +1776,7 @@ func (s *ThreadsService) Edit(ctx context.Context, threadID int64, body *Threads
 		Path:   fmt.Sprintf("/threads/%d", threadID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1805,7 +1805,7 @@ func (s *ThreadsService) Follow(ctx context.Context, threadID int64, body *Threa
 		Path:   fmt.Sprintf("/threads/%d/followers", threadID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1895,7 +1895,7 @@ func (s *ThreadsService) Move(ctx context.Context, threadID int64, body *Threads
 		Path:   fmt.Sprintf("/threads/%d/move", threadID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -1937,7 +1937,7 @@ func (s *ThreadsService) PollVote(ctx context.Context, threadID int64, body *Thr
 		Path:   fmt.Sprintf("/threads/%d/poll/votes", threadID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -2029,7 +2029,7 @@ func (s *UsersService) AvatarCrop(ctx context.Context, userID any, body *UsersAv
 		Path:   fmt.Sprintf("/users/%v/avatar/crop", userID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -2074,7 +2074,7 @@ func (s *UsersService) BackgroundCrop(ctx context.Context, userID any, body *Use
 		Path:   fmt.Sprintf("/users/%v/background/crop", userID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -2151,7 +2151,7 @@ func (s *UsersService) Edit(ctx context.Context, userID any, body *UsersEditBody
 		Path:   fmt.Sprintf("/users/%v", userID),
 	}
 	if body != nil {
-		opts.Body = lolzteam.StructToForm(body)
+		opts.RawJSON = body
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err

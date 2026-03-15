@@ -4,8 +4,11 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"io"
 	"net/http"
 	"net/http/httptest"
+	"net/url"
+	"strings"
 	"testing"
 	"time"
 )
@@ -280,7 +283,8 @@ func TestIsRetryable(t *testing.T) {
 	}{
 		{"RateLimitError", &RateLimitError{}, true},
 		{"ServerError", &ServerError{}, true},
-		{"NetworkError", &NetworkError{Err: errors.New("timeout")}, true},
+		{"NetworkError/transient", &NetworkError{Err: io.ErrUnexpectedEOF}, true},
+		{"NetworkError/permanent", &NetworkError{Err: errors.New("some error")}, false},
 		{"AuthError", &AuthError{}, false},
 		{"NotFoundError", &NotFoundError{}, false},
 		{"HttpError", &HttpError{StatusCode: 400}, false},
@@ -695,5 +699,238 @@ func TestConfigErrorMessage(t *testing.T) {
 	want := "config error: bad proxy"
 	if got := err.Error(); got != want {
 		t.Errorf("Error() = %q, want %q", got, want)
+	}
+}
+
+// --- Rate limiter ---
+
+func TestRateLimiterAllowsBurst(t *testing.T) {
+	rl := newRateLimiter(600) // 10 per sec
+	start := time.Now()
+	for i := 0; i < 10; i++ {
+		if err := rl.acquire(context.Background()); err != nil {
+			t.Fatalf("acquire error: %v", err)
+		}
+	}
+	elapsed := time.Since(start)
+	if elapsed > 50*time.Millisecond {
+		t.Errorf("burst of 10 requests took %v, expected near-instant", elapsed)
+	}
+}
+
+func TestRateLimiterDelaysWhenExhausted(t *testing.T) {
+	rl := newRateLimiter(60) // 1 per sec
+	// Drain all tokens
+	for i := 0; i < 60; i++ {
+		if err := rl.acquire(context.Background()); err != nil {
+			t.Fatalf("acquire error: %v", err)
+		}
+	}
+	start := time.Now()
+	if err := rl.acquire(context.Background()); err != nil {
+		t.Fatalf("acquire error: %v", err)
+	}
+	elapsed := time.Since(start)
+	if elapsed < 500*time.Millisecond {
+		t.Errorf("expected delay after exhaustion, got %v", elapsed)
+	}
+}
+
+func TestRateLimiterCancellation(t *testing.T) {
+	rl := newRateLimiter(1) // 1 per minute
+	// Drain the single token
+	if err := rl.acquire(context.Background()); err != nil {
+		t.Fatalf("acquire error: %v", err)
+	}
+	// Cancel immediately
+	ctx, cancel := context.WithCancel(context.Background())
+	cancel()
+	err := rl.acquire(ctx)
+	if err == nil {
+		t.Fatal("expected error from cancelled context")
+	}
+	if !errors.Is(err, context.Canceled) {
+		t.Errorf("expected context.Canceled, got %v", err)
+	}
+}
+
+// --- StructToQuery ---
+
+func TestStructToQueryBasic(t *testing.T) {
+	type Params struct {
+		Name  *string `query:"name"`
+		Page  *int    `query:"page"`
+		Empty *string `query:"empty"`
+	}
+	name := "test"
+	page := 2
+	vals := StructToQuery(&Params{Name: &name, Page: &page})
+	if vals.Get("name") != "test" {
+		t.Errorf("name = %q, want %q", vals.Get("name"), "test")
+	}
+	if vals.Get("page") != "2" {
+		t.Errorf("page = %q, want %q", vals.Get("page"), "2")
+	}
+	if vals.Has("empty") {
+		t.Error("empty should not be present when nil")
+	}
+}
+
+func TestStructToQueryBool(t *testing.T) {
+	type Params struct {
+		Active  *bool `query:"active"`
+		Deleted *bool `query:"deleted"`
+	}
+	yes := true
+	no := false
+	vals := StructToQuery(&Params{Active: &yes, Deleted: &no})
+	if vals.Get("active") != "1" {
+		t.Errorf("active = %q, want %q", vals.Get("active"), "1")
+	}
+	if vals.Get("deleted") != "0" {
+		t.Errorf("deleted = %q, want %q", vals.Get("deleted"), "0")
+	}
+}
+
+func TestStructToQueryNil(t *testing.T) {
+	vals := StructToQuery(nil)
+	if len(vals) != 0 {
+		t.Errorf("expected empty values for nil, got %v", vals)
+	}
+}
+
+func TestStructToFormBasic(t *testing.T) {
+	type Body struct {
+		Title   *string `form:"title"`
+		Content *string `form:"content"`
+	}
+	title := "hello"
+	content := "world"
+	vals := StructToForm(&Body{Title: &title, Content: &content})
+	if vals.Get("title") != "hello" {
+		t.Errorf("title = %q, want %q", vals.Get("title"), "hello")
+	}
+	if vals.Get("content") != "world" {
+		t.Errorf("content = %q, want %q", vals.Get("content"), "world")
+	}
+}
+
+// --- HTTP server error tests ---
+
+func TestHTTPClientServerError503Retry(t *testing.T) {
+	calls := 0
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		calls++
+		if calls == 1 {
+			w.WriteHeader(http.StatusServiceUnavailable)
+			w.Write([]byte("service unavailable"))
+			return
+		}
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("{}"))
+	}))
+	defer srv.Close()
+
+	c, err := NewClient(Config{
+		Token:             "t",
+		BaseURL:           srv.URL,
+		RequestsPerMinute: 600,
+		MaxRetries:        3,
+		RetryBaseDelay:    time.Millisecond,
+		RetryMaxDelay:     50 * time.Millisecond,
+	})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
+
+	err = c.Request(context.Background(), RequestOptions{
+		Method: "GET",
+		Path:   "/service",
+	}, nil)
+
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if calls != 2 {
+		t.Errorf("calls = %d, want 2", calls)
+	}
+}
+
+func TestHTTPClientNonRetryable401(t *testing.T) {
+	calls := 0
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		calls++
+		w.WriteHeader(http.StatusUnauthorized)
+		w.Write([]byte(`{"error":"unauthorized"}`))
+	}))
+	defer srv.Close()
+
+	c, err := NewClient(Config{
+		Token:             "t",
+		BaseURL:           srv.URL,
+		RequestsPerMinute: 600,
+		MaxRetries:        3,
+		RetryBaseDelay:    time.Millisecond,
+		RetryMaxDelay:     50 * time.Millisecond,
+	})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
+
+	err = c.Request(context.Background(), RequestOptions{
+		Method: "GET",
+		Path:   "/secret",
+	}, nil)
+
+	if err == nil {
+		t.Fatal("expected error for 401")
+	}
+	if calls != 1 {
+		t.Errorf("calls = %d, want 1 (non-retryable should not retry)", calls)
+	}
+
+	var authErr *AuthError
+	if !errors.As(err, &authErr) {
+		t.Errorf("expected *AuthError, got %T", err)
+	}
+}
+
+func TestHTTPClientFormBody(t *testing.T) {
+	var gotContentType string
+	var gotBody string
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		gotContentType = r.Header.Get("Content-Type")
+		body, _ := io.ReadAll(r.Body)
+		gotBody = string(body)
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("{}"))
+	}))
+	defer srv.Close()
+
+	c, err := NewClient(Config{
+		Token:             "t",
+		BaseURL:           srv.URL,
+		RequestsPerMinute: 600,
+		MaxRetries:        1,
+	})
+	if err != nil {
+		t.Fatalf("NewClient error: %v", err)
+	}
+
+	body := url.Values{"title": {"hello"}, "content": {"world"}}
+	err = c.Request(context.Background(), RequestOptions{
+		Method: "POST",
+		Path:   "/posts",
+		Body:   body,
+	}, nil)
+
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if !strings.Contains(gotContentType, "application/x-www-form-urlencoded") {
+		t.Errorf("Content-Type = %q, want application/x-www-form-urlencoded", gotContentType)
+	}
+	if !strings.Contains(gotBody, "title=hello") {
+		t.Errorf("body = %q, expected to contain title=hello", gotBody)
 	}
 }

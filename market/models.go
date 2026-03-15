@@ -815,11 +815,11 @@ type ItemFromListModelSeller struct {
 // ItemListModel represents a component schema.
 type ItemListModel struct {
 	HasNextPage     bool                    `json:"hasNextPage,omitempty"`
-	Items           []any                   `json:"items,omitempty"`
+	Items           []ItemFromListModel     `json:"items,omitempty"`
 	Page            int64                   `json:"page,omitempty"`
 	PerPage         int64                   `json:"perPage,omitempty"`
 	SearchURL       string                  `json:"searchUrl,omitempty"`
-	StickyItems     []any                   `json:"stickyItems,omitempty"`
+	StickyItems     []ItemFromListModel     `json:"stickyItems,omitempty"`
 	SystemInfo      ItemListModelSystemInfo `json:"system_info,omitempty"`
 	TotalItems      int64                   `json:"totalItems,omitempty"`
 	TotalItemsPrice any                     `json:"totalItemsPrice,omitempty"`
@@ -5717,12 +5717,12 @@ type UserModelTelegramClient struct {
 
 // AutoPaymentsCreateBody holds the request body for AutoPayments.Create.
 type AutoPaymentsCreateBody struct {
-	Amount           float64 `form:"amount"`
-	Currency         *string `form:"currency"`
-	Day              int64   `form:"day"`
-	Description      *string `form:"description"`
-	SecretAnswer     *string `form:"secret_answer"`
-	UsernameReceiver string  `form:"username_receiver"`
+	Amount           float64 `json:"amount"`
+	Currency         *string `json:"currency,omitempty"`
+	Day              int64   `json:"day"`
+	Description      *string `json:"description,omitempty"`
+	SecretAnswer     *string `json:"secret_answer,omitempty"`
+	UsernameReceiver string  `json:"username_receiver"`
 }
 
 // AutoPaymentsCreateResponse is the response for the endpoint.
@@ -5735,7 +5735,7 @@ type AutoPaymentsCreateResponse struct {
 
 // AutoPaymentsDeleteBody holds the request body for AutoPayments.Delete.
 type AutoPaymentsDeleteBody struct {
-	AutoPaymentID int64 `form:"auto_payment_id"`
+	AutoPaymentID int64 `json:"auto_payment_id"`
 }
 
 // AutoPaymentsDeleteResponse is the response for the endpoint.
@@ -5767,7 +5767,7 @@ type BatchBatchResponse struct {
 
 // CartAddBody holds the request body for Cart.Add.
 type CartAddBody struct {
-	ItemID int64 `form:"item_id"`
+	ItemID int64 `json:"item_id"`
 }
 
 // CartAddResponse is the response for the endpoint.
@@ -5778,7 +5778,7 @@ type CartAddResponse struct {
 
 // CartDeleteBody holds the request body for Cart.Delete.
 type CartDeleteBody struct {
-	ItemID *int64 `form:"item_id"`
+	ItemID *int64 `json:"item_id,omitempty"`
 }
 
 // CartDeleteResponse is the response for the endpoint.
@@ -7611,12 +7611,12 @@ type CategoryWotBlitzResponse struct {
 
 // CustomDiscountsCreateBody holds the request body for CustomDiscounts.Create.
 type CustomDiscountsCreateBody struct {
-	CategoryID      int64    `form:"category_id"`
-	Currency        *string  `form:"currency"`
-	DiscountPercent float64  `form:"discount_percent"`
-	MaxPrice        *float64 `form:"max_price"`
-	MinPrice        float64  `form:"min_price"`
-	UserID          int64    `form:"user_id"`
+	CategoryID      int64    `json:"category_id"`
+	Currency        *string  `json:"currency,omitempty"`
+	DiscountPercent float64  `json:"discount_percent"`
+	MaxPrice        *float64 `json:"max_price,omitempty"`
+	MinPrice        float64  `json:"min_price"`
+	UserID          int64    `json:"user_id"`
 }
 
 // CustomDiscountsCreateResponse is the response for the endpoint.
@@ -7628,7 +7628,7 @@ type CustomDiscountsCreateResponse struct {
 
 // CustomDiscountsDeleteBody holds the request body for CustomDiscounts.Delete.
 type CustomDiscountsDeleteBody struct {
-	DiscountID int64 `form:"discount_id"`
+	DiscountID int64 `json:"discount_id"`
 }
 
 // CustomDiscountsDeleteResponse is the response for the endpoint.
@@ -7640,10 +7640,10 @@ type CustomDiscountsDeleteResponse struct {
 
 // CustomDiscountsEditBody holds the request body for CustomDiscounts.Edit.
 type CustomDiscountsEditBody struct {
-	DiscountID      int64    `form:"discount_id"`
-	DiscountPercent *float64 `form:"discount_percent"`
-	MaxPrice        *float64 `form:"max_price"`
-	MinPrice        *float64 `form:"min_price"`
+	DiscountID      int64    `json:"discount_id"`
+	DiscountPercent *float64 `json:"discount_percent,omitempty"`
+	MaxPrice        *float64 `json:"max_price,omitempty"`
+	MinPrice        *float64 `json:"min_price,omitempty"`
 }
 
 // CustomDiscountsEditResponse is the response for the endpoint.
@@ -7662,10 +7662,10 @@ type CustomDiscountsGetResponse struct {
 
 // ImapCreateBody holds the request body for Imap.Create.
 type ImapCreateBody struct {
-	Domain     string `form:"domain"`
-	ImapServer string `form:"imap_server"`
-	Port       int64  `form:"port"`
-	Secure     bool   `form:"secure"`
+	Domain     string `json:"domain"`
+	ImapServer string `json:"imap_server"`
+	Port       int64  `json:"port"`
+	Secure     bool   `json:"secure"`
 }
 
 // ImapCreateResponse is the response for the endpoint.
@@ -7677,7 +7677,7 @@ type ImapCreateResponse struct {
 
 // ImapDeleteBody holds the request body for Imap.Delete.
 type ImapDeleteBody struct {
-	Domain string `form:"domain"`
+	Domain string `json:"domain"`
 }
 
 // ImapDeleteResponse is the response for the endpoint.
@@ -7869,7 +7869,7 @@ type ManagingAIPriceResponse struct {
 
 // ManagingAutoBumpBody holds the request body for Managing.AutoBump.
 type ManagingAutoBumpBody struct {
-	Hour int64 `form:"hour"`
+	Hour int64 `json:"hour"`
 }
 
 // ManagingAutoBumpResponse is the response for the endpoint.
@@ -7894,8 +7894,8 @@ type ManagingAutoBuyPriceResponse struct {
 
 // ManagingBulkGetBody holds the request body for Managing.BulkGet.
 type ManagingBulkGetBody struct {
-	ItemID           []int64 `form:"item_id"`
-	ParseSameItemIds *bool   `form:"parse_same_item_ids"`
+	ItemID           []int64 `json:"item_id,omitempty"`
+	ParseSameItemIds *bool   `json:"parse_same_item_ids,omitempty"`
 }
 
 // ManagingBulkGetResponse is the response for the endpoint.
@@ -7914,7 +7914,7 @@ type ManagingBumpResponse struct {
 
 // ManagingChangePasswordBody holds the request body for Managing.ChangePassword.
 type ManagingChangePasswordBody struct {
-	Cancel *int64 `form:"_cancel"`
+	Cancel *int64 `json:"_cancel,omitempty"`
 }
 
 // ManagingChangePasswordResponse is the response for the endpoint.
@@ -7939,8 +7939,8 @@ type ManagingCloseResponse struct {
 
 // ManagingCreateClaimBody holds the request body for Managing.CreateClaim.
 type ManagingCreateClaimBody struct {
-	ItemID   int64  `form:"item_id"`
-	PostBody string `form:"post_body"`
+	ItemID   int64  `json:"item_id"`
+	PostBody string `json:"post_body"`
 }
 
 // ManagingCreateClaimResponse is the response for the endpoint.
@@ -7951,7 +7951,7 @@ type ManagingCreateClaimResponse struct {
 
 // ManagingDeclineVideoRecordingBody holds the request body for Managing.DeclineVideoRecording.
 type ManagingDeclineVideoRecordingBody struct {
-	IVoluntarilyAndWithFullAwarenessOfMyActionsWaiveAnyClaimsRegardingThisItem bool `form:"i_voluntarily_and_with_full_awareness_of_my_actions_waive_any_claims_regarding_this_item"`
+	IVoluntarilyAndWithFullAwarenessOfMyActionsWaiveAnyClaimsRegardingThisItem bool `json:"i_voluntarily_and_with_full_awareness_of_my_actions_waive_any_claims_regarding_this_item"`
 }
 
 // ManagingDeclineVideoRecordingResponse is the response for the endpoint.
@@ -7963,7 +7963,7 @@ type ManagingDeclineVideoRecordingResponse struct {
 
 // ManagingDeleteBody holds the request body for Managing.Delete.
 type ManagingDeleteBody struct {
-	Reason string `form:"reason"`
+	Reason string `json:"reason"`
 }
 
 // ManagingDeleteResponse is the response for the endpoint.
@@ -7975,17 +7975,17 @@ type ManagingDeleteResponse struct {
 
 // ManagingEditBody holds the request body for Managing.Edit.
 type ManagingEditBody struct {
-	AllowAskDiscount *bool   `form:"allow_ask_discount"`
-	Currency         *string `form:"currency"`
-	Description      *string `form:"description"`
-	EmailLoginData   *string `form:"email_login_data"`
-	EmailType        *string `form:"email_type"`
-	Information      *string `form:"information"`
-	ItemOrigin       *string `form:"item_origin"`
-	Price            *int64  `form:"price"`
-	ProxyID          *int64  `form:"proxy_id"`
-	Title            *string `form:"title"`
-	TitleEn          *string `form:"title_en"`
+	AllowAskDiscount *bool   `json:"allow_ask_discount,omitempty"`
+	Currency         *string `json:"currency,omitempty"`
+	Description      *string `json:"description,omitempty"`
+	EmailLoginData   *string `json:"email_login_data,omitempty"`
+	EmailType        *string `json:"email_type,omitempty"`
+	Information      *string `json:"information,omitempty"`
+	ItemOrigin       *string `json:"item_origin,omitempty"`
+	Price            *int64  `json:"price,omitempty"`
+	ProxyID          *int64  `json:"proxy_id,omitempty"`
+	Title            *string `json:"title,omitempty"`
+	TitleEn          *string `json:"title_en,omitempty"`
 }
 
 // ManagingEditResponse is the response for the endpoint.
@@ -8066,7 +8066,7 @@ type ManagingImageResponse struct {
 
 // ManagingNoteBody holds the request body for Managing.Note.
 type ManagingNoteBody struct {
-	Text *string `form:"text"`
+	Text *string `json:"text,omitempty"`
 }
 
 // ManagingNoteResponse is the response for the endpoint.
@@ -8085,7 +8085,7 @@ type ManagingOpenResponse struct {
 
 // ManagingPublicTagBody holds the request body for Managing.PublicTag.
 type ManagingPublicTagBody struct {
-	TagID int64 `form:"tag_id"`
+	TagID int64 `json:"tag_id"`
 }
 
 // ManagingPublicTagResponse is the response for the endpoint.
@@ -8099,7 +8099,7 @@ type ManagingPublicTagResponse struct {
 
 // ManagingPublicUntagBody holds the request body for Managing.PublicUntag.
 type ManagingPublicUntagBody struct {
-	TagID int64 `form:"tag_id"`
+	TagID int64 `json:"tag_id"`
 }
 
 // ManagingPublicUntagResponse is the response for the endpoint.
@@ -8168,8 +8168,8 @@ type ManagingSteamRemoveMafileResponse struct {
 
 // ManagingSteamSDABody holds the request body for Managing.SteamSDA.
 type ManagingSteamSDABody struct {
-	ID    *int64 `form:"id"`
-	Nonce *int64 `form:"nonce"`
+	ID    *int64 `json:"id,omitempty"`
+	Nonce *int64 `json:"nonce,omitempty"`
 }
 
 // ManagingSteamSDAResponse is the response for the endpoint.
@@ -8181,9 +8181,9 @@ type ManagingSteamSDAResponse struct {
 
 // ManagingSteamUpdateValueBody holds the request body for Managing.SteamUpdateValue.
 type ManagingSteamUpdateValueBody struct {
-	All       *bool  `form:"all"`
-	AppID     *int64 `form:"app_id"`
-	Authorize *bool  `form:"authorize"`
+	All       *bool  `json:"all,omitempty"`
+	AppID     *int64 `json:"app_id,omitempty"`
+	Authorize *bool  `json:"authorize,omitempty"`
 }
 
 // ManagingSteamUpdateValueResponse is the response for the endpoint.
@@ -8218,7 +8218,7 @@ type ManagingStickResponse struct {
 
 // ManagingTagBody holds the request body for Managing.Tag.
 type ManagingTagBody struct {
-	TagID int64 `form:"tag_id"`
+	TagID int64 `json:"tag_id"`
 }
 
 // ManagingTagResponse is the response for the endpoint.
@@ -8250,8 +8250,8 @@ type ManagingTempEmailPasswordResponse struct {
 
 // ManagingTransferBody holds the request body for Managing.Transfer.
 type ManagingTransferBody struct {
-	SecretAnswer string `form:"secret_answer"`
-	Username     string `form:"username"`
+	SecretAnswer string `json:"secret_answer"`
+	Username     string `json:"username"`
 }
 
 // ManagingTransferResponse is the response for the endpoint.
@@ -8277,7 +8277,7 @@ type ManagingUnstickResponse struct {
 
 // ManagingUntagBody holds the request body for Managing.Untag.
 type ManagingUntagBody struct {
-	TagID int64 `form:"tag_id"`
+	TagID int64 `json:"tag_id"`
 }
 
 // ManagingUntagResponse is the response for the endpoint.
@@ -8291,9 +8291,9 @@ type ManagingUntagResponse struct {
 
 // PaymentsBalanceExchangeBody holds the request body for Payments.BalanceExchange.
 type PaymentsBalanceExchangeBody struct {
-	Amount      int64  `form:"amount"`
-	FromBalance string `form:"from_balance"`
-	ToBalance   string `form:"to_balance"`
+	Amount      int64  `json:"amount"`
+	FromBalance string `json:"from_balance"`
+	ToBalance   string `json:"to_balance"`
 }
 
 // PaymentsBalanceExchangeResponse is the response for the endpoint.
@@ -8312,7 +8312,7 @@ type PaymentsBalanceListResponse struct {
 
 // PaymentsCancelBody holds the request body for Payments.Cancel.
 type PaymentsCancelBody struct {
-	PaymentID int64 `form:"payment_id"`
+	PaymentID int64 `json:"payment_id"`
 }
 
 // PaymentsCancelResponse is the response for the endpoint.
@@ -8382,18 +8382,18 @@ type PaymentsHistoryResponse struct {
 
 // PaymentsInvoiceCreateBody holds the request body for Payments.InvoiceCreate.
 type PaymentsInvoiceCreateBody struct {
-	AdditionalData           *string  `form:"additional_data"`
-	Amount                   float64  `form:"amount"`
-	Comment                  string   `form:"comment"`
-	Currency                 string   `form:"currency"`
-	IsTest                   *bool    `form:"is_test"`
-	Lifetime                 *float64 `form:"lifetime"`
-	MerchantID               int64    `form:"merchant_id"`
-	PaymentID                string   `form:"payment_id"`
-	RequiredTelegramID       *int64   `form:"required_telegram_id"`
-	RequiredTelegramUsername *string  `form:"required_telegram_username"`
-	URLCallback              *string  `form:"url_callback"`
-	URLSuccess               string   `form:"url_success"`
+	AdditionalData           *string  `json:"additional_data,omitempty"`
+	Amount                   float64  `json:"amount"`
+	Comment                  string   `json:"comment"`
+	Currency                 string   `json:"currency"`
+	IsTest                   *bool    `json:"is_test,omitempty"`
+	Lifetime                 *float64 `json:"lifetime,omitempty"`
+	MerchantID               int64    `json:"merchant_id"`
+	PaymentID                string   `json:"payment_id"`
+	RequiredTelegramID       *int64   `json:"required_telegram_id,omitempty"`
+	RequiredTelegramUsername *string  `json:"required_telegram_username,omitempty"`
+	URLCallback              *string  `json:"url_callback,omitempty"`
+	URLSuccess               string   `json:"url_success"`
 }
 
 // PaymentsInvoiceCreateResponse is the response for the endpoint.
@@ -8434,12 +8434,12 @@ type PaymentsInvoiceListResponse struct {
 
 // PaymentsPayoutBody holds the request body for Payments.Payout.
 type PaymentsPayoutBody struct {
-	Amount        float64 `form:"amount"`
-	Currency      string  `form:"currency"`
-	Extra         any     `form:"extra"`
-	IncludeFee    *bool   `form:"include_fee"`
-	PaymentSystem string  `form:"payment_system"`
-	Wallet        string  `form:"wallet"`
+	Amount        float64 `json:"amount"`
+	Currency      string  `json:"currency"`
+	Extra         any     `json:"extra,omitempty"`
+	IncludeFee    *bool   `json:"include_fee,omitempty"`
+	PaymentSystem string  `json:"payment_system"`
+	Wallet        string  `json:"wallet"`
 }
 
 // PaymentsPayoutResponse is the response for the endpoint.
@@ -8457,16 +8457,16 @@ type PaymentsPayoutServicesResponse struct {
 
 // PaymentsTransferBody holds the request body for Payments.Transfer.
 type PaymentsTransferBody struct {
-	Amount           int64   `form:"amount"`
-	Comment          *string `form:"comment"`
-	Currency         string  `form:"currency"`
-	HoldLengthOption *string `form:"hold_length_option"`
-	HoldLengthValue  *int64  `form:"hold_length_value"`
-	TelegramDeal     *bool   `form:"telegram_deal"`
-	TelegramUsername *string `form:"telegram_username"`
-	TransferHold     *bool   `form:"transfer_hold"`
-	UserID           *int64  `form:"user_id"`
-	Username         *string `form:"username"`
+	Amount           int64   `json:"amount"`
+	Comment          *string `json:"comment,omitempty"`
+	Currency         string  `json:"currency"`
+	HoldLengthOption *string `json:"hold_length_option,omitempty"`
+	HoldLengthValue  *int64  `json:"hold_length_value,omitempty"`
+	TelegramDeal     *bool   `json:"telegram_deal,omitempty"`
+	TelegramUsername *string `json:"telegram_username,omitempty"`
+	TransferHold     *bool   `json:"transfer_hold,omitempty"`
+	UserID           *int64  `json:"user_id,omitempty"`
+	Username         *string `json:"username,omitempty"`
 }
 
 // PaymentsTransferResponse is the response for the endpoint.
@@ -8491,18 +8491,18 @@ type ProfileClaimsResponse struct {
 
 // ProfileEditBody holds the request body for Profile.Edit.
 type ProfileEditBody struct {
-	AllowAcceptAccounts    []string `form:"allow_accept_accounts"`
-	ClearTelegramClient    *bool    `form:"clear_telegram_client"`
-	Option                 any      `form:"option"`
-	TelegramAPIHash        *string  `form:"telegram_api_hash"`
-	TelegramAPIID          *string  `form:"telegram_api_id"`
-	TelegramAppVersion     *string  `form:"telegram_app_version"`
-	TelegramDeviceModel    *string  `form:"telegram_device_model"`
-	TelegramLangCode       *string  `form:"telegram_lang_code"`
-	TelegramLangPack       *string  `form:"telegram_lang_pack"`
-	TelegramSystemLangCode *string  `form:"telegram_system_lang_code"`
-	TelegramSystemVersion  *string  `form:"telegram_system_version"`
-	User                   any      `form:"user"`
+	AllowAcceptAccounts    []string `json:"allow_accept_accounts,omitempty"`
+	ClearTelegramClient    *bool    `json:"clear_telegram_client,omitempty"`
+	Option                 any      `json:"option,omitempty"`
+	TelegramAPIHash        *string  `json:"telegram_api_hash,omitempty"`
+	TelegramAPIID          *string  `json:"telegram_api_id,omitempty"`
+	TelegramAppVersion     *string  `json:"telegram_app_version,omitempty"`
+	TelegramDeviceModel    *string  `json:"telegram_device_model,omitempty"`
+	TelegramLangCode       *string  `json:"telegram_lang_code,omitempty"`
+	TelegramLangPack       *string  `json:"telegram_lang_pack,omitempty"`
+	TelegramSystemLangCode *string  `json:"telegram_system_lang_code,omitempty"`
+	TelegramSystemVersion  *string  `json:"telegram_system_version,omitempty"`
+	User                   any      `json:"user,omitempty"`
 }
 
 // ProfileEditResponse is the response for the endpoint.
@@ -8525,11 +8525,11 @@ type ProfileGetResponse struct {
 
 // ProxyAddBody holds the request body for Proxy.Add.
 type ProxyAddBody struct {
-	ProxyIP   *string `form:"proxy_ip"`
-	ProxyPass *string `form:"proxy_pass"`
-	ProxyPort *int64  `form:"proxy_port"`
-	ProxyRow  *string `form:"proxy_row"`
-	ProxyUser *string `form:"proxy_user"`
+	ProxyIP   *string `json:"proxy_ip,omitempty"`
+	ProxyPass *string `json:"proxy_pass,omitempty"`
+	ProxyPort *int64  `json:"proxy_port,omitempty"`
+	ProxyRow  *string `json:"proxy_row,omitempty"`
+	ProxyUser *string `json:"proxy_user,omitempty"`
 }
 
 // ProxyAddResponse is the response for the endpoint.
@@ -8541,8 +8541,8 @@ type ProxyAddResponse struct {
 
 // ProxyDeleteBody holds the request body for Proxy.Delete.
 type ProxyDeleteBody struct {
-	DeleteAll *bool  `form:"delete_all"`
-	ProxyID   *int64 `form:"proxy_id"`
+	DeleteAll *bool  `json:"delete_all,omitempty"`
+	ProxyID   *int64 `json:"proxy_id,omitempty"`
 }
 
 // ProxyDeleteResponse is the response for the endpoint.
@@ -8560,23 +8560,23 @@ type ProxyGetResponse struct {
 
 // PublishingAddBody holds the request body for Publishing.Add.
 type PublishingAddBody struct {
-	AllowAskDiscount  *bool   `form:"allow_ask_discount"`
-	CategoryID        int64   `form:"category_id"`
-	Currency          string  `form:"currency"`
-	Description       *string `form:"description"`
-	EmailLoginData    *string `form:"email_login_data"`
-	EmailType         *string `form:"email_type"`
-	ExtendedGuarantee *int64  `form:"extended_guarantee"`
-	ForceTempEmail    *bool   `form:"forceTempEmail"`
-	HasEmailLoginData *bool   `form:"has_email_login_data"`
-	Information       *string `form:"information"`
-	ItemOrigin        string  `form:"item_origin"`
-	Price             float64 `form:"price"`
-	ProxyID           *int64  `form:"proxy_id"`
-	RandomProxy       *bool   `form:"random_proxy"`
-	ResellItemID      *int64  `form:"resell_item_id"`
-	Title             *string `form:"title"`
-	TitleEn           *string `form:"title_en"`
+	AllowAskDiscount  *bool   `json:"allow_ask_discount,omitempty"`
+	CategoryID        int64   `json:"category_id"`
+	Currency          string  `json:"currency"`
+	Description       *string `json:"description,omitempty"`
+	EmailLoginData    *string `json:"email_login_data,omitempty"`
+	EmailType         *string `json:"email_type,omitempty"`
+	ExtendedGuarantee *int64  `json:"extended_guarantee,omitempty"`
+	ForceTempEmail    *bool   `json:"forceTempEmail,omitempty"`
+	HasEmailLoginData *bool   `json:"has_email_login_data,omitempty"`
+	Information       *string `json:"information,omitempty"`
+	ItemOrigin        string  `json:"item_origin"`
+	Price             float64 `json:"price"`
+	ProxyID           *int64  `json:"proxy_id,omitempty"`
+	RandomProxy       *bool   `json:"random_proxy,omitempty"`
+	ResellItemID      *int64  `json:"resell_item_id,omitempty"`
+	Title             *string `json:"title,omitempty"`
+	TitleEn           *string `json:"title_en,omitempty"`
 }
 
 // PublishingAddResponse is the response for the endpoint.
@@ -8588,15 +8588,15 @@ type PublishingAddResponse struct {
 
 // PublishingCheckBody holds the request body for Publishing.Check.
 type PublishingCheckBody struct {
-	EmailLoginData    *string `form:"email_login_data"`
-	EmailType         *string `form:"email_type"`
-	Extra             any     `form:"extra"`
-	HasEmailLoginData *bool   `form:"has_email_login_data"`
-	Login             *string `form:"login"`
-	LoginPassword     *string `form:"login_password"`
-	Password          *string `form:"password"`
-	RandomProxy       *bool   `form:"random_proxy"`
-	ResellItemID      *int64  `form:"resell_item_id"`
+	EmailLoginData    *string `json:"email_login_data,omitempty"`
+	EmailType         *string `json:"email_type,omitempty"`
+	Extra             any     `json:"extra,omitempty"`
+	HasEmailLoginData *bool   `json:"has_email_login_data,omitempty"`
+	Login             *string `json:"login,omitempty"`
+	LoginPassword     *string `json:"login_password,omitempty"`
+	Password          *string `json:"password,omitempty"`
+	RandomProxy       *bool   `json:"random_proxy,omitempty"`
+	ResellItemID      *int64  `json:"resell_item_id,omitempty"`
 }
 
 // PublishingCheckResponse is the response for the endpoint.
@@ -8608,10 +8608,10 @@ type PublishingCheckResponse struct {
 
 // PublishingExternalBody holds the request body for Publishing.External.
 type PublishingExternalBody struct {
-	Cookies        *string `form:"cookies"`
-	EmailLoginData *string `form:"email_login_data"`
-	Login          *string `form:"login"`
-	Type           string  `form:"type"`
+	Cookies        *string `json:"cookies,omitempty"`
+	EmailLoginData *string `json:"email_login_data,omitempty"`
+	Login          *string `json:"login,omitempty"`
+	Type           string  `json:"type"`
 }
 
 // PublishingExternalResponse is the response for the endpoint.
@@ -8623,25 +8623,25 @@ type PublishingExternalResponse struct {
 
 // PublishingFastSellBody holds the request body for Publishing.FastSell.
 type PublishingFastSellBody struct {
-	AllowAskDiscount  *bool   `form:"allow_ask_discount"`
-	CategoryID        int64   `form:"category_id"`
-	Currency          string  `form:"currency"`
-	Description       *string `form:"description"`
-	EmailLoginData    *string `form:"email_login_data"`
-	EmailType         *string `form:"email_type"`
-	ExtendedGuarantee *int64  `form:"extended_guarantee"`
-	Extra             any     `form:"extra"`
-	HasEmailLoginData *bool   `form:"has_email_login_data"`
-	Information       *string `form:"information"`
-	ItemOrigin        string  `form:"item_origin"`
-	Login             *string `form:"login"`
-	LoginPassword     *string `form:"login_password"`
-	Password          *string `form:"password"`
-	Price             float64 `form:"price"`
-	ProxyID           *int64  `form:"proxy_id"`
-	RandomProxy       *bool   `form:"random_proxy"`
-	Title             *string `form:"title"`
-	TitleEn           *string `form:"title_en"`
+	AllowAskDiscount  *bool   `json:"allow_ask_discount,omitempty"`
+	CategoryID        int64   `json:"category_id"`
+	Currency          string  `json:"currency"`
+	Description       *string `json:"description,omitempty"`
+	EmailLoginData    *string `json:"email_login_data,omitempty"`
+	EmailType         *string `json:"email_type,omitempty"`
+	ExtendedGuarantee *int64  `json:"extended_guarantee,omitempty"`
+	Extra             any     `json:"extra,omitempty"`
+	HasEmailLoginData *bool   `json:"has_email_login_data,omitempty"`
+	Information       *string `json:"information,omitempty"`
+	ItemOrigin        string  `json:"item_origin"`
+	Login             *string `json:"login,omitempty"`
+	LoginPassword     *string `json:"login_password,omitempty"`
+	Password          *string `json:"password,omitempty"`
+	Price             float64 `json:"price"`
+	ProxyID           *int64  `json:"proxy_id,omitempty"`
+	RandomProxy       *bool   `json:"random_proxy,omitempty"`
+	Title             *string `json:"title,omitempty"`
+	TitleEn           *string `json:"title_en,omitempty"`
 }
 
 // PublishingFastSellResponse is the response for the endpoint.
@@ -8661,8 +8661,8 @@ type PurchasingCheckResponse struct {
 
 // PurchasingConfirmBody holds the request body for Purchasing.Confirm.
 type PurchasingConfirmBody struct {
-	BalanceID *int64 `form:"balance_id"`
-	Price     *int64 `form:"price"`
+	BalanceID *int64 `json:"balance_id,omitempty"`
+	Price     *int64 `json:"price,omitempty"`
 }
 
 // PurchasingConfirmResponse is the response for the endpoint.
@@ -8681,8 +8681,8 @@ type PurchasingDiscountCancelResponse struct {
 
 // PurchasingDiscountRequestBody holds the request body for Purchasing.DiscountRequest.
 type PurchasingDiscountRequestBody struct {
-	DiscountPrice float64 `form:"discount_price"`
-	Message       *string `form:"message"`
+	DiscountPrice float64 `json:"discount_price"`
+	Message       *string `json:"message,omitempty"`
 }
 
 // PurchasingDiscountRequestResponse is the response for the endpoint.
@@ -8694,8 +8694,8 @@ type PurchasingDiscountRequestResponse struct {
 
 // PurchasingFastBuyBody holds the request body for Purchasing.FastBuy.
 type PurchasingFastBuyBody struct {
-	BalanceID *int64   `form:"balance_id"`
-	Price     *float64 `form:"price"`
+	BalanceID *int64   `json:"balance_id,omitempty"`
+	Price     *float64 `json:"price,omitempty"`
 }
 
 // PurchasingFastBuyResponse is the response for the endpoint.

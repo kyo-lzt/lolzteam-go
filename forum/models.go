@@ -5175,7 +5175,7 @@ type CategoriesListResponse struct {
 
 // ChatboxDeleteIgnoreBody holds the request body for Chatbox.DeleteIgnore.
 type ChatboxDeleteIgnoreBody struct {
-	UserID any `form:"user_id"`
+	UserID any `json:"user_id"`
 }
 
 // ChatboxDeleteIgnoreResponse is the response for the endpoint.
@@ -5187,7 +5187,7 @@ type ChatboxDeleteIgnoreResponse struct {
 
 // ChatboxDeleteMessageBody holds the request body for Chatbox.DeleteMessage.
 type ChatboxDeleteMessageBody struct {
-	MessageID int64 `form:"message_id"`
+	MessageID int64 `json:"message_id"`
 }
 
 // ChatboxDeleteMessageResponse is the response for the endpoint.
@@ -5199,8 +5199,8 @@ type ChatboxDeleteMessageResponse struct {
 
 // ChatboxEditMessageBody holds the request body for Chatbox.EditMessage.
 type ChatboxEditMessageBody struct {
-	Message   string `form:"message"`
-	MessageID int64  `form:"message_id"`
+	Message   string `json:"message"`
+	MessageID int64  `json:"message_id"`
 }
 
 // ChatboxEditMessageResponse is the response for the endpoint.
@@ -5267,7 +5267,7 @@ type ChatboxOnlineResponse struct {
 
 // ChatboxPostIgnoreBody holds the request body for Chatbox.PostIgnore.
 type ChatboxPostIgnoreBody struct {
-	UserID any `form:"user_id"`
+	UserID any `json:"user_id"`
 }
 
 // ChatboxPostIgnoreResponse is the response for the endpoint.
@@ -5279,9 +5279,9 @@ type ChatboxPostIgnoreResponse struct {
 
 // ChatboxPostMessageBody holds the request body for Chatbox.PostMessage.
 type ChatboxPostMessageBody struct {
-	Message        string `form:"message"`
-	ReplyMessageID *int64 `form:"reply_message_id"`
-	RoomID         int64  `form:"room_id"`
+	Message        string `json:"message"`
+	ReplyMessageID *int64 `json:"reply_message_id,omitempty"`
+	RoomID         int64  `json:"room_id"`
 }
 
 // ChatboxPostMessageResponse is the response for the endpoint.
@@ -5292,8 +5292,8 @@ type ChatboxPostMessageResponse struct {
 
 // ChatboxReportBody holds the request body for Chatbox.Report.
 type ChatboxReportBody struct {
-	MessageID int64  `form:"message_id"`
-	Reason    string `form:"reason"`
+	MessageID int64  `json:"message_id"`
+	Reason    string `json:"reason"`
 }
 
 // ChatboxReportResponse is the response for the endpoint.
@@ -5330,15 +5330,15 @@ type ConversationsAlertsEnableResponse struct {
 
 // ConversationsCreateBody holds the request body for Conversations.Create.
 type ConversationsCreateBody struct {
-	AllowDeleteOwnMessages *bool    `form:"allow_delete_own_messages"`
-	AllowEditMessages      *bool    `form:"allow_edit_messages"`
-	AllowStickyMessages    *bool    `form:"allow_sticky_messages"`
-	IsGroup                *bool    `form:"is_group"`
-	MessageBody            *string  `form:"message_body"`
-	OpenInvite             *bool    `form:"open_invite"`
-	RecipientID            *int64   `form:"recipient_id"`
-	Recipients             []string `form:"recipients"`
-	Title                  *string  `form:"title"`
+	AllowDeleteOwnMessages *bool    `json:"allow_delete_own_messages,omitempty"`
+	AllowEditMessages      *bool    `json:"allow_edit_messages,omitempty"`
+	AllowStickyMessages    *bool    `json:"allow_sticky_messages,omitempty"`
+	IsGroup                *bool    `json:"is_group,omitempty"`
+	MessageBody            *string  `json:"message_body,omitempty"`
+	OpenInvite             *bool    `json:"open_invite,omitempty"`
+	RecipientID            *int64   `json:"recipient_id,omitempty"`
+	Recipients             []string `json:"recipients,omitempty"`
+	Title                  *string  `json:"title,omitempty"`
 }
 
 // ConversationsCreateResponse is the response for the endpoint.
@@ -5349,8 +5349,8 @@ type ConversationsCreateResponse struct {
 
 // ConversationsDeleteBody holds the request body for Conversations.Delete.
 type ConversationsDeleteBody struct {
-	ConversationID int64  `form:"conversation_id"`
-	DeleteType     string `form:"delete_type"`
+	ConversationID int64  `json:"conversation_id"`
+	DeleteType     string `json:"delete_type"`
 }
 
 // ConversationsDeleteResponse is the response for the endpoint.
@@ -5368,7 +5368,7 @@ type ConversationsGetResponse struct {
 
 // ConversationsInviteBody holds the request body for Conversations.Invite.
 type ConversationsInviteBody struct {
-	Recipients []string `form:"recipients"`
+	Recipients []string `json:"recipients"`
 }
 
 // ConversationsInviteResponse is the response for the endpoint.
@@ -5380,7 +5380,7 @@ type ConversationsInviteResponse struct {
 
 // ConversationsKickBody holds the request body for Conversations.Kick.
 type ConversationsKickBody struct {
-	UserID int64 `form:"user_id"`
+	UserID int64 `json:"user_id"`
 }
 
 // ConversationsKickResponse is the response for the endpoint.
@@ -5408,8 +5408,8 @@ type ConversationsListResponse struct {
 
 // ConversationsMessagesCreateBody holds the request body for Conversations.MessagesCreate.
 type ConversationsMessagesCreateBody struct {
-	MessageBody    string `form:"message_body"`
-	ReplyMessageID *int64 `form:"reply_message_id"`
+	MessageBody    string `json:"message_body"`
+	ReplyMessageID *int64 `json:"reply_message_id,omitempty"`
 }
 
 // ConversationsMessagesCreateResponse is the response for the endpoint.
@@ -5427,7 +5427,7 @@ type ConversationsMessagesDeleteResponse struct {
 
 // ConversationsMessagesEditBody holds the request body for Conversations.MessagesEdit.
 type ConversationsMessagesEditBody struct {
-	MessageBody string `form:"message_body"`
+	MessageBody string `json:"message_body"`
 }
 
 // ConversationsMessagesEditResponse is the response for the endpoint.
@@ -5489,7 +5489,7 @@ type ConversationsReadAllResponse struct {
 
 // ConversationsSaveBody holds the request body for Conversations.Save.
 type ConversationsSaveBody struct {
-	Link string `form:"link"`
+	Link string `json:"link"`
 }
 
 // ConversationsSaveResponse is the response for the endpoint.
@@ -5501,9 +5501,9 @@ type ConversationsSaveResponse struct {
 
 // ConversationsSearchBody holds the request body for Conversations.Search.
 type ConversationsSearchBody struct {
-	ConversationID   *int64  `form:"conversation_id"`
-	Q                *string `form:"q"`
-	SearchRecipients *bool   `form:"search_recipients"`
+	ConversationID   *int64  `json:"conversation_id,omitempty"`
+	Q                *string `json:"q,omitempty"`
+	SearchRecipients *bool   `json:"search_recipients,omitempty"`
 }
 
 // ConversationsSearchResponse is the response for the endpoint.
@@ -5522,7 +5522,7 @@ type ConversationsStarResponse struct {
 
 // ConversationsStartBody holds the request body for Conversations.Start.
 type ConversationsStartBody struct {
-	UserID any `form:"user_id"`
+	UserID any `json:"user_id"`
 }
 
 // ConversationsStartResponse is the response for the endpoint.
@@ -5540,13 +5540,13 @@ type ConversationsUnstarResponse struct {
 
 // ConversationsUpdateBody holds the request body for Conversations.Update.
 type ConversationsUpdateBody struct {
-	AllowDeleteOwnMessages *bool   `form:"allow_delete_own_messages"`
-	AllowEditMessages      *bool   `form:"allow_edit_messages"`
-	AllowStickyMessages    *bool   `form:"allow_sticky_messages"`
-	ConversationID         int64   `form:"conversation_id"`
-	HistoryOpen            *bool   `form:"history_open"`
-	OpenInvite             *bool   `form:"open_invite"`
-	Title                  *string `form:"title"`
+	AllowDeleteOwnMessages *bool   `json:"allow_delete_own_messages,omitempty"`
+	AllowEditMessages      *bool   `json:"allow_edit_messages,omitempty"`
+	AllowStickyMessages    *bool   `json:"allow_sticky_messages,omitempty"`
+	ConversationID         int64   `json:"conversation_id"`
+	HistoryOpen            *bool   `json:"history_open,omitempty"`
+	OpenInvite             *bool   `json:"open_invite,omitempty"`
+	Title                  *string `json:"title,omitempty"`
 }
 
 // ConversationsUpdateResponse is the response for the endpoint.
@@ -5557,8 +5557,8 @@ type ConversationsUpdateResponse struct {
 
 // FormsCreateBody holds the request body for Forms.Create.
 type FormsCreateBody struct {
-	Fields any   `form:"fields"`
-	FormID int64 `form:"form_id"`
+	Fields any   `json:"fields"`
+	FormID int64 `json:"form_id"`
 }
 
 // FormsCreateResponse is the response for the endpoint.
@@ -5584,8 +5584,8 @@ type FormsListResponse struct {
 
 // ForumsEditFeedOptionsBody holds the request body for Forums.EditFeedOptions.
 type ForumsEditFeedOptionsBody struct {
-	Keywords []string `form:"keywords"`
-	NodeIds  []int64  `form:"node_ids"`
+	Keywords []string `json:"keywords,omitempty"`
+	NodeIds  []int64  `json:"node_ids,omitempty"`
 }
 
 // ForumsEditFeedOptionsResponse is the response for the endpoint.
@@ -5597,11 +5597,11 @@ type ForumsEditFeedOptionsResponse struct {
 
 // ForumsFollowBody holds the request body for Forums.Follow.
 type ForumsFollowBody struct {
-	Alert                *bool   `form:"alert"`
-	Email                *bool   `form:"email"`
-	MinimalContestAmount *int64  `form:"minimal_contest_amount"`
-	Post                 *bool   `form:"post"`
-	PrefixIds            []int64 `form:"prefix_ids"`
+	Alert                *bool   `json:"alert,omitempty"`
+	Email                *bool   `json:"email,omitempty"`
+	MinimalContestAmount *int64  `json:"minimal_contest_amount,omitempty"`
+	Post                 *bool   `json:"post,omitempty"`
+	PrefixIds            []int64 `json:"prefix_ids,omitempty"`
 }
 
 // ForumsFollowResponse is the response for the endpoint.
@@ -5721,7 +5721,7 @@ type NotificationsListResponse struct {
 
 // NotificationsReadBody holds the request body for Notifications.Read.
 type NotificationsReadBody struct {
-	NotificationID *int64 `form:"notification_id"`
+	NotificationID *int64 `json:"notification_id,omitempty"`
 }
 
 // NotificationsReadResponse is the response for the endpoint.
@@ -5774,8 +5774,8 @@ type PagesListResponse struct {
 
 // PostsCommentsCreateBody holds the request body for Posts.CommentsCreate.
 type PostsCommentsCreateBody struct {
-	CommentBody string `form:"comment_body"`
-	PostID      int64  `form:"post_id"`
+	CommentBody string `json:"comment_body"`
+	PostID      int64  `json:"post_id"`
 }
 
 // PostsCommentsCreateResponse is the response for the endpoint.
@@ -5786,8 +5786,8 @@ type PostsCommentsCreateResponse struct {
 
 // PostsCommentsDeleteBody holds the request body for Posts.CommentsDelete.
 type PostsCommentsDeleteBody struct {
-	PostCommentID int64   `form:"post_comment_id"`
-	Reason        *string `form:"reason"`
+	PostCommentID int64   `json:"post_comment_id"`
+	Reason        *string `json:"reason,omitempty"`
 }
 
 // PostsCommentsDeleteResponse is the response for the endpoint.
@@ -5799,8 +5799,8 @@ type PostsCommentsDeleteResponse struct {
 
 // PostsCommentsEditBody holds the request body for Posts.CommentsEdit.
 type PostsCommentsEditBody struct {
-	CommentBody   string `form:"comment_body"`
-	PostCommentID int64  `form:"post_comment_id"`
+	CommentBody   string `json:"comment_body"`
+	PostCommentID int64  `json:"post_comment_id"`
 }
 
 // PostsCommentsEditResponse is the response for the endpoint.
@@ -5824,8 +5824,8 @@ type PostsCommentsGetResponse struct {
 
 // PostsCommentsReportBody holds the request body for Posts.CommentsReport.
 type PostsCommentsReportBody struct {
-	Message       string `form:"message"`
-	PostCommentID int64  `form:"post_comment_id"`
+	Message       string `json:"message"`
+	PostCommentID int64  `json:"post_comment_id"`
 }
 
 // PostsCommentsReportResponse is the response for the endpoint.
@@ -5837,9 +5837,9 @@ type PostsCommentsReportResponse struct {
 
 // PostsCreateBody holds the request body for Posts.Create.
 type PostsCreateBody struct {
-	PostBody    string `form:"post_body"`
-	QuotePostID *int64 `form:"quote_post_id"`
-	ThreadID    *int64 `form:"thread_id"`
+	PostBody    string `json:"post_body"`
+	QuotePostID *int64 `json:"quote_post_id,omitempty"`
+	ThreadID    *int64 `json:"thread_id,omitempty"`
 }
 
 // PostsCreateResponse is the response for the endpoint.
@@ -5850,7 +5850,7 @@ type PostsCreateResponse struct {
 
 // PostsDeleteBody holds the request body for Posts.Delete.
 type PostsDeleteBody struct {
-	Reason *string `form:"reason"`
+	Reason *string `json:"reason,omitempty"`
 }
 
 // PostsDeleteResponse is the response for the endpoint.
@@ -5862,7 +5862,7 @@ type PostsDeleteResponse struct {
 
 // PostsEditBody holds the request body for Posts.Edit.
 type PostsEditBody struct {
-	PostBody *string `form:"post_body"`
+	PostBody *string `json:"post_body,omitempty"`
 }
 
 // PostsEditResponse is the response for the endpoint.
@@ -5915,7 +5915,7 @@ type PostsListResponse struct {
 
 // PostsReportBody holds the request body for Posts.Report.
 type PostsReportBody struct {
-	Message string `form:"message"`
+	Message string `json:"message"`
 }
 
 // PostsReportResponse is the response for the endpoint.
@@ -5940,8 +5940,8 @@ type PostsUnlikeResponse struct {
 
 // ProfilePostsCommentsCreateBody holds the request body for ProfilePosts.CommentsCreate.
 type ProfilePostsCommentsCreateBody struct {
-	CommentBody   string `form:"comment_body"`
-	ProfilePostID int64  `form:"profile_post_id"`
+	CommentBody   string `json:"comment_body"`
+	ProfilePostID int64  `json:"profile_post_id"`
 }
 
 // ProfilePostsCommentsCreateResponse is the response for the endpoint.
@@ -5952,7 +5952,7 @@ type ProfilePostsCommentsCreateResponse struct {
 
 // ProfilePostsCommentsDeleteBody holds the request body for ProfilePosts.CommentsDelete.
 type ProfilePostsCommentsDeleteBody struct {
-	CommentID int64 `form:"comment_id"`
+	CommentID int64 `json:"comment_id"`
 }
 
 // ProfilePostsCommentsDeleteResponse is the response for the endpoint.
@@ -5964,8 +5964,8 @@ type ProfilePostsCommentsDeleteResponse struct {
 
 // ProfilePostsCommentsEditBody holds the request body for ProfilePosts.CommentsEdit.
 type ProfilePostsCommentsEditBody struct {
-	CommentBody string `form:"comment_body"`
-	CommentID   int64  `form:"comment_id"`
+	CommentBody string `json:"comment_body"`
+	CommentID   int64  `json:"comment_id"`
 }
 
 // ProfilePostsCommentsEditResponse is the response for the endpoint.
@@ -5998,7 +5998,7 @@ type ProfilePostsCommentsListResponse struct {
 
 // ProfilePostsCommentsReportBody holds the request body for ProfilePosts.CommentsReport.
 type ProfilePostsCommentsReportBody struct {
-	Message string `form:"message"`
+	Message string `json:"message"`
 }
 
 // ProfilePostsCommentsReportResponse is the response for the endpoint.
@@ -6010,8 +6010,8 @@ type ProfilePostsCommentsReportResponse struct {
 
 // ProfilePostsCreateBody holds the request body for ProfilePosts.Create.
 type ProfilePostsCreateBody struct {
-	PostBody string `form:"post_body"`
-	UserID   any    `form:"user_id"`
+	PostBody string `json:"post_body"`
+	UserID   any    `json:"user_id"`
 }
 
 // ProfilePostsCreateResponse is the response for the endpoint.
@@ -6034,8 +6034,8 @@ type ProfilePostsDeleteResponse struct {
 
 // ProfilePostsEditBody holds the request body for ProfilePosts.Edit.
 type ProfilePostsEditBody struct {
-	DisableComments *bool   `form:"disable_comments"`
-	PostBody        *string `form:"post_body"`
+	DisableComments *bool   `json:"disable_comments,omitempty"`
+	PostBody        *string `json:"post_body,omitempty"`
 }
 
 // ProfilePostsEditResponse is the response for the endpoint.
@@ -6082,7 +6082,7 @@ type ProfilePostsListResponse struct {
 
 // ProfilePostsReportBody holds the request body for ProfilePosts.Report.
 type ProfilePostsReportBody struct {
-	Message string `form:"message"`
+	Message string `json:"message"`
 }
 
 // ProfilePostsReportResponse is the response for the endpoint.
@@ -6121,12 +6121,12 @@ type ProfilePostsUnstickResponse struct {
 
 // SearchAllBody holds the request body for Search.All.
 type SearchAllBody struct {
-	ForumID *int64  `form:"forum_id"`
-	Limit   *int64  `form:"limit"`
-	Page    *int64  `form:"page"`
-	Q       *string `form:"q"`
-	Tag     *string `form:"tag"`
-	UserID  any     `form:"user_id"`
+	ForumID *int64  `json:"forum_id,omitempty"`
+	Limit   *int64  `json:"limit,omitempty"`
+	Page    *int64  `json:"page,omitempty"`
+	Q       *string `json:"q,omitempty"`
+	Tag     *string `json:"tag,omitempty"`
+	UserID  any     `json:"user_id,omitempty"`
 }
 
 // SearchAllResponse is the response for the endpoint.
@@ -6140,13 +6140,13 @@ type SearchAllResponse struct {
 
 // SearchPostsBody holds the request body for Search.Posts.
 type SearchPostsBody struct {
-	DataLimit *int64  `form:"data_limit"`
-	ForumID   *int64  `form:"forum_id"`
-	Limit     *int64  `form:"limit"`
-	Page      *int64  `form:"page"`
-	Q         *string `form:"q"`
-	Tag       *string `form:"tag"`
-	UserID    any     `form:"user_id"`
+	DataLimit *int64  `json:"data_limit,omitempty"`
+	ForumID   *int64  `json:"forum_id,omitempty"`
+	Limit     *int64  `json:"limit,omitempty"`
+	Page      *int64  `json:"page,omitempty"`
+	Q         *string `json:"q,omitempty"`
+	Tag       *string `json:"tag,omitempty"`
+	UserID    any     `json:"user_id,omitempty"`
 }
 
 // SearchPostsResponse is the response for the endpoint.
@@ -6159,10 +6159,10 @@ type SearchPostsResponse struct {
 
 // SearchProfilePostsBody holds the request body for Search.ProfilePosts.
 type SearchProfilePostsBody struct {
-	Limit  *int64  `form:"limit"`
-	Page   *int64  `form:"page"`
-	Q      *string `form:"q"`
-	UserID *int64  `form:"user_id"`
+	Limit  *int64  `json:"limit,omitempty"`
+	Page   *int64  `json:"page,omitempty"`
+	Q      *string `json:"q,omitempty"`
+	UserID *int64  `json:"user_id,omitempty"`
 }
 
 // SearchProfilePostsResponse is the response for the endpoint.
@@ -6175,8 +6175,8 @@ type SearchProfilePostsResponse struct {
 
 // SearchResultsParams holds query parameters for Search.Results.
 type SearchResultsParams struct {
-	Page  *int64 `query:"page"`
 	Limit *int64 `query:"limit"`
+	Page  *int64 `query:"page"`
 }
 
 // SearchResultsResponse is the response for the endpoint.
@@ -6189,10 +6189,10 @@ type SearchResultsResponse struct {
 
 // SearchTaggedBody holds the request body for Search.Tagged.
 type SearchTaggedBody struct {
-	Limit *int64   `form:"limit"`
-	Page  *int64   `form:"page"`
-	Tag   *string  `form:"tag"`
-	Tags  []string `form:"tags"`
+	Limit *int64   `json:"limit,omitempty"`
+	Page  *int64   `json:"page,omitempty"`
+	Tag   *string  `json:"tag,omitempty"`
+	Tags  []string `json:"tags,omitempty"`
 }
 
 // SearchTaggedResponse is the response for the endpoint.
@@ -6205,13 +6205,13 @@ type SearchTaggedResponse struct {
 
 // SearchThreadsBody holds the request body for Search.Threads.
 type SearchThreadsBody struct {
-	DataLimit *int64  `form:"data_limit"`
-	ForumID   *int64  `form:"forum_id"`
-	Limit     *int64  `form:"limit"`
-	Page      *int64  `form:"page"`
-	Q         *string `form:"q"`
-	Tag       *string `form:"tag"`
-	UserID    any     `form:"user_id"`
+	DataLimit *int64  `json:"data_limit,omitempty"`
+	ForumID   *int64  `json:"forum_id,omitempty"`
+	Limit     *int64  `json:"limit,omitempty"`
+	Page      *int64  `json:"page,omitempty"`
+	Q         *string `json:"q,omitempty"`
+	Tag       *string `json:"tag,omitempty"`
+	UserID    any     `json:"user_id,omitempty"`
 }
 
 // SearchThreadsResponse is the response for the endpoint.
@@ -6224,7 +6224,7 @@ type SearchThreadsResponse struct {
 
 // SearchUsersBody holds the request body for Search.Users.
 type SearchUsersBody struct {
-	Q *string `form:"q"`
+	Q *string `json:"q,omitempty"`
 }
 
 // SearchUsersResponse is the response for the endpoint.
@@ -6289,28 +6289,28 @@ type ThreadsBumpResponse struct {
 
 // ThreadsClaimBody holds the request body for Threads.Claim.
 type ThreadsClaimBody struct {
-	AllowAskHiddenContent *bool    `form:"allow_ask_hidden_content"`
-	AsAmount              float64  `form:"as_amount"`
-	AsData                *string  `form:"as_data"`
-	AsFundsReceipt        *string  `form:"as_funds_receipt"`
-	AsIsMarketDeal        bool     `form:"as_is_market_deal"`
-	AsMarketItemID        *int64   `form:"as_market_item_id"`
-	AsResponder           string   `form:"as_responder"`
-	AsTgLoginScreenshot   *string  `form:"as_tg_login_screenshot"`
-	CommentIgnoreGroup    *bool    `form:"comment_ignore_group"`
-	Currency              *string  `form:"currency"`
-	DontAlertFollowers    *bool    `form:"dont_alert_followers"`
-	HideContacts          *bool    `form:"hide_contacts"`
-	PayClaim              *string  `form:"pay_claim"`
-	PostBody              string   `form:"post_body"`
-	ReplyGroup            *int64   `form:"reply_group"`
-	ScheduleDate          *string  `form:"schedule_date"`
-	ScheduleTime          *string  `form:"schedule_time"`
-	Tags                  []string `form:"tags"`
-	TransferType          string   `form:"transfer_type"`
-	WatchThread           *bool    `form:"watch_thread"`
-	WatchThreadEmail      *bool    `form:"watch_thread_email"`
-	WatchThreadState      *bool    `form:"watch_thread_state"`
+	AllowAskHiddenContent *bool    `json:"allow_ask_hidden_content,omitempty"`
+	AsAmount              float64  `json:"as_amount"`
+	AsData                *string  `json:"as_data,omitempty"`
+	AsFundsReceipt        *string  `json:"as_funds_receipt,omitempty"`
+	AsIsMarketDeal        bool     `json:"as_is_market_deal"`
+	AsMarketItemID        *int64   `json:"as_market_item_id,omitempty"`
+	AsResponder           string   `json:"as_responder"`
+	AsTgLoginScreenshot   *string  `json:"as_tg_login_screenshot,omitempty"`
+	CommentIgnoreGroup    *bool    `json:"comment_ignore_group,omitempty"`
+	Currency              *string  `json:"currency,omitempty"`
+	DontAlertFollowers    *bool    `json:"dont_alert_followers,omitempty"`
+	HideContacts          *bool    `json:"hide_contacts,omitempty"`
+	PayClaim              *string  `json:"pay_claim,omitempty"`
+	PostBody              string   `json:"post_body"`
+	ReplyGroup            *int64   `json:"reply_group,omitempty"`
+	ScheduleDate          *string  `json:"schedule_date,omitempty"`
+	ScheduleTime          *string  `json:"schedule_time,omitempty"`
+	Tags                  []string `json:"tags,omitempty"`
+	TransferType          string   `json:"transfer_type"`
+	WatchThread           *bool    `json:"watch_thread,omitempty"`
+	WatchThreadEmail      *bool    `json:"watch_thread_email,omitempty"`
+	WatchThreadState      *bool    `json:"watch_thread_state,omitempty"`
 }
 
 // ThreadsClaimResponse is the response for the endpoint.
@@ -6321,22 +6321,22 @@ type ThreadsClaimResponse struct {
 
 // ThreadsCreateBody holds the request body for Threads.Create.
 type ThreadsCreateBody struct {
-	AllowAskHiddenContent *bool    `form:"allow_ask_hidden_content"`
-	CommentIgnoreGroup    *bool    `form:"comment_ignore_group"`
-	DontAlertFollowers    *bool    `form:"dont_alert_followers"`
-	ForumID               int64    `form:"forum_id"`
-	HideContacts          *bool    `form:"hide_contacts"`
-	PostBody              string   `form:"post_body"`
-	PrefixID              []int64  `form:"prefix_id"`
-	ReplyGroup            *int64   `form:"reply_group"`
-	ScheduleDate          *string  `form:"schedule_date"`
-	ScheduleTime          *string  `form:"schedule_time"`
-	Tags                  []string `form:"tags"`
-	Title                 *string  `form:"title"`
-	TitleEn               *string  `form:"title_en"`
-	WatchThread           *bool    `form:"watch_thread"`
-	WatchThreadEmail      *bool    `form:"watch_thread_email"`
-	WatchThreadState      *bool    `form:"watch_thread_state"`
+	AllowAskHiddenContent *bool    `json:"allow_ask_hidden_content,omitempty"`
+	CommentIgnoreGroup    *bool    `json:"comment_ignore_group,omitempty"`
+	DontAlertFollowers    *bool    `json:"dont_alert_followers,omitempty"`
+	ForumID               int64    `json:"forum_id"`
+	HideContacts          *bool    `json:"hide_contacts,omitempty"`
+	PostBody              string   `json:"post_body"`
+	PrefixID              []int64  `json:"prefix_id,omitempty"`
+	ReplyGroup            *int64   `json:"reply_group,omitempty"`
+	ScheduleDate          *string  `json:"schedule_date,omitempty"`
+	ScheduleTime          *string  `json:"schedule_time,omitempty"`
+	Tags                  []string `json:"tags,omitempty"`
+	Title                 *string  `json:"title,omitempty"`
+	TitleEn               *string  `json:"title_en,omitempty"`
+	WatchThread           *bool    `json:"watch_thread,omitempty"`
+	WatchThreadEmail      *bool    `json:"watch_thread_email,omitempty"`
+	WatchThreadState      *bool    `json:"watch_thread_state,omitempty"`
 }
 
 // ThreadsCreateResponse is the response for the endpoint.
@@ -6347,32 +6347,32 @@ type ThreadsCreateResponse struct {
 
 // ThreadsCreateContestBody holds the request body for Threads.CreateContest.
 type ThreadsCreateContestBody struct {
-	AllowAskHiddenContent *bool     `form:"allow_ask_hidden_content"`
-	CommentIgnoreGroup    *bool     `form:"comment_ignore_group"`
-	ContestType           string    `form:"contest_type"`
-	CountWinners          *int64    `form:"count_winners"`
-	DontAlertFollowers    *bool     `form:"dont_alert_followers"`
-	HideContacts          *bool     `form:"hide_contacts"`
-	IsMoneyPlaces         *bool     `form:"is_money_places"`
-	LengthOption          *string   `form:"length_option"`
-	LengthValue           *int64    `form:"length_value"`
-	PostBody              string    `form:"post_body"`
-	PrizeDataMoney        *float64  `form:"prize_data_money"`
-	PrizeDataPlaces       []float64 `form:"prize_data_places"`
-	PrizeDataUpgrade      *int64    `form:"prize_data_upgrade"`
-	PrizeType             string    `form:"prize_type"`
-	ReplyGroup            *int64    `form:"reply_group"`
-	RequireLikeCount      int64     `form:"require_like_count"`
-	RequireTotalLikeCount int64     `form:"require_total_like_count"`
-	ScheduleDate          *string   `form:"schedule_date"`
-	ScheduleTime          *string   `form:"schedule_time"`
-	SecretAnswer          *string   `form:"secret_answer"`
-	Tags                  []string  `form:"tags"`
-	Title                 *string   `form:"title"`
-	TitleEn               *string   `form:"title_en"`
-	WatchThread           *bool     `form:"watch_thread"`
-	WatchThreadEmail      *bool     `form:"watch_thread_email"`
-	WatchThreadState      *bool     `form:"watch_thread_state"`
+	AllowAskHiddenContent *bool     `json:"allow_ask_hidden_content,omitempty"`
+	CommentIgnoreGroup    *bool     `json:"comment_ignore_group,omitempty"`
+	ContestType           string    `json:"contest_type"`
+	CountWinners          *int64    `json:"count_winners,omitempty"`
+	DontAlertFollowers    *bool     `json:"dont_alert_followers,omitempty"`
+	HideContacts          *bool     `json:"hide_contacts,omitempty"`
+	IsMoneyPlaces         *bool     `json:"is_money_places,omitempty"`
+	LengthOption          *string   `json:"length_option,omitempty"`
+	LengthValue           *int64    `json:"length_value,omitempty"`
+	PostBody              string    `json:"post_body"`
+	PrizeDataMoney        *float64  `json:"prize_data_money,omitempty"`
+	PrizeDataPlaces       []float64 `json:"prize_data_places,omitempty"`
+	PrizeDataUpgrade      *int64    `json:"prize_data_upgrade,omitempty"`
+	PrizeType             string    `json:"prize_type"`
+	ReplyGroup            *int64    `json:"reply_group,omitempty"`
+	RequireLikeCount      int64     `json:"require_like_count"`
+	RequireTotalLikeCount int64     `json:"require_total_like_count"`
+	ScheduleDate          *string   `json:"schedule_date,omitempty"`
+	ScheduleTime          *string   `json:"schedule_time,omitempty"`
+	SecretAnswer          *string   `json:"secret_answer,omitempty"`
+	Tags                  []string  `json:"tags,omitempty"`
+	Title                 *string   `json:"title,omitempty"`
+	TitleEn               *string   `json:"title_en,omitempty"`
+	WatchThread           *bool     `json:"watch_thread,omitempty"`
+	WatchThreadEmail      *bool     `json:"watch_thread_email,omitempty"`
+	WatchThreadState      *bool     `json:"watch_thread_state,omitempty"`
 }
 
 // ThreadsCreateContestResponse is the response for the endpoint.
@@ -6383,7 +6383,7 @@ type ThreadsCreateContestResponse struct {
 
 // ThreadsDeleteBody holds the request body for Threads.Delete.
 type ThreadsDeleteBody struct {
-	Reason *string `form:"reason"`
+	Reason *string `json:"reason,omitempty"`
 }
 
 // ThreadsDeleteResponse is the response for the endpoint.
@@ -6395,15 +6395,15 @@ type ThreadsDeleteResponse struct {
 
 // ThreadsEditBody holds the request body for Threads.Edit.
 type ThreadsEditBody struct {
-	AllowAskHiddenContent *bool    `form:"allow_ask_hidden_content"`
-	CommentIgnoreGroup    *bool    `form:"comment_ignore_group"`
-	DiscussionOpen        *bool    `form:"discussion_open"`
-	HideContacts          *bool    `form:"hide_contacts"`
-	PrefixID              []int64  `form:"prefix_id"`
-	ReplyGroup            *int64   `form:"reply_group"`
-	Tags                  []string `form:"tags"`
-	Title                 *string  `form:"title"`
-	TitleEn               *string  `form:"title_en"`
+	AllowAskHiddenContent *bool    `json:"allow_ask_hidden_content,omitempty"`
+	CommentIgnoreGroup    *bool    `json:"comment_ignore_group,omitempty"`
+	DiscussionOpen        *bool    `json:"discussion_open,omitempty"`
+	HideContacts          *bool    `json:"hide_contacts,omitempty"`
+	PrefixID              []int64  `json:"prefix_id,omitempty"`
+	ReplyGroup            *int64   `json:"reply_group,omitempty"`
+	Tags                  []string `json:"tags,omitempty"`
+	Title                 *string  `json:"title,omitempty"`
+	TitleEn               *string  `json:"title_en,omitempty"`
 }
 
 // ThreadsEditResponse is the response for the endpoint.
@@ -6421,7 +6421,7 @@ type ThreadsFinishResponse struct {
 
 // ThreadsFollowBody holds the request body for Threads.Follow.
 type ThreadsFollowBody struct {
-	Email *bool `form:"email"`
+	Email *bool `json:"email,omitempty"`
 }
 
 // ThreadsFollowResponse is the response for the endpoint.
@@ -6501,12 +6501,12 @@ type ThreadsListResponse struct {
 
 // ThreadsMoveBody holds the request body for Threads.Move.
 type ThreadsMoveBody struct {
-	ApplyThreadPrefix *bool   `form:"apply_thread_prefix"`
-	NodeID            string  `form:"node_id"`
-	PrefixID          []int64 `form:"prefix_id"`
-	SendAlert         *bool   `form:"send_alert"`
-	Title             *string `form:"title"`
-	TitleEn           *string `form:"title_en"`
+	ApplyThreadPrefix *bool   `json:"apply_thread_prefix,omitempty"`
+	NodeID            string  `json:"node_id"`
+	PrefixID          []int64 `json:"prefix_id,omitempty"`
+	SendAlert         *bool   `json:"send_alert,omitempty"`
+	Title             *string `json:"title,omitempty"`
+	TitleEn           *string `json:"title_en,omitempty"`
 }
 
 // ThreadsMoveResponse is the response for the endpoint.
@@ -6531,8 +6531,8 @@ type ThreadsPollGetResponse struct {
 
 // ThreadsPollVoteBody holds the request body for Threads.PollVote.
 type ThreadsPollVoteBody struct {
-	ResponseID  *int64  `form:"response_id"`
-	ResponseIds []int64 `form:"response_ids"`
+	ResponseID  *int64  `json:"response_id,omitempty"`
+	ResponseIds []int64 `json:"response_ids,omitempty"`
 }
 
 // ThreadsPollVoteResponse is the response for the endpoint.
@@ -6594,9 +6594,9 @@ type ThreadsUnstarResponse struct {
 
 // UsersAvatarCropBody holds the request body for Users.AvatarCrop.
 type UsersAvatarCropBody struct {
-	Crop *int64 `form:"crop"`
-	X    *int64 `form:"x"`
-	Y    *int64 `form:"y"`
+	Crop *int64 `json:"crop,omitempty"`
+	X    *int64 `json:"x,omitempty"`
+	Y    *int64 `json:"y,omitempty"`
 }
 
 // UsersAvatarCropResponse is the response for the endpoint.
@@ -6630,9 +6630,9 @@ type UsersAvatarUploadResponse struct {
 
 // UsersBackgroundCropBody holds the request body for Users.BackgroundCrop.
 type UsersBackgroundCropBody struct {
-	Crop *int64 `form:"crop"`
-	X    *int64 `form:"x"`
-	Y    *int64 `form:"y"`
+	Crop *int64 `json:"crop,omitempty"`
+	X    *int64 `json:"x,omitempty"`
+	Y    *int64 `json:"y,omitempty"`
 }
 
 // UsersBackgroundCropResponse is the response for the endpoint.
@@ -6694,33 +6694,33 @@ type UsersContentsResponse struct {
 
 // UsersEditBody holds the request body for Users.Edit.
 type UsersEditBody struct {
-	ActivityVisible               *bool           `form:"activity_visible"`
-	Alert                         map[string]bool `form:"alert"`
-	AllowInviteGroup              *string         `form:"allow_invite_group"`
-	AllowPostProfile              *string         `form:"allow_post_profile"`
-	AllowReceiveNewsFeed          *string         `form:"allow_receive_news_feed"`
-	AllowSendPersonalConversation *string         `form:"allow_send_personal_conversation"`
-	AllowViewProfile              *string         `form:"allow_view_profile"`
-	ConvWelcomeMessage            *string         `form:"conv_welcome_message"`
-	DisplayBannerID               *int64          `form:"display_banner_id"`
-	DisplayGroupID                *int64          `form:"display_group_id"`
-	DisplayIconGroupID            *int64          `form:"display_icon_group_id"`
-	Fields                        any             `form:"fields"`
-	Gender                        *string         `form:"gender"`
-	HideUsernameChangeLogs        *bool           `form:"hide_username_change_logs"`
-	LanguageID                    *int64          `form:"language_id"`
-	ReceiveAdminEmail             *bool           `form:"receive_admin_email"`
-	SecretAnswer                  *string         `form:"secret_answer"`
-	SecretAnswerType              *int64          `form:"secret_answer_type"`
-	ShortLink                     *string         `form:"short_link"`
-	ShowDobDate                   *bool           `form:"show_dob_date"`
-	ShowDobYear                   *bool           `form:"show_dob_year"`
-	Timezone                      *string         `form:"timezone"`
-	UserDobDay                    *int64          `form:"user_dob_day"`
-	UserDobMonth                  *int64          `form:"user_dob_month"`
-	UserDobYear                   *int64          `form:"user_dob_year"`
-	UserTitle                     *string         `form:"user_title"`
-	Username                      *string         `form:"username"`
+	ActivityVisible               *bool           `json:"activity_visible,omitempty"`
+	Alert                         map[string]bool `json:"alert,omitempty"`
+	AllowInviteGroup              *string         `json:"allow_invite_group,omitempty"`
+	AllowPostProfile              *string         `json:"allow_post_profile,omitempty"`
+	AllowReceiveNewsFeed          *string         `json:"allow_receive_news_feed,omitempty"`
+	AllowSendPersonalConversation *string         `json:"allow_send_personal_conversation,omitempty"`
+	AllowViewProfile              *string         `json:"allow_view_profile,omitempty"`
+	ConvWelcomeMessage            *string         `json:"conv_welcome_message,omitempty"`
+	DisplayBannerID               *int64          `json:"display_banner_id,omitempty"`
+	DisplayGroupID                *int64          `json:"display_group_id,omitempty"`
+	DisplayIconGroupID            *int64          `json:"display_icon_group_id,omitempty"`
+	Fields                        any             `json:"fields,omitempty"`
+	Gender                        *string         `json:"gender,omitempty"`
+	HideUsernameChangeLogs        *bool           `json:"hide_username_change_logs,omitempty"`
+	LanguageID                    *int64          `json:"language_id,omitempty"`
+	ReceiveAdminEmail             *bool           `json:"receive_admin_email,omitempty"`
+	SecretAnswer                  *string         `json:"secret_answer,omitempty"`
+	SecretAnswerType              *int64          `json:"secret_answer_type,omitempty"`
+	ShortLink                     *string         `json:"short_link,omitempty"`
+	ShowDobDate                   *bool           `json:"show_dob_date,omitempty"`
+	ShowDobYear                   *bool           `json:"show_dob_year,omitempty"`
+	Timezone                      *string         `json:"timezone,omitempty"`
+	UserDobDay                    *int64          `json:"user_dob_day,omitempty"`
+	UserDobMonth                  *int64          `json:"user_dob_month,omitempty"`
+	UserDobYear                   *int64          `json:"user_dob_year,omitempty"`
+	UserTitle                     *string         `json:"user_title,omitempty"`
+	Username                      *string         `json:"username,omitempty"`
 }
 
 // UsersEditResponse is the response for the endpoint.

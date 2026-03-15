@@ -14,6 +14,7 @@ type APIConfig struct {
 	Prefix     string
 	BaseURL    string
 	RPM        int
+	SearchRPM  int // optional: search rate limit (e.g. 20 for Market)
 }
 
 // Generate reads OpenAPI schemas and generates Go client code.
@@ -50,7 +51,7 @@ func Generate(outDir string, apis []APIConfig) error {
 			return fmt.Errorf("creating directory %s: %w", subDir, err)
 		}
 
-		if err := g.WriteClientFile(outDir, api.BaseURL, api.RPM); err != nil {
+		if err := g.WriteClientFile(outDir, api.BaseURL, api.RPM, api.SearchRPM); err != nil {
 			return fmt.Errorf("writing client file: %w", err)
 		}
 
@@ -68,7 +69,7 @@ func Generate(outDir string, apis []APIConfig) error {
 // Code generation — client file
 // ---------------------------------------------------------------------------
 
-func (g *Generator) WriteClientFile(outDir, baseURL string, rpm int) error {
+func (g *Generator) WriteClientFile(outDir, baseURL string, rpm int, searchRPM int) error {
 	var b strings.Builder
 	prefix := g.Prefix
 	lowerPrefix := strings.ToLower(prefix)
@@ -118,6 +119,11 @@ func (g *Generator) WriteClientFile(outDir, baseURL string, rpm int) error {
 	fmt.Fprintf(&b, "\tif config.RequestsPerMinute == 0 {\n")
 	fmt.Fprintf(&b, "\t\tconfig.RequestsPerMinute = %d\n", rpm)
 	fmt.Fprintf(&b, "\t}\n")
+	if searchRPM > 0 {
+		fmt.Fprintf(&b, "\tif config.SearchRequestsPerMinute == 0 {\n")
+		fmt.Fprintf(&b, "\t\tconfig.SearchRequestsPerMinute = %d\n", searchRPM)
+		fmt.Fprintf(&b, "\t}\n")
+	}
 	b.WriteString("\tc, err := lolzteam.NewClient(config)\n")
 	fmt.Fprintf(&b, "\tif err != nil {\n")
 	fmt.Fprintf(&b, "\t\treturn nil, err\n")
@@ -210,16 +216,28 @@ func (g *Generator) WriteTypesFile(outDir string) error {
 				structName := groupName + op.Method + "Body"
 				fmt.Fprintf(&b, "// %s holds the request body for %s.%s.\n", structName, groupName, op.Method)
 				fmt.Fprintf(&b, "type %s struct {\n", structName)
+				tagName := "form"
+				if op.ContentKind == ContentJSON {
+					tagName = "json"
+				}
 				for _, bp := range op.BodyProps {
 					goType := bp.GoType
 					if goType == "FileUpload" {
 						goType = "lolzteam.FileUpload"
 					}
 					if bp.Required {
-						fmt.Fprintf(&b, "\t%s %s `form:\"%s\"`\n", bp.GoName, goType, bp.Name)
+						if tagName == "json" {
+							fmt.Fprintf(&b, "\t%s %s `json:\"%s\"`\n", bp.GoName, goType, bp.Name)
+						} else {
+							fmt.Fprintf(&b, "\t%s %s `form:\"%s\"`\n", bp.GoName, goType, bp.Name)
+						}
 					} else {
 						ptrType := PtrWrap(goType)
-						fmt.Fprintf(&b, "\t%s %s `form:\"%s\"`\n", bp.GoName, ptrType, bp.Name)
+						if tagName == "json" {
+							fmt.Fprintf(&b, "\t%s %s `json:\"%s,omitempty\"`\n", bp.GoName, ptrType, bp.Name)
+						} else {
+							fmt.Fprintf(&b, "\t%s %s `form:\"%s\"`\n", bp.GoName, ptrType, bp.Name)
+						}
 					}
 				}
 				b.WriteString("}\n\n")
@@ -377,11 +395,16 @@ func (g *Generator) WriteMethod(b *strings.Builder, groupName string, op Operati
 	// Build path
 	pathExpr := BuildPathExpr(op.Path, op.PathParams)
 
+	isSearch := strings.EqualFold(groupName, "Category")
+
 	fmt.Fprintf(b, "\topts := lolzteam.RequestOptions{\n")
 	fmt.Fprintf(b, "\t\tMethod: %q,\n", op.HTTPMethod)
 	fmt.Fprintf(b, "\t\tPath:   %s,\n", pathExpr)
 	if op.IsArrayBody {
 		b.WriteString("\t\tRawJSON: jobs,\n")
+	}
+	if isSearch {
+		b.WriteString("\t\tIsSearch: true,\n")
 	}
 	b.WriteString("\t}\n")
 
@@ -393,9 +416,12 @@ func (g *Generator) WriteMethod(b *strings.Builder, groupName string, op Operati
 
 	if !op.IsArrayBody && hasBody {
 		b.WriteString("\tif body != nil {\n")
-		if op.HasBinaryBody {
+		switch op.ContentKind {
+		case ContentMultipart:
 			b.WriteString("\t\topts.Multipart = lolzteam.StructToMultipart(body)\n")
-		} else {
+		case ContentJSON:
+			b.WriteString("\t\topts.RawJSON = body\n")
+		default:
 			b.WriteString("\t\topts.Body = lolzteam.StructToForm(body)\n")
 		}
 		b.WriteString("\t}\n")
