@@ -275,6 +275,68 @@ func (c *Client) Request(ctx context.Context, opts RequestOptions, result any) e
 	return withRetry(ctx, *c.retryConfig, opts.Method, opts.Path, doRequest)
 }
 
+// RequestText executes an HTTP request and returns the response body as a raw string.
+// Used for endpoints that return text/html or other non-JSON content types.
+func (c *Client) RequestText(ctx context.Context, opts RequestOptions) (string, error) {
+	if err := c.rateLimiter.acquire(ctx); err != nil {
+		return "", err
+	}
+
+	if opts.IsSearch && c.searchRateLimiter != nil {
+		if err := c.searchRateLimiter.acquire(ctx); err != nil {
+			return "", err
+		}
+	}
+
+	var result string
+	doRequest := func() error {
+		reqURL := c.baseURL + opts.Path
+		if len(opts.Query) > 0 {
+			encoded := opts.Query.Encode()
+			encoded = strings.ReplaceAll(encoded, "%5B", "[")
+			encoded = strings.ReplaceAll(encoded, "%5D", "]")
+			reqURL += "?" + encoded
+		}
+
+		req, err := http.NewRequestWithContext(ctx, opts.Method, reqURL, nil)
+		if err != nil {
+			return &NetworkError{LolzteamError: LolzteamError{Message: "failed to create request"}, Err: err}
+		}
+
+		req.Header.Set("Authorization", "Bearer "+c.token)
+
+		resp, err := c.httpClient.Do(req)
+		if err != nil {
+			return &NetworkError{LolzteamError: LolzteamError{Message: "request failed"}, Err: err}
+		}
+		defer resp.Body.Close()
+
+		body, err := io.ReadAll(resp.Body)
+		if err != nil {
+			return &NetworkError{LolzteamError: LolzteamError{Message: "failed to read response body"}, Err: err}
+		}
+
+		if resp.StatusCode >= 400 {
+			retryAfter := parseRetryAfter(resp.Header.Get("Retry-After"))
+			return newHttpError(resp.StatusCode, body, retryAfter)
+		}
+
+		result = string(body)
+		return nil
+	}
+
+	if c.retryConfig == nil {
+		if err := doRequest(); err != nil {
+			return "", err
+		}
+		return result, nil
+	}
+	if err := withRetry(ctx, *c.retryConfig, opts.Method, opts.Path, doRequest); err != nil {
+		return "", err
+	}
+	return result, nil
+}
+
 func parseRetryAfter(value string) time.Duration {
 	if value == "" {
 		return 0
@@ -330,6 +392,15 @@ func structToValues(v any, tagName string) url.Values {
 		name, _, _ := strings.Cut(tag, ",")
 
 		fieldVal := rv.Field(i)
+
+		// Apply default value if the field is a nil pointer and has a default tag
+		if fieldVal.Kind() == reflect.Ptr && fieldVal.IsNil() {
+			if def := field.Tag.Get("default"); def != "" {
+				values.Set(name, def)
+				continue
+			}
+		}
+
 		appendFieldValues(&values, name, fieldVal)
 	}
 
@@ -487,6 +558,14 @@ func StructToMultipart(v any) *MultipartBody {
 
 		name, _, _ := strings.Cut(tag, ",")
 		fieldVal := rv.Field(i)
+
+		// Apply default value if the field is a nil pointer and has a default tag
+		if fieldVal.Kind() == reflect.Ptr && fieldVal.IsNil() {
+			if def := field.Tag.Get("default"); def != "" {
+				mb.fields[name] = def
+				continue
+			}
+		}
 
 		appendMultipartField(mb, name, field.Type, fieldVal)
 	}

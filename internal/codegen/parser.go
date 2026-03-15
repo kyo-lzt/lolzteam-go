@@ -121,8 +121,10 @@ type Operation struct {
 	HasBinaryBody  bool
 	IsArrayBody    bool       // body schema is type: "array" (e.g. batch endpoints)
 	ArrayItemProps []BodyProp // properties of the array item object
+	BodyUnion      *UnionDef  // discriminated union body (oneOf with discriminator)
 	ResponseSchema SchemaObj
 	HasResponse    bool
+	IsHTMLResponse bool // response is text/html (return raw string)
 }
 
 type PathParam struct {
@@ -139,6 +141,7 @@ type QueryParam struct {
 	Required bool
 	IsArray  bool
 	ItemType string
+	Default  string // formatted default value from schema, empty if none
 }
 
 type BodyProp struct {
@@ -147,6 +150,29 @@ type BodyProp struct {
 	GoType   string
 	Required bool
 	IsBinary bool
+	Default  string // formatted default value from schema, empty if none
+}
+
+// EnumDef describes a named enum type to be generated.
+type EnumDef struct {
+	Name   string            // Go type name, e.g. "ReplyGroup"
+	GoType string            // underlying Go type, e.g. "int64" or "string"
+	Values []json.RawMessage // raw enum values
+}
+
+// UnionVariant describes one variant of a discriminated union.
+type UnionVariant struct {
+	Name       string      // Go struct name, e.g. "OAuthTokenClientCredentials"
+	Title      string      // from schema title, e.g. "Client Credentials"
+	Fields     []BodyProp  // all fields including discriminator
+	ContentKind ContentKind // encoding: form, json, multipart
+}
+
+// UnionDef describes a discriminated union (oneOf with single-value enum discriminator).
+type UnionDef struct {
+	InterfaceName string         // Go interface name, e.g. "OAuthTokenBody"
+	MarkerMethod  string         // unexported marker, e.g. "oauthTokenBody"
+	Variants      []UnionVariant // concrete variant structs
 }
 
 // ---------------------------------------------------------------------------
@@ -159,8 +185,12 @@ type Generator struct {
 	RawSpec    map[string]json.RawMessage
 	Resolving  map[string]bool // cycle detection
 	NamedTypes map[string]*StructDef
+	EnumTypes  map[string]*EnumDef // enum type name → definition
 	Operations []Operation
 	Groups     map[string][]Operation
+	// enumLookup maps (paramName, valuesKey) → assigned enum type name.
+	// Built by CollectEnums before ParseOperations.
+	enumLookup map[string]string
 }
 
 // ---------------------------------------------------------------------------
@@ -215,16 +245,35 @@ func (g *Generator) ParseOperations() error {
 						Required: param.Required,
 					}
 					resolved := g.ResolveSchemaRef(param.Schema)
+					qp.Default = FormatDefault(resolved.Default)
 					typeStrs := SchemaTypeStrings(resolved)
 					if slices.Contains(typeStrs, "array") && resolved.Items != nil {
 						qp.IsArray = true
 						itemResolved := g.ResolveSchemaRef(*resolved.Items)
-						qp.ItemType = g.PrimitiveGoType(itemResolved)
-						qp.GoType = "[]" + qp.ItemType
+						if len(itemResolved.Enum) >= 2 {
+							enumName := g.LookupEnum(param.Name, itemResolved.Enum)
+							if enumName != "" {
+								qp.ItemType = enumName
+								qp.GoType = "[]" + enumName
+							} else {
+								qp.ItemType = g.PrimitiveGoType(itemResolved)
+								qp.GoType = "[]" + qp.ItemType
+							}
+						} else {
+							qp.ItemType = g.PrimitiveGoType(itemResolved)
+							qp.GoType = "[]" + qp.ItemType
+						}
 					} else if slices.Contains(typeStrs, "object") && resolved.AdditionalProperties != nil {
 						// deepObject params like hours_played: map[string]int64
 						valType := g.PrimitiveGoType(g.ResolveSchemaRef(*resolved.AdditionalProperties))
 						qp.GoType = "map[string]" + valType
+					} else if len(resolved.Enum) >= 2 {
+						enumName := g.LookupEnum(param.Name, resolved.Enum)
+						if enumName != "" {
+							qp.GoType = enumName
+						} else {
+							qp.GoType = g.PrimitiveGoType(resolved)
+						}
 					} else {
 						qp.GoType = g.PrimitiveGoType(resolved)
 					}
@@ -279,49 +328,95 @@ func (g *Generator) ParseOperations() error {
 							Name:     propName,
 							GoName:   ToPascalCase(propName),
 							Required: false,
+							Default:  FormatDefault(resolvedProp.Default),
 						}
 						typeStrs := SchemaTypeStrings(resolvedProp)
 						if slices.Contains(typeStrs, "array") && resolvedProp.Items != nil {
 							qp.IsArray = true
 							itemResolved := g.ResolveSchemaRef(*resolvedProp.Items)
-							qp.ItemType = g.PrimitiveGoType(itemResolved)
-							qp.GoType = "[]" + qp.ItemType
+							if len(itemResolved.Enum) >= 2 {
+								enumName := g.LookupEnum(propName, itemResolved.Enum)
+								if enumName != "" {
+									qp.ItemType = enumName
+									qp.GoType = "[]" + enumName
+								} else {
+									qp.ItemType = g.PrimitiveGoType(itemResolved)
+									qp.GoType = "[]" + qp.ItemType
+								}
+							} else {
+								qp.ItemType = g.PrimitiveGoType(itemResolved)
+								qp.GoType = "[]" + qp.ItemType
+							}
+						} else if len(resolvedProp.Enum) >= 2 {
+							enumName := g.LookupEnum(propName, resolvedProp.Enum)
+							if enumName != "" {
+								qp.GoType = enumName
+							} else {
+								qp.GoType = g.PrimitiveGoType(resolvedProp)
+							}
 						} else {
 							qp.GoType = g.PrimitiveGoType(resolvedProp)
 						}
 						parsed.QueryParams = append(parsed.QueryParams, qp)
 					}
 				} else {
-					// If oneOf/anyOf, merge all properties
-					if len(resolved.OneOf) > 0 || len(resolved.AnyOf) > 0 {
-						resolved = g.MergeOneOfSchemas(resolved)
+					// Check for discriminated union (oneOf with single-value enum discriminator)
+					unionVariants := resolved.OneOf
+					if len(unionVariants) == 0 {
+						unionVariants = resolved.AnyOf
 					}
-					if len(resolved.AllOf) > 0 {
-						resolved = g.MergeAllOfSchemas(resolved)
+					discriminator := g.DetectDiscriminatedUnion(unionVariants)
+					if discriminator != "" && len(unionVariants) >= 2 {
+						parsed.BodyUnion = g.BuildUnionDef(group+method, unionVariants, contentKind, isMultipart)
+					} else {
+						// If oneOf/anyOf, merge all properties
+						if len(resolved.OneOf) > 0 || len(resolved.AnyOf) > 0 {
+							resolved = g.MergeOneOfSchemas(resolved)
+						}
+						if len(resolved.AllOf) > 0 {
+							resolved = g.MergeAllOfSchemas(resolved)
+						}
+						bodyStructName := group + method + "Body"
+						reqFields := ToSet(resolved.Required)
+						for propName, propSchema := range resolved.Properties {
+							resolvedProp := g.ResolveSchemaRef(propSchema)
+							isBinary := isMultipart && resolvedProp.Format == "binary"
+							goType := g.ResolveGoType(propSchema)
+							if isBinary {
+								goType = "FileUpload"
+							}
+							// Inline objects with properties: generate named struct
+							if resolvedProp.Ref == "" && len(resolvedProp.Properties) > 0 {
+								goFieldName := ToPascalCase(propName)
+								inlineName := bodyStructName + goFieldName
+								inlineSD := g.SchemaToStructDef(inlineName, resolvedProp)
+								g.NamedTypes[inlineName] = inlineSD
+								goType = inlineName
+							}
+							// Enum detection for body properties
+							if !isBinary && len(resolvedProp.Enum) >= 2 {
+								enumName := g.LookupEnum(propName, resolvedProp.Enum)
+								if enumName != "" {
+									goType = enumName
+								}
+							}
+							bp := BodyProp{
+								Name:     propName,
+								GoName:   ToPascalCase(propName),
+								GoType:   goType,
+								Required: reqFields[propName],
+								IsBinary: isBinary,
+								Default:  FormatDefault(resolvedProp.Default),
+							}
+							parsed.BodyProps = append(parsed.BodyProps, bp)
+							if isBinary {
+								parsed.HasBinaryBody = true
+							}
+						}
+						sort.Slice(parsed.BodyProps, func(i, j int) bool {
+							return parsed.BodyProps[i].Name < parsed.BodyProps[j].Name
+						})
 					}
-					reqFields := ToSet(resolved.Required)
-					for propName, propSchema := range resolved.Properties {
-						resolvedProp := g.ResolveSchemaRef(propSchema)
-						isBinary := isMultipart && resolvedProp.Format == "binary"
-						goType := g.ResolveGoType(propSchema)
-						if isBinary {
-							goType = "FileUpload"
-						}
-						bp := BodyProp{
-							Name:     propName,
-							GoName:   ToPascalCase(propName),
-							GoType:   goType,
-							Required: reqFields[propName],
-							IsBinary: isBinary,
-						}
-						parsed.BodyProps = append(parsed.BodyProps, bp)
-						if isBinary {
-							parsed.HasBinaryBody = true
-						}
-					}
-					sort.Slice(parsed.BodyProps, func(i, j int) bool {
-						return parsed.BodyProps[i].Name < parsed.BodyProps[j].Name
-					})
 				}
 			}
 
@@ -331,7 +426,12 @@ func (g *Generator) ParseOperations() error {
 				if code != "200" && code != "201" {
 					continue
 				}
-					respSchema, err := g.ExtractResponseSchema(rawResp)
+				// Check for text/html response
+				if g.IsHTMLResponse(rawResp) {
+					parsed.IsHTMLResponse = true
+					break
+				}
+				respSchema, err := g.ExtractResponseSchema(rawResp)
 				if err != nil {
 					return fmt.Errorf("extracting response schema for %s %s: %w", httpMethod, path, err)
 				}
@@ -425,6 +525,27 @@ func (g *Generator) ExtractResponseSchema(raw json.RawMessage) (SchemaObj, error
 		return SchemaObj{}, fmt.Errorf("unmarshaling response: %w", err)
 	}
 	return g.ExtractResponseSchemaFromObj(resp)
+}
+
+// IsHTMLResponse checks if a raw response object contains a text/html content type.
+func (g *Generator) IsHTMLResponse(raw json.RawMessage) bool {
+	// Try as $ref first
+	var ref struct {
+		Ref string `json:"$ref"`
+	}
+	if err := json.Unmarshal(raw, &ref); err == nil && ref.Ref != "" {
+		name := RefName(ref.Ref)
+		if resp, ok := g.Spec.Components.Responses[name]; ok {
+			_, hasHTML := resp.Content["text/html"]
+			return hasHTML
+		}
+	}
+	var resp ResponseObj
+	if err := json.Unmarshal(raw, &resp); err != nil {
+		return false
+	}
+	_, hasHTML := resp.Content["text/html"]
+	return hasHTML
 }
 
 func (g *Generator) ExtractResponseSchemaFromObj(resp ResponseObj) (SchemaObj, error) {
@@ -657,6 +778,109 @@ func (g *Generator) MergeAllOfSchemas(s SchemaObj) SchemaObj {
 		merged.Required = append(merged.Required, resolved.Required...)
 	}
 	return merged
+}
+
+// DetectDiscriminatedUnion checks if a oneOf schema uses a discriminator pattern:
+// each variant has a property with a single-value enum. Returns the discriminator
+// property name, or "" if not a discriminated union.
+func (g *Generator) DetectDiscriminatedUnion(variants []SchemaObj) string {
+	if len(variants) < 2 {
+		return ""
+	}
+	// Find properties that appear in every variant with a single-value enum
+	candidates := map[string]int{}
+	for _, variant := range variants {
+		resolved := g.ResolveSchemaRef(variant)
+		if len(resolved.AllOf) > 0 {
+			resolved = g.MergeAllOfSchemas(resolved)
+		}
+		for propName, propSchema := range resolved.Properties {
+			propResolved := g.ResolveSchemaRef(propSchema)
+			if len(propResolved.Enum) == 1 {
+				candidates[propName]++
+			}
+		}
+	}
+	for propName, count := range candidates {
+		if count == len(variants) {
+			return propName
+		}
+	}
+	return ""
+}
+
+// BuildUnionDef constructs a UnionDef from oneOf variants with a discriminator.
+func (g *Generator) BuildUnionDef(baseName string, variants []SchemaObj, contentKind ContentKind, isMultipart bool) *UnionDef {
+	interfaceName := baseName + "Body"
+	markerMethod := CamelCase(interfaceName[:1]) + interfaceName[1:]
+	// Proper camelCase: "OAuthTokenBody" → "oAuthTokenBody" — but simpler to just lowercase first char
+	runes := []rune(interfaceName)
+	runes[0] = unicode.ToLower(runes[0])
+	markerMethod = string(runes)
+
+	ud := &UnionDef{
+		InterfaceName: interfaceName,
+		MarkerMethod:  markerMethod,
+	}
+
+	for _, variant := range variants {
+		resolved := g.ResolveSchemaRef(variant)
+		if len(resolved.AllOf) > 0 {
+			resolved = g.MergeAllOfSchemas(resolved)
+		}
+
+		// Derive variant name from title
+		title := resolved.Title
+		if title == "" {
+			title = variant.Title
+		}
+		variantName := baseName + ToPascalCase(title)
+
+		reqSet := ToSet(resolved.Required)
+		var fields []BodyProp
+		for _, propName := range SortedKeys(resolved.Properties) {
+			propSchema := resolved.Properties[propName]
+			resolvedProp := g.ResolveSchemaRef(propSchema)
+			isBinary := isMultipart && resolvedProp.Format == "binary"
+			goType := g.ResolveGoType(propSchema)
+			if isBinary {
+				goType = "FileUpload"
+			}
+			// Inline objects with properties: generate named struct
+			if resolvedProp.Ref == "" && len(resolvedProp.Properties) > 0 {
+				goFieldName := ToPascalCase(propName)
+				inlineName := variantName + goFieldName
+				inlineSD := g.SchemaToStructDef(inlineName, resolvedProp)
+				g.NamedTypes[inlineName] = inlineSD
+				goType = inlineName
+			}
+			// Enum detection for body properties
+			if !isBinary && len(resolvedProp.Enum) >= 2 {
+				enumName := g.LookupEnum(propName, resolvedProp.Enum)
+				if enumName != "" {
+					goType = enumName
+				}
+			}
+			bp := BodyProp{
+				Name:     propName,
+				GoName:   ToPascalCase(propName),
+				GoType:   goType,
+				Required: reqSet[propName],
+				IsBinary: isBinary,
+				Default:  FormatDefault(resolvedProp.Default),
+			}
+			fields = append(fields, bp)
+		}
+
+		ud.Variants = append(ud.Variants, UnionVariant{
+			Name:        variantName,
+			Title:       title,
+			Fields:      fields,
+			ContentKind: contentKind,
+		})
+	}
+
+	return ud
 }
 
 // ---------------------------------------------------------------------------
@@ -936,6 +1160,269 @@ func PtrWrap(goType string) string {
 	return "*" + goType
 }
 
+// ---------------------------------------------------------------------------
+// Enum detection — two-phase: collect all occurrences, then assign names
+// ---------------------------------------------------------------------------
+
+// enumOccurrence records one place where an enum appears in the spec.
+type enumOccurrence struct {
+	Group    string
+	Method   string
+	ParamName string
+	GoType   string // underlying Go type: "string" or "int64"
+	Values   []json.RawMessage
+	ValKey   string // canonical sorted key for dedup
+}
+
+// CollectEnums scans the entire OpenAPI spec and pre-assigns enum type names.
+// Must be called before ParseOperations.
+func (g *Generator) CollectEnums() {
+	g.enumLookup = make(map[string]string)
+
+	// Collect all enum occurrences
+	var occs []enumOccurrence
+	for _, methods := range g.Spec.Paths {
+		for httpMethod, rawOp := range methods {
+			if httpMethod == "parameters" {
+				continue
+			}
+			var op OperationObj
+			if err := json.Unmarshal(rawOp, &op); err != nil || op.OperationID == "" {
+				continue
+			}
+			group, method := SplitOperationID(op.OperationID)
+			if group == "Manging" {
+				group = "Managing"
+			}
+
+			// Parameters
+			for _, rawParam := range op.Parameters {
+				param, err := g.ResolveParam(rawParam)
+				if err != nil {
+					continue
+				}
+				resolved := g.ResolveSchemaRef(param.Schema)
+				g.collectEnumFromSchema(group, method, param.Name, resolved, &occs)
+				// Also check array items
+				typeStrs := SchemaTypeStrings(resolved)
+				if slices.Contains(typeStrs, "array") && resolved.Items != nil {
+					itemResolved := g.ResolveSchemaRef(*resolved.Items)
+					g.collectEnumFromSchema(group, method, param.Name, itemResolved, &occs)
+				}
+			}
+
+			// Request body properties
+			if op.RequestBody != nil {
+				bodySchema, _, err := g.ExtractBodySchema(op.RequestBody)
+				if err != nil {
+					continue
+				}
+				resolved := g.ResolveSchemaRef(bodySchema)
+				if len(resolved.OneOf) > 0 || len(resolved.AnyOf) > 0 {
+					resolved = g.MergeOneOfSchemas(resolved)
+				}
+				if len(resolved.AllOf) > 0 {
+					resolved = g.MergeAllOfSchemas(resolved)
+				}
+				for propName, propSchema := range resolved.Properties {
+					propResolved := g.ResolveSchemaRef(propSchema)
+					g.collectEnumFromSchema(group, method, propName, propResolved, &occs)
+				}
+			}
+		}
+	}
+
+	// Group by param name → unique value sets
+	// paramName → valKey → []group names (sorted first group)
+	type valEntry struct {
+		goType string
+		values []json.RawMessage
+		groups []string // first group that uses this variant
+	}
+	byName := make(map[string]map[string]*valEntry)
+	for _, occ := range occs {
+		m, ok := byName[occ.ParamName]
+		if !ok {
+			m = make(map[string]*valEntry)
+			byName[occ.ParamName] = m
+		}
+		if _, ok := m[occ.ValKey]; !ok {
+			m[occ.ValKey] = &valEntry{
+				goType: occ.GoType,
+				values: occ.Values,
+				groups: []string{occ.Group},
+			}
+		} else {
+			// Track additional groups
+			existing := m[occ.ValKey]
+			found := false
+			for _, g2 := range existing.groups {
+				if g2 == occ.Group {
+					found = true
+					break
+				}
+			}
+			if !found {
+				existing.groups = append(existing.groups, occ.Group)
+			}
+		}
+	}
+
+	// Assign names
+	usedNames := make(map[string]bool)
+	for _, paramName := range SortedMapKeys(byName) {
+		variants := byName[paramName]
+		baseName := ToPascalCase(paramName)
+
+		if len(variants) == 1 {
+			// Single variant → use simple name
+			for valKey, entry := range variants {
+				name := baseName
+				for usedNames[name] {
+					name = entry.groups[0] + name
+				}
+				usedNames[name] = true
+				g.EnumTypes[name] = &EnumDef{
+					Name:   name,
+					GoType: entry.goType,
+					Values: entry.values,
+				}
+				g.enumLookup[paramName+"\x00"+valKey] = name
+			}
+		} else {
+			// Multiple variants → prefix with first group name
+			valKeys := SortedMapKeys(variants)
+			for _, valKey := range valKeys {
+				entry := variants[valKey]
+				sort.Strings(entry.groups)
+				prefix := entry.groups[0]
+				name := prefix + baseName
+				if usedNames[name] {
+					for i := 2; ; i++ {
+						candidate := fmt.Sprintf("%s%d", name, i)
+						if !usedNames[candidate] {
+							name = candidate
+							break
+						}
+					}
+				}
+				usedNames[name] = true
+				g.EnumTypes[name] = &EnumDef{
+					Name:   name,
+					GoType: entry.goType,
+					Values: entry.values,
+				}
+				g.enumLookup[paramName+"\x00"+valKey] = name
+			}
+		}
+	}
+}
+
+func (g *Generator) collectEnumFromSchema(group, method, paramName string, resolved SchemaObj, occs *[]enumOccurrence) {
+	if len(resolved.Enum) < 2 {
+		return
+	}
+	goType := g.PrimitiveGoType(resolved)
+	if goType != "string" && goType != "int64" {
+		return
+	}
+	valKey := enumValuesKey(resolved.Enum)
+	*occs = append(*occs, enumOccurrence{
+		Group:     group,
+		Method:    method,
+		ParamName: paramName,
+		GoType:    goType,
+		Values:    resolved.Enum,
+		ValKey:    valKey,
+	})
+}
+
+// LookupEnum returns the pre-assigned enum type name for a param with given enum values.
+// Returns "" if no enum type was assigned.
+func (g *Generator) LookupEnum(paramName string, values []json.RawMessage) string {
+	if g.enumLookup == nil {
+		return ""
+	}
+	valKey := enumValuesKey(values)
+	return g.enumLookup[paramName+"\x00"+valKey]
+}
+
+func enumValuesKey(values []json.RawMessage) string {
+	parts := make([]string, len(values))
+	for i, v := range values {
+		parts[i] = string(v)
+	}
+	sort.Strings(parts)
+	return strings.Join(parts, "|")
+}
+
+// EnumConstName generates a Go constant name for an enum value.
+func EnumConstName(typeName string, raw json.RawMessage, goBaseType string) string {
+	switch goBaseType {
+	case "int64":
+		var n json.Number
+		if err := json.Unmarshal(raw, &n); err == nil {
+			s := n.String()
+			// Handle negative numbers
+			if strings.HasPrefix(s, "-") {
+				return typeName + "Neg" + s[1:]
+			}
+			return typeName + "V" + s
+		}
+	case "string":
+		var s string
+		if err := json.Unmarshal(raw, &s); err == nil {
+			if s == "" {
+				return typeName + "Empty"
+			}
+			pascal := ToPascalCase(s)
+			if pascal == "" {
+				// All non-alphanumeric chars (e.g. "*")
+				return typeName + "All"
+			}
+			return typeName + pascal
+		}
+	}
+	return typeName + "Unknown"
+}
+
+// FormatDefault returns a human-readable string for a JSON default value.
+// Returns "" if the default is nil or empty.
+func FormatDefault(raw json.RawMessage) string {
+	if len(raw) == 0 {
+		return ""
+	}
+	s := strings.TrimSpace(string(raw))
+	if s == "null" {
+		return ""
+	}
+	// Strings: unquote for cleaner display
+	var str string
+	if err := json.Unmarshal(raw, &str); err == nil {
+		return fmt.Sprintf("%q", str)
+	}
+	// Numbers, booleans: use as-is
+	return s
+}
+
+// DefaultTag returns a struct tag fragment like ` default:"value"` for the given
+// formatted default string. Returns "" if there is no default.
+func DefaultTag(formatted string) string {
+	if formatted == "" {
+		return ""
+	}
+	// Strip surrounding quotes from string defaults (FormatDefault wraps strings in %q)
+	val := formatted
+	if len(val) >= 2 && val[0] == '"' && val[len(val)-1] == '"' {
+		// Unescape the inner string for the struct tag value
+		var s string
+		if err := json.Unmarshal([]byte(val), &s); err == nil {
+			val = s
+		}
+	}
+	return fmt.Sprintf(` default:"%s"`, val)
+}
+
 var PathParamRe = regexp.MustCompile(`\{([^}]+)\}`)
 
 func BuildPathExpr(path string, params []PathParam) string {
@@ -982,6 +1469,38 @@ func BuildPathExpr(path string, params []PathParam) string {
 // rootPkgTypes are types defined in the root lolzteam package that need qualified references.
 var rootPkgTypes = map[string]bool{"FileUpload": true, "StringOrInt": true}
 
+// WriteEnumDef writes a named type and const block for an enum.
+func WriteEnumDef(b *strings.Builder, ed *EnumDef) {
+	fmt.Fprintf(b, "// %s is an enum type.\n", ed.Name)
+	fmt.Fprintf(b, "type %s %s\n\n", ed.Name, ed.GoType)
+	fmt.Fprintf(b, "const (\n")
+	seen := make(map[string]bool)
+	for _, raw := range ed.Values {
+		constName := EnumConstName(ed.Name, raw, ed.GoType)
+		if seen[constName] {
+			// Append raw value suffix to disambiguate
+			constName = constName + "X"
+			for seen[constName] {
+				constName = constName + "X"
+			}
+		}
+		seen[constName] = true
+		switch ed.GoType {
+		case "int64":
+			var n json.Number
+			if err := json.Unmarshal(raw, &n); err == nil {
+				fmt.Fprintf(b, "\t%s %s = %s\n", constName, ed.Name, n.String())
+			}
+		case "string":
+			var s string
+			if err := json.Unmarshal(raw, &s); err == nil {
+				fmt.Fprintf(b, "\t%s %s = %q\n", constName, ed.Name, s)
+			}
+		}
+	}
+	fmt.Fprintf(b, ")\n")
+}
+
 func WriteStructDef(b *strings.Builder, sd *StructDef) {
 	fmt.Fprintf(b, "// %s represents a component schema.\n", sd.Name)
 	fmt.Fprintf(b, "type %s struct {\n", sd.Name)
@@ -996,6 +1515,44 @@ func WriteStructDef(b *strings.Builder, sd *StructDef) {
 		fmt.Fprintf(b, "\t%s %s %s\n", f.Name, typeName, f.Tag)
 	}
 	b.WriteString("}\n")
+}
+
+// WriteUnionDef writes a discriminated union: interface + concrete variant structs.
+func WriteUnionDef(b *strings.Builder, ud *UnionDef, contentKind ContentKind) {
+	// Interface
+	fmt.Fprintf(b, "// %s is a discriminated union for the request body.\n", ud.InterfaceName)
+	fmt.Fprintf(b, "type %s interface {\n", ud.InterfaceName)
+	fmt.Fprintf(b, "\t%s()\n", ud.MarkerMethod)
+	fmt.Fprintf(b, "}\n\n")
+
+	// Variant structs
+	for _, v := range ud.Variants {
+		tagName := "form"
+		if contentKind == ContentJSON {
+			tagName = "json"
+		}
+		fmt.Fprintf(b, "// %s is a variant of %s.\n", v.Name, ud.InterfaceName)
+		fmt.Fprintf(b, "type %s struct {\n", v.Name)
+		for _, bp := range v.Fields {
+			goType := bp.GoType
+			if rootPkgTypes[goType] {
+				goType = "lolzteam." + goType
+			}
+			if bp.Default != "" {
+				fmt.Fprintf(b, "\t// %s - Default: %s\n", bp.GoName, bp.Default)
+			}
+			if bp.Required {
+				fmt.Fprintf(b, "\t%s %s `%s:\"%s\"`\n", bp.GoName, goType, tagName, bp.Name)
+			} else {
+				ptrType := PtrWrap(goType)
+				defaultTag := DefaultTag(bp.Default)
+				fmt.Fprintf(b, "\t%s %s `%s:\"%s,omitempty\"%s`\n", bp.GoName, ptrType, tagName, bp.Name, defaultTag)
+			}
+		}
+		fmt.Fprintf(b, "}\n\n")
+		// Marker method
+		fmt.Fprintf(b, "func (%s) %s() {}\n\n", v.Name, ud.MarkerMethod)
+	}
 }
 
 func WriteFormattedFile(path, content string) error {

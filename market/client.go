@@ -767,7 +767,7 @@ type ListService struct {
 }
 
 // Download Download Accounts Data
-func (s *ListService) Download(ctx context.Context, typeVal string, params *ListDownloadParams) error {
+func (s *ListService) Download(ctx context.Context, typeVal string, params *ListDownloadParams) (string, error) {
 	opts := lolzteam.RequestOptions{
 		Method: "GET",
 		Path:   fmt.Sprintf("/user/%s/download", typeVal),
@@ -775,7 +775,11 @@ func (s *ListService) Download(ctx context.Context, typeVal string, params *List
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
 	}
-	return s.client.Request(ctx, opts, nil)
+	html, err := s.client.RequestText(ctx, opts)
+	if err != nil {
+		return "", err
+	}
+	return html, nil
 }
 
 // Favorites Get All Favourites Accounts
@@ -1257,7 +1261,7 @@ func (s *ManagingService) SteamMafileCode(ctx context.Context, itemID int64) (*M
 }
 
 // SteamPreview Get Steam HTML
-func (s *ManagingService) SteamPreview(ctx context.Context, itemID int64, params *ManagingSteamPreviewParams) error {
+func (s *ManagingService) SteamPreview(ctx context.Context, itemID int64, params *ManagingSteamPreviewParams) (string, error) {
 	opts := lolzteam.RequestOptions{
 		Method: "GET",
 		Path:   fmt.Sprintf("/%d/steam-preview", itemID),
@@ -1265,7 +1269,11 @@ func (s *ManagingService) SteamPreview(ctx context.Context, itemID int64, params
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
 	}
-	return s.client.Request(ctx, opts, nil)
+	html, err := s.client.RequestText(ctx, opts)
+	if err != nil {
+		return "", err
+	}
+	return html, nil
 }
 
 // SteamRemoveMafile Remove Mafile

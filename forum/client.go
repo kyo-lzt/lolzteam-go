@@ -682,7 +682,7 @@ type FormsService struct {
 }
 
 // Create Create Form
-func (s *FormsService) Create(ctx context.Context, body *FormsCreateBody) (*FormsCreateResponse, error) {
+func (s *FormsService) Create(ctx context.Context, body FormsCreateBody) (*FormsCreateResponse, error) {
 	var result FormsCreateResponse
 	opts := lolzteam.RequestOptions{
 		Method: "POST",
@@ -955,7 +955,7 @@ type OAuthService struct {
 }
 
 // Token Get Access Token
-func (s *OAuthService) Token(ctx context.Context, body *OAuthTokenBody) (*OAuthTokenResponse, error) {
+func (s *OAuthService) Token(ctx context.Context, body OAuthTokenBody) (*OAuthTokenResponse, error) {
 	var result OAuthTokenResponse
 	opts := lolzteam.RequestOptions{
 		Method: "POST",

@@ -29,6 +29,7 @@ func Generate(outDir string, apis []APIConfig) error {
 			Prefix:     api.Prefix,
 			Resolving:  make(map[string]bool),
 			NamedTypes: make(map[string]*StructDef),
+			EnumTypes:  make(map[string]*EnumDef),
 			Groups:     make(map[string][]Operation),
 		}
 
@@ -41,6 +42,8 @@ func Generate(outDir string, apis []APIConfig) error {
 			return fmt.Errorf("parsing raw %s: %w", api.SchemaFile, err)
 		}
 		g.RawSpec = rawSpec
+
+		g.CollectEnums()
 
 		if err := g.ParseOperations(); err != nil {
 			return fmt.Errorf("parsing operations for %s: %w", api.Prefix, err)
@@ -188,6 +191,16 @@ func (g *Generator) WriteTypesFile(outDir string) error {
 		b.WriteString(")\n\n")
 	}
 
+	// Enum types
+	enumNames := SortedMapKeys(g.EnumTypes)
+	if len(enumNames) > 0 {
+		for _, en := range enumNames {
+			ed := g.EnumTypes[en]
+			WriteEnumDef(&b, ed)
+			b.WriteString("\n")
+		}
+	}
+
 	// All named types (component schemas + inline response/body types)
 	typeNames := SortedMapKeys(g.NamedTypes)
 	for _, tn := range typeNames {
@@ -206,11 +219,15 @@ func (g *Generator) WriteTypesFile(outDir string) error {
 				fmt.Fprintf(&b, "// %s holds query parameters for %s.%s.\n", structName, groupName, op.Method)
 				fmt.Fprintf(&b, "type %s struct {\n", structName)
 				for _, qp := range op.QueryParams {
+					if qp.Default != "" {
+						fmt.Fprintf(&b, "\t// %s - Default: %s\n", qp.GoName, qp.Default)
+					}
 					if qp.Required {
 						fmt.Fprintf(&b, "\t%s %s `query:\"%s\"`\n", qp.GoName, qp.GoType, qp.Name)
 					} else {
 						ptrType := PtrWrap(qp.GoType)
-						fmt.Fprintf(&b, "\t%s %s `query:\"%s\"`\n", qp.GoName, ptrType, qp.Name)
+						defaultTag := DefaultTag(qp.Default)
+						fmt.Fprintf(&b, "\t%s %s `query:\"%s\"%s`\n", qp.GoName, ptrType, qp.Name, defaultTag)
 					}
 				}
 				b.WriteString("}\n\n")
@@ -226,6 +243,9 @@ func (g *Generator) WriteTypesFile(outDir string) error {
 					tagName = "json"
 				}
 				for _, bp := range op.BodyProps {
+					if bp.Default != "" {
+						fmt.Fprintf(&b, "\t// %s - Default: %s\n", bp.GoName, bp.Default)
+					}
 					goType := bp.GoType
 					if rootPkgTypes[goType] {
 						goType = "lolzteam." + goType
@@ -238,14 +258,20 @@ func (g *Generator) WriteTypesFile(outDir string) error {
 						}
 					} else {
 						ptrType := PtrWrap(goType)
+						defaultTag := DefaultTag(bp.Default)
 						if tagName == "json" {
-							fmt.Fprintf(&b, "\t%s %s `json:\"%s,omitempty\"`\n", bp.GoName, ptrType, bp.Name)
+							fmt.Fprintf(&b, "\t%s %s `json:\"%s,omitempty\"%s`\n", bp.GoName, ptrType, bp.Name, defaultTag)
 						} else {
-							fmt.Fprintf(&b, "\t%s %s `form:\"%s\"`\n", bp.GoName, ptrType, bp.Name)
+							fmt.Fprintf(&b, "\t%s %s `form:\"%s\"%s`\n", bp.GoName, ptrType, bp.Name, defaultTag)
 						}
 					}
 				}
 				b.WriteString("}\n\n")
+			}
+
+			// Discriminated union body (interface + variant structs)
+			if op.BodyUnion != nil {
+				WriteUnionDef(&b, op.BodyUnion, op.ContentKind)
 			}
 
 			// Array body item struct (batch endpoints)
@@ -284,6 +310,15 @@ func (g *Generator) TypesReferenceRootPkg() bool {
 			for _, bp := range op.BodyProps {
 				if rootTypes[bp.GoType] {
 					return true
+				}
+			}
+			if op.BodyUnion != nil {
+				for _, v := range op.BodyUnion.Variants {
+					for _, bp := range v.Fields {
+						if rootTypes[bp.GoType] {
+							return true
+						}
+					}
 				}
 			}
 		}
@@ -395,6 +430,7 @@ func (g *Generator) WriteMethod(b *strings.Builder, groupName string, op Operati
 
 	hasParams := len(op.QueryParams) > 0
 	hasBody := len(op.BodyProps) > 0
+	hasUnionBody := op.BodyUnion != nil
 	itemTypeName := groupName + op.Method + "Item"
 
 	// Build method signature
@@ -412,12 +448,16 @@ func (g *Generator) WriteMethod(b *strings.Builder, groupName string, op Operati
 	}
 	if op.IsArrayBody {
 		sigParts = append(sigParts, "jobs []"+itemTypeName)
+	} else if hasUnionBody {
+		sigParts = append(sigParts, "body "+op.BodyUnion.InterfaceName)
 	} else if hasBody {
 		sigParts = append(sigParts, "body *"+bodyStructName)
 	}
 
 	returnType := "error"
-	if op.HasResponse {
+	if op.IsHTMLResponse {
+		returnType = "(string, error)"
+	} else if op.HasResponse {
 		returnType = fmt.Sprintf("(*%s, error)", responseStructName)
 	}
 
@@ -458,7 +498,22 @@ func (g *Generator) WriteMethod(b *strings.Builder, groupName string, op Operati
 		b.WriteString("\t}\n")
 	}
 
-	if !op.IsArrayBody && hasBody {
+	if hasUnionBody {
+		switch op.ContentKind {
+		case ContentMultipart:
+			b.WriteString("\tif body != nil {\n")
+			b.WriteString("\t\topts.Multipart = lolzteam.StructToMultipart(body)\n")
+			b.WriteString("\t}\n")
+		case ContentJSON:
+			b.WriteString("\tif body != nil {\n")
+			b.WriteString("\t\topts.RawJSON = body\n")
+			b.WriteString("\t}\n")
+		default:
+			b.WriteString("\tif body != nil {\n")
+			b.WriteString("\t\topts.Body = lolzteam.StructToForm(body)\n")
+			b.WriteString("\t}\n")
+		}
+	} else if !op.IsArrayBody && hasBody {
 		b.WriteString("\tif body != nil {\n")
 		switch op.ContentKind {
 		case ContentMultipart:
@@ -471,7 +526,13 @@ func (g *Generator) WriteMethod(b *strings.Builder, groupName string, op Operati
 		b.WriteString("\t}\n")
 	}
 
-	if op.HasResponse {
+	if op.IsHTMLResponse {
+		b.WriteString("\thtml, err := s.client.RequestText(ctx, opts)\n")
+		b.WriteString("\tif err != nil {\n")
+		b.WriteString("\t\treturn \"\", err\n")
+		b.WriteString("\t}\n")
+		b.WriteString("\treturn html, nil\n")
+	} else if op.HasResponse {
 		b.WriteString("\tif err := s.client.Request(ctx, opts, &result); err != nil {\n")
 		b.WriteString("\t\treturn nil, err\n")
 		b.WriteString("\t}\n")

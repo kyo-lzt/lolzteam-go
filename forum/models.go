@@ -6,6 +6,427 @@ import (
 	lolzteam "github.com/kyo-lzt/lolzteam-go"
 )
 
+// AllowInviteGroup is an enum type.
+type AllowInviteGroup string
+
+const (
+	AllowInviteGroupNone     AllowInviteGroup = "none"
+	AllowInviteGroupMembers  AllowInviteGroup = "members"
+	AllowInviteGroupFollowed AllowInviteGroup = "followed"
+)
+
+// AllowPostProfile is an enum type.
+type AllowPostProfile string
+
+const (
+	AllowPostProfileNone     AllowPostProfile = "none"
+	AllowPostProfileMembers  AllowPostProfile = "members"
+	AllowPostProfileFollowed AllowPostProfile = "followed"
+)
+
+// AllowReceiveNewsFeed is an enum type.
+type AllowReceiveNewsFeed string
+
+const (
+	AllowReceiveNewsFeedNone     AllowReceiveNewsFeed = "none"
+	AllowReceiveNewsFeedMembers  AllowReceiveNewsFeed = "members"
+	AllowReceiveNewsFeedFollowed AllowReceiveNewsFeed = "followed"
+)
+
+// AllowSendPersonalConversation is an enum type.
+type AllowSendPersonalConversation string
+
+const (
+	AllowSendPersonalConversationNone     AllowSendPersonalConversation = "none"
+	AllowSendPersonalConversationMembers  AllowSendPersonalConversation = "members"
+	AllowSendPersonalConversationFollowed AllowSendPersonalConversation = "followed"
+)
+
+// AllowViewProfile is an enum type.
+type AllowViewProfile string
+
+const (
+	AllowViewProfileNone     AllowViewProfile = "none"
+	AllowViewProfileMembers  AllowViewProfile = "members"
+	AllowViewProfileFollowed AllowViewProfile = "followed"
+)
+
+// CategoriesOrder is an enum type.
+type CategoriesOrder string
+
+const (
+	CategoriesOrderNatural CategoriesOrder = "natural"
+	CategoriesOrderList    CategoriesOrder = "list"
+)
+
+// ClaimState is an enum type.
+type ClaimState string
+
+const (
+	ClaimStateActive   ClaimState = "active"
+	ClaimStateSolved   ClaimState = "solved"
+	ClaimStateRejected ClaimState = "rejected"
+	ClaimStateSettled  ClaimState = "settled"
+)
+
+// ContentType is an enum type.
+type ContentType string
+
+const (
+	ContentTypePost               ContentType = "post"
+	ContentTypePostComment        ContentType = "post_comment"
+	ContentTypeProfilePost        ContentType = "profile_post"
+	ContentTypeProfilePostComment ContentType = "profile_post_comment"
+)
+
+// ConversationsOrder is an enum type.
+type ConversationsOrder string
+
+const (
+	ConversationsOrderNatural        ConversationsOrder = "natural"
+	ConversationsOrderNaturalReverse ConversationsOrder = "natural_reverse"
+)
+
+// Currency is an enum type.
+type Currency string
+
+const (
+	CurrencyRub Currency = "rub"
+	CurrencyUah Currency = "uah"
+	CurrencyKzt Currency = "kzt"
+	CurrencyByn Currency = "byn"
+	CurrencyUsd Currency = "usd"
+	CurrencyEur Currency = "eur"
+	CurrencyGbp Currency = "gbp"
+	CurrencyCny Currency = "cny"
+	CurrencyTry Currency = "try"
+)
+
+// DeleteType is an enum type.
+type DeleteType string
+
+const (
+	DeleteTypeDelete       DeleteType = "delete"
+	DeleteTypeDeleteIgnore DeleteType = "delete_ignore"
+)
+
+// Direction is an enum type.
+type Direction string
+
+const (
+	DirectionAsc  Direction = "asc"
+	DirectionDesc Direction = "desc"
+)
+
+// Duration is an enum type.
+type Duration string
+
+const (
+	DurationDay   Duration = "day"
+	DurationWeek  Duration = "week"
+	DurationMonth Duration = "month"
+)
+
+// Folder is an enum type.
+type Folder string
+
+const (
+	FolderAll                Folder = "all"
+	FolderUnread             Folder = "unread"
+	FolderGroups             Folder = "groups"
+	FolderMarket             Folder = "market"
+	FolderMarketReplacements Folder = "market_replacements"
+	FolderStaff              Folder = "staff"
+	FolderGiveaways          Folder = "giveaways"
+	FolderP2p                Folder = "p2p"
+)
+
+// Gender is an enum type.
+type Gender string
+
+const (
+	GenderEmpty  Gender = ""
+	GenderMale   Gender = "male"
+	GenderFemale Gender = "female"
+)
+
+// LanguageID is an enum type.
+type LanguageID int64
+
+const (
+	LanguageIDV1 LanguageID = 1
+	LanguageIDV2 LanguageID = 2
+)
+
+// LengthOption is an enum type.
+type LengthOption string
+
+const (
+	LengthOptionMinutes LengthOption = "minutes"
+	LengthOptionHours   LengthOption = "hours"
+	LengthOptionDays    LengthOption = "days"
+)
+
+// LikeType is an enum type.
+type LikeType string
+
+const (
+	LikeTypeLike  LikeType = "like"
+	LikeTypeLike2 LikeType = "like2"
+)
+
+// NotificationsType is an enum type.
+type NotificationsType string
+
+const (
+	NotificationsTypeMarket   NotificationsType = "market"
+	NotificationsTypeNomarket NotificationsType = "nomarket"
+)
+
+// PayClaim is an enum type.
+type PayClaim string
+
+const (
+	PayClaimNow   PayClaim = "now"
+	PayClaimLater PayClaim = "later"
+)
+
+// Period is an enum type.
+type Period string
+
+const (
+	PeriodDay   Period = "day"
+	PeriodWeek  Period = "week"
+	PeriodMonth Period = "month"
+	PeriodYear  Period = "year"
+)
+
+// PostsOrder is an enum type.
+type PostsOrder string
+
+const (
+	PostsOrderNatural          PostsOrder = "natural"
+	PostsOrderNaturalReverse   PostsOrder = "natural_reverse"
+	PostsOrderPostLikes        PostsOrder = "post_likes"
+	PostsOrderPostLikesReverse PostsOrder = "post_likes_reverse"
+)
+
+// PrizeDataUpgrade is an enum type.
+type PrizeDataUpgrade int64
+
+const (
+	PrizeDataUpgradeV1  PrizeDataUpgrade = 1
+	PrizeDataUpgradeV6  PrizeDataUpgrade = 6
+	PrizeDataUpgradeV12 PrizeDataUpgrade = 12
+	PrizeDataUpgradeV14 PrizeDataUpgrade = 14
+	PrizeDataUpgradeV17 PrizeDataUpgrade = 17
+	PrizeDataUpgradeV19 PrizeDataUpgrade = 19
+	PrizeDataUpgradeV20 PrizeDataUpgrade = 20
+	PrizeDataUpgradeV21 PrizeDataUpgrade = 21
+	PrizeDataUpgradeV22 PrizeDataUpgrade = 22
+)
+
+// PrizeType is an enum type.
+type PrizeType string
+
+const (
+	PrizeTypeMoney    PrizeType = "money"
+	PrizeTypeUpgrades PrizeType = "upgrades"
+)
+
+// ProfilePostsFieldsInclude is an enum type.
+type ProfilePostsFieldsInclude string
+
+const (
+	ProfilePostsFieldsIncludeAll            ProfilePostsFieldsInclude = "*"
+	ProfilePostsFieldsIncludeLatestComments ProfilePostsFieldsInclude = "latest_comments"
+)
+
+// ReplyGroup is an enum type.
+type ReplyGroup int64
+
+const (
+	ReplyGroupV0   ReplyGroup = 0
+	ReplyGroupV2   ReplyGroup = 2
+	ReplyGroupV21  ReplyGroup = 21
+	ReplyGroupV22  ReplyGroup = 22
+	ReplyGroupV23  ReplyGroup = 23
+	ReplyGroupV60  ReplyGroup = 60
+	ReplyGroupV351 ReplyGroup = 351
+)
+
+// RoomID is an enum type.
+type RoomID int64
+
+const (
+	RoomIDV1  RoomID = 1
+	RoomIDV2  RoomID = 2
+	RoomIDV3  RoomID = 3
+	RoomIDV4  RoomID = 4
+	RoomIDV13 RoomID = 13
+)
+
+// State is an enum type.
+type State string
+
+const (
+	StateActive State = "active"
+	StateClosed State = "closed"
+)
+
+// ThreadsFieldsInclude is an enum type.
+type ThreadsFieldsInclude string
+
+const (
+	ThreadsFieldsIncludeAll         ThreadsFieldsInclude = "*"
+	ThreadsFieldsIncludeLatestPosts ThreadsFieldsInclude = "latest_posts"
+)
+
+// ThreadsOrder is an enum type.
+type ThreadsOrder string
+
+const (
+	ThreadsOrderPostDate       ThreadsOrder = "post_date"
+	ThreadsOrderLastPostDate   ThreadsOrder = "last_post_date"
+	ThreadsOrderReplyCount     ThreadsOrder = "reply_count"
+	ThreadsOrderReplyCountAsc  ThreadsOrder = "reply_count_asc"
+	ThreadsOrderFirstPostLikes ThreadsOrder = "first_post_likes"
+	ThreadsOrderVoteCount      ThreadsOrder = "vote_count"
+)
+
+// Timezone is an enum type.
+type Timezone string
+
+const (
+	TimezonePacificMidway               Timezone = "Pacific/Midway"
+	TimezonePacificHonolulu             Timezone = "Pacific/Honolulu"
+	TimezonePacificMarquesas            Timezone = "Pacific/Marquesas"
+	TimezoneAmericaAnchorage            Timezone = "America/Anchorage"
+	TimezoneAmericaLosAngeles           Timezone = "America/Los_Angeles"
+	TimezoneAmericaSantaIsabel          Timezone = "America/Santa_Isabel"
+	TimezoneAmericaTijuana              Timezone = "America/Tijuana"
+	TimezoneAmericaDenver               Timezone = "America/Denver"
+	TimezoneAmericaChihuahua            Timezone = "America/Chihuahua"
+	TimezoneAmericaPhoenix              Timezone = "America/Phoenix"
+	TimezoneAmericaChicago              Timezone = "America/Chicago"
+	TimezoneAmericaBelize               Timezone = "America/Belize"
+	TimezoneAmericaMexicoCity           Timezone = "America/Mexico_City"
+	TimezonePacificEaster               Timezone = "Pacific/Easter"
+	TimezoneAmericaNewYork              Timezone = "America/New_York"
+	TimezoneAmericaHavana               Timezone = "America/Havana"
+	TimezoneAmericaBogota               Timezone = "America/Bogota"
+	TimezoneAmericaCaracas              Timezone = "America/Caracas"
+	TimezoneAmericaHalifax              Timezone = "America/Halifax"
+	TimezoneAmericaGooseBay             Timezone = "America/Goose_Bay"
+	TimezoneAmericaAsuncion             Timezone = "America/Asuncion"
+	TimezoneAmericaSantiago             Timezone = "America/Santiago"
+	TimezoneAmericaCuiaba               Timezone = "America/Cuiaba"
+	TimezoneAmericaLaPaz                Timezone = "America/La_Paz"
+	TimezoneAmericaStJohns              Timezone = "America/St_Johns"
+	TimezoneAmericaArgentinaBuenosAires Timezone = "America/Argentina/Buenos_Aires"
+	TimezoneAmericaArgentinaSanLuis     Timezone = "America/Argentina/San_Luis"
+	TimezoneAmericaArgentinaMendoza     Timezone = "America/Argentina/Mendoza"
+	TimezoneAtlanticStanley             Timezone = "Atlantic/Stanley"
+	TimezoneAmericaGodthab              Timezone = "America/Godthab"
+	TimezoneAmericaMontevideo           Timezone = "America/Montevideo"
+	TimezoneAmericaSaoPaulo             Timezone = "America/Sao_Paulo"
+	TimezoneAmericaMiquelon             Timezone = "America/Miquelon"
+	TimezoneAmericaNoronha              Timezone = "America/Noronha"
+	TimezoneAtlanticCapeVerde           Timezone = "Atlantic/Cape_Verde"
+	TimezoneAtlanticAzores              Timezone = "Atlantic/Azores"
+	TimezoneEuropeLondon                Timezone = "Europe/London"
+	TimezoneAfricaCasablanca            Timezone = "Africa/Casablanca"
+	TimezoneAtlanticReykjavik           Timezone = "Atlantic/Reykjavik"
+	TimezoneEuropeAmsterdam             Timezone = "Europe/Amsterdam"
+	TimezoneAfricaAlgiers               Timezone = "Africa/Algiers"
+	TimezoneAfricaWindhoek              Timezone = "Africa/Windhoek"
+	TimezoneAfricaTunis                 Timezone = "Africa/Tunis"
+	TimezoneEuropeAthens                Timezone = "Europe/Athens"
+	TimezoneAfricaJohannesburg          Timezone = "Africa/Johannesburg"
+	TimezoneEuropeKaliningrad           Timezone = "Europe/Kaliningrad"
+	TimezoneAsiaAmman                   Timezone = "Asia/Amman"
+	TimezoneAsiaBeirut                  Timezone = "Asia/Beirut"
+	TimezoneAfricaCairo                 Timezone = "Africa/Cairo"
+	TimezoneAsiaJerusalem               Timezone = "Asia/Jerusalem"
+	TimezoneAsiaGaza                    Timezone = "Asia/Gaza"
+	TimezoneAsiaDamascus                Timezone = "Asia/Damascus"
+	TimezoneEuropeMoscow                Timezone = "Europe/Moscow"
+	TimezoneEuropeMinsk                 Timezone = "Europe/Minsk"
+	TimezoneAfricaNairobi               Timezone = "Africa/Nairobi"
+	TimezoneAsiaTehran                  Timezone = "Asia/Tehran"
+	TimezoneAsiaDubai                   Timezone = "Asia/Dubai"
+	TimezoneAsiaYerevan                 Timezone = "Asia/Yerevan"
+	TimezoneAsiaBaku                    Timezone = "Asia/Baku"
+	TimezoneIndianMauritius             Timezone = "Indian/Mauritius"
+	TimezoneAsiaKabul                   Timezone = "Asia/Kabul"
+	TimezoneAsiaYekaterinburg           Timezone = "Asia/Yekaterinburg"
+	TimezoneAsiaTashkent                Timezone = "Asia/Tashkent"
+	TimezoneAsiaKolkata                 Timezone = "Asia/Kolkata"
+	TimezoneAsiaKathmandu               Timezone = "Asia/Kathmandu"
+	TimezoneAsiaNovosibirsk             Timezone = "Asia/Novosibirsk"
+	TimezoneAsiaDhaka                   Timezone = "Asia/Dhaka"
+	TimezoneAsiaAlmaty                  Timezone = "Asia/Almaty"
+	TimezoneAsiaRangoon                 Timezone = "Asia/Rangoon"
+	TimezoneAsiaKrasnoyarsk             Timezone = "Asia/Krasnoyarsk"
+	TimezoneAsiaBangkok                 Timezone = "Asia/Bangkok"
+	TimezoneAsiaIrkutsk                 Timezone = "Asia/Irkutsk"
+	TimezoneAsiaHongKong                Timezone = "Asia/Hong_Kong"
+	TimezoneAsiaSingapore               Timezone = "Asia/Singapore"
+	TimezoneAustraliaPerth              Timezone = "Australia/Perth"
+	TimezoneAsiaYakutsk                 Timezone = "Asia/Yakutsk"
+	TimezoneAsiaTokyo                   Timezone = "Asia/Tokyo"
+	TimezoneAsiaSeoul                   Timezone = "Asia/Seoul"
+	TimezoneAustraliaAdelaide           Timezone = "Australia/Adelaide"
+	TimezoneAustraliaDarwin             Timezone = "Australia/Darwin"
+	TimezoneAsiaVladivostok             Timezone = "Asia/Vladivostok"
+	TimezoneAsiaMagadan                 Timezone = "Asia/Magadan"
+	TimezoneAustraliaBrisbane           Timezone = "Australia/Brisbane"
+	TimezoneAustraliaSydney             Timezone = "Australia/Sydney"
+	TimezonePacificNoumea               Timezone = "Pacific/Noumea"
+	TimezonePacificNorfolk              Timezone = "Pacific/Norfolk"
+	TimezoneAsiaAnadyr                  Timezone = "Asia/Anadyr"
+	TimezonePacificAuckland             Timezone = "Pacific/Auckland"
+	TimezonePacificFiji                 Timezone = "Pacific/Fiji"
+	TimezonePacificChatham              Timezone = "Pacific/Chatham"
+	TimezonePacificTongatapu            Timezone = "Pacific/Tongatapu"
+	TimezonePacificApia                 Timezone = "Pacific/Apia"
+	TimezonePacificKiritimati           Timezone = "Pacific/Kiritimati"
+)
+
+// TransferType is an enum type.
+type TransferType string
+
+const (
+	TransferTypeGuarantor TransferType = "guarantor"
+	TransferTypeSafe      TransferType = "safe"
+	TransferTypeNotsafe   TransferType = "notsafe"
+)
+
+// UsersFieldsInclude is an enum type.
+type UsersFieldsInclude string
+
+const (
+	UsersFieldsIncludeAll    UsersFieldsInclude = "*"
+	UsersFieldsIncludeAlerts UsersFieldsInclude = "alerts"
+)
+
+// UsersOrder is an enum type.
+type UsersOrder string
+
+const (
+	UsersOrderNatural           UsersOrder = "natural"
+	UsersOrderFollowDate        UsersOrder = "follow_date"
+	UsersOrderFollowDateReverse UsersOrder = "follow_date_reverse"
+)
+
+// UsersType is an enum type.
+type UsersType string
+
+const (
+	UsersTypeGotten UsersType = "gotten"
+	UsersTypeGiven  UsersType = "given"
+)
+
 // AssetsCSSResponseSystemInfo represents a component schema.
 type AssetsCSSResponseSystemInfo struct {
 	Time      int64 `json:"time"`
@@ -810,6 +1231,28 @@ type ConversationsUpdateResponseConversationRecipient struct {
 type ConversationsUpdateResponseSystemInfo struct {
 	Time      int64 `json:"time"`
 	VisitorID int64 `json:"visitor_id"`
+}
+
+// FormsCreateComplaintFields represents a component schema.
+type FormsCreateComplaintFields struct {
+	N22 *string `json:"22,omitempty"`
+	N23 *string `json:"23,omitempty"`
+	N24 string  `json:"24"`
+	N27 *string `json:"27,omitempty"`
+	N28 *string `json:"28,omitempty"`
+	N29 *string `json:"29,omitempty"`
+	N30 *string `json:"30,omitempty"`
+}
+
+// FormsCreateP2PtradeFields represents a component schema.
+type FormsCreateP2PtradeFields struct {
+	N11 float64 `json:"11"`
+	N14 *string `json:"14,omitempty"`
+	N15 *string `json:"15,omitempty"`
+	N16 *string `json:"16,omitempty"`
+	N17 *string `json:"17,omitempty"`
+	N18 *string `json:"18,omitempty"`
+	N8  float64 `json:"8"`
 }
 
 // FormsCreateResponseContent represents a component schema.
@@ -4627,6 +5070,24 @@ type UsersContentsResponseUserUserFollowing struct {
 	Users []any `json:"users"`
 }
 
+// UsersEditBodyFields represents a component schema.
+type UsersEditBodyFields struct {
+	N4                  *string `json:"_4,omitempty"`
+	Discord             *string `json:"discord,omitempty"`
+	Github              *string `json:"github,omitempty"`
+	Homepage            *string `json:"homepage,omitempty"`
+	Jabber              *string `json:"jabber,omitempty"`
+	Location            *string `json:"location,omitempty"`
+	LztInnovation20Link *string `json:"lztInnovation20Link,omitempty"`
+	LztInnovation30Link *string `json:"lztInnovation30Link,omitempty"`
+	LztInnovationLink   *string `json:"lztInnovationLink,omitempty"`
+	Matrix              *string `json:"matrix,omitempty"`
+	Occupation          *string `json:"occupation,omitempty"`
+	Steam               *string `json:"steam,omitempty"`
+	Telegram            *string `json:"telegram,omitempty"`
+	Vk                  *string `json:"vk,omitempty"`
+}
+
 // UsersEditResponseSystemInfo represents a component schema.
 type UsersEditResponseSystemInfo struct {
 	Time      int64 `json:"time"`
@@ -5161,9 +5622,9 @@ type CategoriesGetResponse struct {
 
 // CategoriesListParams holds query parameters for Categories.List.
 type CategoriesListParams struct {
-	ParentCategoryID *int64  `query:"parent_category_id"`
-	ParentForumID    *int64  `query:"parent_forum_id"`
-	Order            *string `query:"order"`
+	ParentCategoryID *int64           `query:"parent_category_id"`
+	ParentForumID    *int64           `query:"parent_forum_id"`
+	Order            *CategoriesOrder `query:"order"`
 }
 
 // CategoriesListResponse is the response for the endpoint.
@@ -5217,7 +5678,7 @@ type ChatboxGetIgnoreResponse struct {
 
 // ChatboxGetLeaderboardParams holds query parameters for Chatbox.GetLeaderboard.
 type ChatboxGetLeaderboardParams struct {
-	Duration *string `query:"duration"`
+	Duration *Duration `query:"duration"`
 }
 
 // ChatboxGetLeaderboardResponse is the response for the endpoint.
@@ -5228,7 +5689,7 @@ type ChatboxGetLeaderboardResponse struct {
 
 // ChatboxGetMessagesParams holds query parameters for Chatbox.GetMessages.
 type ChatboxGetMessagesParams struct {
-	RoomID          int64  `query:"room_id"`
+	RoomID          RoomID `query:"room_id"`
 	BeforeMessageID *int64 `query:"before_message_id"`
 }
 
@@ -5240,7 +5701,7 @@ type ChatboxGetMessagesResponse struct {
 
 // ChatboxIndexParams holds query parameters for Chatbox.Index.
 type ChatboxIndexParams struct {
-	RoomID *int64 `query:"room_id"`
+	RoomID *RoomID `query:"room_id"`
 }
 
 // ChatboxIndexResponse is the response for the endpoint.
@@ -5256,7 +5717,7 @@ type ChatboxIndexResponse struct {
 
 // ChatboxOnlineParams holds query parameters for Chatbox.Online.
 type ChatboxOnlineParams struct {
-	RoomID int64 `query:"room_id"`
+	RoomID RoomID `query:"room_id"`
 }
 
 // ChatboxOnlineResponse is the response for the endpoint.
@@ -5281,7 +5742,7 @@ type ChatboxPostIgnoreResponse struct {
 type ChatboxPostMessageBody struct {
 	Message        string `json:"message"`
 	ReplyMessageID *int64 `json:"reply_message_id,omitempty"`
-	RoomID         int64  `json:"room_id"`
+	RoomID         RoomID `json:"room_id"`
 }
 
 // ChatboxPostMessageResponse is the response for the endpoint.
@@ -5330,15 +5791,16 @@ type ConversationsAlertsEnableResponse struct {
 
 // ConversationsCreateBody holds the request body for Conversations.Create.
 type ConversationsCreateBody struct {
-	AllowDeleteOwnMessages *bool    `json:"allow_delete_own_messages,omitempty"`
-	AllowEditMessages      *bool    `json:"allow_edit_messages,omitempty"`
-	AllowStickyMessages    *bool    `json:"allow_sticky_messages,omitempty"`
-	IsGroup                *bool    `json:"is_group,omitempty"`
-	MessageBody            *string  `json:"message_body,omitempty"`
-	OpenInvite             *bool    `json:"open_invite,omitempty"`
-	RecipientID            *int64   `json:"recipient_id,omitempty"`
-	Recipients             []string `json:"recipients,omitempty"`
-	Title                  *string  `json:"title,omitempty"`
+	AllowDeleteOwnMessages *bool `json:"allow_delete_own_messages,omitempty"`
+	AllowEditMessages      *bool `json:"allow_edit_messages,omitempty"`
+	AllowStickyMessages    *bool `json:"allow_sticky_messages,omitempty"`
+	// IsGroup - Default: false
+	IsGroup     *bool    `json:"is_group,omitempty" default:"false"`
+	MessageBody *string  `json:"message_body,omitempty"`
+	OpenInvite  *bool    `json:"open_invite,omitempty"`
+	RecipientID *int64   `json:"recipient_id,omitempty"`
+	Recipients  []string `json:"recipients,omitempty"`
+	Title       *string  `json:"title,omitempty"`
 }
 
 // ConversationsCreateResponse is the response for the endpoint.
@@ -5349,8 +5811,8 @@ type ConversationsCreateResponse struct {
 
 // ConversationsDeleteBody holds the request body for Conversations.Delete.
 type ConversationsDeleteBody struct {
-	ConversationID int64  `json:"conversation_id"`
-	DeleteType     string `json:"delete_type"`
+	ConversationID int64      `json:"conversation_id"`
+	DeleteType     DeleteType `json:"delete_type"`
 }
 
 // ConversationsDeleteResponse is the response for the endpoint.
@@ -5392,7 +5854,7 @@ type ConversationsKickResponse struct {
 
 // ConversationsListParams holds query parameters for Conversations.List.
 type ConversationsListParams struct {
-	Folder *string `query:"folder"`
+	Folder *Folder `query:"folder"`
 	Page   *int64  `query:"page"`
 	Limit  *int64  `query:"limit"`
 }
@@ -5444,11 +5906,11 @@ type ConversationsMessagesGetResponse struct {
 
 // ConversationsMessagesListParams holds query parameters for Conversations.MessagesList.
 type ConversationsMessagesListParams struct {
-	Page   *int64  `query:"page"`
-	Limit  *int64  `query:"limit"`
-	Order  *string `query:"order"`
-	Before *int64  `query:"before"`
-	After  *int64  `query:"after"`
+	Page   *int64              `query:"page"`
+	Limit  *int64              `query:"limit"`
+	Order  *ConversationsOrder `query:"order"`
+	Before *int64              `query:"before"`
+	After  *int64              `query:"after"`
 }
 
 // ConversationsMessagesListResponse is the response for the endpoint.
@@ -5555,11 +6017,28 @@ type ConversationsUpdateResponse struct {
 	SystemInfo   ConversationsUpdateResponseSystemInfo   `json:"system_info"`
 }
 
-// FormsCreateBody holds the request body for Forms.Create.
-type FormsCreateBody struct {
-	Fields any   `json:"fields"`
+// FormsCreateBody is a discriminated union for the request body.
+type FormsCreateBody interface {
+	formsCreateBody()
+}
+
+// FormsCreateP2Ptrade is a variant of FormsCreateBody.
+type FormsCreateP2Ptrade struct {
+	Fields FormsCreateP2PtradeFields `json:"fields"`
+	// FormID - Default: 1
 	FormID int64 `json:"form_id"`
 }
+
+func (FormsCreateP2Ptrade) formsCreateBody() {}
+
+// FormsCreateComplaint is a variant of FormsCreateBody.
+type FormsCreateComplaint struct {
+	Fields FormsCreateComplaintFields `json:"fields"`
+	// FormID - Default: 3
+	FormID int64 `json:"form_id"`
+}
+
+func (FormsCreateComplaint) formsCreateBody() {}
 
 // FormsCreateResponse is the response for the endpoint.
 type FormsCreateResponse struct {
@@ -5652,9 +6131,9 @@ type ForumsGroupedResponse struct {
 
 // ForumsListParams holds query parameters for Forums.List.
 type ForumsListParams struct {
-	ParentCategoryID *int64  `query:"parent_category_id"`
-	ParentForumID    *int64  `query:"parent_forum_id"`
-	Order            *string `query:"order"`
+	ParentCategoryID *int64           `query:"parent_category_id"`
+	ParentForumID    *int64           `query:"parent_forum_id"`
+	Order            *CategoriesOrder `query:"order"`
 }
 
 // ForumsListResponse is the response for the endpoint.
@@ -5706,9 +6185,9 @@ type NotificationsGetResponse struct {
 
 // NotificationsListParams holds query parameters for Notifications.List.
 type NotificationsListParams struct {
-	Type  *string `query:"type"`
-	Page  *int64  `query:"page"`
-	Limit *int64  `query:"limit"`
+	Type  *NotificationsType `query:"type"`
+	Page  *int64             `query:"page"`
+	Limit *int64             `query:"limit"`
 }
 
 // NotificationsListResponse is the response for the endpoint.
@@ -5731,18 +6210,54 @@ type NotificationsReadResponse struct {
 	SystemInfo *NotificationsReadResponseSystemInfo `json:"system_info,omitempty"`
 }
 
-// OAuthTokenBody holds the request body for OAuth.Token.
-type OAuthTokenBody struct {
+// OAuthTokenBody is a discriminated union for the request body.
+type OAuthTokenBody interface {
+	oAuthTokenBody()
+}
+
+// OAuthTokenClientCredentials is a variant of OAuthTokenBody.
+type OAuthTokenClientCredentials struct {
 	ClientID     string   `form:"client_id"`
 	ClientSecret string   `form:"client_secret"`
-	Code         *string  `form:"code"`
 	GrantType    string   `form:"grant_type"`
-	Password     *string  `form:"password"`
-	RedirectURI  *string  `form:"redirect_uri"`
-	RefreshToken *string  `form:"refresh_token"`
 	Scope        []string `form:"scope"`
-	Username     *string  `form:"username"`
 }
+
+func (OAuthTokenClientCredentials) oAuthTokenBody() {}
+
+// OAuthTokenAuthorizationCode is a variant of OAuthTokenBody.
+type OAuthTokenAuthorizationCode struct {
+	ClientID     string   `form:"client_id"`
+	ClientSecret string   `form:"client_secret"`
+	Code         string   `form:"code"`
+	GrantType    string   `form:"grant_type"`
+	RedirectURI  string   `form:"redirect_uri"`
+	Scope        []string `form:"scope"`
+}
+
+func (OAuthTokenAuthorizationCode) oAuthTokenBody() {}
+
+// OAuthTokenRefreshToken is a variant of OAuthTokenBody.
+type OAuthTokenRefreshToken struct {
+	ClientID     string `form:"client_id"`
+	ClientSecret string `form:"client_secret"`
+	GrantType    string `form:"grant_type"`
+	RefreshToken string `form:"refresh_token"`
+}
+
+func (OAuthTokenRefreshToken) oAuthTokenBody() {}
+
+// OAuthTokenPassword is a variant of OAuthTokenBody.
+type OAuthTokenPassword struct {
+	ClientID     string   `form:"client_id"`
+	ClientSecret string   `form:"client_secret"`
+	GrantType    string   `form:"grant_type"`
+	Password     string   `form:"password"`
+	Scope        []string `form:"scope"`
+	Username     string   `form:"username"`
+}
+
+func (OAuthTokenPassword) oAuthTokenBody() {}
 
 // OAuthTokenResponse is the response for the endpoint.
 type OAuthTokenResponse struct {
@@ -5761,8 +6276,8 @@ type PagesGetResponse struct {
 
 // PagesListParams holds query parameters for Pages.List.
 type PagesListParams struct {
-	ParentPageID *int64  `query:"parent_page_id"`
-	Order        *string `query:"order"`
+	ParentPageID *int64           `query:"parent_page_id"`
+	Order        *CategoriesOrder `query:"order"`
 }
 
 // PagesListResponse is the response for the endpoint.
@@ -5898,11 +6413,11 @@ type PostsLikesResponse struct {
 
 // PostsListParams holds query parameters for Posts.List.
 type PostsListParams struct {
-	ThreadID     *int64  `query:"thread_id"`
-	PageOfPostID *int64  `query:"page_of_post_id"`
-	Page         *int64  `query:"page"`
-	Limit        *int64  `query:"limit"`
-	Order        *string `query:"order"`
+	ThreadID     *int64      `query:"thread_id"`
+	PageOfPostID *int64      `query:"page_of_post_id"`
+	Page         *int64      `query:"page"`
+	Limit        *int64      `query:"limit"`
+	Order        *PostsOrder `query:"order"`
 }
 
 // PostsListResponse is the response for the endpoint.
@@ -6065,10 +6580,10 @@ type ProfilePostsLikesResponse struct {
 
 // ProfilePostsListParams holds query parameters for ProfilePosts.List.
 type ProfilePostsListParams struct {
-	PostsUserID   *int64   `query:"posts_user_id"`
-	Page          *int64   `query:"page"`
-	Limit         *int64   `query:"limit"`
-	FieldsInclude []string `query:"fields_include"`
+	PostsUserID   *int64                      `query:"posts_user_id"`
+	Page          *int64                      `query:"page"`
+	Limit         *int64                      `query:"limit"`
+	FieldsInclude []ProfilePostsFieldsInclude `query:"fields_include"`
 }
 
 // ProfilePostsListResponse is the response for the endpoint.
@@ -6289,28 +6804,29 @@ type ThreadsBumpResponse struct {
 
 // ThreadsClaimBody holds the request body for Threads.Claim.
 type ThreadsClaimBody struct {
-	AllowAskHiddenContent *bool    `json:"allow_ask_hidden_content,omitempty"`
-	AsAmount              float64  `json:"as_amount"`
-	AsData                *string  `json:"as_data,omitempty"`
-	AsFundsReceipt        *string  `json:"as_funds_receipt,omitempty"`
-	AsIsMarketDeal        bool     `json:"as_is_market_deal"`
-	AsMarketItemID        *int64   `json:"as_market_item_id,omitempty"`
-	AsResponder           string   `json:"as_responder"`
-	AsTgLoginScreenshot   *string  `json:"as_tg_login_screenshot,omitempty"`
-	CommentIgnoreGroup    *bool    `json:"comment_ignore_group,omitempty"`
-	Currency              *string  `json:"currency,omitempty"`
-	DontAlertFollowers    *bool    `json:"dont_alert_followers,omitempty"`
-	HideContacts          *bool    `json:"hide_contacts,omitempty"`
-	PayClaim              *string  `json:"pay_claim,omitempty"`
-	PostBody              string   `json:"post_body"`
-	ReplyGroup            *int64   `json:"reply_group,omitempty"`
-	ScheduleDate          *string  `json:"schedule_date,omitempty"`
-	ScheduleTime          *string  `json:"schedule_time,omitempty"`
-	Tags                  []string `json:"tags,omitempty"`
-	TransferType          string   `json:"transfer_type"`
-	WatchThread           *bool    `json:"watch_thread,omitempty"`
-	WatchThreadEmail      *bool    `json:"watch_thread_email,omitempty"`
-	WatchThreadState      *bool    `json:"watch_thread_state,omitempty"`
+	AllowAskHiddenContent *bool     `json:"allow_ask_hidden_content,omitempty"`
+	AsAmount              float64   `json:"as_amount"`
+	AsData                *string   `json:"as_data,omitempty"`
+	AsFundsReceipt        *string   `json:"as_funds_receipt,omitempty"`
+	AsIsMarketDeal        bool      `json:"as_is_market_deal"`
+	AsMarketItemID        *int64    `json:"as_market_item_id,omitempty"`
+	AsResponder           string    `json:"as_responder"`
+	AsTgLoginScreenshot   *string   `json:"as_tg_login_screenshot,omitempty"`
+	CommentIgnoreGroup    *bool     `json:"comment_ignore_group,omitempty"`
+	Currency              *Currency `json:"currency,omitempty"`
+	DontAlertFollowers    *bool     `json:"dont_alert_followers,omitempty"`
+	HideContacts          *bool     `json:"hide_contacts,omitempty"`
+	PayClaim              *PayClaim `json:"pay_claim,omitempty"`
+	PostBody              string    `json:"post_body"`
+	// ReplyGroup - Default: 2
+	ReplyGroup       *ReplyGroup  `json:"reply_group,omitempty" default:"2"`
+	ScheduleDate     *string      `json:"schedule_date,omitempty"`
+	ScheduleTime     *string      `json:"schedule_time,omitempty"`
+	Tags             []string     `json:"tags,omitempty"`
+	TransferType     TransferType `json:"transfer_type"`
+	WatchThread      *bool        `json:"watch_thread,omitempty"`
+	WatchThreadEmail *bool        `json:"watch_thread_email,omitempty"`
+	WatchThreadState *bool        `json:"watch_thread_state,omitempty"`
 }
 
 // ThreadsClaimResponse is the response for the endpoint.
@@ -6321,22 +6837,23 @@ type ThreadsClaimResponse struct {
 
 // ThreadsCreateBody holds the request body for Threads.Create.
 type ThreadsCreateBody struct {
-	AllowAskHiddenContent *bool    `json:"allow_ask_hidden_content,omitempty"`
-	CommentIgnoreGroup    *bool    `json:"comment_ignore_group,omitempty"`
-	DontAlertFollowers    *bool    `json:"dont_alert_followers,omitempty"`
-	ForumID               int64    `json:"forum_id"`
-	HideContacts          *bool    `json:"hide_contacts,omitempty"`
-	PostBody              string   `json:"post_body"`
-	PrefixID              []int64  `json:"prefix_id,omitempty"`
-	ReplyGroup            *int64   `json:"reply_group,omitempty"`
-	ScheduleDate          *string  `json:"schedule_date,omitempty"`
-	ScheduleTime          *string  `json:"schedule_time,omitempty"`
-	Tags                  []string `json:"tags,omitempty"`
-	Title                 *string  `json:"title,omitempty"`
-	TitleEn               *string  `json:"title_en,omitempty"`
-	WatchThread           *bool    `json:"watch_thread,omitempty"`
-	WatchThreadEmail      *bool    `json:"watch_thread_email,omitempty"`
-	WatchThreadState      *bool    `json:"watch_thread_state,omitempty"`
+	AllowAskHiddenContent *bool   `json:"allow_ask_hidden_content,omitempty"`
+	CommentIgnoreGroup    *bool   `json:"comment_ignore_group,omitempty"`
+	DontAlertFollowers    *bool   `json:"dont_alert_followers,omitempty"`
+	ForumID               int64   `json:"forum_id"`
+	HideContacts          *bool   `json:"hide_contacts,omitempty"`
+	PostBody              string  `json:"post_body"`
+	PrefixID              []int64 `json:"prefix_id,omitempty"`
+	// ReplyGroup - Default: 2
+	ReplyGroup       *ReplyGroup `json:"reply_group,omitempty" default:"2"`
+	ScheduleDate     *string     `json:"schedule_date,omitempty"`
+	ScheduleTime     *string     `json:"schedule_time,omitempty"`
+	Tags             []string    `json:"tags,omitempty"`
+	Title            *string     `json:"title,omitempty"`
+	TitleEn          *string     `json:"title_en,omitempty"`
+	WatchThread      *bool       `json:"watch_thread,omitempty"`
+	WatchThreadEmail *bool       `json:"watch_thread_email,omitempty"`
+	WatchThreadState *bool       `json:"watch_thread_state,omitempty"`
 }
 
 // ThreadsCreateResponse is the response for the endpoint.
@@ -6347,32 +6864,34 @@ type ThreadsCreateResponse struct {
 
 // ThreadsCreateContestBody holds the request body for Threads.CreateContest.
 type ThreadsCreateContestBody struct {
-	AllowAskHiddenContent *bool     `json:"allow_ask_hidden_content,omitempty"`
-	CommentIgnoreGroup    *bool     `json:"comment_ignore_group,omitempty"`
-	ContestType           string    `json:"contest_type"`
-	CountWinners          *int64    `json:"count_winners,omitempty"`
-	DontAlertFollowers    *bool     `json:"dont_alert_followers,omitempty"`
-	HideContacts          *bool     `json:"hide_contacts,omitempty"`
-	IsMoneyPlaces         *bool     `json:"is_money_places,omitempty"`
-	LengthOption          *string   `json:"length_option,omitempty"`
-	LengthValue           *int64    `json:"length_value,omitempty"`
-	PostBody              string    `json:"post_body"`
-	PrizeDataMoney        *float64  `json:"prize_data_money,omitempty"`
-	PrizeDataPlaces       []float64 `json:"prize_data_places,omitempty"`
-	PrizeDataUpgrade      *int64    `json:"prize_data_upgrade,omitempty"`
-	PrizeType             string    `json:"prize_type"`
-	ReplyGroup            *int64    `json:"reply_group,omitempty"`
-	RequireLikeCount      int64     `json:"require_like_count"`
-	RequireTotalLikeCount int64     `json:"require_total_like_count"`
-	ScheduleDate          *string   `json:"schedule_date,omitempty"`
-	ScheduleTime          *string   `json:"schedule_time,omitempty"`
-	SecretAnswer          *string   `json:"secret_answer,omitempty"`
-	Tags                  []string  `json:"tags,omitempty"`
-	Title                 *string   `json:"title,omitempty"`
-	TitleEn               *string   `json:"title_en,omitempty"`
-	WatchThread           *bool     `json:"watch_thread,omitempty"`
-	WatchThreadEmail      *bool     `json:"watch_thread_email,omitempty"`
-	WatchThreadState      *bool     `json:"watch_thread_state,omitempty"`
+	AllowAskHiddenContent *bool `json:"allow_ask_hidden_content,omitempty"`
+	CommentIgnoreGroup    *bool `json:"comment_ignore_group,omitempty"`
+	// ContestType - Default: "by_finish_date"
+	ContestType        string            `json:"contest_type"`
+	CountWinners       *int64            `json:"count_winners,omitempty"`
+	DontAlertFollowers *bool             `json:"dont_alert_followers,omitempty"`
+	HideContacts       *bool             `json:"hide_contacts,omitempty"`
+	IsMoneyPlaces      *bool             `json:"is_money_places,omitempty"`
+	LengthOption       *LengthOption     `json:"length_option,omitempty"`
+	LengthValue        *int64            `json:"length_value,omitempty"`
+	PostBody           string            `json:"post_body"`
+	PrizeDataMoney     *float64          `json:"prize_data_money,omitempty"`
+	PrizeDataPlaces    []float64         `json:"prize_data_places,omitempty"`
+	PrizeDataUpgrade   *PrizeDataUpgrade `json:"prize_data_upgrade,omitempty"`
+	PrizeType          PrizeType         `json:"prize_type"`
+	// ReplyGroup - Default: 2
+	ReplyGroup            *ReplyGroup `json:"reply_group,omitempty" default:"2"`
+	RequireLikeCount      int64       `json:"require_like_count"`
+	RequireTotalLikeCount int64       `json:"require_total_like_count"`
+	ScheduleDate          *string     `json:"schedule_date,omitempty"`
+	ScheduleTime          *string     `json:"schedule_time,omitempty"`
+	SecretAnswer          *string     `json:"secret_answer,omitempty"`
+	Tags                  []string    `json:"tags,omitempty"`
+	Title                 *string     `json:"title,omitempty"`
+	TitleEn               *string     `json:"title_en,omitempty"`
+	WatchThread           *bool       `json:"watch_thread,omitempty"`
+	WatchThreadEmail      *bool       `json:"watch_thread_email,omitempty"`
+	WatchThreadState      *bool       `json:"watch_thread_state,omitempty"`
 }
 
 // ThreadsCreateContestResponse is the response for the endpoint.
@@ -6395,15 +6914,15 @@ type ThreadsDeleteResponse struct {
 
 // ThreadsEditBody holds the request body for Threads.Edit.
 type ThreadsEditBody struct {
-	AllowAskHiddenContent *bool    `json:"allow_ask_hidden_content,omitempty"`
-	CommentIgnoreGroup    *bool    `json:"comment_ignore_group,omitempty"`
-	DiscussionOpen        *bool    `json:"discussion_open,omitempty"`
-	HideContacts          *bool    `json:"hide_contacts,omitempty"`
-	PrefixID              []int64  `json:"prefix_id,omitempty"`
-	ReplyGroup            *int64   `json:"reply_group,omitempty"`
-	Tags                  []string `json:"tags,omitempty"`
-	Title                 *string  `json:"title,omitempty"`
-	TitleEn               *string  `json:"title_en,omitempty"`
+	AllowAskHiddenContent *bool       `json:"allow_ask_hidden_content,omitempty"`
+	CommentIgnoreGroup    *bool       `json:"comment_ignore_group,omitempty"`
+	DiscussionOpen        *bool       `json:"discussion_open,omitempty"`
+	HideContacts          *bool       `json:"hide_contacts,omitempty"`
+	PrefixID              []int64     `json:"prefix_id,omitempty"`
+	ReplyGroup            *ReplyGroup `json:"reply_group,omitempty"`
+	Tags                  []string    `json:"tags,omitempty"`
+	Title                 *string     `json:"title,omitempty"`
+	TitleEn               *string     `json:"title_en,omitempty"`
 }
 
 // ThreadsEditResponse is the response for the endpoint.
@@ -6433,8 +6952,8 @@ type ThreadsFollowResponse struct {
 
 // ThreadsFollowedParams holds query parameters for Threads.Followed.
 type ThreadsFollowedParams struct {
-	Total         *bool    `query:"total"`
-	FieldsInclude []string `query:"fields_include"`
+	Total         *bool                  `query:"total"`
+	FieldsInclude []ThreadsFieldsInclude `query:"fields_include"`
 }
 
 // ThreadsFollowedResponse is the response for the endpoint.
@@ -6452,7 +6971,7 @@ type ThreadsFollowersResponse struct {
 
 // ThreadsGetParams holds query parameters for Threads.Get.
 type ThreadsGetParams struct {
-	FieldsInclude []string `query:"fields_include"`
+	FieldsInclude []ThreadsFieldsInclude `query:"fields_include"`
 }
 
 // ThreadsGetResponse is the response for the endpoint.
@@ -6470,24 +6989,24 @@ type ThreadsHideResponse struct {
 
 // ThreadsListParams holds query parameters for Threads.List.
 type ThreadsListParams struct {
-	ForumID          *int64   `query:"forum_id"`
-	Tab              *string  `query:"tab"`
-	State            *string  `query:"state"`
-	Period           *string  `query:"period"`
-	Title            *string  `query:"title"`
-	TitleOnly        *bool    `query:"title_only"`
-	CreatorUserID    *int64   `query:"creator_user_id"`
-	Sticky           *bool    `query:"sticky"`
-	PrefixIds        []int64  `query:"prefix_ids[]"`
-	PrefixIdsNot     []int64  `query:"prefix_ids_not[]"`
-	ThreadTagID      *int64   `query:"thread_tag_id"`
-	Page             *int64   `query:"page"`
-	Limit            *int64   `query:"limit"`
-	Order            *string  `query:"order"`
-	Direction        *string  `query:"direction"`
-	ThreadCreateDate *int64   `query:"thread_create_date"`
-	ThreadUpdateDate *int64   `query:"thread_update_date"`
-	FieldsInclude    []string `query:"fields_include"`
+	ForumID          *int64                 `query:"forum_id"`
+	Tab              *string                `query:"tab"`
+	State            *State                 `query:"state"`
+	Period           *Period                `query:"period"`
+	Title            *string                `query:"title"`
+	TitleOnly        *bool                  `query:"title_only"`
+	CreatorUserID    *int64                 `query:"creator_user_id"`
+	Sticky           *bool                  `query:"sticky"`
+	PrefixIds        []int64                `query:"prefix_ids[]"`
+	PrefixIdsNot     []int64                `query:"prefix_ids_not[]"`
+	ThreadTagID      *int64                 `query:"thread_tag_id"`
+	Page             *int64                 `query:"page"`
+	Limit            *int64                 `query:"limit"`
+	Order            *ThreadsOrder          `query:"order"`
+	Direction        *Direction             `query:"direction"`
+	ThreadCreateDate *int64                 `query:"thread_create_date"`
+	ThreadUpdateDate *int64                 `query:"thread_update_date"`
+	FieldsInclude    []ThreadsFieldsInclude `query:"fields_include"`
 }
 
 // ThreadsListResponse is the response for the endpoint.
@@ -6666,8 +7185,8 @@ type UsersBackgroundUploadResponse struct {
 
 // UsersClaimsParams holds query parameters for Users.Claims.
 type UsersClaimsParams struct {
-	Type       *string `query:"type"`
-	ClaimState *string `query:"claim_state"`
+	Type       *NotificationsType `query:"type"`
+	ClaimState *ClaimState        `query:"claim_state"`
 }
 
 // UsersClaimsResponse is the response for the endpoint.
@@ -6694,33 +7213,33 @@ type UsersContentsResponse struct {
 
 // UsersEditBody holds the request body for Users.Edit.
 type UsersEditBody struct {
-	ActivityVisible               *bool           `json:"activity_visible,omitempty"`
-	Alert                         map[string]bool `json:"alert,omitempty"`
-	AllowInviteGroup              *string         `json:"allow_invite_group,omitempty"`
-	AllowPostProfile              *string         `json:"allow_post_profile,omitempty"`
-	AllowReceiveNewsFeed          *string         `json:"allow_receive_news_feed,omitempty"`
-	AllowSendPersonalConversation *string         `json:"allow_send_personal_conversation,omitempty"`
-	AllowViewProfile              *string         `json:"allow_view_profile,omitempty"`
-	ConvWelcomeMessage            *string         `json:"conv_welcome_message,omitempty"`
-	DisplayBannerID               *int64          `json:"display_banner_id,omitempty"`
-	DisplayGroupID                *int64          `json:"display_group_id,omitempty"`
-	DisplayIconGroupID            *int64          `json:"display_icon_group_id,omitempty"`
-	Fields                        any             `json:"fields,omitempty"`
-	Gender                        *string         `json:"gender,omitempty"`
-	HideUsernameChangeLogs        *bool           `json:"hide_username_change_logs,omitempty"`
-	LanguageID                    *int64          `json:"language_id,omitempty"`
-	ReceiveAdminEmail             *bool           `json:"receive_admin_email,omitempty"`
-	SecretAnswer                  *string         `json:"secret_answer,omitempty"`
-	SecretAnswerType              *int64          `json:"secret_answer_type,omitempty"`
-	ShortLink                     *string         `json:"short_link,omitempty"`
-	ShowDobDate                   *bool           `json:"show_dob_date,omitempty"`
-	ShowDobYear                   *bool           `json:"show_dob_year,omitempty"`
-	Timezone                      *string         `json:"timezone,omitempty"`
-	UserDobDay                    *int64          `json:"user_dob_day,omitempty"`
-	UserDobMonth                  *int64          `json:"user_dob_month,omitempty"`
-	UserDobYear                   *int64          `json:"user_dob_year,omitempty"`
-	UserTitle                     *string         `json:"user_title,omitempty"`
-	Username                      *string         `json:"username,omitempty"`
+	ActivityVisible               *bool                          `json:"activity_visible,omitempty"`
+	Alert                         map[string]bool                `json:"alert,omitempty"`
+	AllowInviteGroup              *AllowInviteGroup              `json:"allow_invite_group,omitempty"`
+	AllowPostProfile              *AllowPostProfile              `json:"allow_post_profile,omitempty"`
+	AllowReceiveNewsFeed          *AllowReceiveNewsFeed          `json:"allow_receive_news_feed,omitempty"`
+	AllowSendPersonalConversation *AllowSendPersonalConversation `json:"allow_send_personal_conversation,omitempty"`
+	AllowViewProfile              *AllowViewProfile              `json:"allow_view_profile,omitempty"`
+	ConvWelcomeMessage            *string                        `json:"conv_welcome_message,omitempty"`
+	DisplayBannerID               *int64                         `json:"display_banner_id,omitempty"`
+	DisplayGroupID                *int64                         `json:"display_group_id,omitempty"`
+	DisplayIconGroupID            *int64                         `json:"display_icon_group_id,omitempty"`
+	Fields                        *UsersEditBodyFields           `json:"fields,omitempty"`
+	Gender                        *Gender                        `json:"gender,omitempty"`
+	HideUsernameChangeLogs        *bool                          `json:"hide_username_change_logs,omitempty"`
+	LanguageID                    *LanguageID                    `json:"language_id,omitempty"`
+	ReceiveAdminEmail             *bool                          `json:"receive_admin_email,omitempty"`
+	SecretAnswer                  *string                        `json:"secret_answer,omitempty"`
+	SecretAnswerType              *int64                         `json:"secret_answer_type,omitempty"`
+	ShortLink                     *string                        `json:"short_link,omitempty"`
+	ShowDobDate                   *bool                          `json:"show_dob_date,omitempty"`
+	ShowDobYear                   *bool                          `json:"show_dob_year,omitempty"`
+	Timezone                      *Timezone                      `json:"timezone,omitempty"`
+	UserDobDay                    *int64                         `json:"user_dob_day,omitempty"`
+	UserDobMonth                  *int64                         `json:"user_dob_month,omitempty"`
+	UserDobYear                   *int64                         `json:"user_dob_year,omitempty"`
+	UserTitle                     *string                        `json:"user_title,omitempty"`
+	Username                      *string                        `json:"username,omitempty"`
 }
 
 // UsersEditResponse is the response for the endpoint.
@@ -6738,9 +7257,9 @@ type UsersFieldsResponse struct {
 
 // UsersFindParams holds query parameters for Users.Find.
 type UsersFindParams struct {
-	Username      *string           `query:"username"`
-	CustomFields  map[string]string `query:"custom_fields"`
-	FieldsInclude []string          `query:"fields_include"`
+	Username      *string              `query:"username"`
+	CustomFields  map[string]string    `query:"custom_fields"`
+	FieldsInclude []UsersFieldsInclude `query:"fields_include"`
 }
 
 // UsersFindResponse is the response for the endpoint.
@@ -6758,9 +7277,9 @@ type UsersFollowResponse struct {
 
 // UsersFollowersParams holds query parameters for Users.Followers.
 type UsersFollowersParams struct {
-	Order *string `query:"order"`
-	Page  *int64  `query:"page"`
-	Limit *int64  `query:"limit"`
+	Order *UsersOrder `query:"order"`
+	Page  *int64      `query:"page"`
+	Limit *int64      `query:"limit"`
 }
 
 // UsersFollowersResponse is the response for the endpoint.
@@ -6773,9 +7292,9 @@ type UsersFollowersResponse struct {
 
 // UsersFollowingsParams holds query parameters for Users.Followings.
 type UsersFollowingsParams struct {
-	Order *string `query:"order"`
-	Page  *int64  `query:"page"`
-	Limit *int64  `query:"limit"`
+	Order *UsersOrder `query:"order"`
+	Page  *int64      `query:"page"`
+	Limit *int64      `query:"limit"`
 }
 
 // UsersFollowingsResponse is the response for the endpoint.
@@ -6787,7 +7306,7 @@ type UsersFollowingsResponse struct {
 
 // UsersGetParams holds query parameters for Users.Get.
 type UsersGetParams struct {
-	FieldsInclude []string `query:"fields_include"`
+	FieldsInclude []UsersFieldsInclude `query:"fields_include"`
 }
 
 // UsersGetResponse is the response for the endpoint.
@@ -6830,13 +7349,15 @@ type UsersIgnoredResponse struct {
 
 // UsersLikesParams holds query parameters for Users.Likes.
 type UsersLikesParams struct {
-	NodeID       *int64  `query:"node_id"`
-	LikeType     *string `query:"like_type"`
-	Type         *string `query:"type"`
-	Page         *int64  `query:"page"`
-	ContentType  *string `query:"content_type"`
-	SearchUserID *int64  `query:"search_user_id"`
-	Stats        *bool   `query:"stats"`
+	NodeID   *int64    `query:"node_id"`
+	LikeType *LikeType `query:"like_type"`
+	// Type - Default: "gotten"
+	Type *UsersType `query:"type" default:"gotten"`
+	Page *int64     `query:"page"`
+	// ContentType - Default: "post"
+	ContentType  *ContentType `query:"content_type" default:"post"`
+	SearchUserID *int64       `query:"search_user_id"`
+	Stats        *bool        `query:"stats"`
 }
 
 // UsersLikesResponse is the response for the endpoint.
@@ -6851,9 +7372,9 @@ type UsersLikesResponse struct {
 
 // UsersListParams holds query parameters for Users.List.
 type UsersListParams struct {
-	Page          *int64   `query:"page"`
-	Limit         *int64   `query:"limit"`
-	FieldsInclude []string `query:"fields_include"`
+	Page          *int64               `query:"page"`
+	Limit         *int64               `query:"limit"`
+	FieldsInclude []UsersFieldsInclude `query:"fields_include"`
 }
 
 // UsersListResponse is the response for the endpoint.
