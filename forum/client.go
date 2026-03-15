@@ -36,8 +36,11 @@ func NewClient(config lolzteam.Config) (*Client, error) {
 	if config.BaseURL == "" {
 		config.BaseURL = "https://prod-api.lolz.live"
 	}
-	if config.RequestsPerMinute == 0 {
-		config.RequestsPerMinute = 300
+	if config.RateLimit == nil {
+		config.RateLimit = &lolzteam.RateLimitConfig{}
+	}
+	if config.RateLimit.RequestsPerMinute == 0 {
+		config.RateLimit.RequestsPerMinute = 300
 	}
 	c, err := lolzteam.NewClient(config)
 	if err != nil {

@@ -31,11 +31,14 @@ func NewClient(config lolzteam.Config) (*Client, error) {
 	if config.BaseURL == "" {
 		config.BaseURL = "https://prod-api.lzt.market"
 	}
-	if config.RequestsPerMinute == 0 {
-		config.RequestsPerMinute = 120
+	if config.RateLimit == nil {
+		config.RateLimit = &lolzteam.RateLimitConfig{}
 	}
-	if config.SearchRequestsPerMinute == 0 {
-		config.SearchRequestsPerMinute = 20
+	if config.RateLimit.RequestsPerMinute == 0 {
+		config.RateLimit.RequestsPerMinute = 120
+	}
+	if config.RateLimit.SearchRequestsPerMinute == 0 {
+		config.RateLimit.SearchRequestsPerMinute = 20
 	}
 	c, err := lolzteam.NewClient(config)
 	if err != nil {

@@ -32,33 +32,59 @@ type RetryInfo struct {
 	Path    string
 }
 
+// RetryConfig holds retry behavior settings.
+// Use a non-nil pointer in Config to enable retries (nil = disabled).
+type RetryConfig struct {
+	MaxRetries int           // default: 3
+	BaseDelay  time.Duration // default: 1s
+	MaxDelay   time.Duration // default: 30s
+}
+
+// ProxyConfig holds proxy connection settings.
+type ProxyConfig struct {
+	URL string // e.g. "http://proxy:8080" or "socks5://proxy:1080"
+}
+
+// RateLimitConfig holds rate limiting settings.
+type RateLimitConfig struct {
+	RequestsPerMinute       int // default: per-client (Forum=300, Market=120)
+	SearchRequestsPerMinute int // default: 0 (disabled); for Market: 20
+}
+
 // Config holds settings for creating Forum/Market clients.
 type Config struct {
-	Token                    string
-	BaseURL                  string
-	ProxyURL                 string        // optional, e.g. "http://proxy:8080" or "socks5://proxy:1080"
-	MaxRetries               int           // default: 3
-	RetryBaseDelay           time.Duration // default: 1s
-	RetryMaxDelay            time.Duration // default: 30s
-	RequestsPerMinute        int           // default: per-client (Forum=300, Market=120)
-	SearchRequestsPerMinute  int           // default: 0 (disabled); for Market: 20
-	Timeout                  time.Duration // default: 30s
-	OnRetry                  func(info RetryInfo) // optional callback invoked before each retry sleep
-	DisableRetry             bool          // if true, no retries are performed
+	Token     string
+	BaseURL   string
+	Timeout   time.Duration        // default: 30s
+	Retry     *RetryConfig         // nil = disabled; non-nil = enabled with defaults for zero fields
+	Proxy     *ProxyConfig         // nil = no proxy
+	RateLimit *RateLimitConfig     // nil = use defaults
+	OnRetry   func(info RetryInfo) // optional callback invoked before each retry sleep
+}
+
+// DefaultRetryConfig returns the default retry configuration.
+func DefaultRetryConfig() *RetryConfig {
+	return &RetryConfig{
+		MaxRetries: 3,
+		BaseDelay:  time.Second,
+		MaxDelay:   30 * time.Second,
+	}
 }
 
 func (c Config) withDefaults() Config {
-	if c.MaxRetries <= 0 {
-		c.MaxRetries = 3
-	}
-	if c.RetryBaseDelay <= 0 {
-		c.RetryBaseDelay = time.Second
-	}
-	if c.RetryMaxDelay <= 0 {
-		c.RetryMaxDelay = 30 * time.Second
-	}
 	if c.Timeout <= 0 {
 		c.Timeout = 30 * time.Second
+	}
+	if c.Retry != nil {
+		if c.Retry.MaxRetries <= 0 {
+			c.Retry.MaxRetries = 3
+		}
+		if c.Retry.BaseDelay <= 0 {
+			c.Retry.BaseDelay = time.Second
+		}
+		if c.Retry.MaxDelay <= 0 {
+			c.Retry.MaxDelay = 30 * time.Second
+		}
 	}
 	return c
 }
@@ -71,8 +97,7 @@ type Client struct {
 	httpClient         *http.Client
 	rateLimiter        *rateLimiter
 	searchRateLimiter  *rateLimiter
-	retryConfig        retryConfig
-	disableRetry       bool
+	retryConfig        *retryConfig // nil = retry disabled
 }
 
 // RequestOptions describes a single API call.
@@ -94,10 +119,10 @@ func NewClient(config Config) (*Client, error) {
 		transport = t.Clone()
 	}
 
-	if config.ProxyURL != "" {
-		proxyURL, err := url.Parse(config.ProxyURL)
+	if config.Proxy != nil && config.Proxy.URL != "" {
+		proxyURL, err := url.Parse(config.Proxy.URL)
 		if err != nil {
-			return nil, &ConfigError{LolzteamError{Message: fmt.Sprintf("invalid proxy URL %q: %v", config.ProxyURL, err)}}
+			return nil, &ConfigError{LolzteamError{Message: fmt.Sprintf("invalid proxy URL %q: %v", config.Proxy.URL, err)}}
 		}
 
 		switch proxyURL.Scheme {
@@ -108,23 +133,24 @@ func NewClient(config Config) (*Client, error) {
 		}
 
 		if proxyURL.Host == "" {
-			return nil, &ConfigError{LolzteamError{Message: fmt.Sprintf("proxy URL %q has no host", config.ProxyURL)}}
+			return nil, &ConfigError{LolzteamError{Message: fmt.Sprintf("proxy URL %q has no host", config.Proxy.URL)}}
 		}
 
 		transport.Proxy = http.ProxyURL(proxyURL)
 	}
 
-	rpm := config.RequestsPerMinute
-	if rpm <= 0 {
-		rpm = 300 // safe default
-	}
-
+	rpm := 300 // safe default
 	var searchRL *rateLimiter
-	if config.SearchRequestsPerMinute > 0 {
-		searchRL = newRateLimiter(config.SearchRequestsPerMinute)
+	if config.RateLimit != nil {
+		if config.RateLimit.RequestsPerMinute > 0 {
+			rpm = config.RateLimit.RequestsPerMinute
+		}
+		if config.RateLimit.SearchRequestsPerMinute > 0 {
+			searchRL = newRateLimiter(config.RateLimit.SearchRequestsPerMinute)
+		}
 	}
 
-	return &Client{
+	c := &Client{
 		baseURL: strings.TrimRight(config.BaseURL, "/"),
 		token:   config.Token,
 		httpClient: &http.Client{
@@ -133,14 +159,18 @@ func NewClient(config Config) (*Client, error) {
 		},
 		rateLimiter:       newRateLimiter(rpm),
 		searchRateLimiter: searchRL,
-		disableRetry:     config.DisableRetry,
-		retryConfig: retryConfig{
-			maxRetries: config.MaxRetries,
-			baseDelay:  config.RetryBaseDelay,
-			maxDelay:   config.RetryMaxDelay,
+	}
+
+	if config.Retry != nil {
+		c.retryConfig = &retryConfig{
+			maxRetries: config.Retry.MaxRetries,
+			baseDelay:  config.Retry.BaseDelay,
+			maxDelay:   config.Retry.MaxDelay,
 			onRetry:    config.OnRetry,
-		},
-	}, nil
+		}
+	}
+
+	return c, nil
 }
 
 // Request executes an HTTP request with rate limiting and retry.
@@ -239,10 +269,10 @@ func (c *Client) Request(ctx context.Context, opts RequestOptions, result any) e
 		return nil
 	}
 
-	if c.disableRetry {
+	if c.retryConfig == nil {
 		return doRequest()
 	}
-	return withRetry(ctx, c.retryConfig, opts.Method, opts.Path, doRequest)
+	return withRetry(ctx, *c.retryConfig, opts.Method, opts.Path, doRequest)
 }
 
 func parseRetryAfter(value string) time.Duration {
@@ -615,7 +645,14 @@ func isRetryable(err error) bool {
 
 	var serverErr *ServerError
 	if errors.As(err, &serverErr) {
-		return true
+		// Only retry 502 Bad Gateway, 503 Service Unavailable, 504 Gateway Timeout.
+		// 500 Internal Server Error is not retried — it typically indicates a bug, not a transient issue.
+		switch serverErr.StatusCode {
+		case 502, 503, 504:
+			return true
+		default:
+			return false
+		}
 	}
 
 	var networkErr *NetworkError

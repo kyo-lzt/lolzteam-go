@@ -55,13 +55,17 @@ Market API groups: `AutoPayments`, `Batch`, `Cart`, `Category`, `CustomDiscounts
 
 ```go
 config := lolzteam.Config{
-    Token:             "your_token",
-    ProxyURL:          "socks5://127.0.0.1:1080",
-    MaxRetries:        5,               // default: 3
-    RetryBaseDelay:    time.Second,      // default: 1s
-    RetryMaxDelay:     30 * time.Second, // default: 30s
-    RequestsPerMinute: 200,             // default: 300 (Forum), 120 (Market)
-    Timeout:           30 * time.Second, // default: 30s
+    Token:   "your_token",
+    Timeout: 30 * time.Second, // default: 30s
+    Proxy:   &lolzteam.ProxyConfig{URL: "socks5://127.0.0.1:1080"},
+    Retry:   &lolzteam.RetryConfig{
+        MaxRetries: 5,               // default: 3
+        BaseDelay:  time.Second,     // default: 1s
+        MaxDelay:   30 * time.Second, // default: 30s
+    },
+    RateLimit: &lolzteam.RateLimitConfig{
+        RequestsPerMinute: 200, // default: 300 (Forum), 120 (Market)
+    },
 }
 ```
 
@@ -74,6 +78,7 @@ Failed requests are retried automatically for transient errors. The delay uses e
 | Status | Retried | Behavior |
 |--------|---------|----------|
 | 429 | Yes | Uses `Retry-After` header if present |
+| 500 | No | Returned immediately |
 | 502, 503, 504 | Yes | Exponential backoff with jitter |
 | Network errors | Yes | Timeout and connection errors |
 | 401, 403 | No | Returned immediately |
@@ -83,19 +88,23 @@ Failed requests are retried automatically for transient errors. The delay uses e
 Delay formula: `min(baseDelay * 2^attempt + random(0, baseDelay), maxDelay)`
 
 ```go
-// Disable retry
-client := lolzteam.NewForumClient(lolzteam.Config{
-    Token:        "...",
-    DisableRetry: true,
-})
+// Disable retry (nil Retry = no retries)
+config := lolzteam.Config{Token: "..."}
+
+// Enable retry with defaults
+config = lolzteam.Config{
+    Token: "...",
+    Retry: lolzteam.DefaultRetryConfig(),
+}
 
 // OnRetry callback
-client := lolzteam.NewForumClient(lolzteam.Config{
+config = lolzteam.Config{
     Token: "...",
+    Retry: lolzteam.DefaultRetryConfig(),
     OnRetry: func(info lolzteam.RetryInfo) {
         fmt.Printf("Retry #%d\n", info.Attempt)
     },
-})
+}
 ```
 
 ## Proxy
@@ -104,8 +113,8 @@ Pass a proxy URL in the config. Supported schemes: `http`, `https`, `socks5`.
 
 ```go
 config := lolzteam.Config{
-    Token:    "your_token",
-    ProxyURL: "socks5://127.0.0.1:1080",
+    Token: "your_token",
+    Proxy: &lolzteam.ProxyConfig{URL: "socks5://127.0.0.1:1080"},
 }
 ```
 
@@ -149,10 +158,12 @@ The built-in rate limiter uses a token bucket algorithm. Mutex-based, thread-saf
 | Market (search) | 20 req/min |
 
 ```go
-client := lolzteam.NewMarketClient(lolzteam.Config{
-    Token:                  "...",
-    SearchRequestsPerMinute: 30,
-})
+config := lolzteam.Config{
+    Token: "...",
+    RateLimit: &lolzteam.RateLimitConfig{
+        SearchRequestsPerMinute: 30,
+    },
+}
 ```
 
 ## Code Generation

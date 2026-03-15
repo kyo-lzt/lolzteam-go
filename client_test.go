@@ -17,16 +17,16 @@ import (
 // --- Config defaults ---
 
 func TestConfigDefaults(t *testing.T) {
-	cfg := Config{Token: "t"}.withDefaults()
+	cfg := Config{Token: "t", Retry: &RetryConfig{}}.withDefaults()
 
-	if cfg.MaxRetries != 3 {
-		t.Errorf("MaxRetries = %d, want 3", cfg.MaxRetries)
+	if cfg.Retry.MaxRetries != 3 {
+		t.Errorf("MaxRetries = %d, want 3", cfg.Retry.MaxRetries)
 	}
-	if cfg.RetryBaseDelay != time.Second {
-		t.Errorf("RetryBaseDelay = %v, want 1s", cfg.RetryBaseDelay)
+	if cfg.Retry.BaseDelay != time.Second {
+		t.Errorf("BaseDelay = %v, want 1s", cfg.Retry.BaseDelay)
 	}
-	if cfg.RetryMaxDelay != 30*time.Second {
-		t.Errorf("RetryMaxDelay = %v, want 30s", cfg.RetryMaxDelay)
+	if cfg.Retry.MaxDelay != 30*time.Second {
+		t.Errorf("MaxDelay = %v, want 30s", cfg.Retry.MaxDelay)
 	}
 	if cfg.Timeout != 30*time.Second {
 		t.Errorf("Timeout = %v, want 30s", cfg.Timeout)
@@ -35,29 +35,42 @@ func TestConfigDefaults(t *testing.T) {
 
 func TestConfigDefaultsPreserveExplicit(t *testing.T) {
 	cfg := Config{
-		Token:          "t",
-		MaxRetries:     5,
-		RetryBaseDelay: 2 * time.Second,
-		RetryMaxDelay:  10 * time.Second,
-		Timeout:        15 * time.Second,
+		Token:   "t",
+		Timeout: 15 * time.Second,
+		Retry: &RetryConfig{
+			MaxRetries: 5,
+			BaseDelay:  2 * time.Second,
+			MaxDelay:   10 * time.Second,
+		},
 	}.withDefaults()
 
-	if cfg.MaxRetries != 5 {
-		t.Errorf("MaxRetries = %d, want 5", cfg.MaxRetries)
+	if cfg.Retry.MaxRetries != 5 {
+		t.Errorf("MaxRetries = %d, want 5", cfg.Retry.MaxRetries)
 	}
-	if cfg.RetryBaseDelay != 2*time.Second {
-		t.Errorf("RetryBaseDelay = %v, want 2s", cfg.RetryBaseDelay)
+	if cfg.Retry.BaseDelay != 2*time.Second {
+		t.Errorf("BaseDelay = %v, want 2s", cfg.Retry.BaseDelay)
 	}
-	if cfg.RetryMaxDelay != 10*time.Second {
-		t.Errorf("RetryMaxDelay = %v, want 10s", cfg.RetryMaxDelay)
+	if cfg.Retry.MaxDelay != 10*time.Second {
+		t.Errorf("MaxDelay = %v, want 10s", cfg.Retry.MaxDelay)
 	}
 	if cfg.Timeout != 15*time.Second {
 		t.Errorf("Timeout = %v, want 15s", cfg.Timeout)
 	}
 }
 
+func TestConfigDefaultsNilRetryStaysNil(t *testing.T) {
+	cfg := Config{Token: "t"}.withDefaults()
+
+	if cfg.Retry != nil {
+		t.Error("Retry should remain nil when not set")
+	}
+	if cfg.Timeout != 30*time.Second {
+		t.Errorf("Timeout = %v, want 30s", cfg.Timeout)
+	}
+}
+
 func TestForumClientDefaultBaseURL(t *testing.T) {
-	c, err := NewClient(Config{Token: "t", BaseURL: "https://prod-api.lolz.live", RequestsPerMinute: 300})
+	c, err := NewClient(Config{Token: "t", BaseURL: "https://prod-api.lolz.live", RateLimit: &RateLimitConfig{RequestsPerMinute: 300}})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
 	}
@@ -67,7 +80,7 @@ func TestForumClientDefaultBaseURL(t *testing.T) {
 }
 
 func TestMarketClientDefaultBaseURL(t *testing.T) {
-	c, err := NewClient(Config{Token: "t", BaseURL: "https://prod-api.lzt.market", RequestsPerMinute: 120})
+	c, err := NewClient(Config{Token: "t", BaseURL: "https://prod-api.lzt.market", RateLimit: &RateLimitConfig{RequestsPerMinute: 120}})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
 	}
@@ -283,7 +296,10 @@ func TestIsRetryable(t *testing.T) {
 		retryable bool
 	}{
 		{"RateLimitError", &RateLimitError{}, true},
-		{"ServerError", &ServerError{}, true},
+		{"ServerError/500", &ServerError{HttpError: HttpError{StatusCode: 500}}, false},
+		{"ServerError/502", &ServerError{HttpError: HttpError{StatusCode: 502}}, true},
+		{"ServerError/503", &ServerError{HttpError: HttpError{StatusCode: 503}}, true},
+		{"ServerError/504", &ServerError{HttpError: HttpError{StatusCode: 504}}, true},
 		{"NetworkError/transient", &NetworkError{Err: io.ErrUnexpectedEOF}, true},
 		{"NetworkError/permanent", &NetworkError{Err: errors.New("some error")}, false},
 		{"AuthError", &AuthError{}, false},
@@ -329,7 +345,7 @@ func TestWithRetryEventualSuccess(t *testing.T) {
 	}, "GET", "/test", func() error {
 		calls++
 		if calls < 3 {
-			return &ServerError{HttpError: HttpError{StatusCode: 500}}
+			return &ServerError{HttpError: HttpError{StatusCode: 502}}
 		}
 		return nil
 	})
@@ -400,7 +416,7 @@ func TestWithRetryCancellation(t *testing.T) {
 		maxDelay:   100 * time.Millisecond,
 	}, "GET", "/test", func() error {
 		calls++
-		return &ServerError{HttpError: HttpError{StatusCode: 500}}
+		return &ServerError{HttpError: HttpError{StatusCode: 503}}
 	})
 
 	if !errors.Is(err, context.Canceled) {
@@ -420,10 +436,10 @@ func TestHTTPClientSendsAuthHeader(t *testing.T) {
 	defer srv.Close()
 
 	c, err := NewClient(Config{
-		Token:             "secret-token",
-		BaseURL:           srv.URL,
-		RequestsPerMinute: 600,
-		MaxRetries:        1,
+		Token:     "secret-token",
+		BaseURL:   srv.URL,
+		RateLimit: &RateLimitConfig{RequestsPerMinute: 600},
+		Retry:     &RetryConfig{MaxRetries: 1},
 	})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
@@ -450,10 +466,10 @@ func TestHTTPClientHTTPError(t *testing.T) {
 	defer srv.Close()
 
 	c, err := NewClient(Config{
-		Token:             "t",
-		BaseURL:           srv.URL,
-		RequestsPerMinute: 600,
-		MaxRetries:        1,
+		Token:     "t",
+		BaseURL:   srv.URL,
+		RateLimit: &RateLimitConfig{RequestsPerMinute: 600},
+		Retry:     &RetryConfig{MaxRetries: 1},
 	})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
@@ -482,10 +498,10 @@ func TestHTTPClientJSONDecoding(t *testing.T) {
 	defer srv.Close()
 
 	c, err := NewClient(Config{
-		Token:             "t",
-		BaseURL:           srv.URL,
-		RequestsPerMinute: 600,
-		MaxRetries:        1,
+		Token:     "t",
+		BaseURL:   srv.URL,
+		RateLimit: &RateLimitConfig{RequestsPerMinute: 600},
+		Retry:     &RetryConfig{MaxRetries: 1},
 	})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
@@ -521,12 +537,10 @@ func TestHTTPClientRateLimitRetry(t *testing.T) {
 	defer srv.Close()
 
 	c, err := NewClient(Config{
-		Token:             "t",
-		BaseURL:           srv.URL,
-		RequestsPerMinute: 600,
-		MaxRetries:        3,
-		RetryBaseDelay:    time.Millisecond,
-		RetryMaxDelay:     50 * time.Millisecond,
+		Token:     "t",
+		BaseURL:   srv.URL,
+		RateLimit: &RateLimitConfig{RequestsPerMinute: 600},
+		Retry:     &RetryConfig{MaxRetries: 3, BaseDelay: time.Millisecond, MaxDelay: 50 * time.Millisecond},
 	})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
@@ -576,7 +590,7 @@ func TestCalcDelayExponentialBackoff(t *testing.T) {
 		baseDelay:  100 * time.Millisecond,
 		maxDelay:   10 * time.Second,
 	}
-	srvErr := &ServerError{HttpError: HttpError{StatusCode: 500}}
+	srvErr := &ServerError{HttpError: HttpError{StatusCode: 502}}
 
 	// attempt 0 -> ~100ms (+ up to 25% jitter)
 	d0 := calcDelay(srvErr, 0, cfg)
@@ -597,7 +611,7 @@ func TestCalcDelayRespectMaxDelay(t *testing.T) {
 		baseDelay:  time.Second,
 		maxDelay:   5 * time.Second,
 	}
-	srvErr := &ServerError{HttpError: HttpError{StatusCode: 500}}
+	srvErr := &ServerError{HttpError: HttpError{StatusCode: 502}}
 
 	d := calcDelay(srvErr, 8, cfg)
 	// After capping at maxDelay (5s), jitter adds up to 25%
@@ -644,8 +658,8 @@ func TestCalcDelayRateLimitCappedByMaxDelay(t *testing.T) {
 
 func TestProxyInvalidScheme(t *testing.T) {
 	_, err := NewClient(Config{
-		Token:    "t",
-		ProxyURL: "ftp://proxy:8080",
+		Token: "t",
+		Proxy: &ProxyConfig{URL: "ftp://proxy:8080"},
 	})
 	if err == nil {
 		t.Fatal("expected error for unsupported proxy scheme")
@@ -658,8 +672,8 @@ func TestProxyInvalidScheme(t *testing.T) {
 
 func TestProxyMissingHost(t *testing.T) {
 	_, err := NewClient(Config{
-		Token:    "t",
-		ProxyURL: "http://",
+		Token: "t",
+		Proxy: &ProxyConfig{URL: "http://"},
 	})
 	if err == nil {
 		t.Fatal("expected error for proxy URL with no host")
@@ -682,8 +696,8 @@ func TestProxyValidURL(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			c, err := NewClient(Config{
-				Token:    "t",
-				ProxyURL: tt.proxyURL,
+				Token: "t",
+				Proxy: &ProxyConfig{URL: tt.proxyURL},
 			})
 			if err != nil {
 				t.Fatalf("unexpected error for %s proxy: %v", tt.name, err)
@@ -828,10 +842,10 @@ func TestHTTPClientPathParam(t *testing.T) {
 	defer srv.Close()
 
 	c, err := NewClient(Config{
-		Token:             "t",
-		BaseURL:           srv.URL,
-		RequestsPerMinute: 600,
-		MaxRetries:        1,
+		Token:     "t",
+		BaseURL:   srv.URL,
+		RateLimit: &RateLimitConfig{RequestsPerMinute: 600},
+		Retry:     &RetryConfig{MaxRetries: 1},
 	})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
@@ -866,10 +880,10 @@ func TestHTTPClientQueryParams(t *testing.T) {
 	defer srv.Close()
 
 	c, err := NewClient(Config{
-		Token:             "t",
-		BaseURL:           srv.URL,
-		RequestsPerMinute: 600,
-		MaxRetries:        1,
+		Token:     "t",
+		BaseURL:   srv.URL,
+		RateLimit: &RateLimitConfig{RequestsPerMinute: 600},
+		Retry:     &RetryConfig{MaxRetries: 1},
 	})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
@@ -909,12 +923,10 @@ func TestHTTPClient502Retry(t *testing.T) {
 	defer srv.Close()
 
 	c, err := NewClient(Config{
-		Token:             "t",
-		BaseURL:           srv.URL,
-		RequestsPerMinute: 600,
-		MaxRetries:        3,
-		RetryBaseDelay:    time.Millisecond,
-		RetryMaxDelay:     50 * time.Millisecond,
+		Token:     "t",
+		BaseURL:   srv.URL,
+		RateLimit: &RateLimitConfig{RequestsPerMinute: 600},
+		Retry:     &RetryConfig{MaxRetries: 3, BaseDelay: time.Millisecond, MaxDelay: 50 * time.Millisecond},
 	})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
@@ -943,10 +955,10 @@ func TestHTTPClient403AuthError(t *testing.T) {
 	defer srv.Close()
 
 	c, err := NewClient(Config{
-		Token:             "t",
-		BaseURL:           srv.URL,
-		RequestsPerMinute: 600,
-		MaxRetries:        1,
+		Token:     "t",
+		BaseURL:   srv.URL,
+		RateLimit: &RateLimitConfig{RequestsPerMinute: 600},
+		Retry:     &RetryConfig{MaxRetries: 1},
 	})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
@@ -983,12 +995,10 @@ func TestHTTPClientRetryExhausted(t *testing.T) {
 	defer srv.Close()
 
 	c, err := NewClient(Config{
-		Token:             "t",
-		BaseURL:           srv.URL,
-		RequestsPerMinute: 600,
-		MaxRetries:        2,
-		RetryBaseDelay:    time.Millisecond,
-		RetryMaxDelay:     10 * time.Millisecond,
+		Token:     "t",
+		BaseURL:   srv.URL,
+		RateLimit: &RateLimitConfig{RequestsPerMinute: 600},
+		Retry:     &RetryConfig{MaxRetries: 2, BaseDelay: time.Millisecond, MaxDelay: 10 * time.Millisecond},
 	})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
@@ -1035,12 +1045,10 @@ func TestHTTPClientServerError503Retry(t *testing.T) {
 	defer srv.Close()
 
 	c, err := NewClient(Config{
-		Token:             "t",
-		BaseURL:           srv.URL,
-		RequestsPerMinute: 600,
-		MaxRetries:        3,
-		RetryBaseDelay:    time.Millisecond,
-		RetryMaxDelay:     50 * time.Millisecond,
+		Token:     "t",
+		BaseURL:   srv.URL,
+		RateLimit: &RateLimitConfig{RequestsPerMinute: 600},
+		Retry:     &RetryConfig{MaxRetries: 3, BaseDelay: time.Millisecond, MaxDelay: 50 * time.Millisecond},
 	})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
@@ -1069,12 +1077,10 @@ func TestHTTPClientNonRetryable401(t *testing.T) {
 	defer srv.Close()
 
 	c, err := NewClient(Config{
-		Token:             "t",
-		BaseURL:           srv.URL,
-		RequestsPerMinute: 600,
-		MaxRetries:        3,
-		RetryBaseDelay:    time.Millisecond,
-		RetryMaxDelay:     50 * time.Millisecond,
+		Token:     "t",
+		BaseURL:   srv.URL,
+		RateLimit: &RateLimitConfig{RequestsPerMinute: 600},
+		Retry:     &RetryConfig{MaxRetries: 3, BaseDelay: time.Millisecond, MaxDelay: 50 * time.Millisecond},
 	})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
@@ -1111,10 +1117,10 @@ func TestHTTPClientFormBody(t *testing.T) {
 	defer srv.Close()
 
 	c, err := NewClient(Config{
-		Token:             "t",
-		BaseURL:           srv.URL,
-		RequestsPerMinute: 600,
-		MaxRetries:        1,
+		Token:     "t",
+		BaseURL:   srv.URL,
+		RateLimit: &RateLimitConfig{RequestsPerMinute: 600},
+		Retry:     &RetryConfig{MaxRetries: 1},
 	})
 	if err != nil {
 		t.Fatalf("NewClient error: %v", err)
