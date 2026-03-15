@@ -18,6 +18,7 @@ jobs:
       - uses: actions/setup-go@v6
         with:
           go-version: "1.23"
+          cache: false
       - run: go build ./...
 
   lint:
@@ -29,6 +30,7 @@ jobs:
       - uses: actions/setup-go@v6
         with:
           go-version: "1.23"
+          cache: false
       - run: go vet ./...
 
   test:
@@ -40,4 +42,5 @@ jobs:
       - uses: actions/setup-go@v6
         with:
           go-version: "1.23"
+          cache: false
       - run: go test ./...
