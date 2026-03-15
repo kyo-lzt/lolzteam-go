@@ -6175,8 +6175,8 @@ type SearchProfilePostsResponse struct {
 
 // SearchResultsParams holds query parameters for Search.Results.
 type SearchResultsParams struct {
-	Page  *int64 `query:"page"`
 	Limit *int64 `query:"limit"`
+	Page  *int64 `query:"page"`
 }
 
 // SearchResultsResponse is the response for the endpoint.

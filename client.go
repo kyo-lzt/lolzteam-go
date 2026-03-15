@@ -23,6 +23,15 @@ import (
 
 // --- Config ---
 
+// RetryInfo provides context about a retry attempt, passed to OnRetry callback.
+type RetryInfo struct {
+	Attempt int
+	Delay   time.Duration
+	Err     error
+	Method  string
+	Path    string
+}
+
 // Config holds settings for creating Forum/Market clients.
 type Config struct {
 	Token                    string
@@ -34,6 +43,8 @@ type Config struct {
 	RequestsPerMinute        int           // default: per-client (Forum=300, Market=120)
 	SearchRequestsPerMinute  int           // default: 0 (disabled); for Market: 20
 	Timeout                  time.Duration // default: 30s
+	OnRetry                  func(info RetryInfo) // optional callback invoked before each retry sleep
+	DisableRetry             bool          // if true, no retries are performed
 }
 
 func (c Config) withDefaults() Config {
@@ -61,6 +72,7 @@ type Client struct {
 	rateLimiter        *rateLimiter
 	searchRateLimiter  *rateLimiter
 	retryConfig        retryConfig
+	disableRetry       bool
 }
 
 // RequestOptions describes a single API call.
@@ -121,10 +133,12 @@ func NewClient(config Config) (*Client, error) {
 		},
 		rateLimiter:       newRateLimiter(rpm),
 		searchRateLimiter: searchRL,
+		disableRetry:     config.DisableRetry,
 		retryConfig: retryConfig{
 			maxRetries: config.MaxRetries,
 			baseDelay:  config.RetryBaseDelay,
 			maxDelay:   config.RetryMaxDelay,
+			onRetry:    config.OnRetry,
 		},
 	}, nil
 }
@@ -164,7 +178,7 @@ func (c *Client) Request(ctx context.Context, opts RequestOptions, result any) e
 		}
 	}
 
-	return withRetry(ctx, c.retryConfig, func() error {
+	doRequest := func() error {
 		reqURL := c.baseURL + opts.Path
 		if len(opts.Query) > 0 {
 			encoded := opts.Query.Encode()
@@ -223,7 +237,12 @@ func (c *Client) Request(ctx context.Context, opts RequestOptions, result any) e
 		}
 
 		return nil
-	})
+	}
+
+	if c.disableRetry {
+		return doRequest()
+	}
+	return withRetry(ctx, c.retryConfig, opts.Method, opts.Path, doRequest)
 }
 
 func parseRetryAfter(value string) time.Duration {
@@ -543,9 +562,10 @@ type retryConfig struct {
 	maxRetries int
 	baseDelay  time.Duration
 	maxDelay   time.Duration
+	onRetry    func(info RetryInfo)
 }
 
-func withRetry(ctx context.Context, cfg retryConfig, fn func() error) error {
+func withRetry(ctx context.Context, cfg retryConfig, method, path string, fn func() error) error {
 	var lastErr error
 
 	for attempt := range cfg.maxRetries {
@@ -564,6 +584,16 @@ func withRetry(ctx context.Context, cfg retryConfig, fn func() error) error {
 		}
 
 		delay := calcDelay(lastErr, attempt, cfg)
+
+		if cfg.onRetry != nil {
+			cfg.onRetry(RetryInfo{
+				Attempt: attempt,
+				Delay:   delay,
+				Err:     lastErr,
+				Method:  method,
+				Path:    path,
+			})
+		}
 
 		timer := time.NewTimer(delay)
 		select {

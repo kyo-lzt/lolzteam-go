@@ -119,6 +119,8 @@ func newHttpError(statusCode int, body []byte, retryAfter time.Duration) error {
 		return &AuthError{HttpError: base}
 	case statusCode == 404:
 		return &NotFoundError{HttpError: base}
+	case statusCode == 500 || statusCode == 502 || statusCode == 503 || statusCode == 504:
+		return &ServerError{HttpError: base}
 	case statusCode >= 500:
 		return &ServerError{HttpError: base}
 	default:

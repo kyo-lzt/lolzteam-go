@@ -74,12 +74,29 @@ Failed requests are retried automatically for transient errors. The delay uses e
 | Status | Retried | Behavior |
 |--------|---------|----------|
 | 429 | Yes | Uses `Retry-After` header if present |
-| 502, 503 | Yes | Exponential backoff with jitter |
+| 502, 503, 504 | Yes | Exponential backoff with jitter |
+| Network errors | Yes | Timeout and connection errors |
 | 401, 403 | No | Returned immediately |
 | 404 | No | Returned immediately |
 | Other | No | Returned immediately |
 
 Delay formula: `min(baseDelay * 2^attempt + random(0, baseDelay), maxDelay)`
+
+```go
+// Disable retry
+client := lolzteam.NewForumClient(lolzteam.Config{
+    Token:        "...",
+    DisableRetry: true,
+})
+
+// OnRetry callback
+client := lolzteam.NewForumClient(lolzteam.Config{
+    Token: "...",
+    OnRetry: func(info lolzteam.RetryInfo) {
+        fmt.Printf("Retry #%d\n", info.Attempt)
+    },
+})
+```
 
 ## Proxy
 
@@ -129,6 +146,14 @@ The built-in rate limiter uses a token bucket algorithm. Mutex-based, thread-saf
 |--------|---------------|
 | Forum  | 300 req/min   |
 | Market | 120 req/min   |
+| Market (search) | 20 req/min |
+
+```go
+client := lolzteam.NewMarketClient(lolzteam.Config{
+    Token:                  "...",
+    SearchRequestsPerMinute: 30,
+})
+```
 
 ## Code Generation
 

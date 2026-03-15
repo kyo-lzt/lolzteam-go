@@ -306,7 +306,7 @@ func TestWithRetrySuccess(t *testing.T) {
 		maxRetries: 3,
 		baseDelay:  time.Millisecond,
 		maxDelay:   10 * time.Millisecond,
-	}, func() error {
+	}, "GET", "/test", func() error {
 		calls++
 		return nil
 	})
@@ -325,7 +325,7 @@ func TestWithRetryEventualSuccess(t *testing.T) {
 		maxRetries: 3,
 		baseDelay:  time.Millisecond,
 		maxDelay:   10 * time.Millisecond,
-	}, func() error {
+	}, "GET", "/test", func() error {
 		calls++
 		if calls < 3 {
 			return &ServerError{HttpError: HttpError{StatusCode: 500}}
@@ -347,7 +347,7 @@ func TestWithRetryExhaustsRetries(t *testing.T) {
 		maxRetries: 2,
 		baseDelay:  time.Millisecond,
 		maxDelay:   10 * time.Millisecond,
-	}, func() error {
+	}, "GET", "/test", func() error {
 		calls++
 		return &ServerError{HttpError: HttpError{StatusCode: 503}}
 	})
@@ -371,7 +371,7 @@ func TestWithRetryNonRetryableStopsImmediately(t *testing.T) {
 		maxRetries: 5,
 		baseDelay:  time.Millisecond,
 		maxDelay:   10 * time.Millisecond,
-	}, func() error {
+	}, "GET", "/test", func() error {
 		calls++
 		return &AuthError{HttpError: HttpError{StatusCode: 401}}
 	})
@@ -397,7 +397,7 @@ func TestWithRetryCancellation(t *testing.T) {
 		maxRetries: 100,
 		baseDelay:  50 * time.Millisecond,
 		maxDelay:   100 * time.Millisecond,
-	}, func() error {
+	}, "GET", "/test", func() error {
 		calls++
 		return &ServerError{HttpError: HttpError{StatusCode: 500}}
 	})
