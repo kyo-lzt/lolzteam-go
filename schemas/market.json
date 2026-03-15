@@ -11,7 +11,7 @@
       "description": "Production."
     },
     {
-      "url": "https://prod-api.lzt.market",
+      "url": "https://api.lzt.market",
       "description": "Production Alternative."
     }
   ],
