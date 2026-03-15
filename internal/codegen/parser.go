@@ -272,7 +272,8 @@ func (g *Generator) ParseOperations() error {
 					if len(resolved.AllOf) > 0 {
 						resolved = g.MergeAllOfSchemas(resolved)
 					}
-					for propName, propSchema := range resolved.Properties {
+					for _, propName := range SortedKeys(resolved.Properties) {
+						propSchema := resolved.Properties[propName]
 						resolvedProp := g.ResolveSchemaRef(propSchema)
 						qp := QueryParam{
 							Name:     propName,
@@ -519,6 +520,12 @@ func (g *Generator) SchemaToGoType(s SchemaObj) string {
 		}
 		// Multi-type union like ["string", "integer"]
 		if len(typeStrs) == 2 {
+			sorted := make([]string, len(typeStrs))
+			copy(sorted, typeStrs)
+			sort.Strings(sorted)
+			if sorted[0] == "integer" && sorted[1] == "string" {
+				return "StringOrInt"
+			}
 			return "any"
 		}
 		return ToPascalCase(name)
@@ -528,6 +535,12 @@ func (g *Generator) SchemaToGoType(s SchemaObj) string {
 
 	// Multi-type union like ["string", "integer"]
 	if len(typeStrs) > 1 {
+		sorted := make([]string, len(typeStrs))
+		copy(sorted, typeStrs)
+		sort.Strings(sorted)
+		if len(sorted) == 2 && sorted[0] == "integer" && sorted[1] == "string" {
+			return "StringOrInt"
+		}
 		return "any"
 	}
 
@@ -651,11 +664,12 @@ func (g *Generator) MergeAllOfSchemas(s SchemaObj) SchemaObj {
 // ---------------------------------------------------------------------------
 
 func (g *Generator) GenerateNamedTypes() {
+	// Pass 1: register all struct type names so cross-references resolve
+	// regardless of map iteration order.
 	for name, schema := range g.Spec.Components.Schemas {
 		goName := ToPascalCase(name)
 		typeStrs := SchemaTypeStrings(schema)
 
-		// Skip simple scalars / enums — they map to primitive Go types
 		if len(typeStrs) == 1 {
 			switch typeStrs[0] {
 			case "string", "integer", "number", "boolean":
@@ -663,15 +677,22 @@ func (g *Generator) GenerateNamedTypes() {
 			}
 		}
 		if len(typeStrs) > 1 {
-			continue // union type like ["string", "integer"]
+			continue
 		}
-
 		if len(schema.Properties) == 0 {
 			continue
 		}
 
-		sd := g.SchemaToStructDef(goName, schema)
-		g.NamedTypes[goName] = sd
+		g.NamedTypes[goName] = &StructDef{Name: goName} // placeholder
+	}
+
+	// Pass 2: populate struct fields (all names are now resolvable).
+	for name, schema := range g.Spec.Components.Schemas {
+		goName := ToPascalCase(name)
+		if _, ok := g.NamedTypes[goName]; !ok {
+			continue
+		}
+		g.NamedTypes[goName] = g.SchemaToStructDef(goName, schema)
 	}
 }
 
@@ -701,8 +722,12 @@ func (g *Generator) SchemaToStructDef(name string, s SchemaObj) *StructDef {
 		}
 
 		isRequired := reqSet[propName]
-		tagVal := propName + ",omitempty"
-		tag := fmt.Sprintf("`json:\"%s\"`", tagVal)
+		var tag string
+		if isRequired {
+			tag = fmt.Sprintf("`json:\"%s\"`", propName)
+		} else {
+			tag = fmt.Sprintf("`json:\"%s,omitempty\"`", propName)
+		}
 
 		field := StructField{
 			Name: goFieldName,
@@ -954,11 +979,17 @@ func BuildPathExpr(path string, params []PathParam) string {
 	return fmt.Sprintf("fmt.Sprintf(%q, %s)", fmtStr, strings.Join(args, ", "))
 }
 
+// rootPkgTypes are types defined in the root lolzteam package that need qualified references.
+var rootPkgTypes = map[string]bool{"FileUpload": true, "StringOrInt": true}
+
 func WriteStructDef(b *strings.Builder, sd *StructDef) {
 	fmt.Fprintf(b, "// %s represents a component schema.\n", sd.Name)
 	fmt.Fprintf(b, "type %s struct {\n", sd.Name)
 	for _, f := range sd.Fields {
 		typeName := f.Type.Name
+		if rootPkgTypes[typeName] {
+			typeName = "lolzteam." + typeName
+		}
 		if f.Type.IsPtr {
 			typeName = PtrWrap(typeName)
 		}

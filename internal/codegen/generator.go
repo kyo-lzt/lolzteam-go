@@ -181,7 +181,7 @@ func (g *Generator) WriteTypesFile(outDir string) error {
 	fmt.Fprintf(&b, "package %s\n\n", lowerPrefix)
 
 	// Check if any type references FileUpload (defined in root package)
-	needsRootImport := g.TypesReferenceFileUpload()
+	needsRootImport := g.TypesReferenceRootPkg()
 	if needsRootImport {
 		b.WriteString("import (\n")
 		b.WriteString("\tlolzteam \"github.com/kyo-lzt/lolzteam-go\"\n")
@@ -227,8 +227,8 @@ func (g *Generator) WriteTypesFile(outDir string) error {
 				}
 				for _, bp := range op.BodyProps {
 					goType := bp.GoType
-					if goType == "FileUpload" {
-						goType = "lolzteam.FileUpload"
+					if rootPkgTypes[goType] {
+						goType = "lolzteam." + goType
 					}
 					if bp.Required {
 						if tagName == "json" {
@@ -276,13 +276,42 @@ func (g *Generator) WriteTypesFile(outDir string) error {
 	return WriteFormattedFile(filepath.Join(outDir, lowerPrefix, "models.go"), b.String())
 }
 
-// TypesReferenceFileUpload checks if any body prop references FileUpload.
-func (g *Generator) TypesReferenceFileUpload() bool {
+// TypesReferenceRootPkg checks if any type references a root package type (FileUpload, StringOrInt).
+func (g *Generator) TypesReferenceRootPkg() bool {
+	rootTypes := map[string]bool{"FileUpload": true, "StringOrInt": true}
 	for _, ops := range g.Groups {
 		for _, op := range ops {
 			for _, bp := range op.BodyProps {
-				if bp.GoType == "FileUpload" {
+				if rootTypes[bp.GoType] {
 					return true
+				}
+			}
+		}
+	}
+	// Check named types (component schemas) for StringOrInt fields
+	for _, sd := range g.NamedTypes {
+		for _, f := range sd.Fields {
+			if rootTypes[f.Type.Name] {
+				return true
+			}
+		}
+	}
+	// Check response schema inline fields
+	for _, ops := range g.Groups {
+		for _, op := range ops {
+			if op.HasResponse {
+				resolved := g.ResolveSchemaRef(op.ResponseSchema)
+				if len(resolved.AllOf) > 0 {
+					resolved = g.MergeAllOfSchemas(resolved)
+				}
+				if len(resolved.OneOf) > 0 || len(resolved.AnyOf) > 0 {
+					resolved = g.MergeOneOfSchemas(resolved)
+				}
+				for _, propSchema := range resolved.Properties {
+					goType := g.ResolveGoType(propSchema)
+					if rootTypes[goType] {
+						return true
+					}
 				}
 			}
 		}
@@ -300,7 +329,8 @@ func (g *Generator) CollectResponseTypes(name string, s SchemaObj) {
 		resolved = g.MergeOneOfSchemas(resolved)
 	}
 
-	for propName, propSchema := range resolved.Properties {
+	for _, propName := range SortedKeys(resolved.Properties) {
+		propSchema := resolved.Properties[propName]
 		goFieldName := ToPascalCase(propName)
 		resolvedProp := g.ResolveSchemaRef(propSchema)
 		if resolvedProp.Ref == "" && len(resolvedProp.Properties) > 0 {
@@ -340,9 +370,14 @@ func (g *Generator) WriteResponseStruct(b *strings.Builder, name string, s Schem
 			goType = inlineName
 		}
 
+		// Qualify root package types
+		if rootPkgTypes[goType] {
+			goType = "lolzteam." + goType
+		}
+
 		isRequired := reqSet[propName]
 		if isRequired {
-			fmt.Fprintf(b, "\t%s %s `json:\"%s,omitempty\"`\n", goFieldName, goType, propName)
+			fmt.Fprintf(b, "\t%s %s `json:\"%s\"`\n", goFieldName, goType, propName)
 		} else {
 			ptrType := PtrWrap(goType)
 			fmt.Fprintf(b, "\t%s %s `json:\"%s,omitempty\"`\n", goFieldName, ptrType, propName)
@@ -366,7 +401,11 @@ func (g *Generator) WriteMethod(b *strings.Builder, groupName string, op Operati
 	var sigParts []string
 	sigParts = append(sigParts, "ctx context.Context")
 	for _, pp := range op.PathParams {
-		sigParts = append(sigParts, CamelCase(pp.GoName)+" "+pp.GoType)
+		goType := pp.GoType
+		if rootPkgTypes[goType] {
+			goType = "lolzteam." + goType
+		}
+		sigParts = append(sigParts, CamelCase(pp.GoName)+" "+goType)
 	}
 	if hasParams {
 		sigParts = append(sigParts, "params *"+paramsStructName)

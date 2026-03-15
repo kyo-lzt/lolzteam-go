@@ -8,5125 +8,5125 @@ import (
 
 // AssetsCSSResponseSystemInfo represents a component schema.
 type AssetsCSSResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // BatchExecuteResponseJobs represents a component schema.
 type BatchExecuteResponseJobs struct {
-	JobID map[string]any `json:"job_id,omitempty"`
+	JobID map[string]any `json:"job_id"`
 }
 
 // CategoriesGetResponseCategory represents a component schema.
 type CategoriesGetResponseCategory struct {
-	CategoryDescription string                                   `json:"category_description,omitempty"`
-	CategoryID          int64                                    `json:"category_id,omitempty"`
-	CategoryTitle       string                                   `json:"category_title,omitempty"`
-	Links               CategoriesGetResponseCategoryLinks       `json:"links,omitempty"`
-	Permissions         CategoriesGetResponseCategoryPermissions `json:"permissions,omitempty"`
+	CategoryDescription string                                   `json:"category_description"`
+	CategoryID          int64                                    `json:"category_id"`
+	CategoryTitle       string                                   `json:"category_title"`
+	Links               CategoriesGetResponseCategoryLinks       `json:"links"`
+	Permissions         CategoriesGetResponseCategoryPermissions `json:"permissions"`
 }
 
 // CategoriesGetResponseCategoryLinks represents a component schema.
 type CategoriesGetResponseCategoryLinks struct {
-	Detail        string `json:"detail,omitempty"`
-	Permalink     string `json:"permalink,omitempty"`
-	SubCategories string `json:"sub-categories,omitempty"`
-	SubForums     string `json:"sub-forums,omitempty"`
+	Detail        string `json:"detail"`
+	Permalink     string `json:"permalink"`
+	SubCategories string `json:"sub-categories"`
+	SubForums     string `json:"sub-forums"`
 }
 
 // CategoriesGetResponseCategoryPermissions represents a component schema.
 type CategoriesGetResponseCategoryPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	View   bool `json:"view"`
 }
 
 // CategoriesGetResponseSystemInfo represents a component schema.
 type CategoriesGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // CategoriesListResponseSystemInfo represents a component schema.
 type CategoriesListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ChatboxDeleteIgnoreResponseSystemInfo represents a component schema.
 type ChatboxDeleteIgnoreResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ChatboxDeleteMessageResponseSystemInfo represents a component schema.
 type ChatboxDeleteMessageResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ChatboxEditMessageResponseMessage represents a component schema.
 type ChatboxEditMessageResponseMessage struct {
-	CanReport   bool                                  `json:"can_report,omitempty"`
-	Date        int64                                 `json:"date,omitempty"`
-	IsDeleted   bool                                  `json:"is_deleted,omitempty"`
-	Message     string                                `json:"message,omitempty"`
-	MessageJSON string                                `json:"messageJson,omitempty"`
-	MessageRaw  string                                `json:"messageRaw,omitempty"`
-	MessageID   int64                                 `json:"message_id,omitempty"`
-	Room        ChatboxEditMessageResponseMessageRoom `json:"room,omitempty"`
-	User        ChatboxEditMessageResponseMessageUser `json:"user,omitempty"`
+	CanReport   bool                                  `json:"can_report"`
+	Date        int64                                 `json:"date"`
+	IsDeleted   bool                                  `json:"is_deleted"`
+	Message     string                                `json:"message"`
+	MessageJSON string                                `json:"messageJson"`
+	MessageRaw  string                                `json:"messageRaw"`
+	MessageID   int64                                 `json:"message_id"`
+	Room        ChatboxEditMessageResponseMessageRoom `json:"room"`
+	User        ChatboxEditMessageResponseMessageUser `json:"user"`
 }
 
 // ChatboxEditMessageResponseMessageRoom represents a component schema.
 type ChatboxEditMessageResponseMessageRoom struct {
-	CanReport bool   `json:"can_report,omitempty"`
-	Eng       bool   `json:"eng,omitempty"`
-	Market    bool   `json:"market,omitempty"`
-	RoomID    int64  `json:"room_id,omitempty"`
-	Title     string `json:"title,omitempty"`
+	CanReport bool   `json:"can_report"`
+	Eng       bool   `json:"eng"`
+	Market    bool   `json:"market"`
+	RoomID    int64  `json:"room_id"`
+	Title     string `json:"title"`
 }
 
 // ChatboxEditMessageResponseMessageUser represents a component schema.
 type ChatboxEditMessageResponseMessageUser struct {
-	AvatarDate          int64                                           `json:"avatar_date,omitempty"`
-	BackgroundDate      int64                                           `json:"background_date,omitempty"`
-	ContestCount        int64                                           `json:"contest_count,omitempty"`
-	CustomTitle         string                                          `json:"custom_title,omitempty"`
-	DisplayBannerID     int64                                           `json:"display_banner_id,omitempty"`
-	DisplayIconGroupID  int64                                           `json:"display_icon_group_id,omitempty"`
-	DisplayStyleGroupID int64                                           `json:"display_style_group_id,omitempty"`
-	IsAdmin             bool                                            `json:"is_admin,omitempty"`
-	IsBanned            bool                                            `json:"is_banned,omitempty"`
-	IsModerator         bool                                            `json:"is_moderator,omitempty"`
-	IsStaff             bool                                            `json:"is_staff,omitempty"`
-	LastActivity        int64                                           `json:"last_activity,omitempty"`
-	Like2Count          int64                                           `json:"like2_count,omitempty"`
-	LikeCount           int64                                           `json:"like_count,omitempty"`
-	MessageCount        int64                                           `json:"message_count,omitempty"`
-	RegisterDate        int64                                           `json:"register_date,omitempty"`
-	Rendered            ChatboxEditMessageResponseMessageUserRendered   `json:"rendered,omitempty"`
-	ShortLink           string                                          `json:"short_link,omitempty"`
-	TrophyPoints        int64                                           `json:"trophy_points,omitempty"`
-	UniqBanner          ChatboxEditMessageResponseMessageUserUniqBanner `json:"uniq_banner,omitempty"`
-	UniqUsernameCSS     string                                          `json:"uniq_username_css,omitempty"`
-	UserID              int64                                           `json:"user_id,omitempty"`
-	Username            string                                          `json:"username,omitempty"`
+	AvatarDate          int64                                           `json:"avatar_date"`
+	BackgroundDate      int64                                           `json:"background_date"`
+	ContestCount        int64                                           `json:"contest_count"`
+	CustomTitle         string                                          `json:"custom_title"`
+	DisplayBannerID     int64                                           `json:"display_banner_id"`
+	DisplayIconGroupID  int64                                           `json:"display_icon_group_id"`
+	DisplayStyleGroupID int64                                           `json:"display_style_group_id"`
+	IsAdmin             bool                                            `json:"is_admin"`
+	IsBanned            bool                                            `json:"is_banned"`
+	IsModerator         bool                                            `json:"is_moderator"`
+	IsStaff             bool                                            `json:"is_staff"`
+	LastActivity        int64                                           `json:"last_activity"`
+	Like2Count          int64                                           `json:"like2_count"`
+	LikeCount           int64                                           `json:"like_count"`
+	MessageCount        int64                                           `json:"message_count"`
+	RegisterDate        int64                                           `json:"register_date"`
+	Rendered            ChatboxEditMessageResponseMessageUserRendered   `json:"rendered"`
+	ShortLink           string                                          `json:"short_link"`
+	TrophyPoints        int64                                           `json:"trophy_points"`
+	UniqBanner          ChatboxEditMessageResponseMessageUserUniqBanner `json:"uniq_banner"`
+	UniqUsernameCSS     string                                          `json:"uniq_username_css"`
+	UserID              int64                                           `json:"user_id"`
+	Username            string                                          `json:"username"`
 }
 
 // ChatboxEditMessageResponseMessageUserRendered represents a component schema.
 type ChatboxEditMessageResponseMessageUserRendered struct {
-	Avatars  ChatboxEditMessageResponseMessageUserRenderedAvatars `json:"avatars,omitempty"`
-	Link     string                                               `json:"link,omitempty"`
-	Username string                                               `json:"username,omitempty"`
+	Avatars  ChatboxEditMessageResponseMessageUserRenderedAvatars `json:"avatars"`
+	Link     string                                               `json:"link"`
+	Username string                                               `json:"username"`
 }
 
 // ChatboxEditMessageResponseMessageUserRenderedAvatars represents a component schema.
 type ChatboxEditMessageResponseMessageUserRenderedAvatars struct {
-	L string `json:"l,omitempty"`
-	M string `json:"m,omitempty"`
-	S string `json:"s,omitempty"`
+	L string `json:"l"`
+	M string `json:"m"`
+	S string `json:"s"`
 }
 
 // ChatboxEditMessageResponseMessageUserUniqBanner represents a component schema.
 type ChatboxEditMessageResponseMessageUserUniqBanner struct {
-	BannerCSS    string `json:"banner_css,omitempty"`
-	BannerIcon   string `json:"banner_icon,omitempty"`
-	BannerText   string `json:"banner_text,omitempty"`
-	UsernameIcon string `json:"username_icon,omitempty"`
+	BannerCSS    string `json:"banner_css"`
+	BannerIcon   string `json:"banner_icon"`
+	BannerText   string `json:"banner_text"`
+	UsernameIcon string `json:"username_icon"`
 }
 
 // ChatboxEditMessageResponseSystemInfo represents a component schema.
 type ChatboxEditMessageResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ChatboxGetIgnoreResponseSystemInfo represents a component schema.
 type ChatboxGetIgnoreResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ChatboxGetLeaderboardResponseSystemInfo represents a component schema.
 type ChatboxGetLeaderboardResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ChatboxGetMessagesResponseSystemInfo represents a component schema.
 type ChatboxGetMessagesResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ChatboxIndexResponsePermissions represents a component schema.
 type ChatboxIndexResponsePermissions struct {
-	Ban              bool `json:"ban,omitempty"`
-	DeleteAnyMessage bool `json:"deleteAnyMessage,omitempty"`
-	EditAnyMessage   bool `json:"editAnyMessage,omitempty"`
-	PostMessage      bool `json:"postMessage,omitempty"`
-	ViewAnyMessage   bool `json:"viewAnyMessage,omitempty"`
-	ViewMessages     bool `json:"viewMessages,omitempty"`
+	Ban              bool `json:"ban"`
+	DeleteAnyMessage bool `json:"deleteAnyMessage"`
+	EditAnyMessage   bool `json:"editAnyMessage"`
+	PostMessage      bool `json:"postMessage"`
+	ViewAnyMessage   bool `json:"viewAnyMessage"`
+	ViewMessages     bool `json:"viewMessages"`
 }
 
 // ChatboxIndexResponseRoomsOnline represents a component schema.
 type ChatboxIndexResponseRoomsOnline struct {
-	Chat0 int64 `json:"chat:0,omitempty"`
+	Chat0 int64 `json:"chat:0"`
 }
 
 // ChatboxIndexResponseSystemInfo represents a component schema.
 type ChatboxIndexResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ChatboxOnlineResponseSystemInfo represents a component schema.
 type ChatboxOnlineResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ChatboxPostIgnoreResponseSystemInfo represents a component schema.
 type ChatboxPostIgnoreResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ChatboxPostMessageResponseMessage represents a component schema.
 type ChatboxPostMessageResponseMessage struct {
-	CanReport   bool                                  `json:"can_report,omitempty"`
-	Date        int64                                 `json:"date,omitempty"`
-	IsDeleted   bool                                  `json:"is_deleted,omitempty"`
-	Message     string                                `json:"message,omitempty"`
-	MessageJSON string                                `json:"messageJson,omitempty"`
-	MessageRaw  string                                `json:"messageRaw,omitempty"`
-	MessageID   int64                                 `json:"message_id,omitempty"`
-	Room        ChatboxPostMessageResponseMessageRoom `json:"room,omitempty"`
-	User        ChatboxPostMessageResponseMessageUser `json:"user,omitempty"`
+	CanReport   bool                                  `json:"can_report"`
+	Date        int64                                 `json:"date"`
+	IsDeleted   bool                                  `json:"is_deleted"`
+	Message     string                                `json:"message"`
+	MessageJSON string                                `json:"messageJson"`
+	MessageRaw  string                                `json:"messageRaw"`
+	MessageID   int64                                 `json:"message_id"`
+	Room        ChatboxPostMessageResponseMessageRoom `json:"room"`
+	User        ChatboxPostMessageResponseMessageUser `json:"user"`
 }
 
 // ChatboxPostMessageResponseMessageRoom represents a component schema.
 type ChatboxPostMessageResponseMessageRoom struct {
-	CanReport bool   `json:"can_report,omitempty"`
-	Eng       bool   `json:"eng,omitempty"`
-	Market    bool   `json:"market,omitempty"`
-	RoomID    int64  `json:"room_id,omitempty"`
-	Title     string `json:"title,omitempty"`
+	CanReport bool   `json:"can_report"`
+	Eng       bool   `json:"eng"`
+	Market    bool   `json:"market"`
+	RoomID    int64  `json:"room_id"`
+	Title     string `json:"title"`
 }
 
 // ChatboxPostMessageResponseMessageUser represents a component schema.
 type ChatboxPostMessageResponseMessageUser struct {
-	AvatarDate          int64                                           `json:"avatar_date,omitempty"`
-	BackgroundDate      int64                                           `json:"background_date,omitempty"`
-	ContestCount        int64                                           `json:"contest_count,omitempty"`
-	CustomTitle         string                                          `json:"custom_title,omitempty"`
-	DisplayBannerID     int64                                           `json:"display_banner_id,omitempty"`
-	DisplayIconGroupID  int64                                           `json:"display_icon_group_id,omitempty"`
-	DisplayStyleGroupID int64                                           `json:"display_style_group_id,omitempty"`
-	IsAdmin             bool                                            `json:"is_admin,omitempty"`
-	IsBanned            bool                                            `json:"is_banned,omitempty"`
-	IsModerator         bool                                            `json:"is_moderator,omitempty"`
-	IsStaff             bool                                            `json:"is_staff,omitempty"`
-	LastActivity        int64                                           `json:"last_activity,omitempty"`
-	Like2Count          int64                                           `json:"like2_count,omitempty"`
-	LikeCount           int64                                           `json:"like_count,omitempty"`
-	MessageCount        int64                                           `json:"message_count,omitempty"`
-	RegisterDate        int64                                           `json:"register_date,omitempty"`
-	Rendered            ChatboxPostMessageResponseMessageUserRendered   `json:"rendered,omitempty"`
-	ShortLink           string                                          `json:"short_link,omitempty"`
-	TrophyPoints        int64                                           `json:"trophy_points,omitempty"`
-	UniqBanner          ChatboxPostMessageResponseMessageUserUniqBanner `json:"uniq_banner,omitempty"`
-	UniqUsernameCSS     string                                          `json:"uniq_username_css,omitempty"`
-	UserID              int64                                           `json:"user_id,omitempty"`
-	Username            string                                          `json:"username,omitempty"`
+	AvatarDate          int64                                           `json:"avatar_date"`
+	BackgroundDate      int64                                           `json:"background_date"`
+	ContestCount        int64                                           `json:"contest_count"`
+	CustomTitle         string                                          `json:"custom_title"`
+	DisplayBannerID     int64                                           `json:"display_banner_id"`
+	DisplayIconGroupID  int64                                           `json:"display_icon_group_id"`
+	DisplayStyleGroupID int64                                           `json:"display_style_group_id"`
+	IsAdmin             bool                                            `json:"is_admin"`
+	IsBanned            bool                                            `json:"is_banned"`
+	IsModerator         bool                                            `json:"is_moderator"`
+	IsStaff             bool                                            `json:"is_staff"`
+	LastActivity        int64                                           `json:"last_activity"`
+	Like2Count          int64                                           `json:"like2_count"`
+	LikeCount           int64                                           `json:"like_count"`
+	MessageCount        int64                                           `json:"message_count"`
+	RegisterDate        int64                                           `json:"register_date"`
+	Rendered            ChatboxPostMessageResponseMessageUserRendered   `json:"rendered"`
+	ShortLink           string                                          `json:"short_link"`
+	TrophyPoints        int64                                           `json:"trophy_points"`
+	UniqBanner          ChatboxPostMessageResponseMessageUserUniqBanner `json:"uniq_banner"`
+	UniqUsernameCSS     string                                          `json:"uniq_username_css"`
+	UserID              int64                                           `json:"user_id"`
+	Username            string                                          `json:"username"`
 }
 
 // ChatboxPostMessageResponseMessageUserRendered represents a component schema.
 type ChatboxPostMessageResponseMessageUserRendered struct {
-	Avatars  ChatboxPostMessageResponseMessageUserRenderedAvatars `json:"avatars,omitempty"`
-	Link     string                                               `json:"link,omitempty"`
-	Username string                                               `json:"username,omitempty"`
+	Avatars  ChatboxPostMessageResponseMessageUserRenderedAvatars `json:"avatars"`
+	Link     string                                               `json:"link"`
+	Username string                                               `json:"username"`
 }
 
 // ChatboxPostMessageResponseMessageUserRenderedAvatars represents a component schema.
 type ChatboxPostMessageResponseMessageUserRenderedAvatars struct {
-	L string `json:"l,omitempty"`
-	M string `json:"m,omitempty"`
-	S string `json:"s,omitempty"`
+	L string `json:"l"`
+	M string `json:"m"`
+	S string `json:"s"`
 }
 
 // ChatboxPostMessageResponseMessageUserUniqBanner represents a component schema.
 type ChatboxPostMessageResponseMessageUserUniqBanner struct {
-	BannerCSS    string `json:"banner_css,omitempty"`
-	BannerIcon   string `json:"banner_icon,omitempty"`
-	BannerText   string `json:"banner_text,omitempty"`
-	UsernameIcon string `json:"username_icon,omitempty"`
+	BannerCSS    string `json:"banner_css"`
+	BannerIcon   string `json:"banner_icon"`
+	BannerText   string `json:"banner_text"`
+	UsernameIcon string `json:"username_icon"`
 }
 
 // ChatboxPostMessageResponseSystemInfo represents a component schema.
 type ChatboxPostMessageResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ChatboxReportReasonsResponseSystemInfo represents a component schema.
 type ChatboxReportReasonsResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ChatboxReportResponseSystemInfo represents a component schema.
 type ChatboxReportResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsAlertsDisableResponseSystemInfo represents a component schema.
 type ConversationsAlertsDisableResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsAlertsEnableResponseSystemInfo represents a component schema.
 type ConversationsAlertsEnableResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsCreateResponseConversation represents a component schema.
 type ConversationsCreateResponseConversation struct {
-	Alerts                   int64                                              `json:"alerts,omitempty"`
-	ConversationCreateDate   int64                                              `json:"conversation_create_date,omitempty"`
-	ConversationID           int64                                              `json:"conversation_id,omitempty"`
-	ConversationIsDeleted    bool                                               `json:"conversation_is_deleted,omitempty"`
-	ConversationIsNew        bool                                               `json:"conversation_is_new,omitempty"`
-	ConversationIsOpen       bool                                               `json:"conversation_is_open,omitempty"`
-	ConversationLastReadDate int64                                              `json:"conversation_last_read_date,omitempty"`
-	ConversationMessageCount int64                                              `json:"conversation_message_count,omitempty"`
-	ConversationOnlineCount  int64                                              `json:"conversation_online_count,omitempty"`
-	ConversationTitle        string                                             `json:"conversation_title,omitempty"`
-	ConversationUpdateDate   int64                                              `json:"conversation_update_date,omitempty"`
-	CreatorIsIgnored         bool                                               `json:"creator_is_ignored,omitempty"`
-	CreatorUserID            int64                                              `json:"creator_user_id,omitempty"`
-	CreatorUsername          string                                             `json:"creator_username,omitempty"`
-	CreatorUsernameHTML      string                                             `json:"creator_username_html,omitempty"`
-	IsGroup                  int64                                              `json:"is_group,omitempty"`
-	IsStarred                int64                                              `json:"is_starred,omitempty"`
-	IsUnread                 int64                                              `json:"is_unread,omitempty"`
-	Links                    ConversationsCreateResponseConversationLinks       `json:"links,omitempty"`
-	Permissions              ConversationsCreateResponseConversationPermissions `json:"permissions,omitempty"`
-	Recipient                ConversationsCreateResponseConversationRecipient   `json:"recipient,omitempty"`
-	Recipients               []any                                              `json:"recipients,omitempty"`
+	Alerts                   int64                                              `json:"alerts"`
+	ConversationCreateDate   int64                                              `json:"conversation_create_date"`
+	ConversationID           int64                                              `json:"conversation_id"`
+	ConversationIsDeleted    bool                                               `json:"conversation_is_deleted"`
+	ConversationIsNew        bool                                               `json:"conversation_is_new"`
+	ConversationIsOpen       bool                                               `json:"conversation_is_open"`
+	ConversationLastReadDate int64                                              `json:"conversation_last_read_date"`
+	ConversationMessageCount int64                                              `json:"conversation_message_count"`
+	ConversationOnlineCount  int64                                              `json:"conversation_online_count"`
+	ConversationTitle        string                                             `json:"conversation_title"`
+	ConversationUpdateDate   int64                                              `json:"conversation_update_date"`
+	CreatorIsIgnored         bool                                               `json:"creator_is_ignored"`
+	CreatorUserID            int64                                              `json:"creator_user_id"`
+	CreatorUsername          string                                             `json:"creator_username"`
+	CreatorUsernameHTML      string                                             `json:"creator_username_html"`
+	IsGroup                  int64                                              `json:"is_group"`
+	IsStarred                int64                                              `json:"is_starred"`
+	IsUnread                 int64                                              `json:"is_unread"`
+	Links                    ConversationsCreateResponseConversationLinks       `json:"links"`
+	Permissions              ConversationsCreateResponseConversationPermissions `json:"permissions"`
+	Recipient                ConversationsCreateResponseConversationRecipient   `json:"recipient"`
+	Recipients               []any                                              `json:"recipients"`
 }
 
 // ConversationsCreateResponseConversationLinks represents a component schema.
 type ConversationsCreateResponseConversationLinks struct {
-	Avatar    string `json:"avatar,omitempty"`
-	Detail    string `json:"detail,omitempty"`
-	Messages  string `json:"messages,omitempty"`
-	Permalink string `json:"permalink,omitempty"`
+	Avatar    string `json:"avatar"`
+	Detail    string `json:"detail"`
+	Messages  string `json:"messages"`
+	Permalink string `json:"permalink"`
 }
 
 // ConversationsCreateResponseConversationPermissions represents a component schema.
 type ConversationsCreateResponseConversationPermissions struct {
-	EditOwnPost       bool `json:"editOwnPost,omitempty"`
-	Invite            bool `json:"invite,omitempty"`
-	Kick              bool `json:"kick,omitempty"`
-	ManageInviteLinks bool `json:"manage_invite_links,omitempty"`
-	Reply             bool `json:"reply,omitempty"`
-	StickyMessages    bool `json:"stickyMessages,omitempty"`
-	UploadAvatar      bool `json:"upload_avatar,omitempty"`
-	View              bool `json:"view,omitempty"`
+	EditOwnPost       bool `json:"editOwnPost"`
+	Invite            bool `json:"invite"`
+	Kick              bool `json:"kick"`
+	ManageInviteLinks bool `json:"manage_invite_links"`
+	Reply             bool `json:"reply"`
+	StickyMessages    bool `json:"stickyMessages"`
+	UploadAvatar      bool `json:"upload_avatar"`
+	View              bool `json:"view"`
 }
 
 // ConversationsCreateResponseConversationRecipient represents a component schema.
 type ConversationsCreateResponseConversationRecipient struct {
-	Avatar          string `json:"avatar,omitempty"`
-	ContactsChanged bool   `json:"contacts_changed,omitempty"`
-	IsOnline        bool   `json:"is_online,omitempty"`
-	LastActivity    int64  `json:"last_activity,omitempty"`
-	UserID          int64  `json:"user_id,omitempty"`
-	Username        string `json:"username,omitempty"`
-	UsernameHTML    string `json:"username_html,omitempty"`
+	Avatar          string `json:"avatar"`
+	ContactsChanged bool   `json:"contacts_changed"`
+	IsOnline        bool   `json:"is_online"`
+	LastActivity    int64  `json:"last_activity"`
+	UserID          int64  `json:"user_id"`
+	Username        string `json:"username"`
+	UsernameHTML    string `json:"username_html"`
 }
 
 // ConversationsCreateResponseSystemInfo represents a component schema.
 type ConversationsCreateResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsDeleteResponseSystemInfo represents a component schema.
 type ConversationsDeleteResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsGetResponseConversation represents a component schema.
 type ConversationsGetResponseConversation struct {
-	Alerts                   int64                                           `json:"alerts,omitempty"`
-	ConversationCreateDate   int64                                           `json:"conversation_create_date,omitempty"`
-	ConversationID           int64                                           `json:"conversation_id,omitempty"`
-	ConversationIsDeleted    bool                                            `json:"conversation_is_deleted,omitempty"`
-	ConversationIsNew        bool                                            `json:"conversation_is_new,omitempty"`
-	ConversationIsOpen       bool                                            `json:"conversation_is_open,omitempty"`
-	ConversationLastReadDate int64                                           `json:"conversation_last_read_date,omitempty"`
-	ConversationMessageCount int64                                           `json:"conversation_message_count,omitempty"`
-	ConversationOnlineCount  int64                                           `json:"conversation_online_count,omitempty"`
-	ConversationTitle        string                                          `json:"conversation_title,omitempty"`
-	ConversationUpdateDate   int64                                           `json:"conversation_update_date,omitempty"`
-	CreatorIsIgnored         bool                                            `json:"creator_is_ignored,omitempty"`
-	CreatorUserID            int64                                           `json:"creator_user_id,omitempty"`
-	CreatorUsername          string                                          `json:"creator_username,omitempty"`
-	CreatorUsernameHTML      string                                          `json:"creator_username_html,omitempty"`
-	IsGroup                  int64                                           `json:"is_group,omitempty"`
-	IsStarred                int64                                           `json:"is_starred,omitempty"`
-	IsUnread                 int64                                           `json:"is_unread,omitempty"`
-	Links                    ConversationsGetResponseConversationLinks       `json:"links,omitempty"`
-	Permissions              ConversationsGetResponseConversationPermissions `json:"permissions,omitempty"`
-	Recipient                ConversationsGetResponseConversationRecipient   `json:"recipient,omitempty"`
-	Recipients               []any                                           `json:"recipients,omitempty"`
+	Alerts                   int64                                           `json:"alerts"`
+	ConversationCreateDate   int64                                           `json:"conversation_create_date"`
+	ConversationID           int64                                           `json:"conversation_id"`
+	ConversationIsDeleted    bool                                            `json:"conversation_is_deleted"`
+	ConversationIsNew        bool                                            `json:"conversation_is_new"`
+	ConversationIsOpen       bool                                            `json:"conversation_is_open"`
+	ConversationLastReadDate int64                                           `json:"conversation_last_read_date"`
+	ConversationMessageCount int64                                           `json:"conversation_message_count"`
+	ConversationOnlineCount  int64                                           `json:"conversation_online_count"`
+	ConversationTitle        string                                          `json:"conversation_title"`
+	ConversationUpdateDate   int64                                           `json:"conversation_update_date"`
+	CreatorIsIgnored         bool                                            `json:"creator_is_ignored"`
+	CreatorUserID            int64                                           `json:"creator_user_id"`
+	CreatorUsername          string                                          `json:"creator_username"`
+	CreatorUsernameHTML      string                                          `json:"creator_username_html"`
+	IsGroup                  int64                                           `json:"is_group"`
+	IsStarred                int64                                           `json:"is_starred"`
+	IsUnread                 int64                                           `json:"is_unread"`
+	Links                    ConversationsGetResponseConversationLinks       `json:"links"`
+	Permissions              ConversationsGetResponseConversationPermissions `json:"permissions"`
+	Recipient                ConversationsGetResponseConversationRecipient   `json:"recipient"`
+	Recipients               []any                                           `json:"recipients"`
 }
 
 // ConversationsGetResponseConversationLinks represents a component schema.
 type ConversationsGetResponseConversationLinks struct {
-	Avatar    string `json:"avatar,omitempty"`
-	Detail    string `json:"detail,omitempty"`
-	Messages  string `json:"messages,omitempty"`
-	Permalink string `json:"permalink,omitempty"`
+	Avatar    string `json:"avatar"`
+	Detail    string `json:"detail"`
+	Messages  string `json:"messages"`
+	Permalink string `json:"permalink"`
 }
 
 // ConversationsGetResponseConversationPermissions represents a component schema.
 type ConversationsGetResponseConversationPermissions struct {
-	EditOwnPost       bool `json:"editOwnPost,omitempty"`
-	Invite            bool `json:"invite,omitempty"`
-	Kick              bool `json:"kick,omitempty"`
-	ManageInviteLinks bool `json:"manage_invite_links,omitempty"`
-	Reply             bool `json:"reply,omitempty"`
-	StickyMessages    bool `json:"stickyMessages,omitempty"`
-	UploadAvatar      bool `json:"upload_avatar,omitempty"`
-	View              bool `json:"view,omitempty"`
+	EditOwnPost       bool `json:"editOwnPost"`
+	Invite            bool `json:"invite"`
+	Kick              bool `json:"kick"`
+	ManageInviteLinks bool `json:"manage_invite_links"`
+	Reply             bool `json:"reply"`
+	StickyMessages    bool `json:"stickyMessages"`
+	UploadAvatar      bool `json:"upload_avatar"`
+	View              bool `json:"view"`
 }
 
 // ConversationsGetResponseConversationRecipient represents a component schema.
 type ConversationsGetResponseConversationRecipient struct {
-	Avatar          string `json:"avatar,omitempty"`
-	ContactsChanged bool   `json:"contacts_changed,omitempty"`
-	IsOnline        bool   `json:"is_online,omitempty"`
-	LastActivity    int64  `json:"last_activity,omitempty"`
-	UserID          int64  `json:"user_id,omitempty"`
-	Username        string `json:"username,omitempty"`
-	UsernameHTML    string `json:"username_html,omitempty"`
+	Avatar          string `json:"avatar"`
+	ContactsChanged bool   `json:"contacts_changed"`
+	IsOnline        bool   `json:"is_online"`
+	LastActivity    int64  `json:"last_activity"`
+	UserID          int64  `json:"user_id"`
+	Username        string `json:"username"`
+	UsernameHTML    string `json:"username_html"`
 }
 
 // ConversationsGetResponseSystemInfo represents a component schema.
 type ConversationsGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsInviteResponseSystemInfo represents a component schema.
 type ConversationsInviteResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsKickResponseSystemInfo represents a component schema.
 type ConversationsKickResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsListResponseLinks represents a component schema.
 type ConversationsListResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
 }
 
 // ConversationsListResponseSystemInfo represents a component schema.
 type ConversationsListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsMessagesCreateResponseMessage represents a component schema.
 type ConversationsMessagesCreateResponseMessage struct {
-	ConversationID       int64                                                 `json:"conversation_id,omitempty"`
-	CreatorUserID        int64                                                 `json:"creator_user_id,omitempty"`
-	CreatorUsername      string                                                `json:"creator_username,omitempty"`
-	CreatorUsernameHTML  string                                                `json:"creator_username_html,omitempty"`
-	Links                ConversationsMessagesCreateResponseMessageLinks       `json:"links,omitempty"`
-	MessageBody          string                                                `json:"message_body,omitempty"`
-	MessageBodyHTML      string                                                `json:"message_body_html,omitempty"`
-	MessageBodyPlainText string                                                `json:"message_body_plain_text,omitempty"`
-	MessageCreateDate    int64                                                 `json:"message_create_date,omitempty"`
-	MessageEditDate      int64                                                 `json:"message_edit_date,omitempty"`
-	MessageID            int64                                                 `json:"message_id,omitempty"`
-	MessageIsSystem      bool                                                  `json:"message_is_system,omitempty"`
-	MessageIsUnread      int64                                                 `json:"message_is_unread,omitempty"`
-	MessageNeedTranslate bool                                                  `json:"message_need_translate,omitempty"`
-	Permissions          ConversationsMessagesCreateResponseMessagePermissions `json:"permissions,omitempty"`
-	UserIsIgnored        bool                                                  `json:"user_is_ignored,omitempty"`
+	ConversationID       int64                                                 `json:"conversation_id"`
+	CreatorUserID        int64                                                 `json:"creator_user_id"`
+	CreatorUsername      string                                                `json:"creator_username"`
+	CreatorUsernameHTML  string                                                `json:"creator_username_html"`
+	Links                ConversationsMessagesCreateResponseMessageLinks       `json:"links"`
+	MessageBody          string                                                `json:"message_body"`
+	MessageBodyHTML      string                                                `json:"message_body_html"`
+	MessageBodyPlainText string                                                `json:"message_body_plain_text"`
+	MessageCreateDate    int64                                                 `json:"message_create_date"`
+	MessageEditDate      int64                                                 `json:"message_edit_date"`
+	MessageID            int64                                                 `json:"message_id"`
+	MessageIsSystem      bool                                                  `json:"message_is_system"`
+	MessageIsUnread      int64                                                 `json:"message_is_unread"`
+	MessageNeedTranslate bool                                                  `json:"message_need_translate"`
+	Permissions          ConversationsMessagesCreateResponseMessagePermissions `json:"permissions"`
+	UserIsIgnored        bool                                                  `json:"user_is_ignored"`
 }
 
 // ConversationsMessagesCreateResponseMessageLinks represents a component schema.
 type ConversationsMessagesCreateResponseMessageLinks struct {
-	Conversation  string `json:"conversation,omitempty"`
-	Creator       string `json:"creator,omitempty"`
-	CreatorAvatar string `json:"creator_avatar,omitempty"`
-	Detail        string `json:"detail,omitempty"`
+	Conversation  string `json:"conversation"`
+	Creator       string `json:"creator"`
+	CreatorAvatar string `json:"creator_avatar"`
+	Detail        string `json:"detail"`
 }
 
 // ConversationsMessagesCreateResponseMessagePermissions represents a component schema.
 type ConversationsMessagesCreateResponseMessagePermissions struct {
-	Delete       bool `json:"delete,omitempty"`
-	Edit         bool `json:"edit,omitempty"`
-	StickUnstick bool `json:"stick-unstick,omitempty"`
-	View         bool `json:"view,omitempty"`
+	Delete       bool `json:"delete"`
+	Edit         bool `json:"edit"`
+	StickUnstick bool `json:"stick-unstick"`
+	View         bool `json:"view"`
 }
 
 // ConversationsMessagesCreateResponseSystemInfo represents a component schema.
 type ConversationsMessagesCreateResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsMessagesDeleteResponseSystemInfo represents a component schema.
 type ConversationsMessagesDeleteResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsMessagesEditResponseMessage represents a component schema.
 type ConversationsMessagesEditResponseMessage struct {
-	Alerts                   int64                                               `json:"alerts,omitempty"`
-	ConversationCreateDate   int64                                               `json:"conversation_create_date,omitempty"`
-	ConversationID           int64                                               `json:"conversation_id,omitempty"`
-	ConversationIsDeleted    bool                                                `json:"conversation_is_deleted,omitempty"`
-	ConversationIsNew        bool                                                `json:"conversation_is_new,omitempty"`
-	ConversationIsOpen       bool                                                `json:"conversation_is_open,omitempty"`
-	ConversationLastReadDate int64                                               `json:"conversation_last_read_date,omitempty"`
-	ConversationMessageCount int64                                               `json:"conversation_message_count,omitempty"`
-	ConversationOnlineCount  int64                                               `json:"conversation_online_count,omitempty"`
-	ConversationTitle        string                                              `json:"conversation_title,omitempty"`
-	ConversationUpdateDate   int64                                               `json:"conversation_update_date,omitempty"`
-	CreatorIsIgnored         bool                                                `json:"creator_is_ignored,omitempty"`
-	CreatorUserID            int64                                               `json:"creator_user_id,omitempty"`
-	CreatorUsername          string                                              `json:"creator_username,omitempty"`
-	CreatorUsernameHTML      string                                              `json:"creator_username_html,omitempty"`
-	IsGroup                  int64                                               `json:"is_group,omitempty"`
-	IsStarred                int64                                               `json:"is_starred,omitempty"`
-	IsUnread                 int64                                               `json:"is_unread,omitempty"`
-	Links                    ConversationsMessagesEditResponseMessageLinks       `json:"links,omitempty"`
-	Permissions              ConversationsMessagesEditResponseMessagePermissions `json:"permissions,omitempty"`
-	Recipient                ConversationsMessagesEditResponseMessageRecipient   `json:"recipient,omitempty"`
-	Recipients               []any                                               `json:"recipients,omitempty"`
+	Alerts                   int64                                               `json:"alerts"`
+	ConversationCreateDate   int64                                               `json:"conversation_create_date"`
+	ConversationID           int64                                               `json:"conversation_id"`
+	ConversationIsDeleted    bool                                                `json:"conversation_is_deleted"`
+	ConversationIsNew        bool                                                `json:"conversation_is_new"`
+	ConversationIsOpen       bool                                                `json:"conversation_is_open"`
+	ConversationLastReadDate int64                                               `json:"conversation_last_read_date"`
+	ConversationMessageCount int64                                               `json:"conversation_message_count"`
+	ConversationOnlineCount  int64                                               `json:"conversation_online_count"`
+	ConversationTitle        string                                              `json:"conversation_title"`
+	ConversationUpdateDate   int64                                               `json:"conversation_update_date"`
+	CreatorIsIgnored         bool                                                `json:"creator_is_ignored"`
+	CreatorUserID            int64                                               `json:"creator_user_id"`
+	CreatorUsername          string                                              `json:"creator_username"`
+	CreatorUsernameHTML      string                                              `json:"creator_username_html"`
+	IsGroup                  int64                                               `json:"is_group"`
+	IsStarred                int64                                               `json:"is_starred"`
+	IsUnread                 int64                                               `json:"is_unread"`
+	Links                    ConversationsMessagesEditResponseMessageLinks       `json:"links"`
+	Permissions              ConversationsMessagesEditResponseMessagePermissions `json:"permissions"`
+	Recipient                ConversationsMessagesEditResponseMessageRecipient   `json:"recipient"`
+	Recipients               []any                                               `json:"recipients"`
 }
 
 // ConversationsMessagesEditResponseMessageLinks represents a component schema.
 type ConversationsMessagesEditResponseMessageLinks struct {
-	Avatar    string `json:"avatar,omitempty"`
-	Detail    string `json:"detail,omitempty"`
-	Messages  string `json:"messages,omitempty"`
-	Permalink string `json:"permalink,omitempty"`
+	Avatar    string `json:"avatar"`
+	Detail    string `json:"detail"`
+	Messages  string `json:"messages"`
+	Permalink string `json:"permalink"`
 }
 
 // ConversationsMessagesEditResponseMessagePermissions represents a component schema.
 type ConversationsMessagesEditResponseMessagePermissions struct {
-	EditOwnPost       bool `json:"editOwnPost,omitempty"`
-	Invite            bool `json:"invite,omitempty"`
-	Kick              bool `json:"kick,omitempty"`
-	ManageInviteLinks bool `json:"manage_invite_links,omitempty"`
-	Reply             bool `json:"reply,omitempty"`
-	StickyMessages    bool `json:"stickyMessages,omitempty"`
-	UploadAvatar      bool `json:"upload_avatar,omitempty"`
-	View              bool `json:"view,omitempty"`
+	EditOwnPost       bool `json:"editOwnPost"`
+	Invite            bool `json:"invite"`
+	Kick              bool `json:"kick"`
+	ManageInviteLinks bool `json:"manage_invite_links"`
+	Reply             bool `json:"reply"`
+	StickyMessages    bool `json:"stickyMessages"`
+	UploadAvatar      bool `json:"upload_avatar"`
+	View              bool `json:"view"`
 }
 
 // ConversationsMessagesEditResponseMessageRecipient represents a component schema.
 type ConversationsMessagesEditResponseMessageRecipient struct {
-	Avatar          string `json:"avatar,omitempty"`
-	ContactsChanged bool   `json:"contacts_changed,omitempty"`
-	IsOnline        bool   `json:"is_online,omitempty"`
-	LastActivity    int64  `json:"last_activity,omitempty"`
-	UserID          int64  `json:"user_id,omitempty"`
-	Username        string `json:"username,omitempty"`
-	UsernameHTML    string `json:"username_html,omitempty"`
+	Avatar          string `json:"avatar"`
+	ContactsChanged bool   `json:"contacts_changed"`
+	IsOnline        bool   `json:"is_online"`
+	LastActivity    int64  `json:"last_activity"`
+	UserID          int64  `json:"user_id"`
+	Username        string `json:"username"`
+	UsernameHTML    string `json:"username_html"`
 }
 
 // ConversationsMessagesEditResponseSystemInfo represents a component schema.
 type ConversationsMessagesEditResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsMessagesGetResponseMessage represents a component schema.
 type ConversationsMessagesGetResponseMessage struct {
-	Alerts                   int64                                              `json:"alerts,omitempty"`
-	ConversationCreateDate   int64                                              `json:"conversation_create_date,omitempty"`
-	ConversationID           int64                                              `json:"conversation_id,omitempty"`
-	ConversationIsDeleted    bool                                               `json:"conversation_is_deleted,omitempty"`
-	ConversationIsNew        bool                                               `json:"conversation_is_new,omitempty"`
-	ConversationIsOpen       bool                                               `json:"conversation_is_open,omitempty"`
-	ConversationLastReadDate int64                                              `json:"conversation_last_read_date,omitempty"`
-	ConversationMessageCount int64                                              `json:"conversation_message_count,omitempty"`
-	ConversationOnlineCount  int64                                              `json:"conversation_online_count,omitempty"`
-	ConversationTitle        string                                             `json:"conversation_title,omitempty"`
-	ConversationUpdateDate   int64                                              `json:"conversation_update_date,omitempty"`
-	CreatorIsIgnored         bool                                               `json:"creator_is_ignored,omitempty"`
-	CreatorUserID            int64                                              `json:"creator_user_id,omitempty"`
-	CreatorUsername          string                                             `json:"creator_username,omitempty"`
-	CreatorUsernameHTML      string                                             `json:"creator_username_html,omitempty"`
-	IsGroup                  int64                                              `json:"is_group,omitempty"`
-	IsStarred                int64                                              `json:"is_starred,omitempty"`
-	IsUnread                 int64                                              `json:"is_unread,omitempty"`
-	Links                    ConversationsMessagesGetResponseMessageLinks       `json:"links,omitempty"`
-	Permissions              ConversationsMessagesGetResponseMessagePermissions `json:"permissions,omitempty"`
-	Recipient                ConversationsMessagesGetResponseMessageRecipient   `json:"recipient,omitempty"`
-	Recipients               []any                                              `json:"recipients,omitempty"`
+	Alerts                   int64                                              `json:"alerts"`
+	ConversationCreateDate   int64                                              `json:"conversation_create_date"`
+	ConversationID           int64                                              `json:"conversation_id"`
+	ConversationIsDeleted    bool                                               `json:"conversation_is_deleted"`
+	ConversationIsNew        bool                                               `json:"conversation_is_new"`
+	ConversationIsOpen       bool                                               `json:"conversation_is_open"`
+	ConversationLastReadDate int64                                              `json:"conversation_last_read_date"`
+	ConversationMessageCount int64                                              `json:"conversation_message_count"`
+	ConversationOnlineCount  int64                                              `json:"conversation_online_count"`
+	ConversationTitle        string                                             `json:"conversation_title"`
+	ConversationUpdateDate   int64                                              `json:"conversation_update_date"`
+	CreatorIsIgnored         bool                                               `json:"creator_is_ignored"`
+	CreatorUserID            int64                                              `json:"creator_user_id"`
+	CreatorUsername          string                                             `json:"creator_username"`
+	CreatorUsernameHTML      string                                             `json:"creator_username_html"`
+	IsGroup                  int64                                              `json:"is_group"`
+	IsStarred                int64                                              `json:"is_starred"`
+	IsUnread                 int64                                              `json:"is_unread"`
+	Links                    ConversationsMessagesGetResponseMessageLinks       `json:"links"`
+	Permissions              ConversationsMessagesGetResponseMessagePermissions `json:"permissions"`
+	Recipient                ConversationsMessagesGetResponseMessageRecipient   `json:"recipient"`
+	Recipients               []any                                              `json:"recipients"`
 }
 
 // ConversationsMessagesGetResponseMessageLinks represents a component schema.
 type ConversationsMessagesGetResponseMessageLinks struct {
-	Avatar    string `json:"avatar,omitempty"`
-	Detail    string `json:"detail,omitempty"`
-	Messages  string `json:"messages,omitempty"`
-	Permalink string `json:"permalink,omitempty"`
+	Avatar    string `json:"avatar"`
+	Detail    string `json:"detail"`
+	Messages  string `json:"messages"`
+	Permalink string `json:"permalink"`
 }
 
 // ConversationsMessagesGetResponseMessagePermissions represents a component schema.
 type ConversationsMessagesGetResponseMessagePermissions struct {
-	EditOwnPost       bool `json:"editOwnPost,omitempty"`
-	Invite            bool `json:"invite,omitempty"`
-	Kick              bool `json:"kick,omitempty"`
-	ManageInviteLinks bool `json:"manage_invite_links,omitempty"`
-	Reply             bool `json:"reply,omitempty"`
-	StickyMessages    bool `json:"stickyMessages,omitempty"`
-	UploadAvatar      bool `json:"upload_avatar,omitempty"`
-	View              bool `json:"view,omitempty"`
+	EditOwnPost       bool `json:"editOwnPost"`
+	Invite            bool `json:"invite"`
+	Kick              bool `json:"kick"`
+	ManageInviteLinks bool `json:"manage_invite_links"`
+	Reply             bool `json:"reply"`
+	StickyMessages    bool `json:"stickyMessages"`
+	UploadAvatar      bool `json:"upload_avatar"`
+	View              bool `json:"view"`
 }
 
 // ConversationsMessagesGetResponseMessageRecipient represents a component schema.
 type ConversationsMessagesGetResponseMessageRecipient struct {
-	Avatar          string `json:"avatar,omitempty"`
-	ContactsChanged bool   `json:"contacts_changed,omitempty"`
-	IsOnline        bool   `json:"is_online,omitempty"`
-	LastActivity    int64  `json:"last_activity,omitempty"`
-	UserID          int64  `json:"user_id,omitempty"`
-	Username        string `json:"username,omitempty"`
-	UsernameHTML    string `json:"username_html,omitempty"`
+	Avatar          string `json:"avatar"`
+	ContactsChanged bool   `json:"contacts_changed"`
+	IsOnline        bool   `json:"is_online"`
+	LastActivity    int64  `json:"last_activity"`
+	UserID          int64  `json:"user_id"`
+	Username        string `json:"username"`
+	UsernameHTML    string `json:"username_html"`
 }
 
 // ConversationsMessagesGetResponseSystemInfo represents a component schema.
 type ConversationsMessagesGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsMessagesListResponseLinks represents a component schema.
 type ConversationsMessagesListResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
 }
 
 // ConversationsMessagesListResponseSystemInfo represents a component schema.
 type ConversationsMessagesListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsMessagesStickResponseSystemInfo represents a component schema.
 type ConversationsMessagesStickResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsMessagesUnstickResponseSystemInfo represents a component schema.
 type ConversationsMessagesUnstickResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsReadAllResponseSystemInfo represents a component schema.
 type ConversationsReadAllResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsReadResponseSystemInfo represents a component schema.
 type ConversationsReadResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsSaveResponseSystemInfo represents a component schema.
 type ConversationsSaveResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsSearchResponseSystemInfo represents a component schema.
 type ConversationsSearchResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsStarResponseSystemInfo represents a component schema.
 type ConversationsStarResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsStartResponseConversation represents a component schema.
 type ConversationsStartResponseConversation struct {
-	Alerts                   int64                                             `json:"alerts,omitempty"`
-	ConversationCreateDate   int64                                             `json:"conversation_create_date,omitempty"`
-	ConversationID           int64                                             `json:"conversation_id,omitempty"`
-	ConversationIsDeleted    bool                                              `json:"conversation_is_deleted,omitempty"`
-	ConversationIsNew        bool                                              `json:"conversation_is_new,omitempty"`
-	ConversationIsOpen       bool                                              `json:"conversation_is_open,omitempty"`
-	ConversationLastReadDate int64                                             `json:"conversation_last_read_date,omitempty"`
-	ConversationMessageCount int64                                             `json:"conversation_message_count,omitempty"`
-	ConversationOnlineCount  int64                                             `json:"conversation_online_count,omitempty"`
-	ConversationTitle        string                                            `json:"conversation_title,omitempty"`
-	ConversationUpdateDate   int64                                             `json:"conversation_update_date,omitempty"`
-	CreatorIsIgnored         bool                                              `json:"creator_is_ignored,omitempty"`
-	CreatorUserID            int64                                             `json:"creator_user_id,omitempty"`
-	CreatorUsername          string                                            `json:"creator_username,omitempty"`
-	CreatorUsernameHTML      string                                            `json:"creator_username_html,omitempty"`
-	IsGroup                  int64                                             `json:"is_group,omitempty"`
-	IsStarred                int64                                             `json:"is_starred,omitempty"`
-	IsUnread                 int64                                             `json:"is_unread,omitempty"`
-	Links                    ConversationsStartResponseConversationLinks       `json:"links,omitempty"`
-	Permissions              ConversationsStartResponseConversationPermissions `json:"permissions,omitempty"`
-	Recipient                ConversationsStartResponseConversationRecipient   `json:"recipient,omitempty"`
-	Recipients               []any                                             `json:"recipients,omitempty"`
+	Alerts                   int64                                             `json:"alerts"`
+	ConversationCreateDate   int64                                             `json:"conversation_create_date"`
+	ConversationID           int64                                             `json:"conversation_id"`
+	ConversationIsDeleted    bool                                              `json:"conversation_is_deleted"`
+	ConversationIsNew        bool                                              `json:"conversation_is_new"`
+	ConversationIsOpen       bool                                              `json:"conversation_is_open"`
+	ConversationLastReadDate int64                                             `json:"conversation_last_read_date"`
+	ConversationMessageCount int64                                             `json:"conversation_message_count"`
+	ConversationOnlineCount  int64                                             `json:"conversation_online_count"`
+	ConversationTitle        string                                            `json:"conversation_title"`
+	ConversationUpdateDate   int64                                             `json:"conversation_update_date"`
+	CreatorIsIgnored         bool                                              `json:"creator_is_ignored"`
+	CreatorUserID            int64                                             `json:"creator_user_id"`
+	CreatorUsername          string                                            `json:"creator_username"`
+	CreatorUsernameHTML      string                                            `json:"creator_username_html"`
+	IsGroup                  int64                                             `json:"is_group"`
+	IsStarred                int64                                             `json:"is_starred"`
+	IsUnread                 int64                                             `json:"is_unread"`
+	Links                    ConversationsStartResponseConversationLinks       `json:"links"`
+	Permissions              ConversationsStartResponseConversationPermissions `json:"permissions"`
+	Recipient                ConversationsStartResponseConversationRecipient   `json:"recipient"`
+	Recipients               []any                                             `json:"recipients"`
 }
 
 // ConversationsStartResponseConversationLinks represents a component schema.
 type ConversationsStartResponseConversationLinks struct {
-	Avatar    string `json:"avatar,omitempty"`
-	Detail    string `json:"detail,omitempty"`
-	Messages  string `json:"messages,omitempty"`
-	Permalink string `json:"permalink,omitempty"`
+	Avatar    string `json:"avatar"`
+	Detail    string `json:"detail"`
+	Messages  string `json:"messages"`
+	Permalink string `json:"permalink"`
 }
 
 // ConversationsStartResponseConversationPermissions represents a component schema.
 type ConversationsStartResponseConversationPermissions struct {
-	EditOwnPost       bool `json:"editOwnPost,omitempty"`
-	Invite            bool `json:"invite,omitempty"`
-	Kick              bool `json:"kick,omitempty"`
-	ManageInviteLinks bool `json:"manage_invite_links,omitempty"`
-	Reply             bool `json:"reply,omitempty"`
-	StickyMessages    bool `json:"stickyMessages,omitempty"`
-	UploadAvatar      bool `json:"upload_avatar,omitempty"`
-	View              bool `json:"view,omitempty"`
+	EditOwnPost       bool `json:"editOwnPost"`
+	Invite            bool `json:"invite"`
+	Kick              bool `json:"kick"`
+	ManageInviteLinks bool `json:"manage_invite_links"`
+	Reply             bool `json:"reply"`
+	StickyMessages    bool `json:"stickyMessages"`
+	UploadAvatar      bool `json:"upload_avatar"`
+	View              bool `json:"view"`
 }
 
 // ConversationsStartResponseConversationRecipient represents a component schema.
 type ConversationsStartResponseConversationRecipient struct {
-	Avatar          string `json:"avatar,omitempty"`
-	ContactsChanged bool   `json:"contacts_changed,omitempty"`
-	IsOnline        bool   `json:"is_online,omitempty"`
-	LastActivity    int64  `json:"last_activity,omitempty"`
-	UserID          int64  `json:"user_id,omitempty"`
-	Username        string `json:"username,omitempty"`
-	UsernameHTML    string `json:"username_html,omitempty"`
+	Avatar          string `json:"avatar"`
+	ContactsChanged bool   `json:"contacts_changed"`
+	IsOnline        bool   `json:"is_online"`
+	LastActivity    int64  `json:"last_activity"`
+	UserID          int64  `json:"user_id"`
+	Username        string `json:"username"`
+	UsernameHTML    string `json:"username_html"`
 }
 
 // ConversationsStartResponseSystemInfo represents a component schema.
 type ConversationsStartResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsUnstarResponseSystemInfo represents a component schema.
 type ConversationsUnstarResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ConversationsUpdateResponseConversation represents a component schema.
 type ConversationsUpdateResponseConversation struct {
-	Alerts                   int64                                              `json:"alerts,omitempty"`
-	ConversationCreateDate   int64                                              `json:"conversation_create_date,omitempty"`
-	ConversationID           int64                                              `json:"conversation_id,omitempty"`
-	ConversationIsDeleted    bool                                               `json:"conversation_is_deleted,omitempty"`
-	ConversationIsNew        bool                                               `json:"conversation_is_new,omitempty"`
-	ConversationIsOpen       bool                                               `json:"conversation_is_open,omitempty"`
-	ConversationLastReadDate int64                                              `json:"conversation_last_read_date,omitempty"`
-	ConversationMessageCount int64                                              `json:"conversation_message_count,omitempty"`
-	ConversationOnlineCount  int64                                              `json:"conversation_online_count,omitempty"`
-	ConversationTitle        string                                             `json:"conversation_title,omitempty"`
-	ConversationUpdateDate   int64                                              `json:"conversation_update_date,omitempty"`
-	CreatorIsIgnored         bool                                               `json:"creator_is_ignored,omitempty"`
-	CreatorUserID            int64                                              `json:"creator_user_id,omitempty"`
-	CreatorUsername          string                                             `json:"creator_username,omitempty"`
-	CreatorUsernameHTML      string                                             `json:"creator_username_html,omitempty"`
-	IsGroup                  int64                                              `json:"is_group,omitempty"`
-	IsStarred                int64                                              `json:"is_starred,omitempty"`
-	IsUnread                 int64                                              `json:"is_unread,omitempty"`
-	Links                    ConversationsUpdateResponseConversationLinks       `json:"links,omitempty"`
-	Permissions              ConversationsUpdateResponseConversationPermissions `json:"permissions,omitempty"`
-	Recipient                ConversationsUpdateResponseConversationRecipient   `json:"recipient,omitempty"`
-	Recipients               []any                                              `json:"recipients,omitempty"`
+	Alerts                   int64                                              `json:"alerts"`
+	ConversationCreateDate   int64                                              `json:"conversation_create_date"`
+	ConversationID           int64                                              `json:"conversation_id"`
+	ConversationIsDeleted    bool                                               `json:"conversation_is_deleted"`
+	ConversationIsNew        bool                                               `json:"conversation_is_new"`
+	ConversationIsOpen       bool                                               `json:"conversation_is_open"`
+	ConversationLastReadDate int64                                              `json:"conversation_last_read_date"`
+	ConversationMessageCount int64                                              `json:"conversation_message_count"`
+	ConversationOnlineCount  int64                                              `json:"conversation_online_count"`
+	ConversationTitle        string                                             `json:"conversation_title"`
+	ConversationUpdateDate   int64                                              `json:"conversation_update_date"`
+	CreatorIsIgnored         bool                                               `json:"creator_is_ignored"`
+	CreatorUserID            int64                                              `json:"creator_user_id"`
+	CreatorUsername          string                                             `json:"creator_username"`
+	CreatorUsernameHTML      string                                             `json:"creator_username_html"`
+	IsGroup                  int64                                              `json:"is_group"`
+	IsStarred                int64                                              `json:"is_starred"`
+	IsUnread                 int64                                              `json:"is_unread"`
+	Links                    ConversationsUpdateResponseConversationLinks       `json:"links"`
+	Permissions              ConversationsUpdateResponseConversationPermissions `json:"permissions"`
+	Recipient                ConversationsUpdateResponseConversationRecipient   `json:"recipient"`
+	Recipients               []any                                              `json:"recipients"`
 }
 
 // ConversationsUpdateResponseConversationLinks represents a component schema.
 type ConversationsUpdateResponseConversationLinks struct {
-	Avatar    string `json:"avatar,omitempty"`
-	Detail    string `json:"detail,omitempty"`
-	Messages  string `json:"messages,omitempty"`
-	Permalink string `json:"permalink,omitempty"`
+	Avatar    string `json:"avatar"`
+	Detail    string `json:"detail"`
+	Messages  string `json:"messages"`
+	Permalink string `json:"permalink"`
 }
 
 // ConversationsUpdateResponseConversationPermissions represents a component schema.
 type ConversationsUpdateResponseConversationPermissions struct {
-	EditOwnPost       bool `json:"editOwnPost,omitempty"`
-	Invite            bool `json:"invite,omitempty"`
-	Kick              bool `json:"kick,omitempty"`
-	ManageInviteLinks bool `json:"manage_invite_links,omitempty"`
-	Reply             bool `json:"reply,omitempty"`
-	StickyMessages    bool `json:"stickyMessages,omitempty"`
-	UploadAvatar      bool `json:"upload_avatar,omitempty"`
-	View              bool `json:"view,omitempty"`
+	EditOwnPost       bool `json:"editOwnPost"`
+	Invite            bool `json:"invite"`
+	Kick              bool `json:"kick"`
+	ManageInviteLinks bool `json:"manage_invite_links"`
+	Reply             bool `json:"reply"`
+	StickyMessages    bool `json:"stickyMessages"`
+	UploadAvatar      bool `json:"upload_avatar"`
+	View              bool `json:"view"`
 }
 
 // ConversationsUpdateResponseConversationRecipient represents a component schema.
 type ConversationsUpdateResponseConversationRecipient struct {
-	Avatar          string `json:"avatar,omitempty"`
-	ContactsChanged bool   `json:"contacts_changed,omitempty"`
-	IsOnline        bool   `json:"is_online,omitempty"`
-	LastActivity    int64  `json:"last_activity,omitempty"`
-	UserID          int64  `json:"user_id,omitempty"`
-	Username        string `json:"username,omitempty"`
-	UsernameHTML    string `json:"username_html,omitempty"`
+	Avatar          string `json:"avatar"`
+	ContactsChanged bool   `json:"contacts_changed"`
+	IsOnline        bool   `json:"is_online"`
+	LastActivity    int64  `json:"last_activity"`
+	UserID          int64  `json:"user_id"`
+	Username        string `json:"username"`
+	UsernameHTML    string `json:"username_html"`
 }
 
 // ConversationsUpdateResponseSystemInfo represents a component schema.
 type ConversationsUpdateResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // FormsCreateResponseContent represents a component schema.
 type FormsCreateResponseContent struct {
-	CreatorUserID       int64                                 `json:"creator_user_id,omitempty"`
-	CreatorUsername     string                                `json:"creator_username,omitempty"`
-	CreatorUsernameHTML string                                `json:"creator_username_html,omitempty"`
-	ForumID             int64                                 `json:"forum_id,omitempty"`
-	Links               FormsCreateResponseContentLinks       `json:"links,omitempty"`
-	NodeTitle           string                                `json:"node_title,omitempty"`
-	Permissions         FormsCreateResponseContentPermissions `json:"permissions,omitempty"`
-	ThreadCreateDate    int64                                 `json:"thread_create_date,omitempty"`
-	ThreadID            int64                                 `json:"thread_id,omitempty"`
-	ThreadIsClosed      bool                                  `json:"thread_is_closed,omitempty"`
-	ThreadIsDeleted     bool                                  `json:"thread_is_deleted,omitempty"`
-	ThreadIsFollowed    bool                                  `json:"thread_is_followed,omitempty"`
-	ThreadIsPublished   bool                                  `json:"thread_is_published,omitempty"`
-	ThreadIsSticky      bool                                  `json:"thread_is_sticky,omitempty"`
-	ThreadPostCount     int64                                 `json:"thread_post_count,omitempty"`
-	ThreadPrefixes      []any                                 `json:"thread_prefixes,omitempty"`
-	ThreadTags          []any                                 `json:"thread_tags,omitempty"`
-	ThreadTitle         string                                `json:"thread_title,omitempty"`
-	ThreadUpdateDate    int64                                 `json:"thread_update_date,omitempty"`
-	ThreadViewCount     int64                                 `json:"thread_view_count,omitempty"`
-	UserIsIgnored       bool                                  `json:"user_is_ignored,omitempty"`
+	CreatorUserID       int64                                 `json:"creator_user_id"`
+	CreatorUsername     string                                `json:"creator_username"`
+	CreatorUsernameHTML string                                `json:"creator_username_html"`
+	ForumID             int64                                 `json:"forum_id"`
+	Links               FormsCreateResponseContentLinks       `json:"links"`
+	NodeTitle           string                                `json:"node_title"`
+	Permissions         FormsCreateResponseContentPermissions `json:"permissions"`
+	ThreadCreateDate    int64                                 `json:"thread_create_date"`
+	ThreadID            int64                                 `json:"thread_id"`
+	ThreadIsClosed      bool                                  `json:"thread_is_closed"`
+	ThreadIsDeleted     bool                                  `json:"thread_is_deleted"`
+	ThreadIsFollowed    bool                                  `json:"thread_is_followed"`
+	ThreadIsPublished   bool                                  `json:"thread_is_published"`
+	ThreadIsSticky      bool                                  `json:"thread_is_sticky"`
+	ThreadPostCount     int64                                 `json:"thread_post_count"`
+	ThreadPrefixes      []any                                 `json:"thread_prefixes"`
+	ThreadTags          []any                                 `json:"thread_tags"`
+	ThreadTitle         string                                `json:"thread_title"`
+	ThreadUpdateDate    int64                                 `json:"thread_update_date"`
+	ThreadViewCount     int64                                 `json:"thread_view_count"`
+	UserIsIgnored       bool                                  `json:"user_is_ignored"`
 }
 
 // FormsCreateResponseContentLinks represents a component schema.
 type FormsCreateResponseContentLinks struct {
-	Detail            string `json:"detail,omitempty"`
-	FirstPost         string `json:"first_post,omitempty"`
-	FirstPoster       string `json:"first_poster,omitempty"`
-	FirstPosterAvatar string `json:"first_poster_avatar,omitempty"`
-	Followers         string `json:"followers,omitempty"`
-	Forum             string `json:"forum,omitempty"`
-	Permalink         string `json:"permalink,omitempty"`
-	Posts             string `json:"posts,omitempty"`
+	Detail            string `json:"detail"`
+	FirstPost         string `json:"first_post"`
+	FirstPoster       string `json:"first_poster"`
+	FirstPosterAvatar string `json:"first_poster_avatar"`
+	Followers         string `json:"followers"`
+	Forum             string `json:"forum"`
+	Permalink         string `json:"permalink"`
+	Posts             string `json:"posts"`
 }
 
 // FormsCreateResponseContentPermissions represents a component schema.
 type FormsCreateResponseContentPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Follow bool `json:"follow,omitempty"`
-	Post   bool `json:"post,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Follow bool `json:"follow"`
+	Post   bool `json:"post"`
+	View   bool `json:"view"`
 }
 
 // FormsCreateResponseSystemInfo represents a component schema.
 type FormsCreateResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // FormsListResponseSystemInfo represents a component schema.
 type FormsListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ForumsEditFeedOptionsResponseSystemInfo represents a component schema.
 type ForumsEditFeedOptionsResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ForumsFollowResponseSystemInfo represents a component schema.
 type ForumsFollowResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ForumsFollowedResponseSystemInfo represents a component schema.
 type ForumsFollowedResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ForumsFollowersResponseSystemInfo represents a component schema.
 type ForumsFollowersResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ForumsGetFeedOptionsResponseSystemInfo represents a component schema.
 type ForumsGetFeedOptionsResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ForumsGetResponseForum represents a component schema.
 type ForumsGetResponseForum struct {
-	ForumDescription       string                            `json:"forum_description,omitempty"`
-	ForumID                int64                             `json:"forum_id,omitempty"`
-	ForumIsFollowed        bool                              `json:"forum_is_followed,omitempty"`
-	ForumPostCount         int64                             `json:"forum_post_count,omitempty"`
-	ForumPrefixes          []any                             `json:"forum_prefixes,omitempty"`
-	ForumThreadCount       int64                             `json:"forum_thread_count,omitempty"`
-	ForumTitle             string                            `json:"forum_title,omitempty"`
-	Links                  ForumsGetResponseForumLinks       `json:"links,omitempty"`
-	Permissions            ForumsGetResponseForumPermissions `json:"permissions,omitempty"`
-	ThreadDefaultPrefixID  int64                             `json:"thread_default_prefix_id,omitempty"`
-	ThreadPrefixIsRequired bool                              `json:"thread_prefix_is_required,omitempty"`
+	ForumDescription       string                            `json:"forum_description"`
+	ForumID                int64                             `json:"forum_id"`
+	ForumIsFollowed        bool                              `json:"forum_is_followed"`
+	ForumPostCount         int64                             `json:"forum_post_count"`
+	ForumPrefixes          []any                             `json:"forum_prefixes"`
+	ForumThreadCount       int64                             `json:"forum_thread_count"`
+	ForumTitle             string                            `json:"forum_title"`
+	Links                  ForumsGetResponseForumLinks       `json:"links"`
+	Permissions            ForumsGetResponseForumPermissions `json:"permissions"`
+	ThreadDefaultPrefixID  int64                             `json:"thread_default_prefix_id"`
+	ThreadPrefixIsRequired bool                              `json:"thread_prefix_is_required"`
 }
 
 // ForumsGetResponseForumLinks represents a component schema.
 type ForumsGetResponseForumLinks struct {
-	Detail        string `json:"detail,omitempty"`
-	Followers     string `json:"followers,omitempty"`
-	Permalink     string `json:"permalink,omitempty"`
-	SubCategories string `json:"sub-categories,omitempty"`
-	SubForums     string `json:"sub-forums,omitempty"`
-	Threads       string `json:"threads,omitempty"`
+	Detail        string `json:"detail"`
+	Followers     string `json:"followers"`
+	Permalink     string `json:"permalink"`
+	SubCategories string `json:"sub-categories"`
+	SubForums     string `json:"sub-forums"`
+	Threads       string `json:"threads"`
 }
 
 // ForumsGetResponseForumPermissions represents a component schema.
 type ForumsGetResponseForumPermissions struct {
-	CreateThread     bool `json:"create_thread,omitempty"`
-	Delete           bool `json:"delete,omitempty"`
-	Edit             bool `json:"edit,omitempty"`
-	Follow           bool `json:"follow,omitempty"`
-	TagThread        bool `json:"tag_thread,omitempty"`
-	UploadAttachment bool `json:"upload_attachment,omitempty"`
-	View             bool `json:"view,omitempty"`
+	CreateThread     bool `json:"create_thread"`
+	Delete           bool `json:"delete"`
+	Edit             bool `json:"edit"`
+	Follow           bool `json:"follow"`
+	TagThread        bool `json:"tag_thread"`
+	UploadAttachment bool `json:"upload_attachment"`
+	View             bool `json:"view"`
 }
 
 // ForumsGetResponseSystemInfo represents a component schema.
 type ForumsGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ForumsGroupedResponseData represents a component schema.
 type ForumsGroupedResponseData struct {
-	N0 ForumsGroupedResponseDataN0 `json:"0,omitempty"`
+	N0 ForumsGroupedResponseDataN0 `json:"0"`
 }
 
 // ForumsGroupedResponseDataN0 represents a component schema.
 type ForumsGroupedResponseDataN0 struct {
-	N0 ForumsGroupedResponseDataN0N0 `json:"0,omitempty"`
+	N0 ForumsGroupedResponseDataN0N0 `json:"0"`
 }
 
 // ForumsGroupedResponseDataN0N0 represents a component schema.
 type ForumsGroupedResponseDataN0N0 struct {
-	ForumDescription string                                   `json:"forum_description,omitempty"`
-	ForumID          int64                                    `json:"forum_id,omitempty"`
-	ForumIsFollowed  bool                                     `json:"forum_is_followed,omitempty"`
-	ForumPostCount   int64                                    `json:"forum_post_count,omitempty"`
-	ForumThreadCount int64                                    `json:"forum_thread_count,omitempty"`
-	ForumTitle       string                                   `json:"forum_title,omitempty"`
-	Links            ForumsGroupedResponseDataN0N0Links       `json:"links,omitempty"`
-	ParentNodeID     int64                                    `json:"parent_node_id,omitempty"`
-	Permissions      ForumsGroupedResponseDataN0N0Permissions `json:"permissions,omitempty"`
+	ForumDescription string                                   `json:"forum_description"`
+	ForumID          int64                                    `json:"forum_id"`
+	ForumIsFollowed  bool                                     `json:"forum_is_followed"`
+	ForumPostCount   int64                                    `json:"forum_post_count"`
+	ForumThreadCount int64                                    `json:"forum_thread_count"`
+	ForumTitle       string                                   `json:"forum_title"`
+	Links            ForumsGroupedResponseDataN0N0Links       `json:"links"`
+	ParentNodeID     int64                                    `json:"parent_node_id"`
+	Permissions      ForumsGroupedResponseDataN0N0Permissions `json:"permissions"`
 }
 
 // ForumsGroupedResponseDataN0N0Links represents a component schema.
 type ForumsGroupedResponseDataN0N0Links struct {
-	Detail        string `json:"detail,omitempty"`
-	Followers     string `json:"followers,omitempty"`
-	Permalink     string `json:"permalink,omitempty"`
-	SubCategories string `json:"sub-categories,omitempty"`
-	SubForums     string `json:"sub-forums,omitempty"`
-	Threads       string `json:"threads,omitempty"`
+	Detail        string `json:"detail"`
+	Followers     string `json:"followers"`
+	Permalink     string `json:"permalink"`
+	SubCategories string `json:"sub-categories"`
+	SubForums     string `json:"sub-forums"`
+	Threads       string `json:"threads"`
 }
 
 // ForumsGroupedResponseDataN0N0Permissions represents a component schema.
 type ForumsGroupedResponseDataN0N0Permissions struct {
-	CreateThread bool `json:"create_thread,omitempty"`
-	Delete       bool `json:"delete,omitempty"`
-	Edit         bool `json:"edit,omitempty"`
-	Follow       bool `json:"follow,omitempty"`
-	TagThread    bool `json:"tag_thread,omitempty"`
-	View         bool `json:"view,omitempty"`
+	CreateThread bool `json:"create_thread"`
+	Delete       bool `json:"delete"`
+	Edit         bool `json:"edit"`
+	Follow       bool `json:"follow"`
+	TagThread    bool `json:"tag_thread"`
+	View         bool `json:"view"`
 }
 
 // ForumsGroupedResponseSystemInfo represents a component schema.
 type ForumsGroupedResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ForumsListResponseSystemInfo represents a component schema.
 type ForumsListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ForumsUnfollowResponseSystemInfo represents a component schema.
 type ForumsUnfollowResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // LinksGetResponseLinkForum represents a component schema.
 type LinksGetResponseLinkForum struct {
-	LinkDescription string                               `json:"link_description,omitempty"`
-	LinkID          int64                                `json:"link_id,omitempty"`
-	LinkTitle       string                               `json:"link_title,omitempty"`
-	Links           LinksGetResponseLinkForumLinks       `json:"links,omitempty"`
-	Permissions     LinksGetResponseLinkForumPermissions `json:"permissions,omitempty"`
+	LinkDescription string                               `json:"link_description"`
+	LinkID          int64                                `json:"link_id"`
+	LinkTitle       string                               `json:"link_title"`
+	Links           LinksGetResponseLinkForumLinks       `json:"links"`
+	Permissions     LinksGetResponseLinkForumPermissions `json:"permissions"`
 }
 
 // LinksGetResponseLinkForumLinks represents a component schema.
 type LinksGetResponseLinkForumLinks struct {
-	Detail string `json:"detail,omitempty"`
-	Target string `json:"target,omitempty"`
+	Detail string `json:"detail"`
+	Target string `json:"target"`
 }
 
 // LinksGetResponseLinkForumPermissions represents a component schema.
 type LinksGetResponseLinkForumPermissions struct {
-	View bool `json:"view,omitempty"`
+	View bool `json:"view"`
 }
 
 // LinksGetResponseSystemInfo represents a component schema.
 type LinksGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // LinksListResponseSystemInfo represents a component schema.
 type LinksListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // NavigationListResponseSystemInfo represents a component schema.
 type NavigationListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // NotificationsGetResponseNotification represents a component schema.
 type NotificationsGetResponseNotification struct {
-	ContentAction          string                                    `json:"content_action,omitempty"`
-	ContentID              int64                                     `json:"content_id,omitempty"`
-	ContentType            string                                    `json:"content_type,omitempty"`
-	CreatorUserID          int64                                     `json:"creator_user_id,omitempty"`
-	CreatorUsername        string                                    `json:"creator_username,omitempty"`
-	CreatorUsernameHTML    string                                    `json:"creator_username_html,omitempty"`
-	Links                  NotificationsGetResponseNotificationLinks `json:"links,omitempty"`
-	NotificationCreateDate int64                                     `json:"notification_create_date,omitempty"`
-	NotificationHTML       string                                    `json:"notification_html,omitempty"`
-	NotificationID         int64                                     `json:"notification_id,omitempty"`
-	NotificationIsUnread   bool                                      `json:"notification_is_unread,omitempty"`
-	NotificationType       string                                    `json:"notification_type,omitempty"`
+	ContentAction          string                                    `json:"content_action"`
+	ContentID              int64                                     `json:"content_id"`
+	ContentType            string                                    `json:"content_type"`
+	CreatorUserID          int64                                     `json:"creator_user_id"`
+	CreatorUsername        string                                    `json:"creator_username"`
+	CreatorUsernameHTML    string                                    `json:"creator_username_html"`
+	Links                  NotificationsGetResponseNotificationLinks `json:"links"`
+	NotificationCreateDate int64                                     `json:"notification_create_date"`
+	NotificationHTML       string                                    `json:"notification_html"`
+	NotificationID         int64                                     `json:"notification_id"`
+	NotificationIsUnread   bool                                      `json:"notification_is_unread"`
+	NotificationType       string                                    `json:"notification_type"`
 }
 
 // NotificationsGetResponseNotificationLinks represents a component schema.
 type NotificationsGetResponseNotificationLinks struct {
-	Content       string `json:"content,omitempty"`
-	CreatorAvatar string `json:"creator_avatar,omitempty"`
+	Content       string `json:"content"`
+	CreatorAvatar string `json:"creator_avatar"`
 }
 
 // NotificationsGetResponseSystemInfo represents a component schema.
 type NotificationsGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // NotificationsListResponseLinks represents a component schema.
 type NotificationsListResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
-	Read  string `json:"read,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
+	Read  string `json:"read"`
 }
 
 // NotificationsListResponseSystemInfo represents a component schema.
 type NotificationsListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // NotificationsReadResponseSystemInfo represents a component schema.
 type NotificationsReadResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PagesGetResponsePage represents a component schema.
 type PagesGetResponsePage struct {
-	Links           PagesGetResponsePageLinks       `json:"links,omitempty"`
-	PageDescription string                          `json:"page_description,omitempty"`
-	PageHTML        string                          `json:"page_html,omitempty"`
-	PageID          int64                           `json:"page_id,omitempty"`
-	PageTitle       string                          `json:"page_title,omitempty"`
-	PageViewCount   int64                           `json:"page_view_count,omitempty"`
-	Permissions     PagesGetResponsePagePermissions `json:"permissions,omitempty"`
+	Links           PagesGetResponsePageLinks       `json:"links"`
+	PageDescription string                          `json:"page_description"`
+	PageHTML        string                          `json:"page_html"`
+	PageID          int64                           `json:"page_id"`
+	PageTitle       string                          `json:"page_title"`
+	PageViewCount   int64                           `json:"page_view_count"`
+	Permissions     PagesGetResponsePagePermissions `json:"permissions"`
 }
 
 // PagesGetResponsePageLinks represents a component schema.
 type PagesGetResponsePageLinks struct {
-	Detail    string `json:"detail,omitempty"`
-	Permalink string `json:"permalink,omitempty"`
-	SubPages  string `json:"sub-pages,omitempty"`
+	Detail    string `json:"detail"`
+	Permalink string `json:"permalink"`
+	SubPages  string `json:"sub-pages"`
 }
 
 // PagesGetResponsePagePermissions represents a component schema.
 type PagesGetResponsePagePermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	View   bool `json:"view"`
 }
 
 // PagesGetResponseSystemInfo represents a component schema.
 type PagesGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PagesListResponseSystemInfo represents a component schema.
 type PagesListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsCommentsCreateResponseComment represents a component schema.
 type PostsCommentsCreateResponseComment struct {
-	Links                    PostsCommentsCreateResponseCommentLinks       `json:"links,omitempty"`
-	Permissions              PostsCommentsCreateResponseCommentPermissions `json:"permissions,omitempty"`
-	PostCommentBody          string                                        `json:"post_comment_body,omitempty"`
-	PostCommentBodyHTML      string                                        `json:"post_comment_body_html,omitempty"`
-	PostCommentBodyPlainText string                                        `json:"post_comment_body_plain_text,omitempty"`
-	PostCommentID            int64                                         `json:"post_comment_id,omitempty"`
-	PostCommentIsDeleted     bool                                          `json:"post_comment_is_deleted,omitempty"`
-	PostCommentIsPublished   bool                                          `json:"post_comment_is_published,omitempty"`
-	PostCommentLikeCount     int64                                         `json:"post_comment_like_count,omitempty"`
-	PostCommentUpdateDate    int64                                         `json:"post_comment_update_date,omitempty"`
-	PostID                   int64                                         `json:"post_id,omitempty"`
-	PosterUserID             int64                                         `json:"poster_user_id,omitempty"`
-	PosterUsername           string                                        `json:"poster_username,omitempty"`
-	PosterUsernameHTML       string                                        `json:"poster_username_html,omitempty"`
-	ThreadID                 int64                                         `json:"thread_id,omitempty"`
-	UserIsIgnored            bool                                          `json:"user_is_ignored,omitempty"`
+	Links                    PostsCommentsCreateResponseCommentLinks       `json:"links"`
+	Permissions              PostsCommentsCreateResponseCommentPermissions `json:"permissions"`
+	PostCommentBody          string                                        `json:"post_comment_body"`
+	PostCommentBodyHTML      string                                        `json:"post_comment_body_html"`
+	PostCommentBodyPlainText string                                        `json:"post_comment_body_plain_text"`
+	PostCommentID            int64                                         `json:"post_comment_id"`
+	PostCommentIsDeleted     bool                                          `json:"post_comment_is_deleted"`
+	PostCommentIsPublished   bool                                          `json:"post_comment_is_published"`
+	PostCommentLikeCount     int64                                         `json:"post_comment_like_count"`
+	PostCommentUpdateDate    int64                                         `json:"post_comment_update_date"`
+	PostID                   int64                                         `json:"post_id"`
+	PosterUserID             int64                                         `json:"poster_user_id"`
+	PosterUsername           string                                        `json:"poster_username"`
+	PosterUsernameHTML       string                                        `json:"poster_username_html"`
+	ThreadID                 int64                                         `json:"thread_id"`
+	UserIsIgnored            bool                                          `json:"user_is_ignored"`
 }
 
 // PostsCommentsCreateResponseCommentLinks represents a component schema.
 type PostsCommentsCreateResponseCommentLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Post         string `json:"post,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Post         string `json:"post"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // PostsCommentsCreateResponseCommentPermissions represents a component schema.
 type PostsCommentsCreateResponseCommentPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // PostsCommentsCreateResponseSystemInfo represents a component schema.
 type PostsCommentsCreateResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsCommentsDeleteResponseSystemInfo represents a component schema.
 type PostsCommentsDeleteResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsCommentsEditResponseComment represents a component schema.
 type PostsCommentsEditResponseComment struct {
-	Links                    PostsCommentsEditResponseCommentLinks       `json:"links,omitempty"`
-	Permissions              PostsCommentsEditResponseCommentPermissions `json:"permissions,omitempty"`
-	PostCommentBody          string                                      `json:"post_comment_body,omitempty"`
-	PostCommentBodyHTML      string                                      `json:"post_comment_body_html,omitempty"`
-	PostCommentBodyPlainText string                                      `json:"post_comment_body_plain_text,omitempty"`
-	PostCommentID            int64                                       `json:"post_comment_id,omitempty"`
-	PostCommentIsDeleted     bool                                        `json:"post_comment_is_deleted,omitempty"`
-	PostCommentIsPublished   bool                                        `json:"post_comment_is_published,omitempty"`
-	PostCommentLikeCount     int64                                       `json:"post_comment_like_count,omitempty"`
-	PostCommentUpdateDate    int64                                       `json:"post_comment_update_date,omitempty"`
-	PostID                   int64                                       `json:"post_id,omitempty"`
-	PosterUserID             int64                                       `json:"poster_user_id,omitempty"`
-	PosterUsername           string                                      `json:"poster_username,omitempty"`
-	PosterUsernameHTML       string                                      `json:"poster_username_html,omitempty"`
-	ThreadID                 int64                                       `json:"thread_id,omitempty"`
-	UserIsIgnored            bool                                        `json:"user_is_ignored,omitempty"`
+	Links                    PostsCommentsEditResponseCommentLinks       `json:"links"`
+	Permissions              PostsCommentsEditResponseCommentPermissions `json:"permissions"`
+	PostCommentBody          string                                      `json:"post_comment_body"`
+	PostCommentBodyHTML      string                                      `json:"post_comment_body_html"`
+	PostCommentBodyPlainText string                                      `json:"post_comment_body_plain_text"`
+	PostCommentID            int64                                       `json:"post_comment_id"`
+	PostCommentIsDeleted     bool                                        `json:"post_comment_is_deleted"`
+	PostCommentIsPublished   bool                                        `json:"post_comment_is_published"`
+	PostCommentLikeCount     int64                                       `json:"post_comment_like_count"`
+	PostCommentUpdateDate    int64                                       `json:"post_comment_update_date"`
+	PostID                   int64                                       `json:"post_id"`
+	PosterUserID             int64                                       `json:"poster_user_id"`
+	PosterUsername           string                                      `json:"poster_username"`
+	PosterUsernameHTML       string                                      `json:"poster_username_html"`
+	ThreadID                 int64                                       `json:"thread_id"`
+	UserIsIgnored            bool                                        `json:"user_is_ignored"`
 }
 
 // PostsCommentsEditResponseCommentLinks represents a component schema.
 type PostsCommentsEditResponseCommentLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Post         string `json:"post,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Post         string `json:"post"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // PostsCommentsEditResponseCommentPermissions represents a component schema.
 type PostsCommentsEditResponseCommentPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // PostsCommentsEditResponseSystemInfo represents a component schema.
 type PostsCommentsEditResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsCommentsGetResponseSystemInfo represents a component schema.
 type PostsCommentsGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsCommentsReportResponseSystemInfo represents a component schema.
 type PostsCommentsReportResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsCreateResponsePost represents a component schema.
 type PostsCreateResponsePost struct {
-	Links              PostsCreateResponsePostLinks       `json:"links,omitempty"`
-	Permissions        PostsCreateResponsePostPermissions `json:"permissions,omitempty"`
-	PostBody           string                             `json:"post_body,omitempty"`
-	PostBodyHTML       string                             `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                             `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                              `json:"post_create_date,omitempty"`
-	PostID             int64                              `json:"post_id,omitempty"`
-	PostIsDeleted      bool                               `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                               `json:"post_is_first_post,omitempty"`
-	PostIsPublished    bool                               `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                              `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                              `json:"post_update_date,omitempty"`
-	PosterUserID       int64                              `json:"poster_user_id,omitempty"`
-	PosterUsername     string                             `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                             `json:"poster_username_html,omitempty"`
-	Signature          string                             `json:"signature,omitempty"`
-	SignatureHTML      string                             `json:"signature_html,omitempty"`
-	SignaturePlainText string                             `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                              `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                               `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                               `json:"user_is_ignored,omitempty"`
+	Links              PostsCreateResponsePostLinks       `json:"links"`
+	Permissions        PostsCreateResponsePostPermissions `json:"permissions"`
+	PostBody           string                             `json:"post_body"`
+	PostBodyHTML       string                             `json:"post_body_html"`
+	PostBodyPlainText  string                             `json:"post_body_plain_text"`
+	PostCreateDate     int64                              `json:"post_create_date"`
+	PostID             int64                              `json:"post_id"`
+	PostIsDeleted      bool                               `json:"post_is_deleted"`
+	PostIsFirstPost    bool                               `json:"post_is_first_post"`
+	PostIsPublished    bool                               `json:"post_is_published"`
+	PostLikeCount      int64                              `json:"post_like_count"`
+	PostUpdateDate     int64                              `json:"post_update_date"`
+	PosterUserID       int64                              `json:"poster_user_id"`
+	PosterUsername     string                             `json:"poster_username"`
+	PosterUsernameHTML string                             `json:"poster_username_html"`
+	Signature          string                             `json:"signature"`
+	SignatureHTML      string                             `json:"signature_html"`
+	SignaturePlainText string                             `json:"signature_plain_text"`
+	ThreadID           int64                              `json:"thread_id"`
+	ThreadIsDeleted    bool                               `json:"thread_is_deleted"`
+	UserIsIgnored      bool                               `json:"user_is_ignored"`
 }
 
 // PostsCreateResponsePostLinks represents a component schema.
 type PostsCreateResponsePostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // PostsCreateResponsePostPermissions represents a component schema.
 type PostsCreateResponsePostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // PostsCreateResponseSystemInfo represents a component schema.
 type PostsCreateResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsDeleteResponseSystemInfo represents a component schema.
 type PostsDeleteResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsEditResponsePost represents a component schema.
 type PostsEditResponsePost struct {
-	Links              PostsEditResponsePostLinks       `json:"links,omitempty"`
-	Permissions        PostsEditResponsePostPermissions `json:"permissions,omitempty"`
-	PostBody           string                           `json:"post_body,omitempty"`
-	PostBodyHTML       string                           `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                           `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                            `json:"post_create_date,omitempty"`
-	PostID             int64                            `json:"post_id,omitempty"`
-	PostIsDeleted      bool                             `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                             `json:"post_is_first_post,omitempty"`
-	PostIsPublished    bool                             `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                            `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                            `json:"post_update_date,omitempty"`
-	PosterUserID       int64                            `json:"poster_user_id,omitempty"`
-	PosterUsername     string                           `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                           `json:"poster_username_html,omitempty"`
-	Signature          string                           `json:"signature,omitempty"`
-	SignatureHTML      string                           `json:"signature_html,omitempty"`
-	SignaturePlainText string                           `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                            `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                             `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                             `json:"user_is_ignored,omitempty"`
+	Links              PostsEditResponsePostLinks       `json:"links"`
+	Permissions        PostsEditResponsePostPermissions `json:"permissions"`
+	PostBody           string                           `json:"post_body"`
+	PostBodyHTML       string                           `json:"post_body_html"`
+	PostBodyPlainText  string                           `json:"post_body_plain_text"`
+	PostCreateDate     int64                            `json:"post_create_date"`
+	PostID             int64                            `json:"post_id"`
+	PostIsDeleted      bool                             `json:"post_is_deleted"`
+	PostIsFirstPost    bool                             `json:"post_is_first_post"`
+	PostIsPublished    bool                             `json:"post_is_published"`
+	PostLikeCount      int64                            `json:"post_like_count"`
+	PostUpdateDate     int64                            `json:"post_update_date"`
+	PosterUserID       int64                            `json:"poster_user_id"`
+	PosterUsername     string                           `json:"poster_username"`
+	PosterUsernameHTML string                           `json:"poster_username_html"`
+	Signature          string                           `json:"signature"`
+	SignatureHTML      string                           `json:"signature_html"`
+	SignaturePlainText string                           `json:"signature_plain_text"`
+	ThreadID           int64                            `json:"thread_id"`
+	ThreadIsDeleted    bool                             `json:"thread_is_deleted"`
+	UserIsIgnored      bool                             `json:"user_is_ignored"`
 }
 
 // PostsEditResponsePostLinks represents a component schema.
 type PostsEditResponsePostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // PostsEditResponsePostPermissions represents a component schema.
 type PostsEditResponsePostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // PostsEditResponseSystemInfo represents a component schema.
 type PostsEditResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsGetResponsePost represents a component schema.
 type PostsGetResponsePost struct {
-	Links              PostsGetResponsePostLinks       `json:"links,omitempty"`
-	Permissions        PostsGetResponsePostPermissions `json:"permissions,omitempty"`
-	PostBody           string                          `json:"post_body,omitempty"`
-	PostBodyHTML       string                          `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                          `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                           `json:"post_create_date,omitempty"`
-	PostID             int64                           `json:"post_id,omitempty"`
-	PostIsDeleted      bool                            `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                            `json:"post_is_first_post,omitempty"`
-	PostIsPublished    bool                            `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                           `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                           `json:"post_update_date,omitempty"`
-	PosterUserID       int64                           `json:"poster_user_id,omitempty"`
-	PosterUsername     string                          `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                          `json:"poster_username_html,omitempty"`
-	Signature          string                          `json:"signature,omitempty"`
-	SignatureHTML      string                          `json:"signature_html,omitempty"`
-	SignaturePlainText string                          `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                           `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                            `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                            `json:"user_is_ignored,omitempty"`
+	Links              PostsGetResponsePostLinks       `json:"links"`
+	Permissions        PostsGetResponsePostPermissions `json:"permissions"`
+	PostBody           string                          `json:"post_body"`
+	PostBodyHTML       string                          `json:"post_body_html"`
+	PostBodyPlainText  string                          `json:"post_body_plain_text"`
+	PostCreateDate     int64                           `json:"post_create_date"`
+	PostID             int64                           `json:"post_id"`
+	PostIsDeleted      bool                            `json:"post_is_deleted"`
+	PostIsFirstPost    bool                            `json:"post_is_first_post"`
+	PostIsPublished    bool                            `json:"post_is_published"`
+	PostLikeCount      int64                           `json:"post_like_count"`
+	PostUpdateDate     int64                           `json:"post_update_date"`
+	PosterUserID       int64                           `json:"poster_user_id"`
+	PosterUsername     string                          `json:"poster_username"`
+	PosterUsernameHTML string                          `json:"poster_username_html"`
+	Signature          string                          `json:"signature"`
+	SignatureHTML      string                          `json:"signature_html"`
+	SignaturePlainText string                          `json:"signature_plain_text"`
+	ThreadID           int64                           `json:"thread_id"`
+	ThreadIsDeleted    bool                            `json:"thread_is_deleted"`
+	UserIsIgnored      bool                            `json:"user_is_ignored"`
 }
 
 // PostsGetResponsePostLinks represents a component schema.
 type PostsGetResponsePostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // PostsGetResponsePostPermissions represents a component schema.
 type PostsGetResponsePostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // PostsGetResponseSystemInfo represents a component schema.
 type PostsGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsLikeResponseSystemInfo represents a component schema.
 type PostsLikeResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsLikesResponseSystemInfo represents a component schema.
 type PostsLikesResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsListResponseSystemInfo represents a component schema.
 type PostsListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsListResponseThread represents a component schema.
 type PostsListResponseThread struct {
-	Contest             PostsListResponseThreadContest      `json:"contest,omitempty"`
-	CreatorUserID       int64                               `json:"creator_user_id,omitempty"`
-	CreatorUsername     string                              `json:"creator_username,omitempty"`
-	CreatorUsernameHTML string                              `json:"creator_username_html,omitempty"`
-	FirstPost           PostsListResponseThreadFirstPost    `json:"first_post,omitempty"`
-	ForumID             int64                               `json:"forum_id,omitempty"`
-	LastPost            PostsListResponseThreadLastPost     `json:"last_post,omitempty"`
-	Links               PostsListResponseThreadLinks        `json:"links,omitempty"`
-	NodeTitle           string                              `json:"node_title,omitempty"`
-	Permissions         PostsListResponseThreadPermissions  `json:"permissions,omitempty"`
-	Restrictions        PostsListResponseThreadRestrictions `json:"restrictions,omitempty"`
-	ThreadCreateDate    int64                               `json:"thread_create_date,omitempty"`
-	ThreadID            int64                               `json:"thread_id,omitempty"`
-	ThreadIsClosed      bool                                `json:"thread_is_closed,omitempty"`
-	ThreadIsDeleted     bool                                `json:"thread_is_deleted,omitempty"`
-	ThreadIsFollowed    bool                                `json:"thread_is_followed,omitempty"`
-	ThreadIsPublished   bool                                `json:"thread_is_published,omitempty"`
-	ThreadIsStarred     bool                                `json:"thread_is_starred,omitempty"`
-	ThreadIsSticky      bool                                `json:"thread_is_sticky,omitempty"`
-	ThreadPostCount     int64                               `json:"thread_post_count,omitempty"`
-	ThreadPrefixes      []any                               `json:"thread_prefixes,omitempty"`
-	ThreadTags          PostsListResponseThreadThreadTags   `json:"thread_tags,omitempty"`
-	ThreadTitle         string                              `json:"thread_title,omitempty"`
-	ThreadUpdateDate    int64                               `json:"thread_update_date,omitempty"`
-	ThreadViewCount     int64                               `json:"thread_view_count,omitempty"`
-	UserIsIgnored       bool                                `json:"user_is_ignored,omitempty"`
+	Contest             PostsListResponseThreadContest      `json:"contest"`
+	CreatorUserID       int64                               `json:"creator_user_id"`
+	CreatorUsername     string                              `json:"creator_username"`
+	CreatorUsernameHTML string                              `json:"creator_username_html"`
+	FirstPost           PostsListResponseThreadFirstPost    `json:"first_post"`
+	ForumID             int64                               `json:"forum_id"`
+	LastPost            PostsListResponseThreadLastPost     `json:"last_post"`
+	Links               PostsListResponseThreadLinks        `json:"links"`
+	NodeTitle           string                              `json:"node_title"`
+	Permissions         PostsListResponseThreadPermissions  `json:"permissions"`
+	Restrictions        PostsListResponseThreadRestrictions `json:"restrictions"`
+	ThreadCreateDate    int64                               `json:"thread_create_date"`
+	ThreadID            int64                               `json:"thread_id"`
+	ThreadIsClosed      bool                                `json:"thread_is_closed"`
+	ThreadIsDeleted     bool                                `json:"thread_is_deleted"`
+	ThreadIsFollowed    bool                                `json:"thread_is_followed"`
+	ThreadIsPublished   bool                                `json:"thread_is_published"`
+	ThreadIsStarred     bool                                `json:"thread_is_starred"`
+	ThreadIsSticky      bool                                `json:"thread_is_sticky"`
+	ThreadPostCount     int64                               `json:"thread_post_count"`
+	ThreadPrefixes      []any                               `json:"thread_prefixes"`
+	ThreadTags          PostsListResponseThreadThreadTags   `json:"thread_tags"`
+	ThreadTitle         string                              `json:"thread_title"`
+	ThreadUpdateDate    int64                               `json:"thread_update_date"`
+	ThreadViewCount     int64                               `json:"thread_view_count"`
+	UserIsIgnored       bool                                `json:"user_is_ignored"`
 }
 
 // PostsListResponseThreadContest represents a component schema.
 type PostsListResponseThreadContest struct {
-	AlreadyParticipate    bool                                      `json:"already_participate,omitempty"`
-	ChanceToWin           float64                                   `json:"chance_to_win,omitempty"`
-	CountWinners          int64                                     `json:"count_winners,omitempty"`
-	FinishDate            int64                                     `json:"finish_date,omitempty"`
-	IsFinished            int64                                     `json:"is_finished,omitempty"`
-	IsMoneyPlaces         int64                                     `json:"is_money_places,omitempty"`
-	NeededMembers         int64                                     `json:"needed_members,omitempty"`
-	NowCountMembers       int64                                     `json:"now_count_members,omitempty"`
-	Permissions           PostsListResponseThreadContestPermissions `json:"permissions,omitempty"`
-	PrizeData             int64                                     `json:"prize_data,omitempty"`
-	PrizeType             string                                    `json:"prize_type,omitempty"`
-	PrizeTypePhrase       string                                    `json:"prize_type_phrase,omitempty"`
-	RequireLikeCount      int64                                     `json:"require_like_count,omitempty"`
-	RequireTotalLikeCount int64                                     `json:"require_total_like_count,omitempty"`
-	Type                  string                                    `json:"type,omitempty"`
-	Winners               []int64                                   `json:"winners,omitempty"`
+	AlreadyParticipate    bool                                      `json:"already_participate"`
+	ChanceToWin           float64                                   `json:"chance_to_win"`
+	CountWinners          int64                                     `json:"count_winners"`
+	FinishDate            int64                                     `json:"finish_date"`
+	IsFinished            int64                                     `json:"is_finished"`
+	IsMoneyPlaces         int64                                     `json:"is_money_places"`
+	NeededMembers         int64                                     `json:"needed_members"`
+	NowCountMembers       int64                                     `json:"now_count_members"`
+	Permissions           PostsListResponseThreadContestPermissions `json:"permissions"`
+	PrizeData             int64                                     `json:"prize_data"`
+	PrizeType             string                                    `json:"prize_type"`
+	PrizeTypePhrase       string                                    `json:"prize_type_phrase"`
+	RequireLikeCount      int64                                     `json:"require_like_count"`
+	RequireTotalLikeCount int64                                     `json:"require_total_like_count"`
+	Type                  string                                    `json:"type"`
+	Winners               []int64                                   `json:"winners"`
 }
 
 // PostsListResponseThreadContestPermissions represents a component schema.
 type PostsListResponseThreadContestPermissions struct {
-	CanFinish           bool   `json:"can_finish,omitempty"`
-	CanParticipate      bool   `json:"can_participate,omitempty"`
-	CanParticipateError string `json:"can_participate_error,omitempty"`
-	CanViewUserList     bool   `json:"can_view_user_list,omitempty"`
+	CanFinish           bool   `json:"can_finish"`
+	CanParticipate      bool   `json:"can_participate"`
+	CanParticipateError string `json:"can_participate_error"`
+	CanViewUserList     bool   `json:"can_view_user_list"`
 }
 
 // PostsListResponseThreadFirstPost represents a component schema.
 type PostsListResponseThreadFirstPost struct {
-	Links              PostsListResponseThreadFirstPostLinks       `json:"links,omitempty"`
-	Permissions        PostsListResponseThreadFirstPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                      `json:"post_body,omitempty"`
-	PostBodyHTML       string                                      `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                                      `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                                       `json:"post_create_date,omitempty"`
-	PostID             int64                                       `json:"post_id,omitempty"`
-	PostIsDeleted      bool                                        `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                                        `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                                        `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                                        `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                       `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                                       `json:"post_update_date,omitempty"`
-	PosterUserID       int64                                       `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                      `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                      `json:"poster_username_html,omitempty"`
-	Signature          string                                      `json:"signature,omitempty"`
-	SignatureHTML      string                                      `json:"signature_html,omitempty"`
-	SignaturePlainText string                                      `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                                       `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                                        `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                                        `json:"user_is_ignored,omitempty"`
+	Links              PostsListResponseThreadFirstPostLinks       `json:"links"`
+	Permissions        PostsListResponseThreadFirstPostPermissions `json:"permissions"`
+	PostBody           string                                      `json:"post_body"`
+	PostBodyHTML       string                                      `json:"post_body_html"`
+	PostBodyPlainText  string                                      `json:"post_body_plain_text"`
+	PostCreateDate     int64                                       `json:"post_create_date"`
+	PostID             int64                                       `json:"post_id"`
+	PostIsDeleted      bool                                        `json:"post_is_deleted"`
+	PostIsFirstPost    bool                                        `json:"post_is_first_post"`
+	PostIsLiked        bool                                        `json:"post_is_liked"`
+	PostIsPublished    bool                                        `json:"post_is_published"`
+	PostLikeCount      int64                                       `json:"post_like_count"`
+	PostUpdateDate     int64                                       `json:"post_update_date"`
+	PosterUserID       int64                                       `json:"poster_user_id"`
+	PosterUsername     string                                      `json:"poster_username"`
+	PosterUsernameHTML string                                      `json:"poster_username_html"`
+	Signature          string                                      `json:"signature"`
+	SignatureHTML      string                                      `json:"signature_html"`
+	SignaturePlainText string                                      `json:"signature_plain_text"`
+	ThreadID           int64                                       `json:"thread_id"`
+	ThreadIsDeleted    bool                                        `json:"thread_is_deleted"`
+	UserIsIgnored      bool                                        `json:"user_is_ignored"`
 }
 
 // PostsListResponseThreadFirstPostLinks represents a component schema.
 type PostsListResponseThreadFirstPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // PostsListResponseThreadFirstPostPermissions represents a component schema.
 type PostsListResponseThreadFirstPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // PostsListResponseThreadLastPost represents a component schema.
 type PostsListResponseThreadLastPost struct {
-	Links              PostsListResponseThreadLastPostLinks       `json:"links,omitempty"`
-	Permissions        PostsListResponseThreadLastPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                     `json:"post_body,omitempty"`
-	PostBodyHTML       string                                     `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                                     `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                                      `json:"post_create_date,omitempty"`
-	PostID             int64                                      `json:"post_id,omitempty"`
-	PostIsDeleted      bool                                       `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                                       `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                                       `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                                       `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                      `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                                      `json:"post_update_date,omitempty"`
-	PosterUserID       int64                                      `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                     `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                     `json:"poster_username_html,omitempty"`
-	Signature          string                                     `json:"signature,omitempty"`
-	SignatureHTML      string                                     `json:"signature_html,omitempty"`
-	SignaturePlainText string                                     `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                                      `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                                       `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                                       `json:"user_is_ignored,omitempty"`
+	Links              PostsListResponseThreadLastPostLinks       `json:"links"`
+	Permissions        PostsListResponseThreadLastPostPermissions `json:"permissions"`
+	PostBody           string                                     `json:"post_body"`
+	PostBodyHTML       string                                     `json:"post_body_html"`
+	PostBodyPlainText  string                                     `json:"post_body_plain_text"`
+	PostCreateDate     int64                                      `json:"post_create_date"`
+	PostID             int64                                      `json:"post_id"`
+	PostIsDeleted      bool                                       `json:"post_is_deleted"`
+	PostIsFirstPost    bool                                       `json:"post_is_first_post"`
+	PostIsLiked        bool                                       `json:"post_is_liked"`
+	PostIsPublished    bool                                       `json:"post_is_published"`
+	PostLikeCount      int64                                      `json:"post_like_count"`
+	PostUpdateDate     int64                                      `json:"post_update_date"`
+	PosterUserID       int64                                      `json:"poster_user_id"`
+	PosterUsername     string                                     `json:"poster_username"`
+	PosterUsernameHTML string                                     `json:"poster_username_html"`
+	Signature          string                                     `json:"signature"`
+	SignatureHTML      string                                     `json:"signature_html"`
+	SignaturePlainText string                                     `json:"signature_plain_text"`
+	ThreadID           int64                                      `json:"thread_id"`
+	ThreadIsDeleted    bool                                       `json:"thread_is_deleted"`
+	UserIsIgnored      bool                                       `json:"user_is_ignored"`
 }
 
 // PostsListResponseThreadLastPostLinks represents a component schema.
 type PostsListResponseThreadLastPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // PostsListResponseThreadLastPostPermissions represents a component schema.
 type PostsListResponseThreadLastPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // PostsListResponseThreadLinks represents a component schema.
 type PostsListResponseThreadLinks struct {
-	Detail            string `json:"detail,omitempty"`
-	FirstPost         string `json:"first_post,omitempty"`
-	FirstPoster       string `json:"first_poster,omitempty"`
-	FirstPosterAvatar string `json:"first_poster_avatar,omitempty"`
-	Followers         string `json:"followers,omitempty"`
-	Forum             string `json:"forum,omitempty"`
-	LastPost          string `json:"last_post,omitempty"`
-	Permalink         string `json:"permalink,omitempty"`
-	Posts             string `json:"posts,omitempty"`
+	Detail            string `json:"detail"`
+	FirstPost         string `json:"first_post"`
+	FirstPoster       string `json:"first_poster"`
+	FirstPosterAvatar string `json:"first_poster_avatar"`
+	Followers         string `json:"followers"`
+	Forum             string `json:"forum"`
+	LastPost          string `json:"last_post"`
+	Permalink         string `json:"permalink"`
+	Posts             string `json:"posts"`
 }
 
 // PostsListResponseThreadPermissions represents a component schema.
 type PostsListResponseThreadPermissions struct {
-	Bump      PostsListResponseThreadPermissionsBump `json:"bump,omitempty"`
-	Delete    bool                                   `json:"delete,omitempty"`
-	Edit      bool                                   `json:"edit,omitempty"`
-	EditTags  bool                                   `json:"edit_tags,omitempty"`
-	EditTitle bool                                   `json:"edit_title,omitempty"`
-	Follow    bool                                   `json:"follow,omitempty"`
-	Post      bool                                   `json:"post,omitempty"`
-	View      bool                                   `json:"view,omitempty"`
+	Bump      PostsListResponseThreadPermissionsBump `json:"bump"`
+	Delete    bool                                   `json:"delete"`
+	Edit      bool                                   `json:"edit"`
+	EditTags  bool                                   `json:"edit_tags"`
+	EditTitle bool                                   `json:"edit_title"`
+	Follow    bool                                   `json:"follow"`
+	Post      bool                                   `json:"post"`
+	View      bool                                   `json:"view"`
 }
 
 // PostsListResponseThreadPermissionsBump represents a component schema.
 type PostsListResponseThreadPermissionsBump struct {
-	AvailableCount    int64 `json:"available_count,omitempty"`
-	Can               bool  `json:"can,omitempty"`
-	Error             any   `json:"error,omitempty"`
-	NextAvailableTime any   `json:"next_available_time,omitempty"`
+	AvailableCount    int64 `json:"available_count"`
+	Can               bool  `json:"can"`
+	Error             any   `json:"error"`
+	NextAvailableTime any   `json:"next_available_time"`
 }
 
 // PostsListResponseThreadRestrictions represents a component schema.
 type PostsListResponseThreadRestrictions struct {
-	MaxReplyCount int64 `json:"max_reply_count,omitempty"`
-	ReplyDelay    int64 `json:"reply_delay,omitempty"`
+	MaxReplyCount int64 `json:"max_reply_count"`
+	ReplyDelay    int64 `json:"reply_delay"`
 }
 
 // PostsListResponseThreadThreadTags represents a component schema.
 type PostsListResponseThreadThreadTags struct {
-	N193431 string `json:"193431,omitempty"`
-	N206    string `json:"206,omitempty"`
-	N97491  string `json:"97491,omitempty"`
+	N193431 string `json:"193431"`
+	N206    string `json:"206"`
+	N97491  string `json:"97491"`
 }
 
 // PostsReportReasonsResponseSystemInfo represents a component schema.
 type PostsReportReasonsResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsReportResponseSystemInfo represents a component schema.
 type PostsReportResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // PostsUnlikeResponseSystemInfo represents a component schema.
 type PostsUnlikeResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsCommentsCreateResponseComment represents a component schema.
 type ProfilePostsCommentsCreateResponseComment struct {
-	CommentBody         string                                               `json:"comment_body,omitempty"`
-	CommentCreateDate   int64                                                `json:"comment_create_date,omitempty"`
-	CommentID           int64                                                `json:"comment_id,omitempty"`
-	CommentUserID       int64                                                `json:"comment_user_id,omitempty"`
-	CommentUsername     string                                               `json:"comment_username,omitempty"`
-	CommentUsernameHTML string                                               `json:"comment_username_html,omitempty"`
-	Links               ProfilePostsCommentsCreateResponseCommentLinks       `json:"links,omitempty"`
-	Permissions         ProfilePostsCommentsCreateResponseCommentPermissions `json:"permissions,omitempty"`
-	ProfilePostID       int64                                                `json:"profile_post_id,omitempty"`
-	TimelineUserID      int64                                                `json:"timeline_user_id,omitempty"`
-	UserIsIgnored       bool                                                 `json:"user_is_ignored,omitempty"`
+	CommentBody         string                                               `json:"comment_body"`
+	CommentCreateDate   int64                                                `json:"comment_create_date"`
+	CommentID           int64                                                `json:"comment_id"`
+	CommentUserID       int64                                                `json:"comment_user_id"`
+	CommentUsername     string                                               `json:"comment_username"`
+	CommentUsernameHTML string                                               `json:"comment_username_html"`
+	Links               ProfilePostsCommentsCreateResponseCommentLinks       `json:"links"`
+	Permissions         ProfilePostsCommentsCreateResponseCommentPermissions `json:"permissions"`
+	ProfilePostID       int64                                                `json:"profile_post_id"`
+	TimelineUserID      int64                                                `json:"timeline_user_id"`
+	UserIsIgnored       bool                                                 `json:"user_is_ignored"`
 }
 
 // ProfilePostsCommentsCreateResponseCommentLinks represents a component schema.
 type ProfilePostsCommentsCreateResponseCommentLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	ProfilePost  string `json:"profile_post,omitempty"`
-	Timeline     string `json:"timeline,omitempty"`
-	TimelineUser string `json:"timeline_user,omitempty"`
+	Detail       string `json:"detail"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	ProfilePost  string `json:"profile_post"`
+	Timeline     string `json:"timeline"`
+	TimelineUser string `json:"timeline_user"`
 }
 
 // ProfilePostsCommentsCreateResponseCommentPermissions represents a component schema.
 type ProfilePostsCommentsCreateResponseCommentPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	View   bool `json:"view"`
 }
 
 // ProfilePostsCommentsCreateResponseSystemInfo represents a component schema.
 type ProfilePostsCommentsCreateResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsCommentsDeleteResponseSystemInfo represents a component schema.
 type ProfilePostsCommentsDeleteResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsCommentsEditResponseComment represents a component schema.
 type ProfilePostsCommentsEditResponseComment struct {
-	CommentBody         string                                             `json:"comment_body,omitempty"`
-	CommentCreateDate   int64                                              `json:"comment_create_date,omitempty"`
-	CommentID           int64                                              `json:"comment_id,omitempty"`
-	CommentUserID       int64                                              `json:"comment_user_id,omitempty"`
-	CommentUsername     string                                             `json:"comment_username,omitempty"`
-	CommentUsernameHTML string                                             `json:"comment_username_html,omitempty"`
-	Links               ProfilePostsCommentsEditResponseCommentLinks       `json:"links,omitempty"`
-	Permissions         ProfilePostsCommentsEditResponseCommentPermissions `json:"permissions,omitempty"`
-	ProfilePostID       int64                                              `json:"profile_post_id,omitempty"`
-	TimelineUserID      int64                                              `json:"timeline_user_id,omitempty"`
-	UserIsIgnored       bool                                               `json:"user_is_ignored,omitempty"`
+	CommentBody         string                                             `json:"comment_body"`
+	CommentCreateDate   int64                                              `json:"comment_create_date"`
+	CommentID           int64                                              `json:"comment_id"`
+	CommentUserID       int64                                              `json:"comment_user_id"`
+	CommentUsername     string                                             `json:"comment_username"`
+	CommentUsernameHTML string                                             `json:"comment_username_html"`
+	Links               ProfilePostsCommentsEditResponseCommentLinks       `json:"links"`
+	Permissions         ProfilePostsCommentsEditResponseCommentPermissions `json:"permissions"`
+	ProfilePostID       int64                                              `json:"profile_post_id"`
+	TimelineUserID      int64                                              `json:"timeline_user_id"`
+	UserIsIgnored       bool                                               `json:"user_is_ignored"`
 }
 
 // ProfilePostsCommentsEditResponseCommentLinks represents a component schema.
 type ProfilePostsCommentsEditResponseCommentLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	ProfilePost  string `json:"profile_post,omitempty"`
-	Timeline     string `json:"timeline,omitempty"`
-	TimelineUser string `json:"timeline_user,omitempty"`
+	Detail       string `json:"detail"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	ProfilePost  string `json:"profile_post"`
+	Timeline     string `json:"timeline"`
+	TimelineUser string `json:"timeline_user"`
 }
 
 // ProfilePostsCommentsEditResponseCommentPermissions represents a component schema.
 type ProfilePostsCommentsEditResponseCommentPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	View   bool `json:"view"`
 }
 
 // ProfilePostsCommentsEditResponseSystemInfo represents a component schema.
 type ProfilePostsCommentsEditResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsCommentsGetResponseComment represents a component schema.
 type ProfilePostsCommentsGetResponseComment struct {
-	CommentBody          string                                            `json:"comment_body,omitempty"`
-	CommentBodyHTML      string                                            `json:"comment_body_html,omitempty"`
-	CommentBodyPlainText string                                            `json:"comment_body_plain_text,omitempty"`
-	CommentCreateDate    int64                                             `json:"comment_create_date,omitempty"`
-	CommentID            int64                                             `json:"comment_id,omitempty"`
-	CommentUserID        int64                                             `json:"comment_user_id,omitempty"`
-	CommentUsername      string                                            `json:"comment_username,omitempty"`
-	CommentUsernameHTML  string                                            `json:"comment_username_html,omitempty"`
-	Links                ProfilePostsCommentsGetResponseCommentLinks       `json:"links,omitempty"`
-	Permissions          ProfilePostsCommentsGetResponseCommentPermissions `json:"permissions,omitempty"`
-	ProfilePostID        int64                                             `json:"profile_post_id,omitempty"`
-	TimelineUserID       int64                                             `json:"timeline_user_id,omitempty"`
-	UserIsIgnored        bool                                              `json:"user_is_ignored,omitempty"`
+	CommentBody          string                                            `json:"comment_body"`
+	CommentBodyHTML      string                                            `json:"comment_body_html"`
+	CommentBodyPlainText string                                            `json:"comment_body_plain_text"`
+	CommentCreateDate    int64                                             `json:"comment_create_date"`
+	CommentID            int64                                             `json:"comment_id"`
+	CommentUserID        int64                                             `json:"comment_user_id"`
+	CommentUsername      string                                            `json:"comment_username"`
+	CommentUsernameHTML  string                                            `json:"comment_username_html"`
+	Links                ProfilePostsCommentsGetResponseCommentLinks       `json:"links"`
+	Permissions          ProfilePostsCommentsGetResponseCommentPermissions `json:"permissions"`
+	ProfilePostID        int64                                             `json:"profile_post_id"`
+	TimelineUserID       int64                                             `json:"timeline_user_id"`
+	UserIsIgnored        bool                                              `json:"user_is_ignored"`
 }
 
 // ProfilePostsCommentsGetResponseCommentLinks represents a component schema.
 type ProfilePostsCommentsGetResponseCommentLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	ProfilePost  string `json:"profile_post,omitempty"`
-	Timeline     string `json:"timeline,omitempty"`
-	TimelineUser string `json:"timeline_user,omitempty"`
+	Detail       string `json:"detail"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	ProfilePost  string `json:"profile_post"`
+	Timeline     string `json:"timeline"`
+	TimelineUser string `json:"timeline_user"`
 }
 
 // ProfilePostsCommentsGetResponseCommentPermissions represents a component schema.
 type ProfilePostsCommentsGetResponseCommentPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	View   bool `json:"view"`
 }
 
 // ProfilePostsCommentsGetResponseSystemInfo represents a component schema.
 type ProfilePostsCommentsGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsCommentsListResponseProfilePost represents a component schema.
 type ProfilePostsCommentsListResponseProfilePost struct {
-	Links              ProfilePostsCommentsListResponseProfilePostLinks       `json:"links,omitempty"`
-	Permissions        ProfilePostsCommentsListResponseProfilePostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                                 `json:"post_body,omitempty"`
-	PostCommentCount   int64                                                  `json:"post_comment_count,omitempty"`
-	PostCreateDate     int64                                                  `json:"post_create_date,omitempty"`
-	PostIsDeleted      bool                                                   `json:"post_is_deleted,omitempty"`
-	PostIsPublished    bool                                                   `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                                  `json:"post_like_count,omitempty"`
-	PosterUserID       int64                                                  `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                                 `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                                 `json:"poster_username_html,omitempty"`
-	ProfilePostID      int64                                                  `json:"profile_post_id,omitempty"`
-	TimelineUserID     int64                                                  `json:"timeline_user_id,omitempty"`
-	TimelineUsername   string                                                 `json:"timeline_username,omitempty"`
-	UserIsIgnored      bool                                                   `json:"user_is_ignored,omitempty"`
+	Links              ProfilePostsCommentsListResponseProfilePostLinks       `json:"links"`
+	Permissions        ProfilePostsCommentsListResponseProfilePostPermissions `json:"permissions"`
+	PostBody           string                                                 `json:"post_body"`
+	PostCommentCount   int64                                                  `json:"post_comment_count"`
+	PostCreateDate     int64                                                  `json:"post_create_date"`
+	PostIsDeleted      bool                                                   `json:"post_is_deleted"`
+	PostIsPublished    bool                                                   `json:"post_is_published"`
+	PostLikeCount      int64                                                  `json:"post_like_count"`
+	PosterUserID       int64                                                  `json:"poster_user_id"`
+	PosterUsername     string                                                 `json:"poster_username"`
+	PosterUsernameHTML string                                                 `json:"poster_username_html"`
+	ProfilePostID      int64                                                  `json:"profile_post_id"`
+	TimelineUserID     int64                                                  `json:"timeline_user_id"`
+	TimelineUsername   string                                                 `json:"timeline_username"`
+	UserIsIgnored      bool                                                   `json:"user_is_ignored"`
 }
 
 // ProfilePostsCommentsListResponseProfilePostLinks represents a component schema.
 type ProfilePostsCommentsListResponseProfilePostLinks struct {
-	Comments     string `json:"comments,omitempty"`
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Timeline     string `json:"timeline,omitempty"`
-	TimelineUser string `json:"timeline_user,omitempty"`
+	Comments     string `json:"comments"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Timeline     string `json:"timeline"`
+	TimelineUser string `json:"timeline_user"`
 }
 
 // ProfilePostsCommentsListResponseProfilePostPermissions represents a component schema.
 type ProfilePostsCommentsListResponseProfilePostPermissions struct {
-	Comment bool `json:"comment,omitempty"`
-	Delete  bool `json:"delete,omitempty"`
-	Edit    bool `json:"edit,omitempty"`
-	Like    bool `json:"like,omitempty"`
-	Report  bool `json:"report,omitempty"`
-	View    bool `json:"view,omitempty"`
+	Comment bool `json:"comment"`
+	Delete  bool `json:"delete"`
+	Edit    bool `json:"edit"`
+	Like    bool `json:"like"`
+	Report  bool `json:"report"`
+	View    bool `json:"view"`
 }
 
 // ProfilePostsCommentsListResponseSystemInfo represents a component schema.
 type ProfilePostsCommentsListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsCommentsListResponseTimelineUser represents a component schema.
 type ProfilePostsCommentsListResponseTimelineUser struct {
-	Balance                     string                                                      `json:"balance,omitempty"`
-	Banner                      string                                                      `json:"banner,omitempty"`
-	Birthday                    ProfilePostsCommentsListResponseTimelineUserBirthday        `json:"birthday,omitempty"`
-	ContestCount                int64                                                       `json:"contest_count,omitempty"`
-	ConvWelcomeMessage          string                                                      `json:"conv_welcome_message,omitempty"`
-	CuratorTitles               []string                                                    `json:"curator_titles,omitempty"`
-	Currency                    string                                                      `json:"currency,omitempty"`
-	CustomTitle                 string                                                      `json:"custom_title,omitempty"`
-	DisplayBannerID             int64                                                       `json:"display_banner_id,omitempty"`
-	DisplayIconGroupID          int64                                                       `json:"display_icon_group_id,omitempty"`
-	EditPermissions             ProfilePostsCommentsListResponseTimelineUserEditPermissions `json:"edit_permissions,omitempty"`
-	Fields                      []any                                                       `json:"fields,omitempty"`
-	Hold                        string                                                      `json:"hold,omitempty"`
-	IsBanned                    int64                                                       `json:"is_banned,omitempty"`
-	Links                       ProfilePostsCommentsListResponseTimelineUserLinks           `json:"links,omitempty"`
-	Permissions                 ProfilePostsCommentsListResponseTimelineUserPermissions     `json:"permissions,omitempty"`
-	SecretAnswerFirstLetter     string                                                      `json:"secret_answer_first_letter,omitempty"`
-	SecretAnswerRendered        string                                                      `json:"secret_answer_rendered,omitempty"`
-	SelfPermissions             ProfilePostsCommentsListResponseTimelineUserSelfPermissions `json:"self_permissions,omitempty"`
-	ShortLink                   string                                                      `json:"short_link,omitempty"`
-	TrophyCount                 int64                                                       `json:"trophy_count,omitempty"`
-	UserDeposit                 int64                                                       `json:"user_deposit,omitempty"`
-	UserEmail                   string                                                      `json:"user_email,omitempty"`
-	UserExternalAuthentications []any                                                       `json:"user_external_authentications,omitempty"`
-	UserFollowers               ProfilePostsCommentsListResponseTimelineUserUserFollowers   `json:"user_followers,omitempty"`
-	UserFollowing               ProfilePostsCommentsListResponseTimelineUserUserFollowing   `json:"user_following,omitempty"`
-	UserGroupID                 int64                                                       `json:"user_group_id,omitempty"`
-	UserGroups                  []any                                                       `json:"user_groups,omitempty"`
-	UserID                      int64                                                       `json:"user_id,omitempty"`
-	UserIsFollowed              bool                                                        `json:"user_is_followed,omitempty"`
-	UserIsIgnored               bool                                                        `json:"user_is_ignored,omitempty"`
-	UserIsValid                 bool                                                        `json:"user_is_valid,omitempty"`
-	UserIsVerified              bool                                                        `json:"user_is_verified,omitempty"`
-	UserIsVisitor               bool                                                        `json:"user_is_visitor,omitempty"`
-	UserLastSeenDate            int64                                                       `json:"user_last_seen_date,omitempty"`
-	UserLike2Count              int64                                                       `json:"user_like2_count,omitempty"`
-	UserLikeCount               int64                                                       `json:"user_like_count,omitempty"`
-	UserMessageCount            int64                                                       `json:"user_message_count,omitempty"`
-	UserRegisterDate            int64                                                       `json:"user_register_date,omitempty"`
-	UserTimezoneOffset          int64                                                       `json:"user_timezone_offset,omitempty"`
-	UserTitle                   string                                                      `json:"user_title,omitempty"`
-	UserUnreadConversationCount int64                                                       `json:"user_unread_conversation_count,omitempty"`
-	UserUnreadNotificationCount int64                                                       `json:"user_unread_notification_count,omitempty"`
-	Username                    string                                                      `json:"username,omitempty"`
-	UsernameHTML                string                                                      `json:"username_html,omitempty"`
+	Balance                     string                                                      `json:"balance"`
+	Banner                      string                                                      `json:"banner"`
+	Birthday                    ProfilePostsCommentsListResponseTimelineUserBirthday        `json:"birthday"`
+	ContestCount                int64                                                       `json:"contest_count"`
+	ConvWelcomeMessage          string                                                      `json:"conv_welcome_message"`
+	CuratorTitles               []string                                                    `json:"curator_titles"`
+	Currency                    string                                                      `json:"currency"`
+	CustomTitle                 string                                                      `json:"custom_title"`
+	DisplayBannerID             int64                                                       `json:"display_banner_id"`
+	DisplayIconGroupID          int64                                                       `json:"display_icon_group_id"`
+	EditPermissions             ProfilePostsCommentsListResponseTimelineUserEditPermissions `json:"edit_permissions"`
+	Fields                      []any                                                       `json:"fields"`
+	Hold                        string                                                      `json:"hold"`
+	IsBanned                    int64                                                       `json:"is_banned"`
+	Links                       ProfilePostsCommentsListResponseTimelineUserLinks           `json:"links"`
+	Permissions                 ProfilePostsCommentsListResponseTimelineUserPermissions     `json:"permissions"`
+	SecretAnswerFirstLetter     string                                                      `json:"secret_answer_first_letter"`
+	SecretAnswerRendered        string                                                      `json:"secret_answer_rendered"`
+	SelfPermissions             ProfilePostsCommentsListResponseTimelineUserSelfPermissions `json:"self_permissions"`
+	ShortLink                   string                                                      `json:"short_link"`
+	TrophyCount                 int64                                                       `json:"trophy_count"`
+	UserDeposit                 int64                                                       `json:"user_deposit"`
+	UserEmail                   string                                                      `json:"user_email"`
+	UserExternalAuthentications []any                                                       `json:"user_external_authentications"`
+	UserFollowers               ProfilePostsCommentsListResponseTimelineUserUserFollowers   `json:"user_followers"`
+	UserFollowing               ProfilePostsCommentsListResponseTimelineUserUserFollowing   `json:"user_following"`
+	UserGroupID                 int64                                                       `json:"user_group_id"`
+	UserGroups                  []any                                                       `json:"user_groups"`
+	UserID                      int64                                                       `json:"user_id"`
+	UserIsFollowed              bool                                                        `json:"user_is_followed"`
+	UserIsIgnored               bool                                                        `json:"user_is_ignored"`
+	UserIsValid                 bool                                                        `json:"user_is_valid"`
+	UserIsVerified              bool                                                        `json:"user_is_verified"`
+	UserIsVisitor               bool                                                        `json:"user_is_visitor"`
+	UserLastSeenDate            int64                                                       `json:"user_last_seen_date"`
+	UserLike2Count              int64                                                       `json:"user_like2_count"`
+	UserLikeCount               int64                                                       `json:"user_like_count"`
+	UserMessageCount            int64                                                       `json:"user_message_count"`
+	UserRegisterDate            int64                                                       `json:"user_register_date"`
+	UserTimezoneOffset          int64                                                       `json:"user_timezone_offset"`
+	UserTitle                   string                                                      `json:"user_title"`
+	UserUnreadConversationCount int64                                                       `json:"user_unread_conversation_count"`
+	UserUnreadNotificationCount int64                                                       `json:"user_unread_notification_count"`
+	Username                    string                                                      `json:"username"`
+	UsernameHTML                string                                                      `json:"username_html"`
 }
 
 // ProfilePostsCommentsListResponseTimelineUserBirthday represents a component schema.
 type ProfilePostsCommentsListResponseTimelineUserBirthday struct {
-	Age       int64                                                         `json:"age,omitempty"`
-	Format    string                                                        `json:"format,omitempty"`
-	TimeStamp ProfilePostsCommentsListResponseTimelineUserBirthdayTimeStamp `json:"timeStamp,omitempty"`
+	Age       int64                                                         `json:"age"`
+	Format    string                                                        `json:"format"`
+	TimeStamp ProfilePostsCommentsListResponseTimelineUserBirthdayTimeStamp `json:"timeStamp"`
 }
 
 // ProfilePostsCommentsListResponseTimelineUserBirthdayTimeStamp represents a component schema.
 type ProfilePostsCommentsListResponseTimelineUserBirthdayTimeStamp struct {
-	Date         string `json:"date,omitempty"`
-	Timezone     string `json:"timezone,omitempty"`
-	TimezoneType int64  `json:"timezone_type,omitempty"`
+	Date         string `json:"date"`
+	Timezone     string `json:"timezone"`
+	TimezoneType int64  `json:"timezone_type"`
 }
 
 // ProfilePostsCommentsListResponseTimelineUserEditPermissions represents a component schema.
 type ProfilePostsCommentsListResponseTimelineUserEditPermissions struct {
-	Fields            bool `json:"fields,omitempty"`
-	HideUsernameLogs  bool `json:"hide_username_logs,omitempty"`
-	Password          bool `json:"password,omitempty"`
-	PrimaryGroupID    bool `json:"primary_group_id,omitempty"`
-	SecondaryGroupIds bool `json:"secondary_group_ids,omitempty"`
-	ShortLink         bool `json:"short_link,omitempty"`
-	UserDobDay        bool `json:"user_dob_day,omitempty"`
-	UserDobMonth      bool `json:"user_dob_month,omitempty"`
-	UserDobYear       bool `json:"user_dob_year,omitempty"`
-	UserEmail         bool `json:"user_email,omitempty"`
-	UserTitle         bool `json:"user_title,omitempty"`
-	Username          bool `json:"username,omitempty"`
+	Fields            bool `json:"fields"`
+	HideUsernameLogs  bool `json:"hide_username_logs"`
+	Password          bool `json:"password"`
+	PrimaryGroupID    bool `json:"primary_group_id"`
+	SecondaryGroupIds bool `json:"secondary_group_ids"`
+	ShortLink         bool `json:"short_link"`
+	UserDobDay        bool `json:"user_dob_day"`
+	UserDobMonth      bool `json:"user_dob_month"`
+	UserDobYear       bool `json:"user_dob_year"`
+	UserEmail         bool `json:"user_email"`
+	UserTitle         bool `json:"user_title"`
+	Username          bool `json:"username"`
 }
 
 // ProfilePostsCommentsListResponseTimelineUserLinks represents a component schema.
 type ProfilePostsCommentsListResponseTimelineUserLinks struct {
-	Avatar      string `json:"avatar,omitempty"`
-	AvatarBig   string `json:"avatar_big,omitempty"`
-	AvatarSmall string `json:"avatar_small,omitempty"`
-	BackgroundL string `json:"background_l,omitempty"`
-	BackgroundM string `json:"background_m,omitempty"`
-	Detail      string `json:"detail,omitempty"`
-	Followers   string `json:"followers,omitempty"`
-	Followings  string `json:"followings,omitempty"`
-	Ignore      string `json:"ignore,omitempty"`
-	Permalink   string `json:"permalink,omitempty"`
-	Status      string `json:"status,omitempty"`
-	Timeline    string `json:"timeline,omitempty"`
+	Avatar      string `json:"avatar"`
+	AvatarBig   string `json:"avatar_big"`
+	AvatarSmall string `json:"avatar_small"`
+	BackgroundL string `json:"background_l"`
+	BackgroundM string `json:"background_m"`
+	Detail      string `json:"detail"`
+	Followers   string `json:"followers"`
+	Followings  string `json:"followings"`
+	Ignore      string `json:"ignore"`
+	Permalink   string `json:"permalink"`
+	Status      string `json:"status"`
+	Timeline    string `json:"timeline"`
 }
 
 // ProfilePostsCommentsListResponseTimelineUserPermissions represents a component schema.
 type ProfilePostsCommentsListResponseTimelineUserPermissions struct {
-	Edit        bool `json:"edit,omitempty"`
-	Follow      bool `json:"follow,omitempty"`
-	Ignore      bool `json:"ignore,omitempty"`
-	ProfilePost bool `json:"profile_post,omitempty"`
+	Edit        bool `json:"edit"`
+	Follow      bool `json:"follow"`
+	Ignore      bool `json:"ignore"`
+	ProfilePost bool `json:"profile_post"`
 }
 
 // ProfilePostsCommentsListResponseTimelineUserSelfPermissions represents a component schema.
 type ProfilePostsCommentsListResponseTimelineUserSelfPermissions struct {
-	CreateConversation bool `json:"create_conversation,omitempty"`
+	CreateConversation bool `json:"create_conversation"`
 }
 
 // ProfilePostsCommentsListResponseTimelineUserUserFollowers represents a component schema.
 type ProfilePostsCommentsListResponseTimelineUserUserFollowers struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // ProfilePostsCommentsListResponseTimelineUserUserFollowing represents a component schema.
 type ProfilePostsCommentsListResponseTimelineUserUserFollowing struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // ProfilePostsCommentsReportResponseSystemInfo represents a component schema.
 type ProfilePostsCommentsReportResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsCreateResponseProfilePost represents a component schema.
 type ProfilePostsCreateResponseProfilePost struct {
-	Links              ProfilePostsCreateResponseProfilePostLinks       `json:"links,omitempty"`
-	Permissions        ProfilePostsCreateResponseProfilePostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                           `json:"post_body,omitempty"`
-	PostCommentCount   int64                                            `json:"post_comment_count,omitempty"`
-	PostCreateDate     int64                                            `json:"post_create_date,omitempty"`
-	PostIsDeleted      bool                                             `json:"post_is_deleted,omitempty"`
-	PostIsPublished    bool                                             `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                            `json:"post_like_count,omitempty"`
-	PosterUserID       int64                                            `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                           `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                           `json:"poster_username_html,omitempty"`
-	ProfilePostID      int64                                            `json:"profile_post_id,omitempty"`
-	TimelineUserID     int64                                            `json:"timeline_user_id,omitempty"`
-	TimelineUsername   string                                           `json:"timeline_username,omitempty"`
-	UserIsIgnored      bool                                             `json:"user_is_ignored,omitempty"`
+	Links              ProfilePostsCreateResponseProfilePostLinks       `json:"links"`
+	Permissions        ProfilePostsCreateResponseProfilePostPermissions `json:"permissions"`
+	PostBody           string                                           `json:"post_body"`
+	PostCommentCount   int64                                            `json:"post_comment_count"`
+	PostCreateDate     int64                                            `json:"post_create_date"`
+	PostIsDeleted      bool                                             `json:"post_is_deleted"`
+	PostIsPublished    bool                                             `json:"post_is_published"`
+	PostLikeCount      int64                                            `json:"post_like_count"`
+	PosterUserID       int64                                            `json:"poster_user_id"`
+	PosterUsername     string                                           `json:"poster_username"`
+	PosterUsernameHTML string                                           `json:"poster_username_html"`
+	ProfilePostID      int64                                            `json:"profile_post_id"`
+	TimelineUserID     int64                                            `json:"timeline_user_id"`
+	TimelineUsername   string                                           `json:"timeline_username"`
+	UserIsIgnored      bool                                             `json:"user_is_ignored"`
 }
 
 // ProfilePostsCreateResponseProfilePostLinks represents a component schema.
 type ProfilePostsCreateResponseProfilePostLinks struct {
-	Comments     string `json:"comments,omitempty"`
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Timeline     string `json:"timeline,omitempty"`
-	TimelineUser string `json:"timeline_user,omitempty"`
+	Comments     string `json:"comments"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Timeline     string `json:"timeline"`
+	TimelineUser string `json:"timeline_user"`
 }
 
 // ProfilePostsCreateResponseProfilePostPermissions represents a component schema.
 type ProfilePostsCreateResponseProfilePostPermissions struct {
-	Comment bool `json:"comment,omitempty"`
-	Delete  bool `json:"delete,omitempty"`
-	Edit    bool `json:"edit,omitempty"`
-	Like    bool `json:"like,omitempty"`
-	Report  bool `json:"report,omitempty"`
-	View    bool `json:"view,omitempty"`
+	Comment bool `json:"comment"`
+	Delete  bool `json:"delete"`
+	Edit    bool `json:"edit"`
+	Like    bool `json:"like"`
+	Report  bool `json:"report"`
+	View    bool `json:"view"`
 }
 
 // ProfilePostsCreateResponseSystemInfo represents a component schema.
 type ProfilePostsCreateResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsDeleteResponseSystemInfo represents a component schema.
 type ProfilePostsDeleteResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsEditResponseProfilePost represents a component schema.
 type ProfilePostsEditResponseProfilePost struct {
-	Links              ProfilePostsEditResponseProfilePostLinks       `json:"links,omitempty"`
-	Permissions        ProfilePostsEditResponseProfilePostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                         `json:"post_body,omitempty"`
-	PostCommentCount   int64                                          `json:"post_comment_count,omitempty"`
-	PostCreateDate     int64                                          `json:"post_create_date,omitempty"`
-	PostIsDeleted      bool                                           `json:"post_is_deleted,omitempty"`
-	PostIsPublished    bool                                           `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                          `json:"post_like_count,omitempty"`
-	PosterUserID       int64                                          `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                         `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                         `json:"poster_username_html,omitempty"`
-	ProfilePostID      int64                                          `json:"profile_post_id,omitempty"`
-	TimelineUserID     int64                                          `json:"timeline_user_id,omitempty"`
-	TimelineUsername   string                                         `json:"timeline_username,omitempty"`
-	UserIsIgnored      bool                                           `json:"user_is_ignored,omitempty"`
+	Links              ProfilePostsEditResponseProfilePostLinks       `json:"links"`
+	Permissions        ProfilePostsEditResponseProfilePostPermissions `json:"permissions"`
+	PostBody           string                                         `json:"post_body"`
+	PostCommentCount   int64                                          `json:"post_comment_count"`
+	PostCreateDate     int64                                          `json:"post_create_date"`
+	PostIsDeleted      bool                                           `json:"post_is_deleted"`
+	PostIsPublished    bool                                           `json:"post_is_published"`
+	PostLikeCount      int64                                          `json:"post_like_count"`
+	PosterUserID       int64                                          `json:"poster_user_id"`
+	PosterUsername     string                                         `json:"poster_username"`
+	PosterUsernameHTML string                                         `json:"poster_username_html"`
+	ProfilePostID      int64                                          `json:"profile_post_id"`
+	TimelineUserID     int64                                          `json:"timeline_user_id"`
+	TimelineUsername   string                                         `json:"timeline_username"`
+	UserIsIgnored      bool                                           `json:"user_is_ignored"`
 }
 
 // ProfilePostsEditResponseProfilePostLinks represents a component schema.
 type ProfilePostsEditResponseProfilePostLinks struct {
-	Comments     string `json:"comments,omitempty"`
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Timeline     string `json:"timeline,omitempty"`
-	TimelineUser string `json:"timeline_user,omitempty"`
+	Comments     string `json:"comments"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Timeline     string `json:"timeline"`
+	TimelineUser string `json:"timeline_user"`
 }
 
 // ProfilePostsEditResponseProfilePostPermissions represents a component schema.
 type ProfilePostsEditResponseProfilePostPermissions struct {
-	Comment bool `json:"comment,omitempty"`
-	Delete  bool `json:"delete,omitempty"`
-	Edit    bool `json:"edit,omitempty"`
-	Like    bool `json:"like,omitempty"`
-	Report  bool `json:"report,omitempty"`
-	View    bool `json:"view,omitempty"`
+	Comment bool `json:"comment"`
+	Delete  bool `json:"delete"`
+	Edit    bool `json:"edit"`
+	Like    bool `json:"like"`
+	Report  bool `json:"report"`
+	View    bool `json:"view"`
 }
 
 // ProfilePostsEditResponseSystemInfo represents a component schema.
 type ProfilePostsEditResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsGetResponseProfilePost represents a component schema.
 type ProfilePostsGetResponseProfilePost struct {
-	Links                  ProfilePostsGetResponseProfilePostLinks        `json:"links,omitempty"`
-	Permissions            ProfilePostsGetResponseProfilePostPermissions  `json:"permissions,omitempty"`
-	PostBody               string                                         `json:"post_body,omitempty"`
-	PostBodyHTML           string                                         `json:"post_body_html,omitempty"`
-	PostBodyPlainText      string                                         `json:"post_body_plain_text,omitempty"`
-	PostCommentCount       int64                                          `json:"post_comment_count,omitempty"`
-	PostCommentsIsDisabled int64                                          `json:"post_comments_is_disabled,omitempty"`
-	PostCreateDate         int64                                          `json:"post_create_date,omitempty"`
-	PostIsDeleted          bool                                           `json:"post_is_deleted,omitempty"`
-	PostIsLiked            bool                                           `json:"post_is_liked,omitempty"`
-	PostIsPublished        bool                                           `json:"post_is_published,omitempty"`
-	PostIsSticked          bool                                           `json:"post_is_sticked,omitempty"`
-	PostLikeCount          int64                                          `json:"post_like_count,omitempty"`
-	PosterUserID           int64                                          `json:"poster_user_id,omitempty"`
-	PosterUsername         string                                         `json:"poster_username,omitempty"`
-	PosterUsernameHTML     string                                         `json:"poster_username_html,omitempty"`
-	ProfilePostID          int64                                          `json:"profile_post_id,omitempty"`
-	TimelineUser           ProfilePostsGetResponseProfilePostTimelineUser `json:"timeline_user,omitempty"`
-	TimelineUserID         int64                                          `json:"timeline_user_id,omitempty"`
-	TimelineUsername       string                                         `json:"timeline_username,omitempty"`
-	UserIsIgnored          bool                                           `json:"user_is_ignored,omitempty"`
+	Links                  ProfilePostsGetResponseProfilePostLinks        `json:"links"`
+	Permissions            ProfilePostsGetResponseProfilePostPermissions  `json:"permissions"`
+	PostBody               string                                         `json:"post_body"`
+	PostBodyHTML           string                                         `json:"post_body_html"`
+	PostBodyPlainText      string                                         `json:"post_body_plain_text"`
+	PostCommentCount       int64                                          `json:"post_comment_count"`
+	PostCommentsIsDisabled int64                                          `json:"post_comments_is_disabled"`
+	PostCreateDate         int64                                          `json:"post_create_date"`
+	PostIsDeleted          bool                                           `json:"post_is_deleted"`
+	PostIsLiked            bool                                           `json:"post_is_liked"`
+	PostIsPublished        bool                                           `json:"post_is_published"`
+	PostIsSticked          bool                                           `json:"post_is_sticked"`
+	PostLikeCount          int64                                          `json:"post_like_count"`
+	PosterUserID           int64                                          `json:"poster_user_id"`
+	PosterUsername         string                                         `json:"poster_username"`
+	PosterUsernameHTML     string                                         `json:"poster_username_html"`
+	ProfilePostID          int64                                          `json:"profile_post_id"`
+	TimelineUser           ProfilePostsGetResponseProfilePostTimelineUser `json:"timeline_user"`
+	TimelineUserID         int64                                          `json:"timeline_user_id"`
+	TimelineUsername       string                                         `json:"timeline_username"`
+	UserIsIgnored          bool                                           `json:"user_is_ignored"`
 }
 
 // ProfilePostsGetResponseProfilePostLinks represents a component schema.
 type ProfilePostsGetResponseProfilePostLinks struct {
-	Comments     string `json:"comments,omitempty"`
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Timeline     string `json:"timeline,omitempty"`
-	TimelineUser string `json:"timeline_user,omitempty"`
+	Comments     string `json:"comments"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Timeline     string `json:"timeline"`
+	TimelineUser string `json:"timeline_user"`
 }
 
 // ProfilePostsGetResponseProfilePostPermissions represents a component schema.
 type ProfilePostsGetResponseProfilePostPermissions struct {
-	Comment bool `json:"comment,omitempty"`
-	Delete  bool `json:"delete,omitempty"`
-	Edit    bool `json:"edit,omitempty"`
-	Like    bool `json:"like,omitempty"`
-	Report  bool `json:"report,omitempty"`
-	Stick   bool `json:"stick,omitempty"`
-	View    bool `json:"view,omitempty"`
+	Comment bool `json:"comment"`
+	Delete  bool `json:"delete"`
+	Edit    bool `json:"edit"`
+	Like    bool `json:"like"`
+	Report  bool `json:"report"`
+	Stick   bool `json:"stick"`
+	View    bool `json:"view"`
 }
 
 // ProfilePostsGetResponseProfilePostTimelineUser represents a component schema.
 type ProfilePostsGetResponseProfilePostTimelineUser struct {
-	Balance                     string                                                        `json:"balance,omitempty"`
-	Banner                      string                                                        `json:"banner,omitempty"`
-	Birthday                    ProfilePostsGetResponseProfilePostTimelineUserBirthday        `json:"birthday,omitempty"`
-	ContestCount                int64                                                         `json:"contest_count,omitempty"`
-	ConvWelcomeMessage          string                                                        `json:"conv_welcome_message,omitempty"`
-	CuratorTitles               []string                                                      `json:"curator_titles,omitempty"`
-	Currency                    string                                                        `json:"currency,omitempty"`
-	CustomTitle                 string                                                        `json:"custom_title,omitempty"`
-	DisplayBannerID             int64                                                         `json:"display_banner_id,omitempty"`
-	DisplayIconGroupID          int64                                                         `json:"display_icon_group_id,omitempty"`
-	EditPermissions             ProfilePostsGetResponseProfilePostTimelineUserEditPermissions `json:"edit_permissions,omitempty"`
-	Fields                      []any                                                         `json:"fields,omitempty"`
-	Hold                        string                                                        `json:"hold,omitempty"`
-	IsBanned                    int64                                                         `json:"is_banned,omitempty"`
-	Links                       ProfilePostsGetResponseProfilePostTimelineUserLinks           `json:"links,omitempty"`
-	Permissions                 ProfilePostsGetResponseProfilePostTimelineUserPermissions     `json:"permissions,omitempty"`
-	SecretAnswerFirstLetter     string                                                        `json:"secret_answer_first_letter,omitempty"`
-	SecretAnswerRendered        string                                                        `json:"secret_answer_rendered,omitempty"`
-	SelfPermissions             ProfilePostsGetResponseProfilePostTimelineUserSelfPermissions `json:"self_permissions,omitempty"`
-	ShortLink                   string                                                        `json:"short_link,omitempty"`
-	TrophyCount                 int64                                                         `json:"trophy_count,omitempty"`
-	UserDeposit                 int64                                                         `json:"user_deposit,omitempty"`
-	UserEmail                   string                                                        `json:"user_email,omitempty"`
-	UserExternalAuthentications []any                                                         `json:"user_external_authentications,omitempty"`
-	UserFollowers               ProfilePostsGetResponseProfilePostTimelineUserUserFollowers   `json:"user_followers,omitempty"`
-	UserFollowing               ProfilePostsGetResponseProfilePostTimelineUserUserFollowing   `json:"user_following,omitempty"`
-	UserGroupID                 int64                                                         `json:"user_group_id,omitempty"`
-	UserGroups                  []any                                                         `json:"user_groups,omitempty"`
-	UserID                      int64                                                         `json:"user_id,omitempty"`
-	UserIsFollowed              bool                                                          `json:"user_is_followed,omitempty"`
-	UserIsIgnored               bool                                                          `json:"user_is_ignored,omitempty"`
-	UserIsValid                 bool                                                          `json:"user_is_valid,omitempty"`
-	UserIsVerified              bool                                                          `json:"user_is_verified,omitempty"`
-	UserIsVisitor               bool                                                          `json:"user_is_visitor,omitempty"`
-	UserLastSeenDate            int64                                                         `json:"user_last_seen_date,omitempty"`
-	UserLike2Count              int64                                                         `json:"user_like2_count,omitempty"`
-	UserLikeCount               int64                                                         `json:"user_like_count,omitempty"`
-	UserMessageCount            int64                                                         `json:"user_message_count,omitempty"`
-	UserRegisterDate            int64                                                         `json:"user_register_date,omitempty"`
-	UserTimezoneOffset          int64                                                         `json:"user_timezone_offset,omitempty"`
-	UserTitle                   string                                                        `json:"user_title,omitempty"`
-	UserUnreadConversationCount int64                                                         `json:"user_unread_conversation_count,omitempty"`
-	UserUnreadNotificationCount int64                                                         `json:"user_unread_notification_count,omitempty"`
-	Username                    string                                                        `json:"username,omitempty"`
-	UsernameHTML                string                                                        `json:"username_html,omitempty"`
+	Balance                     string                                                        `json:"balance"`
+	Banner                      string                                                        `json:"banner"`
+	Birthday                    ProfilePostsGetResponseProfilePostTimelineUserBirthday        `json:"birthday"`
+	ContestCount                int64                                                         `json:"contest_count"`
+	ConvWelcomeMessage          string                                                        `json:"conv_welcome_message"`
+	CuratorTitles               []string                                                      `json:"curator_titles"`
+	Currency                    string                                                        `json:"currency"`
+	CustomTitle                 string                                                        `json:"custom_title"`
+	DisplayBannerID             int64                                                         `json:"display_banner_id"`
+	DisplayIconGroupID          int64                                                         `json:"display_icon_group_id"`
+	EditPermissions             ProfilePostsGetResponseProfilePostTimelineUserEditPermissions `json:"edit_permissions"`
+	Fields                      []any                                                         `json:"fields"`
+	Hold                        string                                                        `json:"hold"`
+	IsBanned                    int64                                                         `json:"is_banned"`
+	Links                       ProfilePostsGetResponseProfilePostTimelineUserLinks           `json:"links"`
+	Permissions                 ProfilePostsGetResponseProfilePostTimelineUserPermissions     `json:"permissions"`
+	SecretAnswerFirstLetter     string                                                        `json:"secret_answer_first_letter"`
+	SecretAnswerRendered        string                                                        `json:"secret_answer_rendered"`
+	SelfPermissions             ProfilePostsGetResponseProfilePostTimelineUserSelfPermissions `json:"self_permissions"`
+	ShortLink                   string                                                        `json:"short_link"`
+	TrophyCount                 int64                                                         `json:"trophy_count"`
+	UserDeposit                 int64                                                         `json:"user_deposit"`
+	UserEmail                   string                                                        `json:"user_email"`
+	UserExternalAuthentications []any                                                         `json:"user_external_authentications"`
+	UserFollowers               ProfilePostsGetResponseProfilePostTimelineUserUserFollowers   `json:"user_followers"`
+	UserFollowing               ProfilePostsGetResponseProfilePostTimelineUserUserFollowing   `json:"user_following"`
+	UserGroupID                 int64                                                         `json:"user_group_id"`
+	UserGroups                  []any                                                         `json:"user_groups"`
+	UserID                      int64                                                         `json:"user_id"`
+	UserIsFollowed              bool                                                          `json:"user_is_followed"`
+	UserIsIgnored               bool                                                          `json:"user_is_ignored"`
+	UserIsValid                 bool                                                          `json:"user_is_valid"`
+	UserIsVerified              bool                                                          `json:"user_is_verified"`
+	UserIsVisitor               bool                                                          `json:"user_is_visitor"`
+	UserLastSeenDate            int64                                                         `json:"user_last_seen_date"`
+	UserLike2Count              int64                                                         `json:"user_like2_count"`
+	UserLikeCount               int64                                                         `json:"user_like_count"`
+	UserMessageCount            int64                                                         `json:"user_message_count"`
+	UserRegisterDate            int64                                                         `json:"user_register_date"`
+	UserTimezoneOffset          int64                                                         `json:"user_timezone_offset"`
+	UserTitle                   string                                                        `json:"user_title"`
+	UserUnreadConversationCount int64                                                         `json:"user_unread_conversation_count"`
+	UserUnreadNotificationCount int64                                                         `json:"user_unread_notification_count"`
+	Username                    string                                                        `json:"username"`
+	UsernameHTML                string                                                        `json:"username_html"`
 }
 
 // ProfilePostsGetResponseProfilePostTimelineUserBirthday represents a component schema.
 type ProfilePostsGetResponseProfilePostTimelineUserBirthday struct {
-	Age       int64                                                           `json:"age,omitempty"`
-	Format    string                                                          `json:"format,omitempty"`
-	TimeStamp ProfilePostsGetResponseProfilePostTimelineUserBirthdayTimeStamp `json:"timeStamp,omitempty"`
+	Age       int64                                                           `json:"age"`
+	Format    string                                                          `json:"format"`
+	TimeStamp ProfilePostsGetResponseProfilePostTimelineUserBirthdayTimeStamp `json:"timeStamp"`
 }
 
 // ProfilePostsGetResponseProfilePostTimelineUserBirthdayTimeStamp represents a component schema.
 type ProfilePostsGetResponseProfilePostTimelineUserBirthdayTimeStamp struct {
-	Date         string `json:"date,omitempty"`
-	Timezone     string `json:"timezone,omitempty"`
-	TimezoneType int64  `json:"timezone_type,omitempty"`
+	Date         string `json:"date"`
+	Timezone     string `json:"timezone"`
+	TimezoneType int64  `json:"timezone_type"`
 }
 
 // ProfilePostsGetResponseProfilePostTimelineUserEditPermissions represents a component schema.
 type ProfilePostsGetResponseProfilePostTimelineUserEditPermissions struct {
-	Fields            bool `json:"fields,omitempty"`
-	HideUsernameLogs  bool `json:"hide_username_logs,omitempty"`
-	Password          bool `json:"password,omitempty"`
-	PrimaryGroupID    bool `json:"primary_group_id,omitempty"`
-	SecondaryGroupIds bool `json:"secondary_group_ids,omitempty"`
-	ShortLink         bool `json:"short_link,omitempty"`
-	UserDobDay        bool `json:"user_dob_day,omitempty"`
-	UserDobMonth      bool `json:"user_dob_month,omitempty"`
-	UserDobYear       bool `json:"user_dob_year,omitempty"`
-	UserEmail         bool `json:"user_email,omitempty"`
-	UserTitle         bool `json:"user_title,omitempty"`
-	Username          bool `json:"username,omitempty"`
+	Fields            bool `json:"fields"`
+	HideUsernameLogs  bool `json:"hide_username_logs"`
+	Password          bool `json:"password"`
+	PrimaryGroupID    bool `json:"primary_group_id"`
+	SecondaryGroupIds bool `json:"secondary_group_ids"`
+	ShortLink         bool `json:"short_link"`
+	UserDobDay        bool `json:"user_dob_day"`
+	UserDobMonth      bool `json:"user_dob_month"`
+	UserDobYear       bool `json:"user_dob_year"`
+	UserEmail         bool `json:"user_email"`
+	UserTitle         bool `json:"user_title"`
+	Username          bool `json:"username"`
 }
 
 // ProfilePostsGetResponseProfilePostTimelineUserLinks represents a component schema.
 type ProfilePostsGetResponseProfilePostTimelineUserLinks struct {
-	Avatar      string `json:"avatar,omitempty"`
-	AvatarBig   string `json:"avatar_big,omitempty"`
-	AvatarSmall string `json:"avatar_small,omitempty"`
-	BackgroundL string `json:"background_l,omitempty"`
-	BackgroundM string `json:"background_m,omitempty"`
-	Detail      string `json:"detail,omitempty"`
-	Followers   string `json:"followers,omitempty"`
-	Followings  string `json:"followings,omitempty"`
-	Ignore      string `json:"ignore,omitempty"`
-	Permalink   string `json:"permalink,omitempty"`
-	Status      string `json:"status,omitempty"`
-	Timeline    string `json:"timeline,omitempty"`
+	Avatar      string `json:"avatar"`
+	AvatarBig   string `json:"avatar_big"`
+	AvatarSmall string `json:"avatar_small"`
+	BackgroundL string `json:"background_l"`
+	BackgroundM string `json:"background_m"`
+	Detail      string `json:"detail"`
+	Followers   string `json:"followers"`
+	Followings  string `json:"followings"`
+	Ignore      string `json:"ignore"`
+	Permalink   string `json:"permalink"`
+	Status      string `json:"status"`
+	Timeline    string `json:"timeline"`
 }
 
 // ProfilePostsGetResponseProfilePostTimelineUserPermissions represents a component schema.
 type ProfilePostsGetResponseProfilePostTimelineUserPermissions struct {
-	Edit        bool `json:"edit,omitempty"`
-	Follow      bool `json:"follow,omitempty"`
-	Ignore      bool `json:"ignore,omitempty"`
-	ProfilePost bool `json:"profile_post,omitempty"`
+	Edit        bool `json:"edit"`
+	Follow      bool `json:"follow"`
+	Ignore      bool `json:"ignore"`
+	ProfilePost bool `json:"profile_post"`
 }
 
 // ProfilePostsGetResponseProfilePostTimelineUserSelfPermissions represents a component schema.
 type ProfilePostsGetResponseProfilePostTimelineUserSelfPermissions struct {
-	CreateConversation bool `json:"create_conversation,omitempty"`
+	CreateConversation bool `json:"create_conversation"`
 }
 
 // ProfilePostsGetResponseProfilePostTimelineUserUserFollowers represents a component schema.
 type ProfilePostsGetResponseProfilePostTimelineUserUserFollowers struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // ProfilePostsGetResponseProfilePostTimelineUserUserFollowing represents a component schema.
 type ProfilePostsGetResponseProfilePostTimelineUserUserFollowing struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // ProfilePostsGetResponseSystemInfo represents a component schema.
 type ProfilePostsGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsLikeResponseSystemInfo represents a component schema.
 type ProfilePostsLikeResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsLikesResponseSystemInfo represents a component schema.
 type ProfilePostsLikesResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsListResponseLinks represents a component schema.
 type ProfilePostsListResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
 }
 
 // ProfilePostsListResponseSystemInfo represents a component schema.
 type ProfilePostsListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsReportReasonsResponseSystemInfo represents a component schema.
 type ProfilePostsReportReasonsResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsReportResponseSystemInfo represents a component schema.
 type ProfilePostsReportResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsStickResponseSystemInfo represents a component schema.
 type ProfilePostsStickResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsUnlikeResponseSystemInfo represents a component schema.
 type ProfilePostsUnlikeResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ProfilePostsUnstickResponseSystemInfo represents a component schema.
 type ProfilePostsUnstickResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // RespChatboxMessageModel represents a component schema.
 type RespChatboxMessageModel struct {
-	CanReport   bool                        `json:"can_report,omitempty"`
-	Date        int64                       `json:"date,omitempty"`
-	IsDeleted   bool                        `json:"is_deleted,omitempty"`
-	Message     string                      `json:"message,omitempty"`
-	MessageJSON string                      `json:"messageJson,omitempty"`
-	MessageRaw  string                      `json:"messageRaw,omitempty"`
-	MessageID   int64                       `json:"message_id,omitempty"`
-	Room        RespChatboxMessageModelRoom `json:"room,omitempty"`
-	User        RespChatboxMessageModelUser `json:"user,omitempty"`
+	CanReport   bool                        `json:"can_report"`
+	Date        int64                       `json:"date"`
+	IsDeleted   bool                        `json:"is_deleted"`
+	Message     string                      `json:"message"`
+	MessageJSON string                      `json:"messageJson"`
+	MessageRaw  string                      `json:"messageRaw"`
+	MessageID   int64                       `json:"message_id"`
+	Room        RespChatboxMessageModelRoom `json:"room"`
+	User        RespChatboxMessageModelUser `json:"user"`
 }
 
 // RespChatboxMessageModelRoom represents a component schema.
 type RespChatboxMessageModelRoom struct {
-	CanReport bool   `json:"can_report,omitempty"`
-	Eng       bool   `json:"eng,omitempty"`
-	Market    bool   `json:"market,omitempty"`
-	RoomID    int64  `json:"room_id,omitempty"`
-	Title     string `json:"title,omitempty"`
+	CanReport bool   `json:"can_report"`
+	Eng       bool   `json:"eng"`
+	Market    bool   `json:"market"`
+	RoomID    int64  `json:"room_id"`
+	Title     string `json:"title"`
 }
 
 // RespChatboxMessageModelUser represents a component schema.
 type RespChatboxMessageModelUser struct {
-	AvatarDate          int64                                 `json:"avatar_date,omitempty"`
-	BackgroundDate      int64                                 `json:"background_date,omitempty"`
-	ContestCount        int64                                 `json:"contest_count,omitempty"`
-	CustomTitle         string                                `json:"custom_title,omitempty"`
-	DisplayBannerID     int64                                 `json:"display_banner_id,omitempty"`
-	DisplayIconGroupID  int64                                 `json:"display_icon_group_id,omitempty"`
-	DisplayStyleGroupID int64                                 `json:"display_style_group_id,omitempty"`
-	IsAdmin             bool                                  `json:"is_admin,omitempty"`
-	IsBanned            bool                                  `json:"is_banned,omitempty"`
-	IsModerator         bool                                  `json:"is_moderator,omitempty"`
-	IsStaff             bool                                  `json:"is_staff,omitempty"`
-	LastActivity        int64                                 `json:"last_activity,omitempty"`
-	Like2Count          int64                                 `json:"like2_count,omitempty"`
-	LikeCount           int64                                 `json:"like_count,omitempty"`
-	MessageCount        int64                                 `json:"message_count,omitempty"`
-	RegisterDate        int64                                 `json:"register_date,omitempty"`
-	Rendered            RespChatboxMessageModelUserRendered   `json:"rendered,omitempty"`
-	ShortLink           string                                `json:"short_link,omitempty"`
-	TrophyPoints        int64                                 `json:"trophy_points,omitempty"`
-	UniqBanner          RespChatboxMessageModelUserUniqBanner `json:"uniq_banner,omitempty"`
-	UniqUsernameCSS     string                                `json:"uniq_username_css,omitempty"`
-	UserID              int64                                 `json:"user_id,omitempty"`
-	Username            string                                `json:"username,omitempty"`
+	AvatarDate          int64                                 `json:"avatar_date"`
+	BackgroundDate      int64                                 `json:"background_date"`
+	ContestCount        int64                                 `json:"contest_count"`
+	CustomTitle         string                                `json:"custom_title"`
+	DisplayBannerID     int64                                 `json:"display_banner_id"`
+	DisplayIconGroupID  int64                                 `json:"display_icon_group_id"`
+	DisplayStyleGroupID int64                                 `json:"display_style_group_id"`
+	IsAdmin             bool                                  `json:"is_admin"`
+	IsBanned            bool                                  `json:"is_banned"`
+	IsModerator         bool                                  `json:"is_moderator"`
+	IsStaff             bool                                  `json:"is_staff"`
+	LastActivity        int64                                 `json:"last_activity"`
+	Like2Count          int64                                 `json:"like2_count"`
+	LikeCount           int64                                 `json:"like_count"`
+	MessageCount        int64                                 `json:"message_count"`
+	RegisterDate        int64                                 `json:"register_date"`
+	Rendered            RespChatboxMessageModelUserRendered   `json:"rendered"`
+	ShortLink           string                                `json:"short_link"`
+	TrophyPoints        int64                                 `json:"trophy_points"`
+	UniqBanner          RespChatboxMessageModelUserUniqBanner `json:"uniq_banner"`
+	UniqUsernameCSS     string                                `json:"uniq_username_css"`
+	UserID              int64                                 `json:"user_id"`
+	Username            string                                `json:"username"`
 }
 
 // RespChatboxMessageModelUserRendered represents a component schema.
 type RespChatboxMessageModelUserRendered struct {
-	Avatars  RespChatboxMessageModelUserRenderedAvatars `json:"avatars,omitempty"`
-	Link     string                                     `json:"link,omitempty"`
-	Username string                                     `json:"username,omitempty"`
+	Avatars  RespChatboxMessageModelUserRenderedAvatars `json:"avatars"`
+	Link     string                                     `json:"link"`
+	Username string                                     `json:"username"`
 }
 
 // RespChatboxMessageModelUserRenderedAvatars represents a component schema.
 type RespChatboxMessageModelUserRenderedAvatars struct {
-	L string `json:"l,omitempty"`
-	M string `json:"m,omitempty"`
-	S string `json:"s,omitempty"`
+	L string `json:"l"`
+	M string `json:"m"`
+	S string `json:"s"`
 }
 
 // RespChatboxMessageModelUserUniqBanner represents a component schema.
 type RespChatboxMessageModelUserUniqBanner struct {
-	BannerCSS    string `json:"banner_css,omitempty"`
-	BannerIcon   string `json:"banner_icon,omitempty"`
-	BannerText   string `json:"banner_text,omitempty"`
-	UsernameIcon string `json:"username_icon,omitempty"`
+	BannerCSS    string `json:"banner_css"`
+	BannerIcon   string `json:"banner_icon"`
+	BannerText   string `json:"banner_text"`
+	UsernameIcon string `json:"username_icon"`
 }
 
 // RespConversationMessageModel represents a component schema.
 type RespConversationMessageModel struct {
-	ConversationID       int64                                   `json:"conversation_id,omitempty"`
-	CreatorUserID        int64                                   `json:"creator_user_id,omitempty"`
-	CreatorUsername      string                                  `json:"creator_username,omitempty"`
-	CreatorUsernameHTML  string                                  `json:"creator_username_html,omitempty"`
-	Links                RespConversationMessageModelLinks       `json:"links,omitempty"`
-	MessageBody          string                                  `json:"message_body,omitempty"`
-	MessageBodyHTML      string                                  `json:"message_body_html,omitempty"`
-	MessageBodyPlainText string                                  `json:"message_body_plain_text,omitempty"`
-	MessageCreateDate    int64                                   `json:"message_create_date,omitempty"`
-	MessageEditDate      int64                                   `json:"message_edit_date,omitempty"`
-	MessageID            int64                                   `json:"message_id,omitempty"`
-	MessageIsSystem      bool                                    `json:"message_is_system,omitempty"`
-	MessageIsUnread      int64                                   `json:"message_is_unread,omitempty"`
-	MessageNeedTranslate bool                                    `json:"message_need_translate,omitempty"`
-	Permissions          RespConversationMessageModelPermissions `json:"permissions,omitempty"`
-	UserIsIgnored        bool                                    `json:"user_is_ignored,omitempty"`
+	ConversationID       int64                                   `json:"conversation_id"`
+	CreatorUserID        int64                                   `json:"creator_user_id"`
+	CreatorUsername      string                                  `json:"creator_username"`
+	CreatorUsernameHTML  string                                  `json:"creator_username_html"`
+	Links                RespConversationMessageModelLinks       `json:"links"`
+	MessageBody          string                                  `json:"message_body"`
+	MessageBodyHTML      string                                  `json:"message_body_html"`
+	MessageBodyPlainText string                                  `json:"message_body_plain_text"`
+	MessageCreateDate    int64                                   `json:"message_create_date"`
+	MessageEditDate      int64                                   `json:"message_edit_date"`
+	MessageID            int64                                   `json:"message_id"`
+	MessageIsSystem      bool                                    `json:"message_is_system"`
+	MessageIsUnread      int64                                   `json:"message_is_unread"`
+	MessageNeedTranslate bool                                    `json:"message_need_translate"`
+	Permissions          RespConversationMessageModelPermissions `json:"permissions"`
+	UserIsIgnored        bool                                    `json:"user_is_ignored"`
 }
 
 // RespConversationMessageModelLinks represents a component schema.
 type RespConversationMessageModelLinks struct {
-	Conversation  string `json:"conversation,omitempty"`
-	Creator       string `json:"creator,omitempty"`
-	CreatorAvatar string `json:"creator_avatar,omitempty"`
-	Detail        string `json:"detail,omitempty"`
+	Conversation  string `json:"conversation"`
+	Creator       string `json:"creator"`
+	CreatorAvatar string `json:"creator_avatar"`
+	Detail        string `json:"detail"`
 }
 
 // RespConversationMessageModelPermissions represents a component schema.
 type RespConversationMessageModelPermissions struct {
-	Delete       bool `json:"delete,omitempty"`
-	Edit         bool `json:"edit,omitempty"`
-	StickUnstick bool `json:"stick-unstick,omitempty"`
-	View         bool `json:"view,omitempty"`
+	Delete       bool `json:"delete"`
+	Edit         bool `json:"edit"`
+	StickUnstick bool `json:"stick-unstick"`
+	View         bool `json:"view"`
 }
 
 // RespConversationModel represents a component schema.
 type RespConversationModel struct {
-	Alerts                   int64                            `json:"alerts,omitempty"`
-	ConversationCreateDate   int64                            `json:"conversation_create_date,omitempty"`
-	ConversationID           int64                            `json:"conversation_id,omitempty"`
-	ConversationIsDeleted    bool                             `json:"conversation_is_deleted,omitempty"`
-	ConversationIsNew        bool                             `json:"conversation_is_new,omitempty"`
-	ConversationIsOpen       bool                             `json:"conversation_is_open,omitempty"`
-	ConversationLastReadDate int64                            `json:"conversation_last_read_date,omitempty"`
-	ConversationMessageCount int64                            `json:"conversation_message_count,omitempty"`
-	ConversationOnlineCount  int64                            `json:"conversation_online_count,omitempty"`
-	ConversationTitle        string                           `json:"conversation_title,omitempty"`
-	ConversationUpdateDate   int64                            `json:"conversation_update_date,omitempty"`
-	CreatorIsIgnored         bool                             `json:"creator_is_ignored,omitempty"`
-	CreatorUserID            int64                            `json:"creator_user_id,omitempty"`
-	CreatorUsername          string                           `json:"creator_username,omitempty"`
-	CreatorUsernameHTML      string                           `json:"creator_username_html,omitempty"`
-	IsGroup                  int64                            `json:"is_group,omitempty"`
-	IsStarred                int64                            `json:"is_starred,omitempty"`
-	IsUnread                 int64                            `json:"is_unread,omitempty"`
-	Links                    RespConversationModelLinks       `json:"links,omitempty"`
-	Permissions              RespConversationModelPermissions `json:"permissions,omitempty"`
-	Recipient                RespConversationModelRecipient   `json:"recipient,omitempty"`
-	Recipients               []any                            `json:"recipients,omitempty"`
+	Alerts                   int64                            `json:"alerts"`
+	ConversationCreateDate   int64                            `json:"conversation_create_date"`
+	ConversationID           int64                            `json:"conversation_id"`
+	ConversationIsDeleted    bool                             `json:"conversation_is_deleted"`
+	ConversationIsNew        bool                             `json:"conversation_is_new"`
+	ConversationIsOpen       bool                             `json:"conversation_is_open"`
+	ConversationLastReadDate int64                            `json:"conversation_last_read_date"`
+	ConversationMessageCount int64                            `json:"conversation_message_count"`
+	ConversationOnlineCount  int64                            `json:"conversation_online_count"`
+	ConversationTitle        string                           `json:"conversation_title"`
+	ConversationUpdateDate   int64                            `json:"conversation_update_date"`
+	CreatorIsIgnored         bool                             `json:"creator_is_ignored"`
+	CreatorUserID            int64                            `json:"creator_user_id"`
+	CreatorUsername          string                           `json:"creator_username"`
+	CreatorUsernameHTML      string                           `json:"creator_username_html"`
+	IsGroup                  int64                            `json:"is_group"`
+	IsStarred                int64                            `json:"is_starred"`
+	IsUnread                 int64                            `json:"is_unread"`
+	Links                    RespConversationModelLinks       `json:"links"`
+	Permissions              RespConversationModelPermissions `json:"permissions"`
+	Recipient                RespConversationModelRecipient   `json:"recipient"`
+	Recipients               []any                            `json:"recipients"`
 }
 
 // RespConversationModelLinks represents a component schema.
 type RespConversationModelLinks struct {
-	Avatar    string `json:"avatar,omitempty"`
-	Detail    string `json:"detail,omitempty"`
-	Messages  string `json:"messages,omitempty"`
-	Permalink string `json:"permalink,omitempty"`
+	Avatar    string `json:"avatar"`
+	Detail    string `json:"detail"`
+	Messages  string `json:"messages"`
+	Permalink string `json:"permalink"`
 }
 
 // RespConversationModelPermissions represents a component schema.
 type RespConversationModelPermissions struct {
-	EditOwnPost       bool `json:"editOwnPost,omitempty"`
-	Invite            bool `json:"invite,omitempty"`
-	Kick              bool `json:"kick,omitempty"`
-	ManageInviteLinks bool `json:"manage_invite_links,omitempty"`
-	Reply             bool `json:"reply,omitempty"`
-	StickyMessages    bool `json:"stickyMessages,omitempty"`
-	UploadAvatar      bool `json:"upload_avatar,omitempty"`
-	View              bool `json:"view,omitempty"`
+	EditOwnPost       bool `json:"editOwnPost"`
+	Invite            bool `json:"invite"`
+	Kick              bool `json:"kick"`
+	ManageInviteLinks bool `json:"manage_invite_links"`
+	Reply             bool `json:"reply"`
+	StickyMessages    bool `json:"stickyMessages"`
+	UploadAvatar      bool `json:"upload_avatar"`
+	View              bool `json:"view"`
 }
 
 // RespConversationModelRecipient represents a component schema.
 type RespConversationModelRecipient struct {
-	Avatar          string `json:"avatar,omitempty"`
-	ContactsChanged bool   `json:"contacts_changed,omitempty"`
-	IsOnline        bool   `json:"is_online,omitempty"`
-	LastActivity    int64  `json:"last_activity,omitempty"`
-	UserID          int64  `json:"user_id,omitempty"`
-	Username        string `json:"username,omitempty"`
-	UsernameHTML    string `json:"username_html,omitempty"`
+	Avatar          string `json:"avatar"`
+	ContactsChanged bool   `json:"contacts_changed"`
+	IsOnline        bool   `json:"is_online"`
+	LastActivity    int64  `json:"last_activity"`
+	UserID          int64  `json:"user_id"`
+	Username        string `json:"username"`
+	UsernameHTML    string `json:"username_html"`
 }
 
 // RespLinkModel represents a component schema.
 type RespLinkModel struct {
-	LinkDescription string                   `json:"link_description,omitempty"`
-	LinkID          int64                    `json:"link_id,omitempty"`
-	LinkTitle       string                   `json:"link_title,omitempty"`
-	Links           RespLinkModelLinks       `json:"links,omitempty"`
-	Permissions     RespLinkModelPermissions `json:"permissions,omitempty"`
+	LinkDescription string                   `json:"link_description"`
+	LinkID          int64                    `json:"link_id"`
+	LinkTitle       string                   `json:"link_title"`
+	Links           RespLinkModelLinks       `json:"links"`
+	Permissions     RespLinkModelPermissions `json:"permissions"`
 }
 
 // RespLinkModelLinks represents a component schema.
 type RespLinkModelLinks struct {
-	Detail string `json:"detail,omitempty"`
-	Target string `json:"target,omitempty"`
+	Detail string `json:"detail"`
+	Target string `json:"target"`
 }
 
 // RespLinkModelPermissions represents a component schema.
 type RespLinkModelPermissions struct {
-	View bool `json:"view,omitempty"`
+	View bool `json:"view"`
 }
 
 // RespNotificationModel represents a component schema.
 type RespNotificationModel struct {
-	ContentAction          string                     `json:"content_action,omitempty"`
-	ContentID              int64                      `json:"content_id,omitempty"`
-	ContentType            string                     `json:"content_type,omitempty"`
-	CreatorUserID          int64                      `json:"creator_user_id,omitempty"`
-	CreatorUsername        string                     `json:"creator_username,omitempty"`
-	CreatorUsernameHTML    string                     `json:"creator_username_html,omitempty"`
-	Links                  RespNotificationModelLinks `json:"links,omitempty"`
-	NotificationCreateDate int64                      `json:"notification_create_date,omitempty"`
-	NotificationHTML       string                     `json:"notification_html,omitempty"`
-	NotificationID         int64                      `json:"notification_id,omitempty"`
-	NotificationIsUnread   bool                       `json:"notification_is_unread,omitempty"`
-	NotificationType       string                     `json:"notification_type,omitempty"`
+	ContentAction          string                     `json:"content_action"`
+	ContentID              int64                      `json:"content_id"`
+	ContentType            string                     `json:"content_type"`
+	CreatorUserID          int64                      `json:"creator_user_id"`
+	CreatorUsername        string                     `json:"creator_username"`
+	CreatorUsernameHTML    string                     `json:"creator_username_html"`
+	Links                  RespNotificationModelLinks `json:"links"`
+	NotificationCreateDate int64                      `json:"notification_create_date"`
+	NotificationHTML       string                     `json:"notification_html"`
+	NotificationID         int64                      `json:"notification_id"`
+	NotificationIsUnread   bool                       `json:"notification_is_unread"`
+	NotificationType       string                     `json:"notification_type"`
 }
 
 // RespNotificationModelLinks represents a component schema.
 type RespNotificationModelLinks struct {
-	Content       string `json:"content,omitempty"`
-	CreatorAvatar string `json:"creator_avatar,omitempty"`
+	Content       string `json:"content"`
+	CreatorAvatar string `json:"creator_avatar"`
 }
 
 // RespPostCommentModel represents a component schema.
 type RespPostCommentModel struct {
-	Links                    RespPostCommentModelLinks       `json:"links,omitempty"`
-	Permissions              RespPostCommentModelPermissions `json:"permissions,omitempty"`
-	PostCommentBody          string                          `json:"post_comment_body,omitempty"`
-	PostCommentBodyHTML      string                          `json:"post_comment_body_html,omitempty"`
-	PostCommentBodyPlainText string                          `json:"post_comment_body_plain_text,omitempty"`
-	PostCommentCreateDate    int64                           `json:"post_comment_create_date,omitempty"`
-	PostCommentID            int64                           `json:"post_comment_id,omitempty"`
-	PostCommentIsDeleted     bool                            `json:"post_comment_is_deleted,omitempty"`
-	PostCommentIsPublished   bool                            `json:"post_comment_is_published,omitempty"`
-	PostCommentLikeCount     int64                           `json:"post_comment_like_count,omitempty"`
-	PostCommentUpdateDate    int64                           `json:"post_comment_update_date,omitempty"`
-	PostID                   int64                           `json:"post_id,omitempty"`
-	PosterUserID             int64                           `json:"poster_user_id,omitempty"`
-	PosterUsername           string                          `json:"poster_username,omitempty"`
-	PosterUsernameHTML       string                          `json:"poster_username_html,omitempty"`
-	ThreadID                 int64                           `json:"thread_id,omitempty"`
-	UserIsIgnored            bool                            `json:"user_is_ignored,omitempty"`
+	Links                    RespPostCommentModelLinks       `json:"links"`
+	Permissions              RespPostCommentModelPermissions `json:"permissions"`
+	PostCommentBody          string                          `json:"post_comment_body"`
+	PostCommentBodyHTML      string                          `json:"post_comment_body_html"`
+	PostCommentBodyPlainText string                          `json:"post_comment_body_plain_text"`
+	PostCommentCreateDate    int64                           `json:"post_comment_create_date"`
+	PostCommentID            int64                           `json:"post_comment_id"`
+	PostCommentIsDeleted     bool                            `json:"post_comment_is_deleted"`
+	PostCommentIsPublished   bool                            `json:"post_comment_is_published"`
+	PostCommentLikeCount     int64                           `json:"post_comment_like_count"`
+	PostCommentUpdateDate    int64                           `json:"post_comment_update_date"`
+	PostID                   int64                           `json:"post_id"`
+	PosterUserID             int64                           `json:"poster_user_id"`
+	PosterUsername           string                          `json:"poster_username"`
+	PosterUsernameHTML       string                          `json:"poster_username_html"`
+	ThreadID                 int64                           `json:"thread_id"`
+	UserIsIgnored            bool                            `json:"user_is_ignored"`
 }
 
 // RespPostCommentModelLinks represents a component schema.
 type RespPostCommentModelLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Post         string `json:"post,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Post         string `json:"post"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // RespPostCommentModelPermissions represents a component schema.
 type RespPostCommentModelPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // RespPostModel represents a component schema.
 type RespPostModel struct {
-	Links              RespPostModelLinks       `json:"links,omitempty"`
-	Permissions        RespPostModelPermissions `json:"permissions,omitempty"`
-	PostBody           string                   `json:"post_body,omitempty"`
-	PostBodyHTML       string                   `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                   `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                    `json:"post_create_date,omitempty"`
-	PostID             int64                    `json:"post_id,omitempty"`
-	PostIsDeleted      bool                     `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                     `json:"post_is_first_post,omitempty"`
-	PostIsPublished    bool                     `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                    `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                    `json:"post_update_date,omitempty"`
-	PosterUserID       int64                    `json:"poster_user_id,omitempty"`
-	PosterUsername     string                   `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                   `json:"poster_username_html,omitempty"`
-	Signature          string                   `json:"signature,omitempty"`
-	SignatureHTML      string                   `json:"signature_html,omitempty"`
-	SignaturePlainText string                   `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                    `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                     `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                     `json:"user_is_ignored,omitempty"`
+	Links              RespPostModelLinks       `json:"links"`
+	Permissions        RespPostModelPermissions `json:"permissions"`
+	PostBody           string                   `json:"post_body"`
+	PostBodyHTML       string                   `json:"post_body_html"`
+	PostBodyPlainText  string                   `json:"post_body_plain_text"`
+	PostCreateDate     int64                    `json:"post_create_date"`
+	PostID             int64                    `json:"post_id"`
+	PostIsDeleted      bool                     `json:"post_is_deleted"`
+	PostIsFirstPost    bool                     `json:"post_is_first_post"`
+	PostIsPublished    bool                     `json:"post_is_published"`
+	PostLikeCount      int64                    `json:"post_like_count"`
+	PostUpdateDate     int64                    `json:"post_update_date"`
+	PosterUserID       int64                    `json:"poster_user_id"`
+	PosterUsername     string                   `json:"poster_username"`
+	PosterUsernameHTML string                   `json:"poster_username_html"`
+	Signature          string                   `json:"signature"`
+	SignatureHTML      string                   `json:"signature_html"`
+	SignaturePlainText string                   `json:"signature_plain_text"`
+	ThreadID           int64                    `json:"thread_id"`
+	ThreadIsDeleted    bool                     `json:"thread_is_deleted"`
+	UserIsIgnored      bool                     `json:"user_is_ignored"`
 }
 
 // RespPostModelLinks represents a component schema.
 type RespPostModelLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // RespPostModelPermissions represents a component schema.
 type RespPostModelPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // RespProfilePostCommentModel represents a component schema.
 type RespProfilePostCommentModel struct {
-	CommentBody          string                                 `json:"comment_body,omitempty"`
-	CommentBodyHTML      string                                 `json:"comment_body_html,omitempty"`
-	CommentBodyPlainText string                                 `json:"comment_body_plain_text,omitempty"`
-	CommentCreateDate    int64                                  `json:"comment_create_date,omitempty"`
-	CommentID            int64                                  `json:"comment_id,omitempty"`
-	CommentUserID        int64                                  `json:"comment_user_id,omitempty"`
-	CommentUsername      string                                 `json:"comment_username,omitempty"`
-	CommentUsernameHTML  string                                 `json:"comment_username_html,omitempty"`
-	Links                RespProfilePostCommentModelLinks       `json:"links,omitempty"`
-	Permissions          RespProfilePostCommentModelPermissions `json:"permissions,omitempty"`
-	ProfilePostID        int64                                  `json:"profile_post_id,omitempty"`
-	TimelineUserID       int64                                  `json:"timeline_user_id,omitempty"`
-	UserIsIgnored        bool                                   `json:"user_is_ignored,omitempty"`
+	CommentBody          string                                 `json:"comment_body"`
+	CommentBodyHTML      string                                 `json:"comment_body_html"`
+	CommentBodyPlainText string                                 `json:"comment_body_plain_text"`
+	CommentCreateDate    int64                                  `json:"comment_create_date"`
+	CommentID            int64                                  `json:"comment_id"`
+	CommentUserID        int64                                  `json:"comment_user_id"`
+	CommentUsername      string                                 `json:"comment_username"`
+	CommentUsernameHTML  string                                 `json:"comment_username_html"`
+	Links                RespProfilePostCommentModelLinks       `json:"links"`
+	Permissions          RespProfilePostCommentModelPermissions `json:"permissions"`
+	ProfilePostID        int64                                  `json:"profile_post_id"`
+	TimelineUserID       int64                                  `json:"timeline_user_id"`
+	UserIsIgnored        bool                                   `json:"user_is_ignored"`
 }
 
 // RespProfilePostCommentModelLinks represents a component schema.
 type RespProfilePostCommentModelLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	ProfilePost  string `json:"profile_post,omitempty"`
-	Timeline     string `json:"timeline,omitempty"`
-	TimelineUser string `json:"timeline_user,omitempty"`
+	Detail       string `json:"detail"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	ProfilePost  string `json:"profile_post"`
+	Timeline     string `json:"timeline"`
+	TimelineUser string `json:"timeline_user"`
 }
 
 // RespProfilePostCommentModelPermissions represents a component schema.
 type RespProfilePostCommentModelPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	View   bool `json:"view"`
 }
 
 // RespProfilePostModel represents a component schema.
 type RespProfilePostModel struct {
-	Links                  RespProfilePostModelLinks        `json:"links,omitempty"`
-	Permissions            RespProfilePostModelPermissions  `json:"permissions,omitempty"`
-	PostBody               string                           `json:"post_body,omitempty"`
-	PostBodyHTML           string                           `json:"post_body_html,omitempty"`
-	PostBodyPlainText      string                           `json:"post_body_plain_text,omitempty"`
-	PostCommentCount       int64                            `json:"post_comment_count,omitempty"`
-	PostCommentsIsDisabled int64                            `json:"post_comments_is_disabled,omitempty"`
-	PostCreateDate         int64                            `json:"post_create_date,omitempty"`
-	PostIsDeleted          bool                             `json:"post_is_deleted,omitempty"`
-	PostIsLiked            bool                             `json:"post_is_liked,omitempty"`
-	PostIsPublished        bool                             `json:"post_is_published,omitempty"`
-	PostIsSticked          bool                             `json:"post_is_sticked,omitempty"`
-	PostLikeCount          int64                            `json:"post_like_count,omitempty"`
-	PosterUserID           int64                            `json:"poster_user_id,omitempty"`
-	PosterUsername         string                           `json:"poster_username,omitempty"`
-	PosterUsernameHTML     string                           `json:"poster_username_html,omitempty"`
-	ProfilePostID          int64                            `json:"profile_post_id,omitempty"`
-	TimelineUser           RespProfilePostModelTimelineUser `json:"timeline_user,omitempty"`
-	TimelineUserID         int64                            `json:"timeline_user_id,omitempty"`
-	TimelineUsername       string                           `json:"timeline_username,omitempty"`
-	UserIsIgnored          bool                             `json:"user_is_ignored,omitempty"`
+	Links                  RespProfilePostModelLinks        `json:"links"`
+	Permissions            RespProfilePostModelPermissions  `json:"permissions"`
+	PostBody               string                           `json:"post_body"`
+	PostBodyHTML           string                           `json:"post_body_html"`
+	PostBodyPlainText      string                           `json:"post_body_plain_text"`
+	PostCommentCount       int64                            `json:"post_comment_count"`
+	PostCommentsIsDisabled int64                            `json:"post_comments_is_disabled"`
+	PostCreateDate         int64                            `json:"post_create_date"`
+	PostIsDeleted          bool                             `json:"post_is_deleted"`
+	PostIsLiked            bool                             `json:"post_is_liked"`
+	PostIsPublished        bool                             `json:"post_is_published"`
+	PostIsSticked          bool                             `json:"post_is_sticked"`
+	PostLikeCount          int64                            `json:"post_like_count"`
+	PosterUserID           int64                            `json:"poster_user_id"`
+	PosterUsername         string                           `json:"poster_username"`
+	PosterUsernameHTML     string                           `json:"poster_username_html"`
+	ProfilePostID          int64                            `json:"profile_post_id"`
+	TimelineUser           RespProfilePostModelTimelineUser `json:"timeline_user"`
+	TimelineUserID         int64                            `json:"timeline_user_id"`
+	TimelineUsername       string                           `json:"timeline_username"`
+	UserIsIgnored          bool                             `json:"user_is_ignored"`
 }
 
 // RespProfilePostModelLinks represents a component schema.
 type RespProfilePostModelLinks struct {
-	Comments     string `json:"comments,omitempty"`
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Timeline     string `json:"timeline,omitempty"`
-	TimelineUser string `json:"timeline_user,omitempty"`
+	Comments     string `json:"comments"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Timeline     string `json:"timeline"`
+	TimelineUser string `json:"timeline_user"`
 }
 
 // RespProfilePostModelPermissions represents a component schema.
 type RespProfilePostModelPermissions struct {
-	Comment bool `json:"comment,omitempty"`
-	Delete  bool `json:"delete,omitempty"`
-	Edit    bool `json:"edit,omitempty"`
-	Like    bool `json:"like,omitempty"`
-	Report  bool `json:"report,omitempty"`
-	Stick   bool `json:"stick,omitempty"`
-	View    bool `json:"view,omitempty"`
+	Comment bool `json:"comment"`
+	Delete  bool `json:"delete"`
+	Edit    bool `json:"edit"`
+	Like    bool `json:"like"`
+	Report  bool `json:"report"`
+	Stick   bool `json:"stick"`
+	View    bool `json:"view"`
 }
 
 // RespProfilePostModelTimelineUser represents a component schema.
 type RespProfilePostModelTimelineUser struct {
-	Balance                     string                                          `json:"balance,omitempty"`
-	Banner                      string                                          `json:"banner,omitempty"`
-	Birthday                    RespProfilePostModelTimelineUserBirthday        `json:"birthday,omitempty"`
-	ContestCount                int64                                           `json:"contest_count,omitempty"`
-	ConvWelcomeMessage          string                                          `json:"conv_welcome_message,omitempty"`
-	CuratorTitles               []string                                        `json:"curator_titles,omitempty"`
-	Currency                    string                                          `json:"currency,omitempty"`
-	CustomTitle                 string                                          `json:"custom_title,omitempty"`
-	DisplayBannerID             int64                                           `json:"display_banner_id,omitempty"`
-	DisplayIconGroupID          int64                                           `json:"display_icon_group_id,omitempty"`
-	EditPermissions             RespProfilePostModelTimelineUserEditPermissions `json:"edit_permissions,omitempty"`
-	Fields                      []any                                           `json:"fields,omitempty"`
-	Hold                        string                                          `json:"hold,omitempty"`
-	IsBanned                    int64                                           `json:"is_banned,omitempty"`
-	Links                       RespProfilePostModelTimelineUserLinks           `json:"links,omitempty"`
-	Permissions                 RespProfilePostModelTimelineUserPermissions     `json:"permissions,omitempty"`
-	SecretAnswerFirstLetter     string                                          `json:"secret_answer_first_letter,omitempty"`
-	SecretAnswerRendered        string                                          `json:"secret_answer_rendered,omitempty"`
-	SelfPermissions             RespProfilePostModelTimelineUserSelfPermissions `json:"self_permissions,omitempty"`
-	ShortLink                   string                                          `json:"short_link,omitempty"`
-	TrophyCount                 int64                                           `json:"trophy_count,omitempty"`
-	UserDeposit                 int64                                           `json:"user_deposit,omitempty"`
-	UserEmail                   string                                          `json:"user_email,omitempty"`
-	UserExternalAuthentications []any                                           `json:"user_external_authentications,omitempty"`
-	UserFollowers               RespProfilePostModelTimelineUserUserFollowers   `json:"user_followers,omitempty"`
-	UserFollowing               RespProfilePostModelTimelineUserUserFollowing   `json:"user_following,omitempty"`
-	UserGroupID                 int64                                           `json:"user_group_id,omitempty"`
-	UserGroups                  []any                                           `json:"user_groups,omitempty"`
-	UserID                      int64                                           `json:"user_id,omitempty"`
-	UserIsFollowed              bool                                            `json:"user_is_followed,omitempty"`
-	UserIsIgnored               bool                                            `json:"user_is_ignored,omitempty"`
-	UserIsValid                 bool                                            `json:"user_is_valid,omitempty"`
-	UserIsVerified              bool                                            `json:"user_is_verified,omitempty"`
-	UserIsVisitor               bool                                            `json:"user_is_visitor,omitempty"`
-	UserLastSeenDate            int64                                           `json:"user_last_seen_date,omitempty"`
-	UserLike2Count              int64                                           `json:"user_like2_count,omitempty"`
-	UserLikeCount               int64                                           `json:"user_like_count,omitempty"`
-	UserMessageCount            int64                                           `json:"user_message_count,omitempty"`
-	UserRegisterDate            int64                                           `json:"user_register_date,omitempty"`
-	UserTimezoneOffset          int64                                           `json:"user_timezone_offset,omitempty"`
-	UserTitle                   string                                          `json:"user_title,omitempty"`
-	UserUnreadConversationCount int64                                           `json:"user_unread_conversation_count,omitempty"`
-	UserUnreadNotificationCount int64                                           `json:"user_unread_notification_count,omitempty"`
-	Username                    string                                          `json:"username,omitempty"`
-	UsernameHTML                string                                          `json:"username_html,omitempty"`
+	Balance                     string                                          `json:"balance"`
+	Banner                      string                                          `json:"banner"`
+	Birthday                    RespProfilePostModelTimelineUserBirthday        `json:"birthday"`
+	ContestCount                int64                                           `json:"contest_count"`
+	ConvWelcomeMessage          string                                          `json:"conv_welcome_message"`
+	CuratorTitles               []string                                        `json:"curator_titles"`
+	Currency                    string                                          `json:"currency"`
+	CustomTitle                 string                                          `json:"custom_title"`
+	DisplayBannerID             int64                                           `json:"display_banner_id"`
+	DisplayIconGroupID          int64                                           `json:"display_icon_group_id"`
+	EditPermissions             RespProfilePostModelTimelineUserEditPermissions `json:"edit_permissions"`
+	Fields                      []any                                           `json:"fields"`
+	Hold                        string                                          `json:"hold"`
+	IsBanned                    int64                                           `json:"is_banned"`
+	Links                       RespProfilePostModelTimelineUserLinks           `json:"links"`
+	Permissions                 RespProfilePostModelTimelineUserPermissions     `json:"permissions"`
+	SecretAnswerFirstLetter     string                                          `json:"secret_answer_first_letter"`
+	SecretAnswerRendered        string                                          `json:"secret_answer_rendered"`
+	SelfPermissions             RespProfilePostModelTimelineUserSelfPermissions `json:"self_permissions"`
+	ShortLink                   string                                          `json:"short_link"`
+	TrophyCount                 int64                                           `json:"trophy_count"`
+	UserDeposit                 int64                                           `json:"user_deposit"`
+	UserEmail                   string                                          `json:"user_email"`
+	UserExternalAuthentications []any                                           `json:"user_external_authentications"`
+	UserFollowers               RespProfilePostModelTimelineUserUserFollowers   `json:"user_followers"`
+	UserFollowing               RespProfilePostModelTimelineUserUserFollowing   `json:"user_following"`
+	UserGroupID                 int64                                           `json:"user_group_id"`
+	UserGroups                  []any                                           `json:"user_groups"`
+	UserID                      int64                                           `json:"user_id"`
+	UserIsFollowed              bool                                            `json:"user_is_followed"`
+	UserIsIgnored               bool                                            `json:"user_is_ignored"`
+	UserIsValid                 bool                                            `json:"user_is_valid"`
+	UserIsVerified              bool                                            `json:"user_is_verified"`
+	UserIsVisitor               bool                                            `json:"user_is_visitor"`
+	UserLastSeenDate            int64                                           `json:"user_last_seen_date"`
+	UserLike2Count              int64                                           `json:"user_like2_count"`
+	UserLikeCount               int64                                           `json:"user_like_count"`
+	UserMessageCount            int64                                           `json:"user_message_count"`
+	UserRegisterDate            int64                                           `json:"user_register_date"`
+	UserTimezoneOffset          int64                                           `json:"user_timezone_offset"`
+	UserTitle                   string                                          `json:"user_title"`
+	UserUnreadConversationCount int64                                           `json:"user_unread_conversation_count"`
+	UserUnreadNotificationCount int64                                           `json:"user_unread_notification_count"`
+	Username                    string                                          `json:"username"`
+	UsernameHTML                string                                          `json:"username_html"`
 }
 
 // RespProfilePostModelTimelineUserBirthday represents a component schema.
 type RespProfilePostModelTimelineUserBirthday struct {
-	Age       int64                                             `json:"age,omitempty"`
-	Format    string                                            `json:"format,omitempty"`
-	TimeStamp RespProfilePostModelTimelineUserBirthdayTimeStamp `json:"timeStamp,omitempty"`
+	Age       int64                                             `json:"age"`
+	Format    string                                            `json:"format"`
+	TimeStamp RespProfilePostModelTimelineUserBirthdayTimeStamp `json:"timeStamp"`
 }
 
 // RespProfilePostModelTimelineUserBirthdayTimeStamp represents a component schema.
 type RespProfilePostModelTimelineUserBirthdayTimeStamp struct {
-	Date         string `json:"date,omitempty"`
-	Timezone     string `json:"timezone,omitempty"`
-	TimezoneType int64  `json:"timezone_type,omitempty"`
+	Date         string `json:"date"`
+	Timezone     string `json:"timezone"`
+	TimezoneType int64  `json:"timezone_type"`
 }
 
 // RespProfilePostModelTimelineUserEditPermissions represents a component schema.
 type RespProfilePostModelTimelineUserEditPermissions struct {
-	Fields            bool `json:"fields,omitempty"`
-	HideUsernameLogs  bool `json:"hide_username_logs,omitempty"`
-	Password          bool `json:"password,omitempty"`
-	PrimaryGroupID    bool `json:"primary_group_id,omitempty"`
-	SecondaryGroupIds bool `json:"secondary_group_ids,omitempty"`
-	ShortLink         bool `json:"short_link,omitempty"`
-	UserDobDay        bool `json:"user_dob_day,omitempty"`
-	UserDobMonth      bool `json:"user_dob_month,omitempty"`
-	UserDobYear       bool `json:"user_dob_year,omitempty"`
-	UserEmail         bool `json:"user_email,omitempty"`
-	UserTitle         bool `json:"user_title,omitempty"`
-	Username          bool `json:"username,omitempty"`
+	Fields            bool `json:"fields"`
+	HideUsernameLogs  bool `json:"hide_username_logs"`
+	Password          bool `json:"password"`
+	PrimaryGroupID    bool `json:"primary_group_id"`
+	SecondaryGroupIds bool `json:"secondary_group_ids"`
+	ShortLink         bool `json:"short_link"`
+	UserDobDay        bool `json:"user_dob_day"`
+	UserDobMonth      bool `json:"user_dob_month"`
+	UserDobYear       bool `json:"user_dob_year"`
+	UserEmail         bool `json:"user_email"`
+	UserTitle         bool `json:"user_title"`
+	Username          bool `json:"username"`
 }
 
 // RespProfilePostModelTimelineUserLinks represents a component schema.
 type RespProfilePostModelTimelineUserLinks struct {
-	Avatar      string `json:"avatar,omitempty"`
-	AvatarBig   string `json:"avatar_big,omitempty"`
-	AvatarSmall string `json:"avatar_small,omitempty"`
-	BackgroundL string `json:"background_l,omitempty"`
-	BackgroundM string `json:"background_m,omitempty"`
-	Detail      string `json:"detail,omitempty"`
-	Followers   string `json:"followers,omitempty"`
-	Followings  string `json:"followings,omitempty"`
-	Ignore      string `json:"ignore,omitempty"`
-	Permalink   string `json:"permalink,omitempty"`
-	Status      string `json:"status,omitempty"`
-	Timeline    string `json:"timeline,omitempty"`
+	Avatar      string `json:"avatar"`
+	AvatarBig   string `json:"avatar_big"`
+	AvatarSmall string `json:"avatar_small"`
+	BackgroundL string `json:"background_l"`
+	BackgroundM string `json:"background_m"`
+	Detail      string `json:"detail"`
+	Followers   string `json:"followers"`
+	Followings  string `json:"followings"`
+	Ignore      string `json:"ignore"`
+	Permalink   string `json:"permalink"`
+	Status      string `json:"status"`
+	Timeline    string `json:"timeline"`
 }
 
 // RespProfilePostModelTimelineUserPermissions represents a component schema.
 type RespProfilePostModelTimelineUserPermissions struct {
-	Edit        bool `json:"edit,omitempty"`
-	Follow      bool `json:"follow,omitempty"`
-	Ignore      bool `json:"ignore,omitempty"`
-	ProfilePost bool `json:"profile_post,omitempty"`
+	Edit        bool `json:"edit"`
+	Follow      bool `json:"follow"`
+	Ignore      bool `json:"ignore"`
+	ProfilePost bool `json:"profile_post"`
 }
 
 // RespProfilePostModelTimelineUserSelfPermissions represents a component schema.
 type RespProfilePostModelTimelineUserSelfPermissions struct {
-	CreateConversation bool `json:"create_conversation,omitempty"`
+	CreateConversation bool `json:"create_conversation"`
 }
 
 // RespProfilePostModelTimelineUserUserFollowers represents a component schema.
 type RespProfilePostModelTimelineUserUserFollowers struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // RespProfilePostModelTimelineUserUserFollowing represents a component schema.
 type RespProfilePostModelTimelineUserUserFollowing struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // RespSystemInfo represents a component schema.
 type RespSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // RespThreadModel represents a component schema.
 type RespThreadModel struct {
-	Contest             RespThreadModelContest      `json:"contest,omitempty"`
-	CreatorUserID       int64                       `json:"creator_user_id,omitempty"`
-	CreatorUsername     string                      `json:"creator_username,omitempty"`
-	CreatorUsernameHTML string                      `json:"creator_username_html,omitempty"`
-	FirstPost           RespThreadModelFirstPost    `json:"first_post,omitempty"`
-	ForumID             int64                       `json:"forum_id,omitempty"`
-	LastPost            RespThreadModelLastPost     `json:"last_post,omitempty"`
-	Links               RespThreadModelLinks        `json:"links,omitempty"`
-	NodeTitle           string                      `json:"node_title,omitempty"`
-	Permissions         RespThreadModelPermissions  `json:"permissions,omitempty"`
-	Restrictions        RespThreadModelRestrictions `json:"restrictions,omitempty"`
-	ThreadCreateDate    int64                       `json:"thread_create_date,omitempty"`
-	ThreadID            int64                       `json:"thread_id,omitempty"`
-	ThreadIsClosed      bool                        `json:"thread_is_closed,omitempty"`
-	ThreadIsDeleted     bool                        `json:"thread_is_deleted,omitempty"`
-	ThreadIsFollowed    bool                        `json:"thread_is_followed,omitempty"`
-	ThreadIsPublished   bool                        `json:"thread_is_published,omitempty"`
-	ThreadIsStarred     bool                        `json:"thread_is_starred,omitempty"`
-	ThreadIsSticky      bool                        `json:"thread_is_sticky,omitempty"`
-	ThreadPostCount     int64                       `json:"thread_post_count,omitempty"`
-	ThreadPrefixes      []any                       `json:"thread_prefixes,omitempty"`
-	ThreadTags          RespThreadModelThreadTags   `json:"thread_tags,omitempty"`
-	ThreadTitle         string                      `json:"thread_title,omitempty"`
-	ThreadUpdateDate    int64                       `json:"thread_update_date,omitempty"`
-	ThreadViewCount     int64                       `json:"thread_view_count,omitempty"`
-	UserIsIgnored       bool                        `json:"user_is_ignored,omitempty"`
+	Contest             RespThreadModelContest      `json:"contest"`
+	CreatorUserID       int64                       `json:"creator_user_id"`
+	CreatorUsername     string                      `json:"creator_username"`
+	CreatorUsernameHTML string                      `json:"creator_username_html"`
+	FirstPost           RespThreadModelFirstPost    `json:"first_post"`
+	ForumID             int64                       `json:"forum_id"`
+	LastPost            RespThreadModelLastPost     `json:"last_post"`
+	Links               RespThreadModelLinks        `json:"links"`
+	NodeTitle           string                      `json:"node_title"`
+	Permissions         RespThreadModelPermissions  `json:"permissions"`
+	Restrictions        RespThreadModelRestrictions `json:"restrictions"`
+	ThreadCreateDate    int64                       `json:"thread_create_date"`
+	ThreadID            int64                       `json:"thread_id"`
+	ThreadIsClosed      bool                        `json:"thread_is_closed"`
+	ThreadIsDeleted     bool                        `json:"thread_is_deleted"`
+	ThreadIsFollowed    bool                        `json:"thread_is_followed"`
+	ThreadIsPublished   bool                        `json:"thread_is_published"`
+	ThreadIsStarred     bool                        `json:"thread_is_starred"`
+	ThreadIsSticky      bool                        `json:"thread_is_sticky"`
+	ThreadPostCount     int64                       `json:"thread_post_count"`
+	ThreadPrefixes      []any                       `json:"thread_prefixes"`
+	ThreadTags          RespThreadModelThreadTags   `json:"thread_tags"`
+	ThreadTitle         string                      `json:"thread_title"`
+	ThreadUpdateDate    int64                       `json:"thread_update_date"`
+	ThreadViewCount     int64                       `json:"thread_view_count"`
+	UserIsIgnored       bool                        `json:"user_is_ignored"`
 }
 
 // RespThreadModelContest represents a component schema.
 type RespThreadModelContest struct {
-	AlreadyParticipate    bool                              `json:"already_participate,omitempty"`
-	ChanceToWin           float64                           `json:"chance_to_win,omitempty"`
-	CountWinners          int64                             `json:"count_winners,omitempty"`
-	FinishDate            int64                             `json:"finish_date,omitempty"`
-	IsFinished            int64                             `json:"is_finished,omitempty"`
-	IsMoneyPlaces         int64                             `json:"is_money_places,omitempty"`
-	NeededMembers         int64                             `json:"needed_members,omitempty"`
-	NowCountMembers       int64                             `json:"now_count_members,omitempty"`
-	Permissions           RespThreadModelContestPermissions `json:"permissions,omitempty"`
-	PrizeData             int64                             `json:"prize_data,omitempty"`
-	PrizeType             string                            `json:"prize_type,omitempty"`
-	PrizeTypePhrase       string                            `json:"prize_type_phrase,omitempty"`
-	RequireLikeCount      int64                             `json:"require_like_count,omitempty"`
-	RequireTotalLikeCount int64                             `json:"require_total_like_count,omitempty"`
-	Type                  string                            `json:"type,omitempty"`
-	Winners               []int64                           `json:"winners,omitempty"`
+	AlreadyParticipate    bool                              `json:"already_participate"`
+	ChanceToWin           float64                           `json:"chance_to_win"`
+	CountWinners          int64                             `json:"count_winners"`
+	FinishDate            int64                             `json:"finish_date"`
+	IsFinished            int64                             `json:"is_finished"`
+	IsMoneyPlaces         int64                             `json:"is_money_places"`
+	NeededMembers         int64                             `json:"needed_members"`
+	NowCountMembers       int64                             `json:"now_count_members"`
+	Permissions           RespThreadModelContestPermissions `json:"permissions"`
+	PrizeData             int64                             `json:"prize_data"`
+	PrizeType             string                            `json:"prize_type"`
+	PrizeTypePhrase       string                            `json:"prize_type_phrase"`
+	RequireLikeCount      int64                             `json:"require_like_count"`
+	RequireTotalLikeCount int64                             `json:"require_total_like_count"`
+	Type                  string                            `json:"type"`
+	Winners               []int64                           `json:"winners"`
 }
 
 // RespThreadModelContestPermissions represents a component schema.
 type RespThreadModelContestPermissions struct {
-	CanFinish           bool   `json:"can_finish,omitempty"`
-	CanParticipate      bool   `json:"can_participate,omitempty"`
-	CanParticipateError string `json:"can_participate_error,omitempty"`
-	CanViewUserList     bool   `json:"can_view_user_list,omitempty"`
+	CanFinish           bool   `json:"can_finish"`
+	CanParticipate      bool   `json:"can_participate"`
+	CanParticipateError string `json:"can_participate_error"`
+	CanViewUserList     bool   `json:"can_view_user_list"`
 }
 
 // RespThreadModelFirstPost represents a component schema.
 type RespThreadModelFirstPost struct {
-	Links              RespThreadModelFirstPostLinks       `json:"links,omitempty"`
-	Permissions        RespThreadModelFirstPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                              `json:"post_body,omitempty"`
-	PostBodyHTML       string                              `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                              `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                               `json:"post_create_date,omitempty"`
-	PostID             int64                               `json:"post_id,omitempty"`
-	PostIsDeleted      bool                                `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                                `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                                `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                                `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                               `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                               `json:"post_update_date,omitempty"`
-	PosterUserID       int64                               `json:"poster_user_id,omitempty"`
-	PosterUsername     string                              `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                              `json:"poster_username_html,omitempty"`
-	Signature          string                              `json:"signature,omitempty"`
-	SignatureHTML      string                              `json:"signature_html,omitempty"`
-	SignaturePlainText string                              `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                               `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                                `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                                `json:"user_is_ignored,omitempty"`
+	Links              RespThreadModelFirstPostLinks       `json:"links"`
+	Permissions        RespThreadModelFirstPostPermissions `json:"permissions"`
+	PostBody           string                              `json:"post_body"`
+	PostBodyHTML       string                              `json:"post_body_html"`
+	PostBodyPlainText  string                              `json:"post_body_plain_text"`
+	PostCreateDate     int64                               `json:"post_create_date"`
+	PostID             int64                               `json:"post_id"`
+	PostIsDeleted      bool                                `json:"post_is_deleted"`
+	PostIsFirstPost    bool                                `json:"post_is_first_post"`
+	PostIsLiked        bool                                `json:"post_is_liked"`
+	PostIsPublished    bool                                `json:"post_is_published"`
+	PostLikeCount      int64                               `json:"post_like_count"`
+	PostUpdateDate     int64                               `json:"post_update_date"`
+	PosterUserID       int64                               `json:"poster_user_id"`
+	PosterUsername     string                              `json:"poster_username"`
+	PosterUsernameHTML string                              `json:"poster_username_html"`
+	Signature          string                              `json:"signature"`
+	SignatureHTML      string                              `json:"signature_html"`
+	SignaturePlainText string                              `json:"signature_plain_text"`
+	ThreadID           int64                               `json:"thread_id"`
+	ThreadIsDeleted    bool                                `json:"thread_is_deleted"`
+	UserIsIgnored      bool                                `json:"user_is_ignored"`
 }
 
 // RespThreadModelFirstPostLinks represents a component schema.
 type RespThreadModelFirstPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // RespThreadModelFirstPostPermissions represents a component schema.
 type RespThreadModelFirstPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // RespThreadModelLastPost represents a component schema.
 type RespThreadModelLastPost struct {
-	Links              RespThreadModelLastPostLinks       `json:"links,omitempty"`
-	Permissions        RespThreadModelLastPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                             `json:"post_body,omitempty"`
-	PostBodyHTML       string                             `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                             `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                              `json:"post_create_date,omitempty"`
-	PostID             int64                              `json:"post_id,omitempty"`
-	PostIsDeleted      bool                               `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                               `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                               `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                               `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                              `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                              `json:"post_update_date,omitempty"`
-	PosterUserID       int64                              `json:"poster_user_id,omitempty"`
-	PosterUsername     string                             `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                             `json:"poster_username_html,omitempty"`
-	Signature          string                             `json:"signature,omitempty"`
-	SignatureHTML      string                             `json:"signature_html,omitempty"`
-	SignaturePlainText string                             `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                              `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                               `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                               `json:"user_is_ignored,omitempty"`
+	Links              RespThreadModelLastPostLinks       `json:"links"`
+	Permissions        RespThreadModelLastPostPermissions `json:"permissions"`
+	PostBody           string                             `json:"post_body"`
+	PostBodyHTML       string                             `json:"post_body_html"`
+	PostBodyPlainText  string                             `json:"post_body_plain_text"`
+	PostCreateDate     int64                              `json:"post_create_date"`
+	PostID             int64                              `json:"post_id"`
+	PostIsDeleted      bool                               `json:"post_is_deleted"`
+	PostIsFirstPost    bool                               `json:"post_is_first_post"`
+	PostIsLiked        bool                               `json:"post_is_liked"`
+	PostIsPublished    bool                               `json:"post_is_published"`
+	PostLikeCount      int64                              `json:"post_like_count"`
+	PostUpdateDate     int64                              `json:"post_update_date"`
+	PosterUserID       int64                              `json:"poster_user_id"`
+	PosterUsername     string                             `json:"poster_username"`
+	PosterUsernameHTML string                             `json:"poster_username_html"`
+	Signature          string                             `json:"signature"`
+	SignatureHTML      string                             `json:"signature_html"`
+	SignaturePlainText string                             `json:"signature_plain_text"`
+	ThreadID           int64                              `json:"thread_id"`
+	ThreadIsDeleted    bool                               `json:"thread_is_deleted"`
+	UserIsIgnored      bool                               `json:"user_is_ignored"`
 }
 
 // RespThreadModelLastPostLinks represents a component schema.
 type RespThreadModelLastPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // RespThreadModelLastPostPermissions represents a component schema.
 type RespThreadModelLastPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // RespThreadModelLinks represents a component schema.
 type RespThreadModelLinks struct {
-	Detail            string `json:"detail,omitempty"`
-	FirstPost         string `json:"first_post,omitempty"`
-	FirstPoster       string `json:"first_poster,omitempty"`
-	FirstPosterAvatar string `json:"first_poster_avatar,omitempty"`
-	Followers         string `json:"followers,omitempty"`
-	Forum             string `json:"forum,omitempty"`
-	LastPost          string `json:"last_post,omitempty"`
-	Permalink         string `json:"permalink,omitempty"`
-	Posts             string `json:"posts,omitempty"`
+	Detail            string `json:"detail"`
+	FirstPost         string `json:"first_post"`
+	FirstPoster       string `json:"first_poster"`
+	FirstPosterAvatar string `json:"first_poster_avatar"`
+	Followers         string `json:"followers"`
+	Forum             string `json:"forum"`
+	LastPost          string `json:"last_post"`
+	Permalink         string `json:"permalink"`
+	Posts             string `json:"posts"`
 }
 
 // RespThreadModelPermissions represents a component schema.
 type RespThreadModelPermissions struct {
-	Bump      RespThreadModelPermissionsBump `json:"bump,omitempty"`
-	Delete    bool                           `json:"delete,omitempty"`
-	Edit      bool                           `json:"edit,omitempty"`
-	EditTags  bool                           `json:"edit_tags,omitempty"`
-	EditTitle bool                           `json:"edit_title,omitempty"`
-	Follow    bool                           `json:"follow,omitempty"`
-	Post      bool                           `json:"post,omitempty"`
-	View      bool                           `json:"view,omitempty"`
+	Bump      RespThreadModelPermissionsBump `json:"bump"`
+	Delete    bool                           `json:"delete"`
+	Edit      bool                           `json:"edit"`
+	EditTags  bool                           `json:"edit_tags"`
+	EditTitle bool                           `json:"edit_title"`
+	Follow    bool                           `json:"follow"`
+	Post      bool                           `json:"post"`
+	View      bool                           `json:"view"`
 }
 
 // RespThreadModelPermissionsBump represents a component schema.
 type RespThreadModelPermissionsBump struct {
-	AvailableCount    int64 `json:"available_count,omitempty"`
-	Can               bool  `json:"can,omitempty"`
-	Error             any   `json:"error,omitempty"`
-	NextAvailableTime any   `json:"next_available_time,omitempty"`
+	AvailableCount    int64 `json:"available_count"`
+	Can               bool  `json:"can"`
+	Error             any   `json:"error"`
+	NextAvailableTime any   `json:"next_available_time"`
 }
 
 // RespThreadModelRestrictions represents a component schema.
 type RespThreadModelRestrictions struct {
-	MaxReplyCount int64 `json:"max_reply_count,omitempty"`
-	ReplyDelay    int64 `json:"reply_delay,omitempty"`
+	MaxReplyCount int64 `json:"max_reply_count"`
+	ReplyDelay    int64 `json:"reply_delay"`
 }
 
 // RespThreadModelThreadTags represents a component schema.
 type RespThreadModelThreadTags struct {
-	N193431 string `json:"193431,omitempty"`
-	N206    string `json:"206,omitempty"`
-	N97491  string `json:"97491,omitempty"`
+	N193431 string `json:"193431"`
+	N206    string `json:"206"`
+	N97491  string `json:"97491"`
 }
 
 // RespUserModel represents a component schema.
 type RespUserModel struct {
-	Balance                     string                       `json:"balance,omitempty"`
-	Banner                      string                       `json:"banner,omitempty"`
-	Birthday                    RespUserModelBirthday        `json:"birthday,omitempty"`
-	ContestCount                int64                        `json:"contest_count,omitempty"`
-	ConvWelcomeMessage          string                       `json:"conv_welcome_message,omitempty"`
-	CuratorTitles               []string                     `json:"curator_titles,omitempty"`
-	Currency                    string                       `json:"currency,omitempty"`
-	CustomTitle                 string                       `json:"custom_title,omitempty"`
-	DisplayBannerID             int64                        `json:"display_banner_id,omitempty"`
-	DisplayIconGroupID          int64                        `json:"display_icon_group_id,omitempty"`
-	EditPermissions             RespUserModelEditPermissions `json:"edit_permissions,omitempty"`
-	Fields                      []any                        `json:"fields,omitempty"`
-	Hold                        string                       `json:"hold,omitempty"`
-	IsBanned                    int64                        `json:"is_banned,omitempty"`
-	Links                       RespUserModelLinks           `json:"links,omitempty"`
-	Permissions                 RespUserModelPermissions     `json:"permissions,omitempty"`
-	SecretAnswerFirstLetter     string                       `json:"secret_answer_first_letter,omitempty"`
-	SecretAnswerRendered        string                       `json:"secret_answer_rendered,omitempty"`
-	SelfPermissions             RespUserModelSelfPermissions `json:"self_permissions,omitempty"`
-	ShortLink                   string                       `json:"short_link,omitempty"`
-	TrophyCount                 int64                        `json:"trophy_count,omitempty"`
-	UserDeposit                 int64                        `json:"user_deposit,omitempty"`
-	UserEmail                   string                       `json:"user_email,omitempty"`
-	UserExternalAuthentications []any                        `json:"user_external_authentications,omitempty"`
-	UserFollowers               RespUserModelUserFollowers   `json:"user_followers,omitempty"`
-	UserFollowing               RespUserModelUserFollowing   `json:"user_following,omitempty"`
-	UserGroupID                 int64                        `json:"user_group_id,omitempty"`
-	UserGroups                  []any                        `json:"user_groups,omitempty"`
-	UserID                      int64                        `json:"user_id,omitempty"`
-	UserIsFollowed              bool                         `json:"user_is_followed,omitempty"`
-	UserIsIgnored               bool                         `json:"user_is_ignored,omitempty"`
-	UserIsValid                 bool                         `json:"user_is_valid,omitempty"`
-	UserIsVerified              bool                         `json:"user_is_verified,omitempty"`
-	UserIsVisitor               bool                         `json:"user_is_visitor,omitempty"`
-	UserLastSeenDate            int64                        `json:"user_last_seen_date,omitempty"`
-	UserLike2Count              int64                        `json:"user_like2_count,omitempty"`
-	UserLikeCount               int64                        `json:"user_like_count,omitempty"`
-	UserMessageCount            int64                        `json:"user_message_count,omitempty"`
-	UserRegisterDate            int64                        `json:"user_register_date,omitempty"`
-	UserTimezoneOffset          int64                        `json:"user_timezone_offset,omitempty"`
-	UserTitle                   string                       `json:"user_title,omitempty"`
-	UserUnreadConversationCount int64                        `json:"user_unread_conversation_count,omitempty"`
-	UserUnreadNotificationCount int64                        `json:"user_unread_notification_count,omitempty"`
-	Username                    string                       `json:"username,omitempty"`
-	UsernameHTML                string                       `json:"username_html,omitempty"`
+	Balance                     string                       `json:"balance"`
+	Banner                      string                       `json:"banner"`
+	Birthday                    RespUserModelBirthday        `json:"birthday"`
+	ContestCount                int64                        `json:"contest_count"`
+	ConvWelcomeMessage          string                       `json:"conv_welcome_message"`
+	CuratorTitles               []string                     `json:"curator_titles"`
+	Currency                    string                       `json:"currency"`
+	CustomTitle                 string                       `json:"custom_title"`
+	DisplayBannerID             int64                        `json:"display_banner_id"`
+	DisplayIconGroupID          int64                        `json:"display_icon_group_id"`
+	EditPermissions             RespUserModelEditPermissions `json:"edit_permissions"`
+	Fields                      []any                        `json:"fields"`
+	Hold                        string                       `json:"hold"`
+	IsBanned                    int64                        `json:"is_banned"`
+	Links                       RespUserModelLinks           `json:"links"`
+	Permissions                 RespUserModelPermissions     `json:"permissions"`
+	SecretAnswerFirstLetter     string                       `json:"secret_answer_first_letter"`
+	SecretAnswerRendered        string                       `json:"secret_answer_rendered"`
+	SelfPermissions             RespUserModelSelfPermissions `json:"self_permissions"`
+	ShortLink                   string                       `json:"short_link"`
+	TrophyCount                 int64                        `json:"trophy_count"`
+	UserDeposit                 int64                        `json:"user_deposit"`
+	UserEmail                   string                       `json:"user_email"`
+	UserExternalAuthentications []any                        `json:"user_external_authentications"`
+	UserFollowers               RespUserModelUserFollowers   `json:"user_followers"`
+	UserFollowing               RespUserModelUserFollowing   `json:"user_following"`
+	UserGroupID                 int64                        `json:"user_group_id"`
+	UserGroups                  []any                        `json:"user_groups"`
+	UserID                      int64                        `json:"user_id"`
+	UserIsFollowed              bool                         `json:"user_is_followed"`
+	UserIsIgnored               bool                         `json:"user_is_ignored"`
+	UserIsValid                 bool                         `json:"user_is_valid"`
+	UserIsVerified              bool                         `json:"user_is_verified"`
+	UserIsVisitor               bool                         `json:"user_is_visitor"`
+	UserLastSeenDate            int64                        `json:"user_last_seen_date"`
+	UserLike2Count              int64                        `json:"user_like2_count"`
+	UserLikeCount               int64                        `json:"user_like_count"`
+	UserMessageCount            int64                        `json:"user_message_count"`
+	UserRegisterDate            int64                        `json:"user_register_date"`
+	UserTimezoneOffset          int64                        `json:"user_timezone_offset"`
+	UserTitle                   string                       `json:"user_title"`
+	UserUnreadConversationCount int64                        `json:"user_unread_conversation_count"`
+	UserUnreadNotificationCount int64                        `json:"user_unread_notification_count"`
+	Username                    string                       `json:"username"`
+	UsernameHTML                string                       `json:"username_html"`
 }
 
 // RespUserModelBirthday represents a component schema.
 type RespUserModelBirthday struct {
-	Age       int64                          `json:"age,omitempty"`
-	Format    string                         `json:"format,omitempty"`
-	TimeStamp RespUserModelBirthdayTimeStamp `json:"timeStamp,omitempty"`
+	Age       int64                          `json:"age"`
+	Format    string                         `json:"format"`
+	TimeStamp RespUserModelBirthdayTimeStamp `json:"timeStamp"`
 }
 
 // RespUserModelBirthdayTimeStamp represents a component schema.
 type RespUserModelBirthdayTimeStamp struct {
-	Date         string `json:"date,omitempty"`
-	Timezone     string `json:"timezone,omitempty"`
-	TimezoneType int64  `json:"timezone_type,omitempty"`
+	Date         string `json:"date"`
+	Timezone     string `json:"timezone"`
+	TimezoneType int64  `json:"timezone_type"`
 }
 
 // RespUserModelEditPermissions represents a component schema.
 type RespUserModelEditPermissions struct {
-	Fields            bool `json:"fields,omitempty"`
-	HideUsernameLogs  bool `json:"hide_username_logs,omitempty"`
-	Password          bool `json:"password,omitempty"`
-	PrimaryGroupID    bool `json:"primary_group_id,omitempty"`
-	SecondaryGroupIds bool `json:"secondary_group_ids,omitempty"`
-	ShortLink         bool `json:"short_link,omitempty"`
-	UserDobDay        bool `json:"user_dob_day,omitempty"`
-	UserDobMonth      bool `json:"user_dob_month,omitempty"`
-	UserDobYear       bool `json:"user_dob_year,omitempty"`
-	UserEmail         bool `json:"user_email,omitempty"`
-	UserTitle         bool `json:"user_title,omitempty"`
-	Username          bool `json:"username,omitempty"`
+	Fields            bool `json:"fields"`
+	HideUsernameLogs  bool `json:"hide_username_logs"`
+	Password          bool `json:"password"`
+	PrimaryGroupID    bool `json:"primary_group_id"`
+	SecondaryGroupIds bool `json:"secondary_group_ids"`
+	ShortLink         bool `json:"short_link"`
+	UserDobDay        bool `json:"user_dob_day"`
+	UserDobMonth      bool `json:"user_dob_month"`
+	UserDobYear       bool `json:"user_dob_year"`
+	UserEmail         bool `json:"user_email"`
+	UserTitle         bool `json:"user_title"`
+	Username          bool `json:"username"`
 }
 
 // RespUserModelLinks represents a component schema.
 type RespUserModelLinks struct {
-	Avatar      string `json:"avatar,omitempty"`
-	AvatarBig   string `json:"avatar_big,omitempty"`
-	AvatarSmall string `json:"avatar_small,omitempty"`
-	BackgroundL string `json:"background_l,omitempty"`
-	BackgroundM string `json:"background_m,omitempty"`
-	Detail      string `json:"detail,omitempty"`
-	Followers   string `json:"followers,omitempty"`
-	Followings  string `json:"followings,omitempty"`
-	Ignore      string `json:"ignore,omitempty"`
-	Permalink   string `json:"permalink,omitempty"`
-	Status      string `json:"status,omitempty"`
-	Timeline    string `json:"timeline,omitempty"`
+	Avatar      string `json:"avatar"`
+	AvatarBig   string `json:"avatar_big"`
+	AvatarSmall string `json:"avatar_small"`
+	BackgroundL string `json:"background_l"`
+	BackgroundM string `json:"background_m"`
+	Detail      string `json:"detail"`
+	Followers   string `json:"followers"`
+	Followings  string `json:"followings"`
+	Ignore      string `json:"ignore"`
+	Permalink   string `json:"permalink"`
+	Status      string `json:"status"`
+	Timeline    string `json:"timeline"`
 }
 
 // RespUserModelPermissions represents a component schema.
 type RespUserModelPermissions struct {
-	Edit        bool `json:"edit,omitempty"`
-	Follow      bool `json:"follow,omitempty"`
-	Ignore      bool `json:"ignore,omitempty"`
-	ProfilePost bool `json:"profile_post,omitempty"`
+	Edit        bool `json:"edit"`
+	Follow      bool `json:"follow"`
+	Ignore      bool `json:"ignore"`
+	ProfilePost bool `json:"profile_post"`
 }
 
 // RespUserModelSelfPermissions represents a component schema.
 type RespUserModelSelfPermissions struct {
-	CreateConversation bool `json:"create_conversation,omitempty"`
+	CreateConversation bool `json:"create_conversation"`
 }
 
 // RespUserModelUserFollowers represents a component schema.
 type RespUserModelUserFollowers struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // RespUserModelUserFollowing represents a component schema.
 type RespUserModelUserFollowing struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // SearchAllResponseLinks represents a component schema.
 type SearchAllResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
 }
 
 // SearchAllResponseSystemInfo represents a component schema.
 type SearchAllResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // SearchPostsResponseLinks represents a component schema.
 type SearchPostsResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
 }
 
 // SearchPostsResponseSystemInfo represents a component schema.
 type SearchPostsResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // SearchProfilePostsResponseLinks represents a component schema.
 type SearchProfilePostsResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
 }
 
 // SearchProfilePostsResponseSystemInfo represents a component schema.
 type SearchProfilePostsResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // SearchResultsResponseSearchTags represents a component schema.
 type SearchResultsResponseSearchTags struct {
-	N160179 string `json:"160179,omitempty"`
+	N160179 string `json:"160179"`
 }
 
 // SearchResultsResponseSystemInfo represents a component schema.
 type SearchResultsResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // SearchTaggedResponseSearchTags represents a component schema.
 type SearchTaggedResponseSearchTags struct {
-	N160179 string `json:"160179,omitempty"`
+	N160179 string `json:"160179"`
 }
 
 // SearchTaggedResponseSystemInfo represents a component schema.
 type SearchTaggedResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // SearchThreadsResponseLinks represents a component schema.
 type SearchThreadsResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
 }
 
 // SearchThreadsResponseSystemInfo represents a component schema.
 type SearchThreadsResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // SearchUsersResponseSystemInfo represents a component schema.
 type SearchUsersResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // TagsFindResponseSystemInfo represents a component schema.
 type TagsFindResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // TagsGetResponseLinks represents a component schema.
 type TagsGetResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
 }
 
 // TagsGetResponseSystemInfo represents a component schema.
 type TagsGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // TagsGetResponseTag represents a component schema.
 type TagsGetResponseTag struct {
-	Links       TagsGetResponseTagLinks `json:"links,omitempty"`
-	TagID       int64                   `json:"tag_id,omitempty"`
-	TagText     string                  `json:"tag_text,omitempty"`
-	TagUseCount int64                   `json:"tag_use_count,omitempty"`
+	Links       TagsGetResponseTagLinks `json:"links"`
+	TagID       int64                   `json:"tag_id"`
+	TagText     string                  `json:"tag_text"`
+	TagUseCount int64                   `json:"tag_use_count"`
 }
 
 // TagsGetResponseTagLinks represents a component schema.
 type TagsGetResponseTagLinks struct {
-	Detail    string `json:"detail,omitempty"`
-	Permalink string `json:"permalink,omitempty"`
+	Detail    string `json:"detail"`
+	Permalink string `json:"permalink"`
 }
 
 // TagsListResponseLinks represents a component schema.
 type TagsListResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
 }
 
 // TagsListResponseSystemInfo represents a component schema.
 type TagsListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // TagsListResponseTags represents a component schema.
 type TagsListResponseTags struct {
-	N1  string `json:"1,omitempty"`
-	N10 string `json:"10,omitempty"`
-	N11 string `json:"11,omitempty"`
-	N12 string `json:"12,omitempty"`
-	N14 string `json:"14,omitempty"`
-	N15 string `json:"15,omitempty"`
-	N16 string `json:"16,omitempty"`
-	N17 string `json:"17,omitempty"`
-	N18 string `json:"18,omitempty"`
-	N19 string `json:"19,omitempty"`
-	N2  string `json:"2,omitempty"`
-	N20 string `json:"20,omitempty"`
-	N3  string `json:"3,omitempty"`
-	N4  string `json:"4,omitempty"`
-	N5  string `json:"5,omitempty"`
-	N6  string `json:"6,omitempty"`
-	N7  string `json:"7,omitempty"`
-	N8  string `json:"8,omitempty"`
-	N9  string `json:"9,omitempty"`
+	N1  string `json:"1"`
+	N10 string `json:"10"`
+	N11 string `json:"11"`
+	N12 string `json:"12"`
+	N14 string `json:"14"`
+	N15 string `json:"15"`
+	N16 string `json:"16"`
+	N17 string `json:"17"`
+	N18 string `json:"18"`
+	N19 string `json:"19"`
+	N2  string `json:"2"`
+	N20 string `json:"20"`
+	N3  string `json:"3"`
+	N4  string `json:"4"`
+	N5  string `json:"5"`
+	N6  string `json:"6"`
+	N7  string `json:"7"`
+	N8  string `json:"8"`
+	N9  string `json:"9"`
 }
 
 // TagsPopularResponseSystemInfo represents a component schema.
 type TagsPopularResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // TagsPopularResponseTags represents a component schema.
 type TagsPopularResponseTags struct {
-	N000 string `json:"000,omitempty"`
+	N000 string `json:"000"`
 }
 
 // ThreadsBumpResponseSystemInfo represents a component schema.
 type ThreadsBumpResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsClaimResponseSystemInfo represents a component schema.
 type ThreadsClaimResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsClaimResponseThread represents a component schema.
 type ThreadsClaimResponseThread struct {
-	Contest             ThreadsClaimResponseThreadContest      `json:"contest,omitempty"`
-	CreatorUserID       int64                                  `json:"creator_user_id,omitempty"`
-	CreatorUsername     string                                 `json:"creator_username,omitempty"`
-	CreatorUsernameHTML string                                 `json:"creator_username_html,omitempty"`
-	FirstPost           ThreadsClaimResponseThreadFirstPost    `json:"first_post,omitempty"`
-	ForumID             int64                                  `json:"forum_id,omitempty"`
-	LastPost            ThreadsClaimResponseThreadLastPost     `json:"last_post,omitempty"`
-	Links               ThreadsClaimResponseThreadLinks        `json:"links,omitempty"`
-	NodeTitle           string                                 `json:"node_title,omitempty"`
-	Permissions         ThreadsClaimResponseThreadPermissions  `json:"permissions,omitempty"`
-	Restrictions        ThreadsClaimResponseThreadRestrictions `json:"restrictions,omitempty"`
-	ThreadCreateDate    int64                                  `json:"thread_create_date,omitempty"`
-	ThreadID            int64                                  `json:"thread_id,omitempty"`
-	ThreadIsClosed      bool                                   `json:"thread_is_closed,omitempty"`
-	ThreadIsDeleted     bool                                   `json:"thread_is_deleted,omitempty"`
-	ThreadIsFollowed    bool                                   `json:"thread_is_followed,omitempty"`
-	ThreadIsPublished   bool                                   `json:"thread_is_published,omitempty"`
-	ThreadIsStarred     bool                                   `json:"thread_is_starred,omitempty"`
-	ThreadIsSticky      bool                                   `json:"thread_is_sticky,omitempty"`
-	ThreadPostCount     int64                                  `json:"thread_post_count,omitempty"`
-	ThreadPrefixes      []any                                  `json:"thread_prefixes,omitempty"`
-	ThreadTags          ThreadsClaimResponseThreadThreadTags   `json:"thread_tags,omitempty"`
-	ThreadTitle         string                                 `json:"thread_title,omitempty"`
-	ThreadUpdateDate    int64                                  `json:"thread_update_date,omitempty"`
-	ThreadViewCount     int64                                  `json:"thread_view_count,omitempty"`
-	UserIsIgnored       bool                                   `json:"user_is_ignored,omitempty"`
+	Contest             ThreadsClaimResponseThreadContest      `json:"contest"`
+	CreatorUserID       int64                                  `json:"creator_user_id"`
+	CreatorUsername     string                                 `json:"creator_username"`
+	CreatorUsernameHTML string                                 `json:"creator_username_html"`
+	FirstPost           ThreadsClaimResponseThreadFirstPost    `json:"first_post"`
+	ForumID             int64                                  `json:"forum_id"`
+	LastPost            ThreadsClaimResponseThreadLastPost     `json:"last_post"`
+	Links               ThreadsClaimResponseThreadLinks        `json:"links"`
+	NodeTitle           string                                 `json:"node_title"`
+	Permissions         ThreadsClaimResponseThreadPermissions  `json:"permissions"`
+	Restrictions        ThreadsClaimResponseThreadRestrictions `json:"restrictions"`
+	ThreadCreateDate    int64                                  `json:"thread_create_date"`
+	ThreadID            int64                                  `json:"thread_id"`
+	ThreadIsClosed      bool                                   `json:"thread_is_closed"`
+	ThreadIsDeleted     bool                                   `json:"thread_is_deleted"`
+	ThreadIsFollowed    bool                                   `json:"thread_is_followed"`
+	ThreadIsPublished   bool                                   `json:"thread_is_published"`
+	ThreadIsStarred     bool                                   `json:"thread_is_starred"`
+	ThreadIsSticky      bool                                   `json:"thread_is_sticky"`
+	ThreadPostCount     int64                                  `json:"thread_post_count"`
+	ThreadPrefixes      []any                                  `json:"thread_prefixes"`
+	ThreadTags          ThreadsClaimResponseThreadThreadTags   `json:"thread_tags"`
+	ThreadTitle         string                                 `json:"thread_title"`
+	ThreadUpdateDate    int64                                  `json:"thread_update_date"`
+	ThreadViewCount     int64                                  `json:"thread_view_count"`
+	UserIsIgnored       bool                                   `json:"user_is_ignored"`
 }
 
 // ThreadsClaimResponseThreadContest represents a component schema.
 type ThreadsClaimResponseThreadContest struct {
-	AlreadyParticipate    bool                                         `json:"already_participate,omitempty"`
-	ChanceToWin           float64                                      `json:"chance_to_win,omitempty"`
-	CountWinners          int64                                        `json:"count_winners,omitempty"`
-	FinishDate            int64                                        `json:"finish_date,omitempty"`
-	IsFinished            int64                                        `json:"is_finished,omitempty"`
-	IsMoneyPlaces         int64                                        `json:"is_money_places,omitempty"`
-	NeededMembers         int64                                        `json:"needed_members,omitempty"`
-	NowCountMembers       int64                                        `json:"now_count_members,omitempty"`
-	Permissions           ThreadsClaimResponseThreadContestPermissions `json:"permissions,omitempty"`
-	PrizeData             int64                                        `json:"prize_data,omitempty"`
-	PrizeType             string                                       `json:"prize_type,omitempty"`
-	PrizeTypePhrase       string                                       `json:"prize_type_phrase,omitempty"`
-	RequireLikeCount      int64                                        `json:"require_like_count,omitempty"`
-	RequireTotalLikeCount int64                                        `json:"require_total_like_count,omitempty"`
-	Type                  string                                       `json:"type,omitempty"`
-	Winners               []int64                                      `json:"winners,omitempty"`
+	AlreadyParticipate    bool                                         `json:"already_participate"`
+	ChanceToWin           float64                                      `json:"chance_to_win"`
+	CountWinners          int64                                        `json:"count_winners"`
+	FinishDate            int64                                        `json:"finish_date"`
+	IsFinished            int64                                        `json:"is_finished"`
+	IsMoneyPlaces         int64                                        `json:"is_money_places"`
+	NeededMembers         int64                                        `json:"needed_members"`
+	NowCountMembers       int64                                        `json:"now_count_members"`
+	Permissions           ThreadsClaimResponseThreadContestPermissions `json:"permissions"`
+	PrizeData             int64                                        `json:"prize_data"`
+	PrizeType             string                                       `json:"prize_type"`
+	PrizeTypePhrase       string                                       `json:"prize_type_phrase"`
+	RequireLikeCount      int64                                        `json:"require_like_count"`
+	RequireTotalLikeCount int64                                        `json:"require_total_like_count"`
+	Type                  string                                       `json:"type"`
+	Winners               []int64                                      `json:"winners"`
 }
 
 // ThreadsClaimResponseThreadContestPermissions represents a component schema.
 type ThreadsClaimResponseThreadContestPermissions struct {
-	CanFinish           bool   `json:"can_finish,omitempty"`
-	CanParticipate      bool   `json:"can_participate,omitempty"`
-	CanParticipateError string `json:"can_participate_error,omitempty"`
-	CanViewUserList     bool   `json:"can_view_user_list,omitempty"`
+	CanFinish           bool   `json:"can_finish"`
+	CanParticipate      bool   `json:"can_participate"`
+	CanParticipateError string `json:"can_participate_error"`
+	CanViewUserList     bool   `json:"can_view_user_list"`
 }
 
 // ThreadsClaimResponseThreadFirstPost represents a component schema.
 type ThreadsClaimResponseThreadFirstPost struct {
-	Links              ThreadsClaimResponseThreadFirstPostLinks       `json:"links,omitempty"`
-	Permissions        ThreadsClaimResponseThreadFirstPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                         `json:"post_body,omitempty"`
-	PostBodyHTML       string                                         `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                                         `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                                          `json:"post_create_date,omitempty"`
-	PostID             int64                                          `json:"post_id,omitempty"`
-	PostIsDeleted      bool                                           `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                                           `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                                           `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                                           `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                          `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                                          `json:"post_update_date,omitempty"`
-	PosterUserID       int64                                          `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                         `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                         `json:"poster_username_html,omitempty"`
-	Signature          string                                         `json:"signature,omitempty"`
-	SignatureHTML      string                                         `json:"signature_html,omitempty"`
-	SignaturePlainText string                                         `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                                          `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                                           `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                                           `json:"user_is_ignored,omitempty"`
+	Links              ThreadsClaimResponseThreadFirstPostLinks       `json:"links"`
+	Permissions        ThreadsClaimResponseThreadFirstPostPermissions `json:"permissions"`
+	PostBody           string                                         `json:"post_body"`
+	PostBodyHTML       string                                         `json:"post_body_html"`
+	PostBodyPlainText  string                                         `json:"post_body_plain_text"`
+	PostCreateDate     int64                                          `json:"post_create_date"`
+	PostID             int64                                          `json:"post_id"`
+	PostIsDeleted      bool                                           `json:"post_is_deleted"`
+	PostIsFirstPost    bool                                           `json:"post_is_first_post"`
+	PostIsLiked        bool                                           `json:"post_is_liked"`
+	PostIsPublished    bool                                           `json:"post_is_published"`
+	PostLikeCount      int64                                          `json:"post_like_count"`
+	PostUpdateDate     int64                                          `json:"post_update_date"`
+	PosterUserID       int64                                          `json:"poster_user_id"`
+	PosterUsername     string                                         `json:"poster_username"`
+	PosterUsernameHTML string                                         `json:"poster_username_html"`
+	Signature          string                                         `json:"signature"`
+	SignatureHTML      string                                         `json:"signature_html"`
+	SignaturePlainText string                                         `json:"signature_plain_text"`
+	ThreadID           int64                                          `json:"thread_id"`
+	ThreadIsDeleted    bool                                           `json:"thread_is_deleted"`
+	UserIsIgnored      bool                                           `json:"user_is_ignored"`
 }
 
 // ThreadsClaimResponseThreadFirstPostLinks represents a component schema.
 type ThreadsClaimResponseThreadFirstPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // ThreadsClaimResponseThreadFirstPostPermissions represents a component schema.
 type ThreadsClaimResponseThreadFirstPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // ThreadsClaimResponseThreadLastPost represents a component schema.
 type ThreadsClaimResponseThreadLastPost struct {
-	Links              ThreadsClaimResponseThreadLastPostLinks       `json:"links,omitempty"`
-	Permissions        ThreadsClaimResponseThreadLastPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                        `json:"post_body,omitempty"`
-	PostBodyHTML       string                                        `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                                        `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                                         `json:"post_create_date,omitempty"`
-	PostID             int64                                         `json:"post_id,omitempty"`
-	PostIsDeleted      bool                                          `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                                          `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                                          `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                                          `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                         `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                                         `json:"post_update_date,omitempty"`
-	PosterUserID       int64                                         `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                        `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                        `json:"poster_username_html,omitempty"`
-	Signature          string                                        `json:"signature,omitempty"`
-	SignatureHTML      string                                        `json:"signature_html,omitempty"`
-	SignaturePlainText string                                        `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                                         `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                                          `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                                          `json:"user_is_ignored,omitempty"`
+	Links              ThreadsClaimResponseThreadLastPostLinks       `json:"links"`
+	Permissions        ThreadsClaimResponseThreadLastPostPermissions `json:"permissions"`
+	PostBody           string                                        `json:"post_body"`
+	PostBodyHTML       string                                        `json:"post_body_html"`
+	PostBodyPlainText  string                                        `json:"post_body_plain_text"`
+	PostCreateDate     int64                                         `json:"post_create_date"`
+	PostID             int64                                         `json:"post_id"`
+	PostIsDeleted      bool                                          `json:"post_is_deleted"`
+	PostIsFirstPost    bool                                          `json:"post_is_first_post"`
+	PostIsLiked        bool                                          `json:"post_is_liked"`
+	PostIsPublished    bool                                          `json:"post_is_published"`
+	PostLikeCount      int64                                         `json:"post_like_count"`
+	PostUpdateDate     int64                                         `json:"post_update_date"`
+	PosterUserID       int64                                         `json:"poster_user_id"`
+	PosterUsername     string                                        `json:"poster_username"`
+	PosterUsernameHTML string                                        `json:"poster_username_html"`
+	Signature          string                                        `json:"signature"`
+	SignatureHTML      string                                        `json:"signature_html"`
+	SignaturePlainText string                                        `json:"signature_plain_text"`
+	ThreadID           int64                                         `json:"thread_id"`
+	ThreadIsDeleted    bool                                          `json:"thread_is_deleted"`
+	UserIsIgnored      bool                                          `json:"user_is_ignored"`
 }
 
 // ThreadsClaimResponseThreadLastPostLinks represents a component schema.
 type ThreadsClaimResponseThreadLastPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // ThreadsClaimResponseThreadLastPostPermissions represents a component schema.
 type ThreadsClaimResponseThreadLastPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // ThreadsClaimResponseThreadLinks represents a component schema.
 type ThreadsClaimResponseThreadLinks struct {
-	Detail            string `json:"detail,omitempty"`
-	FirstPost         string `json:"first_post,omitempty"`
-	FirstPoster       string `json:"first_poster,omitempty"`
-	FirstPosterAvatar string `json:"first_poster_avatar,omitempty"`
-	Followers         string `json:"followers,omitempty"`
-	Forum             string `json:"forum,omitempty"`
-	LastPost          string `json:"last_post,omitempty"`
-	Permalink         string `json:"permalink,omitempty"`
-	Posts             string `json:"posts,omitempty"`
+	Detail            string `json:"detail"`
+	FirstPost         string `json:"first_post"`
+	FirstPoster       string `json:"first_poster"`
+	FirstPosterAvatar string `json:"first_poster_avatar"`
+	Followers         string `json:"followers"`
+	Forum             string `json:"forum"`
+	LastPost          string `json:"last_post"`
+	Permalink         string `json:"permalink"`
+	Posts             string `json:"posts"`
 }
 
 // ThreadsClaimResponseThreadPermissions represents a component schema.
 type ThreadsClaimResponseThreadPermissions struct {
-	Bump      ThreadsClaimResponseThreadPermissionsBump `json:"bump,omitempty"`
-	Delete    bool                                      `json:"delete,omitempty"`
-	Edit      bool                                      `json:"edit,omitempty"`
-	EditTags  bool                                      `json:"edit_tags,omitempty"`
-	EditTitle bool                                      `json:"edit_title,omitempty"`
-	Follow    bool                                      `json:"follow,omitempty"`
-	Post      bool                                      `json:"post,omitempty"`
-	View      bool                                      `json:"view,omitempty"`
+	Bump      ThreadsClaimResponseThreadPermissionsBump `json:"bump"`
+	Delete    bool                                      `json:"delete"`
+	Edit      bool                                      `json:"edit"`
+	EditTags  bool                                      `json:"edit_tags"`
+	EditTitle bool                                      `json:"edit_title"`
+	Follow    bool                                      `json:"follow"`
+	Post      bool                                      `json:"post"`
+	View      bool                                      `json:"view"`
 }
 
 // ThreadsClaimResponseThreadPermissionsBump represents a component schema.
 type ThreadsClaimResponseThreadPermissionsBump struct {
-	AvailableCount    int64 `json:"available_count,omitempty"`
-	Can               bool  `json:"can,omitempty"`
-	Error             any   `json:"error,omitempty"`
-	NextAvailableTime any   `json:"next_available_time,omitempty"`
+	AvailableCount    int64 `json:"available_count"`
+	Can               bool  `json:"can"`
+	Error             any   `json:"error"`
+	NextAvailableTime any   `json:"next_available_time"`
 }
 
 // ThreadsClaimResponseThreadRestrictions represents a component schema.
 type ThreadsClaimResponseThreadRestrictions struct {
-	MaxReplyCount int64 `json:"max_reply_count,omitempty"`
-	ReplyDelay    int64 `json:"reply_delay,omitempty"`
+	MaxReplyCount int64 `json:"max_reply_count"`
+	ReplyDelay    int64 `json:"reply_delay"`
 }
 
 // ThreadsClaimResponseThreadThreadTags represents a component schema.
 type ThreadsClaimResponseThreadThreadTags struct {
-	N193431 string `json:"193431,omitempty"`
-	N206    string `json:"206,omitempty"`
-	N97491  string `json:"97491,omitempty"`
+	N193431 string `json:"193431"`
+	N206    string `json:"206"`
+	N97491  string `json:"97491"`
 }
 
 // ThreadsCreateContestResponseSystemInfo represents a component schema.
 type ThreadsCreateContestResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsCreateContestResponseThread represents a component schema.
 type ThreadsCreateContestResponseThread struct {
-	Contest             ThreadsCreateContestResponseThreadContest      `json:"contest,omitempty"`
-	CreatorUserID       int64                                          `json:"creator_user_id,omitempty"`
-	CreatorUsername     string                                         `json:"creator_username,omitempty"`
-	CreatorUsernameHTML string                                         `json:"creator_username_html,omitempty"`
-	FirstPost           ThreadsCreateContestResponseThreadFirstPost    `json:"first_post,omitempty"`
-	ForumID             int64                                          `json:"forum_id,omitempty"`
-	LastPost            ThreadsCreateContestResponseThreadLastPost     `json:"last_post,omitempty"`
-	Links               ThreadsCreateContestResponseThreadLinks        `json:"links,omitempty"`
-	NodeTitle           string                                         `json:"node_title,omitempty"`
-	Permissions         ThreadsCreateContestResponseThreadPermissions  `json:"permissions,omitempty"`
-	Restrictions        ThreadsCreateContestResponseThreadRestrictions `json:"restrictions,omitempty"`
-	ThreadCreateDate    int64                                          `json:"thread_create_date,omitempty"`
-	ThreadID            int64                                          `json:"thread_id,omitempty"`
-	ThreadIsClosed      bool                                           `json:"thread_is_closed,omitempty"`
-	ThreadIsDeleted     bool                                           `json:"thread_is_deleted,omitempty"`
-	ThreadIsFollowed    bool                                           `json:"thread_is_followed,omitempty"`
-	ThreadIsPublished   bool                                           `json:"thread_is_published,omitempty"`
-	ThreadIsStarred     bool                                           `json:"thread_is_starred,omitempty"`
-	ThreadIsSticky      bool                                           `json:"thread_is_sticky,omitempty"`
-	ThreadPostCount     int64                                          `json:"thread_post_count,omitempty"`
-	ThreadPrefixes      []any                                          `json:"thread_prefixes,omitempty"`
-	ThreadTags          ThreadsCreateContestResponseThreadThreadTags   `json:"thread_tags,omitempty"`
-	ThreadTitle         string                                         `json:"thread_title,omitempty"`
-	ThreadUpdateDate    int64                                          `json:"thread_update_date,omitempty"`
-	ThreadViewCount     int64                                          `json:"thread_view_count,omitempty"`
-	UserIsIgnored       bool                                           `json:"user_is_ignored,omitempty"`
+	Contest             ThreadsCreateContestResponseThreadContest      `json:"contest"`
+	CreatorUserID       int64                                          `json:"creator_user_id"`
+	CreatorUsername     string                                         `json:"creator_username"`
+	CreatorUsernameHTML string                                         `json:"creator_username_html"`
+	FirstPost           ThreadsCreateContestResponseThreadFirstPost    `json:"first_post"`
+	ForumID             int64                                          `json:"forum_id"`
+	LastPost            ThreadsCreateContestResponseThreadLastPost     `json:"last_post"`
+	Links               ThreadsCreateContestResponseThreadLinks        `json:"links"`
+	NodeTitle           string                                         `json:"node_title"`
+	Permissions         ThreadsCreateContestResponseThreadPermissions  `json:"permissions"`
+	Restrictions        ThreadsCreateContestResponseThreadRestrictions `json:"restrictions"`
+	ThreadCreateDate    int64                                          `json:"thread_create_date"`
+	ThreadID            int64                                          `json:"thread_id"`
+	ThreadIsClosed      bool                                           `json:"thread_is_closed"`
+	ThreadIsDeleted     bool                                           `json:"thread_is_deleted"`
+	ThreadIsFollowed    bool                                           `json:"thread_is_followed"`
+	ThreadIsPublished   bool                                           `json:"thread_is_published"`
+	ThreadIsStarred     bool                                           `json:"thread_is_starred"`
+	ThreadIsSticky      bool                                           `json:"thread_is_sticky"`
+	ThreadPostCount     int64                                          `json:"thread_post_count"`
+	ThreadPrefixes      []any                                          `json:"thread_prefixes"`
+	ThreadTags          ThreadsCreateContestResponseThreadThreadTags   `json:"thread_tags"`
+	ThreadTitle         string                                         `json:"thread_title"`
+	ThreadUpdateDate    int64                                          `json:"thread_update_date"`
+	ThreadViewCount     int64                                          `json:"thread_view_count"`
+	UserIsIgnored       bool                                           `json:"user_is_ignored"`
 }
 
 // ThreadsCreateContestResponseThreadContest represents a component schema.
 type ThreadsCreateContestResponseThreadContest struct {
-	AlreadyParticipate    bool                                                 `json:"already_participate,omitempty"`
-	ChanceToWin           float64                                              `json:"chance_to_win,omitempty"`
-	CountWinners          int64                                                `json:"count_winners,omitempty"`
-	FinishDate            int64                                                `json:"finish_date,omitempty"`
-	IsFinished            int64                                                `json:"is_finished,omitempty"`
-	IsMoneyPlaces         int64                                                `json:"is_money_places,omitempty"`
-	NeededMembers         int64                                                `json:"needed_members,omitempty"`
-	NowCountMembers       int64                                                `json:"now_count_members,omitempty"`
-	Permissions           ThreadsCreateContestResponseThreadContestPermissions `json:"permissions,omitempty"`
-	PrizeData             int64                                                `json:"prize_data,omitempty"`
-	PrizeType             string                                               `json:"prize_type,omitempty"`
-	PrizeTypePhrase       string                                               `json:"prize_type_phrase,omitempty"`
-	RequireLikeCount      int64                                                `json:"require_like_count,omitempty"`
-	RequireTotalLikeCount int64                                                `json:"require_total_like_count,omitempty"`
-	Type                  string                                               `json:"type,omitempty"`
-	Winners               []int64                                              `json:"winners,omitempty"`
+	AlreadyParticipate    bool                                                 `json:"already_participate"`
+	ChanceToWin           float64                                              `json:"chance_to_win"`
+	CountWinners          int64                                                `json:"count_winners"`
+	FinishDate            int64                                                `json:"finish_date"`
+	IsFinished            int64                                                `json:"is_finished"`
+	IsMoneyPlaces         int64                                                `json:"is_money_places"`
+	NeededMembers         int64                                                `json:"needed_members"`
+	NowCountMembers       int64                                                `json:"now_count_members"`
+	Permissions           ThreadsCreateContestResponseThreadContestPermissions `json:"permissions"`
+	PrizeData             int64                                                `json:"prize_data"`
+	PrizeType             string                                               `json:"prize_type"`
+	PrizeTypePhrase       string                                               `json:"prize_type_phrase"`
+	RequireLikeCount      int64                                                `json:"require_like_count"`
+	RequireTotalLikeCount int64                                                `json:"require_total_like_count"`
+	Type                  string                                               `json:"type"`
+	Winners               []int64                                              `json:"winners"`
 }
 
 // ThreadsCreateContestResponseThreadContestPermissions represents a component schema.
 type ThreadsCreateContestResponseThreadContestPermissions struct {
-	CanFinish           bool   `json:"can_finish,omitempty"`
-	CanParticipate      bool   `json:"can_participate,omitempty"`
-	CanParticipateError string `json:"can_participate_error,omitempty"`
-	CanViewUserList     bool   `json:"can_view_user_list,omitempty"`
+	CanFinish           bool   `json:"can_finish"`
+	CanParticipate      bool   `json:"can_participate"`
+	CanParticipateError string `json:"can_participate_error"`
+	CanViewUserList     bool   `json:"can_view_user_list"`
 }
 
 // ThreadsCreateContestResponseThreadFirstPost represents a component schema.
 type ThreadsCreateContestResponseThreadFirstPost struct {
-	Links              ThreadsCreateContestResponseThreadFirstPostLinks       `json:"links,omitempty"`
-	Permissions        ThreadsCreateContestResponseThreadFirstPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                                 `json:"post_body,omitempty"`
-	PostBodyHTML       string                                                 `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                                                 `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                                                  `json:"post_create_date,omitempty"`
-	PostID             int64                                                  `json:"post_id,omitempty"`
-	PostIsDeleted      bool                                                   `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                                                   `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                                                   `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                                                   `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                                  `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                                                  `json:"post_update_date,omitempty"`
-	PosterUserID       int64                                                  `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                                 `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                                 `json:"poster_username_html,omitempty"`
-	Signature          string                                                 `json:"signature,omitempty"`
-	SignatureHTML      string                                                 `json:"signature_html,omitempty"`
-	SignaturePlainText string                                                 `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                                                  `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                                                   `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                                                   `json:"user_is_ignored,omitempty"`
+	Links              ThreadsCreateContestResponseThreadFirstPostLinks       `json:"links"`
+	Permissions        ThreadsCreateContestResponseThreadFirstPostPermissions `json:"permissions"`
+	PostBody           string                                                 `json:"post_body"`
+	PostBodyHTML       string                                                 `json:"post_body_html"`
+	PostBodyPlainText  string                                                 `json:"post_body_plain_text"`
+	PostCreateDate     int64                                                  `json:"post_create_date"`
+	PostID             int64                                                  `json:"post_id"`
+	PostIsDeleted      bool                                                   `json:"post_is_deleted"`
+	PostIsFirstPost    bool                                                   `json:"post_is_first_post"`
+	PostIsLiked        bool                                                   `json:"post_is_liked"`
+	PostIsPublished    bool                                                   `json:"post_is_published"`
+	PostLikeCount      int64                                                  `json:"post_like_count"`
+	PostUpdateDate     int64                                                  `json:"post_update_date"`
+	PosterUserID       int64                                                  `json:"poster_user_id"`
+	PosterUsername     string                                                 `json:"poster_username"`
+	PosterUsernameHTML string                                                 `json:"poster_username_html"`
+	Signature          string                                                 `json:"signature"`
+	SignatureHTML      string                                                 `json:"signature_html"`
+	SignaturePlainText string                                                 `json:"signature_plain_text"`
+	ThreadID           int64                                                  `json:"thread_id"`
+	ThreadIsDeleted    bool                                                   `json:"thread_is_deleted"`
+	UserIsIgnored      bool                                                   `json:"user_is_ignored"`
 }
 
 // ThreadsCreateContestResponseThreadFirstPostLinks represents a component schema.
 type ThreadsCreateContestResponseThreadFirstPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // ThreadsCreateContestResponseThreadFirstPostPermissions represents a component schema.
 type ThreadsCreateContestResponseThreadFirstPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // ThreadsCreateContestResponseThreadLastPost represents a component schema.
 type ThreadsCreateContestResponseThreadLastPost struct {
-	Links              ThreadsCreateContestResponseThreadLastPostLinks       `json:"links,omitempty"`
-	Permissions        ThreadsCreateContestResponseThreadLastPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                                `json:"post_body,omitempty"`
-	PostBodyHTML       string                                                `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                                                `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                                                 `json:"post_create_date,omitempty"`
-	PostID             int64                                                 `json:"post_id,omitempty"`
-	PostIsDeleted      bool                                                  `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                                                  `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                                                  `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                                                  `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                                 `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                                                 `json:"post_update_date,omitempty"`
-	PosterUserID       int64                                                 `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                                `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                                `json:"poster_username_html,omitempty"`
-	Signature          string                                                `json:"signature,omitempty"`
-	SignatureHTML      string                                                `json:"signature_html,omitempty"`
-	SignaturePlainText string                                                `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                                                 `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                                                  `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                                                  `json:"user_is_ignored,omitempty"`
+	Links              ThreadsCreateContestResponseThreadLastPostLinks       `json:"links"`
+	Permissions        ThreadsCreateContestResponseThreadLastPostPermissions `json:"permissions"`
+	PostBody           string                                                `json:"post_body"`
+	PostBodyHTML       string                                                `json:"post_body_html"`
+	PostBodyPlainText  string                                                `json:"post_body_plain_text"`
+	PostCreateDate     int64                                                 `json:"post_create_date"`
+	PostID             int64                                                 `json:"post_id"`
+	PostIsDeleted      bool                                                  `json:"post_is_deleted"`
+	PostIsFirstPost    bool                                                  `json:"post_is_first_post"`
+	PostIsLiked        bool                                                  `json:"post_is_liked"`
+	PostIsPublished    bool                                                  `json:"post_is_published"`
+	PostLikeCount      int64                                                 `json:"post_like_count"`
+	PostUpdateDate     int64                                                 `json:"post_update_date"`
+	PosterUserID       int64                                                 `json:"poster_user_id"`
+	PosterUsername     string                                                `json:"poster_username"`
+	PosterUsernameHTML string                                                `json:"poster_username_html"`
+	Signature          string                                                `json:"signature"`
+	SignatureHTML      string                                                `json:"signature_html"`
+	SignaturePlainText string                                                `json:"signature_plain_text"`
+	ThreadID           int64                                                 `json:"thread_id"`
+	ThreadIsDeleted    bool                                                  `json:"thread_is_deleted"`
+	UserIsIgnored      bool                                                  `json:"user_is_ignored"`
 }
 
 // ThreadsCreateContestResponseThreadLastPostLinks represents a component schema.
 type ThreadsCreateContestResponseThreadLastPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // ThreadsCreateContestResponseThreadLastPostPermissions represents a component schema.
 type ThreadsCreateContestResponseThreadLastPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // ThreadsCreateContestResponseThreadLinks represents a component schema.
 type ThreadsCreateContestResponseThreadLinks struct {
-	Detail            string `json:"detail,omitempty"`
-	FirstPost         string `json:"first_post,omitempty"`
-	FirstPoster       string `json:"first_poster,omitempty"`
-	FirstPosterAvatar string `json:"first_poster_avatar,omitempty"`
-	Followers         string `json:"followers,omitempty"`
-	Forum             string `json:"forum,omitempty"`
-	LastPost          string `json:"last_post,omitempty"`
-	Permalink         string `json:"permalink,omitempty"`
-	Posts             string `json:"posts,omitempty"`
+	Detail            string `json:"detail"`
+	FirstPost         string `json:"first_post"`
+	FirstPoster       string `json:"first_poster"`
+	FirstPosterAvatar string `json:"first_poster_avatar"`
+	Followers         string `json:"followers"`
+	Forum             string `json:"forum"`
+	LastPost          string `json:"last_post"`
+	Permalink         string `json:"permalink"`
+	Posts             string `json:"posts"`
 }
 
 // ThreadsCreateContestResponseThreadPermissions represents a component schema.
 type ThreadsCreateContestResponseThreadPermissions struct {
-	Bump      ThreadsCreateContestResponseThreadPermissionsBump `json:"bump,omitempty"`
-	Delete    bool                                              `json:"delete,omitempty"`
-	Edit      bool                                              `json:"edit,omitempty"`
-	EditTags  bool                                              `json:"edit_tags,omitempty"`
-	EditTitle bool                                              `json:"edit_title,omitempty"`
-	Follow    bool                                              `json:"follow,omitempty"`
-	Post      bool                                              `json:"post,omitempty"`
-	View      bool                                              `json:"view,omitempty"`
+	Bump      ThreadsCreateContestResponseThreadPermissionsBump `json:"bump"`
+	Delete    bool                                              `json:"delete"`
+	Edit      bool                                              `json:"edit"`
+	EditTags  bool                                              `json:"edit_tags"`
+	EditTitle bool                                              `json:"edit_title"`
+	Follow    bool                                              `json:"follow"`
+	Post      bool                                              `json:"post"`
+	View      bool                                              `json:"view"`
 }
 
 // ThreadsCreateContestResponseThreadPermissionsBump represents a component schema.
 type ThreadsCreateContestResponseThreadPermissionsBump struct {
-	AvailableCount    int64 `json:"available_count,omitempty"`
-	Can               bool  `json:"can,omitempty"`
-	Error             any   `json:"error,omitempty"`
-	NextAvailableTime any   `json:"next_available_time,omitempty"`
+	AvailableCount    int64 `json:"available_count"`
+	Can               bool  `json:"can"`
+	Error             any   `json:"error"`
+	NextAvailableTime any   `json:"next_available_time"`
 }
 
 // ThreadsCreateContestResponseThreadRestrictions represents a component schema.
 type ThreadsCreateContestResponseThreadRestrictions struct {
-	MaxReplyCount int64 `json:"max_reply_count,omitempty"`
-	ReplyDelay    int64 `json:"reply_delay,omitempty"`
+	MaxReplyCount int64 `json:"max_reply_count"`
+	ReplyDelay    int64 `json:"reply_delay"`
 }
 
 // ThreadsCreateContestResponseThreadThreadTags represents a component schema.
 type ThreadsCreateContestResponseThreadThreadTags struct {
-	N193431 string `json:"193431,omitempty"`
-	N206    string `json:"206,omitempty"`
-	N97491  string `json:"97491,omitempty"`
+	N193431 string `json:"193431"`
+	N206    string `json:"206"`
+	N97491  string `json:"97491"`
 }
 
 // ThreadsCreateResponseSystemInfo represents a component schema.
 type ThreadsCreateResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsCreateResponseThread represents a component schema.
 type ThreadsCreateResponseThread struct {
-	Contest             ThreadsCreateResponseThreadContest      `json:"contest,omitempty"`
-	CreatorUserID       int64                                   `json:"creator_user_id,omitempty"`
-	CreatorUsername     string                                  `json:"creator_username,omitempty"`
-	CreatorUsernameHTML string                                  `json:"creator_username_html,omitempty"`
-	FirstPost           ThreadsCreateResponseThreadFirstPost    `json:"first_post,omitempty"`
-	ForumID             int64                                   `json:"forum_id,omitempty"`
-	LastPost            ThreadsCreateResponseThreadLastPost     `json:"last_post,omitempty"`
-	Links               ThreadsCreateResponseThreadLinks        `json:"links,omitempty"`
-	NodeTitle           string                                  `json:"node_title,omitempty"`
-	Permissions         ThreadsCreateResponseThreadPermissions  `json:"permissions,omitempty"`
-	Restrictions        ThreadsCreateResponseThreadRestrictions `json:"restrictions,omitempty"`
-	ThreadCreateDate    int64                                   `json:"thread_create_date,omitempty"`
-	ThreadID            int64                                   `json:"thread_id,omitempty"`
-	ThreadIsClosed      bool                                    `json:"thread_is_closed,omitempty"`
-	ThreadIsDeleted     bool                                    `json:"thread_is_deleted,omitempty"`
-	ThreadIsFollowed    bool                                    `json:"thread_is_followed,omitempty"`
-	ThreadIsPublished   bool                                    `json:"thread_is_published,omitempty"`
-	ThreadIsStarred     bool                                    `json:"thread_is_starred,omitempty"`
-	ThreadIsSticky      bool                                    `json:"thread_is_sticky,omitempty"`
-	ThreadPostCount     int64                                   `json:"thread_post_count,omitempty"`
-	ThreadPrefixes      []any                                   `json:"thread_prefixes,omitempty"`
-	ThreadTags          ThreadsCreateResponseThreadThreadTags   `json:"thread_tags,omitempty"`
-	ThreadTitle         string                                  `json:"thread_title,omitempty"`
-	ThreadUpdateDate    int64                                   `json:"thread_update_date,omitempty"`
-	ThreadViewCount     int64                                   `json:"thread_view_count,omitempty"`
-	UserIsIgnored       bool                                    `json:"user_is_ignored,omitempty"`
+	Contest             ThreadsCreateResponseThreadContest      `json:"contest"`
+	CreatorUserID       int64                                   `json:"creator_user_id"`
+	CreatorUsername     string                                  `json:"creator_username"`
+	CreatorUsernameHTML string                                  `json:"creator_username_html"`
+	FirstPost           ThreadsCreateResponseThreadFirstPost    `json:"first_post"`
+	ForumID             int64                                   `json:"forum_id"`
+	LastPost            ThreadsCreateResponseThreadLastPost     `json:"last_post"`
+	Links               ThreadsCreateResponseThreadLinks        `json:"links"`
+	NodeTitle           string                                  `json:"node_title"`
+	Permissions         ThreadsCreateResponseThreadPermissions  `json:"permissions"`
+	Restrictions        ThreadsCreateResponseThreadRestrictions `json:"restrictions"`
+	ThreadCreateDate    int64                                   `json:"thread_create_date"`
+	ThreadID            int64                                   `json:"thread_id"`
+	ThreadIsClosed      bool                                    `json:"thread_is_closed"`
+	ThreadIsDeleted     bool                                    `json:"thread_is_deleted"`
+	ThreadIsFollowed    bool                                    `json:"thread_is_followed"`
+	ThreadIsPublished   bool                                    `json:"thread_is_published"`
+	ThreadIsStarred     bool                                    `json:"thread_is_starred"`
+	ThreadIsSticky      bool                                    `json:"thread_is_sticky"`
+	ThreadPostCount     int64                                   `json:"thread_post_count"`
+	ThreadPrefixes      []any                                   `json:"thread_prefixes"`
+	ThreadTags          ThreadsCreateResponseThreadThreadTags   `json:"thread_tags"`
+	ThreadTitle         string                                  `json:"thread_title"`
+	ThreadUpdateDate    int64                                   `json:"thread_update_date"`
+	ThreadViewCount     int64                                   `json:"thread_view_count"`
+	UserIsIgnored       bool                                    `json:"user_is_ignored"`
 }
 
 // ThreadsCreateResponseThreadContest represents a component schema.
 type ThreadsCreateResponseThreadContest struct {
-	AlreadyParticipate    bool                                          `json:"already_participate,omitempty"`
-	ChanceToWin           float64                                       `json:"chance_to_win,omitempty"`
-	CountWinners          int64                                         `json:"count_winners,omitempty"`
-	FinishDate            int64                                         `json:"finish_date,omitempty"`
-	IsFinished            int64                                         `json:"is_finished,omitempty"`
-	IsMoneyPlaces         int64                                         `json:"is_money_places,omitempty"`
-	NeededMembers         int64                                         `json:"needed_members,omitempty"`
-	NowCountMembers       int64                                         `json:"now_count_members,omitempty"`
-	Permissions           ThreadsCreateResponseThreadContestPermissions `json:"permissions,omitempty"`
-	PrizeData             int64                                         `json:"prize_data,omitempty"`
-	PrizeType             string                                        `json:"prize_type,omitempty"`
-	PrizeTypePhrase       string                                        `json:"prize_type_phrase,omitempty"`
-	RequireLikeCount      int64                                         `json:"require_like_count,omitempty"`
-	RequireTotalLikeCount int64                                         `json:"require_total_like_count,omitempty"`
-	Type                  string                                        `json:"type,omitempty"`
-	Winners               []int64                                       `json:"winners,omitempty"`
+	AlreadyParticipate    bool                                          `json:"already_participate"`
+	ChanceToWin           float64                                       `json:"chance_to_win"`
+	CountWinners          int64                                         `json:"count_winners"`
+	FinishDate            int64                                         `json:"finish_date"`
+	IsFinished            int64                                         `json:"is_finished"`
+	IsMoneyPlaces         int64                                         `json:"is_money_places"`
+	NeededMembers         int64                                         `json:"needed_members"`
+	NowCountMembers       int64                                         `json:"now_count_members"`
+	Permissions           ThreadsCreateResponseThreadContestPermissions `json:"permissions"`
+	PrizeData             int64                                         `json:"prize_data"`
+	PrizeType             string                                        `json:"prize_type"`
+	PrizeTypePhrase       string                                        `json:"prize_type_phrase"`
+	RequireLikeCount      int64                                         `json:"require_like_count"`
+	RequireTotalLikeCount int64                                         `json:"require_total_like_count"`
+	Type                  string                                        `json:"type"`
+	Winners               []int64                                       `json:"winners"`
 }
 
 // ThreadsCreateResponseThreadContestPermissions represents a component schema.
 type ThreadsCreateResponseThreadContestPermissions struct {
-	CanFinish           bool   `json:"can_finish,omitempty"`
-	CanParticipate      bool   `json:"can_participate,omitempty"`
-	CanParticipateError string `json:"can_participate_error,omitempty"`
-	CanViewUserList     bool   `json:"can_view_user_list,omitempty"`
+	CanFinish           bool   `json:"can_finish"`
+	CanParticipate      bool   `json:"can_participate"`
+	CanParticipateError string `json:"can_participate_error"`
+	CanViewUserList     bool   `json:"can_view_user_list"`
 }
 
 // ThreadsCreateResponseThreadFirstPost represents a component schema.
 type ThreadsCreateResponseThreadFirstPost struct {
-	Links              ThreadsCreateResponseThreadFirstPostLinks       `json:"links,omitempty"`
-	Permissions        ThreadsCreateResponseThreadFirstPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                          `json:"post_body,omitempty"`
-	PostBodyHTML       string                                          `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                                          `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                                           `json:"post_create_date,omitempty"`
-	PostID             int64                                           `json:"post_id,omitempty"`
-	PostIsDeleted      bool                                            `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                                            `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                                            `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                                            `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                           `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                                           `json:"post_update_date,omitempty"`
-	PosterUserID       int64                                           `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                          `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                          `json:"poster_username_html,omitempty"`
-	Signature          string                                          `json:"signature,omitempty"`
-	SignatureHTML      string                                          `json:"signature_html,omitempty"`
-	SignaturePlainText string                                          `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                                           `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                                            `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                                            `json:"user_is_ignored,omitempty"`
+	Links              ThreadsCreateResponseThreadFirstPostLinks       `json:"links"`
+	Permissions        ThreadsCreateResponseThreadFirstPostPermissions `json:"permissions"`
+	PostBody           string                                          `json:"post_body"`
+	PostBodyHTML       string                                          `json:"post_body_html"`
+	PostBodyPlainText  string                                          `json:"post_body_plain_text"`
+	PostCreateDate     int64                                           `json:"post_create_date"`
+	PostID             int64                                           `json:"post_id"`
+	PostIsDeleted      bool                                            `json:"post_is_deleted"`
+	PostIsFirstPost    bool                                            `json:"post_is_first_post"`
+	PostIsLiked        bool                                            `json:"post_is_liked"`
+	PostIsPublished    bool                                            `json:"post_is_published"`
+	PostLikeCount      int64                                           `json:"post_like_count"`
+	PostUpdateDate     int64                                           `json:"post_update_date"`
+	PosterUserID       int64                                           `json:"poster_user_id"`
+	PosterUsername     string                                          `json:"poster_username"`
+	PosterUsernameHTML string                                          `json:"poster_username_html"`
+	Signature          string                                          `json:"signature"`
+	SignatureHTML      string                                          `json:"signature_html"`
+	SignaturePlainText string                                          `json:"signature_plain_text"`
+	ThreadID           int64                                           `json:"thread_id"`
+	ThreadIsDeleted    bool                                            `json:"thread_is_deleted"`
+	UserIsIgnored      bool                                            `json:"user_is_ignored"`
 }
 
 // ThreadsCreateResponseThreadFirstPostLinks represents a component schema.
 type ThreadsCreateResponseThreadFirstPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // ThreadsCreateResponseThreadFirstPostPermissions represents a component schema.
 type ThreadsCreateResponseThreadFirstPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // ThreadsCreateResponseThreadLastPost represents a component schema.
 type ThreadsCreateResponseThreadLastPost struct {
-	Links              ThreadsCreateResponseThreadLastPostLinks       `json:"links,omitempty"`
-	Permissions        ThreadsCreateResponseThreadLastPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                         `json:"post_body,omitempty"`
-	PostBodyHTML       string                                         `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                                         `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                                          `json:"post_create_date,omitempty"`
-	PostID             int64                                          `json:"post_id,omitempty"`
-	PostIsDeleted      bool                                           `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                                           `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                                           `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                                           `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                          `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                                          `json:"post_update_date,omitempty"`
-	PosterUserID       int64                                          `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                         `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                         `json:"poster_username_html,omitempty"`
-	Signature          string                                         `json:"signature,omitempty"`
-	SignatureHTML      string                                         `json:"signature_html,omitempty"`
-	SignaturePlainText string                                         `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                                          `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                                           `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                                           `json:"user_is_ignored,omitempty"`
+	Links              ThreadsCreateResponseThreadLastPostLinks       `json:"links"`
+	Permissions        ThreadsCreateResponseThreadLastPostPermissions `json:"permissions"`
+	PostBody           string                                         `json:"post_body"`
+	PostBodyHTML       string                                         `json:"post_body_html"`
+	PostBodyPlainText  string                                         `json:"post_body_plain_text"`
+	PostCreateDate     int64                                          `json:"post_create_date"`
+	PostID             int64                                          `json:"post_id"`
+	PostIsDeleted      bool                                           `json:"post_is_deleted"`
+	PostIsFirstPost    bool                                           `json:"post_is_first_post"`
+	PostIsLiked        bool                                           `json:"post_is_liked"`
+	PostIsPublished    bool                                           `json:"post_is_published"`
+	PostLikeCount      int64                                          `json:"post_like_count"`
+	PostUpdateDate     int64                                          `json:"post_update_date"`
+	PosterUserID       int64                                          `json:"poster_user_id"`
+	PosterUsername     string                                         `json:"poster_username"`
+	PosterUsernameHTML string                                         `json:"poster_username_html"`
+	Signature          string                                         `json:"signature"`
+	SignatureHTML      string                                         `json:"signature_html"`
+	SignaturePlainText string                                         `json:"signature_plain_text"`
+	ThreadID           int64                                          `json:"thread_id"`
+	ThreadIsDeleted    bool                                           `json:"thread_is_deleted"`
+	UserIsIgnored      bool                                           `json:"user_is_ignored"`
 }
 
 // ThreadsCreateResponseThreadLastPostLinks represents a component schema.
 type ThreadsCreateResponseThreadLastPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // ThreadsCreateResponseThreadLastPostPermissions represents a component schema.
 type ThreadsCreateResponseThreadLastPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // ThreadsCreateResponseThreadLinks represents a component schema.
 type ThreadsCreateResponseThreadLinks struct {
-	Detail            string `json:"detail,omitempty"`
-	FirstPost         string `json:"first_post,omitempty"`
-	FirstPoster       string `json:"first_poster,omitempty"`
-	FirstPosterAvatar string `json:"first_poster_avatar,omitempty"`
-	Followers         string `json:"followers,omitempty"`
-	Forum             string `json:"forum,omitempty"`
-	LastPost          string `json:"last_post,omitempty"`
-	Permalink         string `json:"permalink,omitempty"`
-	Posts             string `json:"posts,omitempty"`
+	Detail            string `json:"detail"`
+	FirstPost         string `json:"first_post"`
+	FirstPoster       string `json:"first_poster"`
+	FirstPosterAvatar string `json:"first_poster_avatar"`
+	Followers         string `json:"followers"`
+	Forum             string `json:"forum"`
+	LastPost          string `json:"last_post"`
+	Permalink         string `json:"permalink"`
+	Posts             string `json:"posts"`
 }
 
 // ThreadsCreateResponseThreadPermissions represents a component schema.
 type ThreadsCreateResponseThreadPermissions struct {
-	Bump      ThreadsCreateResponseThreadPermissionsBump `json:"bump,omitempty"`
-	Delete    bool                                       `json:"delete,omitempty"`
-	Edit      bool                                       `json:"edit,omitempty"`
-	EditTags  bool                                       `json:"edit_tags,omitempty"`
-	EditTitle bool                                       `json:"edit_title,omitempty"`
-	Follow    bool                                       `json:"follow,omitempty"`
-	Post      bool                                       `json:"post,omitempty"`
-	View      bool                                       `json:"view,omitempty"`
+	Bump      ThreadsCreateResponseThreadPermissionsBump `json:"bump"`
+	Delete    bool                                       `json:"delete"`
+	Edit      bool                                       `json:"edit"`
+	EditTags  bool                                       `json:"edit_tags"`
+	EditTitle bool                                       `json:"edit_title"`
+	Follow    bool                                       `json:"follow"`
+	Post      bool                                       `json:"post"`
+	View      bool                                       `json:"view"`
 }
 
 // ThreadsCreateResponseThreadPermissionsBump represents a component schema.
 type ThreadsCreateResponseThreadPermissionsBump struct {
-	AvailableCount    int64 `json:"available_count,omitempty"`
-	Can               bool  `json:"can,omitempty"`
-	Error             any   `json:"error,omitempty"`
-	NextAvailableTime any   `json:"next_available_time,omitempty"`
+	AvailableCount    int64 `json:"available_count"`
+	Can               bool  `json:"can"`
+	Error             any   `json:"error"`
+	NextAvailableTime any   `json:"next_available_time"`
 }
 
 // ThreadsCreateResponseThreadRestrictions represents a component schema.
 type ThreadsCreateResponseThreadRestrictions struct {
-	MaxReplyCount int64 `json:"max_reply_count,omitempty"`
-	ReplyDelay    int64 `json:"reply_delay,omitempty"`
+	MaxReplyCount int64 `json:"max_reply_count"`
+	ReplyDelay    int64 `json:"reply_delay"`
 }
 
 // ThreadsCreateResponseThreadThreadTags represents a component schema.
 type ThreadsCreateResponseThreadThreadTags struct {
-	N193431 string `json:"193431,omitempty"`
-	N206    string `json:"206,omitempty"`
-	N97491  string `json:"97491,omitempty"`
+	N193431 string `json:"193431"`
+	N206    string `json:"206"`
+	N97491  string `json:"97491"`
 }
 
 // ThreadsDeleteResponseSystemInfo represents a component schema.
 type ThreadsDeleteResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsEditResponseSystemInfo represents a component schema.
 type ThreadsEditResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsEditResponseThread represents a component schema.
 type ThreadsEditResponseThread struct {
-	Contest             ThreadsEditResponseThreadContest      `json:"contest,omitempty"`
-	CreatorUserID       int64                                 `json:"creator_user_id,omitempty"`
-	CreatorUsername     string                                `json:"creator_username,omitempty"`
-	CreatorUsernameHTML string                                `json:"creator_username_html,omitempty"`
-	FirstPost           ThreadsEditResponseThreadFirstPost    `json:"first_post,omitempty"`
-	ForumID             int64                                 `json:"forum_id,omitempty"`
-	LastPost            ThreadsEditResponseThreadLastPost     `json:"last_post,omitempty"`
-	Links               ThreadsEditResponseThreadLinks        `json:"links,omitempty"`
-	NodeTitle           string                                `json:"node_title,omitempty"`
-	Permissions         ThreadsEditResponseThreadPermissions  `json:"permissions,omitempty"`
-	Restrictions        ThreadsEditResponseThreadRestrictions `json:"restrictions,omitempty"`
-	ThreadCreateDate    int64                                 `json:"thread_create_date,omitempty"`
-	ThreadID            int64                                 `json:"thread_id,omitempty"`
-	ThreadIsClosed      bool                                  `json:"thread_is_closed,omitempty"`
-	ThreadIsDeleted     bool                                  `json:"thread_is_deleted,omitempty"`
-	ThreadIsFollowed    bool                                  `json:"thread_is_followed,omitempty"`
-	ThreadIsPublished   bool                                  `json:"thread_is_published,omitempty"`
-	ThreadIsStarred     bool                                  `json:"thread_is_starred,omitempty"`
-	ThreadIsSticky      bool                                  `json:"thread_is_sticky,omitempty"`
-	ThreadPostCount     int64                                 `json:"thread_post_count,omitempty"`
-	ThreadPrefixes      []any                                 `json:"thread_prefixes,omitempty"`
-	ThreadTags          ThreadsEditResponseThreadThreadTags   `json:"thread_tags,omitempty"`
-	ThreadTitle         string                                `json:"thread_title,omitempty"`
-	ThreadUpdateDate    int64                                 `json:"thread_update_date,omitempty"`
-	ThreadViewCount     int64                                 `json:"thread_view_count,omitempty"`
-	UserIsIgnored       bool                                  `json:"user_is_ignored,omitempty"`
+	Contest             ThreadsEditResponseThreadContest      `json:"contest"`
+	CreatorUserID       int64                                 `json:"creator_user_id"`
+	CreatorUsername     string                                `json:"creator_username"`
+	CreatorUsernameHTML string                                `json:"creator_username_html"`
+	FirstPost           ThreadsEditResponseThreadFirstPost    `json:"first_post"`
+	ForumID             int64                                 `json:"forum_id"`
+	LastPost            ThreadsEditResponseThreadLastPost     `json:"last_post"`
+	Links               ThreadsEditResponseThreadLinks        `json:"links"`
+	NodeTitle           string                                `json:"node_title"`
+	Permissions         ThreadsEditResponseThreadPermissions  `json:"permissions"`
+	Restrictions        ThreadsEditResponseThreadRestrictions `json:"restrictions"`
+	ThreadCreateDate    int64                                 `json:"thread_create_date"`
+	ThreadID            int64                                 `json:"thread_id"`
+	ThreadIsClosed      bool                                  `json:"thread_is_closed"`
+	ThreadIsDeleted     bool                                  `json:"thread_is_deleted"`
+	ThreadIsFollowed    bool                                  `json:"thread_is_followed"`
+	ThreadIsPublished   bool                                  `json:"thread_is_published"`
+	ThreadIsStarred     bool                                  `json:"thread_is_starred"`
+	ThreadIsSticky      bool                                  `json:"thread_is_sticky"`
+	ThreadPostCount     int64                                 `json:"thread_post_count"`
+	ThreadPrefixes      []any                                 `json:"thread_prefixes"`
+	ThreadTags          ThreadsEditResponseThreadThreadTags   `json:"thread_tags"`
+	ThreadTitle         string                                `json:"thread_title"`
+	ThreadUpdateDate    int64                                 `json:"thread_update_date"`
+	ThreadViewCount     int64                                 `json:"thread_view_count"`
+	UserIsIgnored       bool                                  `json:"user_is_ignored"`
 }
 
 // ThreadsEditResponseThreadContest represents a component schema.
 type ThreadsEditResponseThreadContest struct {
-	AlreadyParticipate    bool                                        `json:"already_participate,omitempty"`
-	ChanceToWin           float64                                     `json:"chance_to_win,omitempty"`
-	CountWinners          int64                                       `json:"count_winners,omitempty"`
-	FinishDate            int64                                       `json:"finish_date,omitempty"`
-	IsFinished            int64                                       `json:"is_finished,omitempty"`
-	IsMoneyPlaces         int64                                       `json:"is_money_places,omitempty"`
-	NeededMembers         int64                                       `json:"needed_members,omitempty"`
-	NowCountMembers       int64                                       `json:"now_count_members,omitempty"`
-	Permissions           ThreadsEditResponseThreadContestPermissions `json:"permissions,omitempty"`
-	PrizeData             int64                                       `json:"prize_data,omitempty"`
-	PrizeType             string                                      `json:"prize_type,omitempty"`
-	PrizeTypePhrase       string                                      `json:"prize_type_phrase,omitempty"`
-	RequireLikeCount      int64                                       `json:"require_like_count,omitempty"`
-	RequireTotalLikeCount int64                                       `json:"require_total_like_count,omitempty"`
-	Type                  string                                      `json:"type,omitempty"`
-	Winners               []int64                                     `json:"winners,omitempty"`
+	AlreadyParticipate    bool                                        `json:"already_participate"`
+	ChanceToWin           float64                                     `json:"chance_to_win"`
+	CountWinners          int64                                       `json:"count_winners"`
+	FinishDate            int64                                       `json:"finish_date"`
+	IsFinished            int64                                       `json:"is_finished"`
+	IsMoneyPlaces         int64                                       `json:"is_money_places"`
+	NeededMembers         int64                                       `json:"needed_members"`
+	NowCountMembers       int64                                       `json:"now_count_members"`
+	Permissions           ThreadsEditResponseThreadContestPermissions `json:"permissions"`
+	PrizeData             int64                                       `json:"prize_data"`
+	PrizeType             string                                      `json:"prize_type"`
+	PrizeTypePhrase       string                                      `json:"prize_type_phrase"`
+	RequireLikeCount      int64                                       `json:"require_like_count"`
+	RequireTotalLikeCount int64                                       `json:"require_total_like_count"`
+	Type                  string                                      `json:"type"`
+	Winners               []int64                                     `json:"winners"`
 }
 
 // ThreadsEditResponseThreadContestPermissions represents a component schema.
 type ThreadsEditResponseThreadContestPermissions struct {
-	CanFinish           bool   `json:"can_finish,omitempty"`
-	CanParticipate      bool   `json:"can_participate,omitempty"`
-	CanParticipateError string `json:"can_participate_error,omitempty"`
-	CanViewUserList     bool   `json:"can_view_user_list,omitempty"`
+	CanFinish           bool   `json:"can_finish"`
+	CanParticipate      bool   `json:"can_participate"`
+	CanParticipateError string `json:"can_participate_error"`
+	CanViewUserList     bool   `json:"can_view_user_list"`
 }
 
 // ThreadsEditResponseThreadFirstPost represents a component schema.
 type ThreadsEditResponseThreadFirstPost struct {
-	Links              ThreadsEditResponseThreadFirstPostLinks       `json:"links,omitempty"`
-	Permissions        ThreadsEditResponseThreadFirstPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                        `json:"post_body,omitempty"`
-	PostBodyHTML       string                                        `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                                        `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                                         `json:"post_create_date,omitempty"`
-	PostID             int64                                         `json:"post_id,omitempty"`
-	PostIsDeleted      bool                                          `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                                          `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                                          `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                                          `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                         `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                                         `json:"post_update_date,omitempty"`
-	PosterUserID       int64                                         `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                        `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                        `json:"poster_username_html,omitempty"`
-	Signature          string                                        `json:"signature,omitempty"`
-	SignatureHTML      string                                        `json:"signature_html,omitempty"`
-	SignaturePlainText string                                        `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                                         `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                                          `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                                          `json:"user_is_ignored,omitempty"`
+	Links              ThreadsEditResponseThreadFirstPostLinks       `json:"links"`
+	Permissions        ThreadsEditResponseThreadFirstPostPermissions `json:"permissions"`
+	PostBody           string                                        `json:"post_body"`
+	PostBodyHTML       string                                        `json:"post_body_html"`
+	PostBodyPlainText  string                                        `json:"post_body_plain_text"`
+	PostCreateDate     int64                                         `json:"post_create_date"`
+	PostID             int64                                         `json:"post_id"`
+	PostIsDeleted      bool                                          `json:"post_is_deleted"`
+	PostIsFirstPost    bool                                          `json:"post_is_first_post"`
+	PostIsLiked        bool                                          `json:"post_is_liked"`
+	PostIsPublished    bool                                          `json:"post_is_published"`
+	PostLikeCount      int64                                         `json:"post_like_count"`
+	PostUpdateDate     int64                                         `json:"post_update_date"`
+	PosterUserID       int64                                         `json:"poster_user_id"`
+	PosterUsername     string                                        `json:"poster_username"`
+	PosterUsernameHTML string                                        `json:"poster_username_html"`
+	Signature          string                                        `json:"signature"`
+	SignatureHTML      string                                        `json:"signature_html"`
+	SignaturePlainText string                                        `json:"signature_plain_text"`
+	ThreadID           int64                                         `json:"thread_id"`
+	ThreadIsDeleted    bool                                          `json:"thread_is_deleted"`
+	UserIsIgnored      bool                                          `json:"user_is_ignored"`
 }
 
 // ThreadsEditResponseThreadFirstPostLinks represents a component schema.
 type ThreadsEditResponseThreadFirstPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // ThreadsEditResponseThreadFirstPostPermissions represents a component schema.
 type ThreadsEditResponseThreadFirstPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // ThreadsEditResponseThreadLastPost represents a component schema.
 type ThreadsEditResponseThreadLastPost struct {
-	Links              ThreadsEditResponseThreadLastPostLinks       `json:"links,omitempty"`
-	Permissions        ThreadsEditResponseThreadLastPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                       `json:"post_body,omitempty"`
-	PostBodyHTML       string                                       `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                                       `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                                        `json:"post_create_date,omitempty"`
-	PostID             int64                                        `json:"post_id,omitempty"`
-	PostIsDeleted      bool                                         `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                                         `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                                         `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                                         `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                        `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                                        `json:"post_update_date,omitempty"`
-	PosterUserID       int64                                        `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                       `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                       `json:"poster_username_html,omitempty"`
-	Signature          string                                       `json:"signature,omitempty"`
-	SignatureHTML      string                                       `json:"signature_html,omitempty"`
-	SignaturePlainText string                                       `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                                        `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                                         `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                                         `json:"user_is_ignored,omitempty"`
+	Links              ThreadsEditResponseThreadLastPostLinks       `json:"links"`
+	Permissions        ThreadsEditResponseThreadLastPostPermissions `json:"permissions"`
+	PostBody           string                                       `json:"post_body"`
+	PostBodyHTML       string                                       `json:"post_body_html"`
+	PostBodyPlainText  string                                       `json:"post_body_plain_text"`
+	PostCreateDate     int64                                        `json:"post_create_date"`
+	PostID             int64                                        `json:"post_id"`
+	PostIsDeleted      bool                                         `json:"post_is_deleted"`
+	PostIsFirstPost    bool                                         `json:"post_is_first_post"`
+	PostIsLiked        bool                                         `json:"post_is_liked"`
+	PostIsPublished    bool                                         `json:"post_is_published"`
+	PostLikeCount      int64                                        `json:"post_like_count"`
+	PostUpdateDate     int64                                        `json:"post_update_date"`
+	PosterUserID       int64                                        `json:"poster_user_id"`
+	PosterUsername     string                                       `json:"poster_username"`
+	PosterUsernameHTML string                                       `json:"poster_username_html"`
+	Signature          string                                       `json:"signature"`
+	SignatureHTML      string                                       `json:"signature_html"`
+	SignaturePlainText string                                       `json:"signature_plain_text"`
+	ThreadID           int64                                        `json:"thread_id"`
+	ThreadIsDeleted    bool                                         `json:"thread_is_deleted"`
+	UserIsIgnored      bool                                         `json:"user_is_ignored"`
 }
 
 // ThreadsEditResponseThreadLastPostLinks represents a component schema.
 type ThreadsEditResponseThreadLastPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // ThreadsEditResponseThreadLastPostPermissions represents a component schema.
 type ThreadsEditResponseThreadLastPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // ThreadsEditResponseThreadLinks represents a component schema.
 type ThreadsEditResponseThreadLinks struct {
-	Detail            string `json:"detail,omitempty"`
-	FirstPost         string `json:"first_post,omitempty"`
-	FirstPoster       string `json:"first_poster,omitempty"`
-	FirstPosterAvatar string `json:"first_poster_avatar,omitempty"`
-	Followers         string `json:"followers,omitempty"`
-	Forum             string `json:"forum,omitempty"`
-	LastPost          string `json:"last_post,omitempty"`
-	Permalink         string `json:"permalink,omitempty"`
-	Posts             string `json:"posts,omitempty"`
+	Detail            string `json:"detail"`
+	FirstPost         string `json:"first_post"`
+	FirstPoster       string `json:"first_poster"`
+	FirstPosterAvatar string `json:"first_poster_avatar"`
+	Followers         string `json:"followers"`
+	Forum             string `json:"forum"`
+	LastPost          string `json:"last_post"`
+	Permalink         string `json:"permalink"`
+	Posts             string `json:"posts"`
 }
 
 // ThreadsEditResponseThreadPermissions represents a component schema.
 type ThreadsEditResponseThreadPermissions struct {
-	Bump      ThreadsEditResponseThreadPermissionsBump `json:"bump,omitempty"`
-	Delete    bool                                     `json:"delete,omitempty"`
-	Edit      bool                                     `json:"edit,omitempty"`
-	EditTags  bool                                     `json:"edit_tags,omitempty"`
-	EditTitle bool                                     `json:"edit_title,omitempty"`
-	Follow    bool                                     `json:"follow,omitempty"`
-	Post      bool                                     `json:"post,omitempty"`
-	View      bool                                     `json:"view,omitempty"`
+	Bump      ThreadsEditResponseThreadPermissionsBump `json:"bump"`
+	Delete    bool                                     `json:"delete"`
+	Edit      bool                                     `json:"edit"`
+	EditTags  bool                                     `json:"edit_tags"`
+	EditTitle bool                                     `json:"edit_title"`
+	Follow    bool                                     `json:"follow"`
+	Post      bool                                     `json:"post"`
+	View      bool                                     `json:"view"`
 }
 
 // ThreadsEditResponseThreadPermissionsBump represents a component schema.
 type ThreadsEditResponseThreadPermissionsBump struct {
-	AvailableCount    int64 `json:"available_count,omitempty"`
-	Can               bool  `json:"can,omitempty"`
-	Error             any   `json:"error,omitempty"`
-	NextAvailableTime any   `json:"next_available_time,omitempty"`
+	AvailableCount    int64 `json:"available_count"`
+	Can               bool  `json:"can"`
+	Error             any   `json:"error"`
+	NextAvailableTime any   `json:"next_available_time"`
 }
 
 // ThreadsEditResponseThreadRestrictions represents a component schema.
 type ThreadsEditResponseThreadRestrictions struct {
-	MaxReplyCount int64 `json:"max_reply_count,omitempty"`
-	ReplyDelay    int64 `json:"reply_delay,omitempty"`
+	MaxReplyCount int64 `json:"max_reply_count"`
+	ReplyDelay    int64 `json:"reply_delay"`
 }
 
 // ThreadsEditResponseThreadThreadTags represents a component schema.
 type ThreadsEditResponseThreadThreadTags struct {
-	N193431 string `json:"193431,omitempty"`
-	N206    string `json:"206,omitempty"`
-	N97491  string `json:"97491,omitempty"`
+	N193431 string `json:"193431"`
+	N206    string `json:"206"`
+	N97491  string `json:"97491"`
 }
 
 // ThreadsFinishResponseSystemInfo represents a component schema.
 type ThreadsFinishResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsFollowResponseSystemInfo represents a component schema.
 type ThreadsFollowResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsFollowedResponseSystemInfo represents a component schema.
 type ThreadsFollowedResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsFollowersResponseSystemInfo represents a component schema.
 type ThreadsFollowersResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsGetResponseSystemInfo represents a component schema.
 type ThreadsGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsGetResponseThread represents a component schema.
 type ThreadsGetResponseThread struct {
-	Contest             ThreadsGetResponseThreadContest      `json:"contest,omitempty"`
-	CreatorUserID       int64                                `json:"creator_user_id,omitempty"`
-	CreatorUsername     string                               `json:"creator_username,omitempty"`
-	CreatorUsernameHTML string                               `json:"creator_username_html,omitempty"`
-	FirstPost           ThreadsGetResponseThreadFirstPost    `json:"first_post,omitempty"`
-	ForumID             int64                                `json:"forum_id,omitempty"`
-	LastPost            ThreadsGetResponseThreadLastPost     `json:"last_post,omitempty"`
-	Links               ThreadsGetResponseThreadLinks        `json:"links,omitempty"`
-	NodeTitle           string                               `json:"node_title,omitempty"`
-	Permissions         ThreadsGetResponseThreadPermissions  `json:"permissions,omitempty"`
-	Restrictions        ThreadsGetResponseThreadRestrictions `json:"restrictions,omitempty"`
-	ThreadCreateDate    int64                                `json:"thread_create_date,omitempty"`
-	ThreadID            int64                                `json:"thread_id,omitempty"`
-	ThreadIsClosed      bool                                 `json:"thread_is_closed,omitempty"`
-	ThreadIsDeleted     bool                                 `json:"thread_is_deleted,omitempty"`
-	ThreadIsFollowed    bool                                 `json:"thread_is_followed,omitempty"`
-	ThreadIsPublished   bool                                 `json:"thread_is_published,omitempty"`
-	ThreadIsStarred     bool                                 `json:"thread_is_starred,omitempty"`
-	ThreadIsSticky      bool                                 `json:"thread_is_sticky,omitempty"`
-	ThreadPostCount     int64                                `json:"thread_post_count,omitempty"`
-	ThreadPrefixes      []any                                `json:"thread_prefixes,omitempty"`
-	ThreadTags          ThreadsGetResponseThreadThreadTags   `json:"thread_tags,omitempty"`
-	ThreadTitle         string                               `json:"thread_title,omitempty"`
-	ThreadUpdateDate    int64                                `json:"thread_update_date,omitempty"`
-	ThreadViewCount     int64                                `json:"thread_view_count,omitempty"`
-	UserIsIgnored       bool                                 `json:"user_is_ignored,omitempty"`
+	Contest             ThreadsGetResponseThreadContest      `json:"contest"`
+	CreatorUserID       int64                                `json:"creator_user_id"`
+	CreatorUsername     string                               `json:"creator_username"`
+	CreatorUsernameHTML string                               `json:"creator_username_html"`
+	FirstPost           ThreadsGetResponseThreadFirstPost    `json:"first_post"`
+	ForumID             int64                                `json:"forum_id"`
+	LastPost            ThreadsGetResponseThreadLastPost     `json:"last_post"`
+	Links               ThreadsGetResponseThreadLinks        `json:"links"`
+	NodeTitle           string                               `json:"node_title"`
+	Permissions         ThreadsGetResponseThreadPermissions  `json:"permissions"`
+	Restrictions        ThreadsGetResponseThreadRestrictions `json:"restrictions"`
+	ThreadCreateDate    int64                                `json:"thread_create_date"`
+	ThreadID            int64                                `json:"thread_id"`
+	ThreadIsClosed      bool                                 `json:"thread_is_closed"`
+	ThreadIsDeleted     bool                                 `json:"thread_is_deleted"`
+	ThreadIsFollowed    bool                                 `json:"thread_is_followed"`
+	ThreadIsPublished   bool                                 `json:"thread_is_published"`
+	ThreadIsStarred     bool                                 `json:"thread_is_starred"`
+	ThreadIsSticky      bool                                 `json:"thread_is_sticky"`
+	ThreadPostCount     int64                                `json:"thread_post_count"`
+	ThreadPrefixes      []any                                `json:"thread_prefixes"`
+	ThreadTags          ThreadsGetResponseThreadThreadTags   `json:"thread_tags"`
+	ThreadTitle         string                               `json:"thread_title"`
+	ThreadUpdateDate    int64                                `json:"thread_update_date"`
+	ThreadViewCount     int64                                `json:"thread_view_count"`
+	UserIsIgnored       bool                                 `json:"user_is_ignored"`
 }
 
 // ThreadsGetResponseThreadContest represents a component schema.
 type ThreadsGetResponseThreadContest struct {
-	AlreadyParticipate    bool                                       `json:"already_participate,omitempty"`
-	ChanceToWin           float64                                    `json:"chance_to_win,omitempty"`
-	CountWinners          int64                                      `json:"count_winners,omitempty"`
-	FinishDate            int64                                      `json:"finish_date,omitempty"`
-	IsFinished            int64                                      `json:"is_finished,omitempty"`
-	IsMoneyPlaces         int64                                      `json:"is_money_places,omitempty"`
-	NeededMembers         int64                                      `json:"needed_members,omitempty"`
-	NowCountMembers       int64                                      `json:"now_count_members,omitempty"`
-	Permissions           ThreadsGetResponseThreadContestPermissions `json:"permissions,omitempty"`
-	PrizeData             int64                                      `json:"prize_data,omitempty"`
-	PrizeType             string                                     `json:"prize_type,omitempty"`
-	PrizeTypePhrase       string                                     `json:"prize_type_phrase,omitempty"`
-	RequireLikeCount      int64                                      `json:"require_like_count,omitempty"`
-	RequireTotalLikeCount int64                                      `json:"require_total_like_count,omitempty"`
-	Type                  string                                     `json:"type,omitempty"`
-	Winners               []int64                                    `json:"winners,omitempty"`
+	AlreadyParticipate    bool                                       `json:"already_participate"`
+	ChanceToWin           float64                                    `json:"chance_to_win"`
+	CountWinners          int64                                      `json:"count_winners"`
+	FinishDate            int64                                      `json:"finish_date"`
+	IsFinished            int64                                      `json:"is_finished"`
+	IsMoneyPlaces         int64                                      `json:"is_money_places"`
+	NeededMembers         int64                                      `json:"needed_members"`
+	NowCountMembers       int64                                      `json:"now_count_members"`
+	Permissions           ThreadsGetResponseThreadContestPermissions `json:"permissions"`
+	PrizeData             int64                                      `json:"prize_data"`
+	PrizeType             string                                     `json:"prize_type"`
+	PrizeTypePhrase       string                                     `json:"prize_type_phrase"`
+	RequireLikeCount      int64                                      `json:"require_like_count"`
+	RequireTotalLikeCount int64                                      `json:"require_total_like_count"`
+	Type                  string                                     `json:"type"`
+	Winners               []int64                                    `json:"winners"`
 }
 
 // ThreadsGetResponseThreadContestPermissions represents a component schema.
 type ThreadsGetResponseThreadContestPermissions struct {
-	CanFinish           bool   `json:"can_finish,omitempty"`
-	CanParticipate      bool   `json:"can_participate,omitempty"`
-	CanParticipateError string `json:"can_participate_error,omitempty"`
-	CanViewUserList     bool   `json:"can_view_user_list,omitempty"`
+	CanFinish           bool   `json:"can_finish"`
+	CanParticipate      bool   `json:"can_participate"`
+	CanParticipateError string `json:"can_participate_error"`
+	CanViewUserList     bool   `json:"can_view_user_list"`
 }
 
 // ThreadsGetResponseThreadFirstPost represents a component schema.
 type ThreadsGetResponseThreadFirstPost struct {
-	Links              ThreadsGetResponseThreadFirstPostLinks       `json:"links,omitempty"`
-	Permissions        ThreadsGetResponseThreadFirstPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                       `json:"post_body,omitempty"`
-	PostBodyHTML       string                                       `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                                       `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                                        `json:"post_create_date,omitempty"`
-	PostID             int64                                        `json:"post_id,omitempty"`
-	PostIsDeleted      bool                                         `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                                         `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                                         `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                                         `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                        `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                                        `json:"post_update_date,omitempty"`
-	PosterUserID       int64                                        `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                       `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                       `json:"poster_username_html,omitempty"`
-	Signature          string                                       `json:"signature,omitempty"`
-	SignatureHTML      string                                       `json:"signature_html,omitempty"`
-	SignaturePlainText string                                       `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                                        `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                                         `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                                         `json:"user_is_ignored,omitempty"`
+	Links              ThreadsGetResponseThreadFirstPostLinks       `json:"links"`
+	Permissions        ThreadsGetResponseThreadFirstPostPermissions `json:"permissions"`
+	PostBody           string                                       `json:"post_body"`
+	PostBodyHTML       string                                       `json:"post_body_html"`
+	PostBodyPlainText  string                                       `json:"post_body_plain_text"`
+	PostCreateDate     int64                                        `json:"post_create_date"`
+	PostID             int64                                        `json:"post_id"`
+	PostIsDeleted      bool                                         `json:"post_is_deleted"`
+	PostIsFirstPost    bool                                         `json:"post_is_first_post"`
+	PostIsLiked        bool                                         `json:"post_is_liked"`
+	PostIsPublished    bool                                         `json:"post_is_published"`
+	PostLikeCount      int64                                        `json:"post_like_count"`
+	PostUpdateDate     int64                                        `json:"post_update_date"`
+	PosterUserID       int64                                        `json:"poster_user_id"`
+	PosterUsername     string                                       `json:"poster_username"`
+	PosterUsernameHTML string                                       `json:"poster_username_html"`
+	Signature          string                                       `json:"signature"`
+	SignatureHTML      string                                       `json:"signature_html"`
+	SignaturePlainText string                                       `json:"signature_plain_text"`
+	ThreadID           int64                                        `json:"thread_id"`
+	ThreadIsDeleted    bool                                         `json:"thread_is_deleted"`
+	UserIsIgnored      bool                                         `json:"user_is_ignored"`
 }
 
 // ThreadsGetResponseThreadFirstPostLinks represents a component schema.
 type ThreadsGetResponseThreadFirstPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // ThreadsGetResponseThreadFirstPostPermissions represents a component schema.
 type ThreadsGetResponseThreadFirstPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // ThreadsGetResponseThreadLastPost represents a component schema.
 type ThreadsGetResponseThreadLastPost struct {
-	Links              ThreadsGetResponseThreadLastPostLinks       `json:"links,omitempty"`
-	Permissions        ThreadsGetResponseThreadLastPostPermissions `json:"permissions,omitempty"`
-	PostBody           string                                      `json:"post_body,omitempty"`
-	PostBodyHTML       string                                      `json:"post_body_html,omitempty"`
-	PostBodyPlainText  string                                      `json:"post_body_plain_text,omitempty"`
-	PostCreateDate     int64                                       `json:"post_create_date,omitempty"`
-	PostID             int64                                       `json:"post_id,omitempty"`
-	PostIsDeleted      bool                                        `json:"post_is_deleted,omitempty"`
-	PostIsFirstPost    bool                                        `json:"post_is_first_post,omitempty"`
-	PostIsLiked        bool                                        `json:"post_is_liked,omitempty"`
-	PostIsPublished    bool                                        `json:"post_is_published,omitempty"`
-	PostLikeCount      int64                                       `json:"post_like_count,omitempty"`
-	PostUpdateDate     int64                                       `json:"post_update_date,omitempty"`
-	PosterUserID       int64                                       `json:"poster_user_id,omitempty"`
-	PosterUsername     string                                      `json:"poster_username,omitempty"`
-	PosterUsernameHTML string                                      `json:"poster_username_html,omitempty"`
-	Signature          string                                      `json:"signature,omitempty"`
-	SignatureHTML      string                                      `json:"signature_html,omitempty"`
-	SignaturePlainText string                                      `json:"signature_plain_text,omitempty"`
-	ThreadID           int64                                       `json:"thread_id,omitempty"`
-	ThreadIsDeleted    bool                                        `json:"thread_is_deleted,omitempty"`
-	UserIsIgnored      bool                                        `json:"user_is_ignored,omitempty"`
+	Links              ThreadsGetResponseThreadLastPostLinks       `json:"links"`
+	Permissions        ThreadsGetResponseThreadLastPostPermissions `json:"permissions"`
+	PostBody           string                                      `json:"post_body"`
+	PostBodyHTML       string                                      `json:"post_body_html"`
+	PostBodyPlainText  string                                      `json:"post_body_plain_text"`
+	PostCreateDate     int64                                       `json:"post_create_date"`
+	PostID             int64                                       `json:"post_id"`
+	PostIsDeleted      bool                                        `json:"post_is_deleted"`
+	PostIsFirstPost    bool                                        `json:"post_is_first_post"`
+	PostIsLiked        bool                                        `json:"post_is_liked"`
+	PostIsPublished    bool                                        `json:"post_is_published"`
+	PostLikeCount      int64                                       `json:"post_like_count"`
+	PostUpdateDate     int64                                       `json:"post_update_date"`
+	PosterUserID       int64                                       `json:"poster_user_id"`
+	PosterUsername     string                                      `json:"poster_username"`
+	PosterUsernameHTML string                                      `json:"poster_username_html"`
+	Signature          string                                      `json:"signature"`
+	SignatureHTML      string                                      `json:"signature_html"`
+	SignaturePlainText string                                      `json:"signature_plain_text"`
+	ThreadID           int64                                       `json:"thread_id"`
+	ThreadIsDeleted    bool                                        `json:"thread_is_deleted"`
+	UserIsIgnored      bool                                        `json:"user_is_ignored"`
 }
 
 // ThreadsGetResponseThreadLastPostLinks represents a component schema.
 type ThreadsGetResponseThreadLastPostLinks struct {
-	Detail       string `json:"detail,omitempty"`
-	Likes        string `json:"likes,omitempty"`
-	Permalink    string `json:"permalink,omitempty"`
-	Poster       string `json:"poster,omitempty"`
-	PosterAvatar string `json:"poster_avatar,omitempty"`
-	Report       string `json:"report,omitempty"`
-	Thread       string `json:"thread,omitempty"`
+	Detail       string `json:"detail"`
+	Likes        string `json:"likes"`
+	Permalink    string `json:"permalink"`
+	Poster       string `json:"poster"`
+	PosterAvatar string `json:"poster_avatar"`
+	Report       string `json:"report"`
+	Thread       string `json:"thread"`
 }
 
 // ThreadsGetResponseThreadLastPostPermissions represents a component schema.
 type ThreadsGetResponseThreadLastPostPermissions struct {
-	Delete bool `json:"delete,omitempty"`
-	Edit   bool `json:"edit,omitempty"`
-	Like   bool `json:"like,omitempty"`
-	Reply  bool `json:"reply,omitempty"`
-	Report bool `json:"report,omitempty"`
-	View   bool `json:"view,omitempty"`
+	Delete bool `json:"delete"`
+	Edit   bool `json:"edit"`
+	Like   bool `json:"like"`
+	Reply  bool `json:"reply"`
+	Report bool `json:"report"`
+	View   bool `json:"view"`
 }
 
 // ThreadsGetResponseThreadLinks represents a component schema.
 type ThreadsGetResponseThreadLinks struct {
-	Detail            string `json:"detail,omitempty"`
-	FirstPost         string `json:"first_post,omitempty"`
-	FirstPoster       string `json:"first_poster,omitempty"`
-	FirstPosterAvatar string `json:"first_poster_avatar,omitempty"`
-	Followers         string `json:"followers,omitempty"`
-	Forum             string `json:"forum,omitempty"`
-	LastPost          string `json:"last_post,omitempty"`
-	Permalink         string `json:"permalink,omitempty"`
-	Posts             string `json:"posts,omitempty"`
+	Detail            string `json:"detail"`
+	FirstPost         string `json:"first_post"`
+	FirstPoster       string `json:"first_poster"`
+	FirstPosterAvatar string `json:"first_poster_avatar"`
+	Followers         string `json:"followers"`
+	Forum             string `json:"forum"`
+	LastPost          string `json:"last_post"`
+	Permalink         string `json:"permalink"`
+	Posts             string `json:"posts"`
 }
 
 // ThreadsGetResponseThreadPermissions represents a component schema.
 type ThreadsGetResponseThreadPermissions struct {
-	Bump      ThreadsGetResponseThreadPermissionsBump `json:"bump,omitempty"`
-	Delete    bool                                    `json:"delete,omitempty"`
-	Edit      bool                                    `json:"edit,omitempty"`
-	EditTags  bool                                    `json:"edit_tags,omitempty"`
-	EditTitle bool                                    `json:"edit_title,omitempty"`
-	Follow    bool                                    `json:"follow,omitempty"`
-	Post      bool                                    `json:"post,omitempty"`
-	View      bool                                    `json:"view,omitempty"`
+	Bump      ThreadsGetResponseThreadPermissionsBump `json:"bump"`
+	Delete    bool                                    `json:"delete"`
+	Edit      bool                                    `json:"edit"`
+	EditTags  bool                                    `json:"edit_tags"`
+	EditTitle bool                                    `json:"edit_title"`
+	Follow    bool                                    `json:"follow"`
+	Post      bool                                    `json:"post"`
+	View      bool                                    `json:"view"`
 }
 
 // ThreadsGetResponseThreadPermissionsBump represents a component schema.
 type ThreadsGetResponseThreadPermissionsBump struct {
-	AvailableCount    int64 `json:"available_count,omitempty"`
-	Can               bool  `json:"can,omitempty"`
-	Error             any   `json:"error,omitempty"`
-	NextAvailableTime any   `json:"next_available_time,omitempty"`
+	AvailableCount    int64 `json:"available_count"`
+	Can               bool  `json:"can"`
+	Error             any   `json:"error"`
+	NextAvailableTime any   `json:"next_available_time"`
 }
 
 // ThreadsGetResponseThreadRestrictions represents a component schema.
 type ThreadsGetResponseThreadRestrictions struct {
-	MaxReplyCount int64 `json:"max_reply_count,omitempty"`
-	ReplyDelay    int64 `json:"reply_delay,omitempty"`
+	MaxReplyCount int64 `json:"max_reply_count"`
+	ReplyDelay    int64 `json:"reply_delay"`
 }
 
 // ThreadsGetResponseThreadThreadTags represents a component schema.
 type ThreadsGetResponseThreadThreadTags struct {
-	N193431 string `json:"193431,omitempty"`
-	N206    string `json:"206,omitempty"`
-	N97491  string `json:"97491,omitempty"`
+	N193431 string `json:"193431"`
+	N206    string `json:"206"`
+	N97491  string `json:"97491"`
 }
 
 // ThreadsHideResponseSystemInfo represents a component schema.
 type ThreadsHideResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsListResponseForum represents a component schema.
 type ThreadsListResponseForum struct {
-	ForumDescription       string                              `json:"forum_description,omitempty"`
-	ForumID                int64                               `json:"forum_id,omitempty"`
-	ForumIsFollowed        bool                                `json:"forum_is_followed,omitempty"`
-	ForumPostCount         int64                               `json:"forum_post_count,omitempty"`
-	ForumPrefixes          []any                               `json:"forum_prefixes,omitempty"`
-	ForumThreadCount       int64                               `json:"forum_thread_count,omitempty"`
-	ForumTitle             string                              `json:"forum_title,omitempty"`
-	Links                  ThreadsListResponseForumLinks       `json:"links,omitempty"`
-	Permissions            ThreadsListResponseForumPermissions `json:"permissions,omitempty"`
-	ThreadDefaultPrefixID  int64                               `json:"thread_default_prefix_id,omitempty"`
-	ThreadPrefixIsRequired bool                                `json:"thread_prefix_is_required,omitempty"`
+	ForumDescription       string                              `json:"forum_description"`
+	ForumID                int64                               `json:"forum_id"`
+	ForumIsFollowed        bool                                `json:"forum_is_followed"`
+	ForumPostCount         int64                               `json:"forum_post_count"`
+	ForumPrefixes          []any                               `json:"forum_prefixes"`
+	ForumThreadCount       int64                               `json:"forum_thread_count"`
+	ForumTitle             string                              `json:"forum_title"`
+	Links                  ThreadsListResponseForumLinks       `json:"links"`
+	Permissions            ThreadsListResponseForumPermissions `json:"permissions"`
+	ThreadDefaultPrefixID  int64                               `json:"thread_default_prefix_id"`
+	ThreadPrefixIsRequired bool                                `json:"thread_prefix_is_required"`
 }
 
 // ThreadsListResponseForumLinks represents a component schema.
 type ThreadsListResponseForumLinks struct {
-	Detail        string `json:"detail,omitempty"`
-	Followers     string `json:"followers,omitempty"`
-	Permalink     string `json:"permalink,omitempty"`
-	SubCategories string `json:"sub-categories,omitempty"`
-	SubForums     string `json:"sub-forums,omitempty"`
-	Threads       string `json:"threads,omitempty"`
+	Detail        string `json:"detail"`
+	Followers     string `json:"followers"`
+	Permalink     string `json:"permalink"`
+	SubCategories string `json:"sub-categories"`
+	SubForums     string `json:"sub-forums"`
+	Threads       string `json:"threads"`
 }
 
 // ThreadsListResponseForumPermissions represents a component schema.
 type ThreadsListResponseForumPermissions struct {
-	CreateThread     bool `json:"create_thread,omitempty"`
-	Delete           bool `json:"delete,omitempty"`
-	Edit             bool `json:"edit,omitempty"`
-	Follow           bool `json:"follow,omitempty"`
-	TagThread        bool `json:"tag_thread,omitempty"`
-	UploadAttachment bool `json:"upload_attachment,omitempty"`
-	View             bool `json:"view,omitempty"`
+	CreateThread     bool `json:"create_thread"`
+	Delete           bool `json:"delete"`
+	Edit             bool `json:"edit"`
+	Follow           bool `json:"follow"`
+	TagThread        bool `json:"tag_thread"`
+	UploadAttachment bool `json:"upload_attachment"`
+	View             bool `json:"view"`
 }
 
 // ThreadsListResponseLinks represents a component schema.
 type ThreadsListResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
 }
 
 // ThreadsListResponseSystemInfo represents a component schema.
 type ThreadsListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsMoveResponseSystemInfo represents a component schema.
 type ThreadsMoveResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsNavigationResponseSystemInfo represents a component schema.
 type ThreadsNavigationResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsPollGetResponsePoll represents a component schema.
 type ThreadsPollGetResponsePoll struct {
-	Links         ThreadsPollGetResponsePollLinks       `json:"links,omitempty"`
-	Permissions   ThreadsPollGetResponsePollPermissions `json:"permissions,omitempty"`
-	PollID        int64                                 `json:"poll_id,omitempty"`
-	PollIsOpen    bool                                  `json:"poll_is_open,omitempty"`
-	PollIsVoted   bool                                  `json:"poll_is_voted,omitempty"`
-	PollMaxVotes  int64                                 `json:"poll_max_votes,omitempty"`
-	PollQuestion  string                                `json:"poll_question,omitempty"`
-	PollVoteCount int64                                 `json:"poll_vote_count,omitempty"`
-	Responses     []any                                 `json:"responses,omitempty"`
+	Links         ThreadsPollGetResponsePollLinks       `json:"links"`
+	Permissions   ThreadsPollGetResponsePollPermissions `json:"permissions"`
+	PollID        int64                                 `json:"poll_id"`
+	PollIsOpen    bool                                  `json:"poll_is_open"`
+	PollIsVoted   bool                                  `json:"poll_is_voted"`
+	PollMaxVotes  int64                                 `json:"poll_max_votes"`
+	PollQuestion  string                                `json:"poll_question"`
+	PollVoteCount int64                                 `json:"poll_vote_count"`
+	Responses     []any                                 `json:"responses"`
 }
 
 // ThreadsPollGetResponsePollLinks represents a component schema.
 type ThreadsPollGetResponsePollLinks struct {
-	Vote string `json:"vote,omitempty"`
+	Vote string `json:"vote"`
 }
 
 // ThreadsPollGetResponsePollPermissions represents a component schema.
 type ThreadsPollGetResponsePollPermissions struct {
-	Result bool `json:"result,omitempty"`
-	Vote   bool `json:"vote,omitempty"`
+	Result bool `json:"result"`
+	Vote   bool `json:"vote"`
 }
 
 // ThreadsPollGetResponseSystemInfo represents a component schema.
 type ThreadsPollGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsPollVoteResponseSystemInfo represents a component schema.
 type ThreadsPollVoteResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsRecentResponseSystemInfo represents a component schema.
 type ThreadsRecentResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsStarResponseSystemInfo represents a component schema.
 type ThreadsStarResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsUnfollowResponseSystemInfo represents a component schema.
 type ThreadsUnfollowResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsUnreadResponseSystemInfo represents a component schema.
 type ThreadsUnreadResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // ThreadsUnstarResponseSystemInfo represents a component schema.
 type ThreadsUnstarResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersAvatarCropResponseSystemInfo represents a component schema.
 type UsersAvatarCropResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersAvatarDeleteResponseSystemInfo represents a component schema.
 type UsersAvatarDeleteResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersAvatarUploadResponseSystemInfo represents a component schema.
 type UsersAvatarUploadResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersBackgroundCropResponseSystemInfo represents a component schema.
 type UsersBackgroundCropResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersBackgroundDeleteResponseSystemInfo represents a component schema.
 type UsersBackgroundDeleteResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersBackgroundUploadResponseSystemInfo represents a component schema.
 type UsersBackgroundUploadResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersClaimsResponseStats represents a component schema.
 type UsersClaimsResponseStats struct {
-	Market   UsersClaimsResponseStatsMarket   `json:"market,omitempty"`
-	NoMarket UsersClaimsResponseStatsNoMarket `json:"noMarket,omitempty"`
+	Market   UsersClaimsResponseStatsMarket   `json:"market"`
+	NoMarket UsersClaimsResponseStatsNoMarket `json:"noMarket"`
 }
 
 // UsersClaimsResponseStatsMarket represents a component schema.
 type UsersClaimsResponseStatsMarket struct {
-	Rejected int64 `json:"rejected,omitempty"`
-	Settled  int64 `json:"settled,omitempty"`
-	Solved   int64 `json:"solved,omitempty"`
-	Total    int64 `json:"total,omitempty"`
+	Rejected int64 `json:"rejected"`
+	Settled  int64 `json:"settled"`
+	Solved   int64 `json:"solved"`
+	Total    int64 `json:"total"`
 }
 
 // UsersClaimsResponseStatsNoMarket represents a component schema.
 type UsersClaimsResponseStatsNoMarket struct {
-	Rejected int64 `json:"rejected,omitempty"`
-	Settled  int64 `json:"settled,omitempty"`
-	Solved   int64 `json:"solved,omitempty"`
-	Total    int64 `json:"total,omitempty"`
+	Rejected int64 `json:"rejected"`
+	Settled  int64 `json:"settled"`
+	Solved   int64 `json:"solved"`
+	Total    int64 `json:"total"`
 }
 
 // UsersClaimsResponseSystemInfo represents a component schema.
 type UsersClaimsResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersContentsResponseLinks represents a component schema.
 type UsersContentsResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
 }
 
 // UsersContentsResponseSystemInfo represents a component schema.
 type UsersContentsResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersContentsResponseUser represents a component schema.
 type UsersContentsResponseUser struct {
-	Balance                     string                                   `json:"balance,omitempty"`
-	Banner                      string                                   `json:"banner,omitempty"`
-	Birthday                    UsersContentsResponseUserBirthday        `json:"birthday,omitempty"`
-	ContestCount                int64                                    `json:"contest_count,omitempty"`
-	ConvWelcomeMessage          string                                   `json:"conv_welcome_message,omitempty"`
-	CuratorTitles               []string                                 `json:"curator_titles,omitempty"`
-	Currency                    string                                   `json:"currency,omitempty"`
-	CustomTitle                 string                                   `json:"custom_title,omitempty"`
-	DisplayBannerID             int64                                    `json:"display_banner_id,omitempty"`
-	DisplayIconGroupID          int64                                    `json:"display_icon_group_id,omitempty"`
-	EditPermissions             UsersContentsResponseUserEditPermissions `json:"edit_permissions,omitempty"`
-	Fields                      []any                                    `json:"fields,omitempty"`
-	Hold                        string                                   `json:"hold,omitempty"`
-	IsBanned                    int64                                    `json:"is_banned,omitempty"`
-	Links                       UsersContentsResponseUserLinks           `json:"links,omitempty"`
-	Permissions                 UsersContentsResponseUserPermissions     `json:"permissions,omitempty"`
-	SecretAnswerFirstLetter     string                                   `json:"secret_answer_first_letter,omitempty"`
-	SecretAnswerRendered        string                                   `json:"secret_answer_rendered,omitempty"`
-	SelfPermissions             UsersContentsResponseUserSelfPermissions `json:"self_permissions,omitempty"`
-	ShortLink                   string                                   `json:"short_link,omitempty"`
-	TrophyCount                 int64                                    `json:"trophy_count,omitempty"`
-	UserDeposit                 int64                                    `json:"user_deposit,omitempty"`
-	UserEmail                   string                                   `json:"user_email,omitempty"`
-	UserExternalAuthentications []any                                    `json:"user_external_authentications,omitempty"`
-	UserFollowers               UsersContentsResponseUserUserFollowers   `json:"user_followers,omitempty"`
-	UserFollowing               UsersContentsResponseUserUserFollowing   `json:"user_following,omitempty"`
-	UserGroupID                 int64                                    `json:"user_group_id,omitempty"`
-	UserGroups                  []any                                    `json:"user_groups,omitempty"`
-	UserID                      int64                                    `json:"user_id,omitempty"`
-	UserIsFollowed              bool                                     `json:"user_is_followed,omitempty"`
-	UserIsIgnored               bool                                     `json:"user_is_ignored,omitempty"`
-	UserIsValid                 bool                                     `json:"user_is_valid,omitempty"`
-	UserIsVerified              bool                                     `json:"user_is_verified,omitempty"`
-	UserIsVisitor               bool                                     `json:"user_is_visitor,omitempty"`
-	UserLastSeenDate            int64                                    `json:"user_last_seen_date,omitempty"`
-	UserLike2Count              int64                                    `json:"user_like2_count,omitempty"`
-	UserLikeCount               int64                                    `json:"user_like_count,omitempty"`
-	UserMessageCount            int64                                    `json:"user_message_count,omitempty"`
-	UserRegisterDate            int64                                    `json:"user_register_date,omitempty"`
-	UserTimezoneOffset          int64                                    `json:"user_timezone_offset,omitempty"`
-	UserTitle                   string                                   `json:"user_title,omitempty"`
-	UserUnreadConversationCount int64                                    `json:"user_unread_conversation_count,omitempty"`
-	UserUnreadNotificationCount int64                                    `json:"user_unread_notification_count,omitempty"`
-	Username                    string                                   `json:"username,omitempty"`
-	UsernameHTML                string                                   `json:"username_html,omitempty"`
+	Balance                     string                                   `json:"balance"`
+	Banner                      string                                   `json:"banner"`
+	Birthday                    UsersContentsResponseUserBirthday        `json:"birthday"`
+	ContestCount                int64                                    `json:"contest_count"`
+	ConvWelcomeMessage          string                                   `json:"conv_welcome_message"`
+	CuratorTitles               []string                                 `json:"curator_titles"`
+	Currency                    string                                   `json:"currency"`
+	CustomTitle                 string                                   `json:"custom_title"`
+	DisplayBannerID             int64                                    `json:"display_banner_id"`
+	DisplayIconGroupID          int64                                    `json:"display_icon_group_id"`
+	EditPermissions             UsersContentsResponseUserEditPermissions `json:"edit_permissions"`
+	Fields                      []any                                    `json:"fields"`
+	Hold                        string                                   `json:"hold"`
+	IsBanned                    int64                                    `json:"is_banned"`
+	Links                       UsersContentsResponseUserLinks           `json:"links"`
+	Permissions                 UsersContentsResponseUserPermissions     `json:"permissions"`
+	SecretAnswerFirstLetter     string                                   `json:"secret_answer_first_letter"`
+	SecretAnswerRendered        string                                   `json:"secret_answer_rendered"`
+	SelfPermissions             UsersContentsResponseUserSelfPermissions `json:"self_permissions"`
+	ShortLink                   string                                   `json:"short_link"`
+	TrophyCount                 int64                                    `json:"trophy_count"`
+	UserDeposit                 int64                                    `json:"user_deposit"`
+	UserEmail                   string                                   `json:"user_email"`
+	UserExternalAuthentications []any                                    `json:"user_external_authentications"`
+	UserFollowers               UsersContentsResponseUserUserFollowers   `json:"user_followers"`
+	UserFollowing               UsersContentsResponseUserUserFollowing   `json:"user_following"`
+	UserGroupID                 int64                                    `json:"user_group_id"`
+	UserGroups                  []any                                    `json:"user_groups"`
+	UserID                      int64                                    `json:"user_id"`
+	UserIsFollowed              bool                                     `json:"user_is_followed"`
+	UserIsIgnored               bool                                     `json:"user_is_ignored"`
+	UserIsValid                 bool                                     `json:"user_is_valid"`
+	UserIsVerified              bool                                     `json:"user_is_verified"`
+	UserIsVisitor               bool                                     `json:"user_is_visitor"`
+	UserLastSeenDate            int64                                    `json:"user_last_seen_date"`
+	UserLike2Count              int64                                    `json:"user_like2_count"`
+	UserLikeCount               int64                                    `json:"user_like_count"`
+	UserMessageCount            int64                                    `json:"user_message_count"`
+	UserRegisterDate            int64                                    `json:"user_register_date"`
+	UserTimezoneOffset          int64                                    `json:"user_timezone_offset"`
+	UserTitle                   string                                   `json:"user_title"`
+	UserUnreadConversationCount int64                                    `json:"user_unread_conversation_count"`
+	UserUnreadNotificationCount int64                                    `json:"user_unread_notification_count"`
+	Username                    string                                   `json:"username"`
+	UsernameHTML                string                                   `json:"username_html"`
 }
 
 // UsersContentsResponseUserBirthday represents a component schema.
 type UsersContentsResponseUserBirthday struct {
-	Age       int64                                      `json:"age,omitempty"`
-	Format    string                                     `json:"format,omitempty"`
-	TimeStamp UsersContentsResponseUserBirthdayTimeStamp `json:"timeStamp,omitempty"`
+	Age       int64                                      `json:"age"`
+	Format    string                                     `json:"format"`
+	TimeStamp UsersContentsResponseUserBirthdayTimeStamp `json:"timeStamp"`
 }
 
 // UsersContentsResponseUserBirthdayTimeStamp represents a component schema.
 type UsersContentsResponseUserBirthdayTimeStamp struct {
-	Date         string `json:"date,omitempty"`
-	Timezone     string `json:"timezone,omitempty"`
-	TimezoneType int64  `json:"timezone_type,omitempty"`
+	Date         string `json:"date"`
+	Timezone     string `json:"timezone"`
+	TimezoneType int64  `json:"timezone_type"`
 }
 
 // UsersContentsResponseUserEditPermissions represents a component schema.
 type UsersContentsResponseUserEditPermissions struct {
-	Fields            bool `json:"fields,omitempty"`
-	HideUsernameLogs  bool `json:"hide_username_logs,omitempty"`
-	Password          bool `json:"password,omitempty"`
-	PrimaryGroupID    bool `json:"primary_group_id,omitempty"`
-	SecondaryGroupIds bool `json:"secondary_group_ids,omitempty"`
-	ShortLink         bool `json:"short_link,omitempty"`
-	UserDobDay        bool `json:"user_dob_day,omitempty"`
-	UserDobMonth      bool `json:"user_dob_month,omitempty"`
-	UserDobYear       bool `json:"user_dob_year,omitempty"`
-	UserEmail         bool `json:"user_email,omitempty"`
-	UserTitle         bool `json:"user_title,omitempty"`
-	Username          bool `json:"username,omitempty"`
+	Fields            bool `json:"fields"`
+	HideUsernameLogs  bool `json:"hide_username_logs"`
+	Password          bool `json:"password"`
+	PrimaryGroupID    bool `json:"primary_group_id"`
+	SecondaryGroupIds bool `json:"secondary_group_ids"`
+	ShortLink         bool `json:"short_link"`
+	UserDobDay        bool `json:"user_dob_day"`
+	UserDobMonth      bool `json:"user_dob_month"`
+	UserDobYear       bool `json:"user_dob_year"`
+	UserEmail         bool `json:"user_email"`
+	UserTitle         bool `json:"user_title"`
+	Username          bool `json:"username"`
 }
 
 // UsersContentsResponseUserLinks represents a component schema.
 type UsersContentsResponseUserLinks struct {
-	Avatar      string `json:"avatar,omitempty"`
-	AvatarBig   string `json:"avatar_big,omitempty"`
-	AvatarSmall string `json:"avatar_small,omitempty"`
-	BackgroundL string `json:"background_l,omitempty"`
-	BackgroundM string `json:"background_m,omitempty"`
-	Detail      string `json:"detail,omitempty"`
-	Followers   string `json:"followers,omitempty"`
-	Followings  string `json:"followings,omitempty"`
-	Ignore      string `json:"ignore,omitempty"`
-	Permalink   string `json:"permalink,omitempty"`
-	Status      string `json:"status,omitempty"`
-	Timeline    string `json:"timeline,omitempty"`
+	Avatar      string `json:"avatar"`
+	AvatarBig   string `json:"avatar_big"`
+	AvatarSmall string `json:"avatar_small"`
+	BackgroundL string `json:"background_l"`
+	BackgroundM string `json:"background_m"`
+	Detail      string `json:"detail"`
+	Followers   string `json:"followers"`
+	Followings  string `json:"followings"`
+	Ignore      string `json:"ignore"`
+	Permalink   string `json:"permalink"`
+	Status      string `json:"status"`
+	Timeline    string `json:"timeline"`
 }
 
 // UsersContentsResponseUserPermissions represents a component schema.
 type UsersContentsResponseUserPermissions struct {
-	Edit        bool `json:"edit,omitempty"`
-	Follow      bool `json:"follow,omitempty"`
-	Ignore      bool `json:"ignore,omitempty"`
-	ProfilePost bool `json:"profile_post,omitempty"`
+	Edit        bool `json:"edit"`
+	Follow      bool `json:"follow"`
+	Ignore      bool `json:"ignore"`
+	ProfilePost bool `json:"profile_post"`
 }
 
 // UsersContentsResponseUserSelfPermissions represents a component schema.
 type UsersContentsResponseUserSelfPermissions struct {
-	CreateConversation bool `json:"create_conversation,omitempty"`
+	CreateConversation bool `json:"create_conversation"`
 }
 
 // UsersContentsResponseUserUserFollowers represents a component schema.
 type UsersContentsResponseUserUserFollowers struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // UsersContentsResponseUserUserFollowing represents a component schema.
 type UsersContentsResponseUserUserFollowing struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // UsersEditResponseSystemInfo represents a component schema.
 type UsersEditResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersFieldsResponseSystemInfo represents a component schema.
 type UsersFieldsResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersFindResponseSystemInfo represents a component schema.
 type UsersFindResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersFollowResponseSystemInfo represents a component schema.
 type UsersFollowResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersFollowersResponseLinks represents a component schema.
 type UsersFollowersResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
 }
 
 // UsersFollowersResponseSystemInfo represents a component schema.
 type UsersFollowersResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersFollowingsResponseSystemInfo represents a component schema.
 type UsersFollowingsResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersGetResponseSystemInfo represents a component schema.
 type UsersGetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersGetResponseUser represents a component schema.
 type UsersGetResponseUser struct {
-	Balance                     string                              `json:"balance,omitempty"`
-	Banner                      string                              `json:"banner,omitempty"`
-	Birthday                    UsersGetResponseUserBirthday        `json:"birthday,omitempty"`
-	ContestCount                int64                               `json:"contest_count,omitempty"`
-	ConvWelcomeMessage          string                              `json:"conv_welcome_message,omitempty"`
-	CuratorTitles               []string                            `json:"curator_titles,omitempty"`
-	Currency                    string                              `json:"currency,omitempty"`
-	CustomTitle                 string                              `json:"custom_title,omitempty"`
-	DisplayBannerID             int64                               `json:"display_banner_id,omitempty"`
-	DisplayIconGroupID          int64                               `json:"display_icon_group_id,omitempty"`
-	EditPermissions             UsersGetResponseUserEditPermissions `json:"edit_permissions,omitempty"`
-	Fields                      []any                               `json:"fields,omitempty"`
-	Hold                        string                              `json:"hold,omitempty"`
-	IsBanned                    int64                               `json:"is_banned,omitempty"`
-	Links                       UsersGetResponseUserLinks           `json:"links,omitempty"`
-	Permissions                 UsersGetResponseUserPermissions     `json:"permissions,omitempty"`
-	SecretAnswerFirstLetter     string                              `json:"secret_answer_first_letter,omitempty"`
-	SecretAnswerRendered        string                              `json:"secret_answer_rendered,omitempty"`
-	SelfPermissions             UsersGetResponseUserSelfPermissions `json:"self_permissions,omitempty"`
-	ShortLink                   string                              `json:"short_link,omitempty"`
-	TrophyCount                 int64                               `json:"trophy_count,omitempty"`
-	UserDeposit                 int64                               `json:"user_deposit,omitempty"`
-	UserEmail                   string                              `json:"user_email,omitempty"`
-	UserExternalAuthentications []any                               `json:"user_external_authentications,omitempty"`
-	UserFollowers               UsersGetResponseUserUserFollowers   `json:"user_followers,omitempty"`
-	UserFollowing               UsersGetResponseUserUserFollowing   `json:"user_following,omitempty"`
-	UserGroupID                 int64                               `json:"user_group_id,omitempty"`
-	UserGroups                  []any                               `json:"user_groups,omitempty"`
-	UserID                      int64                               `json:"user_id,omitempty"`
-	UserIsFollowed              bool                                `json:"user_is_followed,omitempty"`
-	UserIsIgnored               bool                                `json:"user_is_ignored,omitempty"`
-	UserIsValid                 bool                                `json:"user_is_valid,omitempty"`
-	UserIsVerified              bool                                `json:"user_is_verified,omitempty"`
-	UserIsVisitor               bool                                `json:"user_is_visitor,omitempty"`
-	UserLastSeenDate            int64                               `json:"user_last_seen_date,omitempty"`
-	UserLike2Count              int64                               `json:"user_like2_count,omitempty"`
-	UserLikeCount               int64                               `json:"user_like_count,omitempty"`
-	UserMessageCount            int64                               `json:"user_message_count,omitempty"`
-	UserRegisterDate            int64                               `json:"user_register_date,omitempty"`
-	UserTimezoneOffset          int64                               `json:"user_timezone_offset,omitempty"`
-	UserTitle                   string                              `json:"user_title,omitempty"`
-	UserUnreadConversationCount int64                               `json:"user_unread_conversation_count,omitempty"`
-	UserUnreadNotificationCount int64                               `json:"user_unread_notification_count,omitempty"`
-	Username                    string                              `json:"username,omitempty"`
-	UsernameHTML                string                              `json:"username_html,omitempty"`
+	Balance                     string                              `json:"balance"`
+	Banner                      string                              `json:"banner"`
+	Birthday                    UsersGetResponseUserBirthday        `json:"birthday"`
+	ContestCount                int64                               `json:"contest_count"`
+	ConvWelcomeMessage          string                              `json:"conv_welcome_message"`
+	CuratorTitles               []string                            `json:"curator_titles"`
+	Currency                    string                              `json:"currency"`
+	CustomTitle                 string                              `json:"custom_title"`
+	DisplayBannerID             int64                               `json:"display_banner_id"`
+	DisplayIconGroupID          int64                               `json:"display_icon_group_id"`
+	EditPermissions             UsersGetResponseUserEditPermissions `json:"edit_permissions"`
+	Fields                      []any                               `json:"fields"`
+	Hold                        string                              `json:"hold"`
+	IsBanned                    int64                               `json:"is_banned"`
+	Links                       UsersGetResponseUserLinks           `json:"links"`
+	Permissions                 UsersGetResponseUserPermissions     `json:"permissions"`
+	SecretAnswerFirstLetter     string                              `json:"secret_answer_first_letter"`
+	SecretAnswerRendered        string                              `json:"secret_answer_rendered"`
+	SelfPermissions             UsersGetResponseUserSelfPermissions `json:"self_permissions"`
+	ShortLink                   string                              `json:"short_link"`
+	TrophyCount                 int64                               `json:"trophy_count"`
+	UserDeposit                 int64                               `json:"user_deposit"`
+	UserEmail                   string                              `json:"user_email"`
+	UserExternalAuthentications []any                               `json:"user_external_authentications"`
+	UserFollowers               UsersGetResponseUserUserFollowers   `json:"user_followers"`
+	UserFollowing               UsersGetResponseUserUserFollowing   `json:"user_following"`
+	UserGroupID                 int64                               `json:"user_group_id"`
+	UserGroups                  []any                               `json:"user_groups"`
+	UserID                      int64                               `json:"user_id"`
+	UserIsFollowed              bool                                `json:"user_is_followed"`
+	UserIsIgnored               bool                                `json:"user_is_ignored"`
+	UserIsValid                 bool                                `json:"user_is_valid"`
+	UserIsVerified              bool                                `json:"user_is_verified"`
+	UserIsVisitor               bool                                `json:"user_is_visitor"`
+	UserLastSeenDate            int64                               `json:"user_last_seen_date"`
+	UserLike2Count              int64                               `json:"user_like2_count"`
+	UserLikeCount               int64                               `json:"user_like_count"`
+	UserMessageCount            int64                               `json:"user_message_count"`
+	UserRegisterDate            int64                               `json:"user_register_date"`
+	UserTimezoneOffset          int64                               `json:"user_timezone_offset"`
+	UserTitle                   string                              `json:"user_title"`
+	UserUnreadConversationCount int64                               `json:"user_unread_conversation_count"`
+	UserUnreadNotificationCount int64                               `json:"user_unread_notification_count"`
+	Username                    string                              `json:"username"`
+	UsernameHTML                string                              `json:"username_html"`
 }
 
 // UsersGetResponseUserBirthday represents a component schema.
 type UsersGetResponseUserBirthday struct {
-	Age       int64                                 `json:"age,omitempty"`
-	Format    string                                `json:"format,omitempty"`
-	TimeStamp UsersGetResponseUserBirthdayTimeStamp `json:"timeStamp,omitempty"`
+	Age       int64                                 `json:"age"`
+	Format    string                                `json:"format"`
+	TimeStamp UsersGetResponseUserBirthdayTimeStamp `json:"timeStamp"`
 }
 
 // UsersGetResponseUserBirthdayTimeStamp represents a component schema.
 type UsersGetResponseUserBirthdayTimeStamp struct {
-	Date         string `json:"date,omitempty"`
-	Timezone     string `json:"timezone,omitempty"`
-	TimezoneType int64  `json:"timezone_type,omitempty"`
+	Date         string `json:"date"`
+	Timezone     string `json:"timezone"`
+	TimezoneType int64  `json:"timezone_type"`
 }
 
 // UsersGetResponseUserEditPermissions represents a component schema.
 type UsersGetResponseUserEditPermissions struct {
-	Fields            bool `json:"fields,omitempty"`
-	HideUsernameLogs  bool `json:"hide_username_logs,omitempty"`
-	Password          bool `json:"password,omitempty"`
-	PrimaryGroupID    bool `json:"primary_group_id,omitempty"`
-	SecondaryGroupIds bool `json:"secondary_group_ids,omitempty"`
-	ShortLink         bool `json:"short_link,omitempty"`
-	UserDobDay        bool `json:"user_dob_day,omitempty"`
-	UserDobMonth      bool `json:"user_dob_month,omitempty"`
-	UserDobYear       bool `json:"user_dob_year,omitempty"`
-	UserEmail         bool `json:"user_email,omitempty"`
-	UserTitle         bool `json:"user_title,omitempty"`
-	Username          bool `json:"username,omitempty"`
+	Fields            bool `json:"fields"`
+	HideUsernameLogs  bool `json:"hide_username_logs"`
+	Password          bool `json:"password"`
+	PrimaryGroupID    bool `json:"primary_group_id"`
+	SecondaryGroupIds bool `json:"secondary_group_ids"`
+	ShortLink         bool `json:"short_link"`
+	UserDobDay        bool `json:"user_dob_day"`
+	UserDobMonth      bool `json:"user_dob_month"`
+	UserDobYear       bool `json:"user_dob_year"`
+	UserEmail         bool `json:"user_email"`
+	UserTitle         bool `json:"user_title"`
+	Username          bool `json:"username"`
 }
 
 // UsersGetResponseUserLinks represents a component schema.
 type UsersGetResponseUserLinks struct {
-	Avatar      string `json:"avatar,omitempty"`
-	AvatarBig   string `json:"avatar_big,omitempty"`
-	AvatarSmall string `json:"avatar_small,omitempty"`
-	BackgroundL string `json:"background_l,omitempty"`
-	BackgroundM string `json:"background_m,omitempty"`
-	Detail      string `json:"detail,omitempty"`
-	Followers   string `json:"followers,omitempty"`
-	Followings  string `json:"followings,omitempty"`
-	Ignore      string `json:"ignore,omitempty"`
-	Permalink   string `json:"permalink,omitempty"`
-	Status      string `json:"status,omitempty"`
-	Timeline    string `json:"timeline,omitempty"`
+	Avatar      string `json:"avatar"`
+	AvatarBig   string `json:"avatar_big"`
+	AvatarSmall string `json:"avatar_small"`
+	BackgroundL string `json:"background_l"`
+	BackgroundM string `json:"background_m"`
+	Detail      string `json:"detail"`
+	Followers   string `json:"followers"`
+	Followings  string `json:"followings"`
+	Ignore      string `json:"ignore"`
+	Permalink   string `json:"permalink"`
+	Status      string `json:"status"`
+	Timeline    string `json:"timeline"`
 }
 
 // UsersGetResponseUserPermissions represents a component schema.
 type UsersGetResponseUserPermissions struct {
-	Edit        bool `json:"edit,omitempty"`
-	Follow      bool `json:"follow,omitempty"`
-	Ignore      bool `json:"ignore,omitempty"`
-	ProfilePost bool `json:"profile_post,omitempty"`
+	Edit        bool `json:"edit"`
+	Follow      bool `json:"follow"`
+	Ignore      bool `json:"ignore"`
+	ProfilePost bool `json:"profile_post"`
 }
 
 // UsersGetResponseUserSelfPermissions represents a component schema.
 type UsersGetResponseUserSelfPermissions struct {
-	CreateConversation bool `json:"create_conversation,omitempty"`
+	CreateConversation bool `json:"create_conversation"`
 }
 
 // UsersGetResponseUserUserFollowers represents a component schema.
 type UsersGetResponseUserUserFollowers struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // UsersGetResponseUserUserFollowing represents a component schema.
 type UsersGetResponseUserUserFollowing struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // UsersIgnoreEditResponseSystemInfo represents a component schema.
 type UsersIgnoreEditResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersIgnoreResponseSystemInfo represents a component schema.
 type UsersIgnoreResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersIgnoredResponseSystemInfo represents a component schema.
 type UsersIgnoredResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersLikesResponseLikes represents a component schema.
 type UsersLikesResponseLikes struct {
-	N1234567890 UsersLikesResponseLikesN1234567890 `json:"1234567890,omitempty"`
+	N1234567890 UsersLikesResponseLikesN1234567890 `json:"1234567890"`
 }
 
 // UsersLikesResponseLikesN1234567890 represents a component schema.
 type UsersLikesResponseLikesN1234567890 struct {
-	ActionUser    UsersLikesResponseLikesN1234567890ActionUser `json:"actionUser,omitempty"`
-	ContentID     int64                                        `json:"content_id,omitempty"`
-	ContentState  string                                       `json:"content_state,omitempty"`
-	ContentType   string                                       `json:"content_type,omitempty"`
-	ContentUserID int64                                        `json:"content_user_id,omitempty"`
-	LikeDate      int64                                        `json:"like_date,omitempty"`
-	LikeID        int64                                        `json:"like_id,omitempty"`
-	LikeUserID    int64                                        `json:"like_user_id,omitempty"`
-	MessageHTML   string                                       `json:"messageHtml,omitempty"`
-	PostDate      int64                                        `json:"post_date,omitempty"`
-	User          UsersLikesResponseLikesN1234567890User       `json:"user,omitempty"`
+	ActionUser    UsersLikesResponseLikesN1234567890ActionUser `json:"actionUser"`
+	ContentID     int64                                        `json:"content_id"`
+	ContentState  string                                       `json:"content_state"`
+	ContentType   string                                       `json:"content_type"`
+	ContentUserID int64                                        `json:"content_user_id"`
+	LikeDate      int64                                        `json:"like_date"`
+	LikeID        int64                                        `json:"like_id"`
+	LikeUserID    int64                                        `json:"like_user_id"`
+	MessageHTML   string                                       `json:"messageHtml"`
+	PostDate      int64                                        `json:"post_date"`
+	User          UsersLikesResponseLikesN1234567890User       `json:"user"`
 }
 
 // UsersLikesResponseLikesN1234567890ActionUser represents a component schema.
 type UsersLikesResponseLikesN1234567890ActionUser struct {
-	Balance                     string                                                      `json:"balance,omitempty"`
-	Banner                      string                                                      `json:"banner,omitempty"`
-	Birthday                    UsersLikesResponseLikesN1234567890ActionUserBirthday        `json:"birthday,omitempty"`
-	ContestCount                int64                                                       `json:"contest_count,omitempty"`
-	ConvWelcomeMessage          string                                                      `json:"conv_welcome_message,omitempty"`
-	CuratorTitles               []string                                                    `json:"curator_titles,omitempty"`
-	Currency                    string                                                      `json:"currency,omitempty"`
-	CustomTitle                 string                                                      `json:"custom_title,omitempty"`
-	DisplayBannerID             int64                                                       `json:"display_banner_id,omitempty"`
-	DisplayIconGroupID          int64                                                       `json:"display_icon_group_id,omitempty"`
-	EditPermissions             UsersLikesResponseLikesN1234567890ActionUserEditPermissions `json:"edit_permissions,omitempty"`
-	Fields                      []any                                                       `json:"fields,omitempty"`
-	Hold                        string                                                      `json:"hold,omitempty"`
-	IsBanned                    int64                                                       `json:"is_banned,omitempty"`
-	Links                       UsersLikesResponseLikesN1234567890ActionUserLinks           `json:"links,omitempty"`
-	Permissions                 UsersLikesResponseLikesN1234567890ActionUserPermissions     `json:"permissions,omitempty"`
-	SecretAnswerFirstLetter     string                                                      `json:"secret_answer_first_letter,omitempty"`
-	SecretAnswerRendered        string                                                      `json:"secret_answer_rendered,omitempty"`
-	SelfPermissions             UsersLikesResponseLikesN1234567890ActionUserSelfPermissions `json:"self_permissions,omitempty"`
-	ShortLink                   string                                                      `json:"short_link,omitempty"`
-	TrophyCount                 int64                                                       `json:"trophy_count,omitempty"`
-	UserDeposit                 int64                                                       `json:"user_deposit,omitempty"`
-	UserEmail                   string                                                      `json:"user_email,omitempty"`
-	UserExternalAuthentications []any                                                       `json:"user_external_authentications,omitempty"`
-	UserFollowers               UsersLikesResponseLikesN1234567890ActionUserUserFollowers   `json:"user_followers,omitempty"`
-	UserFollowing               UsersLikesResponseLikesN1234567890ActionUserUserFollowing   `json:"user_following,omitempty"`
-	UserGroupID                 int64                                                       `json:"user_group_id,omitempty"`
-	UserGroups                  []any                                                       `json:"user_groups,omitempty"`
-	UserID                      int64                                                       `json:"user_id,omitempty"`
-	UserIsFollowed              bool                                                        `json:"user_is_followed,omitempty"`
-	UserIsIgnored               bool                                                        `json:"user_is_ignored,omitempty"`
-	UserIsValid                 bool                                                        `json:"user_is_valid,omitempty"`
-	UserIsVerified              bool                                                        `json:"user_is_verified,omitempty"`
-	UserIsVisitor               bool                                                        `json:"user_is_visitor,omitempty"`
-	UserLastSeenDate            int64                                                       `json:"user_last_seen_date,omitempty"`
-	UserLike2Count              int64                                                       `json:"user_like2_count,omitempty"`
-	UserLikeCount               int64                                                       `json:"user_like_count,omitempty"`
-	UserMessageCount            int64                                                       `json:"user_message_count,omitempty"`
-	UserRegisterDate            int64                                                       `json:"user_register_date,omitempty"`
-	UserTimezoneOffset          int64                                                       `json:"user_timezone_offset,omitempty"`
-	UserTitle                   string                                                      `json:"user_title,omitempty"`
-	UserUnreadConversationCount int64                                                       `json:"user_unread_conversation_count,omitempty"`
-	UserUnreadNotificationCount int64                                                       `json:"user_unread_notification_count,omitempty"`
-	Username                    string                                                      `json:"username,omitempty"`
-	UsernameHTML                string                                                      `json:"username_html,omitempty"`
+	Balance                     string                                                      `json:"balance"`
+	Banner                      string                                                      `json:"banner"`
+	Birthday                    UsersLikesResponseLikesN1234567890ActionUserBirthday        `json:"birthday"`
+	ContestCount                int64                                                       `json:"contest_count"`
+	ConvWelcomeMessage          string                                                      `json:"conv_welcome_message"`
+	CuratorTitles               []string                                                    `json:"curator_titles"`
+	Currency                    string                                                      `json:"currency"`
+	CustomTitle                 string                                                      `json:"custom_title"`
+	DisplayBannerID             int64                                                       `json:"display_banner_id"`
+	DisplayIconGroupID          int64                                                       `json:"display_icon_group_id"`
+	EditPermissions             UsersLikesResponseLikesN1234567890ActionUserEditPermissions `json:"edit_permissions"`
+	Fields                      []any                                                       `json:"fields"`
+	Hold                        string                                                      `json:"hold"`
+	IsBanned                    int64                                                       `json:"is_banned"`
+	Links                       UsersLikesResponseLikesN1234567890ActionUserLinks           `json:"links"`
+	Permissions                 UsersLikesResponseLikesN1234567890ActionUserPermissions     `json:"permissions"`
+	SecretAnswerFirstLetter     string                                                      `json:"secret_answer_first_letter"`
+	SecretAnswerRendered        string                                                      `json:"secret_answer_rendered"`
+	SelfPermissions             UsersLikesResponseLikesN1234567890ActionUserSelfPermissions `json:"self_permissions"`
+	ShortLink                   string                                                      `json:"short_link"`
+	TrophyCount                 int64                                                       `json:"trophy_count"`
+	UserDeposit                 int64                                                       `json:"user_deposit"`
+	UserEmail                   string                                                      `json:"user_email"`
+	UserExternalAuthentications []any                                                       `json:"user_external_authentications"`
+	UserFollowers               UsersLikesResponseLikesN1234567890ActionUserUserFollowers   `json:"user_followers"`
+	UserFollowing               UsersLikesResponseLikesN1234567890ActionUserUserFollowing   `json:"user_following"`
+	UserGroupID                 int64                                                       `json:"user_group_id"`
+	UserGroups                  []any                                                       `json:"user_groups"`
+	UserID                      int64                                                       `json:"user_id"`
+	UserIsFollowed              bool                                                        `json:"user_is_followed"`
+	UserIsIgnored               bool                                                        `json:"user_is_ignored"`
+	UserIsValid                 bool                                                        `json:"user_is_valid"`
+	UserIsVerified              bool                                                        `json:"user_is_verified"`
+	UserIsVisitor               bool                                                        `json:"user_is_visitor"`
+	UserLastSeenDate            int64                                                       `json:"user_last_seen_date"`
+	UserLike2Count              int64                                                       `json:"user_like2_count"`
+	UserLikeCount               int64                                                       `json:"user_like_count"`
+	UserMessageCount            int64                                                       `json:"user_message_count"`
+	UserRegisterDate            int64                                                       `json:"user_register_date"`
+	UserTimezoneOffset          int64                                                       `json:"user_timezone_offset"`
+	UserTitle                   string                                                      `json:"user_title"`
+	UserUnreadConversationCount int64                                                       `json:"user_unread_conversation_count"`
+	UserUnreadNotificationCount int64                                                       `json:"user_unread_notification_count"`
+	Username                    string                                                      `json:"username"`
+	UsernameHTML                string                                                      `json:"username_html"`
 }
 
 // UsersLikesResponseLikesN1234567890ActionUserBirthday represents a component schema.
 type UsersLikesResponseLikesN1234567890ActionUserBirthday struct {
-	Age       int64                                                         `json:"age,omitempty"`
-	Format    string                                                        `json:"format,omitempty"`
-	TimeStamp UsersLikesResponseLikesN1234567890ActionUserBirthdayTimeStamp `json:"timeStamp,omitempty"`
+	Age       int64                                                         `json:"age"`
+	Format    string                                                        `json:"format"`
+	TimeStamp UsersLikesResponseLikesN1234567890ActionUserBirthdayTimeStamp `json:"timeStamp"`
 }
 
 // UsersLikesResponseLikesN1234567890ActionUserBirthdayTimeStamp represents a component schema.
 type UsersLikesResponseLikesN1234567890ActionUserBirthdayTimeStamp struct {
-	Date         string `json:"date,omitempty"`
-	Timezone     string `json:"timezone,omitempty"`
-	TimezoneType int64  `json:"timezone_type,omitempty"`
+	Date         string `json:"date"`
+	Timezone     string `json:"timezone"`
+	TimezoneType int64  `json:"timezone_type"`
 }
 
 // UsersLikesResponseLikesN1234567890ActionUserEditPermissions represents a component schema.
 type UsersLikesResponseLikesN1234567890ActionUserEditPermissions struct {
-	Fields            bool `json:"fields,omitempty"`
-	HideUsernameLogs  bool `json:"hide_username_logs,omitempty"`
-	Password          bool `json:"password,omitempty"`
-	PrimaryGroupID    bool `json:"primary_group_id,omitempty"`
-	SecondaryGroupIds bool `json:"secondary_group_ids,omitempty"`
-	ShortLink         bool `json:"short_link,omitempty"`
-	UserDobDay        bool `json:"user_dob_day,omitempty"`
-	UserDobMonth      bool `json:"user_dob_month,omitempty"`
-	UserDobYear       bool `json:"user_dob_year,omitempty"`
-	UserEmail         bool `json:"user_email,omitempty"`
-	UserTitle         bool `json:"user_title,omitempty"`
-	Username          bool `json:"username,omitempty"`
+	Fields            bool `json:"fields"`
+	HideUsernameLogs  bool `json:"hide_username_logs"`
+	Password          bool `json:"password"`
+	PrimaryGroupID    bool `json:"primary_group_id"`
+	SecondaryGroupIds bool `json:"secondary_group_ids"`
+	ShortLink         bool `json:"short_link"`
+	UserDobDay        bool `json:"user_dob_day"`
+	UserDobMonth      bool `json:"user_dob_month"`
+	UserDobYear       bool `json:"user_dob_year"`
+	UserEmail         bool `json:"user_email"`
+	UserTitle         bool `json:"user_title"`
+	Username          bool `json:"username"`
 }
 
 // UsersLikesResponseLikesN1234567890ActionUserLinks represents a component schema.
 type UsersLikesResponseLikesN1234567890ActionUserLinks struct {
-	Avatar      string `json:"avatar,omitempty"`
-	AvatarBig   string `json:"avatar_big,omitempty"`
-	AvatarSmall string `json:"avatar_small,omitempty"`
-	BackgroundL string `json:"background_l,omitempty"`
-	BackgroundM string `json:"background_m,omitempty"`
-	Detail      string `json:"detail,omitempty"`
-	Followers   string `json:"followers,omitempty"`
-	Followings  string `json:"followings,omitempty"`
-	Ignore      string `json:"ignore,omitempty"`
-	Permalink   string `json:"permalink,omitempty"`
-	Status      string `json:"status,omitempty"`
-	Timeline    string `json:"timeline,omitempty"`
+	Avatar      string `json:"avatar"`
+	AvatarBig   string `json:"avatar_big"`
+	AvatarSmall string `json:"avatar_small"`
+	BackgroundL string `json:"background_l"`
+	BackgroundM string `json:"background_m"`
+	Detail      string `json:"detail"`
+	Followers   string `json:"followers"`
+	Followings  string `json:"followings"`
+	Ignore      string `json:"ignore"`
+	Permalink   string `json:"permalink"`
+	Status      string `json:"status"`
+	Timeline    string `json:"timeline"`
 }
 
 // UsersLikesResponseLikesN1234567890ActionUserPermissions represents a component schema.
 type UsersLikesResponseLikesN1234567890ActionUserPermissions struct {
-	Edit        bool `json:"edit,omitempty"`
-	Follow      bool `json:"follow,omitempty"`
-	Ignore      bool `json:"ignore,omitempty"`
-	ProfilePost bool `json:"profile_post,omitempty"`
+	Edit        bool `json:"edit"`
+	Follow      bool `json:"follow"`
+	Ignore      bool `json:"ignore"`
+	ProfilePost bool `json:"profile_post"`
 }
 
 // UsersLikesResponseLikesN1234567890ActionUserSelfPermissions represents a component schema.
 type UsersLikesResponseLikesN1234567890ActionUserSelfPermissions struct {
-	CreateConversation bool `json:"create_conversation,omitempty"`
+	CreateConversation bool `json:"create_conversation"`
 }
 
 // UsersLikesResponseLikesN1234567890ActionUserUserFollowers represents a component schema.
 type UsersLikesResponseLikesN1234567890ActionUserUserFollowers struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // UsersLikesResponseLikesN1234567890ActionUserUserFollowing represents a component schema.
 type UsersLikesResponseLikesN1234567890ActionUserUserFollowing struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // UsersLikesResponseLikesN1234567890User represents a component schema.
 type UsersLikesResponseLikesN1234567890User struct {
-	Balance                     string                                                `json:"balance,omitempty"`
-	Banner                      string                                                `json:"banner,omitempty"`
-	Birthday                    UsersLikesResponseLikesN1234567890UserBirthday        `json:"birthday,omitempty"`
-	ContestCount                int64                                                 `json:"contest_count,omitempty"`
-	ConvWelcomeMessage          string                                                `json:"conv_welcome_message,omitempty"`
-	CuratorTitles               []string                                              `json:"curator_titles,omitempty"`
-	Currency                    string                                                `json:"currency,omitempty"`
-	CustomTitle                 string                                                `json:"custom_title,omitempty"`
-	DisplayBannerID             int64                                                 `json:"display_banner_id,omitempty"`
-	DisplayIconGroupID          int64                                                 `json:"display_icon_group_id,omitempty"`
-	EditPermissions             UsersLikesResponseLikesN1234567890UserEditPermissions `json:"edit_permissions,omitempty"`
-	Fields                      []any                                                 `json:"fields,omitempty"`
-	Hold                        string                                                `json:"hold,omitempty"`
-	IsBanned                    int64                                                 `json:"is_banned,omitempty"`
-	Links                       UsersLikesResponseLikesN1234567890UserLinks           `json:"links,omitempty"`
-	Permissions                 UsersLikesResponseLikesN1234567890UserPermissions     `json:"permissions,omitempty"`
-	SecretAnswerFirstLetter     string                                                `json:"secret_answer_first_letter,omitempty"`
-	SecretAnswerRendered        string                                                `json:"secret_answer_rendered,omitempty"`
-	SelfPermissions             UsersLikesResponseLikesN1234567890UserSelfPermissions `json:"self_permissions,omitempty"`
-	ShortLink                   string                                                `json:"short_link,omitempty"`
-	TrophyCount                 int64                                                 `json:"trophy_count,omitempty"`
-	UserDeposit                 int64                                                 `json:"user_deposit,omitempty"`
-	UserEmail                   string                                                `json:"user_email,omitempty"`
-	UserExternalAuthentications []any                                                 `json:"user_external_authentications,omitempty"`
-	UserFollowers               UsersLikesResponseLikesN1234567890UserUserFollowers   `json:"user_followers,omitempty"`
-	UserFollowing               UsersLikesResponseLikesN1234567890UserUserFollowing   `json:"user_following,omitempty"`
-	UserGroupID                 int64                                                 `json:"user_group_id,omitempty"`
-	UserGroups                  []any                                                 `json:"user_groups,omitempty"`
-	UserID                      int64                                                 `json:"user_id,omitempty"`
-	UserIsFollowed              bool                                                  `json:"user_is_followed,omitempty"`
-	UserIsIgnored               bool                                                  `json:"user_is_ignored,omitempty"`
-	UserIsValid                 bool                                                  `json:"user_is_valid,omitempty"`
-	UserIsVerified              bool                                                  `json:"user_is_verified,omitempty"`
-	UserIsVisitor               bool                                                  `json:"user_is_visitor,omitempty"`
-	UserLastSeenDate            int64                                                 `json:"user_last_seen_date,omitempty"`
-	UserLike2Count              int64                                                 `json:"user_like2_count,omitempty"`
-	UserLikeCount               int64                                                 `json:"user_like_count,omitempty"`
-	UserMessageCount            int64                                                 `json:"user_message_count,omitempty"`
-	UserRegisterDate            int64                                                 `json:"user_register_date,omitempty"`
-	UserTimezoneOffset          int64                                                 `json:"user_timezone_offset,omitempty"`
-	UserTitle                   string                                                `json:"user_title,omitempty"`
-	UserUnreadConversationCount int64                                                 `json:"user_unread_conversation_count,omitempty"`
-	UserUnreadNotificationCount int64                                                 `json:"user_unread_notification_count,omitempty"`
-	Username                    string                                                `json:"username,omitempty"`
-	UsernameHTML                string                                                `json:"username_html,omitempty"`
+	Balance                     string                                                `json:"balance"`
+	Banner                      string                                                `json:"banner"`
+	Birthday                    UsersLikesResponseLikesN1234567890UserBirthday        `json:"birthday"`
+	ContestCount                int64                                                 `json:"contest_count"`
+	ConvWelcomeMessage          string                                                `json:"conv_welcome_message"`
+	CuratorTitles               []string                                              `json:"curator_titles"`
+	Currency                    string                                                `json:"currency"`
+	CustomTitle                 string                                                `json:"custom_title"`
+	DisplayBannerID             int64                                                 `json:"display_banner_id"`
+	DisplayIconGroupID          int64                                                 `json:"display_icon_group_id"`
+	EditPermissions             UsersLikesResponseLikesN1234567890UserEditPermissions `json:"edit_permissions"`
+	Fields                      []any                                                 `json:"fields"`
+	Hold                        string                                                `json:"hold"`
+	IsBanned                    int64                                                 `json:"is_banned"`
+	Links                       UsersLikesResponseLikesN1234567890UserLinks           `json:"links"`
+	Permissions                 UsersLikesResponseLikesN1234567890UserPermissions     `json:"permissions"`
+	SecretAnswerFirstLetter     string                                                `json:"secret_answer_first_letter"`
+	SecretAnswerRendered        string                                                `json:"secret_answer_rendered"`
+	SelfPermissions             UsersLikesResponseLikesN1234567890UserSelfPermissions `json:"self_permissions"`
+	ShortLink                   string                                                `json:"short_link"`
+	TrophyCount                 int64                                                 `json:"trophy_count"`
+	UserDeposit                 int64                                                 `json:"user_deposit"`
+	UserEmail                   string                                                `json:"user_email"`
+	UserExternalAuthentications []any                                                 `json:"user_external_authentications"`
+	UserFollowers               UsersLikesResponseLikesN1234567890UserUserFollowers   `json:"user_followers"`
+	UserFollowing               UsersLikesResponseLikesN1234567890UserUserFollowing   `json:"user_following"`
+	UserGroupID                 int64                                                 `json:"user_group_id"`
+	UserGroups                  []any                                                 `json:"user_groups"`
+	UserID                      int64                                                 `json:"user_id"`
+	UserIsFollowed              bool                                                  `json:"user_is_followed"`
+	UserIsIgnored               bool                                                  `json:"user_is_ignored"`
+	UserIsValid                 bool                                                  `json:"user_is_valid"`
+	UserIsVerified              bool                                                  `json:"user_is_verified"`
+	UserIsVisitor               bool                                                  `json:"user_is_visitor"`
+	UserLastSeenDate            int64                                                 `json:"user_last_seen_date"`
+	UserLike2Count              int64                                                 `json:"user_like2_count"`
+	UserLikeCount               int64                                                 `json:"user_like_count"`
+	UserMessageCount            int64                                                 `json:"user_message_count"`
+	UserRegisterDate            int64                                                 `json:"user_register_date"`
+	UserTimezoneOffset          int64                                                 `json:"user_timezone_offset"`
+	UserTitle                   string                                                `json:"user_title"`
+	UserUnreadConversationCount int64                                                 `json:"user_unread_conversation_count"`
+	UserUnreadNotificationCount int64                                                 `json:"user_unread_notification_count"`
+	Username                    string                                                `json:"username"`
+	UsernameHTML                string                                                `json:"username_html"`
 }
 
 // UsersLikesResponseLikesN1234567890UserBirthday represents a component schema.
 type UsersLikesResponseLikesN1234567890UserBirthday struct {
-	Age       int64                                                   `json:"age,omitempty"`
-	Format    string                                                  `json:"format,omitempty"`
-	TimeStamp UsersLikesResponseLikesN1234567890UserBirthdayTimeStamp `json:"timeStamp,omitempty"`
+	Age       int64                                                   `json:"age"`
+	Format    string                                                  `json:"format"`
+	TimeStamp UsersLikesResponseLikesN1234567890UserBirthdayTimeStamp `json:"timeStamp"`
 }
 
 // UsersLikesResponseLikesN1234567890UserBirthdayTimeStamp represents a component schema.
 type UsersLikesResponseLikesN1234567890UserBirthdayTimeStamp struct {
-	Date         string `json:"date,omitempty"`
-	Timezone     string `json:"timezone,omitempty"`
-	TimezoneType int64  `json:"timezone_type,omitempty"`
+	Date         string `json:"date"`
+	Timezone     string `json:"timezone"`
+	TimezoneType int64  `json:"timezone_type"`
 }
 
 // UsersLikesResponseLikesN1234567890UserEditPermissions represents a component schema.
 type UsersLikesResponseLikesN1234567890UserEditPermissions struct {
-	Fields            bool `json:"fields,omitempty"`
-	HideUsernameLogs  bool `json:"hide_username_logs,omitempty"`
-	Password          bool `json:"password,omitempty"`
-	PrimaryGroupID    bool `json:"primary_group_id,omitempty"`
-	SecondaryGroupIds bool `json:"secondary_group_ids,omitempty"`
-	ShortLink         bool `json:"short_link,omitempty"`
-	UserDobDay        bool `json:"user_dob_day,omitempty"`
-	UserDobMonth      bool `json:"user_dob_month,omitempty"`
-	UserDobYear       bool `json:"user_dob_year,omitempty"`
-	UserEmail         bool `json:"user_email,omitempty"`
-	UserTitle         bool `json:"user_title,omitempty"`
-	Username          bool `json:"username,omitempty"`
+	Fields            bool `json:"fields"`
+	HideUsernameLogs  bool `json:"hide_username_logs"`
+	Password          bool `json:"password"`
+	PrimaryGroupID    bool `json:"primary_group_id"`
+	SecondaryGroupIds bool `json:"secondary_group_ids"`
+	ShortLink         bool `json:"short_link"`
+	UserDobDay        bool `json:"user_dob_day"`
+	UserDobMonth      bool `json:"user_dob_month"`
+	UserDobYear       bool `json:"user_dob_year"`
+	UserEmail         bool `json:"user_email"`
+	UserTitle         bool `json:"user_title"`
+	Username          bool `json:"username"`
 }
 
 // UsersLikesResponseLikesN1234567890UserLinks represents a component schema.
 type UsersLikesResponseLikesN1234567890UserLinks struct {
-	Avatar      string `json:"avatar,omitempty"`
-	AvatarBig   string `json:"avatar_big,omitempty"`
-	AvatarSmall string `json:"avatar_small,omitempty"`
-	BackgroundL string `json:"background_l,omitempty"`
-	BackgroundM string `json:"background_m,omitempty"`
-	Detail      string `json:"detail,omitempty"`
-	Followers   string `json:"followers,omitempty"`
-	Followings  string `json:"followings,omitempty"`
-	Ignore      string `json:"ignore,omitempty"`
-	Permalink   string `json:"permalink,omitempty"`
-	Status      string `json:"status,omitempty"`
-	Timeline    string `json:"timeline,omitempty"`
+	Avatar      string `json:"avatar"`
+	AvatarBig   string `json:"avatar_big"`
+	AvatarSmall string `json:"avatar_small"`
+	BackgroundL string `json:"background_l"`
+	BackgroundM string `json:"background_m"`
+	Detail      string `json:"detail"`
+	Followers   string `json:"followers"`
+	Followings  string `json:"followings"`
+	Ignore      string `json:"ignore"`
+	Permalink   string `json:"permalink"`
+	Status      string `json:"status"`
+	Timeline    string `json:"timeline"`
 }
 
 // UsersLikesResponseLikesN1234567890UserPermissions represents a component schema.
 type UsersLikesResponseLikesN1234567890UserPermissions struct {
-	Edit        bool `json:"edit,omitempty"`
-	Follow      bool `json:"follow,omitempty"`
-	Ignore      bool `json:"ignore,omitempty"`
-	ProfilePost bool `json:"profile_post,omitempty"`
+	Edit        bool `json:"edit"`
+	Follow      bool `json:"follow"`
+	Ignore      bool `json:"ignore"`
+	ProfilePost bool `json:"profile_post"`
 }
 
 // UsersLikesResponseLikesN1234567890UserSelfPermissions represents a component schema.
 type UsersLikesResponseLikesN1234567890UserSelfPermissions struct {
-	CreateConversation bool `json:"create_conversation,omitempty"`
+	CreateConversation bool `json:"create_conversation"`
 }
 
 // UsersLikesResponseLikesN1234567890UserUserFollowers represents a component schema.
 type UsersLikesResponseLikesN1234567890UserUserFollowers struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // UsersLikesResponseLikesN1234567890UserUserFollowing represents a component schema.
 type UsersLikesResponseLikesN1234567890UserUserFollowing struct {
-	Count int64 `json:"count,omitempty"`
-	Users []any `json:"users,omitempty"`
+	Count int64 `json:"count"`
+	Users []any `json:"users"`
 }
 
 // UsersLikesResponseSystemInfo represents a component schema.
 type UsersLikesResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersListResponseLinks represents a component schema.
 type UsersListResponseLinks struct {
-	Next  string `json:"next,omitempty"`
-	Page  int64  `json:"page,omitempty"`
-	Pages int64  `json:"pages,omitempty"`
+	Next  string `json:"next"`
+	Page  int64  `json:"page"`
+	Pages int64  `json:"pages"`
 }
 
 // UsersListResponseSystemInfo represents a component schema.
 type UsersListResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersSACancelResetResponseSystemInfo represents a component schema.
 type UsersSACancelResetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersSAResetResponseSystemInfo represents a component schema.
 type UsersSAResetResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersSecretAnswerTypesResponseSystemInfo represents a component schema.
 type UsersSecretAnswerTypesResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersTrophiesResponseSystemInfo represents a component schema.
 type UsersTrophiesResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersUnfollowResponseSystemInfo represents a component schema.
 type UsersUnfollowResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // UsersUnignoreResponseSystemInfo represents a component schema.
 type UsersUnignoreResponseSystemInfo struct {
-	Time      int64 `json:"time,omitempty"`
-	VisitorID int64 `json:"visitor_id,omitempty"`
+	Time      int64 `json:"time"`
+	VisitorID int64 `json:"visitor_id"`
 }
 
 // AssetsCSSParams holds query parameters for Assets.CSS.
@@ -5136,8 +5136,8 @@ type AssetsCSSParams struct {
 
 // AssetsCSSResponse is the response for the endpoint.
 type AssetsCSSResponse struct {
-	Contents   string                      `json:"contents,omitempty"`
-	SystemInfo AssetsCSSResponseSystemInfo `json:"system_info,omitempty"`
+	Contents   string                      `json:"contents"`
+	SystemInfo AssetsCSSResponseSystemInfo `json:"system_info"`
 }
 
 // BatchExecuteItem represents a single item in the Batch.Execute request body.
@@ -5150,13 +5150,13 @@ type BatchExecuteItem struct {
 
 // BatchExecuteResponse is the response for the endpoint.
 type BatchExecuteResponse struct {
-	Jobs BatchExecuteResponseJobs `json:"jobs,omitempty"`
+	Jobs BatchExecuteResponseJobs `json:"jobs"`
 }
 
 // CategoriesGetResponse is the response for the endpoint.
 type CategoriesGetResponse struct {
-	Category   CategoriesGetResponseCategory   `json:"category,omitempty"`
-	SystemInfo CategoriesGetResponseSystemInfo `json:"system_info,omitempty"`
+	Category   CategoriesGetResponseCategory   `json:"category"`
+	SystemInfo CategoriesGetResponseSystemInfo `json:"system_info"`
 }
 
 // CategoriesListParams holds query parameters for Categories.List.
@@ -5168,14 +5168,14 @@ type CategoriesListParams struct {
 
 // CategoriesListResponse is the response for the endpoint.
 type CategoriesListResponse struct {
-	Categories      []any                            `json:"categories,omitempty"`
-	CategoriesTotal int64                            `json:"categories_total,omitempty"`
-	SystemInfo      CategoriesListResponseSystemInfo `json:"system_info,omitempty"`
+	Categories      []any                            `json:"categories"`
+	CategoriesTotal int64                            `json:"categories_total"`
+	SystemInfo      CategoriesListResponseSystemInfo `json:"system_info"`
 }
 
 // ChatboxDeleteIgnoreBody holds the request body for Chatbox.DeleteIgnore.
 type ChatboxDeleteIgnoreBody struct {
-	UserID any `json:"user_id"`
+	UserID lolzteam.StringOrInt `json:"user_id"`
 }
 
 // ChatboxDeleteIgnoreResponse is the response for the endpoint.
@@ -5205,14 +5205,14 @@ type ChatboxEditMessageBody struct {
 
 // ChatboxEditMessageResponse is the response for the endpoint.
 type ChatboxEditMessageResponse struct {
-	Message    ChatboxEditMessageResponseMessage    `json:"message,omitempty"`
-	SystemInfo ChatboxEditMessageResponseSystemInfo `json:"system_info,omitempty"`
+	Message    ChatboxEditMessageResponseMessage    `json:"message"`
+	SystemInfo ChatboxEditMessageResponseSystemInfo `json:"system_info"`
 }
 
 // ChatboxGetIgnoreResponse is the response for the endpoint.
 type ChatboxGetIgnoreResponse struct {
-	Ignored    []any                              `json:"ignored,omitempty"`
-	SystemInfo ChatboxGetIgnoreResponseSystemInfo `json:"system_info,omitempty"`
+	Ignored    []any                              `json:"ignored"`
+	SystemInfo ChatboxGetIgnoreResponseSystemInfo `json:"system_info"`
 }
 
 // ChatboxGetLeaderboardParams holds query parameters for Chatbox.GetLeaderboard.
@@ -5222,8 +5222,8 @@ type ChatboxGetLeaderboardParams struct {
 
 // ChatboxGetLeaderboardResponse is the response for the endpoint.
 type ChatboxGetLeaderboardResponse struct {
-	Leaderboard []any                                   `json:"leaderboard,omitempty"`
-	SystemInfo  ChatboxGetLeaderboardResponseSystemInfo `json:"system_info,omitempty"`
+	Leaderboard []any                                   `json:"leaderboard"`
+	SystemInfo  ChatboxGetLeaderboardResponseSystemInfo `json:"system_info"`
 }
 
 // ChatboxGetMessagesParams holds query parameters for Chatbox.GetMessages.
@@ -5234,8 +5234,8 @@ type ChatboxGetMessagesParams struct {
 
 // ChatboxGetMessagesResponse is the response for the endpoint.
 type ChatboxGetMessagesResponse struct {
-	Messages   []RespChatboxMessageModel            `json:"messages,omitempty"`
-	SystemInfo ChatboxGetMessagesResponseSystemInfo `json:"system_info,omitempty"`
+	Messages   []RespChatboxMessageModel            `json:"messages"`
+	SystemInfo ChatboxGetMessagesResponseSystemInfo `json:"system_info"`
 }
 
 // ChatboxIndexParams holds query parameters for Chatbox.Index.
@@ -5245,13 +5245,13 @@ type ChatboxIndexParams struct {
 
 // ChatboxIndexResponse is the response for the endpoint.
 type ChatboxIndexResponse struct {
-	Ban         any                             `json:"ban,omitempty"`
-	Commands    []string                        `json:"commands,omitempty"`
-	Ignore      []any                           `json:"ignore,omitempty"`
-	Permissions ChatboxIndexResponsePermissions `json:"permissions,omitempty"`
-	Rooms       []any                           `json:"rooms,omitempty"`
-	RoomsOnline ChatboxIndexResponseRoomsOnline `json:"roomsOnline,omitempty"`
-	SystemInfo  ChatboxIndexResponseSystemInfo  `json:"system_info,omitempty"`
+	Ban         any                             `json:"ban"`
+	Commands    []string                        `json:"commands"`
+	Ignore      []any                           `json:"ignore"`
+	Permissions ChatboxIndexResponsePermissions `json:"permissions"`
+	Rooms       []any                           `json:"rooms"`
+	RoomsOnline ChatboxIndexResponseRoomsOnline `json:"roomsOnline"`
+	SystemInfo  ChatboxIndexResponseSystemInfo  `json:"system_info"`
 }
 
 // ChatboxOnlineParams holds query parameters for Chatbox.Online.
@@ -5261,13 +5261,13 @@ type ChatboxOnlineParams struct {
 
 // ChatboxOnlineResponse is the response for the endpoint.
 type ChatboxOnlineResponse struct {
-	SystemInfo ChatboxOnlineResponseSystemInfo `json:"system_info,omitempty"`
-	Users      []any                           `json:"users,omitempty"`
+	SystemInfo ChatboxOnlineResponseSystemInfo `json:"system_info"`
+	Users      []any                           `json:"users"`
 }
 
 // ChatboxPostIgnoreBody holds the request body for Chatbox.PostIgnore.
 type ChatboxPostIgnoreBody struct {
-	UserID any `json:"user_id"`
+	UserID lolzteam.StringOrInt `json:"user_id"`
 }
 
 // ChatboxPostIgnoreResponse is the response for the endpoint.
@@ -5286,8 +5286,8 @@ type ChatboxPostMessageBody struct {
 
 // ChatboxPostMessageResponse is the response for the endpoint.
 type ChatboxPostMessageResponse struct {
-	Message    ChatboxPostMessageResponseMessage    `json:"message,omitempty"`
-	SystemInfo ChatboxPostMessageResponseSystemInfo `json:"system_info,omitempty"`
+	Message    ChatboxPostMessageResponseMessage    `json:"message"`
+	SystemInfo ChatboxPostMessageResponseSystemInfo `json:"system_info"`
 }
 
 // ChatboxReportBody holds the request body for Chatbox.Report.
@@ -5310,22 +5310,22 @@ type ChatboxReportReasonsParams struct {
 
 // ChatboxReportReasonsResponse is the response for the endpoint.
 type ChatboxReportReasonsResponse struct {
-	Reasons    []string                               `json:"reasons,omitempty"`
-	SystemInfo ChatboxReportReasonsResponseSystemInfo `json:"system_info,omitempty"`
+	Reasons    []string                               `json:"reasons"`
+	SystemInfo ChatboxReportReasonsResponseSystemInfo `json:"system_info"`
 }
 
 // ConversationsAlertsDisableResponse is the response for the endpoint.
 type ConversationsAlertsDisableResponse struct {
-	Message    string                                       `json:"message,omitempty"`
-	Status     string                                       `json:"status,omitempty"`
-	SystemInfo ConversationsAlertsDisableResponseSystemInfo `json:"system_info,omitempty"`
+	Message    string                                       `json:"message"`
+	Status     string                                       `json:"status"`
+	SystemInfo ConversationsAlertsDisableResponseSystemInfo `json:"system_info"`
 }
 
 // ConversationsAlertsEnableResponse is the response for the endpoint.
 type ConversationsAlertsEnableResponse struct {
-	Message    string                                      `json:"message,omitempty"`
-	Status     string                                      `json:"status,omitempty"`
-	SystemInfo ConversationsAlertsEnableResponseSystemInfo `json:"system_info,omitempty"`
+	Message    string                                      `json:"message"`
+	Status     string                                      `json:"status"`
+	SystemInfo ConversationsAlertsEnableResponseSystemInfo `json:"system_info"`
 }
 
 // ConversationsCreateBody holds the request body for Conversations.Create.
@@ -5343,8 +5343,8 @@ type ConversationsCreateBody struct {
 
 // ConversationsCreateResponse is the response for the endpoint.
 type ConversationsCreateResponse struct {
-	Conversation ConversationsCreateResponseConversation `json:"conversation,omitempty"`
-	SystemInfo   ConversationsCreateResponseSystemInfo   `json:"system_info,omitempty"`
+	Conversation ConversationsCreateResponseConversation `json:"conversation"`
+	SystemInfo   ConversationsCreateResponseSystemInfo   `json:"system_info"`
 }
 
 // ConversationsDeleteBody holds the request body for Conversations.Delete.
@@ -5362,8 +5362,8 @@ type ConversationsDeleteResponse struct {
 
 // ConversationsGetResponse is the response for the endpoint.
 type ConversationsGetResponse struct {
-	Conversation ConversationsGetResponseConversation `json:"conversation,omitempty"`
-	SystemInfo   ConversationsGetResponseSystemInfo   `json:"system_info,omitempty"`
+	Conversation ConversationsGetResponseConversation `json:"conversation"`
+	SystemInfo   ConversationsGetResponseSystemInfo   `json:"system_info"`
 }
 
 // ConversationsInviteBody holds the request body for Conversations.Invite.
@@ -5399,11 +5399,11 @@ type ConversationsListParams struct {
 
 // ConversationsListResponse is the response for the endpoint.
 type ConversationsListResponse struct {
-	CanStart      bool                                `json:"can_start,omitempty"`
-	Conversations []RespConversationModel             `json:"conversations,omitempty"`
-	Folders       []any                               `json:"folders,omitempty"`
-	Links         ConversationsListResponseLinks      `json:"links,omitempty"`
-	SystemInfo    ConversationsListResponseSystemInfo `json:"system_info,omitempty"`
+	CanStart      bool                                `json:"can_start"`
+	Conversations []RespConversationModel             `json:"conversations"`
+	Folders       []any                               `json:"folders"`
+	Links         ConversationsListResponseLinks      `json:"links"`
+	SystemInfo    ConversationsListResponseSystemInfo `json:"system_info"`
 }
 
 // ConversationsMessagesCreateBody holds the request body for Conversations.MessagesCreate.
@@ -5414,8 +5414,8 @@ type ConversationsMessagesCreateBody struct {
 
 // ConversationsMessagesCreateResponse is the response for the endpoint.
 type ConversationsMessagesCreateResponse struct {
-	Message    ConversationsMessagesCreateResponseMessage    `json:"message,omitempty"`
-	SystemInfo ConversationsMessagesCreateResponseSystemInfo `json:"system_info,omitempty"`
+	Message    ConversationsMessagesCreateResponseMessage    `json:"message"`
+	SystemInfo ConversationsMessagesCreateResponseSystemInfo `json:"system_info"`
 }
 
 // ConversationsMessagesDeleteResponse is the response for the endpoint.
@@ -5432,14 +5432,14 @@ type ConversationsMessagesEditBody struct {
 
 // ConversationsMessagesEditResponse is the response for the endpoint.
 type ConversationsMessagesEditResponse struct {
-	Message    ConversationsMessagesEditResponseMessage    `json:"message,omitempty"`
-	SystemInfo ConversationsMessagesEditResponseSystemInfo `json:"system_info,omitempty"`
+	Message    ConversationsMessagesEditResponseMessage    `json:"message"`
+	SystemInfo ConversationsMessagesEditResponseSystemInfo `json:"system_info"`
 }
 
 // ConversationsMessagesGetResponse is the response for the endpoint.
 type ConversationsMessagesGetResponse struct {
-	Message    ConversationsMessagesGetResponseMessage    `json:"message,omitempty"`
-	SystemInfo ConversationsMessagesGetResponseSystemInfo `json:"system_info,omitempty"`
+	Message    ConversationsMessagesGetResponseMessage    `json:"message"`
+	SystemInfo ConversationsMessagesGetResponseSystemInfo `json:"system_info"`
 }
 
 // ConversationsMessagesListParams holds query parameters for Conversations.MessagesList.
@@ -5453,10 +5453,10 @@ type ConversationsMessagesListParams struct {
 
 // ConversationsMessagesListResponse is the response for the endpoint.
 type ConversationsMessagesListResponse struct {
-	Links         ConversationsMessagesListResponseLinks      `json:"links,omitempty"`
-	Messages      []RespConversationMessageModel              `json:"messages,omitempty"`
-	MessagesTotal int64                                       `json:"messages_total,omitempty"`
-	SystemInfo    ConversationsMessagesListResponseSystemInfo `json:"system_info,omitempty"`
+	Links         ConversationsMessagesListResponseLinks      `json:"links"`
+	Messages      []RespConversationMessageModel              `json:"messages"`
+	MessagesTotal int64                                       `json:"messages_total"`
+	SystemInfo    ConversationsMessagesListResponseSystemInfo `json:"system_info"`
 }
 
 // ConversationsMessagesStickResponse is the response for the endpoint.
@@ -5482,9 +5482,9 @@ type ConversationsReadResponse struct {
 
 // ConversationsReadAllResponse is the response for the endpoint.
 type ConversationsReadAllResponse struct {
-	Message    string                                 `json:"message,omitempty"`
-	Status     string                                 `json:"status,omitempty"`
-	SystemInfo ConversationsReadAllResponseSystemInfo `json:"system_info,omitempty"`
+	Message    string                                 `json:"message"`
+	Status     string                                 `json:"status"`
+	SystemInfo ConversationsReadAllResponseSystemInfo `json:"system_info"`
 }
 
 // ConversationsSaveBody holds the request body for Conversations.Save.
@@ -5508,34 +5508,34 @@ type ConversationsSearchBody struct {
 
 // ConversationsSearchResponse is the response for the endpoint.
 type ConversationsSearchResponse struct {
-	Conversations []RespConversationModel               `json:"conversations,omitempty"`
-	Recipients    bool                                  `json:"recipients,omitempty"`
-	SystemInfo    ConversationsSearchResponseSystemInfo `json:"system_info,omitempty"`
+	Conversations []RespConversationModel               `json:"conversations"`
+	Recipients    bool                                  `json:"recipients"`
+	SystemInfo    ConversationsSearchResponseSystemInfo `json:"system_info"`
 }
 
 // ConversationsStarResponse is the response for the endpoint.
 type ConversationsStarResponse struct {
-	Message    string                              `json:"message,omitempty"`
-	Status     string                              `json:"status,omitempty"`
-	SystemInfo ConversationsStarResponseSystemInfo `json:"system_info,omitempty"`
+	Message    string                              `json:"message"`
+	Status     string                              `json:"status"`
+	SystemInfo ConversationsStarResponseSystemInfo `json:"system_info"`
 }
 
 // ConversationsStartBody holds the request body for Conversations.Start.
 type ConversationsStartBody struct {
-	UserID any `json:"user_id"`
+	UserID lolzteam.StringOrInt `json:"user_id"`
 }
 
 // ConversationsStartResponse is the response for the endpoint.
 type ConversationsStartResponse struct {
-	Conversation ConversationsStartResponseConversation `json:"conversation,omitempty"`
-	SystemInfo   ConversationsStartResponseSystemInfo   `json:"system_info,omitempty"`
+	Conversation ConversationsStartResponseConversation `json:"conversation"`
+	SystemInfo   ConversationsStartResponseSystemInfo   `json:"system_info"`
 }
 
 // ConversationsUnstarResponse is the response for the endpoint.
 type ConversationsUnstarResponse struct {
-	Message    string                                `json:"message,omitempty"`
-	Status     string                                `json:"status,omitempty"`
-	SystemInfo ConversationsUnstarResponseSystemInfo `json:"system_info,omitempty"`
+	Message    string                                `json:"message"`
+	Status     string                                `json:"status"`
+	SystemInfo ConversationsUnstarResponseSystemInfo `json:"system_info"`
 }
 
 // ConversationsUpdateBody holds the request body for Conversations.Update.
@@ -5551,8 +5551,8 @@ type ConversationsUpdateBody struct {
 
 // ConversationsUpdateResponse is the response for the endpoint.
 type ConversationsUpdateResponse struct {
-	Conversation ConversationsUpdateResponseConversation `json:"conversation,omitempty"`
-	SystemInfo   ConversationsUpdateResponseSystemInfo   `json:"system_info,omitempty"`
+	Conversation ConversationsUpdateResponseConversation `json:"conversation"`
+	SystemInfo   ConversationsUpdateResponseSystemInfo   `json:"system_info"`
 }
 
 // FormsCreateBody holds the request body for Forms.Create.
@@ -5563,9 +5563,9 @@ type FormsCreateBody struct {
 
 // FormsCreateResponse is the response for the endpoint.
 type FormsCreateResponse struct {
-	Content    FormsCreateResponseContent    `json:"content,omitempty"`
-	Message    string                        `json:"message,omitempty"`
-	SystemInfo FormsCreateResponseSystemInfo `json:"system_info,omitempty"`
+	Content    FormsCreateResponseContent    `json:"content"`
+	Message    string                        `json:"message"`
+	SystemInfo FormsCreateResponseSystemInfo `json:"system_info"`
 }
 
 // FormsListParams holds query parameters for Forms.List.
@@ -5575,11 +5575,11 @@ type FormsListParams struct {
 
 // FormsListResponse is the response for the endpoint.
 type FormsListResponse struct {
-	Forms        []any                       `json:"forms,omitempty"`
-	FormsPerPage int64                       `json:"formsPerPage,omitempty"`
-	Page         int64                       `json:"page,omitempty"`
-	SystemInfo   FormsListResponseSystemInfo `json:"system_info,omitempty"`
-	TotalForms   int64                       `json:"totalForms,omitempty"`
+	Forms        []any                       `json:"forms"`
+	FormsPerPage int64                       `json:"formsPerPage"`
+	Page         int64                       `json:"page"`
+	SystemInfo   FormsListResponseSystemInfo `json:"system_info"`
+	TotalForms   int64                       `json:"totalForms"`
 }
 
 // ForumsEditFeedOptionsBody holds the request body for Forums.EditFeedOptions.
@@ -5618,36 +5618,36 @@ type ForumsFollowedParams struct {
 
 // ForumsFollowedResponse is the response for the endpoint.
 type ForumsFollowedResponse struct {
-	Forums     []any                            `json:"forums,omitempty"`
-	SystemInfo ForumsFollowedResponseSystemInfo `json:"system_info,omitempty"`
+	Forums     []any                            `json:"forums"`
+	SystemInfo ForumsFollowedResponseSystemInfo `json:"system_info"`
 }
 
 // ForumsFollowersResponse is the response for the endpoint.
 type ForumsFollowersResponse struct {
-	SystemInfo ForumsFollowersResponseSystemInfo `json:"system_info,omitempty"`
-	Users      []any                             `json:"users,omitempty"`
+	SystemInfo ForumsFollowersResponseSystemInfo `json:"system_info"`
+	Users      []any                             `json:"users"`
 }
 
 // ForumsGetResponse is the response for the endpoint.
 type ForumsGetResponse struct {
-	Forum      ForumsGetResponseForum      `json:"forum,omitempty"`
-	SystemInfo ForumsGetResponseSystemInfo `json:"system_info,omitempty"`
+	Forum      ForumsGetResponseForum      `json:"forum"`
+	SystemInfo ForumsGetResponseSystemInfo `json:"system_info"`
 }
 
 // ForumsGetFeedOptionsResponse is the response for the endpoint.
 type ForumsGetFeedOptionsResponse struct {
-	DefaultExcludedForumsIds []int64                                `json:"default_excluded_forums_ids,omitempty"`
-	ExcludedForumsIds        []int64                                `json:"excluded_forums_ids,omitempty"`
-	Forums                   []any                                  `json:"forums,omitempty"`
-	Keywords                 string                                 `json:"keywords,omitempty"`
-	SystemInfo               ForumsGetFeedOptionsResponseSystemInfo `json:"system_info,omitempty"`
+	DefaultExcludedForumsIds []int64                                `json:"default_excluded_forums_ids"`
+	ExcludedForumsIds        []int64                                `json:"excluded_forums_ids"`
+	Forums                   []any                                  `json:"forums"`
+	Keywords                 string                                 `json:"keywords"`
+	SystemInfo               ForumsGetFeedOptionsResponseSystemInfo `json:"system_info"`
 }
 
 // ForumsGroupedResponse is the response for the endpoint.
 type ForumsGroupedResponse struct {
-	Data       ForumsGroupedResponseData       `json:"data,omitempty"`
-	SystemInfo ForumsGroupedResponseSystemInfo `json:"system_info,omitempty"`
-	Tabs       []any                           `json:"tabs,omitempty"`
+	Data       ForumsGroupedResponseData       `json:"data"`
+	SystemInfo ForumsGroupedResponseSystemInfo `json:"system_info"`
+	Tabs       []any                           `json:"tabs"`
 }
 
 // ForumsListParams holds query parameters for Forums.List.
@@ -5659,10 +5659,10 @@ type ForumsListParams struct {
 
 // ForumsListResponse is the response for the endpoint.
 type ForumsListResponse struct {
-	Forums      []any                        `json:"forums,omitempty"`
-	ForumsTotal int64                        `json:"forums_total,omitempty"`
-	SystemInfo  ForumsListResponseSystemInfo `json:"system_info,omitempty"`
-	Tabs        []any                        `json:"tabs,omitempty"`
+	Forums      []any                        `json:"forums"`
+	ForumsTotal int64                        `json:"forums_total"`
+	SystemInfo  ForumsListResponseSystemInfo `json:"system_info"`
+	Tabs        []any                        `json:"tabs"`
 }
 
 // ForumsUnfollowResponse is the response for the endpoint.
@@ -5674,15 +5674,15 @@ type ForumsUnfollowResponse struct {
 
 // LinksGetResponse is the response for the endpoint.
 type LinksGetResponse struct {
-	LinkForum  LinksGetResponseLinkForum  `json:"link-forum,omitempty"`
-	SystemInfo LinksGetResponseSystemInfo `json:"system_info,omitempty"`
+	LinkForum  LinksGetResponseLinkForum  `json:"link-forum"`
+	SystemInfo LinksGetResponseSystemInfo `json:"system_info"`
 }
 
 // LinksListResponse is the response for the endpoint.
 type LinksListResponse struct {
-	LinkForums      []RespLinkModel             `json:"link-forums,omitempty"`
-	LinkForumsTotal int64                       `json:"link-forums_total,omitempty"`
-	SystemInfo      LinksListResponseSystemInfo `json:"system_info,omitempty"`
+	LinkForums      []RespLinkModel             `json:"link-forums"`
+	LinkForumsTotal int64                       `json:"link-forums_total"`
+	SystemInfo      LinksListResponseSystemInfo `json:"system_info"`
 }
 
 // NavigationListParams holds query parameters for Navigation.List.
@@ -5692,16 +5692,16 @@ type NavigationListParams struct {
 
 // NavigationListResponse is the response for the endpoint.
 type NavigationListResponse struct {
-	Elements      []any                            `json:"elements,omitempty"`
-	ElementsCount int64                            `json:"elements_count,omitempty"`
-	SystemInfo    NavigationListResponseSystemInfo `json:"system_info,omitempty"`
+	Elements      []any                            `json:"elements"`
+	ElementsCount int64                            `json:"elements_count"`
+	SystemInfo    NavigationListResponseSystemInfo `json:"system_info"`
 }
 
 // NotificationsGetResponse is the response for the endpoint.
 type NotificationsGetResponse struct {
-	Notification   NotificationsGetResponseNotification `json:"notification,omitempty"`
-	NotificationID int64                                `json:"notification_id,omitempty"`
-	SystemInfo     NotificationsGetResponseSystemInfo   `json:"system_info,omitempty"`
+	Notification   NotificationsGetResponseNotification `json:"notification"`
+	NotificationID int64                                `json:"notification_id"`
+	SystemInfo     NotificationsGetResponseSystemInfo   `json:"system_info"`
 }
 
 // NotificationsListParams holds query parameters for Notifications.List.
@@ -5713,10 +5713,10 @@ type NotificationsListParams struct {
 
 // NotificationsListResponse is the response for the endpoint.
 type NotificationsListResponse struct {
-	Links              NotificationsListResponseLinks      `json:"links,omitempty"`
-	Notifications      []RespNotificationModel             `json:"notifications,omitempty"`
-	NotificationsTotal int64                               `json:"notifications_total,omitempty"`
-	SystemInfo         NotificationsListResponseSystemInfo `json:"system_info,omitempty"`
+	Links              NotificationsListResponseLinks      `json:"links"`
+	Notifications      []RespNotificationModel             `json:"notifications"`
+	NotificationsTotal int64                               `json:"notifications_total"`
+	SystemInfo         NotificationsListResponseSystemInfo `json:"system_info"`
 }
 
 // NotificationsReadBody holds the request body for Notifications.Read.
@@ -5746,17 +5746,17 @@ type OAuthTokenBody struct {
 
 // OAuthTokenResponse is the response for the endpoint.
 type OAuthTokenResponse struct {
-	AccessToken  string  `json:"access_token,omitempty"`
-	ExpiresIn    int64   `json:"expires_in,omitempty"`
+	AccessToken  string  `json:"access_token"`
+	ExpiresIn    int64   `json:"expires_in"`
 	RefreshToken *string `json:"refresh_token,omitempty"`
 	Scope        *string `json:"scope,omitempty"`
-	TokenType    string  `json:"token_type,omitempty"`
+	TokenType    string  `json:"token_type"`
 }
 
 // PagesGetResponse is the response for the endpoint.
 type PagesGetResponse struct {
-	Page       PagesGetResponsePage       `json:"page,omitempty"`
-	SystemInfo PagesGetResponseSystemInfo `json:"system_info,omitempty"`
+	Page       PagesGetResponsePage       `json:"page"`
+	SystemInfo PagesGetResponseSystemInfo `json:"system_info"`
 }
 
 // PagesListParams holds query parameters for Pages.List.
@@ -5767,9 +5767,9 @@ type PagesListParams struct {
 
 // PagesListResponse is the response for the endpoint.
 type PagesListResponse struct {
-	Pages      []any                       `json:"pages,omitempty"`
-	PagesTotal int64                       `json:"pages_total,omitempty"`
-	SystemInfo PagesListResponseSystemInfo `json:"system_info,omitempty"`
+	Pages      []any                       `json:"pages"`
+	PagesTotal int64                       `json:"pages_total"`
+	SystemInfo PagesListResponseSystemInfo `json:"system_info"`
 }
 
 // PostsCommentsCreateBody holds the request body for Posts.CommentsCreate.
@@ -5780,8 +5780,8 @@ type PostsCommentsCreateBody struct {
 
 // PostsCommentsCreateResponse is the response for the endpoint.
 type PostsCommentsCreateResponse struct {
-	Comment    PostsCommentsCreateResponseComment    `json:"comment,omitempty"`
-	SystemInfo PostsCommentsCreateResponseSystemInfo `json:"system_info,omitempty"`
+	Comment    PostsCommentsCreateResponseComment    `json:"comment"`
+	SystemInfo PostsCommentsCreateResponseSystemInfo `json:"system_info"`
 }
 
 // PostsCommentsDeleteBody holds the request body for Posts.CommentsDelete.
@@ -5805,8 +5805,8 @@ type PostsCommentsEditBody struct {
 
 // PostsCommentsEditResponse is the response for the endpoint.
 type PostsCommentsEditResponse struct {
-	Comment    PostsCommentsEditResponseComment    `json:"comment,omitempty"`
-	SystemInfo PostsCommentsEditResponseSystemInfo `json:"system_info,omitempty"`
+	Comment    PostsCommentsEditResponseComment    `json:"comment"`
+	SystemInfo PostsCommentsEditResponseSystemInfo `json:"system_info"`
 }
 
 // PostsCommentsGetParams holds query parameters for Posts.CommentsGet.
@@ -5818,8 +5818,8 @@ type PostsCommentsGetParams struct {
 
 // PostsCommentsGetResponse is the response for the endpoint.
 type PostsCommentsGetResponse struct {
-	Comments   []RespPostCommentModel             `json:"comments,omitempty"`
-	SystemInfo PostsCommentsGetResponseSystemInfo `json:"system_info,omitempty"`
+	Comments   []RespPostCommentModel             `json:"comments"`
+	SystemInfo PostsCommentsGetResponseSystemInfo `json:"system_info"`
 }
 
 // PostsCommentsReportBody holds the request body for Posts.CommentsReport.
@@ -5844,8 +5844,8 @@ type PostsCreateBody struct {
 
 // PostsCreateResponse is the response for the endpoint.
 type PostsCreateResponse struct {
-	Post       PostsCreateResponsePost       `json:"post,omitempty"`
-	SystemInfo PostsCreateResponseSystemInfo `json:"system_info,omitempty"`
+	Post       PostsCreateResponsePost       `json:"post"`
+	SystemInfo PostsCreateResponseSystemInfo `json:"system_info"`
 }
 
 // PostsDeleteBody holds the request body for Posts.Delete.
@@ -5867,14 +5867,14 @@ type PostsEditBody struct {
 
 // PostsEditResponse is the response for the endpoint.
 type PostsEditResponse struct {
-	Post       PostsEditResponsePost       `json:"post,omitempty"`
-	SystemInfo PostsEditResponseSystemInfo `json:"system_info,omitempty"`
+	Post       PostsEditResponsePost       `json:"post"`
+	SystemInfo PostsEditResponseSystemInfo `json:"system_info"`
 }
 
 // PostsGetResponse is the response for the endpoint.
 type PostsGetResponse struct {
-	Post       PostsGetResponsePost       `json:"post,omitempty"`
-	SystemInfo PostsGetResponseSystemInfo `json:"system_info,omitempty"`
+	Post       PostsGetResponsePost       `json:"post"`
+	SystemInfo PostsGetResponseSystemInfo `json:"system_info"`
 }
 
 // PostsLikeResponse is the response for the endpoint.
@@ -5892,8 +5892,8 @@ type PostsLikesParams struct {
 
 // PostsLikesResponse is the response for the endpoint.
 type PostsLikesResponse struct {
-	SystemInfo PostsLikesResponseSystemInfo `json:"system_info,omitempty"`
-	Users      []any                        `json:"users,omitempty"`
+	SystemInfo PostsLikesResponseSystemInfo `json:"system_info"`
+	Users      []any                        `json:"users"`
 }
 
 // PostsListParams holds query parameters for Posts.List.
@@ -5907,10 +5907,10 @@ type PostsListParams struct {
 
 // PostsListResponse is the response for the endpoint.
 type PostsListResponse struct {
-	Posts      []RespThreadModel           `json:"posts,omitempty"`
-	PostsTotal int64                       `json:"posts_total,omitempty"`
-	SystemInfo PostsListResponseSystemInfo `json:"system_info,omitempty"`
-	Thread     PostsListResponseThread     `json:"thread,omitempty"`
+	Posts      []RespThreadModel           `json:"posts"`
+	PostsTotal int64                       `json:"posts_total"`
+	SystemInfo PostsListResponseSystemInfo `json:"system_info"`
+	Thread     PostsListResponseThread     `json:"thread"`
 }
 
 // PostsReportBody holds the request body for Posts.Report.
@@ -5927,8 +5927,8 @@ type PostsReportResponse struct {
 
 // PostsReportReasonsResponse is the response for the endpoint.
 type PostsReportReasonsResponse struct {
-	Reasons    []string                             `json:"reasons,omitempty"`
-	SystemInfo PostsReportReasonsResponseSystemInfo `json:"system_info,omitempty"`
+	Reasons    []string                             `json:"reasons"`
+	SystemInfo PostsReportReasonsResponseSystemInfo `json:"system_info"`
 }
 
 // PostsUnlikeResponse is the response for the endpoint.
@@ -5946,8 +5946,8 @@ type ProfilePostsCommentsCreateBody struct {
 
 // ProfilePostsCommentsCreateResponse is the response for the endpoint.
 type ProfilePostsCommentsCreateResponse struct {
-	Comment    ProfilePostsCommentsCreateResponseComment    `json:"comment,omitempty"`
-	SystemInfo ProfilePostsCommentsCreateResponseSystemInfo `json:"system_info,omitempty"`
+	Comment    ProfilePostsCommentsCreateResponseComment    `json:"comment"`
+	SystemInfo ProfilePostsCommentsCreateResponseSystemInfo `json:"system_info"`
 }
 
 // ProfilePostsCommentsDeleteBody holds the request body for ProfilePosts.CommentsDelete.
@@ -5970,14 +5970,14 @@ type ProfilePostsCommentsEditBody struct {
 
 // ProfilePostsCommentsEditResponse is the response for the endpoint.
 type ProfilePostsCommentsEditResponse struct {
-	Comment    ProfilePostsCommentsEditResponseComment    `json:"comment,omitempty"`
-	SystemInfo ProfilePostsCommentsEditResponseSystemInfo `json:"system_info,omitempty"`
+	Comment    ProfilePostsCommentsEditResponseComment    `json:"comment"`
+	SystemInfo ProfilePostsCommentsEditResponseSystemInfo `json:"system_info"`
 }
 
 // ProfilePostsCommentsGetResponse is the response for the endpoint.
 type ProfilePostsCommentsGetResponse struct {
-	Comment    ProfilePostsCommentsGetResponseComment    `json:"comment,omitempty"`
-	SystemInfo ProfilePostsCommentsGetResponseSystemInfo `json:"system_info,omitempty"`
+	Comment    ProfilePostsCommentsGetResponseComment    `json:"comment"`
+	SystemInfo ProfilePostsCommentsGetResponseSystemInfo `json:"system_info"`
 }
 
 // ProfilePostsCommentsListParams holds query parameters for ProfilePosts.CommentsList.
@@ -5989,11 +5989,11 @@ type ProfilePostsCommentsListParams struct {
 
 // ProfilePostsCommentsListResponse is the response for the endpoint.
 type ProfilePostsCommentsListResponse struct {
-	Comments      []RespProfilePostCommentModel                `json:"comments,omitempty"`
-	CommentsTotal int64                                        `json:"comments_total,omitempty"`
-	ProfilePost   ProfilePostsCommentsListResponseProfilePost  `json:"profile_post,omitempty"`
-	SystemInfo    ProfilePostsCommentsListResponseSystemInfo   `json:"system_info,omitempty"`
-	TimelineUser  ProfilePostsCommentsListResponseTimelineUser `json:"timeline_user,omitempty"`
+	Comments      []RespProfilePostCommentModel                `json:"comments"`
+	CommentsTotal int64                                        `json:"comments_total"`
+	ProfilePost   ProfilePostsCommentsListResponseProfilePost  `json:"profile_post"`
+	SystemInfo    ProfilePostsCommentsListResponseSystemInfo   `json:"system_info"`
+	TimelineUser  ProfilePostsCommentsListResponseTimelineUser `json:"timeline_user"`
 }
 
 // ProfilePostsCommentsReportBody holds the request body for ProfilePosts.CommentsReport.
@@ -6010,14 +6010,14 @@ type ProfilePostsCommentsReportResponse struct {
 
 // ProfilePostsCreateBody holds the request body for ProfilePosts.Create.
 type ProfilePostsCreateBody struct {
-	PostBody string `json:"post_body"`
-	UserID   any    `json:"user_id"`
+	PostBody string               `json:"post_body"`
+	UserID   lolzteam.StringOrInt `json:"user_id"`
 }
 
 // ProfilePostsCreateResponse is the response for the endpoint.
 type ProfilePostsCreateResponse struct {
-	ProfilePost ProfilePostsCreateResponseProfilePost `json:"profile_post,omitempty"`
-	SystemInfo  ProfilePostsCreateResponseSystemInfo  `json:"system_info,omitempty"`
+	ProfilePost ProfilePostsCreateResponseProfilePost `json:"profile_post"`
+	SystemInfo  ProfilePostsCreateResponseSystemInfo  `json:"system_info"`
 }
 
 // ProfilePostsDeleteParams holds query parameters for ProfilePosts.Delete.
@@ -6040,14 +6040,14 @@ type ProfilePostsEditBody struct {
 
 // ProfilePostsEditResponse is the response for the endpoint.
 type ProfilePostsEditResponse struct {
-	ProfilePost ProfilePostsEditResponseProfilePost `json:"profile_post,omitempty"`
-	SystemInfo  ProfilePostsEditResponseSystemInfo  `json:"system_info,omitempty"`
+	ProfilePost ProfilePostsEditResponseProfilePost `json:"profile_post"`
+	SystemInfo  ProfilePostsEditResponseSystemInfo  `json:"system_info"`
 }
 
 // ProfilePostsGetResponse is the response for the endpoint.
 type ProfilePostsGetResponse struct {
-	ProfilePost ProfilePostsGetResponseProfilePost `json:"profile_post,omitempty"`
-	SystemInfo  ProfilePostsGetResponseSystemInfo  `json:"system_info,omitempty"`
+	ProfilePost ProfilePostsGetResponseProfilePost `json:"profile_post"`
+	SystemInfo  ProfilePostsGetResponseSystemInfo  `json:"system_info"`
 }
 
 // ProfilePostsLikeResponse is the response for the endpoint.
@@ -6059,8 +6059,8 @@ type ProfilePostsLikeResponse struct {
 
 // ProfilePostsLikesResponse is the response for the endpoint.
 type ProfilePostsLikesResponse struct {
-	SystemInfo ProfilePostsLikesResponseSystemInfo `json:"system_info,omitempty"`
-	Users      []any                               `json:"users,omitempty"`
+	SystemInfo ProfilePostsLikesResponseSystemInfo `json:"system_info"`
+	Users      []any                               `json:"users"`
 }
 
 // ProfilePostsListParams holds query parameters for ProfilePosts.List.
@@ -6073,11 +6073,11 @@ type ProfilePostsListParams struct {
 
 // ProfilePostsListResponse is the response for the endpoint.
 type ProfilePostsListResponse struct {
-	CanPostOnProfile  bool                               `json:"canPostOnProfile,omitempty"`
-	Links             ProfilePostsListResponseLinks      `json:"links,omitempty"`
-	ProfilePosts      []RespProfilePostModel             `json:"profile_posts,omitempty"`
-	SystemInfo        ProfilePostsListResponseSystemInfo `json:"system_info,omitempty"`
-	TotalProfilePosts int64                              `json:"totalProfilePosts,omitempty"`
+	CanPostOnProfile  bool                               `json:"canPostOnProfile"`
+	Links             ProfilePostsListResponseLinks      `json:"links"`
+	ProfilePosts      []RespProfilePostModel             `json:"profile_posts"`
+	SystemInfo        ProfilePostsListResponseSystemInfo `json:"system_info"`
+	TotalProfilePosts int64                              `json:"totalProfilePosts"`
 }
 
 // ProfilePostsReportBody holds the request body for ProfilePosts.Report.
@@ -6094,8 +6094,8 @@ type ProfilePostsReportResponse struct {
 
 // ProfilePostsReportReasonsResponse is the response for the endpoint.
 type ProfilePostsReportReasonsResponse struct {
-	Reasons    []string                                    `json:"reasons,omitempty"`
-	SystemInfo ProfilePostsReportReasonsResponseSystemInfo `json:"system_info,omitempty"`
+	Reasons    []string                                    `json:"reasons"`
+	SystemInfo ProfilePostsReportReasonsResponseSystemInfo `json:"system_info"`
 }
 
 // ProfilePostsStickResponse is the response for the endpoint.
@@ -6121,40 +6121,40 @@ type ProfilePostsUnstickResponse struct {
 
 // SearchAllBody holds the request body for Search.All.
 type SearchAllBody struct {
-	ForumID *int64  `json:"forum_id,omitempty"`
-	Limit   *int64  `json:"limit,omitempty"`
-	Page    *int64  `json:"page,omitempty"`
-	Q       *string `json:"q,omitempty"`
-	Tag     *string `json:"tag,omitempty"`
-	UserID  any     `json:"user_id,omitempty"`
+	ForumID *int64                `json:"forum_id,omitempty"`
+	Limit   *int64                `json:"limit,omitempty"`
+	Page    *int64                `json:"page,omitempty"`
+	Q       *string               `json:"q,omitempty"`
+	Tag     *string               `json:"tag,omitempty"`
+	UserID  *lolzteam.StringOrInt `json:"user_id,omitempty"`
 }
 
 // SearchAllResponse is the response for the endpoint.
 type SearchAllResponse struct {
-	Data       []any                       `json:"data,omitempty"`
-	DataTotal  int64                       `json:"data_total,omitempty"`
-	Links      SearchAllResponseLinks      `json:"links,omitempty"`
-	SystemInfo SearchAllResponseSystemInfo `json:"system_info,omitempty"`
-	Users      []RespUserModel             `json:"users,omitempty"`
+	Data       []any                       `json:"data"`
+	DataTotal  int64                       `json:"data_total"`
+	Links      SearchAllResponseLinks      `json:"links"`
+	SystemInfo SearchAllResponseSystemInfo `json:"system_info"`
+	Users      []RespUserModel             `json:"users"`
 }
 
 // SearchPostsBody holds the request body for Search.Posts.
 type SearchPostsBody struct {
-	DataLimit *int64  `json:"data_limit,omitempty"`
-	ForumID   *int64  `json:"forum_id,omitempty"`
-	Limit     *int64  `json:"limit,omitempty"`
-	Page      *int64  `json:"page,omitempty"`
-	Q         *string `json:"q,omitempty"`
-	Tag       *string `json:"tag,omitempty"`
-	UserID    any     `json:"user_id,omitempty"`
+	DataLimit *int64                `json:"data_limit,omitempty"`
+	ForumID   *int64                `json:"forum_id,omitempty"`
+	Limit     *int64                `json:"limit,omitempty"`
+	Page      *int64                `json:"page,omitempty"`
+	Q         *string               `json:"q,omitempty"`
+	Tag       *string               `json:"tag,omitempty"`
+	UserID    *lolzteam.StringOrInt `json:"user_id,omitempty"`
 }
 
 // SearchPostsResponse is the response for the endpoint.
 type SearchPostsResponse struct {
-	Data       []any                         `json:"data,omitempty"`
-	DataTotal  int64                         `json:"data_total,omitempty"`
-	Links      SearchPostsResponseLinks      `json:"links,omitempty"`
-	SystemInfo SearchPostsResponseSystemInfo `json:"system_info,omitempty"`
+	Data       []any                         `json:"data"`
+	DataTotal  int64                         `json:"data_total"`
+	Links      SearchPostsResponseLinks      `json:"links"`
+	SystemInfo SearchPostsResponseSystemInfo `json:"system_info"`
 }
 
 // SearchProfilePostsBody holds the request body for Search.ProfilePosts.
@@ -6167,24 +6167,24 @@ type SearchProfilePostsBody struct {
 
 // SearchProfilePostsResponse is the response for the endpoint.
 type SearchProfilePostsResponse struct {
-	Data       []any                                `json:"data,omitempty"`
-	DataTotal  int64                                `json:"data_total,omitempty"`
-	Links      SearchProfilePostsResponseLinks      `json:"links,omitempty"`
-	SystemInfo SearchProfilePostsResponseSystemInfo `json:"system_info,omitempty"`
+	Data       []any                                `json:"data"`
+	DataTotal  int64                                `json:"data_total"`
+	Links      SearchProfilePostsResponseLinks      `json:"links"`
+	SystemInfo SearchProfilePostsResponseSystemInfo `json:"system_info"`
 }
 
 // SearchResultsParams holds query parameters for Search.Results.
 type SearchResultsParams struct {
-	Page  *int64 `query:"page"`
 	Limit *int64 `query:"limit"`
+	Page  *int64 `query:"page"`
 }
 
 // SearchResultsResponse is the response for the endpoint.
 type SearchResultsResponse struct {
-	Data       []any                           `json:"data,omitempty"`
-	DataTotal  int64                           `json:"data_total,omitempty"`
-	SearchTags SearchResultsResponseSearchTags `json:"search_tags,omitempty"`
-	SystemInfo SearchResultsResponseSystemInfo `json:"system_info,omitempty"`
+	Data       []any                           `json:"data"`
+	DataTotal  int64                           `json:"data_total"`
+	SearchTags SearchResultsResponseSearchTags `json:"search_tags"`
+	SystemInfo SearchResultsResponseSystemInfo `json:"system_info"`
 }
 
 // SearchTaggedBody holds the request body for Search.Tagged.
@@ -6197,29 +6197,29 @@ type SearchTaggedBody struct {
 
 // SearchTaggedResponse is the response for the endpoint.
 type SearchTaggedResponse struct {
-	Data       []any                          `json:"data,omitempty"`
-	DataTotal  int64                          `json:"data_total,omitempty"`
-	SearchTags SearchTaggedResponseSearchTags `json:"search_tags,omitempty"`
-	SystemInfo SearchTaggedResponseSystemInfo `json:"system_info,omitempty"`
+	Data       []any                          `json:"data"`
+	DataTotal  int64                          `json:"data_total"`
+	SearchTags SearchTaggedResponseSearchTags `json:"search_tags"`
+	SystemInfo SearchTaggedResponseSystemInfo `json:"system_info"`
 }
 
 // SearchThreadsBody holds the request body for Search.Threads.
 type SearchThreadsBody struct {
-	DataLimit *int64  `json:"data_limit,omitempty"`
-	ForumID   *int64  `json:"forum_id,omitempty"`
-	Limit     *int64  `json:"limit,omitempty"`
-	Page      *int64  `json:"page,omitempty"`
-	Q         *string `json:"q,omitempty"`
-	Tag       *string `json:"tag,omitempty"`
-	UserID    any     `json:"user_id,omitempty"`
+	DataLimit *int64                `json:"data_limit,omitempty"`
+	ForumID   *int64                `json:"forum_id,omitempty"`
+	Limit     *int64                `json:"limit,omitempty"`
+	Page      *int64                `json:"page,omitempty"`
+	Q         *string               `json:"q,omitempty"`
+	Tag       *string               `json:"tag,omitempty"`
+	UserID    *lolzteam.StringOrInt `json:"user_id,omitempty"`
 }
 
 // SearchThreadsResponse is the response for the endpoint.
 type SearchThreadsResponse struct {
-	Data       []any                           `json:"data,omitempty"`
-	DataTotal  int64                           `json:"data_total,omitempty"`
-	Links      SearchThreadsResponseLinks      `json:"links,omitempty"`
-	SystemInfo SearchThreadsResponseSystemInfo `json:"system_info,omitempty"`
+	Data       []any                           `json:"data"`
+	DataTotal  int64                           `json:"data_total"`
+	Links      SearchThreadsResponseLinks      `json:"links"`
+	SystemInfo SearchThreadsResponseSystemInfo `json:"system_info"`
 }
 
 // SearchUsersBody holds the request body for Search.Users.
@@ -6229,8 +6229,8 @@ type SearchUsersBody struct {
 
 // SearchUsersResponse is the response for the endpoint.
 type SearchUsersResponse struct {
-	SystemInfo SearchUsersResponseSystemInfo `json:"system_info,omitempty"`
-	Users      []RespUserModel               `json:"users,omitempty"`
+	SystemInfo SearchUsersResponseSystemInfo `json:"system_info"`
+	Users      []RespUserModel               `json:"users"`
 }
 
 // TagsFindParams holds query parameters for Tags.Find.
@@ -6240,9 +6240,9 @@ type TagsFindParams struct {
 
 // TagsFindResponse is the response for the endpoint.
 type TagsFindResponse struct {
-	Ids        []int64                    `json:"ids,omitempty"`
-	SystemInfo TagsFindResponseSystemInfo `json:"system_info,omitempty"`
-	Tags       []string                   `json:"tags,omitempty"`
+	Ids        []int64                    `json:"ids"`
+	SystemInfo TagsFindResponseSystemInfo `json:"system_info"`
+	Tags       []string                   `json:"tags"`
 }
 
 // TagsGetParams holds query parameters for Tags.Get.
@@ -6253,11 +6253,11 @@ type TagsGetParams struct {
 
 // TagsGetResponse is the response for the endpoint.
 type TagsGetResponse struct {
-	Links       TagsGetResponseLinks      `json:"links,omitempty"`
-	SystemInfo  TagsGetResponseSystemInfo `json:"system_info,omitempty"`
-	Tag         TagsGetResponseTag        `json:"tag,omitempty"`
-	Tagged      []any                     `json:"tagged,omitempty"`
-	TaggedTotal int64                     `json:"tagged_total,omitempty"`
+	Links       TagsGetResponseLinks      `json:"links"`
+	SystemInfo  TagsGetResponseSystemInfo `json:"system_info"`
+	Tag         TagsGetResponseTag        `json:"tag"`
+	Tagged      []any                     `json:"tagged"`
+	TaggedTotal int64                     `json:"tagged_total"`
 }
 
 // TagsListParams holds query parameters for Tags.List.
@@ -6268,23 +6268,23 @@ type TagsListParams struct {
 
 // TagsListResponse is the response for the endpoint.
 type TagsListResponse struct {
-	Links      TagsListResponseLinks      `json:"links,omitempty"`
-	SystemInfo TagsListResponseSystemInfo `json:"system_info,omitempty"`
-	Tags       TagsListResponseTags       `json:"tags,omitempty"`
-	TagsTotal  int64                      `json:"tags_total,omitempty"`
+	Links      TagsListResponseLinks      `json:"links"`
+	SystemInfo TagsListResponseSystemInfo `json:"system_info"`
+	Tags       TagsListResponseTags       `json:"tags"`
+	TagsTotal  int64                      `json:"tags_total"`
 }
 
 // TagsPopularResponse is the response for the endpoint.
 type TagsPopularResponse struct {
-	SystemInfo TagsPopularResponseSystemInfo `json:"system_info,omitempty"`
-	Tags       TagsPopularResponseTags       `json:"tags,omitempty"`
+	SystemInfo TagsPopularResponseSystemInfo `json:"system_info"`
+	Tags       TagsPopularResponseTags       `json:"tags"`
 }
 
 // ThreadsBumpResponse is the response for the endpoint.
 type ThreadsBumpResponse struct {
-	Message    string                        `json:"message,omitempty"`
-	Status     string                        `json:"status,omitempty"`
-	SystemInfo ThreadsBumpResponseSystemInfo `json:"system_info,omitempty"`
+	Message    string                        `json:"message"`
+	Status     string                        `json:"status"`
+	SystemInfo ThreadsBumpResponseSystemInfo `json:"system_info"`
 }
 
 // ThreadsClaimBody holds the request body for Threads.Claim.
@@ -6315,8 +6315,8 @@ type ThreadsClaimBody struct {
 
 // ThreadsClaimResponse is the response for the endpoint.
 type ThreadsClaimResponse struct {
-	SystemInfo ThreadsClaimResponseSystemInfo `json:"system_info,omitempty"`
-	Thread     ThreadsClaimResponseThread     `json:"thread,omitempty"`
+	SystemInfo ThreadsClaimResponseSystemInfo `json:"system_info"`
+	Thread     ThreadsClaimResponseThread     `json:"thread"`
 }
 
 // ThreadsCreateBody holds the request body for Threads.Create.
@@ -6341,8 +6341,8 @@ type ThreadsCreateBody struct {
 
 // ThreadsCreateResponse is the response for the endpoint.
 type ThreadsCreateResponse struct {
-	SystemInfo ThreadsCreateResponseSystemInfo `json:"system_info,omitempty"`
-	Thread     ThreadsCreateResponseThread     `json:"thread,omitempty"`
+	SystemInfo ThreadsCreateResponseSystemInfo `json:"system_info"`
+	Thread     ThreadsCreateResponseThread     `json:"thread"`
 }
 
 // ThreadsCreateContestBody holds the request body for Threads.CreateContest.
@@ -6377,8 +6377,8 @@ type ThreadsCreateContestBody struct {
 
 // ThreadsCreateContestResponse is the response for the endpoint.
 type ThreadsCreateContestResponse struct {
-	SystemInfo ThreadsCreateContestResponseSystemInfo `json:"system_info,omitempty"`
-	Thread     ThreadsCreateContestResponseThread     `json:"thread,omitempty"`
+	SystemInfo ThreadsCreateContestResponseSystemInfo `json:"system_info"`
+	Thread     ThreadsCreateContestResponseThread     `json:"thread"`
 }
 
 // ThreadsDeleteBody holds the request body for Threads.Delete.
@@ -6408,8 +6408,8 @@ type ThreadsEditBody struct {
 
 // ThreadsEditResponse is the response for the endpoint.
 type ThreadsEditResponse struct {
-	SystemInfo ThreadsEditResponseSystemInfo `json:"system_info,omitempty"`
-	Thread     ThreadsEditResponseThread     `json:"thread,omitempty"`
+	SystemInfo ThreadsEditResponseSystemInfo `json:"system_info"`
+	Thread     ThreadsEditResponseThread     `json:"thread"`
 }
 
 // ThreadsFinishResponse is the response for the endpoint.
@@ -6439,15 +6439,15 @@ type ThreadsFollowedParams struct {
 
 // ThreadsFollowedResponse is the response for the endpoint.
 type ThreadsFollowedResponse struct {
-	SystemInfo   ThreadsFollowedResponseSystemInfo `json:"system_info,omitempty"`
-	Threads      []any                             `json:"threads,omitempty"`
-	ThreadsTotal int64                             `json:"threads_total,omitempty"`
+	SystemInfo   ThreadsFollowedResponseSystemInfo `json:"system_info"`
+	Threads      []any                             `json:"threads"`
+	ThreadsTotal int64                             `json:"threads_total"`
 }
 
 // ThreadsFollowersResponse is the response for the endpoint.
 type ThreadsFollowersResponse struct {
-	SystemInfo ThreadsFollowersResponseSystemInfo `json:"system_info,omitempty"`
-	Users      []any                              `json:"users,omitempty"`
+	SystemInfo ThreadsFollowersResponseSystemInfo `json:"system_info"`
+	Users      []any                              `json:"users"`
 }
 
 // ThreadsGetParams holds query parameters for Threads.Get.
@@ -6457,15 +6457,15 @@ type ThreadsGetParams struct {
 
 // ThreadsGetResponse is the response for the endpoint.
 type ThreadsGetResponse struct {
-	SystemInfo ThreadsGetResponseSystemInfo `json:"system_info,omitempty"`
-	Thread     ThreadsGetResponseThread     `json:"thread,omitempty"`
+	SystemInfo ThreadsGetResponseSystemInfo `json:"system_info"`
+	Thread     ThreadsGetResponseThread     `json:"thread"`
 }
 
 // ThreadsHideResponse is the response for the endpoint.
 type ThreadsHideResponse struct {
-	Message    string                        `json:"message,omitempty"`
-	Status     string                        `json:"status,omitempty"`
-	SystemInfo ThreadsHideResponseSystemInfo `json:"system_info,omitempty"`
+	Message    string                        `json:"message"`
+	Status     string                        `json:"status"`
+	SystemInfo ThreadsHideResponseSystemInfo `json:"system_info"`
 }
 
 // ThreadsListParams holds query parameters for Threads.List.
@@ -6492,11 +6492,11 @@ type ThreadsListParams struct {
 
 // ThreadsListResponse is the response for the endpoint.
 type ThreadsListResponse struct {
-	Forum        ThreadsListResponseForum      `json:"forum,omitempty"`
-	Links        ThreadsListResponseLinks      `json:"links,omitempty"`
-	SystemInfo   ThreadsListResponseSystemInfo `json:"system_info,omitempty"`
-	Threads      []RespThreadModel             `json:"threads,omitempty"`
-	ThreadsTotal int64                         `json:"threads_total,omitempty"`
+	Forum        ThreadsListResponseForum      `json:"forum"`
+	Links        ThreadsListResponseLinks      `json:"links"`
+	SystemInfo   ThreadsListResponseSystemInfo `json:"system_info"`
+	Threads      []RespThreadModel             `json:"threads"`
+	ThreadsTotal int64                         `json:"threads_total"`
 }
 
 // ThreadsMoveBody holds the request body for Threads.Move.
@@ -6518,15 +6518,15 @@ type ThreadsMoveResponse struct {
 
 // ThreadsNavigationResponse is the response for the endpoint.
 type ThreadsNavigationResponse struct {
-	Elements      []any                               `json:"elements,omitempty"`
-	ElementsCount int64                               `json:"elements_count,omitempty"`
-	SystemInfo    ThreadsNavigationResponseSystemInfo `json:"system_info,omitempty"`
+	Elements      []any                               `json:"elements"`
+	ElementsCount int64                               `json:"elements_count"`
+	SystemInfo    ThreadsNavigationResponseSystemInfo `json:"system_info"`
 }
 
 // ThreadsPollGetResponse is the response for the endpoint.
 type ThreadsPollGetResponse struct {
-	Poll       ThreadsPollGetResponsePoll       `json:"poll,omitempty"`
-	SystemInfo ThreadsPollGetResponseSystemInfo `json:"system_info,omitempty"`
+	Poll       ThreadsPollGetResponsePoll       `json:"poll"`
+	SystemInfo ThreadsPollGetResponseSystemInfo `json:"system_info"`
 }
 
 // ThreadsPollVoteBody holds the request body for Threads.PollVote.
@@ -6552,9 +6552,9 @@ type ThreadsRecentParams struct {
 
 // ThreadsRecentResponse is the response for the endpoint.
 type ThreadsRecentResponse struct {
-	Data       []any                           `json:"data,omitempty"`
-	SystemInfo ThreadsRecentResponseSystemInfo `json:"system_info,omitempty"`
-	Threads    []RespThreadModel               `json:"threads,omitempty"`
+	Data       []any                           `json:"data"`
+	SystemInfo ThreadsRecentResponseSystemInfo `json:"system_info"`
+	Threads    []RespThreadModel               `json:"threads"`
 }
 
 // ThreadsStarResponse is the response for the endpoint.
@@ -6580,9 +6580,9 @@ type ThreadsUnreadParams struct {
 
 // ThreadsUnreadResponse is the response for the endpoint.
 type ThreadsUnreadResponse struct {
-	Data       []any                           `json:"data,omitempty"`
-	SystemInfo ThreadsUnreadResponseSystemInfo `json:"system_info,omitempty"`
-	Threads    []RespThreadModel               `json:"threads,omitempty"`
+	Data       []any                           `json:"data"`
+	SystemInfo ThreadsUnreadResponseSystemInfo `json:"system_info"`
+	Threads    []RespThreadModel               `json:"threads"`
 }
 
 // ThreadsUnstarResponse is the response for the endpoint.
@@ -6601,9 +6601,9 @@ type UsersAvatarCropBody struct {
 
 // UsersAvatarCropResponse is the response for the endpoint.
 type UsersAvatarCropResponse struct {
-	Message    string                            `json:"message,omitempty"`
-	Status     string                            `json:"status,omitempty"`
-	SystemInfo UsersAvatarCropResponseSystemInfo `json:"system_info,omitempty"`
+	Message    string                            `json:"message"`
+	Status     string                            `json:"status"`
+	SystemInfo UsersAvatarCropResponseSystemInfo `json:"system_info"`
 }
 
 // UsersAvatarDeleteResponse is the response for the endpoint.
@@ -6623,9 +6623,9 @@ type UsersAvatarUploadBody struct {
 
 // UsersAvatarUploadResponse is the response for the endpoint.
 type UsersAvatarUploadResponse struct {
-	Message    string                              `json:"message,omitempty"`
-	Status     string                              `json:"status,omitempty"`
-	SystemInfo UsersAvatarUploadResponseSystemInfo `json:"system_info,omitempty"`
+	Message    string                              `json:"message"`
+	Status     string                              `json:"status"`
+	SystemInfo UsersAvatarUploadResponseSystemInfo `json:"system_info"`
 }
 
 // UsersBackgroundCropBody holds the request body for Users.BackgroundCrop.
@@ -6637,9 +6637,9 @@ type UsersBackgroundCropBody struct {
 
 // UsersBackgroundCropResponse is the response for the endpoint.
 type UsersBackgroundCropResponse struct {
-	Message    string                                `json:"message,omitempty"`
-	Status     string                                `json:"status,omitempty"`
-	SystemInfo UsersBackgroundCropResponseSystemInfo `json:"system_info,omitempty"`
+	Message    string                                `json:"message"`
+	Status     string                                `json:"status"`
+	SystemInfo UsersBackgroundCropResponseSystemInfo `json:"system_info"`
 }
 
 // UsersBackgroundDeleteResponse is the response for the endpoint.
@@ -6659,9 +6659,9 @@ type UsersBackgroundUploadBody struct {
 
 // UsersBackgroundUploadResponse is the response for the endpoint.
 type UsersBackgroundUploadResponse struct {
-	Message    string                                  `json:"message,omitempty"`
-	Status     string                                  `json:"status,omitempty"`
-	SystemInfo UsersBackgroundUploadResponseSystemInfo `json:"system_info,omitempty"`
+	Message    string                                  `json:"message"`
+	Status     string                                  `json:"status"`
+	SystemInfo UsersBackgroundUploadResponseSystemInfo `json:"system_info"`
 }
 
 // UsersClaimsParams holds query parameters for Users.Claims.
@@ -6672,9 +6672,9 @@ type UsersClaimsParams struct {
 
 // UsersClaimsResponse is the response for the endpoint.
 type UsersClaimsResponse struct {
-	Claims     []any                         `json:"claims,omitempty"`
-	Stats      UsersClaimsResponseStats      `json:"stats,omitempty"`
-	SystemInfo UsersClaimsResponseSystemInfo `json:"system_info,omitempty"`
+	Claims     []any                         `json:"claims"`
+	Stats      UsersClaimsResponseStats      `json:"stats"`
+	SystemInfo UsersClaimsResponseSystemInfo `json:"system_info"`
 }
 
 // UsersContentsParams holds query parameters for Users.Contents.
@@ -6685,11 +6685,11 @@ type UsersContentsParams struct {
 
 // UsersContentsResponse is the response for the endpoint.
 type UsersContentsResponse struct {
-	Data       []any                           `json:"data,omitempty"`
-	DataTotal  int64                           `json:"data_total,omitempty"`
-	Links      UsersContentsResponseLinks      `json:"links,omitempty"`
-	SystemInfo UsersContentsResponseSystemInfo `json:"system_info,omitempty"`
-	User       UsersContentsResponseUser       `json:"user,omitempty"`
+	Data       []any                           `json:"data"`
+	DataTotal  int64                           `json:"data_total"`
+	Links      UsersContentsResponseLinks      `json:"links"`
+	SystemInfo UsersContentsResponseSystemInfo `json:"system_info"`
+	User       UsersContentsResponseUser       `json:"user"`
 }
 
 // UsersEditBody holds the request body for Users.Edit.
@@ -6732,8 +6732,8 @@ type UsersEditResponse struct {
 
 // UsersFieldsResponse is the response for the endpoint.
 type UsersFieldsResponse struct {
-	Fields     []any                         `json:"fields,omitempty"`
-	SystemInfo UsersFieldsResponseSystemInfo `json:"system_info,omitempty"`
+	Fields     []any                         `json:"fields"`
+	SystemInfo UsersFieldsResponseSystemInfo `json:"system_info"`
 }
 
 // UsersFindParams holds query parameters for Users.Find.
@@ -6745,8 +6745,8 @@ type UsersFindParams struct {
 
 // UsersFindResponse is the response for the endpoint.
 type UsersFindResponse struct {
-	SystemInfo UsersFindResponseSystemInfo `json:"system_info,omitempty"`
-	Users      []RespUserModel             `json:"users,omitempty"`
+	SystemInfo UsersFindResponseSystemInfo `json:"system_info"`
+	Users      []RespUserModel             `json:"users"`
 }
 
 // UsersFollowResponse is the response for the endpoint.
@@ -6765,10 +6765,10 @@ type UsersFollowersParams struct {
 
 // UsersFollowersResponse is the response for the endpoint.
 type UsersFollowersResponse struct {
-	Links      UsersFollowersResponseLinks      `json:"links,omitempty"`
-	SystemInfo UsersFollowersResponseSystemInfo `json:"system_info,omitempty"`
-	Users      []any                            `json:"users,omitempty"`
-	UsersTotal int64                            `json:"users_total,omitempty"`
+	Links      UsersFollowersResponseLinks      `json:"links"`
+	SystemInfo UsersFollowersResponseSystemInfo `json:"system_info"`
+	Users      []any                            `json:"users"`
+	UsersTotal int64                            `json:"users_total"`
 }
 
 // UsersFollowingsParams holds query parameters for Users.Followings.
@@ -6780,9 +6780,9 @@ type UsersFollowingsParams struct {
 
 // UsersFollowingsResponse is the response for the endpoint.
 type UsersFollowingsResponse struct {
-	SystemInfo UsersFollowingsResponseSystemInfo `json:"system_info,omitempty"`
-	Users      []any                             `json:"users,omitempty"`
-	UsersTotal int64                             `json:"users_total,omitempty"`
+	SystemInfo UsersFollowingsResponseSystemInfo `json:"system_info"`
+	Users      []any                             `json:"users"`
+	UsersTotal int64                             `json:"users_total"`
 }
 
 // UsersGetParams holds query parameters for Users.Get.
@@ -6792,8 +6792,8 @@ type UsersGetParams struct {
 
 // UsersGetResponse is the response for the endpoint.
 type UsersGetResponse struct {
-	SystemInfo UsersGetResponseSystemInfo `json:"system_info,omitempty"`
-	User       UsersGetResponseUser       `json:"user,omitempty"`
+	SystemInfo UsersGetResponseSystemInfo `json:"system_info"`
+	User       UsersGetResponseUser       `json:"user"`
 }
 
 // UsersIgnoreResponse is the response for the endpoint.
@@ -6824,8 +6824,8 @@ type UsersIgnoredParams struct {
 
 // UsersIgnoredResponse is the response for the endpoint.
 type UsersIgnoredResponse struct {
-	SystemInfo UsersIgnoredResponseSystemInfo `json:"system_info,omitempty"`
-	Users      []any                          `json:"users,omitempty"`
+	SystemInfo UsersIgnoredResponseSystemInfo `json:"system_info"`
+	Users      []any                          `json:"users"`
 }
 
 // UsersLikesParams holds query parameters for Users.Likes.
@@ -6841,12 +6841,12 @@ type UsersLikesParams struct {
 
 // UsersLikesResponse is the response for the endpoint.
 type UsersLikesResponse struct {
-	ContentType string                       `json:"contentType,omitempty"`
-	Likes       UsersLikesResponseLikes      `json:"likes,omitempty"`
-	Page        int64                        `json:"page,omitempty"`
-	PerPage     int64                        `json:"perPage,omitempty"`
-	SystemInfo  UsersLikesResponseSystemInfo `json:"system_info,omitempty"`
-	TotalLikes  int64                        `json:"totalLikes,omitempty"`
+	ContentType string                       `json:"contentType"`
+	Likes       UsersLikesResponseLikes      `json:"likes"`
+	Page        int64                        `json:"page"`
+	PerPage     int64                        `json:"perPage"`
+	SystemInfo  UsersLikesResponseSystemInfo `json:"system_info"`
+	TotalLikes  int64                        `json:"totalLikes"`
 }
 
 // UsersListParams holds query parameters for Users.List.
@@ -6858,10 +6858,10 @@ type UsersListParams struct {
 
 // UsersListResponse is the response for the endpoint.
 type UsersListResponse struct {
-	Links      UsersListResponseLinks      `json:"links,omitempty"`
-	SystemInfo UsersListResponseSystemInfo `json:"system_info,omitempty"`
-	Users      []RespUserModel             `json:"users,omitempty"`
-	UsersTotal int64                       `json:"users_total,omitempty"`
+	Links      UsersListResponseLinks      `json:"links"`
+	SystemInfo UsersListResponseSystemInfo `json:"system_info"`
+	Users      []RespUserModel             `json:"users"`
+	UsersTotal int64                       `json:"users_total"`
 }
 
 // UsersSACancelResetResponse is the response for the endpoint.
@@ -6873,21 +6873,21 @@ type UsersSACancelResetResponse struct {
 
 // UsersSAResetResponse is the response for the endpoint.
 type UsersSAResetResponse struct {
-	Success     bool                           `json:"success,omitempty"`
-	SystemInfo  UsersSAResetResponseSystemInfo `json:"system_info,omitempty"`
-	WaitingTime string                         `json:"waiting_time,omitempty"`
+	Success     bool                           `json:"success"`
+	SystemInfo  UsersSAResetResponseSystemInfo `json:"system_info"`
+	WaitingTime string                         `json:"waiting_time"`
 }
 
 // UsersSecretAnswerTypesResponse is the response for the endpoint.
 type UsersSecretAnswerTypesResponse struct {
-	Data       []any                                    `json:"data,omitempty"`
-	SystemInfo UsersSecretAnswerTypesResponseSystemInfo `json:"system_info,omitempty"`
+	Data       []any                                    `json:"data"`
+	SystemInfo UsersSecretAnswerTypesResponseSystemInfo `json:"system_info"`
 }
 
 // UsersTrophiesResponse is the response for the endpoint.
 type UsersTrophiesResponse struct {
-	SystemInfo UsersTrophiesResponseSystemInfo `json:"system_info,omitempty"`
-	Trophies   []any                           `json:"trophies,omitempty"`
+	SystemInfo UsersTrophiesResponseSystemInfo `json:"system_info"`
+	Trophies   []any                           `json:"trophies"`
 }
 
 // UsersUnfollowResponse is the response for the endpoint.

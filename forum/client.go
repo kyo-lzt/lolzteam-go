@@ -1423,11 +1423,11 @@ func (s *ProfilePostsService) Likes(ctx context.Context, profilePostID int64) (*
 }
 
 // List Get Profile Posts
-func (s *ProfilePostsService) List(ctx context.Context, userID any, params *ProfilePostsListParams) (*ProfilePostsListResponse, error) {
+func (s *ProfilePostsService) List(ctx context.Context, userID lolzteam.StringOrInt, params *ProfilePostsListParams) (*ProfilePostsListResponse, error) {
 	var result ProfilePostsListResponse
 	opts := lolzteam.RequestOptions{
 		Method: "GET",
-		Path:   fmt.Sprintf("/users/%v/profile-posts", userID),
+		Path:   fmt.Sprintf("/users/%s/profile-posts", userID),
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -1560,11 +1560,11 @@ func (s *SearchService) ProfilePosts(ctx context.Context, body *SearchProfilePos
 }
 
 // Results Get Search Results
-func (s *SearchService) Results(ctx context.Context, searchID any, params *SearchResultsParams) (*SearchResultsResponse, error) {
+func (s *SearchService) Results(ctx context.Context, searchID lolzteam.StringOrInt, params *SearchResultsParams) (*SearchResultsResponse, error) {
 	var result SearchResultsResponse
 	opts := lolzteam.RequestOptions{
 		Method: "GET",
-		Path:   fmt.Sprintf("/search/%v/results", searchID),
+		Path:   fmt.Sprintf("/search/%s/results", searchID),
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -2025,11 +2025,11 @@ type UsersService struct {
 }
 
 // AvatarCrop Crop Avatar
-func (s *UsersService) AvatarCrop(ctx context.Context, userID any, body *UsersAvatarCropBody) (*UsersAvatarCropResponse, error) {
+func (s *UsersService) AvatarCrop(ctx context.Context, userID lolzteam.StringOrInt, body *UsersAvatarCropBody) (*UsersAvatarCropResponse, error) {
 	var result UsersAvatarCropResponse
 	opts := lolzteam.RequestOptions{
 		Method: "POST",
-		Path:   fmt.Sprintf("/users/%v/avatar/crop", userID),
+		Path:   fmt.Sprintf("/users/%s/avatar/crop", userID),
 	}
 	if body != nil {
 		opts.RawJSON = body
@@ -2041,11 +2041,11 @@ func (s *UsersService) AvatarCrop(ctx context.Context, userID any, body *UsersAv
 }
 
 // AvatarDelete Delete Avatar
-func (s *UsersService) AvatarDelete(ctx context.Context, userID any) (*UsersAvatarDeleteResponse, error) {
+func (s *UsersService) AvatarDelete(ctx context.Context, userID lolzteam.StringOrInt) (*UsersAvatarDeleteResponse, error) {
 	var result UsersAvatarDeleteResponse
 	opts := lolzteam.RequestOptions{
 		Method: "DELETE",
-		Path:   fmt.Sprintf("/users/%v/avatar", userID),
+		Path:   fmt.Sprintf("/users/%s/avatar", userID),
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -2054,11 +2054,11 @@ func (s *UsersService) AvatarDelete(ctx context.Context, userID any) (*UsersAvat
 }
 
 // AvatarUpload Upload Avatar
-func (s *UsersService) AvatarUpload(ctx context.Context, userID any, body *UsersAvatarUploadBody) (*UsersAvatarUploadResponse, error) {
+func (s *UsersService) AvatarUpload(ctx context.Context, userID lolzteam.StringOrInt, body *UsersAvatarUploadBody) (*UsersAvatarUploadResponse, error) {
 	var result UsersAvatarUploadResponse
 	opts := lolzteam.RequestOptions{
 		Method: "POST",
-		Path:   fmt.Sprintf("/users/%v/avatar", userID),
+		Path:   fmt.Sprintf("/users/%s/avatar", userID),
 	}
 	if body != nil {
 		opts.Multipart = lolzteam.StructToMultipart(body)
@@ -2070,11 +2070,11 @@ func (s *UsersService) AvatarUpload(ctx context.Context, userID any, body *Users
 }
 
 // BackgroundCrop Crop Background
-func (s *UsersService) BackgroundCrop(ctx context.Context, userID any, body *UsersBackgroundCropBody) (*UsersBackgroundCropResponse, error) {
+func (s *UsersService) BackgroundCrop(ctx context.Context, userID lolzteam.StringOrInt, body *UsersBackgroundCropBody) (*UsersBackgroundCropResponse, error) {
 	var result UsersBackgroundCropResponse
 	opts := lolzteam.RequestOptions{
 		Method: "POST",
-		Path:   fmt.Sprintf("/users/%v/background/crop", userID),
+		Path:   fmt.Sprintf("/users/%s/background/crop", userID),
 	}
 	if body != nil {
 		opts.RawJSON = body
@@ -2086,11 +2086,11 @@ func (s *UsersService) BackgroundCrop(ctx context.Context, userID any, body *Use
 }
 
 // BackgroundDelete Delete Background
-func (s *UsersService) BackgroundDelete(ctx context.Context, userID any) (*UsersBackgroundDeleteResponse, error) {
+func (s *UsersService) BackgroundDelete(ctx context.Context, userID lolzteam.StringOrInt) (*UsersBackgroundDeleteResponse, error) {
 	var result UsersBackgroundDeleteResponse
 	opts := lolzteam.RequestOptions{
 		Method: "DELETE",
-		Path:   fmt.Sprintf("/users/%v/background", userID),
+		Path:   fmt.Sprintf("/users/%s/background", userID),
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -2099,11 +2099,11 @@ func (s *UsersService) BackgroundDelete(ctx context.Context, userID any) (*Users
 }
 
 // BackgroundUpload Upload Background
-func (s *UsersService) BackgroundUpload(ctx context.Context, userID any, body *UsersBackgroundUploadBody) (*UsersBackgroundUploadResponse, error) {
+func (s *UsersService) BackgroundUpload(ctx context.Context, userID lolzteam.StringOrInt, body *UsersBackgroundUploadBody) (*UsersBackgroundUploadResponse, error) {
 	var result UsersBackgroundUploadResponse
 	opts := lolzteam.RequestOptions{
 		Method: "POST",
-		Path:   fmt.Sprintf("/users/%v/background", userID),
+		Path:   fmt.Sprintf("/users/%s/background", userID),
 	}
 	if body != nil {
 		opts.Multipart = lolzteam.StructToMultipart(body)
@@ -2115,11 +2115,11 @@ func (s *UsersService) BackgroundUpload(ctx context.Context, userID any, body *U
 }
 
 // Claims Get User Claims
-func (s *UsersService) Claims(ctx context.Context, userID any, params *UsersClaimsParams) (*UsersClaimsResponse, error) {
+func (s *UsersService) Claims(ctx context.Context, userID lolzteam.StringOrInt, params *UsersClaimsParams) (*UsersClaimsResponse, error) {
 	var result UsersClaimsResponse
 	opts := lolzteam.RequestOptions{
 		Method: "GET",
-		Path:   fmt.Sprintf("/users/%v/claims", userID),
+		Path:   fmt.Sprintf("/users/%s/claims", userID),
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -2131,11 +2131,11 @@ func (s *UsersService) Claims(ctx context.Context, userID any, params *UsersClai
 }
 
 // Contents Get Contents
-func (s *UsersService) Contents(ctx context.Context, userID any, params *UsersContentsParams) (*UsersContentsResponse, error) {
+func (s *UsersService) Contents(ctx context.Context, userID lolzteam.StringOrInt, params *UsersContentsParams) (*UsersContentsResponse, error) {
 	var result UsersContentsResponse
 	opts := lolzteam.RequestOptions{
 		Method: "GET",
-		Path:   fmt.Sprintf("/users/%v/timeline", userID),
+		Path:   fmt.Sprintf("/users/%s/timeline", userID),
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -2147,11 +2147,11 @@ func (s *UsersService) Contents(ctx context.Context, userID any, params *UsersCo
 }
 
 // Edit Edit User
-func (s *UsersService) Edit(ctx context.Context, userID any, body *UsersEditBody) (*UsersEditResponse, error) {
+func (s *UsersService) Edit(ctx context.Context, userID lolzteam.StringOrInt, body *UsersEditBody) (*UsersEditResponse, error) {
 	var result UsersEditResponse
 	opts := lolzteam.RequestOptions{
 		Method: "PUT",
-		Path:   fmt.Sprintf("/users/%v", userID),
+		Path:   fmt.Sprintf("/users/%s", userID),
 	}
 	if body != nil {
 		opts.RawJSON = body
@@ -2192,11 +2192,11 @@ func (s *UsersService) Find(ctx context.Context, params *UsersFindParams) (*User
 }
 
 // Follow Follow User
-func (s *UsersService) Follow(ctx context.Context, userID any) (*UsersFollowResponse, error) {
+func (s *UsersService) Follow(ctx context.Context, userID lolzteam.StringOrInt) (*UsersFollowResponse, error) {
 	var result UsersFollowResponse
 	opts := lolzteam.RequestOptions{
 		Method: "POST",
-		Path:   fmt.Sprintf("/users/%v/followers", userID),
+		Path:   fmt.Sprintf("/users/%s/followers", userID),
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -2205,11 +2205,11 @@ func (s *UsersService) Follow(ctx context.Context, userID any) (*UsersFollowResp
 }
 
 // Followers Get User Followers
-func (s *UsersService) Followers(ctx context.Context, userID any, params *UsersFollowersParams) (*UsersFollowersResponse, error) {
+func (s *UsersService) Followers(ctx context.Context, userID lolzteam.StringOrInt, params *UsersFollowersParams) (*UsersFollowersResponse, error) {
 	var result UsersFollowersResponse
 	opts := lolzteam.RequestOptions{
 		Method: "GET",
-		Path:   fmt.Sprintf("/users/%v/followers", userID),
+		Path:   fmt.Sprintf("/users/%s/followers", userID),
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -2221,11 +2221,11 @@ func (s *UsersService) Followers(ctx context.Context, userID any, params *UsersF
 }
 
 // Followings Get Followed Users By User
-func (s *UsersService) Followings(ctx context.Context, userID any, params *UsersFollowingsParams) (*UsersFollowingsResponse, error) {
+func (s *UsersService) Followings(ctx context.Context, userID lolzteam.StringOrInt, params *UsersFollowingsParams) (*UsersFollowingsResponse, error) {
 	var result UsersFollowingsResponse
 	opts := lolzteam.RequestOptions{
 		Method: "GET",
-		Path:   fmt.Sprintf("/users/%v/followings", userID),
+		Path:   fmt.Sprintf("/users/%s/followings", userID),
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -2237,11 +2237,11 @@ func (s *UsersService) Followings(ctx context.Context, userID any, params *Users
 }
 
 // Get Get User
-func (s *UsersService) Get(ctx context.Context, userID any, params *UsersGetParams) (*UsersGetResponse, error) {
+func (s *UsersService) Get(ctx context.Context, userID lolzteam.StringOrInt, params *UsersGetParams) (*UsersGetResponse, error) {
 	var result UsersGetResponse
 	opts := lolzteam.RequestOptions{
 		Method: "GET",
-		Path:   fmt.Sprintf("/users/%v", userID),
+		Path:   fmt.Sprintf("/users/%s", userID),
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -2253,11 +2253,11 @@ func (s *UsersService) Get(ctx context.Context, userID any, params *UsersGetPara
 }
 
 // Ignore Ignore User
-func (s *UsersService) Ignore(ctx context.Context, userID any) (*UsersIgnoreResponse, error) {
+func (s *UsersService) Ignore(ctx context.Context, userID lolzteam.StringOrInt) (*UsersIgnoreResponse, error) {
 	var result UsersIgnoreResponse
 	opts := lolzteam.RequestOptions{
 		Method: "POST",
-		Path:   fmt.Sprintf("/users/%v/ignore", userID),
+		Path:   fmt.Sprintf("/users/%s/ignore", userID),
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -2266,11 +2266,11 @@ func (s *UsersService) Ignore(ctx context.Context, userID any) (*UsersIgnoreResp
 }
 
 // IgnoreEdit Edit Ignoring Options
-func (s *UsersService) IgnoreEdit(ctx context.Context, userID any, params *UsersIgnoreEditParams) (*UsersIgnoreEditResponse, error) {
+func (s *UsersService) IgnoreEdit(ctx context.Context, userID lolzteam.StringOrInt, params *UsersIgnoreEditParams) (*UsersIgnoreEditResponse, error) {
 	var result UsersIgnoreEditResponse
 	opts := lolzteam.RequestOptions{
 		Method: "PUT",
-		Path:   fmt.Sprintf("/users/%v/ignore", userID),
+		Path:   fmt.Sprintf("/users/%s/ignore", userID),
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -2298,11 +2298,11 @@ func (s *UsersService) Ignored(ctx context.Context, params *UsersIgnoredParams) 
 }
 
 // Likes Get User Likes
-func (s *UsersService) Likes(ctx context.Context, userID any, params *UsersLikesParams) (*UsersLikesResponse, error) {
+func (s *UsersService) Likes(ctx context.Context, userID lolzteam.StringOrInt, params *UsersLikesParams) (*UsersLikesResponse, error) {
 	var result UsersLikesResponse
 	opts := lolzteam.RequestOptions{
 		Method: "GET",
-		Path:   fmt.Sprintf("/users/%v/likes", userID),
+		Path:   fmt.Sprintf("/users/%s/likes", userID),
 	}
 	if params != nil {
 		opts.Query = lolzteam.StructToQuery(params)
@@ -2369,11 +2369,11 @@ func (s *UsersService) SecretAnswerTypes(ctx context.Context) (*UsersSecretAnswe
 }
 
 // Trophies Get Trophies
-func (s *UsersService) Trophies(ctx context.Context, userID any) (*UsersTrophiesResponse, error) {
+func (s *UsersService) Trophies(ctx context.Context, userID lolzteam.StringOrInt) (*UsersTrophiesResponse, error) {
 	var result UsersTrophiesResponse
 	opts := lolzteam.RequestOptions{
 		Method: "GET",
-		Path:   fmt.Sprintf("/users/%v/trophies", userID),
+		Path:   fmt.Sprintf("/users/%s/trophies", userID),
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -2382,11 +2382,11 @@ func (s *UsersService) Trophies(ctx context.Context, userID any) (*UsersTrophies
 }
 
 // Unfollow Unfollow User
-func (s *UsersService) Unfollow(ctx context.Context, userID any) (*UsersUnfollowResponse, error) {
+func (s *UsersService) Unfollow(ctx context.Context, userID lolzteam.StringOrInt) (*UsersUnfollowResponse, error) {
 	var result UsersUnfollowResponse
 	opts := lolzteam.RequestOptions{
 		Method: "DELETE",
-		Path:   fmt.Sprintf("/users/%v/followers", userID),
+		Path:   fmt.Sprintf("/users/%s/followers", userID),
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
@@ -2395,11 +2395,11 @@ func (s *UsersService) Unfollow(ctx context.Context, userID any) (*UsersUnfollow
 }
 
 // Unignore Unignore User
-func (s *UsersService) Unignore(ctx context.Context, userID any) (*UsersUnignoreResponse, error) {
+func (s *UsersService) Unignore(ctx context.Context, userID lolzteam.StringOrInt) (*UsersUnignoreResponse, error) {
 	var result UsersUnignoreResponse
 	opts := lolzteam.RequestOptions{
 		Method: "DELETE",
-		Path:   fmt.Sprintf("/users/%v/ignore", userID),
+		Path:   fmt.Sprintf("/users/%s/ignore", userID),
 	}
 	if err := s.client.Request(ctx, opts, &result); err != nil {
 		return nil, err
