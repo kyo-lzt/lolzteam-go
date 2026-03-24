@@ -23,18 +23,18 @@ type OpenAPISpec struct {
 
 type Components struct {
 	Schemas    map[string]SchemaObj   `json:"schemas"`
-	Parameters map[string]ParamObj   `json:"parameters"`
+	Parameters map[string]ParamObj    `json:"parameters"`
 	Responses  map[string]ResponseObj `json:"responses"`
 }
 
 type PathItem map[string]json.RawMessage // method → operation JSON
 
 type OperationObj struct {
-	OperationID string            `json:"operationId"`
-	Summary     string            `json:"summary"`
-	Description string            `json:"description"`
-	Parameters  []json.RawMessage `json:"parameters"`
-	RequestBody *RequestBodyObj   `json:"requestBody"`
+	OperationID string                     `json:"operationId"`
+	Summary     string                     `json:"summary"`
+	Description string                     `json:"description"`
+	Parameters  []json.RawMessage          `json:"parameters"`
+	RequestBody *RequestBodyObj            `json:"requestBody"`
 	Responses   map[string]json.RawMessage `json:"responses"`
 }
 
@@ -162,9 +162,9 @@ type EnumDef struct {
 
 // UnionVariant describes one variant of a discriminated union.
 type UnionVariant struct {
-	Name       string      // Go struct name, e.g. "OAuthTokenClientCredentials"
-	Title      string      // from schema title, e.g. "Client Credentials"
-	Fields     []BodyProp  // all fields including discriminator
+	Name        string      // Go struct name, e.g. "OAuthTokenClientCredentials"
+	Title       string      // from schema title, e.g. "Client Credentials"
+	Fields      []BodyProp  // all fields including discriminator
 	ContentKind ContentKind // encoding: form, json, multipart
 }
 
@@ -227,7 +227,7 @@ func (g *Generator) ParseOperations() error {
 
 			// Parse parameters
 			for _, rawParam := range op.Parameters {
-					param, err := g.ResolveParam(rawParam)
+				param, err := g.ResolveParam(rawParam)
 				if err != nil {
 					return fmt.Errorf("resolving param for %s %s: %w", httpMethod, path, err)
 				}
@@ -1172,12 +1172,12 @@ func PtrWrap(goType string) string {
 
 // enumOccurrence records one place where an enum appears in the spec.
 type enumOccurrence struct {
-	Group    string
-	Method   string
+	Group     string
+	Method    string
 	ParamName string
-	GoType   string // underlying Go type: "string" or "int64"
-	Values   []json.RawMessage
-	ValKey   string // canonical sorted key for dedup
+	GoType    string // underlying Go type: "string" or "int64"
+	Values    []json.RawMessage
+	ValKey    string // canonical sorted key for dedup
 }
 
 // CollectEnums scans the entire OpenAPI spec and pre-assigns enum type names.

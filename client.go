@@ -94,12 +94,12 @@ func (c Config) withDefaults() Config {
 // --- Client & Request ---
 
 type Client struct {
-	baseURL            string
-	token              string
-	httpClient         *http.Client
-	rateLimiter        *rateLimiter
-	searchRateLimiter  *rateLimiter
-	retryConfig        *retryConfig // nil = retry disabled
+	baseURL           string
+	token             string
+	httpClient        *http.Client
+	rateLimiter       *rateLimiter
+	searchRateLimiter *rateLimiter
+	retryConfig       *retryConfig // nil = retry disabled
 }
 
 // RequestOptions describes a single API call.
@@ -107,10 +107,10 @@ type RequestOptions struct {
 	Method    string
 	Path      string
 	Query     url.Values
-	Body      url.Values      // form-urlencoded body
-	Multipart *MultipartBody  // multipart/form-data body (for file uploads)
-	RawJSON   any             // JSON body (e.g. batch endpoints)
-	IsSearch  bool            // true for search endpoints (category group)
+	Body      url.Values     // form-urlencoded body
+	Multipart *MultipartBody // multipart/form-data body (for file uploads)
+	RawJSON   any            // JSON body (e.g. batch endpoints)
+	IsSearch  bool           // true for search endpoints (category group)
 }
 
 func NewClient(config Config) (*Client, error) {
