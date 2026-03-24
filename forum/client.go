@@ -42,6 +42,9 @@ func NewClient(config lolzteam.Config) (*Client, error) {
 	if config.RateLimit.RequestsPerMinute == 0 {
 		config.RateLimit.RequestsPerMinute = 300
 	}
+	if config.Retry == nil {
+		config.Retry = lolzteam.DefaultRetryConfig()
+	}
 	c, err := lolzteam.NewClient(config)
 	if err != nil {
 		return nil, err
@@ -66,6 +69,11 @@ func NewClient(config lolzteam.Config) (*Client, error) {
 		Threads:       &ThreadsService{client: c},
 		Users:         &UsersService{client: c},
 	}, nil
+}
+
+// NewClientFromToken creates a new Forum API client with default configuration.
+func NewClientFromToken(token string) (*Client, error) {
+	return NewClient(lolzteam.Config{Token: token})
 }
 
 // AssetsService handles Assets API endpoints.

@@ -148,9 +148,9 @@ func TestCalcDelayRateLimitWithoutRetryAfterUsesBackoff(t *testing.T) {
 	rlErr := &RateLimitError{HttpError: HttpError{StatusCode: 429}, RetryAfter: 0}
 
 	d := calcDelay(rlErr, 0, cfg)
-	// Without RetryAfter, should use exponential backoff (base=100ms + jitter)
-	if d < 100*time.Millisecond || d > 125*time.Millisecond {
-		t.Errorf("delay = %v, want [100ms, 125ms] for backoff without Retry-After", d)
+	// Without RetryAfter, should use exponential backoff (base=100ms + jitter up to baseDelay)
+	if d < 100*time.Millisecond || d > 200*time.Millisecond {
+		t.Errorf("delay = %v, want [100ms, 200ms] for backoff without Retry-After", d)
 	}
 }
 

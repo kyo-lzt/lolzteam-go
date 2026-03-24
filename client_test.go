@@ -592,16 +592,16 @@ func TestCalcDelayExponentialBackoff(t *testing.T) {
 	}
 	srvErr := &ServerError{HttpError: HttpError{StatusCode: 502}}
 
-	// attempt 0 -> ~100ms (+ up to 25% jitter)
+	// attempt 0 -> 100ms + jitter up to baseDelay (100ms)
 	d0 := calcDelay(srvErr, 0, cfg)
-	if d0 < 100*time.Millisecond || d0 > 125*time.Millisecond {
-		t.Errorf("attempt 0 delay = %v, want [100ms, 125ms]", d0)
+	if d0 < 100*time.Millisecond || d0 > 200*time.Millisecond {
+		t.Errorf("attempt 0 delay = %v, want [100ms, 200ms]", d0)
 	}
 
-	// attempt 1 -> ~200ms (+ up to 25% jitter)
+	// attempt 1 -> 200ms + jitter up to baseDelay (100ms)
 	d1 := calcDelay(srvErr, 1, cfg)
-	if d1 < 200*time.Millisecond || d1 > 250*time.Millisecond {
-		t.Errorf("attempt 1 delay = %v, want [200ms, 250ms]", d1)
+	if d1 < 200*time.Millisecond || d1 > 300*time.Millisecond {
+		t.Errorf("attempt 1 delay = %v, want [200ms, 300ms]", d1)
 	}
 }
 
@@ -614,9 +614,9 @@ func TestCalcDelayRespectMaxDelay(t *testing.T) {
 	srvErr := &ServerError{HttpError: HttpError{StatusCode: 502}}
 
 	d := calcDelay(srvErr, 8, cfg)
-	// After capping at maxDelay (5s), jitter adds up to 25%
-	if d > 5*time.Second+5*time.Second/4 {
-		t.Errorf("delay %v exceeds maxDelay + 25%% jitter", d)
+	// After capping at maxDelay (5s), jitter adds up to baseDelay (1s)
+	if d > 5*time.Second+time.Second {
+		t.Errorf("delay %v exceeds maxDelay + baseDelay jitter", d)
 	}
 }
 

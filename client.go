@@ -13,6 +13,8 @@ import (
 	"net"
 	"net/http"
 	"net/url"
+
+	"golang.org/x/net/proxy"
 	"reflect"
 	"strconv"
 	"strings"
@@ -136,7 +138,18 @@ func NewClient(config Config) (*Client, error) {
 			return nil, &ConfigError{LolzteamError{Message: fmt.Sprintf("proxy URL %q has no host", config.Proxy.URL)}}
 		}
 
-		transport.Proxy = http.ProxyURL(proxyURL)
+		switch proxyURL.Scheme {
+		case "socks5":
+			dialer, err := proxy.FromURL(proxyURL, proxy.Direct)
+			if err != nil {
+				return nil, &ConfigError{LolzteamError{Message: fmt.Sprintf("failed to create SOCKS5 dialer: %v", err)}}
+			}
+			transport.DialContext = func(ctx context.Context, network, addr string) (net.Conn, error) {
+				return dialer.Dial(network, addr)
+			}
+		default:
+			transport.Proxy = http.ProxyURL(proxyURL)
+		}
 	}
 
 	rpm := 300 // safe default
@@ -341,11 +354,21 @@ func parseRetryAfter(value string) time.Duration {
 	if value == "" {
 		return 0
 	}
+	// Try numeric seconds first
 	seconds, err := strconv.ParseFloat(value, 64)
-	if err != nil {
+	if err == nil {
+		return time.Duration(seconds * float64(time.Second))
+	}
+	// Try HTTP-date format
+	t, err := http.ParseTime(value)
+	if err == nil {
+		delay := time.Until(t)
+		if delay > 0 {
+			return delay
+		}
 		return 0
 	}
-	return time.Duration(seconds * float64(time.Second))
+	return 0
 }
 
 // --- Query/Form helpers ---
@@ -497,6 +520,13 @@ type fileField struct {
 func (mb *MultipartBody) Encode() (data []byte, contentType string, err error) {
 	var buf bytes.Buffer
 	w := multipart.NewWriter(&buf)
+	defer func() {
+		if closeErr := w.Close(); closeErr != nil && err == nil {
+			data = nil
+			contentType = ""
+			err = fmt.Errorf("failed to close multipart writer: %w", closeErr)
+		}
+	}()
 
 	for name, value := range mb.fields {
 		if err := w.WriteField(name, value); err != nil {
@@ -512,10 +542,6 @@ func (mb *MultipartBody) Encode() (data []byte, contentType string, err error) {
 		if _, err := io.Copy(part, file.data); err != nil {
 			return nil, "", fmt.Errorf("failed to write multipart file %q: %w", name, err)
 		}
-	}
-
-	if err := w.Close(); err != nil {
-		return nil, "", fmt.Errorf("failed to close multipart writer: %w", err)
 	}
 
 	return buf.Bytes(), w.FormDataContentType(), nil
@@ -813,8 +839,8 @@ func calcDelay(err error, attempt int, cfg retryConfig) time.Duration {
 		delay = cfg.maxDelay
 	}
 
-	// Add jitter up to 25%
-	jitterBase := int64(delay) / 4
+	// Add jitter up to baseDelay
+	jitterBase := int64(cfg.baseDelay)
 	if jitterBase > 0 {
 		delay += time.Duration(rand.Int64N(jitterBase))
 	}

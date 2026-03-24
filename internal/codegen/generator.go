@@ -132,6 +132,9 @@ func (g *Generator) WriteClientFile(outDir, baseURL string, rpm int, searchRPM i
 		fmt.Fprintf(&b, "\t\tconfig.RateLimit.SearchRequestsPerMinute = %d\n", searchRPM)
 		fmt.Fprintf(&b, "\t}\n")
 	}
+	fmt.Fprintf(&b, "\tif config.Retry == nil {\n")
+	fmt.Fprintf(&b, "\t\tconfig.Retry = lolzteam.DefaultRetryConfig()\n")
+	fmt.Fprintf(&b, "\t}\n")
 	b.WriteString("\tc, err := lolzteam.NewClient(config)\n")
 	fmt.Fprintf(&b, "\tif err != nil {\n")
 	fmt.Fprintf(&b, "\t\treturn nil, err\n")
@@ -141,6 +144,12 @@ func (g *Generator) WriteClientFile(outDir, baseURL string, rpm int, searchRPM i
 		fmt.Fprintf(&b, "\t\t%s: &%sService{client: c},\n", gn, gn)
 	}
 	b.WriteString("\t}, nil\n}\n\n")
+
+	// Convenience constructor
+	fmt.Fprintf(&b, "// NewClientFromToken creates a new %s API client with default configuration.\n", prefix)
+	b.WriteString("func NewClientFromToken(token string) (*Client, error) {\n")
+	b.WriteString("\treturn NewClient(lolzteam.Config{Token: token})\n")
+	b.WriteString("}\n\n")
 
 	// Service structs and methods
 	for _, groupName := range groupNames {

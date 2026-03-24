@@ -40,6 +40,9 @@ func NewClient(config lolzteam.Config) (*Client, error) {
 	if config.RateLimit.SearchRequestsPerMinute == 0 {
 		config.RateLimit.SearchRequestsPerMinute = 20
 	}
+	if config.Retry == nil {
+		config.Retry = lolzteam.DefaultRetryConfig()
+	}
 	c, err := lolzteam.NewClient(config)
 	if err != nil {
 		return nil, err
@@ -59,6 +62,11 @@ func NewClient(config lolzteam.Config) (*Client, error) {
 		Publishing:      &PublishingService{client: c},
 		Purchasing:      &PurchasingService{client: c},
 	}, nil
+}
+
+// NewClientFromToken creates a new Market API client with default configuration.
+func NewClientFromToken(token string) (*Client, error) {
+	return NewClient(lolzteam.Config{Token: token})
 }
 
 // AutoPaymentsService handles AutoPayments API endpoints.

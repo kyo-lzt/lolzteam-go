@@ -31,6 +31,7 @@ jobs:
         with:
           go-version: "1.23"
           cache: false
+      - run: test -z "$(gofmt -l .)"
       - run: go vet ./...
 
   test:
@@ -43,4 +44,4 @@ jobs:
         with:
           go-version: "1.23"
           cache: false
-      - run: go test ./...
+      - run: go test -race ./...
