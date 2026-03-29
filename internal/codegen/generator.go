@@ -232,7 +232,12 @@ func (g *Generator) WriteTypesFile(outDir string) error {
 					if rootPkgTypes[goType] {
 						goType = "lolzteam." + goType
 					}
-					if qp.Default != "" {
+					desc := StripMarkdownBold(CleanComment(qp.Description))
+					if desc != "" && qp.Default != "" {
+						fmt.Fprintf(&b, "\t// %s - %s Default: %s\n", qp.GoName, desc, qp.Default)
+					} else if desc != "" {
+						fmt.Fprintf(&b, "\t// %s - %s\n", qp.GoName, desc)
+					} else if qp.Default != "" {
 						fmt.Fprintf(&b, "\t// %s - Default: %s\n", qp.GoName, qp.Default)
 					}
 					if qp.Required {
@@ -256,7 +261,12 @@ func (g *Generator) WriteTypesFile(outDir string) error {
 					tagName = "json"
 				}
 				for _, bp := range op.BodyProps {
-					if bp.Default != "" {
+					desc := StripMarkdownBold(CleanComment(bp.Description))
+					if desc != "" && bp.Default != "" {
+						fmt.Fprintf(&b, "\t// %s - %s Default: %s\n", bp.GoName, desc, bp.Default)
+					} else if desc != "" {
+						fmt.Fprintf(&b, "\t// %s - %s\n", bp.GoName, desc)
+					} else if bp.Default != "" {
 						fmt.Fprintf(&b, "\t// %s - Default: %s\n", bp.GoName, bp.Default)
 					}
 					goType := bp.GoType
@@ -386,7 +396,7 @@ func (g *Generator) CollectResponseTypes(name string, s SchemaObj) {
 		propSchema := resolved.Properties[propName]
 		goFieldName := ToPascalCase(propName)
 		resolvedProp := g.ResolveSchemaRef(propSchema)
-		if resolvedProp.Ref == "" && len(resolvedProp.Properties) > 0 {
+		if resolvedProp.Ref == "" && len(resolvedProp.Properties) > 0 && !allNumericKeys(resolvedProp.Properties) {
 			inlineName := name + goFieldName
 			inlineSD := g.SchemaToStructDef(inlineName, resolvedProp)
 			g.NamedTypes[inlineName] = inlineSD
@@ -417,20 +427,33 @@ func (g *Generator) WriteResponseStruct(b *strings.Builder, name string, s Schem
 		// Inline objects
 		resolvedProp := g.ResolveSchemaRef(propSchema)
 		if resolvedProp.Ref == "" && len(resolvedProp.Properties) > 0 {
-			inlineName := name + goFieldName
-			inlineSD := g.SchemaToStructDef(inlineName, resolvedProp)
-			g.NamedTypes[inlineName] = inlineSD
-			goType = inlineName
+			if allNumericKeys(resolvedProp.Properties) {
+				goType = "any" // numeric-keyed objects: API may return [] or {"id":"val"}
+			} else {
+				inlineName := name + goFieldName
+				inlineSD := g.SchemaToStructDef(inlineName, resolvedProp)
+				g.NamedTypes[inlineName] = inlineSD
+				goType = inlineName
+			}
 		}
+
+		// Issue 2: response integer → float64
+		goType = responseIntToFloat(goType)
 
 		// Qualify root package types
 		if rootPkgTypes[goType] {
 			goType = "lolzteam." + goType
 		}
 
+		// Struct-typed response fields always use pointer to handle null/empty API responses
+		isStruct := isStructType(goType)
 		isRequired := reqSet[propName]
 		if isRequired {
-			fmt.Fprintf(b, "\t%s %s `json:\"%s\"`\n", goFieldName, goType, propName)
+			if isStruct {
+				fmt.Fprintf(b, "\t%s *%s `json:\"%s\"`\n", goFieldName, goType, propName)
+			} else {
+				fmt.Fprintf(b, "\t%s %s `json:\"%s\"`\n", goFieldName, goType, propName)
+			}
 		} else {
 			ptrType := PtrWrap(goType)
 			fmt.Fprintf(b, "\t%s %s `json:\"%s,omitempty\"`\n", goFieldName, ptrType, propName)
@@ -479,12 +502,16 @@ func (g *Generator) WriteMethod(b *strings.Builder, groupName string, op Operati
 		returnType = fmt.Sprintf("(*%s, error)", responseStructName)
 	}
 
-	// Comment
+	// Doc comment
 	summary := op.Summary
 	if summary == "" {
 		summary = op.Method
 	}
-	fmt.Fprintf(b, "// %s %s\n", op.Method, CleanComment(summary))
+	fmt.Fprintf(b, "// %s %s\n", op.Method, StripMarkdownBold(CleanComment(summary)))
+	if op.Description != "" {
+		b.WriteString("//\n")
+		WriteDocComment(b, op.Description, "")
+	}
 
 	fmt.Fprintf(b, "func (s *%s) %s(%s) %s {\n",
 		svcName, op.Method, strings.Join(sigParts, ", "), returnType)

@@ -13730,233 +13730,166 @@ const (
 
 // AutoPaymentsCreateResponseSystemInfo represents a component schema.
 type AutoPaymentsCreateResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // AutoPaymentsDeleteResponseSystemInfo represents a component schema.
 type AutoPaymentsDeleteResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
-}
-
-// AutoPaymentsListResponsePayments represents a component schema.
-type AutoPaymentsListResponsePayments struct {
-	N1234567890 AutoPaymentsListResponsePaymentsN1234567890 `json:"1234567890"`
-}
-
-// AutoPaymentsListResponsePaymentsN1234567890 represents a component schema.
-type AutoPaymentsListResponsePaymentsN1234567890 struct {
-	Amount        string                                              `json:"amount"`
-	AutoPaymentID int64                                               `json:"auto_payment_id"`
-	Day           string                                              `json:"day"`
-	Description   string                                              `json:"description"`
-	NextAlertDate int64                                               `json:"next_alert_date"`
-	NextPayment   int64                                               `json:"next_payment"`
-	Receiver      AutoPaymentsListResponsePaymentsN1234567890Receiver `json:"receiver"`
-	ReceiverID    int64                                               `json:"receiver_id"`
-	UserID        int64                                               `json:"user_id"`
-}
-
-// AutoPaymentsListResponsePaymentsN1234567890Receiver represents a component schema.
-type AutoPaymentsListResponsePaymentsN1234567890Receiver struct {
-	ContestCount       int64                                                          `json:"contest_count"`
-	CustomTitle        string                                                         `json:"custom_title"`
-	Fields             []any                                                          `json:"fields"`
-	IsBanned           int64                                                          `json:"is_banned"`
-	Links              AutoPaymentsListResponsePaymentsN1234567890ReceiverLinks       `json:"links"`
-	Permissions        AutoPaymentsListResponsePaymentsN1234567890ReceiverPermissions `json:"permissions"`
-	TrophyCount        int64                                                          `json:"trophy_count"`
-	UserFollowersCount int64                                                          `json:"user_followers_count"`
-	UserFollowingCount int64                                                          `json:"user_following_count"`
-	UserGroupID        int64                                                          `json:"user_group_id"`
-	UserID             int64                                                          `json:"user_id"`
-	UserIsFollowed     bool                                                           `json:"user_is_followed"`
-	UserIsIgnored      bool                                                           `json:"user_is_ignored"`
-	UserIsValid        bool                                                           `json:"user_is_valid"`
-	UserIsVerified     bool                                                           `json:"user_is_verified"`
-	UserIsVisitor      bool                                                           `json:"user_is_visitor"`
-	UserLastSeenDate   int64                                                          `json:"user_last_seen_date"`
-	UserLike2Count     int64                                                          `json:"user_like2_count"`
-	UserLikeCount      int64                                                          `json:"user_like_count"`
-	UserMessageCount   int64                                                          `json:"user_message_count"`
-	UserRegisterDate   int64                                                          `json:"user_register_date"`
-	UserTitle          string                                                         `json:"user_title"`
-	Username           string                                                         `json:"username"`
-	UsernameHTML       string                                                         `json:"username_html"`
-}
-
-// AutoPaymentsListResponsePaymentsN1234567890ReceiverLinks represents a component schema.
-type AutoPaymentsListResponsePaymentsN1234567890ReceiverLinks struct {
-	Avatar      string `json:"avatar"`
-	AvatarBig   string `json:"avatar_big"`
-	AvatarSmall string `json:"avatar_small"`
-	Detail      string `json:"detail"`
-	Followers   string `json:"followers"`
-	Followings  string `json:"followings"`
-	Ignore      string `json:"ignore"`
-	Permalink   string `json:"permalink"`
-	Timeline    string `json:"timeline"`
-}
-
-// AutoPaymentsListResponsePaymentsN1234567890ReceiverPermissions represents a component schema.
-type AutoPaymentsListResponsePaymentsN1234567890ReceiverPermissions struct {
-	Edit        bool `json:"edit"`
-	Follow      bool `json:"follow"`
-	Ignore      bool `json:"ignore"`
-	ProfilePost bool `json:"profile_post"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // AutoPaymentsListResponseSystemInfo represents a component schema.
 type AutoPaymentsListResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // BalanceModel represents a component schema.
 type BalanceModel struct {
-	Balance     string `json:"balance"`
-	BalanceID   int64  `json:"balance_id"`
-	CustomTitle any    `json:"custom_title"`
-	FullTitle   string `json:"fullTitle"`
-	MerchantID  int64  `json:"merchant_id"`
-	Title       string `json:"title"`
-	Type        string `json:"type"`
-	UserID      int64  `json:"user_id"`
+	Balance     string  `json:"balance"`
+	BalanceID   float64 `json:"balance_id"`
+	CustomTitle any     `json:"custom_title"`
+	FullTitle   string  `json:"fullTitle"`
+	MerchantID  float64 `json:"merchant_id"`
+	Title       string  `json:"title"`
+	Type        string  `json:"type"`
+	UserID      float64 `json:"user_id"`
 }
 
 // BatchBatchResponseJobs represents a component schema.
 type BatchBatchResponseJobs struct {
-	JobID BatchBatchResponseJobsJobID `json:"job_id"`
+	JobID any `json:"job_id"`
 }
 
 // BatchBatchResponseJobsJobID represents a component schema.
 type BatchBatchResponseJobsJobID struct {
-	JobError  *string `json:"_job_error,omitempty"`
-	JobResult *string `json:"_job_result,omitempty"`
+	JobError  any `json:"_job_error,omitempty"`
+	JobResult any `json:"_job_result,omitempty"`
 }
 
 // BatchBatchResponseSystemInfo represents a component schema.
 type BatchBatchResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CartAddResponseSystemInfo represents a component schema.
 type CartAddResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CartDeleteResponseSystemInfo represents a component schema.
 type CartDeleteResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CartGetResponseSystemInfo represents a component schema.
 type CartGetResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryAllResponseSystemInfo represents a component schema.
 type CategoryAllResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryBattleNetResponseSystemInfo represents a component schema.
 type CategoryBattleNetResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryChatGPTResponseSystemInfo represents a component schema.
 type CategoryChatGPTResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryDiscordResponseSystemInfo represents a component schema.
 type CategoryDiscordResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryEAResponseSystemInfo represents a component schema.
 type CategoryEAResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryEpicGamesResponseSystemInfo represents a component schema.
 type CategoryEpicGamesResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryEscapeFromTarkovResponseSystemInfo represents a component schema.
 type CategoryEscapeFromTarkovResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryFortniteResponseSystemInfo represents a component schema.
 type CategoryFortniteResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryGamesResponseSystemInfo represents a component schema.
 type CategoryGamesResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryGiftsResponseSystemInfo represents a component schema.
 type CategoryGiftsResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryHytaleResponseSystemInfo represents a component schema.
 type CategoryHytaleResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryInstagramResponseSystemInfo represents a component schema.
 type CategoryInstagramResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryListResponseCategory represents a component schema.
 type CategoryListResponseCategory struct {
-	CategoryDescription string                            `json:"category_description"`
-	CategoryID          int64                             `json:"category_id"`
-	CategoryTitle       string                            `json:"category_title"`
-	Links               CategoryListResponseCategoryLinks `json:"links"`
+	CategoryDescription string  `json:"category_description"`
+	CategoryID          float64 `json:"category_id"`
+	CategoryTitle       string  `json:"category_title"`
+	Links               any     `json:"links"`
 }
 
 // CategoryListResponseCategoryLinks represents a component schema.
@@ -13969,282 +13902,270 @@ type CategoryListResponseCategoryLinks struct {
 
 // CategoryListResponseSystemInfo represents a component schema.
 type CategoryListResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryMihoyoResponseSystemInfo represents a component schema.
 type CategoryMihoyoResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryMinecraftResponseSystemInfo represents a component schema.
 type CategoryMinecraftResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
-}
-
-// CategoryParamsResponseBaseParams represents a component schema.
-type CategoryParamsResponseBaseParams struct {
-	N0 CategoryParamsResponseBaseParamsN0 `json:"0"`
-}
-
-// CategoryParamsResponseBaseParamsN0 represents a component schema.
-type CategoryParamsResponseBaseParamsN0 struct {
-	Description string `json:"description"`
-	Input       string `json:"input"`
-	Name        string `json:"name"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryParamsResponseCategory represents a component schema.
 type CategoryParamsResponseCategory struct {
-	AccountPriceMin           int64  `json:"account_price_min"`
-	AddItemAvailable          int64  `json:"add_item_available"`
-	AvailableTempEmail        int64  `json:"available_temp_email"`
-	BuyWithoutValidation      int64  `json:"buy_without_validation"`
-	CanBeResold               int64  `json:"can_be_resold"`
-	CategoryDescriptionHTML   string `json:"category_description_html"`
-	CategoryDescriptionHTMLEn string `json:"category_description_html_en"`
-	CategoryH1HTMLEn          string `json:"category_h1_html_en"`
-	CategoryID                int64  `json:"category_id"`
-	CategoryLoginURL          string `json:"category_login_url"`
-	CategoryName              string `json:"category_name"`
-	CategoryOrder             int64  `json:"category_order"`
-	CategoryTitle             string `json:"category_title"`
-	CategoryURL               string `json:"category_url"`
-	CheckButtonEnabled        int64  `json:"check_button_enabled"`
-	CheckerEnabled            int64  `json:"checker_enabled"`
-	Cookies                   string `json:"cookies"`
-	DisplayInList             int64  `json:"display_in_list"`
-	GuestHidden               int64  `json:"guest_hidden"`
-	HasAccountLink            int64  `json:"has_account_link"`
-	HasGuarantee              int64  `json:"has_guarantee"`
-	LoginType                 string `json:"login_type"`
-	MassUploadItemAvailable   int64  `json:"mass_upload_item_available"`
-	MaxInvalidUploadTries     int64  `json:"max_invalid_upload_tries"`
-	RecoveryLink              string `json:"recovery_link"`
-	RequireEldForNativeAccs   int64  `json:"require_eld_for_native_accs"`
-	RequireEmailLoginData     int64  `json:"require_email_login_data"`
-	RequireTempEmail          int64  `json:"require_temp_email"`
-	RequireVideoRecording     int64  `json:"require_video_recording"`
-	ResaleDurationLimitDays   int64  `json:"resale_duration_limit_days"`
-	SubCategoryID             int64  `json:"sub_category_id"`
-	SupportEmailLoginData     int64  `json:"support_email_login_data"`
-	SupportPersonalProxy      int64  `json:"support_personal_proxy"`
-	SupportTempEmail          int64  `json:"support_temp_email"`
-	TopQueries                string `json:"top_queries"`
+	AccountPriceMin           float64 `json:"account_price_min"`
+	AddItemAvailable          float64 `json:"add_item_available"`
+	AvailableTempEmail        float64 `json:"available_temp_email"`
+	BuyWithoutValidation      float64 `json:"buy_without_validation"`
+	CanBeResold               float64 `json:"can_be_resold"`
+	CategoryDescriptionHTML   string  `json:"category_description_html"`
+	CategoryDescriptionHTMLEn string  `json:"category_description_html_en"`
+	CategoryH1HTMLEn          string  `json:"category_h1_html_en"`
+	CategoryID                float64 `json:"category_id"`
+	CategoryLoginURL          string  `json:"category_login_url"`
+	CategoryName              string  `json:"category_name"`
+	CategoryOrder             float64 `json:"category_order"`
+	CategoryTitle             string  `json:"category_title"`
+	CategoryURL               string  `json:"category_url"`
+	CheckButtonEnabled        float64 `json:"check_button_enabled"`
+	CheckerEnabled            float64 `json:"checker_enabled"`
+	Cookies                   string  `json:"cookies"`
+	DisplayInList             float64 `json:"display_in_list"`
+	GuestHidden               float64 `json:"guest_hidden"`
+	HasAccountLink            float64 `json:"has_account_link"`
+	HasGuarantee              float64 `json:"has_guarantee"`
+	LoginType                 string  `json:"login_type"`
+	MassUploadItemAvailable   float64 `json:"mass_upload_item_available"`
+	MaxInvalidUploadTries     float64 `json:"max_invalid_upload_tries"`
+	RecoveryLink              string  `json:"recovery_link"`
+	RequireEldForNativeAccs   float64 `json:"require_eld_for_native_accs"`
+	RequireEmailLoginData     float64 `json:"require_email_login_data"`
+	RequireTempEmail          float64 `json:"require_temp_email"`
+	RequireVideoRecording     float64 `json:"require_video_recording"`
+	ResaleDurationLimitDays   float64 `json:"resale_duration_limit_days"`
+	SubCategoryID             float64 `json:"sub_category_id"`
+	SupportEmailLoginData     float64 `json:"support_email_login_data"`
+	SupportPersonalProxy      float64 `json:"support_personal_proxy"`
+	SupportTempEmail          float64 `json:"support_temp_email"`
+	TopQueries                string  `json:"top_queries"`
 }
 
 // CategoryParamsResponseSystemInfo represents a component schema.
 type CategoryParamsResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryRiotResponseSystemInfo represents a component schema.
 type CategoryRiotResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryRobloxResponseSystemInfo represents a component schema.
 type CategoryRobloxResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategorySocialClubResponseSystemInfo represents a component schema.
 type CategorySocialClubResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategorySteamResponseSystemInfo represents a component schema.
 type CategorySteamResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategorySupercellResponseSystemInfo represents a component schema.
 type CategorySupercellResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryTelegramResponseSystemInfo represents a component schema.
 type CategoryTelegramResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryTikTokResponseSystemInfo represents a component schema.
 type CategoryTikTokResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryUplayResponseSystemInfo represents a component schema.
 type CategoryUplayResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryVPNResponseSystemInfo represents a component schema.
 type CategoryVPNResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryWarfaceResponseSystemInfo represents a component schema.
 type CategoryWarfaceResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryWotBlitzResponseSystemInfo represents a component schema.
 type CategoryWotBlitzResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CategoryWotResponseSystemInfo represents a component schema.
 type CategoryWotResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ConfirmationCodeModel represents a component schema.
 type ConfirmationCodeModel struct {
-	CodeData ConfirmationCodeModelCodeData `json:"codeData"`
-	Item     ConfirmationCodeModelItem     `json:"item"`
+	CodeData any `json:"codeData"`
+	Item     any `json:"item"`
 }
 
 // ConfirmationCodeModelCodeData represents a component schema.
 type ConfirmationCodeModelCodeData struct {
-	Code      string `json:"code"`
-	Date      int64  `json:"date"`
-	TextPlain string `json:"textPlain"`
+	Code      string  `json:"code"`
+	Date      float64 `json:"date"`
+	TextPlain string  `json:"textPlain"`
 }
 
 // ConfirmationCodeModelItem represents a component schema.
 type ConfirmationCodeModelItem struct {
-	AccountLink                       string                                  `json:"accountLink"`
-	AccountLinks                      []any                                   `json:"accountLinks"`
-	AccountLastActivity               int64                                   `json:"account_last_activity"`
-	AIPrice                           int64                                   `json:"aiPrice"`
-	AIPriceCheckDate                  int64                                   `json:"aiPriceCheckDate"`
-	AllowAskDiscount                  int64                                   `json:"allow_ask_discount"`
-	AutoBuyPrice                      int64                                   `json:"autoBuyPrice"`
-	AutoBuyPriceCheckDate             int64                                   `json:"autoBuyPriceCheckDate"`
-	BumpSettings                      ConfirmationCodeModelItemBumpSettings   `json:"bumpSettings"`
-	Buyer                             ConfirmationCodeModelItemBuyer          `json:"buyer"`
-	BuyerAvatarDate                   int64                                   `json:"buyer_avatar_date"`
-	BuyerDisplayIconGroupID           int64                                   `json:"buyer_display_icon_group_id"`
-	BuyerUniqBanner                   string                                  `json:"buyer_uniq_banner"`
-	BuyerUserGroupID                  int64                                   `json:"buyer_user_group_id"`
-	CanAskDiscount                    bool                                    `json:"canAskDiscount"`
-	CanChangeEmailPassword            bool                                    `json:"canChangeEmailPassword"`
-	CanChangePassword                 bool                                    `json:"canChangePassword"`
-	CanCheckAIPrice                   bool                                    `json:"canCheckAiPrice"`
-	CanCheckAutoBuyPrice              bool                                    `json:"canCheckAutoBuyPrice"`
-	CanCheckGuarantee                 bool                                    `json:"canCheckGuarantee"`
-	CanReportItem                     bool                                    `json:"canReportItem"`
-	CanResellItem                     bool                                    `json:"canResellItem"`
-	CanResellItemAfterPurchase        bool                                    `json:"canResellItemAfterPurchase"`
-	CanShareItem                      bool                                    `json:"canShareItem"`
-	CanUpdateItemStats                bool                                    `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                                    `json:"canValidateAccount"`
-	CanViewAccountLink                bool                                    `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                                    `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                                    `json:"canViewEmailLoginData"`
-	CanViewItemViews                  bool                                    `json:"canViewItemViews"`
-	CanViewLoginData                  bool                                    `json:"canViewLoginData"`
-	CartPrice                         any                                     `json:"cart_price"`
-	CategoryID                        int64                                   `json:"category_id"`
-	ContentID                         any                                     `json:"content_id"`
-	ContentType                       any                                     `json:"content_type"`
-	CopyFormatData                    ConfirmationCodeModelItemCopyFormatData `json:"copyFormatData"`
-	CustomFields                      ConfirmationCodeModelItemCustomFields   `json:"customFields"`
-	DeleteDate                        int64                                   `json:"delete_date"`
-	DeleteReason                      string                                  `json:"delete_reason"`
-	DeleteUserID                      int64                                   `json:"delete_user_id"`
-	DeleteUsername                    string                                  `json:"delete_username"`
-	Deposit                           int64                                   `json:"deposit"`
-	Description                       string                                  `json:"description"`
-	DescriptionEnHTML                 string                                  `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                                  `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                                  `json:"descriptionHtml"`
-	DescriptionPlain                  string                                  `json:"descriptionPlain"`
-	DescriptionEn                     string                                  `json:"description_en"`
-	EditDate                          int64                                   `json:"edit_date"`
-	EmailProvider                     string                                  `json:"email_provider"`
-	EmailType                         string                                  `json:"email_type"`
-	ExtendedGuarantee                 int64                                   `json:"extended_guarantee"`
-	ExternalAuth                      []any                                   `json:"externalAuth"`
-	ExtraPrices                       []any                                   `json:"extraPrices"`
-	FeedbackData                      string                                  `json:"feedback_data"`
-	GetEmailCodeDisplayLogin          any                                     `json:"getEmailCodeDisplayLogin"`
-	Guarantee                         ConfirmationCodeModelItemGuarantee      `json:"guarantee"`
-	ImagePreviewLinks                 []string                                `json:"imagePreviewLinks"`
-	InCart                            any                                     `json:"in_cart"`
-	Information                       string                                  `json:"information"`
-	InformationEn                     string                                  `json:"information_en"`
-	IsBirthdayToday                   bool                                    `json:"isBirthdayToday"`
-	IsIgnored                         bool                                    `json:"isIgnored"`
-	IsPersonalAccount                 bool                                    `json:"isPersonalAccount"`
-	IsSmallExf                        bool                                    `json:"isSmallExf"`
-	IsTrusted                         bool                                    `json:"isTrusted"`
-	IsFave                            any                                     `json:"is_fave"`
-	IsSticky                          int64                                   `json:"is_sticky"`
-	ItemOriginPhrase                  string                                  `json:"itemOriginPhrase"`
-	ItemDomain                        string                                  `json:"item_domain"`
-	ItemID                            int64                                   `json:"item_id"`
-	ItemOrigin                        string                                  `json:"item_origin"`
-	ItemState                         string                                  `json:"item_state"`
-	Login                             string                                  `json:"login"`
-	LoginData                         ConfirmationCodeModelItemLoginData      `json:"loginData"`
-	MarketCustomTitle                 string                                  `json:"market_custom_title"`
-	MaxDiscountPercent                int64                                   `json:"max_discount_percent"`
-	NeedToRequireVideoToViewLoginData bool                                    `json:"needToRequireVideoToViewLoginData"`
-	NoteText                          string                                  `json:"note_text"`
-	Nsb                               int64                                   `json:"nsb"`
-	PendingDeletionDate               int64                                   `json:"pending_deletion_date"`
-	Price                             int64                                   `json:"price"`
-	PriceWithSellerFee                float64                                 `json:"priceWithSellerFee"`
-	PriceWithSellerFeeLabel           string                                  `json:"priceWithSellerFeeLabel"`
-	PriceCurrency                     string                                  `json:"price_currency"`
-	PublishedDate                     int64                                   `json:"published_date"`
-	RefreshedDate                     int64                                   `json:"refreshed_date"`
-	ResaleItemOrigin                  string                                  `json:"resale_item_origin"`
-	RubPrice                          int64                                   `json:"rub_price"`
-	Seller                            ConfirmationCodeModelItemSeller         `json:"seller"`
-	ShowGetEmailCodeButton            bool                                    `json:"showGetEmailCodeButton"`
-	Tags                              ConfirmationCodeModelItemTags           `json:"tags"`
-	TempEmail                         string                                  `json:"temp_email"`
-	Title                             string                                  `json:"title"`
-	TitleEn                           string                                  `json:"title_en"`
-	UniqueKeyExists                   bool                                    `json:"uniqueKeyExists"`
-	UpdateStatDate                    int64                                   `json:"update_stat_date"`
-	UserAllowAskDiscount              int64                                   `json:"user_allow_ask_discount"`
-	ViewCount                         int64                                   `json:"view_count"`
-	VisitorIsAuthor                   bool                                    `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AIPrice                           float64 `json:"aiPrice"`
+	AIPriceCheckDate                  float64 `json:"aiPriceCheckDate"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	AutoBuyPrice                      float64 `json:"autoBuyPrice"`
+	AutoBuyPriceCheckDate             float64 `json:"autoBuyPriceCheckDate"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	Buyer                             any     `json:"buyer"`
+	BuyerAvatarDate                   float64 `json:"buyer_avatar_date"`
+	BuyerDisplayIconGroupID           float64 `json:"buyer_display_icon_group_id"`
+	BuyerUniqBanner                   string  `json:"buyer_uniq_banner"`
+	BuyerUserGroupID                  float64 `json:"buyer_user_group_id"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangeEmailPassword            bool    `json:"canChangeEmailPassword"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckAIPrice                   bool    `json:"canCheckAiPrice"`
+	CanCheckAutoBuyPrice              bool    `json:"canCheckAutoBuyPrice"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItem                     bool    `json:"canResellItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanShareItem                      bool    `json:"canShareItem"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewItemViews                  bool    `json:"canViewItemViews"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CartPrice                         any     `json:"cart_price"`
+	CategoryID                        float64 `json:"category_id"`
+	ContentID                         any     `json:"content_id"`
+	ContentType                       any     `json:"content_type"`
+	CopyFormatData                    any     `json:"copyFormatData"`
+	CustomFields                      any     `json:"customFields"`
+	DeleteDate                        float64 `json:"delete_date"`
+	DeleteReason                      string  `json:"delete_reason"`
+	DeleteUserID                      float64 `json:"delete_user_id"`
+	DeleteUsername                    string  `json:"delete_username"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	GetEmailCodeDisplayLogin          any     `json:"getEmailCodeDisplayLogin"`
+	Guarantee                         any     `json:"guarantee"`
+	ImagePreviewLinks                 any     `json:"imagePreviewLinks"`
+	InCart                            any     `json:"in_cart"`
+	Information                       string  `json:"information"`
+	InformationEn                     string  `json:"information_en"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsSmallExf                        bool    `json:"isSmallExf"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsFave                            any     `json:"is_fave"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	Login                             string  `json:"login"`
+	LoginData                         any     `json:"loginData"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	NoteText                          string  `json:"note_text"`
+	Nsb                               float64 `json:"nsb"`
+	PendingDeletionDate               float64 `json:"pending_deletion_date"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceWithSellerFeeLabel           string  `json:"priceWithSellerFeeLabel"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	Tags                              any     `json:"tags"`
+	TempEmail                         string  `json:"temp_email"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UniqueKeyExists                   bool    `json:"uniqueKeyExists"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // ConfirmationCodeModelItemBumpSettings represents a component schema.
@@ -14258,16 +14179,16 @@ type ConfirmationCodeModelItemBumpSettings struct {
 
 // ConfirmationCodeModelItemBuyer represents a component schema.
 type ConfirmationCodeModelItemBuyer struct {
-	DisplayIconGroupID  int64  `json:"display_icon_group_id"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsBanned            int64  `json:"is_banned"`
-	OperationDate       int64  `json:"operation_date"`
-	UniqBanner          string `json:"uniq_banner"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	VisitorIsBuyer      bool   `json:"visitorIsBuyer"`
+	DisplayIconGroupID  float64 `json:"display_icon_group_id"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsBanned            float64 `json:"is_banned"`
+	OperationDate       float64 `json:"operation_date"`
+	UniqBanner          string  `json:"uniq_banner"`
+	UniqUsernameCSS     string  `json:"uniq_username_css"`
+	UserGroupID         float64 `json:"user_group_id"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
+	VisitorIsBuyer      bool    `json:"visitorIsBuyer"`
 }
 
 // ConfirmationCodeModelItemCopyFormatData represents a component schema.
@@ -14280,7 +14201,7 @@ type ConfirmationCodeModelItemCopyFormatData struct {
 // ConfirmationCodeModelItemCustomFields represents a component schema.
 type ConfirmationCodeModelItemCustomFields struct {
 	N4             string `json:"_4"`
-	AllowSelfUnban []any  `json:"allowSelfUnban"`
+	AllowSelfUnban any    `json:"allowSelfUnban"`
 	BanReason      string `json:"ban_reason"`
 	Discord        string `json:"discord"`
 	Github         string `json:"github"`
@@ -14293,16 +14214,16 @@ type ConfirmationCodeModelItemCustomFields struct {
 
 // ConfirmationCodeModelItemGuarantee represents a component schema.
 type ConfirmationCodeModelItemGuarantee struct {
-	Active                bool   `json:"active"`
-	Cancelled             bool   `json:"cancelled"`
-	CancelledReason       string `json:"cancelledReason"`
-	CancelledReasonPhrase string `json:"cancelledReasonPhrase"`
-	Class                 string `json:"class"`
-	Duration              int64  `json:"duration"`
-	DurationPhrase        string `json:"durationPhrase"`
-	EndDate               int64  `json:"endDate"`
-	RemainingTime         int64  `json:"remainingTime"`
-	RemainingTimePhrase   string `json:"remainingTimePhrase"`
+	Active                bool    `json:"active"`
+	Cancelled             bool    `json:"cancelled"`
+	CancelledReason       string  `json:"cancelledReason"`
+	CancelledReasonPhrase string  `json:"cancelledReasonPhrase"`
+	Class                 string  `json:"class"`
+	Duration              float64 `json:"duration"`
+	DurationPhrase        string  `json:"durationPhrase"`
+	EndDate               float64 `json:"endDate"`
+	RemainingTime         float64 `json:"remainingTime"`
+	RemainingTimePhrase   string  `json:"remainingTimePhrase"`
 }
 
 // ConfirmationCodeModelItemLoginData represents a component schema.
@@ -14318,19 +14239,19 @@ type ConfirmationCodeModelItemLoginData struct {
 
 // ConfirmationCodeModelItemSeller represents a component schema.
 type ConfirmationCodeModelItemSeller struct {
-	ActiveItemsCount      int64                                   `json:"active_items_count"`
-	AvatarDate            int64                                   `json:"avatar_date"`
-	Contacts              ConfirmationCodeModelItemSellerContacts `json:"contacts"`
-	DisplayStyleGroupID   int64                                   `json:"display_style_group_id"`
-	EffectiveLastActivity int64                                   `json:"effective_last_activity"`
-	IsOnline              bool                                    `json:"isOnline"`
-	IsBanned              int64                                   `json:"is_banned"`
-	JoinedDate            int64                                   `json:"joined_date"`
-	RestoreData           string                                  `json:"restore_data"`
-	RestorePercents       any                                     `json:"restore_percents"`
-	SoldItemsCount        int64                                   `json:"sold_items_count"`
-	UserID                int64                                   `json:"user_id"`
-	Username              string                                  `json:"username"`
+	ActiveItemsCount      float64 `json:"active_items_count"`
+	AvatarDate            float64 `json:"avatar_date"`
+	Contacts              any     `json:"contacts"`
+	DisplayStyleGroupID   float64 `json:"display_style_group_id"`
+	EffectiveLastActivity float64 `json:"effective_last_activity"`
+	IsOnline              bool    `json:"isOnline"`
+	IsBanned              float64 `json:"is_banned"`
+	JoinedDate            float64 `json:"joined_date"`
+	RestoreData           string  `json:"restore_data"`
+	RestorePercents       any     `json:"restore_percents"`
+	SoldItemsCount        float64 `json:"sold_items_count"`
+	UserID                float64 `json:"user_id"`
+	Username              string  `json:"username"`
 }
 
 // ConfirmationCodeModelItemSellerContacts represents a component schema.
@@ -14339,327 +14260,313 @@ type ConfirmationCodeModelItemSellerContacts struct {
 	Telegram  string `json:"telegram"`
 }
 
-// ConfirmationCodeModelItemTags represents a component schema.
-type ConfirmationCodeModelItemTags struct {
-	N1234567890 ConfirmationCodeModelItemTagsN1234567890 `json:"1234567890"`
-}
-
-// ConfirmationCodeModelItemTagsN1234567890 represents a component schema.
-type ConfirmationCodeModelItemTagsN1234567890 struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
-}
-
 // CustomDiscountsCreateResponseDiscount represents a component schema.
 type CustomDiscountsCreateResponseDiscount struct {
-	CategoryID      int64 `json:"category_id"`
-	DiscountID      int64 `json:"discount_id"`
-	DiscountPercent int64 `json:"discount_percent"`
-	DiscountUserID  int64 `json:"discount_user_id"`
-	MaxPrice        int64 `json:"max_price"`
-	MinPrice        int64 `json:"min_price"`
-	UserID          int64 `json:"user_id"`
+	CategoryID      float64 `json:"category_id"`
+	DiscountID      float64 `json:"discount_id"`
+	DiscountPercent float64 `json:"discount_percent"`
+	DiscountUserID  float64 `json:"discount_user_id"`
+	MaxPrice        float64 `json:"max_price"`
+	MinPrice        float64 `json:"min_price"`
+	UserID          float64 `json:"user_id"`
 }
 
 // CustomDiscountsCreateResponseSystemInfo represents a component schema.
 type CustomDiscountsCreateResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CustomDiscountsDeleteResponseSystemInfo represents a component schema.
 type CustomDiscountsDeleteResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CustomDiscountsEditResponseSystemInfo represents a component schema.
 type CustomDiscountsEditResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // CustomDiscountsGetResponseSystemInfo represents a component schema.
 type CustomDiscountsGetResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // DiscountModel represents a component schema.
 type DiscountModel struct {
-	CategoryID      int64 `json:"category_id"`
-	DiscountID      int64 `json:"discount_id"`
-	DiscountPercent int64 `json:"discount_percent"`
-	DiscountUserID  int64 `json:"discount_user_id"`
-	MaxPrice        int64 `json:"max_price"`
-	MinPrice        int64 `json:"min_price"`
-	UserID          int64 `json:"user_id"`
+	CategoryID      float64 `json:"category_id"`
+	DiscountID      float64 `json:"discount_id"`
+	DiscountPercent float64 `json:"discount_percent"`
+	DiscountUserID  float64 `json:"discount_user_id"`
+	MaxPrice        float64 `json:"max_price"`
+	MinPrice        float64 `json:"min_price"`
+	UserID          float64 `json:"user_id"`
 }
 
 // ExtraModel represents a component schema.
 type ExtraModel struct {
-	Ark                 *bool   `json:"ark,omitempty"`
-	ArkAscended         *bool   `json:"ark_ascended,omitempty"`
-	CheckChannels       *bool   `json:"checkChannels,omitempty"`
-	CheckHypixelBan     *bool   `json:"checkHypixelBan,omitempty"`
-	CheckSpam           *bool   `json:"checkSpam,omitempty"`
-	CloseItem           *bool   `json:"close_item,omitempty"`
-	ConfirmationCode    *string `json:"confirmationCode,omitempty"`
-	CookieLogin         *bool   `json:"cookie_login,omitempty"`
-	Cookies             *string `json:"cookies,omitempty"`
-	Dota2Mmr            *int64  `json:"dota2_mmr,omitempty"`
-	EAGames             *bool   `json:"ea_games,omitempty"`
-	GenshinCurrency     *int64  `json:"genshin_currency,omitempty"`
-	HonkaiCurrency      *int64  `json:"honkai_currency,omitempty"`
-	LoginWithoutCookies *bool   `json:"login_without_cookies,omitempty"`
-	MfaFile             *string `json:"mfa_file,omitempty"`
-	Password            *string `json:"password,omitempty"`
-	Proxy               *string `json:"proxy,omitempty"`
-	Region              *string `json:"region,omitempty"`
-	Service             *string `json:"service,omitempty"`
-	System              *string `json:"system,omitempty"`
-	TelegramClient      *string `json:"telegramClient,omitempty"`
-	TelegramJSON        *string `json:"telegramJson,omitempty"`
-	TheQuarry           *bool   `json:"the_quarry,omitempty"`
-	UplayGames          *bool   `json:"uplay_games,omitempty"`
-	Warframe            *bool   `json:"warframe,omitempty"`
-	ZenlessCurrency     *int64  `json:"zenless_currency,omitempty"`
+	Ark                 any `json:"ark,omitempty"`
+	ArkAscended         any `json:"ark_ascended,omitempty"`
+	CheckChannels       any `json:"checkChannels,omitempty"`
+	CheckHypixelBan     any `json:"checkHypixelBan,omitempty"`
+	CheckSpam           any `json:"checkSpam,omitempty"`
+	CloseItem           any `json:"close_item,omitempty"`
+	ConfirmationCode    any `json:"confirmationCode,omitempty"`
+	CookieLogin         any `json:"cookie_login,omitempty"`
+	Cookies             any `json:"cookies,omitempty"`
+	Dota2Mmr            any `json:"dota2_mmr,omitempty"`
+	EAGames             any `json:"ea_games,omitempty"`
+	GenshinCurrency     any `json:"genshin_currency,omitempty"`
+	HonkaiCurrency      any `json:"honkai_currency,omitempty"`
+	LoginWithoutCookies any `json:"login_without_cookies,omitempty"`
+	MfaFile             any `json:"mfa_file,omitempty"`
+	Password            any `json:"password,omitempty"`
+	Proxy               any `json:"proxy,omitempty"`
+	Region              any `json:"region,omitempty"`
+	Service             any `json:"service,omitempty"`
+	System              any `json:"system,omitempty"`
+	TelegramClient      any `json:"telegramClient,omitempty"`
+	TelegramJSON        any `json:"telegramJson,omitempty"`
+	TheQuarry           any `json:"the_quarry,omitempty"`
+	UplayGames          any `json:"uplay_games,omitempty"`
+	Warframe            any `json:"warframe,omitempty"`
+	ZenlessCurrency     any `json:"zenless_currency,omitempty"`
 }
 
 // ImapCreateResponseSystemInfo represents a component schema.
 type ImapCreateResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ImapDeleteResponseSystemInfo represents a component schema.
 type ImapDeleteResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // InvoiceModel represents a component schema.
 type InvoiceModel struct {
-	AdditionalData string `json:"additional_data"`
-	Amount         int64  `json:"amount"`
-	Comment        string `json:"comment"`
-	ExpiresAt      int64  `json:"expires_at"`
-	InvoiceDate    int64  `json:"invoice_date"`
-	InvoiceID      int64  `json:"invoice_id"`
-	IsTest         bool   `json:"is_test"`
-	MerchantID     int64  `json:"merchant_id"`
-	PaidDate       int64  `json:"paid_date"`
-	PayerUserID    int64  `json:"payer_user_id"`
-	PaymentID      string `json:"payment_id"`
-	ResendAttempts int64  `json:"resend_attempts"`
-	Status         string `json:"status"`
-	URL            string `json:"url"`
-	URLCallback    string `json:"url_callback"`
-	URLSuccess     string `json:"url_success"`
-	UserID         int64  `json:"user_id"`
+	AdditionalData string  `json:"additional_data"`
+	Amount         float64 `json:"amount"`
+	Comment        string  `json:"comment"`
+	ExpiresAt      float64 `json:"expires_at"`
+	InvoiceDate    float64 `json:"invoice_date"`
+	InvoiceID      float64 `json:"invoice_id"`
+	IsTest         bool    `json:"is_test"`
+	MerchantID     float64 `json:"merchant_id"`
+	PaidDate       float64 `json:"paid_date"`
+	PayerUserID    float64 `json:"payer_user_id"`
+	PaymentID      string  `json:"payment_id"`
+	ResendAttempts float64 `json:"resend_attempts"`
+	Status         string  `json:"status"`
+	URL            string  `json:"url"`
+	URLCallback    string  `json:"url_callback"`
+	URLSuccess     string  `json:"url_success"`
+	UserID         float64 `json:"user_id"`
 }
 
 // ItemFromListModel represents a component schema.
 type ItemFromListModel struct {
-	AllowAskDiscount           *int64                         `json:"allow_ask_discount,omitempty"`
-	BumpSettings               *ItemFromListModelBumpSettings `json:"bumpSettings,omitempty"`
-	CanBumpItem                *bool                          `json:"canBumpItem,omitempty"`
-	CanBuyItem                 *bool                          `json:"canBuyItem,omitempty"`
-	CanCloseItem               *bool                          `json:"canCloseItem,omitempty"`
-	CanDeleteItem              *bool                          `json:"canDeleteItem,omitempty"`
-	CanEditItem                *bool                          `json:"canEditItem,omitempty"`
-	CanOpenItem                *bool                          `json:"canOpenItem,omitempty"`
-	CanResellItemAfterPurchase *bool                          `json:"canResellItemAfterPurchase,omitempty"`
-	CanStickItem               *bool                          `json:"canStickItem,omitempty"`
-	CanUnstickItem             *bool                          `json:"canUnstickItem,omitempty"`
-	CanUpdateItemStats         *bool                          `json:"canUpdateItemStats,omitempty"`
-	CanValidateAccount         *bool                          `json:"canValidateAccount,omitempty"`
-	CanViewAccountLink         *bool                          `json:"canViewAccountLink,omitempty"`
-	CanViewEmailLoginData      *bool                          `json:"canViewEmailLoginData,omitempty"`
-	CanViewLoginData           *bool                          `json:"canViewLoginData,omitempty"`
-	CategoryID                 *int64                         `json:"category_id,omitempty"`
-	Description                *string                        `json:"description,omitempty"`
-	DescriptionEn              *string                        `json:"description_en,omitempty"`
-	DescriptionHTML            *string                        `json:"description_html,omitempty"`
-	DescriptionHTMLEn          *string                        `json:"description_html_en,omitempty"`
-	ExtendedGuarantee          *int64                         `json:"extended_guarantee,omitempty"`
-	Guarantee                  *bool                          `json:"guarantee,omitempty"`
-	IsIgnored                  *int64                         `json:"isIgnored,omitempty"`
-	IsSticky                   *int64                         `json:"is_sticky,omitempty"`
-	ItemOriginPhrase           *string                        `json:"itemOriginPhrase,omitempty"`
-	ItemDomain                 *string                        `json:"item_domain,omitempty"`
-	ItemID                     *int64                         `json:"item_id,omitempty"`
-	ItemOrigin                 *string                        `json:"item_origin,omitempty"`
-	ItemState                  *string                        `json:"item_state,omitempty"`
-	NoteText                   *string                        `json:"note_text,omitempty"`
-	Nsb                        *int64                         `json:"nsb,omitempty"`
-	Price                      *int64                         `json:"price,omitempty"`
-	PriceCurrency              *string                        `json:"price_currency,omitempty"`
-	PublishedDate              *int64                         `json:"published_date,omitempty"`
-	RefreshedDate              *int64                         `json:"refreshed_date,omitempty"`
-	ResaleItemOrigin           *string                        `json:"resale_item_origin,omitempty"`
-	RubPrice                   *int64                         `json:"rub_price,omitempty"`
-	Seller                     *ItemFromListModelSeller       `json:"seller,omitempty"`
-	ShowGetEmailCodeButton     *bool                          `json:"showGetEmailCodeButton,omitempty"`
-	Tags                       []string                       `json:"tags,omitempty"`
-	Title                      *string                        `json:"title,omitempty"`
-	TitleEn                    *string                        `json:"title_en,omitempty"`
-	UpdateStatDate             *int64                         `json:"update_stat_date,omitempty"`
-	ViewCount                  *int64                         `json:"view_count,omitempty"`
+	AllowAskDiscount           any `json:"allow_ask_discount,omitempty"`
+	BumpSettings               any `json:"bumpSettings,omitempty"`
+	CanBumpItem                any `json:"canBumpItem,omitempty"`
+	CanBuyItem                 any `json:"canBuyItem,omitempty"`
+	CanCloseItem               any `json:"canCloseItem,omitempty"`
+	CanDeleteItem              any `json:"canDeleteItem,omitempty"`
+	CanEditItem                any `json:"canEditItem,omitempty"`
+	CanOpenItem                any `json:"canOpenItem,omitempty"`
+	CanResellItemAfterPurchase any `json:"canResellItemAfterPurchase,omitempty"`
+	CanStickItem               any `json:"canStickItem,omitempty"`
+	CanUnstickItem             any `json:"canUnstickItem,omitempty"`
+	CanUpdateItemStats         any `json:"canUpdateItemStats,omitempty"`
+	CanValidateAccount         any `json:"canValidateAccount,omitempty"`
+	CanViewAccountLink         any `json:"canViewAccountLink,omitempty"`
+	CanViewEmailLoginData      any `json:"canViewEmailLoginData,omitempty"`
+	CanViewLoginData           any `json:"canViewLoginData,omitempty"`
+	CategoryID                 any `json:"category_id,omitempty"`
+	Description                any `json:"description,omitempty"`
+	DescriptionEn              any `json:"description_en,omitempty"`
+	DescriptionHTML            any `json:"description_html,omitempty"`
+	DescriptionHTMLEn          any `json:"description_html_en,omitempty"`
+	ExtendedGuarantee          any `json:"extended_guarantee,omitempty"`
+	Guarantee                  any `json:"guarantee,omitempty"`
+	IsIgnored                  any `json:"isIgnored,omitempty"`
+	IsSticky                   any `json:"is_sticky,omitempty"`
+	ItemOriginPhrase           any `json:"itemOriginPhrase,omitempty"`
+	ItemDomain                 any `json:"item_domain,omitempty"`
+	ItemID                     any `json:"item_id,omitempty"`
+	ItemOrigin                 any `json:"item_origin,omitempty"`
+	ItemState                  any `json:"item_state,omitempty"`
+	NoteText                   any `json:"note_text,omitempty"`
+	Nsb                        any `json:"nsb,omitempty"`
+	Price                      any `json:"price,omitempty"`
+	PriceCurrency              any `json:"price_currency,omitempty"`
+	PublishedDate              any `json:"published_date,omitempty"`
+	RefreshedDate              any `json:"refreshed_date,omitempty"`
+	ResaleItemOrigin           any `json:"resale_item_origin,omitempty"`
+	RubPrice                   any `json:"rub_price,omitempty"`
+	Seller                     any `json:"seller,omitempty"`
+	ShowGetEmailCodeButton     any `json:"showGetEmailCodeButton,omitempty"`
+	Tags                       any `json:"tags,omitempty"`
+	Title                      any `json:"title,omitempty"`
+	TitleEn                    any `json:"title_en,omitempty"`
+	UpdateStatDate             any `json:"update_stat_date,omitempty"`
+	ViewCount                  any `json:"view_count,omitempty"`
 }
 
 // ItemFromListModelBumpSettings represents a component schema.
 type ItemFromListModelBumpSettings struct {
-	CanBumpItem         *bool   `json:"canBumpItem,omitempty"`
-	CanBumpItemGlobally *bool   `json:"canBumpItemGlobally,omitempty"`
-	ErrorPhrase         *string `json:"errorPhrase,omitempty"`
-	ShortErrorPhrase    *string `json:"shortErrorPhrase,omitempty"`
+	CanBumpItem         any `json:"canBumpItem,omitempty"`
+	CanBumpItemGlobally any `json:"canBumpItemGlobally,omitempty"`
+	ErrorPhrase         any `json:"errorPhrase,omitempty"`
+	ShortErrorPhrase    any `json:"shortErrorPhrase,omitempty"`
 }
 
 // ItemFromListModelSeller represents a component schema.
 type ItemFromListModelSeller struct {
-	ActiveItemCount     *int64  `json:"active_item_count,omitempty"`
-	AvatarDate          *int64  `json:"avatar_date,omitempty"`
-	DisplayStyleGroupID *int64  `json:"display_style_group_id,omitempty"`
-	IsBanned            *int64  `json:"is_banned,omitempty"`
-	RestoreData         *string `json:"restore_data,omitempty"`
-	RestorePercents     *int64  `json:"restore_percents,omitempty"`
-	SoldItemsCount      *int64  `json:"sold_items_count,omitempty"`
-	UserID              *int64  `json:"user_id,omitempty"`
-	Username            *string `json:"username,omitempty"`
+	ActiveItemCount     any `json:"active_item_count,omitempty"`
+	AvatarDate          any `json:"avatar_date,omitempty"`
+	DisplayStyleGroupID any `json:"display_style_group_id,omitempty"`
+	IsBanned            any `json:"is_banned,omitempty"`
+	RestoreData         any `json:"restore_data,omitempty"`
+	RestorePercents     any `json:"restore_percents,omitempty"`
+	SoldItemsCount      any `json:"sold_items_count,omitempty"`
+	UserID              any `json:"user_id,omitempty"`
+	Username            any `json:"username,omitempty"`
 }
 
 // ItemListModel represents a component schema.
 type ItemListModel struct {
-	HasNextPage     bool                    `json:"hasNextPage"`
-	Items           []ItemFromListModel     `json:"items"`
-	Page            int64                   `json:"page"`
-	PerPage         int64                   `json:"perPage"`
-	SearchURL       string                  `json:"searchUrl"`
-	StickyItems     []ItemFromListModel     `json:"stickyItems"`
-	SystemInfo      ItemListModelSystemInfo `json:"system_info"`
-	TotalItems      int64                   `json:"totalItems"`
-	TotalItemsPrice any                     `json:"totalItemsPrice"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
 }
 
 // ItemListModelSystemInfo represents a component schema.
 type ItemListModelSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ItemModel represents a component schema.
 type ItemModel struct {
-	AccountLink                       string                  `json:"accountLink"`
-	AccountLinks                      []any                   `json:"accountLinks"`
-	AccountLastActivity               int64                   `json:"account_last_activity"`
-	AIPrice                           int64                   `json:"aiPrice"`
-	AIPriceCheckDate                  int64                   `json:"aiPriceCheckDate"`
-	AllowAskDiscount                  int64                   `json:"allow_ask_discount"`
-	AutoBuyPrice                      int64                   `json:"autoBuyPrice"`
-	AutoBuyPriceCheckDate             int64                   `json:"autoBuyPriceCheckDate"`
-	BumpSettings                      ItemModelBumpSettings   `json:"bumpSettings"`
-	Buyer                             ItemModelBuyer          `json:"buyer"`
-	BuyerAvatarDate                   int64                   `json:"buyer_avatar_date"`
-	BuyerDisplayIconGroupID           int64                   `json:"buyer_display_icon_group_id"`
-	BuyerUniqBanner                   string                  `json:"buyer_uniq_banner"`
-	BuyerUserGroupID                  int64                   `json:"buyer_user_group_id"`
-	CanAskDiscount                    bool                    `json:"canAskDiscount"`
-	CanChangeEmailPassword            bool                    `json:"canChangeEmailPassword"`
-	CanChangePassword                 bool                    `json:"canChangePassword"`
-	CanCheckAIPrice                   bool                    `json:"canCheckAiPrice"`
-	CanCheckAutoBuyPrice              bool                    `json:"canCheckAutoBuyPrice"`
-	CanCheckGuarantee                 bool                    `json:"canCheckGuarantee"`
-	CanReportItem                     bool                    `json:"canReportItem"`
-	CanResellItem                     bool                    `json:"canResellItem"`
-	CanResellItemAfterPurchase        bool                    `json:"canResellItemAfterPurchase"`
-	CanShareItem                      bool                    `json:"canShareItem"`
-	CanUpdateItemStats                bool                    `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                    `json:"canValidateAccount"`
-	CanViewAccountLink                bool                    `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                    `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                    `json:"canViewEmailLoginData"`
-	CanViewItemViews                  bool                    `json:"canViewItemViews"`
-	CanViewLoginData                  bool                    `json:"canViewLoginData"`
-	CartPrice                         any                     `json:"cart_price"`
-	CategoryID                        int64                   `json:"category_id"`
-	ContentID                         any                     `json:"content_id"`
-	ContentType                       any                     `json:"content_type"`
-	CopyFormatData                    ItemModelCopyFormatData `json:"copyFormatData"`
-	CustomFields                      ItemModelCustomFields   `json:"customFields"`
-	DeleteDate                        int64                   `json:"delete_date"`
-	DeleteReason                      string                  `json:"delete_reason"`
-	DeleteUserID                      int64                   `json:"delete_user_id"`
-	DeleteUsername                    string                  `json:"delete_username"`
-	Deposit                           int64                   `json:"deposit"`
-	Description                       string                  `json:"description"`
-	DescriptionEnHTML                 string                  `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                  `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                  `json:"descriptionHtml"`
-	DescriptionPlain                  string                  `json:"descriptionPlain"`
-	DescriptionEn                     string                  `json:"description_en"`
-	EditDate                          int64                   `json:"edit_date"`
-	EmailProvider                     string                  `json:"email_provider"`
-	EmailType                         string                  `json:"email_type"`
-	ExtendedGuarantee                 int64                   `json:"extended_guarantee"`
-	ExternalAuth                      []any                   `json:"externalAuth"`
-	ExtraPrices                       []any                   `json:"extraPrices"`
-	FeedbackData                      string                  `json:"feedback_data"`
-	GetEmailCodeDisplayLogin          any                     `json:"getEmailCodeDisplayLogin"`
-	Guarantee                         ItemModelGuarantee      `json:"guarantee"`
-	ImagePreviewLinks                 []string                `json:"imagePreviewLinks"`
-	InCart                            any                     `json:"in_cart"`
-	Information                       string                  `json:"information"`
-	InformationEn                     string                  `json:"information_en"`
-	IsBirthdayToday                   bool                    `json:"isBirthdayToday"`
-	IsIgnored                         bool                    `json:"isIgnored"`
-	IsPersonalAccount                 bool                    `json:"isPersonalAccount"`
-	IsSmallExf                        bool                    `json:"isSmallExf"`
-	IsTrusted                         bool                    `json:"isTrusted"`
-	IsFave                            any                     `json:"is_fave"`
-	IsSticky                          int64                   `json:"is_sticky"`
-	ItemOriginPhrase                  string                  `json:"itemOriginPhrase"`
-	ItemDomain                        string                  `json:"item_domain"`
-	ItemID                            int64                   `json:"item_id"`
-	ItemOrigin                        string                  `json:"item_origin"`
-	ItemState                         string                  `json:"item_state"`
-	Login                             string                  `json:"login"`
-	LoginData                         ItemModelLoginData      `json:"loginData"`
-	MarketCustomTitle                 string                  `json:"market_custom_title"`
-	MaxDiscountPercent                int64                   `json:"max_discount_percent"`
-	NeedToRequireVideoToViewLoginData bool                    `json:"needToRequireVideoToViewLoginData"`
-	NoteText                          string                  `json:"note_text"`
-	Nsb                               int64                   `json:"nsb"`
-	PendingDeletionDate               int64                   `json:"pending_deletion_date"`
-	Price                             int64                   `json:"price"`
-	PriceWithSellerFee                float64                 `json:"priceWithSellerFee"`
-	PriceWithSellerFeeLabel           string                  `json:"priceWithSellerFeeLabel"`
-	PriceCurrency                     string                  `json:"price_currency"`
-	PublishedDate                     int64                   `json:"published_date"`
-	RefreshedDate                     int64                   `json:"refreshed_date"`
-	ResaleItemOrigin                  string                  `json:"resale_item_origin"`
-	RubPrice                          int64                   `json:"rub_price"`
-	Seller                            ItemModelSeller         `json:"seller"`
-	ShowGetEmailCodeButton            bool                    `json:"showGetEmailCodeButton"`
-	Tags                              ItemModelTags           `json:"tags"`
-	TempEmail                         string                  `json:"temp_email"`
-	Title                             string                  `json:"title"`
-	TitleEn                           string                  `json:"title_en"`
-	UniqueKeyExists                   bool                    `json:"uniqueKeyExists"`
-	UpdateStatDate                    int64                   `json:"update_stat_date"`
-	UserAllowAskDiscount              int64                   `json:"user_allow_ask_discount"`
-	ViewCount                         int64                   `json:"view_count"`
-	VisitorIsAuthor                   bool                    `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AIPrice                           float64 `json:"aiPrice"`
+	AIPriceCheckDate                  float64 `json:"aiPriceCheckDate"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	AutoBuyPrice                      float64 `json:"autoBuyPrice"`
+	AutoBuyPriceCheckDate             float64 `json:"autoBuyPriceCheckDate"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	Buyer                             any     `json:"buyer"`
+	BuyerAvatarDate                   float64 `json:"buyer_avatar_date"`
+	BuyerDisplayIconGroupID           float64 `json:"buyer_display_icon_group_id"`
+	BuyerUniqBanner                   string  `json:"buyer_uniq_banner"`
+	BuyerUserGroupID                  float64 `json:"buyer_user_group_id"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangeEmailPassword            bool    `json:"canChangeEmailPassword"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckAIPrice                   bool    `json:"canCheckAiPrice"`
+	CanCheckAutoBuyPrice              bool    `json:"canCheckAutoBuyPrice"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItem                     bool    `json:"canResellItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanShareItem                      bool    `json:"canShareItem"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewItemViews                  bool    `json:"canViewItemViews"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CartPrice                         any     `json:"cart_price"`
+	CategoryID                        float64 `json:"category_id"`
+	ContentID                         any     `json:"content_id"`
+	ContentType                       any     `json:"content_type"`
+	CopyFormatData                    any     `json:"copyFormatData"`
+	CustomFields                      any     `json:"customFields"`
+	DeleteDate                        float64 `json:"delete_date"`
+	DeleteReason                      string  `json:"delete_reason"`
+	DeleteUserID                      float64 `json:"delete_user_id"`
+	DeleteUsername                    string  `json:"delete_username"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	GetEmailCodeDisplayLogin          any     `json:"getEmailCodeDisplayLogin"`
+	Guarantee                         any     `json:"guarantee"`
+	ImagePreviewLinks                 any     `json:"imagePreviewLinks"`
+	InCart                            any     `json:"in_cart"`
+	Information                       string  `json:"information"`
+	InformationEn                     string  `json:"information_en"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsSmallExf                        bool    `json:"isSmallExf"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsFave                            any     `json:"is_fave"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	Login                             string  `json:"login"`
+	LoginData                         any     `json:"loginData"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	NoteText                          string  `json:"note_text"`
+	Nsb                               float64 `json:"nsb"`
+	PendingDeletionDate               float64 `json:"pending_deletion_date"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceWithSellerFeeLabel           string  `json:"priceWithSellerFeeLabel"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	Tags                              any     `json:"tags"`
+	TempEmail                         string  `json:"temp_email"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UniqueKeyExists                   bool    `json:"uniqueKeyExists"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // ItemModelBumpSettings represents a component schema.
@@ -14673,16 +14580,16 @@ type ItemModelBumpSettings struct {
 
 // ItemModelBuyer represents a component schema.
 type ItemModelBuyer struct {
-	DisplayIconGroupID  int64  `json:"display_icon_group_id"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsBanned            int64  `json:"is_banned"`
-	OperationDate       int64  `json:"operation_date"`
-	UniqBanner          string `json:"uniq_banner"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	VisitorIsBuyer      bool   `json:"visitorIsBuyer"`
+	DisplayIconGroupID  float64 `json:"display_icon_group_id"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsBanned            float64 `json:"is_banned"`
+	OperationDate       float64 `json:"operation_date"`
+	UniqBanner          string  `json:"uniq_banner"`
+	UniqUsernameCSS     string  `json:"uniq_username_css"`
+	UserGroupID         float64 `json:"user_group_id"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
+	VisitorIsBuyer      bool    `json:"visitorIsBuyer"`
 }
 
 // ItemModelCopyFormatData represents a component schema.
@@ -14695,7 +14602,7 @@ type ItemModelCopyFormatData struct {
 // ItemModelCustomFields represents a component schema.
 type ItemModelCustomFields struct {
 	N4             string `json:"_4"`
-	AllowSelfUnban []any  `json:"allowSelfUnban"`
+	AllowSelfUnban any    `json:"allowSelfUnban"`
 	BanReason      string `json:"ban_reason"`
 	Discord        string `json:"discord"`
 	Github         string `json:"github"`
@@ -14708,16 +14615,16 @@ type ItemModelCustomFields struct {
 
 // ItemModelGuarantee represents a component schema.
 type ItemModelGuarantee struct {
-	Active                bool   `json:"active"`
-	Cancelled             bool   `json:"cancelled"`
-	CancelledReason       string `json:"cancelledReason"`
-	CancelledReasonPhrase string `json:"cancelledReasonPhrase"`
-	Class                 string `json:"class"`
-	Duration              int64  `json:"duration"`
-	DurationPhrase        string `json:"durationPhrase"`
-	EndDate               int64  `json:"endDate"`
-	RemainingTime         int64  `json:"remainingTime"`
-	RemainingTimePhrase   string `json:"remainingTimePhrase"`
+	Active                bool    `json:"active"`
+	Cancelled             bool    `json:"cancelled"`
+	CancelledReason       string  `json:"cancelledReason"`
+	CancelledReasonPhrase string  `json:"cancelledReasonPhrase"`
+	Class                 string  `json:"class"`
+	Duration              float64 `json:"duration"`
+	DurationPhrase        string  `json:"durationPhrase"`
+	EndDate               float64 `json:"endDate"`
+	RemainingTime         float64 `json:"remainingTime"`
+	RemainingTimePhrase   string  `json:"remainingTimePhrase"`
 }
 
 // ItemModelLoginData represents a component schema.
@@ -14733,19 +14640,19 @@ type ItemModelLoginData struct {
 
 // ItemModelSeller represents a component schema.
 type ItemModelSeller struct {
-	ActiveItemsCount      int64                   `json:"active_items_count"`
-	AvatarDate            int64                   `json:"avatar_date"`
-	Contacts              ItemModelSellerContacts `json:"contacts"`
-	DisplayStyleGroupID   int64                   `json:"display_style_group_id"`
-	EffectiveLastActivity int64                   `json:"effective_last_activity"`
-	IsOnline              bool                    `json:"isOnline"`
-	IsBanned              int64                   `json:"is_banned"`
-	JoinedDate            int64                   `json:"joined_date"`
-	RestoreData           string                  `json:"restore_data"`
-	RestorePercents       any                     `json:"restore_percents"`
-	SoldItemsCount        int64                   `json:"sold_items_count"`
-	UserID                int64                   `json:"user_id"`
-	Username              string                  `json:"username"`
+	ActiveItemsCount      float64 `json:"active_items_count"`
+	AvatarDate            float64 `json:"avatar_date"`
+	Contacts              any     `json:"contacts"`
+	DisplayStyleGroupID   float64 `json:"display_style_group_id"`
+	EffectiveLastActivity float64 `json:"effective_last_activity"`
+	IsOnline              bool    `json:"isOnline"`
+	IsBanned              float64 `json:"is_banned"`
+	JoinedDate            float64 `json:"joined_date"`
+	RestoreData           string  `json:"restore_data"`
+	RestorePercents       any     `json:"restore_percents"`
+	SoldItemsCount        float64 `json:"sold_items_count"`
+	UserID                float64 `json:"user_id"`
+	Username              string  `json:"username"`
 }
 
 // ItemModelSellerContacts represents a component schema.
@@ -14754,273 +14661,259 @@ type ItemModelSellerContacts struct {
 	Telegram  string `json:"telegram"`
 }
 
-// ItemModelTags represents a component schema.
-type ItemModelTags struct {
-	N1234567890 ItemModelTagsN1234567890 `json:"1234567890"`
-}
-
-// ItemModelTagsN1234567890 represents a component schema.
-type ItemModelTagsN1234567890 struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
-}
-
 // ListFavoritesResponseSystemInfo represents a component schema.
 type ListFavoritesResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ListOrdersResponseSystemInfo represents a component schema.
 type ListOrdersResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ListStatesResponseSystemInfo represents a component schema.
 type ListStatesResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ListStatesResponseUserItemStates represents a component schema.
 type ListStatesResponseUserItemStates struct {
-	Active            ListStatesResponseUserItemStatesActive            `json:"active"`
-	AutoBump          ListStatesResponseUserItemStatesAutoBump          `json:"auto_bump"`
-	Awaiting          ListStatesResponseUserItemStatesAwaiting          `json:"awaiting"`
-	Closed            ListStatesResponseUserItemStatesClosed            `json:"closed"`
-	ClosedInactive    ListStatesResponseUserItemStatesClosedInactive    `json:"closed_inactive"`
-	Deleted           ListStatesResponseUserItemStatesDeleted           `json:"deleted"`
-	DiscountRequest   ListStatesResponseUserItemStatesDiscountRequest   `json:"discount_request"`
-	InBuyersFavorites ListStatesResponseUserItemStatesInBuyersFavorites `json:"in_buyers_favorites"`
-	Paid              ListStatesResponseUserItemStatesPaid              `json:"paid"`
-	PendingDeletion   ListStatesResponseUserItemStatesPendingDeletion   `json:"pending_deletion"`
-	PreActive         ListStatesResponseUserItemStatesPreActive         `json:"pre_active"`
-	PreUpload         ListStatesResponseUserItemStatesPreUpload         `json:"pre_upload"`
-	Stickied          ListStatesResponseUserItemStatesStickied          `json:"stickied"`
+	Active            any `json:"active"`
+	AutoBump          any `json:"auto_bump"`
+	Awaiting          any `json:"awaiting"`
+	Closed            any `json:"closed"`
+	ClosedInactive    any `json:"closed_inactive"`
+	Deleted           any `json:"deleted"`
+	DiscountRequest   any `json:"discount_request"`
+	InBuyersFavorites any `json:"in_buyers_favorites"`
+	Paid              any `json:"paid"`
+	PendingDeletion   any `json:"pending_deletion"`
+	PreActive         any `json:"pre_active"`
+	PreUpload         any `json:"pre_upload"`
+	Stickied          any `json:"stickied"`
 }
 
 // ListStatesResponseUserItemStatesActive represents a component schema.
 type ListStatesResponseUserItemStatesActive struct {
-	ItemCount int64  `json:"item_count"`
-	ItemState string `json:"item_state"`
-	Title     string `json:"title"`
+	ItemCount float64 `json:"item_count"`
+	ItemState string  `json:"item_state"`
+	Title     string  `json:"title"`
 }
 
 // ListStatesResponseUserItemStatesAutoBump represents a component schema.
 type ListStatesResponseUserItemStatesAutoBump struct {
-	ItemCount int64  `json:"item_count"`
-	ItemState string `json:"item_state"`
-	Title     string `json:"title"`
+	ItemCount float64 `json:"item_count"`
+	ItemState string  `json:"item_state"`
+	Title     string  `json:"title"`
 }
 
 // ListStatesResponseUserItemStatesAwaiting represents a component schema.
 type ListStatesResponseUserItemStatesAwaiting struct {
-	ItemCount int64  `json:"item_count"`
-	ItemState string `json:"item_state"`
-	Title     string `json:"title"`
+	ItemCount float64 `json:"item_count"`
+	ItemState string  `json:"item_state"`
+	Title     string  `json:"title"`
 }
 
 // ListStatesResponseUserItemStatesClosed represents a component schema.
 type ListStatesResponseUserItemStatesClosed struct {
-	ItemCount int64  `json:"item_count"`
-	ItemState string `json:"item_state"`
-	Title     string `json:"title"`
+	ItemCount float64 `json:"item_count"`
+	ItemState string  `json:"item_state"`
+	Title     string  `json:"title"`
 }
 
 // ListStatesResponseUserItemStatesClosedInactive represents a component schema.
 type ListStatesResponseUserItemStatesClosedInactive struct {
-	ItemCount int64  `json:"item_count"`
-	ItemState string `json:"item_state"`
-	Title     string `json:"title"`
+	ItemCount float64 `json:"item_count"`
+	ItemState string  `json:"item_state"`
+	Title     string  `json:"title"`
 }
 
 // ListStatesResponseUserItemStatesDeleted represents a component schema.
 type ListStatesResponseUserItemStatesDeleted struct {
-	ItemCount int64  `json:"item_count"`
-	ItemState string `json:"item_state"`
-	Title     string `json:"title"`
+	ItemCount float64 `json:"item_count"`
+	ItemState string  `json:"item_state"`
+	Title     string  `json:"title"`
 }
 
 // ListStatesResponseUserItemStatesDiscountRequest represents a component schema.
 type ListStatesResponseUserItemStatesDiscountRequest struct {
-	ItemCount int64  `json:"item_count"`
-	ItemState string `json:"item_state"`
-	Title     string `json:"title"`
+	ItemCount float64 `json:"item_count"`
+	ItemState string  `json:"item_state"`
+	Title     string  `json:"title"`
 }
 
 // ListStatesResponseUserItemStatesInBuyersFavorites represents a component schema.
 type ListStatesResponseUserItemStatesInBuyersFavorites struct {
-	ItemCount int64  `json:"item_count"`
-	ItemState string `json:"item_state"`
-	Title     string `json:"title"`
+	ItemCount float64 `json:"item_count"`
+	ItemState string  `json:"item_state"`
+	Title     string  `json:"title"`
 }
 
 // ListStatesResponseUserItemStatesPaid represents a component schema.
 type ListStatesResponseUserItemStatesPaid struct {
-	ItemCount int64  `json:"item_count"`
-	ItemState string `json:"item_state"`
-	Title     string `json:"title"`
+	ItemCount float64 `json:"item_count"`
+	ItemState string  `json:"item_state"`
+	Title     string  `json:"title"`
 }
 
 // ListStatesResponseUserItemStatesPendingDeletion represents a component schema.
 type ListStatesResponseUserItemStatesPendingDeletion struct {
-	ItemCount int64  `json:"item_count"`
-	ItemState string `json:"item_state"`
-	Title     string `json:"title"`
+	ItemCount float64 `json:"item_count"`
+	ItemState string  `json:"item_state"`
+	Title     string  `json:"title"`
 }
 
 // ListStatesResponseUserItemStatesPreActive represents a component schema.
 type ListStatesResponseUserItemStatesPreActive struct {
-	ItemCount int64  `json:"item_count"`
-	ItemState string `json:"item_state"`
-	Title     string `json:"title"`
+	ItemCount float64 `json:"item_count"`
+	ItemState string  `json:"item_state"`
+	Title     string  `json:"title"`
 }
 
 // ListStatesResponseUserItemStatesPreUpload represents a component schema.
 type ListStatesResponseUserItemStatesPreUpload struct {
-	ItemCount int64  `json:"item_count"`
-	ItemState string `json:"item_state"`
-	Title     string `json:"title"`
+	ItemCount float64 `json:"item_count"`
+	ItemState string  `json:"item_state"`
+	Title     string  `json:"title"`
 }
 
 // ListStatesResponseUserItemStatesStickied represents a component schema.
 type ListStatesResponseUserItemStatesStickied struct {
-	ItemCount   int64  `json:"item_count"`
-	ItemState   string `json:"item_state"`
-	StickyLimit int64  `json:"stickyLimit"`
-	Title       string `json:"title"`
+	ItemCount   float64 `json:"item_count"`
+	ItemState   string  `json:"item_state"`
+	StickyLimit float64 `json:"stickyLimit"`
+	Title       string  `json:"title"`
 }
 
 // ListUserResponseSystemInfo represents a component schema.
 type ListUserResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ListViewedResponseSystemInfo represents a component schema.
 type ListViewedResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingAIPriceResponseSystemInfo represents a component schema.
 type ManagingAIPriceResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingAutoBumpDisableResponseSystemInfo represents a component schema.
 type ManagingAutoBumpDisableResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingAutoBumpResponseSystemInfo represents a component schema.
 type ManagingAutoBumpResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingAutoBuyPriceResponseSystemInfo represents a component schema.
 type ManagingAutoBuyPriceResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingBulkGetResponseSystemInfo represents a component schema.
 type ManagingBulkGetResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingBumpResponseSystemInfo represents a component schema.
 type ManagingBumpResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingCheckGuaranteeResponseSystemInfo represents a component schema.
 type ManagingCheckGuaranteeResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingCloseResponseSystemInfo represents a component schema.
 type ManagingCloseResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingCreateClaimResponseSystemInfo represents a component schema.
 type ManagingCreateClaimResponseSystemInfo struct {
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingCreateClaimResponseThread represents a component schema.
 type ManagingCreateClaimResponseThread struct {
-	CreatorUserID     int64                                        `json:"creator_user_id"`
-	CreatorUsername   string                                       `json:"creator_username"`
-	FirstPost         ManagingCreateClaimResponseThreadFirstPost   `json:"first_post"`
-	Forum             ManagingCreateClaimResponseThreadForum       `json:"forum"`
-	ForumID           int64                                        `json:"forum_id"`
-	Links             ManagingCreateClaimResponseThreadLinks       `json:"links"`
-	Permissions       ManagingCreateClaimResponseThreadPermissions `json:"permissions"`
-	ThreadCreateDate  int64                                        `json:"thread_create_date"`
-	ThreadID          int64                                        `json:"thread_id"`
-	ThreadIsDeleted   bool                                         `json:"thread_is_deleted"`
-	ThreadIsFollowed  bool                                         `json:"thread_is_followed"`
-	ThreadIsPublished bool                                         `json:"thread_is_published"`
-	ThreadIsSticky    bool                                         `json:"thread_is_sticky"`
-	ThreadPostCount   int64                                        `json:"thread_post_count"`
-	ThreadPrefixes    []any                                        `json:"thread_prefixes"`
-	ThreadTags        []any                                        `json:"thread_tags"`
-	ThreadTitle       string                                       `json:"thread_title"`
-	ThreadUpdateDate  int64                                        `json:"thread_update_date"`
-	ThreadViewCount   int64                                        `json:"thread_view_count"`
-	UserIsIgnored     bool                                         `json:"user_is_ignored"`
+	CreatorUserID     float64 `json:"creator_user_id"`
+	CreatorUsername   string  `json:"creator_username"`
+	FirstPost         any     `json:"first_post"`
+	Forum             any     `json:"forum"`
+	ForumID           float64 `json:"forum_id"`
+	Links             any     `json:"links"`
+	Permissions       any     `json:"permissions"`
+	ThreadCreateDate  float64 `json:"thread_create_date"`
+	ThreadID          float64 `json:"thread_id"`
+	ThreadIsDeleted   bool    `json:"thread_is_deleted"`
+	ThreadIsFollowed  bool    `json:"thread_is_followed"`
+	ThreadIsPublished bool    `json:"thread_is_published"`
+	ThreadIsSticky    bool    `json:"thread_is_sticky"`
+	ThreadPostCount   float64 `json:"thread_post_count"`
+	ThreadPrefixes    any     `json:"thread_prefixes"`
+	ThreadTags        any     `json:"thread_tags"`
+	ThreadTitle       string  `json:"thread_title"`
+	ThreadUpdateDate  float64 `json:"thread_update_date"`
+	ThreadViewCount   float64 `json:"thread_view_count"`
+	UserIsIgnored     bool    `json:"user_is_ignored"`
 }
 
 // ManagingCreateClaimResponseThreadFirstPost represents a component schema.
 type ManagingCreateClaimResponseThreadFirstPost struct {
-	LikeUsers           []any                                                 `json:"like_users"`
-	Links               ManagingCreateClaimResponseThreadFirstPostLinks       `json:"links"`
-	Permissions         ManagingCreateClaimResponseThreadFirstPostPermissions `json:"permissions"`
-	PostAttachmentCount int64                                                 `json:"post_attachment_count"`
-	PostBody            string                                                `json:"post_body"`
-	PostBodyHTML        string                                                `json:"post_body_html"`
-	PostBodyPlainText   string                                                `json:"post_body_plain_text"`
-	PostCreateDate      int64                                                 `json:"post_create_date"`
-	PostID              int64                                                 `json:"post_id"`
-	PostIsDeleted       bool                                                  `json:"post_is_deleted"`
-	PostIsFirstPost     bool                                                  `json:"post_is_first_post"`
-	PostIsPublished     bool                                                  `json:"post_is_published"`
-	PostLikeCount       int64                                                 `json:"post_like_count"`
-	PostUpdateDate      int64                                                 `json:"post_update_date"`
-	PosterUserID        int64                                                 `json:"poster_user_id"`
-	PosterUsername      string                                                `json:"poster_username"`
-	Signature           string                                                `json:"signature"`
-	SignatureHTML       string                                                `json:"signature_html"`
-	SignaturePlainText  string                                                `json:"signature_plain_text"`
-	ThreadID            int64                                                 `json:"thread_id"`
-	UserIsIgnored       bool                                                  `json:"user_is_ignored"`
+	LikeUsers           any     `json:"like_users"`
+	Links               any     `json:"links"`
+	Permissions         any     `json:"permissions"`
+	PostAttachmentCount float64 `json:"post_attachment_count"`
+	PostBody            string  `json:"post_body"`
+	PostBodyHTML        string  `json:"post_body_html"`
+	PostBodyPlainText   string  `json:"post_body_plain_text"`
+	PostCreateDate      float64 `json:"post_create_date"`
+	PostID              float64 `json:"post_id"`
+	PostIsDeleted       bool    `json:"post_is_deleted"`
+	PostIsFirstPost     bool    `json:"post_is_first_post"`
+	PostIsPublished     bool    `json:"post_is_published"`
+	PostLikeCount       float64 `json:"post_like_count"`
+	PostUpdateDate      float64 `json:"post_update_date"`
+	PosterUserID        float64 `json:"poster_user_id"`
+	PosterUsername      string  `json:"poster_username"`
+	Signature           string  `json:"signature"`
+	SignatureHTML       string  `json:"signature_html"`
+	SignaturePlainText  string  `json:"signature_plain_text"`
+	ThreadID            float64 `json:"thread_id"`
+	UserIsIgnored       bool    `json:"user_is_ignored"`
 }
 
 // ManagingCreateClaimResponseThreadFirstPostLinks represents a component schema.
@@ -15048,17 +14941,17 @@ type ManagingCreateClaimResponseThreadFirstPostPermissions struct {
 
 // ManagingCreateClaimResponseThreadForum represents a component schema.
 type ManagingCreateClaimResponseThreadForum struct {
-	ForumDescription       string                                            `json:"forum_description"`
-	ForumID                int64                                             `json:"forum_id"`
-	ForumIsFollowed        bool                                              `json:"forum_is_followed"`
-	ForumPostCount         int64                                             `json:"forum_post_count"`
-	ForumPrefixes          []any                                             `json:"forum_prefixes"`
-	ForumThreadCount       int64                                             `json:"forum_thread_count"`
-	ForumTitle             string                                            `json:"forum_title"`
-	Links                  ManagingCreateClaimResponseThreadForumLinks       `json:"links"`
-	Permissions            ManagingCreateClaimResponseThreadForumPermissions `json:"permissions"`
-	ThreadDefaultPrefixID  int64                                             `json:"thread_default_prefix_id"`
-	ThreadPrefixIsRequired bool                                              `json:"thread_prefix_is_required"`
+	ForumDescription       string  `json:"forum_description"`
+	ForumID                float64 `json:"forum_id"`
+	ForumIsFollowed        bool    `json:"forum_is_followed"`
+	ForumPostCount         float64 `json:"forum_post_count"`
+	ForumPrefixes          any     `json:"forum_prefixes"`
+	ForumThreadCount       float64 `json:"forum_thread_count"`
+	ForumTitle             string  `json:"forum_title"`
+	Links                  any     `json:"links"`
+	Permissions            any     `json:"permissions"`
+	ThreadDefaultPrefixID  float64 `json:"thread_default_prefix_id"`
+	ThreadPrefixIsRequired bool    `json:"thread_prefix_is_required"`
 }
 
 // ManagingCreateClaimResponseThreadForumLinks represents a component schema.
@@ -15108,134 +15001,134 @@ type ManagingCreateClaimResponseThreadPermissions struct {
 
 // ManagingDeclineVideoRecordingResponseSystemInfo represents a component schema.
 type ManagingDeclineVideoRecordingResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingDeleteResponseSystemInfo represents a component schema.
 type ManagingDeleteResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingEditResponseSystemInfo represents a component schema.
 type ManagingEditResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingEmailCodeResponseCodeData represents a component schema.
 type ManagingEmailCodeResponseCodeData struct {
-	Code      string `json:"code"`
-	Date      int64  `json:"date"`
-	TextPlain string `json:"textPlain"`
+	Code      string  `json:"code"`
+	Date      float64 `json:"date"`
+	TextPlain string  `json:"textPlain"`
 }
 
 // ManagingEmailCodeResponseItem represents a component schema.
 type ManagingEmailCodeResponseItem struct {
-	AccountLink                       string                                      `json:"accountLink"`
-	AccountLinks                      []any                                       `json:"accountLinks"`
-	AccountLastActivity               int64                                       `json:"account_last_activity"`
-	AIPrice                           int64                                       `json:"aiPrice"`
-	AIPriceCheckDate                  int64                                       `json:"aiPriceCheckDate"`
-	AllowAskDiscount                  int64                                       `json:"allow_ask_discount"`
-	AutoBuyPrice                      int64                                       `json:"autoBuyPrice"`
-	AutoBuyPriceCheckDate             int64                                       `json:"autoBuyPriceCheckDate"`
-	BumpSettings                      ManagingEmailCodeResponseItemBumpSettings   `json:"bumpSettings"`
-	Buyer                             ManagingEmailCodeResponseItemBuyer          `json:"buyer"`
-	BuyerAvatarDate                   int64                                       `json:"buyer_avatar_date"`
-	BuyerDisplayIconGroupID           int64                                       `json:"buyer_display_icon_group_id"`
-	BuyerUniqBanner                   string                                      `json:"buyer_uniq_banner"`
-	BuyerUserGroupID                  int64                                       `json:"buyer_user_group_id"`
-	CanAskDiscount                    bool                                        `json:"canAskDiscount"`
-	CanChangeEmailPassword            bool                                        `json:"canChangeEmailPassword"`
-	CanChangePassword                 bool                                        `json:"canChangePassword"`
-	CanCheckAIPrice                   bool                                        `json:"canCheckAiPrice"`
-	CanCheckAutoBuyPrice              bool                                        `json:"canCheckAutoBuyPrice"`
-	CanCheckGuarantee                 bool                                        `json:"canCheckGuarantee"`
-	CanReportItem                     bool                                        `json:"canReportItem"`
-	CanResellItem                     bool                                        `json:"canResellItem"`
-	CanResellItemAfterPurchase        bool                                        `json:"canResellItemAfterPurchase"`
-	CanShareItem                      bool                                        `json:"canShareItem"`
-	CanUpdateItemStats                bool                                        `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                                        `json:"canValidateAccount"`
-	CanViewAccountLink                bool                                        `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                                        `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                                        `json:"canViewEmailLoginData"`
-	CanViewItemViews                  bool                                        `json:"canViewItemViews"`
-	CanViewLoginData                  bool                                        `json:"canViewLoginData"`
-	CartPrice                         any                                         `json:"cart_price"`
-	CategoryID                        int64                                       `json:"category_id"`
-	ContentID                         any                                         `json:"content_id"`
-	ContentType                       any                                         `json:"content_type"`
-	CopyFormatData                    ManagingEmailCodeResponseItemCopyFormatData `json:"copyFormatData"`
-	CustomFields                      ManagingEmailCodeResponseItemCustomFields   `json:"customFields"`
-	DeleteDate                        int64                                       `json:"delete_date"`
-	DeleteReason                      string                                      `json:"delete_reason"`
-	DeleteUserID                      int64                                       `json:"delete_user_id"`
-	DeleteUsername                    string                                      `json:"delete_username"`
-	Deposit                           int64                                       `json:"deposit"`
-	Description                       string                                      `json:"description"`
-	DescriptionEnHTML                 string                                      `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                                      `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                                      `json:"descriptionHtml"`
-	DescriptionPlain                  string                                      `json:"descriptionPlain"`
-	DescriptionEn                     string                                      `json:"description_en"`
-	EditDate                          int64                                       `json:"edit_date"`
-	EmailProvider                     string                                      `json:"email_provider"`
-	EmailType                         string                                      `json:"email_type"`
-	ExtendedGuarantee                 int64                                       `json:"extended_guarantee"`
-	ExternalAuth                      []any                                       `json:"externalAuth"`
-	ExtraPrices                       []any                                       `json:"extraPrices"`
-	FeedbackData                      string                                      `json:"feedback_data"`
-	GetEmailCodeDisplayLogin          any                                         `json:"getEmailCodeDisplayLogin"`
-	Guarantee                         ManagingEmailCodeResponseItemGuarantee      `json:"guarantee"`
-	ImagePreviewLinks                 []string                                    `json:"imagePreviewLinks"`
-	InCart                            any                                         `json:"in_cart"`
-	Information                       string                                      `json:"information"`
-	InformationEn                     string                                      `json:"information_en"`
-	IsBirthdayToday                   bool                                        `json:"isBirthdayToday"`
-	IsIgnored                         bool                                        `json:"isIgnored"`
-	IsPersonalAccount                 bool                                        `json:"isPersonalAccount"`
-	IsSmallExf                        bool                                        `json:"isSmallExf"`
-	IsTrusted                         bool                                        `json:"isTrusted"`
-	IsFave                            any                                         `json:"is_fave"`
-	IsSticky                          int64                                       `json:"is_sticky"`
-	ItemOriginPhrase                  string                                      `json:"itemOriginPhrase"`
-	ItemDomain                        string                                      `json:"item_domain"`
-	ItemID                            int64                                       `json:"item_id"`
-	ItemOrigin                        string                                      `json:"item_origin"`
-	ItemState                         string                                      `json:"item_state"`
-	Login                             string                                      `json:"login"`
-	LoginData                         ManagingEmailCodeResponseItemLoginData      `json:"loginData"`
-	MarketCustomTitle                 string                                      `json:"market_custom_title"`
-	MaxDiscountPercent                int64                                       `json:"max_discount_percent"`
-	NeedToRequireVideoToViewLoginData bool                                        `json:"needToRequireVideoToViewLoginData"`
-	NoteText                          string                                      `json:"note_text"`
-	Nsb                               int64                                       `json:"nsb"`
-	PendingDeletionDate               int64                                       `json:"pending_deletion_date"`
-	Price                             int64                                       `json:"price"`
-	PriceWithSellerFee                float64                                     `json:"priceWithSellerFee"`
-	PriceWithSellerFeeLabel           string                                      `json:"priceWithSellerFeeLabel"`
-	PriceCurrency                     string                                      `json:"price_currency"`
-	PublishedDate                     int64                                       `json:"published_date"`
-	RefreshedDate                     int64                                       `json:"refreshed_date"`
-	ResaleItemOrigin                  string                                      `json:"resale_item_origin"`
-	RubPrice                          int64                                       `json:"rub_price"`
-	Seller                            ManagingEmailCodeResponseItemSeller         `json:"seller"`
-	ShowGetEmailCodeButton            bool                                        `json:"showGetEmailCodeButton"`
-	Tags                              ManagingEmailCodeResponseItemTags           `json:"tags"`
-	TempEmail                         string                                      `json:"temp_email"`
-	Title                             string                                      `json:"title"`
-	TitleEn                           string                                      `json:"title_en"`
-	UniqueKeyExists                   bool                                        `json:"uniqueKeyExists"`
-	UpdateStatDate                    int64                                       `json:"update_stat_date"`
-	UserAllowAskDiscount              int64                                       `json:"user_allow_ask_discount"`
-	ViewCount                         int64                                       `json:"view_count"`
-	VisitorIsAuthor                   bool                                        `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AIPrice                           float64 `json:"aiPrice"`
+	AIPriceCheckDate                  float64 `json:"aiPriceCheckDate"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	AutoBuyPrice                      float64 `json:"autoBuyPrice"`
+	AutoBuyPriceCheckDate             float64 `json:"autoBuyPriceCheckDate"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	Buyer                             any     `json:"buyer"`
+	BuyerAvatarDate                   float64 `json:"buyer_avatar_date"`
+	BuyerDisplayIconGroupID           float64 `json:"buyer_display_icon_group_id"`
+	BuyerUniqBanner                   string  `json:"buyer_uniq_banner"`
+	BuyerUserGroupID                  float64 `json:"buyer_user_group_id"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangeEmailPassword            bool    `json:"canChangeEmailPassword"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckAIPrice                   bool    `json:"canCheckAiPrice"`
+	CanCheckAutoBuyPrice              bool    `json:"canCheckAutoBuyPrice"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItem                     bool    `json:"canResellItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanShareItem                      bool    `json:"canShareItem"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewItemViews                  bool    `json:"canViewItemViews"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CartPrice                         any     `json:"cart_price"`
+	CategoryID                        float64 `json:"category_id"`
+	ContentID                         any     `json:"content_id"`
+	ContentType                       any     `json:"content_type"`
+	CopyFormatData                    any     `json:"copyFormatData"`
+	CustomFields                      any     `json:"customFields"`
+	DeleteDate                        float64 `json:"delete_date"`
+	DeleteReason                      string  `json:"delete_reason"`
+	DeleteUserID                      float64 `json:"delete_user_id"`
+	DeleteUsername                    string  `json:"delete_username"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	GetEmailCodeDisplayLogin          any     `json:"getEmailCodeDisplayLogin"`
+	Guarantee                         any     `json:"guarantee"`
+	ImagePreviewLinks                 any     `json:"imagePreviewLinks"`
+	InCart                            any     `json:"in_cart"`
+	Information                       string  `json:"information"`
+	InformationEn                     string  `json:"information_en"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsSmallExf                        bool    `json:"isSmallExf"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsFave                            any     `json:"is_fave"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	Login                             string  `json:"login"`
+	LoginData                         any     `json:"loginData"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	NoteText                          string  `json:"note_text"`
+	Nsb                               float64 `json:"nsb"`
+	PendingDeletionDate               float64 `json:"pending_deletion_date"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceWithSellerFeeLabel           string  `json:"priceWithSellerFeeLabel"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	Tags                              any     `json:"tags"`
+	TempEmail                         string  `json:"temp_email"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UniqueKeyExists                   bool    `json:"uniqueKeyExists"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // ManagingEmailCodeResponseItemBumpSettings represents a component schema.
@@ -15249,16 +15142,16 @@ type ManagingEmailCodeResponseItemBumpSettings struct {
 
 // ManagingEmailCodeResponseItemBuyer represents a component schema.
 type ManagingEmailCodeResponseItemBuyer struct {
-	DisplayIconGroupID  int64  `json:"display_icon_group_id"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsBanned            int64  `json:"is_banned"`
-	OperationDate       int64  `json:"operation_date"`
-	UniqBanner          string `json:"uniq_banner"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	VisitorIsBuyer      bool   `json:"visitorIsBuyer"`
+	DisplayIconGroupID  float64 `json:"display_icon_group_id"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsBanned            float64 `json:"is_banned"`
+	OperationDate       float64 `json:"operation_date"`
+	UniqBanner          string  `json:"uniq_banner"`
+	UniqUsernameCSS     string  `json:"uniq_username_css"`
+	UserGroupID         float64 `json:"user_group_id"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
+	VisitorIsBuyer      bool    `json:"visitorIsBuyer"`
 }
 
 // ManagingEmailCodeResponseItemCopyFormatData represents a component schema.
@@ -15271,7 +15164,7 @@ type ManagingEmailCodeResponseItemCopyFormatData struct {
 // ManagingEmailCodeResponseItemCustomFields represents a component schema.
 type ManagingEmailCodeResponseItemCustomFields struct {
 	N4             string `json:"_4"`
-	AllowSelfUnban []any  `json:"allowSelfUnban"`
+	AllowSelfUnban any    `json:"allowSelfUnban"`
 	BanReason      string `json:"ban_reason"`
 	Discord        string `json:"discord"`
 	Github         string `json:"github"`
@@ -15284,16 +15177,16 @@ type ManagingEmailCodeResponseItemCustomFields struct {
 
 // ManagingEmailCodeResponseItemGuarantee represents a component schema.
 type ManagingEmailCodeResponseItemGuarantee struct {
-	Active                bool   `json:"active"`
-	Cancelled             bool   `json:"cancelled"`
-	CancelledReason       string `json:"cancelledReason"`
-	CancelledReasonPhrase string `json:"cancelledReasonPhrase"`
-	Class                 string `json:"class"`
-	Duration              int64  `json:"duration"`
-	DurationPhrase        string `json:"durationPhrase"`
-	EndDate               int64  `json:"endDate"`
-	RemainingTime         int64  `json:"remainingTime"`
-	RemainingTimePhrase   string `json:"remainingTimePhrase"`
+	Active                bool    `json:"active"`
+	Cancelled             bool    `json:"cancelled"`
+	CancelledReason       string  `json:"cancelledReason"`
+	CancelledReasonPhrase string  `json:"cancelledReasonPhrase"`
+	Class                 string  `json:"class"`
+	Duration              float64 `json:"duration"`
+	DurationPhrase        string  `json:"durationPhrase"`
+	EndDate               float64 `json:"endDate"`
+	RemainingTime         float64 `json:"remainingTime"`
+	RemainingTimePhrase   string  `json:"remainingTimePhrase"`
 }
 
 // ManagingEmailCodeResponseItemLoginData represents a component schema.
@@ -15309,19 +15202,19 @@ type ManagingEmailCodeResponseItemLoginData struct {
 
 // ManagingEmailCodeResponseItemSeller represents a component schema.
 type ManagingEmailCodeResponseItemSeller struct {
-	ActiveItemsCount      int64                                       `json:"active_items_count"`
-	AvatarDate            int64                                       `json:"avatar_date"`
-	Contacts              ManagingEmailCodeResponseItemSellerContacts `json:"contacts"`
-	DisplayStyleGroupID   int64                                       `json:"display_style_group_id"`
-	EffectiveLastActivity int64                                       `json:"effective_last_activity"`
-	IsOnline              bool                                        `json:"isOnline"`
-	IsBanned              int64                                       `json:"is_banned"`
-	JoinedDate            int64                                       `json:"joined_date"`
-	RestoreData           string                                      `json:"restore_data"`
-	RestorePercents       any                                         `json:"restore_percents"`
-	SoldItemsCount        int64                                       `json:"sold_items_count"`
-	UserID                int64                                       `json:"user_id"`
-	Username              string                                      `json:"username"`
+	ActiveItemsCount      float64 `json:"active_items_count"`
+	AvatarDate            float64 `json:"avatar_date"`
+	Contacts              any     `json:"contacts"`
+	DisplayStyleGroupID   float64 `json:"display_style_group_id"`
+	EffectiveLastActivity float64 `json:"effective_last_activity"`
+	IsOnline              bool    `json:"isOnline"`
+	IsBanned              float64 `json:"is_banned"`
+	JoinedDate            float64 `json:"joined_date"`
+	RestoreData           string  `json:"restore_data"`
+	RestorePercents       any     `json:"restore_percents"`
+	SoldItemsCount        float64 `json:"sold_items_count"`
+	UserID                float64 `json:"user_id"`
+	Username              string  `json:"username"`
 }
 
 // ManagingEmailCodeResponseItemSellerContacts represents a component schema.
@@ -15330,136 +15223,122 @@ type ManagingEmailCodeResponseItemSellerContacts struct {
 	Telegram  string `json:"telegram"`
 }
 
-// ManagingEmailCodeResponseItemTags represents a component schema.
-type ManagingEmailCodeResponseItemTags struct {
-	N1234567890 ManagingEmailCodeResponseItemTagsN1234567890 `json:"1234567890"`
-}
-
-// ManagingEmailCodeResponseItemTagsN1234567890 represents a component schema.
-type ManagingEmailCodeResponseItemTagsN1234567890 struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
-}
-
 // ManagingFavoriteResponseSystemInfo represents a component schema.
 type ManagingFavoriteResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingGetLetters2ResponseSystemInfo represents a component schema.
 type ManagingGetLetters2ResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingGetResponseItem represents a component schema.
 type ManagingGetResponseItem struct {
-	AccountLink                       string                                `json:"accountLink"`
-	AccountLinks                      []any                                 `json:"accountLinks"`
-	AccountLastActivity               int64                                 `json:"account_last_activity"`
-	AIPrice                           int64                                 `json:"aiPrice"`
-	AIPriceCheckDate                  int64                                 `json:"aiPriceCheckDate"`
-	AllowAskDiscount                  int64                                 `json:"allow_ask_discount"`
-	AutoBuyPrice                      int64                                 `json:"autoBuyPrice"`
-	AutoBuyPriceCheckDate             int64                                 `json:"autoBuyPriceCheckDate"`
-	BumpSettings                      ManagingGetResponseItemBumpSettings   `json:"bumpSettings"`
-	Buyer                             ManagingGetResponseItemBuyer          `json:"buyer"`
-	BuyerAvatarDate                   int64                                 `json:"buyer_avatar_date"`
-	BuyerDisplayIconGroupID           int64                                 `json:"buyer_display_icon_group_id"`
-	BuyerUniqBanner                   string                                `json:"buyer_uniq_banner"`
-	BuyerUserGroupID                  int64                                 `json:"buyer_user_group_id"`
-	CanAskDiscount                    bool                                  `json:"canAskDiscount"`
-	CanChangeEmailPassword            bool                                  `json:"canChangeEmailPassword"`
-	CanChangePassword                 bool                                  `json:"canChangePassword"`
-	CanCheckAIPrice                   bool                                  `json:"canCheckAiPrice"`
-	CanCheckAutoBuyPrice              bool                                  `json:"canCheckAutoBuyPrice"`
-	CanCheckGuarantee                 bool                                  `json:"canCheckGuarantee"`
-	CanReportItem                     bool                                  `json:"canReportItem"`
-	CanResellItem                     bool                                  `json:"canResellItem"`
-	CanResellItemAfterPurchase        bool                                  `json:"canResellItemAfterPurchase"`
-	CanShareItem                      bool                                  `json:"canShareItem"`
-	CanUpdateItemStats                bool                                  `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                                  `json:"canValidateAccount"`
-	CanViewAccountLink                bool                                  `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                                  `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                                  `json:"canViewEmailLoginData"`
-	CanViewItemViews                  bool                                  `json:"canViewItemViews"`
-	CanViewLoginData                  bool                                  `json:"canViewLoginData"`
-	CartPrice                         any                                   `json:"cart_price"`
-	CategoryID                        int64                                 `json:"category_id"`
-	ContentID                         any                                   `json:"content_id"`
-	ContentType                       any                                   `json:"content_type"`
-	CopyFormatData                    ManagingGetResponseItemCopyFormatData `json:"copyFormatData"`
-	CustomFields                      ManagingGetResponseItemCustomFields   `json:"customFields"`
-	DeleteDate                        int64                                 `json:"delete_date"`
-	DeleteReason                      string                                `json:"delete_reason"`
-	DeleteUserID                      int64                                 `json:"delete_user_id"`
-	DeleteUsername                    string                                `json:"delete_username"`
-	Deposit                           int64                                 `json:"deposit"`
-	Description                       string                                `json:"description"`
-	DescriptionEnHTML                 string                                `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                                `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                                `json:"descriptionHtml"`
-	DescriptionPlain                  string                                `json:"descriptionPlain"`
-	DescriptionEn                     string                                `json:"description_en"`
-	EditDate                          int64                                 `json:"edit_date"`
-	EmailProvider                     string                                `json:"email_provider"`
-	EmailType                         string                                `json:"email_type"`
-	ExtendedGuarantee                 int64                                 `json:"extended_guarantee"`
-	ExternalAuth                      []any                                 `json:"externalAuth"`
-	ExtraPrices                       []any                                 `json:"extraPrices"`
-	FeedbackData                      string                                `json:"feedback_data"`
-	GetEmailCodeDisplayLogin          any                                   `json:"getEmailCodeDisplayLogin"`
-	Guarantee                         ManagingGetResponseItemGuarantee      `json:"guarantee"`
-	ImagePreviewLinks                 []string                              `json:"imagePreviewLinks"`
-	InCart                            any                                   `json:"in_cart"`
-	Information                       string                                `json:"information"`
-	InformationEn                     string                                `json:"information_en"`
-	IsBirthdayToday                   bool                                  `json:"isBirthdayToday"`
-	IsIgnored                         bool                                  `json:"isIgnored"`
-	IsPersonalAccount                 bool                                  `json:"isPersonalAccount"`
-	IsSmallExf                        bool                                  `json:"isSmallExf"`
-	IsTrusted                         bool                                  `json:"isTrusted"`
-	IsFave                            any                                   `json:"is_fave"`
-	IsSticky                          int64                                 `json:"is_sticky"`
-	ItemOriginPhrase                  string                                `json:"itemOriginPhrase"`
-	ItemDomain                        string                                `json:"item_domain"`
-	ItemID                            int64                                 `json:"item_id"`
-	ItemOrigin                        string                                `json:"item_origin"`
-	ItemState                         string                                `json:"item_state"`
-	Login                             string                                `json:"login"`
-	LoginData                         ManagingGetResponseItemLoginData      `json:"loginData"`
-	MarketCustomTitle                 string                                `json:"market_custom_title"`
-	MaxDiscountPercent                int64                                 `json:"max_discount_percent"`
-	NeedToRequireVideoToViewLoginData bool                                  `json:"needToRequireVideoToViewLoginData"`
-	NoteText                          string                                `json:"note_text"`
-	Nsb                               int64                                 `json:"nsb"`
-	PendingDeletionDate               int64                                 `json:"pending_deletion_date"`
-	Price                             int64                                 `json:"price"`
-	PriceWithSellerFee                float64                               `json:"priceWithSellerFee"`
-	PriceWithSellerFeeLabel           string                                `json:"priceWithSellerFeeLabel"`
-	PriceCurrency                     string                                `json:"price_currency"`
-	PublishedDate                     int64                                 `json:"published_date"`
-	RefreshedDate                     int64                                 `json:"refreshed_date"`
-	ResaleItemOrigin                  string                                `json:"resale_item_origin"`
-	RubPrice                          int64                                 `json:"rub_price"`
-	Seller                            ManagingGetResponseItemSeller         `json:"seller"`
-	ShowGetEmailCodeButton            bool                                  `json:"showGetEmailCodeButton"`
-	Tags                              ManagingGetResponseItemTags           `json:"tags"`
-	TempEmail                         string                                `json:"temp_email"`
-	Title                             string                                `json:"title"`
-	TitleEn                           string                                `json:"title_en"`
-	UniqueKeyExists                   bool                                  `json:"uniqueKeyExists"`
-	UpdateStatDate                    int64                                 `json:"update_stat_date"`
-	UserAllowAskDiscount              int64                                 `json:"user_allow_ask_discount"`
-	ViewCount                         int64                                 `json:"view_count"`
-	VisitorIsAuthor                   bool                                  `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AIPrice                           float64 `json:"aiPrice"`
+	AIPriceCheckDate                  float64 `json:"aiPriceCheckDate"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	AutoBuyPrice                      float64 `json:"autoBuyPrice"`
+	AutoBuyPriceCheckDate             float64 `json:"autoBuyPriceCheckDate"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	Buyer                             any     `json:"buyer"`
+	BuyerAvatarDate                   float64 `json:"buyer_avatar_date"`
+	BuyerDisplayIconGroupID           float64 `json:"buyer_display_icon_group_id"`
+	BuyerUniqBanner                   string  `json:"buyer_uniq_banner"`
+	BuyerUserGroupID                  float64 `json:"buyer_user_group_id"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangeEmailPassword            bool    `json:"canChangeEmailPassword"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckAIPrice                   bool    `json:"canCheckAiPrice"`
+	CanCheckAutoBuyPrice              bool    `json:"canCheckAutoBuyPrice"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItem                     bool    `json:"canResellItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanShareItem                      bool    `json:"canShareItem"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewItemViews                  bool    `json:"canViewItemViews"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CartPrice                         any     `json:"cart_price"`
+	CategoryID                        float64 `json:"category_id"`
+	ContentID                         any     `json:"content_id"`
+	ContentType                       any     `json:"content_type"`
+	CopyFormatData                    any     `json:"copyFormatData"`
+	CustomFields                      any     `json:"customFields"`
+	DeleteDate                        float64 `json:"delete_date"`
+	DeleteReason                      string  `json:"delete_reason"`
+	DeleteUserID                      float64 `json:"delete_user_id"`
+	DeleteUsername                    string  `json:"delete_username"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	GetEmailCodeDisplayLogin          any     `json:"getEmailCodeDisplayLogin"`
+	Guarantee                         any     `json:"guarantee"`
+	ImagePreviewLinks                 any     `json:"imagePreviewLinks"`
+	InCart                            any     `json:"in_cart"`
+	Information                       string  `json:"information"`
+	InformationEn                     string  `json:"information_en"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsSmallExf                        bool    `json:"isSmallExf"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsFave                            any     `json:"is_fave"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	Login                             string  `json:"login"`
+	LoginData                         any     `json:"loginData"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	NoteText                          string  `json:"note_text"`
+	Nsb                               float64 `json:"nsb"`
+	PendingDeletionDate               float64 `json:"pending_deletion_date"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceWithSellerFeeLabel           string  `json:"priceWithSellerFeeLabel"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	Tags                              any     `json:"tags"`
+	TempEmail                         string  `json:"temp_email"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UniqueKeyExists                   bool    `json:"uniqueKeyExists"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // ManagingGetResponseItemBumpSettings represents a component schema.
@@ -15473,16 +15352,16 @@ type ManagingGetResponseItemBumpSettings struct {
 
 // ManagingGetResponseItemBuyer represents a component schema.
 type ManagingGetResponseItemBuyer struct {
-	DisplayIconGroupID  int64  `json:"display_icon_group_id"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsBanned            int64  `json:"is_banned"`
-	OperationDate       int64  `json:"operation_date"`
-	UniqBanner          string `json:"uniq_banner"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	VisitorIsBuyer      bool   `json:"visitorIsBuyer"`
+	DisplayIconGroupID  float64 `json:"display_icon_group_id"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsBanned            float64 `json:"is_banned"`
+	OperationDate       float64 `json:"operation_date"`
+	UniqBanner          string  `json:"uniq_banner"`
+	UniqUsernameCSS     string  `json:"uniq_username_css"`
+	UserGroupID         float64 `json:"user_group_id"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
+	VisitorIsBuyer      bool    `json:"visitorIsBuyer"`
 }
 
 // ManagingGetResponseItemCopyFormatData represents a component schema.
@@ -15495,7 +15374,7 @@ type ManagingGetResponseItemCopyFormatData struct {
 // ManagingGetResponseItemCustomFields represents a component schema.
 type ManagingGetResponseItemCustomFields struct {
 	N4             string `json:"_4"`
-	AllowSelfUnban []any  `json:"allowSelfUnban"`
+	AllowSelfUnban any    `json:"allowSelfUnban"`
 	BanReason      string `json:"ban_reason"`
 	Discord        string `json:"discord"`
 	Github         string `json:"github"`
@@ -15508,16 +15387,16 @@ type ManagingGetResponseItemCustomFields struct {
 
 // ManagingGetResponseItemGuarantee represents a component schema.
 type ManagingGetResponseItemGuarantee struct {
-	Active                bool   `json:"active"`
-	Cancelled             bool   `json:"cancelled"`
-	CancelledReason       string `json:"cancelledReason"`
-	CancelledReasonPhrase string `json:"cancelledReasonPhrase"`
-	Class                 string `json:"class"`
-	Duration              int64  `json:"duration"`
-	DurationPhrase        string `json:"durationPhrase"`
-	EndDate               int64  `json:"endDate"`
-	RemainingTime         int64  `json:"remainingTime"`
-	RemainingTimePhrase   string `json:"remainingTimePhrase"`
+	Active                bool    `json:"active"`
+	Cancelled             bool    `json:"cancelled"`
+	CancelledReason       string  `json:"cancelledReason"`
+	CancelledReasonPhrase string  `json:"cancelledReasonPhrase"`
+	Class                 string  `json:"class"`
+	Duration              float64 `json:"duration"`
+	DurationPhrase        string  `json:"durationPhrase"`
+	EndDate               float64 `json:"endDate"`
+	RemainingTime         float64 `json:"remainingTime"`
+	RemainingTimePhrase   string  `json:"remainingTimePhrase"`
 }
 
 // ManagingGetResponseItemLoginData represents a component schema.
@@ -15533,19 +15412,19 @@ type ManagingGetResponseItemLoginData struct {
 
 // ManagingGetResponseItemSeller represents a component schema.
 type ManagingGetResponseItemSeller struct {
-	ActiveItemsCount      int64                                 `json:"active_items_count"`
-	AvatarDate            int64                                 `json:"avatar_date"`
-	Contacts              ManagingGetResponseItemSellerContacts `json:"contacts"`
-	DisplayStyleGroupID   int64                                 `json:"display_style_group_id"`
-	EffectiveLastActivity int64                                 `json:"effective_last_activity"`
-	IsOnline              bool                                  `json:"isOnline"`
-	IsBanned              int64                                 `json:"is_banned"`
-	JoinedDate            int64                                 `json:"joined_date"`
-	RestoreData           string                                `json:"restore_data"`
-	RestorePercents       any                                   `json:"restore_percents"`
-	SoldItemsCount        int64                                 `json:"sold_items_count"`
-	UserID                int64                                 `json:"user_id"`
-	Username              string                                `json:"username"`
+	ActiveItemsCount      float64 `json:"active_items_count"`
+	AvatarDate            float64 `json:"avatar_date"`
+	Contacts              any     `json:"contacts"`
+	DisplayStyleGroupID   float64 `json:"display_style_group_id"`
+	EffectiveLastActivity float64 `json:"effective_last_activity"`
+	IsOnline              bool    `json:"isOnline"`
+	IsBanned              float64 `json:"is_banned"`
+	JoinedDate            float64 `json:"joined_date"`
+	RestoreData           string  `json:"restore_data"`
+	RestorePercents       any     `json:"restore_percents"`
+	SoldItemsCount        float64 `json:"sold_items_count"`
+	UserID                float64 `json:"user_id"`
+	Username              string  `json:"username"`
 }
 
 // ManagingGetResponseItemSellerContacts represents a component schema.
@@ -15554,189 +15433,175 @@ type ManagingGetResponseItemSellerContacts struct {
 	Telegram  string `json:"telegram"`
 }
 
-// ManagingGetResponseItemTags represents a component schema.
-type ManagingGetResponseItemTags struct {
-	N1234567890 ManagingGetResponseItemTagsN1234567890 `json:"1234567890"`
-}
-
-// ManagingGetResponseItemTagsN1234567890 represents a component schema.
-type ManagingGetResponseItemTagsN1234567890 struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
-}
-
 // ManagingGetResponseSystemInfo represents a component schema.
 type ManagingGetResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingImageResponseSystemInfo represents a component schema.
 type ManagingImageResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingNoteResponseSystemInfo represents a component schema.
 type ManagingNoteResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingOpenResponseSystemInfo represents a component schema.
 type ManagingOpenResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingPublicTagResponseSystemInfo represents a component schema.
 type ManagingPublicTagResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingPublicTagResponseTag represents a component schema.
 type ManagingPublicTagResponseTag struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
+	Bc                   string  `json:"bc"`
+	ForOwnedAccountsOnly bool    `json:"forOwnedAccountsOnly"`
+	IsDefault            bool    `json:"isDefault"`
+	TagID                float64 `json:"tag_id"`
+	Title                string  `json:"title"`
 }
 
 // ManagingPublicUntagResponseSystemInfo represents a component schema.
 type ManagingPublicUntagResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingPublicUntagResponseTag represents a component schema.
 type ManagingPublicUntagResponseTag struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
+	Bc                   string  `json:"bc"`
+	ForOwnedAccountsOnly bool    `json:"forOwnedAccountsOnly"`
+	IsDefault            bool    `json:"isDefault"`
+	TagID                float64 `json:"tag_id"`
+	Title                string  `json:"title"`
 }
 
 // ManagingRefuseGuaranteeResponseSystemInfo represents a component schema.
 type ManagingRefuseGuaranteeResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingSteamAddMafileResponseItem represents a component schema.
 type ManagingSteamAddMafileResponseItem struct {
-	AccountLink                       string                                           `json:"accountLink"`
-	AccountLinks                      []any                                            `json:"accountLinks"`
-	AccountLastActivity               int64                                            `json:"account_last_activity"`
-	AIPrice                           int64                                            `json:"aiPrice"`
-	AIPriceCheckDate                  int64                                            `json:"aiPriceCheckDate"`
-	AllowAskDiscount                  int64                                            `json:"allow_ask_discount"`
-	AutoBuyPrice                      int64                                            `json:"autoBuyPrice"`
-	AutoBuyPriceCheckDate             int64                                            `json:"autoBuyPriceCheckDate"`
-	BumpSettings                      ManagingSteamAddMafileResponseItemBumpSettings   `json:"bumpSettings"`
-	Buyer                             ManagingSteamAddMafileResponseItemBuyer          `json:"buyer"`
-	BuyerAvatarDate                   int64                                            `json:"buyer_avatar_date"`
-	BuyerDisplayIconGroupID           int64                                            `json:"buyer_display_icon_group_id"`
-	BuyerUniqBanner                   string                                           `json:"buyer_uniq_banner"`
-	BuyerUserGroupID                  int64                                            `json:"buyer_user_group_id"`
-	CanAskDiscount                    bool                                             `json:"canAskDiscount"`
-	CanChangeEmailPassword            bool                                             `json:"canChangeEmailPassword"`
-	CanChangePassword                 bool                                             `json:"canChangePassword"`
-	CanCheckAIPrice                   bool                                             `json:"canCheckAiPrice"`
-	CanCheckAutoBuyPrice              bool                                             `json:"canCheckAutoBuyPrice"`
-	CanCheckGuarantee                 bool                                             `json:"canCheckGuarantee"`
-	CanReportItem                     bool                                             `json:"canReportItem"`
-	CanResellItem                     bool                                             `json:"canResellItem"`
-	CanResellItemAfterPurchase        bool                                             `json:"canResellItemAfterPurchase"`
-	CanShareItem                      bool                                             `json:"canShareItem"`
-	CanUpdateItemStats                bool                                             `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                                             `json:"canValidateAccount"`
-	CanViewAccountLink                bool                                             `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                                             `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                                             `json:"canViewEmailLoginData"`
-	CanViewItemViews                  bool                                             `json:"canViewItemViews"`
-	CanViewLoginData                  bool                                             `json:"canViewLoginData"`
-	CartPrice                         any                                              `json:"cart_price"`
-	CategoryID                        int64                                            `json:"category_id"`
-	ContentID                         any                                              `json:"content_id"`
-	ContentType                       any                                              `json:"content_type"`
-	CopyFormatData                    ManagingSteamAddMafileResponseItemCopyFormatData `json:"copyFormatData"`
-	CustomFields                      ManagingSteamAddMafileResponseItemCustomFields   `json:"customFields"`
-	DeleteDate                        int64                                            `json:"delete_date"`
-	DeleteReason                      string                                           `json:"delete_reason"`
-	DeleteUserID                      int64                                            `json:"delete_user_id"`
-	DeleteUsername                    string                                           `json:"delete_username"`
-	Deposit                           int64                                            `json:"deposit"`
-	Description                       string                                           `json:"description"`
-	DescriptionEnHTML                 string                                           `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                                           `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                                           `json:"descriptionHtml"`
-	DescriptionPlain                  string                                           `json:"descriptionPlain"`
-	DescriptionEn                     string                                           `json:"description_en"`
-	EditDate                          int64                                            `json:"edit_date"`
-	EmailProvider                     string                                           `json:"email_provider"`
-	EmailType                         string                                           `json:"email_type"`
-	ExtendedGuarantee                 int64                                            `json:"extended_guarantee"`
-	ExternalAuth                      []any                                            `json:"externalAuth"`
-	ExtraPrices                       []any                                            `json:"extraPrices"`
-	FeedbackData                      string                                           `json:"feedback_data"`
-	GetEmailCodeDisplayLogin          any                                              `json:"getEmailCodeDisplayLogin"`
-	Guarantee                         ManagingSteamAddMafileResponseItemGuarantee      `json:"guarantee"`
-	ImagePreviewLinks                 []string                                         `json:"imagePreviewLinks"`
-	InCart                            any                                              `json:"in_cart"`
-	Information                       string                                           `json:"information"`
-	InformationEn                     string                                           `json:"information_en"`
-	IsBirthdayToday                   bool                                             `json:"isBirthdayToday"`
-	IsIgnored                         bool                                             `json:"isIgnored"`
-	IsPersonalAccount                 bool                                             `json:"isPersonalAccount"`
-	IsSmallExf                        bool                                             `json:"isSmallExf"`
-	IsTrusted                         bool                                             `json:"isTrusted"`
-	IsFave                            any                                              `json:"is_fave"`
-	IsSticky                          int64                                            `json:"is_sticky"`
-	ItemOriginPhrase                  string                                           `json:"itemOriginPhrase"`
-	ItemDomain                        string                                           `json:"item_domain"`
-	ItemID                            int64                                            `json:"item_id"`
-	ItemOrigin                        string                                           `json:"item_origin"`
-	ItemState                         string                                           `json:"item_state"`
-	Login                             string                                           `json:"login"`
-	LoginData                         ManagingSteamAddMafileResponseItemLoginData      `json:"loginData"`
-	MarketCustomTitle                 string                                           `json:"market_custom_title"`
-	MaxDiscountPercent                int64                                            `json:"max_discount_percent"`
-	NeedToRequireVideoToViewLoginData bool                                             `json:"needToRequireVideoToViewLoginData"`
-	NoteText                          string                                           `json:"note_text"`
-	Nsb                               int64                                            `json:"nsb"`
-	PendingDeletionDate               int64                                            `json:"pending_deletion_date"`
-	Price                             int64                                            `json:"price"`
-	PriceWithSellerFee                float64                                          `json:"priceWithSellerFee"`
-	PriceWithSellerFeeLabel           string                                           `json:"priceWithSellerFeeLabel"`
-	PriceCurrency                     string                                           `json:"price_currency"`
-	PublishedDate                     int64                                            `json:"published_date"`
-	RefreshedDate                     int64                                            `json:"refreshed_date"`
-	ResaleItemOrigin                  string                                           `json:"resale_item_origin"`
-	RubPrice                          int64                                            `json:"rub_price"`
-	Seller                            ManagingSteamAddMafileResponseItemSeller         `json:"seller"`
-	ShowGetEmailCodeButton            bool                                             `json:"showGetEmailCodeButton"`
-	Tags                              ManagingSteamAddMafileResponseItemTags           `json:"tags"`
-	TempEmail                         string                                           `json:"temp_email"`
-	Title                             string                                           `json:"title"`
-	TitleEn                           string                                           `json:"title_en"`
-	UniqueKeyExists                   bool                                             `json:"uniqueKeyExists"`
-	UpdateStatDate                    int64                                            `json:"update_stat_date"`
-	UserAllowAskDiscount              int64                                            `json:"user_allow_ask_discount"`
-	ViewCount                         int64                                            `json:"view_count"`
-	VisitorIsAuthor                   bool                                             `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AIPrice                           float64 `json:"aiPrice"`
+	AIPriceCheckDate                  float64 `json:"aiPriceCheckDate"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	AutoBuyPrice                      float64 `json:"autoBuyPrice"`
+	AutoBuyPriceCheckDate             float64 `json:"autoBuyPriceCheckDate"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	Buyer                             any     `json:"buyer"`
+	BuyerAvatarDate                   float64 `json:"buyer_avatar_date"`
+	BuyerDisplayIconGroupID           float64 `json:"buyer_display_icon_group_id"`
+	BuyerUniqBanner                   string  `json:"buyer_uniq_banner"`
+	BuyerUserGroupID                  float64 `json:"buyer_user_group_id"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangeEmailPassword            bool    `json:"canChangeEmailPassword"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckAIPrice                   bool    `json:"canCheckAiPrice"`
+	CanCheckAutoBuyPrice              bool    `json:"canCheckAutoBuyPrice"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItem                     bool    `json:"canResellItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanShareItem                      bool    `json:"canShareItem"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewItemViews                  bool    `json:"canViewItemViews"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CartPrice                         any     `json:"cart_price"`
+	CategoryID                        float64 `json:"category_id"`
+	ContentID                         any     `json:"content_id"`
+	ContentType                       any     `json:"content_type"`
+	CopyFormatData                    any     `json:"copyFormatData"`
+	CustomFields                      any     `json:"customFields"`
+	DeleteDate                        float64 `json:"delete_date"`
+	DeleteReason                      string  `json:"delete_reason"`
+	DeleteUserID                      float64 `json:"delete_user_id"`
+	DeleteUsername                    string  `json:"delete_username"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	GetEmailCodeDisplayLogin          any     `json:"getEmailCodeDisplayLogin"`
+	Guarantee                         any     `json:"guarantee"`
+	ImagePreviewLinks                 any     `json:"imagePreviewLinks"`
+	InCart                            any     `json:"in_cart"`
+	Information                       string  `json:"information"`
+	InformationEn                     string  `json:"information_en"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsSmallExf                        bool    `json:"isSmallExf"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsFave                            any     `json:"is_fave"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	Login                             string  `json:"login"`
+	LoginData                         any     `json:"loginData"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	NoteText                          string  `json:"note_text"`
+	Nsb                               float64 `json:"nsb"`
+	PendingDeletionDate               float64 `json:"pending_deletion_date"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceWithSellerFeeLabel           string  `json:"priceWithSellerFeeLabel"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	Tags                              any     `json:"tags"`
+	TempEmail                         string  `json:"temp_email"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UniqueKeyExists                   bool    `json:"uniqueKeyExists"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // ManagingSteamAddMafileResponseItemBumpSettings represents a component schema.
@@ -15750,16 +15615,16 @@ type ManagingSteamAddMafileResponseItemBumpSettings struct {
 
 // ManagingSteamAddMafileResponseItemBuyer represents a component schema.
 type ManagingSteamAddMafileResponseItemBuyer struct {
-	DisplayIconGroupID  int64  `json:"display_icon_group_id"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsBanned            int64  `json:"is_banned"`
-	OperationDate       int64  `json:"operation_date"`
-	UniqBanner          string `json:"uniq_banner"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	VisitorIsBuyer      bool   `json:"visitorIsBuyer"`
+	DisplayIconGroupID  float64 `json:"display_icon_group_id"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsBanned            float64 `json:"is_banned"`
+	OperationDate       float64 `json:"operation_date"`
+	UniqBanner          string  `json:"uniq_banner"`
+	UniqUsernameCSS     string  `json:"uniq_username_css"`
+	UserGroupID         float64 `json:"user_group_id"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
+	VisitorIsBuyer      bool    `json:"visitorIsBuyer"`
 }
 
 // ManagingSteamAddMafileResponseItemCopyFormatData represents a component schema.
@@ -15772,7 +15637,7 @@ type ManagingSteamAddMafileResponseItemCopyFormatData struct {
 // ManagingSteamAddMafileResponseItemCustomFields represents a component schema.
 type ManagingSteamAddMafileResponseItemCustomFields struct {
 	N4             string `json:"_4"`
-	AllowSelfUnban []any  `json:"allowSelfUnban"`
+	AllowSelfUnban any    `json:"allowSelfUnban"`
 	BanReason      string `json:"ban_reason"`
 	Discord        string `json:"discord"`
 	Github         string `json:"github"`
@@ -15785,16 +15650,16 @@ type ManagingSteamAddMafileResponseItemCustomFields struct {
 
 // ManagingSteamAddMafileResponseItemGuarantee represents a component schema.
 type ManagingSteamAddMafileResponseItemGuarantee struct {
-	Active                bool   `json:"active"`
-	Cancelled             bool   `json:"cancelled"`
-	CancelledReason       string `json:"cancelledReason"`
-	CancelledReasonPhrase string `json:"cancelledReasonPhrase"`
-	Class                 string `json:"class"`
-	Duration              int64  `json:"duration"`
-	DurationPhrase        string `json:"durationPhrase"`
-	EndDate               int64  `json:"endDate"`
-	RemainingTime         int64  `json:"remainingTime"`
-	RemainingTimePhrase   string `json:"remainingTimePhrase"`
+	Active                bool    `json:"active"`
+	Cancelled             bool    `json:"cancelled"`
+	CancelledReason       string  `json:"cancelledReason"`
+	CancelledReasonPhrase string  `json:"cancelledReasonPhrase"`
+	Class                 string  `json:"class"`
+	Duration              float64 `json:"duration"`
+	DurationPhrase        string  `json:"durationPhrase"`
+	EndDate               float64 `json:"endDate"`
+	RemainingTime         float64 `json:"remainingTime"`
+	RemainingTimePhrase   string  `json:"remainingTimePhrase"`
 }
 
 // ManagingSteamAddMafileResponseItemLoginData represents a component schema.
@@ -15810,19 +15675,19 @@ type ManagingSteamAddMafileResponseItemLoginData struct {
 
 // ManagingSteamAddMafileResponseItemSeller represents a component schema.
 type ManagingSteamAddMafileResponseItemSeller struct {
-	ActiveItemsCount      int64                                            `json:"active_items_count"`
-	AvatarDate            int64                                            `json:"avatar_date"`
-	Contacts              ManagingSteamAddMafileResponseItemSellerContacts `json:"contacts"`
-	DisplayStyleGroupID   int64                                            `json:"display_style_group_id"`
-	EffectiveLastActivity int64                                            `json:"effective_last_activity"`
-	IsOnline              bool                                             `json:"isOnline"`
-	IsBanned              int64                                            `json:"is_banned"`
-	JoinedDate            int64                                            `json:"joined_date"`
-	RestoreData           string                                           `json:"restore_data"`
-	RestorePercents       any                                              `json:"restore_percents"`
-	SoldItemsCount        int64                                            `json:"sold_items_count"`
-	UserID                int64                                            `json:"user_id"`
-	Username              string                                           `json:"username"`
+	ActiveItemsCount      float64 `json:"active_items_count"`
+	AvatarDate            float64 `json:"avatar_date"`
+	Contacts              any     `json:"contacts"`
+	DisplayStyleGroupID   float64 `json:"display_style_group_id"`
+	EffectiveLastActivity float64 `json:"effective_last_activity"`
+	IsOnline              bool    `json:"isOnline"`
+	IsBanned              float64 `json:"is_banned"`
+	JoinedDate            float64 `json:"joined_date"`
+	RestoreData           string  `json:"restore_data"`
+	RestorePercents       any     `json:"restore_percents"`
+	SoldItemsCount        float64 `json:"sold_items_count"`
+	UserID                float64 `json:"user_id"`
+	Username              string  `json:"username"`
 }
 
 // ManagingSteamAddMafileResponseItemSellerContacts represents a component schema.
@@ -15831,40 +15696,26 @@ type ManagingSteamAddMafileResponseItemSellerContacts struct {
 	Telegram  string `json:"telegram"`
 }
 
-// ManagingSteamAddMafileResponseItemTags represents a component schema.
-type ManagingSteamAddMafileResponseItemTags struct {
-	N1234567890 ManagingSteamAddMafileResponseItemTagsN1234567890 `json:"1234567890"`
-}
-
-// ManagingSteamAddMafileResponseItemTagsN1234567890 represents a component schema.
-type ManagingSteamAddMafileResponseItemTagsN1234567890 struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
-}
-
 // ManagingSteamAddMafileResponseSystemInfo represents a component schema.
 type ManagingSteamAddMafileResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingSteamGetMafileResponseMaFile represents a component schema.
 type ManagingSteamGetMafileResponseMaFile struct {
-	Session        ManagingSteamGetMafileResponseMaFileSession `json:"Session"`
-	AccountName    string                                      `json:"account_name"`
-	DeviceID       string                                      `json:"device_id"`
-	FullyEnrolled  bool                                        `json:"fully_enrolled"`
-	IdentitySecret string                                      `json:"identity_secret"`
-	RevocationCode string                                      `json:"revocation_code"`
-	Secret1        string                                      `json:"secret_1"`
-	SerialNumber   int64                                       `json:"serial_number"`
-	SharedSecret   string                                      `json:"shared_secret"`
-	TokenGid       string                                      `json:"token_gid"`
-	URI            string                                      `json:"uri"`
+	Session        any     `json:"Session"`
+	AccountName    string  `json:"account_name"`
+	DeviceID       string  `json:"device_id"`
+	FullyEnrolled  bool    `json:"fully_enrolled"`
+	IdentitySecret string  `json:"identity_secret"`
+	RevocationCode string  `json:"revocation_code"`
+	Secret1        string  `json:"secret_1"`
+	SerialNumber   float64 `json:"serial_number"`
+	SharedSecret   string  `json:"shared_secret"`
+	TokenGid       string  `json:"token_gid"`
+	URI            string  `json:"uri"`
 }
 
 // ManagingSteamGetMafileResponseMaFileSession represents a component schema.
@@ -15878,170 +15729,142 @@ type ManagingSteamGetMafileResponseMaFileSession struct {
 
 // ManagingSteamGetMafileResponseSystemInfo represents a component schema.
 type ManagingSteamGetMafileResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingSteamInventoryValueResponseData represents a component schema.
 type ManagingSteamInventoryValueResponseData struct {
-	AppID               int64                                        `json:"appId"`
-	AppTitle            string                                       `json:"appTitle"`
-	Currency            string                                       `json:"currency"`
-	CurrencyIcon        string                                       `json:"currencyIcon"`
-	ItemCount           int64                                        `json:"itemCount"`
-	Items               ManagingSteamInventoryValueResponseDataItems `json:"items"`
-	Language            string                                       `json:"language"`
-	MarketableItemCount int64                                        `json:"marketableItemCount"`
-	SteamID             string                                       `json:"steam_id"`
-	Time                int64                                        `json:"time"`
-	TotalValue          float64                                      `json:"totalValue"`
-}
-
-// ManagingSteamInventoryValueResponseDataItems represents a component schema.
-type ManagingSteamInventoryValueResponseDataItems struct {
-	N0 *ManagingSteamInventoryValueResponseDataItemsN0 `json:"0,omitempty"`
-}
-
-// ManagingSteamInventoryValueResponseDataItemsN0 represents a component schema.
-type ManagingSteamInventoryValueResponseDataItemsN0 struct {
-	Classid        string                                                 `json:"classid"`
-	Count          int64                                                  `json:"count"`
-	Fraudwarnings  any                                                    `json:"fraudwarnings"`
-	ImageURL       string                                                 `json:"image_url"`
-	MarketHashName string                                                 `json:"market_hash_name"`
-	Marketable     int64                                                  `json:"marketable"`
-	Price          float64                                                `json:"price"`
-	Stickers       ManagingSteamInventoryValueResponseDataItemsN0Stickers `json:"stickers"`
-	Title          string                                                 `json:"title"`
-	Tradable       int64                                                  `json:"tradable"`
-	Type           string                                                 `json:"type"`
-}
-
-// ManagingSteamInventoryValueResponseDataItemsN0Stickers represents a component schema.
-type ManagingSteamInventoryValueResponseDataItemsN0Stickers struct {
-	Count        int64    `json:"count"`
-	Images       []string `json:"images"`
-	StickerCount int64    `json:"stickerCount"`
-	Title        string   `json:"title"`
+	AppID               float64 `json:"appId"`
+	AppTitle            string  `json:"appTitle"`
+	Currency            string  `json:"currency"`
+	CurrencyIcon        string  `json:"currencyIcon"`
+	ItemCount           float64 `json:"itemCount"`
+	Items               any     `json:"items"`
+	Language            string  `json:"language"`
+	MarketableItemCount float64 `json:"marketableItemCount"`
+	SteamID             string  `json:"steam_id"`
+	Time                float64 `json:"time"`
+	TotalValue          float64 `json:"totalValue"`
 }
 
 // ManagingSteamInventoryValueResponseSystemInfo represents a component schema.
 type ManagingSteamInventoryValueResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingSteamMafileCodeResponseCodeData represents a component schema.
 type ManagingSteamMafileCodeResponseCodeData struct {
-	Code      string `json:"code"`
-	Date      int64  `json:"date"`
-	TextPlain string `json:"textPlain"`
+	Code      string  `json:"code"`
+	Date      float64 `json:"date"`
+	TextPlain string  `json:"textPlain"`
 }
 
 // ManagingSteamMafileCodeResponseItem represents a component schema.
 type ManagingSteamMafileCodeResponseItem struct {
-	AccountLink                       string                                            `json:"accountLink"`
-	AccountLinks                      []any                                             `json:"accountLinks"`
-	AccountLastActivity               int64                                             `json:"account_last_activity"`
-	AIPrice                           int64                                             `json:"aiPrice"`
-	AIPriceCheckDate                  int64                                             `json:"aiPriceCheckDate"`
-	AllowAskDiscount                  int64                                             `json:"allow_ask_discount"`
-	AutoBuyPrice                      int64                                             `json:"autoBuyPrice"`
-	AutoBuyPriceCheckDate             int64                                             `json:"autoBuyPriceCheckDate"`
-	BumpSettings                      ManagingSteamMafileCodeResponseItemBumpSettings   `json:"bumpSettings"`
-	Buyer                             ManagingSteamMafileCodeResponseItemBuyer          `json:"buyer"`
-	BuyerAvatarDate                   int64                                             `json:"buyer_avatar_date"`
-	BuyerDisplayIconGroupID           int64                                             `json:"buyer_display_icon_group_id"`
-	BuyerUniqBanner                   string                                            `json:"buyer_uniq_banner"`
-	BuyerUserGroupID                  int64                                             `json:"buyer_user_group_id"`
-	CanAskDiscount                    bool                                              `json:"canAskDiscount"`
-	CanChangeEmailPassword            bool                                              `json:"canChangeEmailPassword"`
-	CanChangePassword                 bool                                              `json:"canChangePassword"`
-	CanCheckAIPrice                   bool                                              `json:"canCheckAiPrice"`
-	CanCheckAutoBuyPrice              bool                                              `json:"canCheckAutoBuyPrice"`
-	CanCheckGuarantee                 bool                                              `json:"canCheckGuarantee"`
-	CanReportItem                     bool                                              `json:"canReportItem"`
-	CanResellItem                     bool                                              `json:"canResellItem"`
-	CanResellItemAfterPurchase        bool                                              `json:"canResellItemAfterPurchase"`
-	CanShareItem                      bool                                              `json:"canShareItem"`
-	CanUpdateItemStats                bool                                              `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                                              `json:"canValidateAccount"`
-	CanViewAccountLink                bool                                              `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                                              `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                                              `json:"canViewEmailLoginData"`
-	CanViewItemViews                  bool                                              `json:"canViewItemViews"`
-	CanViewLoginData                  bool                                              `json:"canViewLoginData"`
-	CartPrice                         any                                               `json:"cart_price"`
-	CategoryID                        int64                                             `json:"category_id"`
-	ContentID                         any                                               `json:"content_id"`
-	ContentType                       any                                               `json:"content_type"`
-	CopyFormatData                    ManagingSteamMafileCodeResponseItemCopyFormatData `json:"copyFormatData"`
-	CustomFields                      ManagingSteamMafileCodeResponseItemCustomFields   `json:"customFields"`
-	DeleteDate                        int64                                             `json:"delete_date"`
-	DeleteReason                      string                                            `json:"delete_reason"`
-	DeleteUserID                      int64                                             `json:"delete_user_id"`
-	DeleteUsername                    string                                            `json:"delete_username"`
-	Deposit                           int64                                             `json:"deposit"`
-	Description                       string                                            `json:"description"`
-	DescriptionEnHTML                 string                                            `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                                            `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                                            `json:"descriptionHtml"`
-	DescriptionPlain                  string                                            `json:"descriptionPlain"`
-	DescriptionEn                     string                                            `json:"description_en"`
-	EditDate                          int64                                             `json:"edit_date"`
-	EmailProvider                     string                                            `json:"email_provider"`
-	EmailType                         string                                            `json:"email_type"`
-	ExtendedGuarantee                 int64                                             `json:"extended_guarantee"`
-	ExternalAuth                      []any                                             `json:"externalAuth"`
-	ExtraPrices                       []any                                             `json:"extraPrices"`
-	FeedbackData                      string                                            `json:"feedback_data"`
-	GetEmailCodeDisplayLogin          any                                               `json:"getEmailCodeDisplayLogin"`
-	Guarantee                         ManagingSteamMafileCodeResponseItemGuarantee      `json:"guarantee"`
-	ImagePreviewLinks                 []string                                          `json:"imagePreviewLinks"`
-	InCart                            any                                               `json:"in_cart"`
-	Information                       string                                            `json:"information"`
-	InformationEn                     string                                            `json:"information_en"`
-	IsBirthdayToday                   bool                                              `json:"isBirthdayToday"`
-	IsIgnored                         bool                                              `json:"isIgnored"`
-	IsPersonalAccount                 bool                                              `json:"isPersonalAccount"`
-	IsSmallExf                        bool                                              `json:"isSmallExf"`
-	IsTrusted                         bool                                              `json:"isTrusted"`
-	IsFave                            any                                               `json:"is_fave"`
-	IsSticky                          int64                                             `json:"is_sticky"`
-	ItemOriginPhrase                  string                                            `json:"itemOriginPhrase"`
-	ItemDomain                        string                                            `json:"item_domain"`
-	ItemID                            int64                                             `json:"item_id"`
-	ItemOrigin                        string                                            `json:"item_origin"`
-	ItemState                         string                                            `json:"item_state"`
-	Login                             string                                            `json:"login"`
-	LoginData                         ManagingSteamMafileCodeResponseItemLoginData      `json:"loginData"`
-	MarketCustomTitle                 string                                            `json:"market_custom_title"`
-	MaxDiscountPercent                int64                                             `json:"max_discount_percent"`
-	NeedToRequireVideoToViewLoginData bool                                              `json:"needToRequireVideoToViewLoginData"`
-	NoteText                          string                                            `json:"note_text"`
-	Nsb                               int64                                             `json:"nsb"`
-	PendingDeletionDate               int64                                             `json:"pending_deletion_date"`
-	Price                             int64                                             `json:"price"`
-	PriceWithSellerFee                float64                                           `json:"priceWithSellerFee"`
-	PriceWithSellerFeeLabel           string                                            `json:"priceWithSellerFeeLabel"`
-	PriceCurrency                     string                                            `json:"price_currency"`
-	PublishedDate                     int64                                             `json:"published_date"`
-	RefreshedDate                     int64                                             `json:"refreshed_date"`
-	ResaleItemOrigin                  string                                            `json:"resale_item_origin"`
-	RubPrice                          int64                                             `json:"rub_price"`
-	Seller                            ManagingSteamMafileCodeResponseItemSeller         `json:"seller"`
-	ShowGetEmailCodeButton            bool                                              `json:"showGetEmailCodeButton"`
-	Tags                              ManagingSteamMafileCodeResponseItemTags           `json:"tags"`
-	TempEmail                         string                                            `json:"temp_email"`
-	Title                             string                                            `json:"title"`
-	TitleEn                           string                                            `json:"title_en"`
-	UniqueKeyExists                   bool                                              `json:"uniqueKeyExists"`
-	UpdateStatDate                    int64                                             `json:"update_stat_date"`
-	UserAllowAskDiscount              int64                                             `json:"user_allow_ask_discount"`
-	ViewCount                         int64                                             `json:"view_count"`
-	VisitorIsAuthor                   bool                                              `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AIPrice                           float64 `json:"aiPrice"`
+	AIPriceCheckDate                  float64 `json:"aiPriceCheckDate"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	AutoBuyPrice                      float64 `json:"autoBuyPrice"`
+	AutoBuyPriceCheckDate             float64 `json:"autoBuyPriceCheckDate"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	Buyer                             any     `json:"buyer"`
+	BuyerAvatarDate                   float64 `json:"buyer_avatar_date"`
+	BuyerDisplayIconGroupID           float64 `json:"buyer_display_icon_group_id"`
+	BuyerUniqBanner                   string  `json:"buyer_uniq_banner"`
+	BuyerUserGroupID                  float64 `json:"buyer_user_group_id"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangeEmailPassword            bool    `json:"canChangeEmailPassword"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckAIPrice                   bool    `json:"canCheckAiPrice"`
+	CanCheckAutoBuyPrice              bool    `json:"canCheckAutoBuyPrice"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItem                     bool    `json:"canResellItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanShareItem                      bool    `json:"canShareItem"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewItemViews                  bool    `json:"canViewItemViews"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CartPrice                         any     `json:"cart_price"`
+	CategoryID                        float64 `json:"category_id"`
+	ContentID                         any     `json:"content_id"`
+	ContentType                       any     `json:"content_type"`
+	CopyFormatData                    any     `json:"copyFormatData"`
+	CustomFields                      any     `json:"customFields"`
+	DeleteDate                        float64 `json:"delete_date"`
+	DeleteReason                      string  `json:"delete_reason"`
+	DeleteUserID                      float64 `json:"delete_user_id"`
+	DeleteUsername                    string  `json:"delete_username"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	GetEmailCodeDisplayLogin          any     `json:"getEmailCodeDisplayLogin"`
+	Guarantee                         any     `json:"guarantee"`
+	ImagePreviewLinks                 any     `json:"imagePreviewLinks"`
+	InCart                            any     `json:"in_cart"`
+	Information                       string  `json:"information"`
+	InformationEn                     string  `json:"information_en"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsSmallExf                        bool    `json:"isSmallExf"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsFave                            any     `json:"is_fave"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	Login                             string  `json:"login"`
+	LoginData                         any     `json:"loginData"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	NoteText                          string  `json:"note_text"`
+	Nsb                               float64 `json:"nsb"`
+	PendingDeletionDate               float64 `json:"pending_deletion_date"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceWithSellerFeeLabel           string  `json:"priceWithSellerFeeLabel"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	Tags                              any     `json:"tags"`
+	TempEmail                         string  `json:"temp_email"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UniqueKeyExists                   bool    `json:"uniqueKeyExists"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // ManagingSteamMafileCodeResponseItemBumpSettings represents a component schema.
@@ -16055,16 +15878,16 @@ type ManagingSteamMafileCodeResponseItemBumpSettings struct {
 
 // ManagingSteamMafileCodeResponseItemBuyer represents a component schema.
 type ManagingSteamMafileCodeResponseItemBuyer struct {
-	DisplayIconGroupID  int64  `json:"display_icon_group_id"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsBanned            int64  `json:"is_banned"`
-	OperationDate       int64  `json:"operation_date"`
-	UniqBanner          string `json:"uniq_banner"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	VisitorIsBuyer      bool   `json:"visitorIsBuyer"`
+	DisplayIconGroupID  float64 `json:"display_icon_group_id"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsBanned            float64 `json:"is_banned"`
+	OperationDate       float64 `json:"operation_date"`
+	UniqBanner          string  `json:"uniq_banner"`
+	UniqUsernameCSS     string  `json:"uniq_username_css"`
+	UserGroupID         float64 `json:"user_group_id"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
+	VisitorIsBuyer      bool    `json:"visitorIsBuyer"`
 }
 
 // ManagingSteamMafileCodeResponseItemCopyFormatData represents a component schema.
@@ -16077,7 +15900,7 @@ type ManagingSteamMafileCodeResponseItemCopyFormatData struct {
 // ManagingSteamMafileCodeResponseItemCustomFields represents a component schema.
 type ManagingSteamMafileCodeResponseItemCustomFields struct {
 	N4             string `json:"_4"`
-	AllowSelfUnban []any  `json:"allowSelfUnban"`
+	AllowSelfUnban any    `json:"allowSelfUnban"`
 	BanReason      string `json:"ban_reason"`
 	Discord        string `json:"discord"`
 	Github         string `json:"github"`
@@ -16090,16 +15913,16 @@ type ManagingSteamMafileCodeResponseItemCustomFields struct {
 
 // ManagingSteamMafileCodeResponseItemGuarantee represents a component schema.
 type ManagingSteamMafileCodeResponseItemGuarantee struct {
-	Active                bool   `json:"active"`
-	Cancelled             bool   `json:"cancelled"`
-	CancelledReason       string `json:"cancelledReason"`
-	CancelledReasonPhrase string `json:"cancelledReasonPhrase"`
-	Class                 string `json:"class"`
-	Duration              int64  `json:"duration"`
-	DurationPhrase        string `json:"durationPhrase"`
-	EndDate               int64  `json:"endDate"`
-	RemainingTime         int64  `json:"remainingTime"`
-	RemainingTimePhrase   string `json:"remainingTimePhrase"`
+	Active                bool    `json:"active"`
+	Cancelled             bool    `json:"cancelled"`
+	CancelledReason       string  `json:"cancelledReason"`
+	CancelledReasonPhrase string  `json:"cancelledReasonPhrase"`
+	Class                 string  `json:"class"`
+	Duration              float64 `json:"duration"`
+	DurationPhrase        string  `json:"durationPhrase"`
+	EndDate               float64 `json:"endDate"`
+	RemainingTime         float64 `json:"remainingTime"`
+	RemainingTimePhrase   string  `json:"remainingTimePhrase"`
 }
 
 // ManagingSteamMafileCodeResponseItemLoginData represents a component schema.
@@ -16115,19 +15938,19 @@ type ManagingSteamMafileCodeResponseItemLoginData struct {
 
 // ManagingSteamMafileCodeResponseItemSeller represents a component schema.
 type ManagingSteamMafileCodeResponseItemSeller struct {
-	ActiveItemsCount      int64                                             `json:"active_items_count"`
-	AvatarDate            int64                                             `json:"avatar_date"`
-	Contacts              ManagingSteamMafileCodeResponseItemSellerContacts `json:"contacts"`
-	DisplayStyleGroupID   int64                                             `json:"display_style_group_id"`
-	EffectiveLastActivity int64                                             `json:"effective_last_activity"`
-	IsOnline              bool                                              `json:"isOnline"`
-	IsBanned              int64                                             `json:"is_banned"`
-	JoinedDate            int64                                             `json:"joined_date"`
-	RestoreData           string                                            `json:"restore_data"`
-	RestorePercents       any                                               `json:"restore_percents"`
-	SoldItemsCount        int64                                             `json:"sold_items_count"`
-	UserID                int64                                             `json:"user_id"`
-	Username              string                                            `json:"username"`
+	ActiveItemsCount      float64 `json:"active_items_count"`
+	AvatarDate            float64 `json:"avatar_date"`
+	Contacts              any     `json:"contacts"`
+	DisplayStyleGroupID   float64 `json:"display_style_group_id"`
+	EffectiveLastActivity float64 `json:"effective_last_activity"`
+	IsOnline              bool    `json:"isOnline"`
+	IsBanned              float64 `json:"is_banned"`
+	JoinedDate            float64 `json:"joined_date"`
+	RestoreData           string  `json:"restore_data"`
+	RestorePercents       any     `json:"restore_percents"`
+	SoldItemsCount        float64 `json:"sold_items_count"`
+	UserID                float64 `json:"user_id"`
+	Username              string  `json:"username"`
 }
 
 // ManagingSteamMafileCodeResponseItemSellerContacts represents a component schema.
@@ -16136,122 +15959,108 @@ type ManagingSteamMafileCodeResponseItemSellerContacts struct {
 	Telegram  string `json:"telegram"`
 }
 
-// ManagingSteamMafileCodeResponseItemTags represents a component schema.
-type ManagingSteamMafileCodeResponseItemTags struct {
-	N1234567890 ManagingSteamMafileCodeResponseItemTagsN1234567890 `json:"1234567890"`
-}
-
-// ManagingSteamMafileCodeResponseItemTagsN1234567890 represents a component schema.
-type ManagingSteamMafileCodeResponseItemTagsN1234567890 struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
-}
-
 // ManagingSteamRemoveMafileResponseItem represents a component schema.
 type ManagingSteamRemoveMafileResponseItem struct {
-	AccountLink                       string                                              `json:"accountLink"`
-	AccountLinks                      []any                                               `json:"accountLinks"`
-	AccountLastActivity               int64                                               `json:"account_last_activity"`
-	AIPrice                           int64                                               `json:"aiPrice"`
-	AIPriceCheckDate                  int64                                               `json:"aiPriceCheckDate"`
-	AllowAskDiscount                  int64                                               `json:"allow_ask_discount"`
-	AutoBuyPrice                      int64                                               `json:"autoBuyPrice"`
-	AutoBuyPriceCheckDate             int64                                               `json:"autoBuyPriceCheckDate"`
-	BumpSettings                      ManagingSteamRemoveMafileResponseItemBumpSettings   `json:"bumpSettings"`
-	Buyer                             ManagingSteamRemoveMafileResponseItemBuyer          `json:"buyer"`
-	BuyerAvatarDate                   int64                                               `json:"buyer_avatar_date"`
-	BuyerDisplayIconGroupID           int64                                               `json:"buyer_display_icon_group_id"`
-	BuyerUniqBanner                   string                                              `json:"buyer_uniq_banner"`
-	BuyerUserGroupID                  int64                                               `json:"buyer_user_group_id"`
-	CanAskDiscount                    bool                                                `json:"canAskDiscount"`
-	CanChangeEmailPassword            bool                                                `json:"canChangeEmailPassword"`
-	CanChangePassword                 bool                                                `json:"canChangePassword"`
-	CanCheckAIPrice                   bool                                                `json:"canCheckAiPrice"`
-	CanCheckAutoBuyPrice              bool                                                `json:"canCheckAutoBuyPrice"`
-	CanCheckGuarantee                 bool                                                `json:"canCheckGuarantee"`
-	CanReportItem                     bool                                                `json:"canReportItem"`
-	CanResellItem                     bool                                                `json:"canResellItem"`
-	CanResellItemAfterPurchase        bool                                                `json:"canResellItemAfterPurchase"`
-	CanShareItem                      bool                                                `json:"canShareItem"`
-	CanUpdateItemStats                bool                                                `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                                                `json:"canValidateAccount"`
-	CanViewAccountLink                bool                                                `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                                                `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                                                `json:"canViewEmailLoginData"`
-	CanViewItemViews                  bool                                                `json:"canViewItemViews"`
-	CanViewLoginData                  bool                                                `json:"canViewLoginData"`
-	CartPrice                         any                                                 `json:"cart_price"`
-	CategoryID                        int64                                               `json:"category_id"`
-	ContentID                         any                                                 `json:"content_id"`
-	ContentType                       any                                                 `json:"content_type"`
-	CopyFormatData                    ManagingSteamRemoveMafileResponseItemCopyFormatData `json:"copyFormatData"`
-	CustomFields                      ManagingSteamRemoveMafileResponseItemCustomFields   `json:"customFields"`
-	DeleteDate                        int64                                               `json:"delete_date"`
-	DeleteReason                      string                                              `json:"delete_reason"`
-	DeleteUserID                      int64                                               `json:"delete_user_id"`
-	DeleteUsername                    string                                              `json:"delete_username"`
-	Deposit                           int64                                               `json:"deposit"`
-	Description                       string                                              `json:"description"`
-	DescriptionEnHTML                 string                                              `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                                              `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                                              `json:"descriptionHtml"`
-	DescriptionPlain                  string                                              `json:"descriptionPlain"`
-	DescriptionEn                     string                                              `json:"description_en"`
-	EditDate                          int64                                               `json:"edit_date"`
-	EmailProvider                     string                                              `json:"email_provider"`
-	EmailType                         string                                              `json:"email_type"`
-	ExtendedGuarantee                 int64                                               `json:"extended_guarantee"`
-	ExternalAuth                      []any                                               `json:"externalAuth"`
-	ExtraPrices                       []any                                               `json:"extraPrices"`
-	FeedbackData                      string                                              `json:"feedback_data"`
-	GetEmailCodeDisplayLogin          any                                                 `json:"getEmailCodeDisplayLogin"`
-	Guarantee                         ManagingSteamRemoveMafileResponseItemGuarantee      `json:"guarantee"`
-	ImagePreviewLinks                 []string                                            `json:"imagePreviewLinks"`
-	InCart                            any                                                 `json:"in_cart"`
-	Information                       string                                              `json:"information"`
-	InformationEn                     string                                              `json:"information_en"`
-	IsBirthdayToday                   bool                                                `json:"isBirthdayToday"`
-	IsIgnored                         bool                                                `json:"isIgnored"`
-	IsPersonalAccount                 bool                                                `json:"isPersonalAccount"`
-	IsSmallExf                        bool                                                `json:"isSmallExf"`
-	IsTrusted                         bool                                                `json:"isTrusted"`
-	IsFave                            any                                                 `json:"is_fave"`
-	IsSticky                          int64                                               `json:"is_sticky"`
-	ItemOriginPhrase                  string                                              `json:"itemOriginPhrase"`
-	ItemDomain                        string                                              `json:"item_domain"`
-	ItemID                            int64                                               `json:"item_id"`
-	ItemOrigin                        string                                              `json:"item_origin"`
-	ItemState                         string                                              `json:"item_state"`
-	Login                             string                                              `json:"login"`
-	LoginData                         ManagingSteamRemoveMafileResponseItemLoginData      `json:"loginData"`
-	MarketCustomTitle                 string                                              `json:"market_custom_title"`
-	MaxDiscountPercent                int64                                               `json:"max_discount_percent"`
-	NeedToRequireVideoToViewLoginData bool                                                `json:"needToRequireVideoToViewLoginData"`
-	NoteText                          string                                              `json:"note_text"`
-	Nsb                               int64                                               `json:"nsb"`
-	PendingDeletionDate               int64                                               `json:"pending_deletion_date"`
-	Price                             int64                                               `json:"price"`
-	PriceWithSellerFee                float64                                             `json:"priceWithSellerFee"`
-	PriceWithSellerFeeLabel           string                                              `json:"priceWithSellerFeeLabel"`
-	PriceCurrency                     string                                              `json:"price_currency"`
-	PublishedDate                     int64                                               `json:"published_date"`
-	RefreshedDate                     int64                                               `json:"refreshed_date"`
-	ResaleItemOrigin                  string                                              `json:"resale_item_origin"`
-	RubPrice                          int64                                               `json:"rub_price"`
-	Seller                            ManagingSteamRemoveMafileResponseItemSeller         `json:"seller"`
-	ShowGetEmailCodeButton            bool                                                `json:"showGetEmailCodeButton"`
-	Tags                              ManagingSteamRemoveMafileResponseItemTags           `json:"tags"`
-	TempEmail                         string                                              `json:"temp_email"`
-	Title                             string                                              `json:"title"`
-	TitleEn                           string                                              `json:"title_en"`
-	UniqueKeyExists                   bool                                                `json:"uniqueKeyExists"`
-	UpdateStatDate                    int64                                               `json:"update_stat_date"`
-	UserAllowAskDiscount              int64                                               `json:"user_allow_ask_discount"`
-	ViewCount                         int64                                               `json:"view_count"`
-	VisitorIsAuthor                   bool                                                `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AIPrice                           float64 `json:"aiPrice"`
+	AIPriceCheckDate                  float64 `json:"aiPriceCheckDate"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	AutoBuyPrice                      float64 `json:"autoBuyPrice"`
+	AutoBuyPriceCheckDate             float64 `json:"autoBuyPriceCheckDate"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	Buyer                             any     `json:"buyer"`
+	BuyerAvatarDate                   float64 `json:"buyer_avatar_date"`
+	BuyerDisplayIconGroupID           float64 `json:"buyer_display_icon_group_id"`
+	BuyerUniqBanner                   string  `json:"buyer_uniq_banner"`
+	BuyerUserGroupID                  float64 `json:"buyer_user_group_id"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangeEmailPassword            bool    `json:"canChangeEmailPassword"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckAIPrice                   bool    `json:"canCheckAiPrice"`
+	CanCheckAutoBuyPrice              bool    `json:"canCheckAutoBuyPrice"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItem                     bool    `json:"canResellItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanShareItem                      bool    `json:"canShareItem"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewItemViews                  bool    `json:"canViewItemViews"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CartPrice                         any     `json:"cart_price"`
+	CategoryID                        float64 `json:"category_id"`
+	ContentID                         any     `json:"content_id"`
+	ContentType                       any     `json:"content_type"`
+	CopyFormatData                    any     `json:"copyFormatData"`
+	CustomFields                      any     `json:"customFields"`
+	DeleteDate                        float64 `json:"delete_date"`
+	DeleteReason                      string  `json:"delete_reason"`
+	DeleteUserID                      float64 `json:"delete_user_id"`
+	DeleteUsername                    string  `json:"delete_username"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	GetEmailCodeDisplayLogin          any     `json:"getEmailCodeDisplayLogin"`
+	Guarantee                         any     `json:"guarantee"`
+	ImagePreviewLinks                 any     `json:"imagePreviewLinks"`
+	InCart                            any     `json:"in_cart"`
+	Information                       string  `json:"information"`
+	InformationEn                     string  `json:"information_en"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsSmallExf                        bool    `json:"isSmallExf"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsFave                            any     `json:"is_fave"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	Login                             string  `json:"login"`
+	LoginData                         any     `json:"loginData"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	NoteText                          string  `json:"note_text"`
+	Nsb                               float64 `json:"nsb"`
+	PendingDeletionDate               float64 `json:"pending_deletion_date"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceWithSellerFeeLabel           string  `json:"priceWithSellerFeeLabel"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	Tags                              any     `json:"tags"`
+	TempEmail                         string  `json:"temp_email"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UniqueKeyExists                   bool    `json:"uniqueKeyExists"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // ManagingSteamRemoveMafileResponseItemBumpSettings represents a component schema.
@@ -16265,16 +16074,16 @@ type ManagingSteamRemoveMafileResponseItemBumpSettings struct {
 
 // ManagingSteamRemoveMafileResponseItemBuyer represents a component schema.
 type ManagingSteamRemoveMafileResponseItemBuyer struct {
-	DisplayIconGroupID  int64  `json:"display_icon_group_id"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsBanned            int64  `json:"is_banned"`
-	OperationDate       int64  `json:"operation_date"`
-	UniqBanner          string `json:"uniq_banner"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	VisitorIsBuyer      bool   `json:"visitorIsBuyer"`
+	DisplayIconGroupID  float64 `json:"display_icon_group_id"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsBanned            float64 `json:"is_banned"`
+	OperationDate       float64 `json:"operation_date"`
+	UniqBanner          string  `json:"uniq_banner"`
+	UniqUsernameCSS     string  `json:"uniq_username_css"`
+	UserGroupID         float64 `json:"user_group_id"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
+	VisitorIsBuyer      bool    `json:"visitorIsBuyer"`
 }
 
 // ManagingSteamRemoveMafileResponseItemCopyFormatData represents a component schema.
@@ -16287,7 +16096,7 @@ type ManagingSteamRemoveMafileResponseItemCopyFormatData struct {
 // ManagingSteamRemoveMafileResponseItemCustomFields represents a component schema.
 type ManagingSteamRemoveMafileResponseItemCustomFields struct {
 	N4             string `json:"_4"`
-	AllowSelfUnban []any  `json:"allowSelfUnban"`
+	AllowSelfUnban any    `json:"allowSelfUnban"`
 	BanReason      string `json:"ban_reason"`
 	Discord        string `json:"discord"`
 	Github         string `json:"github"`
@@ -16300,16 +16109,16 @@ type ManagingSteamRemoveMafileResponseItemCustomFields struct {
 
 // ManagingSteamRemoveMafileResponseItemGuarantee represents a component schema.
 type ManagingSteamRemoveMafileResponseItemGuarantee struct {
-	Active                bool   `json:"active"`
-	Cancelled             bool   `json:"cancelled"`
-	CancelledReason       string `json:"cancelledReason"`
-	CancelledReasonPhrase string `json:"cancelledReasonPhrase"`
-	Class                 string `json:"class"`
-	Duration              int64  `json:"duration"`
-	DurationPhrase        string `json:"durationPhrase"`
-	EndDate               int64  `json:"endDate"`
-	RemainingTime         int64  `json:"remainingTime"`
-	RemainingTimePhrase   string `json:"remainingTimePhrase"`
+	Active                bool    `json:"active"`
+	Cancelled             bool    `json:"cancelled"`
+	CancelledReason       string  `json:"cancelledReason"`
+	CancelledReasonPhrase string  `json:"cancelledReasonPhrase"`
+	Class                 string  `json:"class"`
+	Duration              float64 `json:"duration"`
+	DurationPhrase        string  `json:"durationPhrase"`
+	EndDate               float64 `json:"endDate"`
+	RemainingTime         float64 `json:"remainingTime"`
+	RemainingTimePhrase   string  `json:"remainingTimePhrase"`
 }
 
 // ManagingSteamRemoveMafileResponseItemLoginData represents a component schema.
@@ -16325,19 +16134,19 @@ type ManagingSteamRemoveMafileResponseItemLoginData struct {
 
 // ManagingSteamRemoveMafileResponseItemSeller represents a component schema.
 type ManagingSteamRemoveMafileResponseItemSeller struct {
-	ActiveItemsCount      int64                                               `json:"active_items_count"`
-	AvatarDate            int64                                               `json:"avatar_date"`
-	Contacts              ManagingSteamRemoveMafileResponseItemSellerContacts `json:"contacts"`
-	DisplayStyleGroupID   int64                                               `json:"display_style_group_id"`
-	EffectiveLastActivity int64                                               `json:"effective_last_activity"`
-	IsOnline              bool                                                `json:"isOnline"`
-	IsBanned              int64                                               `json:"is_banned"`
-	JoinedDate            int64                                               `json:"joined_date"`
-	RestoreData           string                                              `json:"restore_data"`
-	RestorePercents       any                                                 `json:"restore_percents"`
-	SoldItemsCount        int64                                               `json:"sold_items_count"`
-	UserID                int64                                               `json:"user_id"`
-	Username              string                                              `json:"username"`
+	ActiveItemsCount      float64 `json:"active_items_count"`
+	AvatarDate            float64 `json:"avatar_date"`
+	Contacts              any     `json:"contacts"`
+	DisplayStyleGroupID   float64 `json:"display_style_group_id"`
+	EffectiveLastActivity float64 `json:"effective_last_activity"`
+	IsOnline              bool    `json:"isOnline"`
+	IsBanned              float64 `json:"is_banned"`
+	JoinedDate            float64 `json:"joined_date"`
+	RestoreData           string  `json:"restore_data"`
+	RestorePercents       any     `json:"restore_percents"`
+	SoldItemsCount        float64 `json:"sold_items_count"`
+	UserID                float64 `json:"user_id"`
+	Username              string  `json:"username"`
 }
 
 // ManagingSteamRemoveMafileResponseItemSellerContacts represents a component schema.
@@ -16346,136 +16155,122 @@ type ManagingSteamRemoveMafileResponseItemSellerContacts struct {
 	Telegram  string `json:"telegram"`
 }
 
-// ManagingSteamRemoveMafileResponseItemTags represents a component schema.
-type ManagingSteamRemoveMafileResponseItemTags struct {
-	N1234567890 ManagingSteamRemoveMafileResponseItemTagsN1234567890 `json:"1234567890"`
-}
-
-// ManagingSteamRemoveMafileResponseItemTagsN1234567890 represents a component schema.
-type ManagingSteamRemoveMafileResponseItemTagsN1234567890 struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
-}
-
 // ManagingSteamRemoveMafileResponseSystemInfo represents a component schema.
 type ManagingSteamRemoveMafileResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingSteamSDAResponseSystemInfo represents a component schema.
 type ManagingSteamSDAResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingSteamUpdateValueResponseItem represents a component schema.
 type ManagingSteamUpdateValueResponseItem struct {
-	AccountLink                       string                                             `json:"accountLink"`
-	AccountLinks                      []any                                              `json:"accountLinks"`
-	AccountLastActivity               int64                                              `json:"account_last_activity"`
-	AIPrice                           int64                                              `json:"aiPrice"`
-	AIPriceCheckDate                  int64                                              `json:"aiPriceCheckDate"`
-	AllowAskDiscount                  int64                                              `json:"allow_ask_discount"`
-	AutoBuyPrice                      int64                                              `json:"autoBuyPrice"`
-	AutoBuyPriceCheckDate             int64                                              `json:"autoBuyPriceCheckDate"`
-	BumpSettings                      ManagingSteamUpdateValueResponseItemBumpSettings   `json:"bumpSettings"`
-	Buyer                             ManagingSteamUpdateValueResponseItemBuyer          `json:"buyer"`
-	BuyerAvatarDate                   int64                                              `json:"buyer_avatar_date"`
-	BuyerDisplayIconGroupID           int64                                              `json:"buyer_display_icon_group_id"`
-	BuyerUniqBanner                   string                                             `json:"buyer_uniq_banner"`
-	BuyerUserGroupID                  int64                                              `json:"buyer_user_group_id"`
-	CanAskDiscount                    bool                                               `json:"canAskDiscount"`
-	CanChangeEmailPassword            bool                                               `json:"canChangeEmailPassword"`
-	CanChangePassword                 bool                                               `json:"canChangePassword"`
-	CanCheckAIPrice                   bool                                               `json:"canCheckAiPrice"`
-	CanCheckAutoBuyPrice              bool                                               `json:"canCheckAutoBuyPrice"`
-	CanCheckGuarantee                 bool                                               `json:"canCheckGuarantee"`
-	CanReportItem                     bool                                               `json:"canReportItem"`
-	CanResellItem                     bool                                               `json:"canResellItem"`
-	CanResellItemAfterPurchase        bool                                               `json:"canResellItemAfterPurchase"`
-	CanShareItem                      bool                                               `json:"canShareItem"`
-	CanUpdateItemStats                bool                                               `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                                               `json:"canValidateAccount"`
-	CanViewAccountLink                bool                                               `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                                               `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                                               `json:"canViewEmailLoginData"`
-	CanViewItemViews                  bool                                               `json:"canViewItemViews"`
-	CanViewLoginData                  bool                                               `json:"canViewLoginData"`
-	CartPrice                         any                                                `json:"cart_price"`
-	CategoryID                        int64                                              `json:"category_id"`
-	ContentID                         any                                                `json:"content_id"`
-	ContentType                       any                                                `json:"content_type"`
-	CopyFormatData                    ManagingSteamUpdateValueResponseItemCopyFormatData `json:"copyFormatData"`
-	CustomFields                      ManagingSteamUpdateValueResponseItemCustomFields   `json:"customFields"`
-	DeleteDate                        int64                                              `json:"delete_date"`
-	DeleteReason                      string                                             `json:"delete_reason"`
-	DeleteUserID                      int64                                              `json:"delete_user_id"`
-	DeleteUsername                    string                                             `json:"delete_username"`
-	Deposit                           int64                                              `json:"deposit"`
-	Description                       string                                             `json:"description"`
-	DescriptionEnHTML                 string                                             `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                                             `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                                             `json:"descriptionHtml"`
-	DescriptionPlain                  string                                             `json:"descriptionPlain"`
-	DescriptionEn                     string                                             `json:"description_en"`
-	EditDate                          int64                                              `json:"edit_date"`
-	EmailProvider                     string                                             `json:"email_provider"`
-	EmailType                         string                                             `json:"email_type"`
-	ExtendedGuarantee                 int64                                              `json:"extended_guarantee"`
-	ExternalAuth                      []any                                              `json:"externalAuth"`
-	ExtraPrices                       []any                                              `json:"extraPrices"`
-	FeedbackData                      string                                             `json:"feedback_data"`
-	GetEmailCodeDisplayLogin          any                                                `json:"getEmailCodeDisplayLogin"`
-	Guarantee                         ManagingSteamUpdateValueResponseItemGuarantee      `json:"guarantee"`
-	ImagePreviewLinks                 []string                                           `json:"imagePreviewLinks"`
-	InCart                            any                                                `json:"in_cart"`
-	Information                       string                                             `json:"information"`
-	InformationEn                     string                                             `json:"information_en"`
-	IsBirthdayToday                   bool                                               `json:"isBirthdayToday"`
-	IsIgnored                         bool                                               `json:"isIgnored"`
-	IsPersonalAccount                 bool                                               `json:"isPersonalAccount"`
-	IsSmallExf                        bool                                               `json:"isSmallExf"`
-	IsTrusted                         bool                                               `json:"isTrusted"`
-	IsFave                            any                                                `json:"is_fave"`
-	IsSticky                          int64                                              `json:"is_sticky"`
-	ItemOriginPhrase                  string                                             `json:"itemOriginPhrase"`
-	ItemDomain                        string                                             `json:"item_domain"`
-	ItemID                            int64                                              `json:"item_id"`
-	ItemOrigin                        string                                             `json:"item_origin"`
-	ItemState                         string                                             `json:"item_state"`
-	Login                             string                                             `json:"login"`
-	LoginData                         ManagingSteamUpdateValueResponseItemLoginData      `json:"loginData"`
-	MarketCustomTitle                 string                                             `json:"market_custom_title"`
-	MaxDiscountPercent                int64                                              `json:"max_discount_percent"`
-	NeedToRequireVideoToViewLoginData bool                                               `json:"needToRequireVideoToViewLoginData"`
-	NoteText                          string                                             `json:"note_text"`
-	Nsb                               int64                                              `json:"nsb"`
-	PendingDeletionDate               int64                                              `json:"pending_deletion_date"`
-	Price                             int64                                              `json:"price"`
-	PriceWithSellerFee                float64                                            `json:"priceWithSellerFee"`
-	PriceWithSellerFeeLabel           string                                             `json:"priceWithSellerFeeLabel"`
-	PriceCurrency                     string                                             `json:"price_currency"`
-	PublishedDate                     int64                                              `json:"published_date"`
-	RefreshedDate                     int64                                              `json:"refreshed_date"`
-	ResaleItemOrigin                  string                                             `json:"resale_item_origin"`
-	RubPrice                          int64                                              `json:"rub_price"`
-	Seller                            ManagingSteamUpdateValueResponseItemSeller         `json:"seller"`
-	ShowGetEmailCodeButton            bool                                               `json:"showGetEmailCodeButton"`
-	Tags                              ManagingSteamUpdateValueResponseItemTags           `json:"tags"`
-	TempEmail                         string                                             `json:"temp_email"`
-	Title                             string                                             `json:"title"`
-	TitleEn                           string                                             `json:"title_en"`
-	UniqueKeyExists                   bool                                               `json:"uniqueKeyExists"`
-	UpdateStatDate                    int64                                              `json:"update_stat_date"`
-	UserAllowAskDiscount              int64                                              `json:"user_allow_ask_discount"`
-	ViewCount                         int64                                              `json:"view_count"`
-	VisitorIsAuthor                   bool                                               `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AIPrice                           float64 `json:"aiPrice"`
+	AIPriceCheckDate                  float64 `json:"aiPriceCheckDate"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	AutoBuyPrice                      float64 `json:"autoBuyPrice"`
+	AutoBuyPriceCheckDate             float64 `json:"autoBuyPriceCheckDate"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	Buyer                             any     `json:"buyer"`
+	BuyerAvatarDate                   float64 `json:"buyer_avatar_date"`
+	BuyerDisplayIconGroupID           float64 `json:"buyer_display_icon_group_id"`
+	BuyerUniqBanner                   string  `json:"buyer_uniq_banner"`
+	BuyerUserGroupID                  float64 `json:"buyer_user_group_id"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangeEmailPassword            bool    `json:"canChangeEmailPassword"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckAIPrice                   bool    `json:"canCheckAiPrice"`
+	CanCheckAutoBuyPrice              bool    `json:"canCheckAutoBuyPrice"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItem                     bool    `json:"canResellItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanShareItem                      bool    `json:"canShareItem"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewItemViews                  bool    `json:"canViewItemViews"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CartPrice                         any     `json:"cart_price"`
+	CategoryID                        float64 `json:"category_id"`
+	ContentID                         any     `json:"content_id"`
+	ContentType                       any     `json:"content_type"`
+	CopyFormatData                    any     `json:"copyFormatData"`
+	CustomFields                      any     `json:"customFields"`
+	DeleteDate                        float64 `json:"delete_date"`
+	DeleteReason                      string  `json:"delete_reason"`
+	DeleteUserID                      float64 `json:"delete_user_id"`
+	DeleteUsername                    string  `json:"delete_username"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	GetEmailCodeDisplayLogin          any     `json:"getEmailCodeDisplayLogin"`
+	Guarantee                         any     `json:"guarantee"`
+	ImagePreviewLinks                 any     `json:"imagePreviewLinks"`
+	InCart                            any     `json:"in_cart"`
+	Information                       string  `json:"information"`
+	InformationEn                     string  `json:"information_en"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsSmallExf                        bool    `json:"isSmallExf"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsFave                            any     `json:"is_fave"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	Login                             string  `json:"login"`
+	LoginData                         any     `json:"loginData"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	NoteText                          string  `json:"note_text"`
+	Nsb                               float64 `json:"nsb"`
+	PendingDeletionDate               float64 `json:"pending_deletion_date"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceWithSellerFeeLabel           string  `json:"priceWithSellerFeeLabel"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	Tags                              any     `json:"tags"`
+	TempEmail                         string  `json:"temp_email"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UniqueKeyExists                   bool    `json:"uniqueKeyExists"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // ManagingSteamUpdateValueResponseItemBumpSettings represents a component schema.
@@ -16489,16 +16284,16 @@ type ManagingSteamUpdateValueResponseItemBumpSettings struct {
 
 // ManagingSteamUpdateValueResponseItemBuyer represents a component schema.
 type ManagingSteamUpdateValueResponseItemBuyer struct {
-	DisplayIconGroupID  int64  `json:"display_icon_group_id"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsBanned            int64  `json:"is_banned"`
-	OperationDate       int64  `json:"operation_date"`
-	UniqBanner          string `json:"uniq_banner"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	VisitorIsBuyer      bool   `json:"visitorIsBuyer"`
+	DisplayIconGroupID  float64 `json:"display_icon_group_id"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsBanned            float64 `json:"is_banned"`
+	OperationDate       float64 `json:"operation_date"`
+	UniqBanner          string  `json:"uniq_banner"`
+	UniqUsernameCSS     string  `json:"uniq_username_css"`
+	UserGroupID         float64 `json:"user_group_id"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
+	VisitorIsBuyer      bool    `json:"visitorIsBuyer"`
 }
 
 // ManagingSteamUpdateValueResponseItemCopyFormatData represents a component schema.
@@ -16511,7 +16306,7 @@ type ManagingSteamUpdateValueResponseItemCopyFormatData struct {
 // ManagingSteamUpdateValueResponseItemCustomFields represents a component schema.
 type ManagingSteamUpdateValueResponseItemCustomFields struct {
 	N4             string `json:"_4"`
-	AllowSelfUnban []any  `json:"allowSelfUnban"`
+	AllowSelfUnban any    `json:"allowSelfUnban"`
 	BanReason      string `json:"ban_reason"`
 	Discord        string `json:"discord"`
 	Github         string `json:"github"`
@@ -16524,16 +16319,16 @@ type ManagingSteamUpdateValueResponseItemCustomFields struct {
 
 // ManagingSteamUpdateValueResponseItemGuarantee represents a component schema.
 type ManagingSteamUpdateValueResponseItemGuarantee struct {
-	Active                bool   `json:"active"`
-	Cancelled             bool   `json:"cancelled"`
-	CancelledReason       string `json:"cancelledReason"`
-	CancelledReasonPhrase string `json:"cancelledReasonPhrase"`
-	Class                 string `json:"class"`
-	Duration              int64  `json:"duration"`
-	DurationPhrase        string `json:"durationPhrase"`
-	EndDate               int64  `json:"endDate"`
-	RemainingTime         int64  `json:"remainingTime"`
-	RemainingTimePhrase   string `json:"remainingTimePhrase"`
+	Active                bool    `json:"active"`
+	Cancelled             bool    `json:"cancelled"`
+	CancelledReason       string  `json:"cancelledReason"`
+	CancelledReasonPhrase string  `json:"cancelledReasonPhrase"`
+	Class                 string  `json:"class"`
+	Duration              float64 `json:"duration"`
+	DurationPhrase        string  `json:"durationPhrase"`
+	EndDate               float64 `json:"endDate"`
+	RemainingTime         float64 `json:"remainingTime"`
+	RemainingTimePhrase   string  `json:"remainingTimePhrase"`
 }
 
 // ManagingSteamUpdateValueResponseItemLoginData represents a component schema.
@@ -16549,19 +16344,19 @@ type ManagingSteamUpdateValueResponseItemLoginData struct {
 
 // ManagingSteamUpdateValueResponseItemSeller represents a component schema.
 type ManagingSteamUpdateValueResponseItemSeller struct {
-	ActiveItemsCount      int64                                              `json:"active_items_count"`
-	AvatarDate            int64                                              `json:"avatar_date"`
-	Contacts              ManagingSteamUpdateValueResponseItemSellerContacts `json:"contacts"`
-	DisplayStyleGroupID   int64                                              `json:"display_style_group_id"`
-	EffectiveLastActivity int64                                              `json:"effective_last_activity"`
-	IsOnline              bool                                               `json:"isOnline"`
-	IsBanned              int64                                              `json:"is_banned"`
-	JoinedDate            int64                                              `json:"joined_date"`
-	RestoreData           string                                             `json:"restore_data"`
-	RestorePercents       any                                                `json:"restore_percents"`
-	SoldItemsCount        int64                                              `json:"sold_items_count"`
-	UserID                int64                                              `json:"user_id"`
-	Username              string                                             `json:"username"`
+	ActiveItemsCount      float64 `json:"active_items_count"`
+	AvatarDate            float64 `json:"avatar_date"`
+	Contacts              any     `json:"contacts"`
+	DisplayStyleGroupID   float64 `json:"display_style_group_id"`
+	EffectiveLastActivity float64 `json:"effective_last_activity"`
+	IsOnline              bool    `json:"isOnline"`
+	IsBanned              float64 `json:"is_banned"`
+	JoinedDate            float64 `json:"joined_date"`
+	RestoreData           string  `json:"restore_data"`
+	RestorePercents       any     `json:"restore_percents"`
+	SoldItemsCount        float64 `json:"sold_items_count"`
+	UserID                float64 `json:"user_id"`
+	Username              string  `json:"username"`
 }
 
 // ManagingSteamUpdateValueResponseItemSellerContacts represents a component schema.
@@ -16570,208 +16365,166 @@ type ManagingSteamUpdateValueResponseItemSellerContacts struct {
 	Telegram  string `json:"telegram"`
 }
 
-// ManagingSteamUpdateValueResponseItemTags represents a component schema.
-type ManagingSteamUpdateValueResponseItemTags struct {
-	N1234567890 ManagingSteamUpdateValueResponseItemTagsN1234567890 `json:"1234567890"`
-}
-
-// ManagingSteamUpdateValueResponseItemTagsN1234567890 represents a component schema.
-type ManagingSteamUpdateValueResponseItemTagsN1234567890 struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
-}
-
 // ManagingSteamUpdateValueResponseSystemInfo represents a component schema.
 type ManagingSteamUpdateValueResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingSteamValueResponseData represents a component schema.
 type ManagingSteamValueResponseData struct {
-	AppID               int64                               `json:"appId"`
-	AppTitle            string                              `json:"appTitle"`
-	Currency            string                              `json:"currency"`
-	CurrencyIcon        string                              `json:"currencyIcon"`
-	ItemCount           int64                               `json:"itemCount"`
-	Items               ManagingSteamValueResponseDataItems `json:"items"`
-	Language            string                              `json:"language"`
-	MarketableItemCount int64                               `json:"marketableItemCount"`
-	SteamID             string                              `json:"steam_id"`
-	Time                int64                               `json:"time"`
-	TotalValue          float64                             `json:"totalValue"`
-}
-
-// ManagingSteamValueResponseDataItems represents a component schema.
-type ManagingSteamValueResponseDataItems struct {
-	N0 *ManagingSteamValueResponseDataItemsN0 `json:"0,omitempty"`
-}
-
-// ManagingSteamValueResponseDataItemsN0 represents a component schema.
-type ManagingSteamValueResponseDataItemsN0 struct {
-	Classid        string                                        `json:"classid"`
-	Count          int64                                         `json:"count"`
-	Fraudwarnings  any                                           `json:"fraudwarnings"`
-	ImageURL       string                                        `json:"image_url"`
-	MarketHashName string                                        `json:"market_hash_name"`
-	Marketable     int64                                         `json:"marketable"`
-	Price          float64                                       `json:"price"`
-	Stickers       ManagingSteamValueResponseDataItemsN0Stickers `json:"stickers"`
-	Title          string                                        `json:"title"`
-	Tradable       int64                                         `json:"tradable"`
-	Type           string                                        `json:"type"`
-}
-
-// ManagingSteamValueResponseDataItemsN0Stickers represents a component schema.
-type ManagingSteamValueResponseDataItemsN0Stickers struct {
-	Count        int64    `json:"count"`
-	Images       []string `json:"images"`
-	StickerCount int64    `json:"stickerCount"`
-	Title        string   `json:"title"`
+	AppID               float64 `json:"appId"`
+	AppTitle            string  `json:"appTitle"`
+	Currency            string  `json:"currency"`
+	CurrencyIcon        string  `json:"currencyIcon"`
+	ItemCount           float64 `json:"itemCount"`
+	Items               any     `json:"items"`
+	Language            string  `json:"language"`
+	MarketableItemCount float64 `json:"marketableItemCount"`
+	SteamID             string  `json:"steam_id"`
+	Time                float64 `json:"time"`
+	TotalValue          float64 `json:"totalValue"`
 }
 
 // ManagingSteamValueResponseSystemInfo represents a component schema.
 type ManagingSteamValueResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingStickResponseSystemInfo represents a component schema.
 type ManagingStickResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingTagResponseSystemInfo represents a component schema.
 type ManagingTagResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingTagResponseTag represents a component schema.
 type ManagingTagResponseTag struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
+	Bc                   string  `json:"bc"`
+	ForOwnedAccountsOnly bool    `json:"forOwnedAccountsOnly"`
+	IsDefault            bool    `json:"isDefault"`
+	TagID                float64 `json:"tag_id"`
+	Title                string  `json:"title"`
 }
 
 // ManagingTelegramCodeResponseCodes represents a component schema.
 type ManagingTelegramCodeResponseCodes struct {
-	Code *string `json:"code,omitempty"`
-	Date *int64  `json:"date,omitempty"`
+	Code any `json:"code,omitempty"`
+	Date any `json:"date,omitempty"`
 }
 
 // ManagingTelegramCodeResponseItem represents a component schema.
 type ManagingTelegramCodeResponseItem struct {
-	AccountLink                       string                                         `json:"accountLink"`
-	AccountLinks                      []any                                          `json:"accountLinks"`
-	AccountLastActivity               int64                                          `json:"account_last_activity"`
-	AIPrice                           int64                                          `json:"aiPrice"`
-	AIPriceCheckDate                  int64                                          `json:"aiPriceCheckDate"`
-	AllowAskDiscount                  int64                                          `json:"allow_ask_discount"`
-	AutoBuyPrice                      int64                                          `json:"autoBuyPrice"`
-	AutoBuyPriceCheckDate             int64                                          `json:"autoBuyPriceCheckDate"`
-	BumpSettings                      ManagingTelegramCodeResponseItemBumpSettings   `json:"bumpSettings"`
-	Buyer                             ManagingTelegramCodeResponseItemBuyer          `json:"buyer"`
-	BuyerAvatarDate                   int64                                          `json:"buyer_avatar_date"`
-	BuyerDisplayIconGroupID           int64                                          `json:"buyer_display_icon_group_id"`
-	BuyerUniqBanner                   string                                         `json:"buyer_uniq_banner"`
-	BuyerUserGroupID                  int64                                          `json:"buyer_user_group_id"`
-	CanAskDiscount                    bool                                           `json:"canAskDiscount"`
-	CanChangeEmailPassword            bool                                           `json:"canChangeEmailPassword"`
-	CanChangePassword                 bool                                           `json:"canChangePassword"`
-	CanCheckAIPrice                   bool                                           `json:"canCheckAiPrice"`
-	CanCheckAutoBuyPrice              bool                                           `json:"canCheckAutoBuyPrice"`
-	CanCheckGuarantee                 bool                                           `json:"canCheckGuarantee"`
-	CanReportItem                     bool                                           `json:"canReportItem"`
-	CanResellItem                     bool                                           `json:"canResellItem"`
-	CanResellItemAfterPurchase        bool                                           `json:"canResellItemAfterPurchase"`
-	CanShareItem                      bool                                           `json:"canShareItem"`
-	CanUpdateItemStats                bool                                           `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                                           `json:"canValidateAccount"`
-	CanViewAccountLink                bool                                           `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                                           `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                                           `json:"canViewEmailLoginData"`
-	CanViewItemViews                  bool                                           `json:"canViewItemViews"`
-	CanViewLoginData                  bool                                           `json:"canViewLoginData"`
-	CartPrice                         any                                            `json:"cart_price"`
-	CategoryID                        int64                                          `json:"category_id"`
-	ContentID                         any                                            `json:"content_id"`
-	ContentType                       any                                            `json:"content_type"`
-	CopyFormatData                    ManagingTelegramCodeResponseItemCopyFormatData `json:"copyFormatData"`
-	CustomFields                      ManagingTelegramCodeResponseItemCustomFields   `json:"customFields"`
-	DeleteDate                        int64                                          `json:"delete_date"`
-	DeleteReason                      string                                         `json:"delete_reason"`
-	DeleteUserID                      int64                                          `json:"delete_user_id"`
-	DeleteUsername                    string                                         `json:"delete_username"`
-	Deposit                           int64                                          `json:"deposit"`
-	Description                       string                                         `json:"description"`
-	DescriptionEnHTML                 string                                         `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                                         `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                                         `json:"descriptionHtml"`
-	DescriptionPlain                  string                                         `json:"descriptionPlain"`
-	DescriptionEn                     string                                         `json:"description_en"`
-	EditDate                          int64                                          `json:"edit_date"`
-	EmailProvider                     string                                         `json:"email_provider"`
-	EmailType                         string                                         `json:"email_type"`
-	ExtendedGuarantee                 int64                                          `json:"extended_guarantee"`
-	ExternalAuth                      []any                                          `json:"externalAuth"`
-	ExtraPrices                       []any                                          `json:"extraPrices"`
-	FeedbackData                      string                                         `json:"feedback_data"`
-	GetEmailCodeDisplayLogin          any                                            `json:"getEmailCodeDisplayLogin"`
-	Guarantee                         ManagingTelegramCodeResponseItemGuarantee      `json:"guarantee"`
-	ImagePreviewLinks                 []string                                       `json:"imagePreviewLinks"`
-	InCart                            any                                            `json:"in_cart"`
-	Information                       string                                         `json:"information"`
-	InformationEn                     string                                         `json:"information_en"`
-	IsBirthdayToday                   bool                                           `json:"isBirthdayToday"`
-	IsIgnored                         bool                                           `json:"isIgnored"`
-	IsPersonalAccount                 bool                                           `json:"isPersonalAccount"`
-	IsSmallExf                        bool                                           `json:"isSmallExf"`
-	IsTrusted                         bool                                           `json:"isTrusted"`
-	IsFave                            any                                            `json:"is_fave"`
-	IsSticky                          int64                                          `json:"is_sticky"`
-	ItemOriginPhrase                  string                                         `json:"itemOriginPhrase"`
-	ItemDomain                        string                                         `json:"item_domain"`
-	ItemID                            int64                                          `json:"item_id"`
-	ItemOrigin                        string                                         `json:"item_origin"`
-	ItemState                         string                                         `json:"item_state"`
-	Login                             string                                         `json:"login"`
-	LoginData                         ManagingTelegramCodeResponseItemLoginData      `json:"loginData"`
-	MarketCustomTitle                 string                                         `json:"market_custom_title"`
-	MaxDiscountPercent                int64                                          `json:"max_discount_percent"`
-	NeedToRequireVideoToViewLoginData bool                                           `json:"needToRequireVideoToViewLoginData"`
-	NoteText                          string                                         `json:"note_text"`
-	Nsb                               int64                                          `json:"nsb"`
-	PendingDeletionDate               int64                                          `json:"pending_deletion_date"`
-	Price                             int64                                          `json:"price"`
-	PriceWithSellerFee                float64                                        `json:"priceWithSellerFee"`
-	PriceWithSellerFeeLabel           string                                         `json:"priceWithSellerFeeLabel"`
-	PriceCurrency                     string                                         `json:"price_currency"`
-	PublishedDate                     int64                                          `json:"published_date"`
-	RefreshedDate                     int64                                          `json:"refreshed_date"`
-	ResaleItemOrigin                  string                                         `json:"resale_item_origin"`
-	RubPrice                          int64                                          `json:"rub_price"`
-	Seller                            ManagingTelegramCodeResponseItemSeller         `json:"seller"`
-	ShowGetEmailCodeButton            bool                                           `json:"showGetEmailCodeButton"`
-	Tags                              ManagingTelegramCodeResponseItemTags           `json:"tags"`
-	TempEmail                         string                                         `json:"temp_email"`
-	Title                             string                                         `json:"title"`
-	TitleEn                           string                                         `json:"title_en"`
-	UniqueKeyExists                   bool                                           `json:"uniqueKeyExists"`
-	UpdateStatDate                    int64                                          `json:"update_stat_date"`
-	UserAllowAskDiscount              int64                                          `json:"user_allow_ask_discount"`
-	ViewCount                         int64                                          `json:"view_count"`
-	VisitorIsAuthor                   bool                                           `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AIPrice                           float64 `json:"aiPrice"`
+	AIPriceCheckDate                  float64 `json:"aiPriceCheckDate"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	AutoBuyPrice                      float64 `json:"autoBuyPrice"`
+	AutoBuyPriceCheckDate             float64 `json:"autoBuyPriceCheckDate"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	Buyer                             any     `json:"buyer"`
+	BuyerAvatarDate                   float64 `json:"buyer_avatar_date"`
+	BuyerDisplayIconGroupID           float64 `json:"buyer_display_icon_group_id"`
+	BuyerUniqBanner                   string  `json:"buyer_uniq_banner"`
+	BuyerUserGroupID                  float64 `json:"buyer_user_group_id"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangeEmailPassword            bool    `json:"canChangeEmailPassword"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckAIPrice                   bool    `json:"canCheckAiPrice"`
+	CanCheckAutoBuyPrice              bool    `json:"canCheckAutoBuyPrice"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItem                     bool    `json:"canResellItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanShareItem                      bool    `json:"canShareItem"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewItemViews                  bool    `json:"canViewItemViews"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CartPrice                         any     `json:"cart_price"`
+	CategoryID                        float64 `json:"category_id"`
+	ContentID                         any     `json:"content_id"`
+	ContentType                       any     `json:"content_type"`
+	CopyFormatData                    any     `json:"copyFormatData"`
+	CustomFields                      any     `json:"customFields"`
+	DeleteDate                        float64 `json:"delete_date"`
+	DeleteReason                      string  `json:"delete_reason"`
+	DeleteUserID                      float64 `json:"delete_user_id"`
+	DeleteUsername                    string  `json:"delete_username"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	GetEmailCodeDisplayLogin          any     `json:"getEmailCodeDisplayLogin"`
+	Guarantee                         any     `json:"guarantee"`
+	ImagePreviewLinks                 any     `json:"imagePreviewLinks"`
+	InCart                            any     `json:"in_cart"`
+	Information                       string  `json:"information"`
+	InformationEn                     string  `json:"information_en"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsSmallExf                        bool    `json:"isSmallExf"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsFave                            any     `json:"is_fave"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	Login                             string  `json:"login"`
+	LoginData                         any     `json:"loginData"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	NoteText                          string  `json:"note_text"`
+	Nsb                               float64 `json:"nsb"`
+	PendingDeletionDate               float64 `json:"pending_deletion_date"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceWithSellerFeeLabel           string  `json:"priceWithSellerFeeLabel"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	Tags                              any     `json:"tags"`
+	TempEmail                         string  `json:"temp_email"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UniqueKeyExists                   bool    `json:"uniqueKeyExists"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // ManagingTelegramCodeResponseItemBumpSettings represents a component schema.
@@ -16785,16 +16538,16 @@ type ManagingTelegramCodeResponseItemBumpSettings struct {
 
 // ManagingTelegramCodeResponseItemBuyer represents a component schema.
 type ManagingTelegramCodeResponseItemBuyer struct {
-	DisplayIconGroupID  int64  `json:"display_icon_group_id"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsBanned            int64  `json:"is_banned"`
-	OperationDate       int64  `json:"operation_date"`
-	UniqBanner          string `json:"uniq_banner"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	VisitorIsBuyer      bool   `json:"visitorIsBuyer"`
+	DisplayIconGroupID  float64 `json:"display_icon_group_id"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsBanned            float64 `json:"is_banned"`
+	OperationDate       float64 `json:"operation_date"`
+	UniqBanner          string  `json:"uniq_banner"`
+	UniqUsernameCSS     string  `json:"uniq_username_css"`
+	UserGroupID         float64 `json:"user_group_id"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
+	VisitorIsBuyer      bool    `json:"visitorIsBuyer"`
 }
 
 // ManagingTelegramCodeResponseItemCopyFormatData represents a component schema.
@@ -16807,7 +16560,7 @@ type ManagingTelegramCodeResponseItemCopyFormatData struct {
 // ManagingTelegramCodeResponseItemCustomFields represents a component schema.
 type ManagingTelegramCodeResponseItemCustomFields struct {
 	N4             string `json:"_4"`
-	AllowSelfUnban []any  `json:"allowSelfUnban"`
+	AllowSelfUnban any    `json:"allowSelfUnban"`
 	BanReason      string `json:"ban_reason"`
 	Discord        string `json:"discord"`
 	Github         string `json:"github"`
@@ -16820,16 +16573,16 @@ type ManagingTelegramCodeResponseItemCustomFields struct {
 
 // ManagingTelegramCodeResponseItemGuarantee represents a component schema.
 type ManagingTelegramCodeResponseItemGuarantee struct {
-	Active                bool   `json:"active"`
-	Cancelled             bool   `json:"cancelled"`
-	CancelledReason       string `json:"cancelledReason"`
-	CancelledReasonPhrase string `json:"cancelledReasonPhrase"`
-	Class                 string `json:"class"`
-	Duration              int64  `json:"duration"`
-	DurationPhrase        string `json:"durationPhrase"`
-	EndDate               int64  `json:"endDate"`
-	RemainingTime         int64  `json:"remainingTime"`
-	RemainingTimePhrase   string `json:"remainingTimePhrase"`
+	Active                bool    `json:"active"`
+	Cancelled             bool    `json:"cancelled"`
+	CancelledReason       string  `json:"cancelledReason"`
+	CancelledReasonPhrase string  `json:"cancelledReasonPhrase"`
+	Class                 string  `json:"class"`
+	Duration              float64 `json:"duration"`
+	DurationPhrase        string  `json:"durationPhrase"`
+	EndDate               float64 `json:"endDate"`
+	RemainingTime         float64 `json:"remainingTime"`
+	RemainingTimePhrase   string  `json:"remainingTimePhrase"`
 }
 
 // ManagingTelegramCodeResponseItemLoginData represents a component schema.
@@ -16845,19 +16598,19 @@ type ManagingTelegramCodeResponseItemLoginData struct {
 
 // ManagingTelegramCodeResponseItemSeller represents a component schema.
 type ManagingTelegramCodeResponseItemSeller struct {
-	ActiveItemsCount      int64                                          `json:"active_items_count"`
-	AvatarDate            int64                                          `json:"avatar_date"`
-	Contacts              ManagingTelegramCodeResponseItemSellerContacts `json:"contacts"`
-	DisplayStyleGroupID   int64                                          `json:"display_style_group_id"`
-	EffectiveLastActivity int64                                          `json:"effective_last_activity"`
-	IsOnline              bool                                           `json:"isOnline"`
-	IsBanned              int64                                          `json:"is_banned"`
-	JoinedDate            int64                                          `json:"joined_date"`
-	RestoreData           string                                         `json:"restore_data"`
-	RestorePercents       any                                            `json:"restore_percents"`
-	SoldItemsCount        int64                                          `json:"sold_items_count"`
-	UserID                int64                                          `json:"user_id"`
-	Username              string                                         `json:"username"`
+	ActiveItemsCount      float64 `json:"active_items_count"`
+	AvatarDate            float64 `json:"avatar_date"`
+	Contacts              any     `json:"contacts"`
+	DisplayStyleGroupID   float64 `json:"display_style_group_id"`
+	EffectiveLastActivity float64 `json:"effective_last_activity"`
+	IsOnline              bool    `json:"isOnline"`
+	IsBanned              float64 `json:"is_banned"`
+	JoinedDate            float64 `json:"joined_date"`
+	RestoreData           string  `json:"restore_data"`
+	RestorePercents       any     `json:"restore_percents"`
+	SoldItemsCount        float64 `json:"sold_items_count"`
+	UserID                float64 `json:"user_id"`
+	Username              string  `json:"username"`
 }
 
 // ManagingTelegramCodeResponseItemSellerContacts represents a component schema.
@@ -16866,25 +16619,11 @@ type ManagingTelegramCodeResponseItemSellerContacts struct {
 	Telegram  string `json:"telegram"`
 }
 
-// ManagingTelegramCodeResponseItemTags represents a component schema.
-type ManagingTelegramCodeResponseItemTags struct {
-	N1234567890 ManagingTelegramCodeResponseItemTagsN1234567890 `json:"1234567890"`
-}
-
-// ManagingTelegramCodeResponseItemTagsN1234567890 represents a component schema.
-type ManagingTelegramCodeResponseItemTagsN1234567890 struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
-}
-
 // ManagingTelegramResetAuthResponseSystemInfo represents a component schema.
 type ManagingTelegramResetAuthResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingTempEmailPasswordResponseItem represents a component schema.
@@ -16894,150 +16633,150 @@ type ManagingTempEmailPasswordResponseItem struct {
 
 // ManagingTransferResponseSystemInfo represents a component schema.
 type ManagingTransferResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingUnfavoriteResponseSystemInfo represents a component schema.
 type ManagingUnfavoriteResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingUnstickResponseSystemInfo represents a component schema.
 type ManagingUnstickResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingUntagResponseSystemInfo represents a component schema.
 type ManagingUntagResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ManagingUntagResponseTag represents a component schema.
 type ManagingUntagResponseTag struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
+	Bc                   string  `json:"bc"`
+	ForOwnedAccountsOnly bool    `json:"forOwnedAccountsOnly"`
+	IsDefault            bool    `json:"isDefault"`
+	TagID                float64 `json:"tag_id"`
+	Title                string  `json:"title"`
 }
 
 // PaymentsBalanceExchangeResponseFrom represents a component schema.
 type PaymentsBalanceExchangeResponseFrom struct {
-	N12345  PaymentsBalanceExchangeResponseFromN12345  `json:"12345"`
-	Balance PaymentsBalanceExchangeResponseFromBalance `json:"balance"`
+	N12345  any `json:"12345"`
+	Balance any `json:"balance"`
 }
 
 // PaymentsBalanceExchangeResponseFromBalance represents a component schema.
 type PaymentsBalanceExchangeResponseFromBalance struct {
-	Balance          string `json:"balance"`
-	ConvertedBalance int64  `json:"convertedBalance"`
-	FullTitle        string `json:"fullTitle"`
-	Title            string `json:"title"`
-	Type             string `json:"type"`
+	Balance          string  `json:"balance"`
+	ConvertedBalance float64 `json:"convertedBalance"`
+	FullTitle        string  `json:"fullTitle"`
+	Title            string  `json:"title"`
+	Type             string  `json:"type"`
 }
 
 // PaymentsBalanceExchangeResponseFromN12345 represents a component schema.
 type PaymentsBalanceExchangeResponseFromN12345 struct {
-	Balance     string `json:"balance"`
-	BalanceID   int64  `json:"balance_id"`
-	CustomTitle any    `json:"custom_title"`
-	FullTitle   string `json:"fullTitle"`
-	MerchantID  int64  `json:"merchant_id"`
-	Title       string `json:"title"`
-	Type        string `json:"type"`
-	UserID      int64  `json:"user_id"`
+	Balance     string  `json:"balance"`
+	BalanceID   float64 `json:"balance_id"`
+	CustomTitle any     `json:"custom_title"`
+	FullTitle   string  `json:"fullTitle"`
+	MerchantID  float64 `json:"merchant_id"`
+	Title       string  `json:"title"`
+	Type        string  `json:"type"`
+	UserID      float64 `json:"user_id"`
 }
 
 // PaymentsBalanceExchangeResponseSystemInfo represents a component schema.
 type PaymentsBalanceExchangeResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PaymentsBalanceExchangeResponseTo represents a component schema.
 type PaymentsBalanceExchangeResponseTo struct {
-	Balance PaymentsBalanceExchangeResponseToBalance `json:"balance"`
+	Balance any `json:"balance"`
 }
 
 // PaymentsBalanceExchangeResponseToBalance represents a component schema.
 type PaymentsBalanceExchangeResponseToBalance struct {
-	ActiveItemsCount            int64                                                  `json:"active_items_count"`
-	ActivityVisible             bool                                                   `json:"activity_visible"`
-	Age                         int64                                                  `json:"age"`
-	Balance                     string                                                 `json:"balance"`
-	Balances                    []any                                                  `json:"balances"`
-	BumpItemPeriod              int64                                                  `json:"bump_item_period"`
-	CanEdit                     bool                                                   `json:"can_edit"`
-	CanFollow                   bool                                                   `json:"can_follow"`
-	CanIgnore                   bool                                                   `json:"can_ignore"`
-	CanPostProfile              bool                                                   `json:"can_post_profile"`
-	CanViewProfile              bool                                                   `json:"can_view_profile"`
-	CanViewProfilePosts         bool                                                   `json:"can_view_profile_posts"`
-	CanWarn                     bool                                                   `json:"can_warn"`
-	ContestCount                int64                                                  `json:"contest_count"`
-	ConvWelcomeMessage          string                                                 `json:"conv_welcome_message"`
-	ConvertedBalance            int64                                                  `json:"convertedBalance"`
-	ConvertedDeposit            int64                                                  `json:"convertedDeposit"`
-	ConvertedHold               int64                                                  `json:"convertedHold"`
-	Currency                    string                                                 `json:"currency"`
-	CurrencyPhrase              string                                                 `json:"currencyPhrase"`
-	CustomAccountDownloadFormat string                                                 `json:"custom_account_download_format"`
-	CustomFields                PaymentsBalanceExchangeResponseToBalanceCustomFields   `json:"custom_fields"`
-	CustomTitle                 string                                                 `json:"custom_title"`
-	Deposit                     int64                                                  `json:"deposit"`
-	Dob                         PaymentsBalanceExchangeResponseToBalanceDob            `json:"dob"`
-	FeedbackData                PaymentsBalanceExchangeResponseToBalanceFeedbackData   `json:"feedback_data"`
-	Hold                        string                                                 `json:"hold"`
-	Homepage                    string                                                 `json:"homepage"`
-	ImapData                    PaymentsBalanceExchangeResponseToBalanceImapData       `json:"imap_data"`
-	IsAdmin                     bool                                                   `json:"is_admin"`
-	IsBanned                    bool                                                   `json:"is_banned"`
-	IsFollowed                  bool                                                   `json:"is_followed"`
-	IsIgnored                   bool                                                   `json:"is_ignored"`
-	IsModerator                 bool                                                   `json:"is_moderator"`
-	IsStaff                     bool                                                   `json:"is_staff"`
-	IsSuperAdmin                bool                                                   `json:"is_super_admin"`
-	JoinedDate                  int64                                                  `json:"joined_date"`
-	LastActivity                int64                                                  `json:"last_activity"`
-	Like2Count                  int64                                                  `json:"like2_count"`
-	LikeCount                   int64                                                  `json:"like_count"`
-	Location                    string                                                 `json:"location"`
-	MarketCustomTitle           string                                                 `json:"market_custom_title"`
-	MaxDiscountPercent          int64                                                  `json:"max_discount_percent"`
-	MessageCount                int64                                                  `json:"message_count"`
-	PaidMailLeft                int64                                                  `json:"paid_mail_left"`
-	PublicTags                  []any                                                  `json:"public_tags"`
-	RegisterDate                int64                                                  `json:"register_date"`
-	Rendered                    PaymentsBalanceExchangeResponseToBalanceRendered       `json:"rendered"`
-	RestoreCount                int64                                                  `json:"restore_count"`
-	RestoreData                 PaymentsBalanceExchangeResponseToBalanceRestoreData    `json:"restore_data"`
-	ShortLink                   string                                                 `json:"short_link"`
-	SoldItemsCount              int64                                                  `json:"sold_items_count"`
-	Tags                        []any                                                  `json:"tags"`
-	TelegramClient              PaymentsBalanceExchangeResponseToBalanceTelegramClient `json:"telegram_client"`
-	TrophyPoints                int64                                                  `json:"trophy_points"`
-	UserAllowAskDiscount        bool                                                   `json:"user_allow_ask_discount"`
-	UserID                      int64                                                  `json:"user_id"`
-	UserTitle                   string                                                 `json:"user_title"`
-	Username                    string                                                 `json:"username"`
-	ViewURL                     string                                                 `json:"view_url"`
-	Visible                     bool                                                   `json:"visible"`
-	WarningPoints               int64                                                  `json:"warning_points"`
+	ActiveItemsCount            float64 `json:"active_items_count"`
+	ActivityVisible             bool    `json:"activity_visible"`
+	Age                         float64 `json:"age"`
+	Balance                     string  `json:"balance"`
+	Balances                    any     `json:"balances"`
+	BumpItemPeriod              float64 `json:"bump_item_period"`
+	CanEdit                     bool    `json:"can_edit"`
+	CanFollow                   bool    `json:"can_follow"`
+	CanIgnore                   bool    `json:"can_ignore"`
+	CanPostProfile              bool    `json:"can_post_profile"`
+	CanViewProfile              bool    `json:"can_view_profile"`
+	CanViewProfilePosts         bool    `json:"can_view_profile_posts"`
+	CanWarn                     bool    `json:"can_warn"`
+	ContestCount                float64 `json:"contest_count"`
+	ConvWelcomeMessage          string  `json:"conv_welcome_message"`
+	ConvertedBalance            float64 `json:"convertedBalance"`
+	ConvertedDeposit            float64 `json:"convertedDeposit"`
+	ConvertedHold               float64 `json:"convertedHold"`
+	Currency                    string  `json:"currency"`
+	CurrencyPhrase              string  `json:"currencyPhrase"`
+	CustomAccountDownloadFormat string  `json:"custom_account_download_format"`
+	CustomFields                any     `json:"custom_fields"`
+	CustomTitle                 string  `json:"custom_title"`
+	Deposit                     float64 `json:"deposit"`
+	Dob                         any     `json:"dob"`
+	FeedbackData                any     `json:"feedback_data"`
+	Hold                        string  `json:"hold"`
+	Homepage                    string  `json:"homepage"`
+	ImapData                    any     `json:"imap_data"`
+	IsAdmin                     bool    `json:"is_admin"`
+	IsBanned                    bool    `json:"is_banned"`
+	IsFollowed                  bool    `json:"is_followed"`
+	IsIgnored                   bool    `json:"is_ignored"`
+	IsModerator                 bool    `json:"is_moderator"`
+	IsStaff                     bool    `json:"is_staff"`
+	IsSuperAdmin                bool    `json:"is_super_admin"`
+	JoinedDate                  float64 `json:"joined_date"`
+	LastActivity                float64 `json:"last_activity"`
+	Like2Count                  float64 `json:"like2_count"`
+	LikeCount                   float64 `json:"like_count"`
+	Location                    string  `json:"location"`
+	MarketCustomTitle           string  `json:"market_custom_title"`
+	MaxDiscountPercent          float64 `json:"max_discount_percent"`
+	MessageCount                float64 `json:"message_count"`
+	PaidMailLeft                float64 `json:"paid_mail_left"`
+	PublicTags                  any     `json:"public_tags"`
+	RegisterDate                float64 `json:"register_date"`
+	Rendered                    any     `json:"rendered"`
+	RestoreCount                float64 `json:"restore_count"`
+	RestoreData                 any     `json:"restore_data"`
+	ShortLink                   string  `json:"short_link"`
+	SoldItemsCount              float64 `json:"sold_items_count"`
+	Tags                        any     `json:"tags"`
+	TelegramClient              any     `json:"telegram_client"`
+	TrophyPoints                float64 `json:"trophy_points"`
+	UserAllowAskDiscount        bool    `json:"user_allow_ask_discount"`
+	UserID                      float64 `json:"user_id"`
+	UserTitle                   string  `json:"user_title"`
+	Username                    string  `json:"username"`
+	ViewURL                     string  `json:"view_url"`
+	Visible                     bool    `json:"visible"`
+	WarningPoints               float64 `json:"warning_points"`
 }
 
 // PaymentsBalanceExchangeResponseToBalanceCustomFields represents a component schema.
 type PaymentsBalanceExchangeResponseToBalanceCustomFields struct {
 	N4                    string `json:"_4"`
-	AllowSelfUnban        []any  `json:"allowSelfUnban"`
+	AllowSelfUnban        any    `json:"allowSelfUnban"`
 	BanReason             string `json:"ban_reason"`
 	Discord               string `json:"discord"`
 	FavoriteAnime         string `json:"favoriteAnime"`
@@ -17061,41 +16800,30 @@ type PaymentsBalanceExchangeResponseToBalanceCustomFields struct {
 
 // PaymentsBalanceExchangeResponseToBalanceDob represents a component schema.
 type PaymentsBalanceExchangeResponseToBalanceDob struct {
-	Day   int64 `json:"day"`
-	Month int64 `json:"month"`
-	Year  int64 `json:"year"`
-}
-
-// PaymentsBalanceExchangeResponseToBalanceFeedbackData represents a component schema.
-type PaymentsBalanceExchangeResponseToBalanceFeedbackData struct {
-	N12345 PaymentsBalanceExchangeResponseToBalanceFeedbackDataN12345 `json:"12345"`
-}
-
-// PaymentsBalanceExchangeResponseToBalanceFeedbackDataN12345 represents a component schema.
-type PaymentsBalanceExchangeResponseToBalanceFeedbackDataN12345 struct {
-	Negative int64 `json:"negative"`
-	Positive int64 `json:"positive"`
+	Day   float64 `json:"day"`
+	Month float64 `json:"month"`
+	Year  float64 `json:"year"`
 }
 
 // PaymentsBalanceExchangeResponseToBalanceImapData represents a component schema.
 type PaymentsBalanceExchangeResponseToBalanceImapData struct {
-	Domainzone PaymentsBalanceExchangeResponseToBalanceImapDataDomainzone `json:"domain.zone"`
+	Domainzone any `json:"domain.zone"`
 }
 
 // PaymentsBalanceExchangeResponseToBalanceImapDataDomainzone represents a component schema.
 type PaymentsBalanceExchangeResponseToBalanceImapDataDomainzone struct {
-	Domain     string `json:"domain"`
-	ImapServer string `json:"imap_server"`
-	Port       int64  `json:"port"`
-	Secure     bool   `json:"secure"`
+	Domain     string  `json:"domain"`
+	ImapServer string  `json:"imap_server"`
+	Port       float64 `json:"port"`
+	Secure     bool    `json:"secure"`
 }
 
 // PaymentsBalanceExchangeResponseToBalanceRendered represents a component schema.
 type PaymentsBalanceExchangeResponseToBalanceRendered struct {
-	Avatars     PaymentsBalanceExchangeResponseToBalanceRenderedAvatars     `json:"avatars"`
-	Backgrounds PaymentsBalanceExchangeResponseToBalanceRenderedBackgrounds `json:"backgrounds"`
-	Link        string                                                      `json:"link"`
-	Username    string                                                      `json:"username"`
+	Avatars     any    `json:"avatars"`
+	Backgrounds any    `json:"backgrounds"`
+	Link        string `json:"link"`
+	Username    string `json:"username"`
 }
 
 // PaymentsBalanceExchangeResponseToBalanceRenderedAvatars represents a component schema.
@@ -17109,11 +16837,6 @@ type PaymentsBalanceExchangeResponseToBalanceRenderedAvatars struct {
 type PaymentsBalanceExchangeResponseToBalanceRenderedBackgrounds struct {
 	L string `json:"l"`
 	M string `json:"m"`
-}
-
-// PaymentsBalanceExchangeResponseToBalanceRestoreData represents a component schema.
-type PaymentsBalanceExchangeResponseToBalanceRestoreData struct {
-	N12345 int64 `json:"12345"`
 }
 
 // PaymentsBalanceExchangeResponseToBalanceTelegramClient represents a component schema.
@@ -17130,113 +16853,113 @@ type PaymentsBalanceExchangeResponseToBalanceTelegramClient struct {
 
 // PaymentsBalanceListResponseFrom represents a component schema.
 type PaymentsBalanceListResponseFrom struct {
-	N12345  PaymentsBalanceListResponseFromN12345  `json:"12345"`
-	Balance PaymentsBalanceListResponseFromBalance `json:"balance"`
+	N12345  any `json:"12345"`
+	Balance any `json:"balance"`
 }
 
 // PaymentsBalanceListResponseFromBalance represents a component schema.
 type PaymentsBalanceListResponseFromBalance struct {
-	Balance          string `json:"balance"`
-	ConvertedBalance int64  `json:"convertedBalance"`
-	FullTitle        string `json:"fullTitle"`
-	Title            string `json:"title"`
-	Type             string `json:"type"`
+	Balance          string  `json:"balance"`
+	ConvertedBalance float64 `json:"convertedBalance"`
+	FullTitle        string  `json:"fullTitle"`
+	Title            string  `json:"title"`
+	Type             string  `json:"type"`
 }
 
 // PaymentsBalanceListResponseFromN12345 represents a component schema.
 type PaymentsBalanceListResponseFromN12345 struct {
-	Balance     string `json:"balance"`
-	BalanceID   int64  `json:"balance_id"`
-	CustomTitle any    `json:"custom_title"`
-	FullTitle   string `json:"fullTitle"`
-	MerchantID  int64  `json:"merchant_id"`
-	Title       string `json:"title"`
-	Type        string `json:"type"`
-	UserID      int64  `json:"user_id"`
+	Balance     string  `json:"balance"`
+	BalanceID   float64 `json:"balance_id"`
+	CustomTitle any     `json:"custom_title"`
+	FullTitle   string  `json:"fullTitle"`
+	MerchantID  float64 `json:"merchant_id"`
+	Title       string  `json:"title"`
+	Type        string  `json:"type"`
+	UserID      float64 `json:"user_id"`
 }
 
 // PaymentsBalanceListResponseSystemInfo represents a component schema.
 type PaymentsBalanceListResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PaymentsBalanceListResponseTo represents a component schema.
 type PaymentsBalanceListResponseTo struct {
-	Balance PaymentsBalanceListResponseToBalance `json:"balance"`
+	Balance any `json:"balance"`
 }
 
 // PaymentsBalanceListResponseToBalance represents a component schema.
 type PaymentsBalanceListResponseToBalance struct {
-	ActiveItemsCount            int64                                              `json:"active_items_count"`
-	ActivityVisible             bool                                               `json:"activity_visible"`
-	Age                         int64                                              `json:"age"`
-	Balance                     string                                             `json:"balance"`
-	Balances                    []any                                              `json:"balances"`
-	BumpItemPeriod              int64                                              `json:"bump_item_period"`
-	CanEdit                     bool                                               `json:"can_edit"`
-	CanFollow                   bool                                               `json:"can_follow"`
-	CanIgnore                   bool                                               `json:"can_ignore"`
-	CanPostProfile              bool                                               `json:"can_post_profile"`
-	CanViewProfile              bool                                               `json:"can_view_profile"`
-	CanViewProfilePosts         bool                                               `json:"can_view_profile_posts"`
-	CanWarn                     bool                                               `json:"can_warn"`
-	ContestCount                int64                                              `json:"contest_count"`
-	ConvWelcomeMessage          string                                             `json:"conv_welcome_message"`
-	ConvertedBalance            int64                                              `json:"convertedBalance"`
-	ConvertedDeposit            int64                                              `json:"convertedDeposit"`
-	ConvertedHold               int64                                              `json:"convertedHold"`
-	Currency                    string                                             `json:"currency"`
-	CurrencyPhrase              string                                             `json:"currencyPhrase"`
-	CustomAccountDownloadFormat string                                             `json:"custom_account_download_format"`
-	CustomFields                PaymentsBalanceListResponseToBalanceCustomFields   `json:"custom_fields"`
-	CustomTitle                 string                                             `json:"custom_title"`
-	Deposit                     int64                                              `json:"deposit"`
-	Dob                         PaymentsBalanceListResponseToBalanceDob            `json:"dob"`
-	FeedbackData                PaymentsBalanceListResponseToBalanceFeedbackData   `json:"feedback_data"`
-	Hold                        string                                             `json:"hold"`
-	Homepage                    string                                             `json:"homepage"`
-	ImapData                    PaymentsBalanceListResponseToBalanceImapData       `json:"imap_data"`
-	IsAdmin                     bool                                               `json:"is_admin"`
-	IsBanned                    bool                                               `json:"is_banned"`
-	IsFollowed                  bool                                               `json:"is_followed"`
-	IsIgnored                   bool                                               `json:"is_ignored"`
-	IsModerator                 bool                                               `json:"is_moderator"`
-	IsStaff                     bool                                               `json:"is_staff"`
-	IsSuperAdmin                bool                                               `json:"is_super_admin"`
-	JoinedDate                  int64                                              `json:"joined_date"`
-	LastActivity                int64                                              `json:"last_activity"`
-	Like2Count                  int64                                              `json:"like2_count"`
-	LikeCount                   int64                                              `json:"like_count"`
-	Location                    string                                             `json:"location"`
-	MarketCustomTitle           string                                             `json:"market_custom_title"`
-	MaxDiscountPercent          int64                                              `json:"max_discount_percent"`
-	MessageCount                int64                                              `json:"message_count"`
-	PaidMailLeft                int64                                              `json:"paid_mail_left"`
-	PublicTags                  []any                                              `json:"public_tags"`
-	RegisterDate                int64                                              `json:"register_date"`
-	Rendered                    PaymentsBalanceListResponseToBalanceRendered       `json:"rendered"`
-	RestoreCount                int64                                              `json:"restore_count"`
-	RestoreData                 PaymentsBalanceListResponseToBalanceRestoreData    `json:"restore_data"`
-	ShortLink                   string                                             `json:"short_link"`
-	SoldItemsCount              int64                                              `json:"sold_items_count"`
-	Tags                        []any                                              `json:"tags"`
-	TelegramClient              PaymentsBalanceListResponseToBalanceTelegramClient `json:"telegram_client"`
-	TrophyPoints                int64                                              `json:"trophy_points"`
-	UserAllowAskDiscount        bool                                               `json:"user_allow_ask_discount"`
-	UserID                      int64                                              `json:"user_id"`
-	UserTitle                   string                                             `json:"user_title"`
-	Username                    string                                             `json:"username"`
-	ViewURL                     string                                             `json:"view_url"`
-	Visible                     bool                                               `json:"visible"`
-	WarningPoints               int64                                              `json:"warning_points"`
+	ActiveItemsCount            float64 `json:"active_items_count"`
+	ActivityVisible             bool    `json:"activity_visible"`
+	Age                         float64 `json:"age"`
+	Balance                     string  `json:"balance"`
+	Balances                    any     `json:"balances"`
+	BumpItemPeriod              float64 `json:"bump_item_period"`
+	CanEdit                     bool    `json:"can_edit"`
+	CanFollow                   bool    `json:"can_follow"`
+	CanIgnore                   bool    `json:"can_ignore"`
+	CanPostProfile              bool    `json:"can_post_profile"`
+	CanViewProfile              bool    `json:"can_view_profile"`
+	CanViewProfilePosts         bool    `json:"can_view_profile_posts"`
+	CanWarn                     bool    `json:"can_warn"`
+	ContestCount                float64 `json:"contest_count"`
+	ConvWelcomeMessage          string  `json:"conv_welcome_message"`
+	ConvertedBalance            float64 `json:"convertedBalance"`
+	ConvertedDeposit            float64 `json:"convertedDeposit"`
+	ConvertedHold               float64 `json:"convertedHold"`
+	Currency                    string  `json:"currency"`
+	CurrencyPhrase              string  `json:"currencyPhrase"`
+	CustomAccountDownloadFormat string  `json:"custom_account_download_format"`
+	CustomFields                any     `json:"custom_fields"`
+	CustomTitle                 string  `json:"custom_title"`
+	Deposit                     float64 `json:"deposit"`
+	Dob                         any     `json:"dob"`
+	FeedbackData                any     `json:"feedback_data"`
+	Hold                        string  `json:"hold"`
+	Homepage                    string  `json:"homepage"`
+	ImapData                    any     `json:"imap_data"`
+	IsAdmin                     bool    `json:"is_admin"`
+	IsBanned                    bool    `json:"is_banned"`
+	IsFollowed                  bool    `json:"is_followed"`
+	IsIgnored                   bool    `json:"is_ignored"`
+	IsModerator                 bool    `json:"is_moderator"`
+	IsStaff                     bool    `json:"is_staff"`
+	IsSuperAdmin                bool    `json:"is_super_admin"`
+	JoinedDate                  float64 `json:"joined_date"`
+	LastActivity                float64 `json:"last_activity"`
+	Like2Count                  float64 `json:"like2_count"`
+	LikeCount                   float64 `json:"like_count"`
+	Location                    string  `json:"location"`
+	MarketCustomTitle           string  `json:"market_custom_title"`
+	MaxDiscountPercent          float64 `json:"max_discount_percent"`
+	MessageCount                float64 `json:"message_count"`
+	PaidMailLeft                float64 `json:"paid_mail_left"`
+	PublicTags                  any     `json:"public_tags"`
+	RegisterDate                float64 `json:"register_date"`
+	Rendered                    any     `json:"rendered"`
+	RestoreCount                float64 `json:"restore_count"`
+	RestoreData                 any     `json:"restore_data"`
+	ShortLink                   string  `json:"short_link"`
+	SoldItemsCount              float64 `json:"sold_items_count"`
+	Tags                        any     `json:"tags"`
+	TelegramClient              any     `json:"telegram_client"`
+	TrophyPoints                float64 `json:"trophy_points"`
+	UserAllowAskDiscount        bool    `json:"user_allow_ask_discount"`
+	UserID                      float64 `json:"user_id"`
+	UserTitle                   string  `json:"user_title"`
+	Username                    string  `json:"username"`
+	ViewURL                     string  `json:"view_url"`
+	Visible                     bool    `json:"visible"`
+	WarningPoints               float64 `json:"warning_points"`
 }
 
 // PaymentsBalanceListResponseToBalanceCustomFields represents a component schema.
 type PaymentsBalanceListResponseToBalanceCustomFields struct {
 	N4                    string `json:"_4"`
-	AllowSelfUnban        []any  `json:"allowSelfUnban"`
+	AllowSelfUnban        any    `json:"allowSelfUnban"`
 	BanReason             string `json:"ban_reason"`
 	Discord               string `json:"discord"`
 	FavoriteAnime         string `json:"favoriteAnime"`
@@ -17260,41 +16983,30 @@ type PaymentsBalanceListResponseToBalanceCustomFields struct {
 
 // PaymentsBalanceListResponseToBalanceDob represents a component schema.
 type PaymentsBalanceListResponseToBalanceDob struct {
-	Day   int64 `json:"day"`
-	Month int64 `json:"month"`
-	Year  int64 `json:"year"`
-}
-
-// PaymentsBalanceListResponseToBalanceFeedbackData represents a component schema.
-type PaymentsBalanceListResponseToBalanceFeedbackData struct {
-	N12345 PaymentsBalanceListResponseToBalanceFeedbackDataN12345 `json:"12345"`
-}
-
-// PaymentsBalanceListResponseToBalanceFeedbackDataN12345 represents a component schema.
-type PaymentsBalanceListResponseToBalanceFeedbackDataN12345 struct {
-	Negative int64 `json:"negative"`
-	Positive int64 `json:"positive"`
+	Day   float64 `json:"day"`
+	Month float64 `json:"month"`
+	Year  float64 `json:"year"`
 }
 
 // PaymentsBalanceListResponseToBalanceImapData represents a component schema.
 type PaymentsBalanceListResponseToBalanceImapData struct {
-	Domainzone PaymentsBalanceListResponseToBalanceImapDataDomainzone `json:"domain.zone"`
+	Domainzone any `json:"domain.zone"`
 }
 
 // PaymentsBalanceListResponseToBalanceImapDataDomainzone represents a component schema.
 type PaymentsBalanceListResponseToBalanceImapDataDomainzone struct {
-	Domain     string `json:"domain"`
-	ImapServer string `json:"imap_server"`
-	Port       int64  `json:"port"`
-	Secure     bool   `json:"secure"`
+	Domain     string  `json:"domain"`
+	ImapServer string  `json:"imap_server"`
+	Port       float64 `json:"port"`
+	Secure     bool    `json:"secure"`
 }
 
 // PaymentsBalanceListResponseToBalanceRendered represents a component schema.
 type PaymentsBalanceListResponseToBalanceRendered struct {
-	Avatars     PaymentsBalanceListResponseToBalanceRenderedAvatars     `json:"avatars"`
-	Backgrounds PaymentsBalanceListResponseToBalanceRenderedBackgrounds `json:"backgrounds"`
-	Link        string                                                  `json:"link"`
-	Username    string                                                  `json:"username"`
+	Avatars     any    `json:"avatars"`
+	Backgrounds any    `json:"backgrounds"`
+	Link        string `json:"link"`
+	Username    string `json:"username"`
 }
 
 // PaymentsBalanceListResponseToBalanceRenderedAvatars represents a component schema.
@@ -17308,11 +17020,6 @@ type PaymentsBalanceListResponseToBalanceRenderedAvatars struct {
 type PaymentsBalanceListResponseToBalanceRenderedBackgrounds struct {
 	L string `json:"l"`
 	M string `json:"m"`
-}
-
-// PaymentsBalanceListResponseToBalanceRestoreData represents a component schema.
-type PaymentsBalanceListResponseToBalanceRestoreData struct {
-	N12345 int64 `json:"12345"`
 }
 
 // PaymentsBalanceListResponseToBalanceTelegramClient represents a component schema.
@@ -17329,73 +17036,73 @@ type PaymentsBalanceListResponseToBalanceTelegramClient struct {
 
 // PaymentsCancelResponseSystemInfo represents a component schema.
 type PaymentsCancelResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PaymentsCurrencyResponseCurrencyList represents a component schema.
 type PaymentsCurrencyResponseCurrencyList struct {
-	AED   PaymentsCurrencyResponseCurrencyListAED   `json:"AED"`
-	ARS   PaymentsCurrencyResponseCurrencyListARS   `json:"ARS"`
-	AUD   PaymentsCurrencyResponseCurrencyListAUD   `json:"AUD"`
-	BCH   PaymentsCurrencyResponseCurrencyListBCH   `json:"BCH"`
-	BGN   PaymentsCurrencyResponseCurrencyListBGN   `json:"BGN"`
-	BNB   PaymentsCurrencyResponseCurrencyListBNB   `json:"BNB"`
-	BRL   PaymentsCurrencyResponseCurrencyListBRL   `json:"BRL"`
-	BTC   PaymentsCurrencyResponseCurrencyListBTC   `json:"BTC"`
-	CAD   PaymentsCurrencyResponseCurrencyListCAD   `json:"CAD"`
-	CHF   PaymentsCurrencyResponseCurrencyListCHF   `json:"CHF"`
-	CLP   PaymentsCurrencyResponseCurrencyListCLP   `json:"CLP"`
-	CNY   PaymentsCurrencyResponseCurrencyListCNY   `json:"CNY"`
-	COP   PaymentsCurrencyResponseCurrencyListCOP   `json:"COP"`
-	CRC   PaymentsCurrencyResponseCurrencyListCRC   `json:"CRC"`
-	CZK   PaymentsCurrencyResponseCurrencyListCZK   `json:"CZK"`
-	DASH  PaymentsCurrencyResponseCurrencyListDASH  `json:"DASH"`
-	DKK   PaymentsCurrencyResponseCurrencyListDKK   `json:"DKK"`
-	DOGE  PaymentsCurrencyResponseCurrencyListDOGE  `json:"DOGE"`
-	ETH   PaymentsCurrencyResponseCurrencyListETH   `json:"ETH"`
-	EUR   PaymentsCurrencyResponseCurrencyListEUR   `json:"EUR"`
-	GBP   PaymentsCurrencyResponseCurrencyListGBP   `json:"GBP"`
-	GEL   PaymentsCurrencyResponseCurrencyListGEL   `json:"GEL"`
-	HKD   PaymentsCurrencyResponseCurrencyListHKD   `json:"HKD"`
-	HUF   PaymentsCurrencyResponseCurrencyListHUF   `json:"HUF"`
-	IDR   PaymentsCurrencyResponseCurrencyListIDR   `json:"IDR"`
-	ILS   PaymentsCurrencyResponseCurrencyListILS   `json:"ILS"`
-	INR   PaymentsCurrencyResponseCurrencyListINR   `json:"INR"`
-	JPY   PaymentsCurrencyResponseCurrencyListJPY   `json:"JPY"`
-	KRW   PaymentsCurrencyResponseCurrencyListKRW   `json:"KRW"`
-	KWD   PaymentsCurrencyResponseCurrencyListKWD   `json:"KWD"`
-	KZT   PaymentsCurrencyResponseCurrencyListKZT   `json:"KZT"`
-	LTC   PaymentsCurrencyResponseCurrencyListLTC   `json:"LTC"`
-	MATIC PaymentsCurrencyResponseCurrencyListMATIC `json:"MATIC"`
-	MXN   PaymentsCurrencyResponseCurrencyListMXN   `json:"MXN"`
-	MYR   PaymentsCurrencyResponseCurrencyListMYR   `json:"MYR"`
-	NOK   PaymentsCurrencyResponseCurrencyListNOK   `json:"NOK"`
-	NZD   PaymentsCurrencyResponseCurrencyListNZD   `json:"NZD"`
-	PEN   PaymentsCurrencyResponseCurrencyListPEN   `json:"PEN"`
-	PHP   PaymentsCurrencyResponseCurrencyListPHP   `json:"PHP"`
-	PLN   PaymentsCurrencyResponseCurrencyListPLN   `json:"PLN"`
-	QAR   PaymentsCurrencyResponseCurrencyListQAR   `json:"QAR"`
-	RON   PaymentsCurrencyResponseCurrencyListRON   `json:"RON"`
-	RSD   PaymentsCurrencyResponseCurrencyListRSD   `json:"RSD"`
-	RUB   PaymentsCurrencyResponseCurrencyListRUB   `json:"RUB"`
-	SAR   PaymentsCurrencyResponseCurrencyListSAR   `json:"SAR"`
-	SEK   PaymentsCurrencyResponseCurrencyListSEK   `json:"SEK"`
-	SGD   PaymentsCurrencyResponseCurrencyListSGD   `json:"SGD"`
-	SOL   PaymentsCurrencyResponseCurrencyListSOL   `json:"SOL"`
-	THB   PaymentsCurrencyResponseCurrencyListTHB   `json:"THB"`
-	TON   PaymentsCurrencyResponseCurrencyListTON   `json:"TON"`
-	TRX   PaymentsCurrencyResponseCurrencyListTRX   `json:"TRX"`
-	TRY   PaymentsCurrencyResponseCurrencyListTRY   `json:"TRY"`
-	TWD   PaymentsCurrencyResponseCurrencyListTWD   `json:"TWD"`
-	UAH   PaymentsCurrencyResponseCurrencyListUAH   `json:"UAH"`
-	USD   PaymentsCurrencyResponseCurrencyListUSD   `json:"USD"`
-	USDT  PaymentsCurrencyResponseCurrencyListUSDT  `json:"USDT"`
-	UYU   PaymentsCurrencyResponseCurrencyListUYU   `json:"UYU"`
-	VND   PaymentsCurrencyResponseCurrencyListVND   `json:"VND"`
-	XMR   PaymentsCurrencyResponseCurrencyListXMR   `json:"XMR"`
-	ZAR   PaymentsCurrencyResponseCurrencyListZAR   `json:"ZAR"`
+	AED   any `json:"AED"`
+	ARS   any `json:"ARS"`
+	AUD   any `json:"AUD"`
+	BCH   any `json:"BCH"`
+	BGN   any `json:"BGN"`
+	BNB   any `json:"BNB"`
+	BRL   any `json:"BRL"`
+	BTC   any `json:"BTC"`
+	CAD   any `json:"CAD"`
+	CHF   any `json:"CHF"`
+	CLP   any `json:"CLP"`
+	CNY   any `json:"CNY"`
+	COP   any `json:"COP"`
+	CRC   any `json:"CRC"`
+	CZK   any `json:"CZK"`
+	DASH  any `json:"DASH"`
+	DKK   any `json:"DKK"`
+	DOGE  any `json:"DOGE"`
+	ETH   any `json:"ETH"`
+	EUR   any `json:"EUR"`
+	GBP   any `json:"GBP"`
+	GEL   any `json:"GEL"`
+	HKD   any `json:"HKD"`
+	HUF   any `json:"HUF"`
+	IDR   any `json:"IDR"`
+	ILS   any `json:"ILS"`
+	INR   any `json:"INR"`
+	JPY   any `json:"JPY"`
+	KRW   any `json:"KRW"`
+	KWD   any `json:"KWD"`
+	KZT   any `json:"KZT"`
+	LTC   any `json:"LTC"`
+	MATIC any `json:"MATIC"`
+	MXN   any `json:"MXN"`
+	MYR   any `json:"MYR"`
+	NOK   any `json:"NOK"`
+	NZD   any `json:"NZD"`
+	PEN   any `json:"PEN"`
+	PHP   any `json:"PHP"`
+	PLN   any `json:"PLN"`
+	QAR   any `json:"QAR"`
+	RON   any `json:"RON"`
+	RSD   any `json:"RSD"`
+	RUB   any `json:"RUB"`
+	SAR   any `json:"SAR"`
+	SEK   any `json:"SEK"`
+	SGD   any `json:"SGD"`
+	SOL   any `json:"SOL"`
+	THB   any `json:"THB"`
+	TON   any `json:"TON"`
+	TRX   any `json:"TRX"`
+	TRY   any `json:"TRY"`
+	TWD   any `json:"TWD"`
+	UAH   any `json:"UAH"`
+	USD   any `json:"USD"`
+	USDT  any `json:"USDT"`
+	UYU   any `json:"UYU"`
+	VND   any `json:"VND"`
+	XMR   any `json:"XMR"`
+	ZAR   any `json:"ZAR"`
 }
 
 // PaymentsCurrencyResponseCurrencyListAED represents a component schema.
@@ -17744,10 +17451,10 @@ type PaymentsCurrencyResponseCurrencyListRSD struct {
 
 // PaymentsCurrencyResponseCurrencyListRUB represents a component schema.
 type PaymentsCurrencyResponseCurrencyListRUB struct {
-	FormattedRate string `json:"formattedRate"`
-	Rate          int64  `json:"rate"`
-	Symbol        string `json:"symbol"`
-	Title         string `json:"title"`
+	FormattedRate string  `json:"formattedRate"`
+	Rate          float64 `json:"rate"`
+	Symbol        string  `json:"symbol"`
+	Title         string  `json:"title"`
 }
 
 // PaymentsCurrencyResponseCurrencyListSAR represents a component schema.
@@ -17880,43 +17587,43 @@ type PaymentsCurrencyResponseCurrencyListZAR struct {
 
 // PaymentsCurrencyResponseSystemInfo represents a component schema.
 type PaymentsCurrencyResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PaymentsFeeResponseCalculator represents a component schema.
 type PaymentsFeeResponseCalculator struct {
-	CommissionAmount  int64 `json:"commissionAmount"`
-	InputAmount       int64 `json:"inputAmount"`
-	TotalOutputAmount int64 `json:"totalOutputAmount"`
+	CommissionAmount  float64 `json:"commissionAmount"`
+	InputAmount       float64 `json:"inputAmount"`
+	TotalOutputAmount float64 `json:"totalOutputAmount"`
 }
 
 // PaymentsFeeResponseSystemInfo represents a component schema.
 type PaymentsFeeResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PaymentsHistoryResponseInput represents a component schema.
 type PaymentsHistoryResponseInput struct {
-	CategoryID    int64  `json:"category_id"`
-	Comment       string `json:"comment"`
-	Currency      string `json:"currency"`
-	EndDate       string `json:"endDate"`
-	IsHold        bool   `json:"is_hold"`
-	OperationIDLt int64  `json:"operation_id_lt"`
-	Page          int64  `json:"page"`
-	PeriodLabel   string `json:"period_label"`
-	Pmax          string `json:"pmax"`
-	Pmin          string `json:"pmin"`
-	Receiver      string `json:"receiver"`
-	Sender        string `json:"sender"`
-	StartDate     string `json:"startDate"`
-	Type          string `json:"type"`
-	UserID        int64  `json:"user_id"`
-	Wallet        string `json:"wallet"`
+	CategoryID    float64 `json:"category_id"`
+	Comment       string  `json:"comment"`
+	Currency      string  `json:"currency"`
+	EndDate       string  `json:"endDate"`
+	IsHold        bool    `json:"is_hold"`
+	OperationIDLt float64 `json:"operation_id_lt"`
+	Page          float64 `json:"page"`
+	PeriodLabel   string  `json:"period_label"`
+	Pmax          string  `json:"pmax"`
+	Pmin          string  `json:"pmin"`
+	Receiver      string  `json:"receiver"`
+	Sender        string  `json:"sender"`
+	StartDate     string  `json:"startDate"`
+	Type          string  `json:"type"`
+	UserID        float64 `json:"user_id"`
+	Wallet        string  `json:"wallet"`
 }
 
 // PaymentsHistoryResponsePageNavParams represents a component schema.
@@ -17926,313 +17633,232 @@ type PaymentsHistoryResponsePageNavParams struct {
 	Type      string `json:"type"`
 }
 
-// PaymentsHistoryResponsePayments represents a component schema.
-type PaymentsHistoryResponsePayments struct {
-	N1234567890 PaymentsHistoryResponsePaymentsN1234567890 `json:"1234567890"`
-}
-
-// PaymentsHistoryResponsePaymentsN1234567890 represents a component schema.
-type PaymentsHistoryResponsePaymentsN1234567890 struct {
-	API                      int64                                              `json:"api"`
-	CanCancelBalanceHold     bool                                               `json:"canCancelBalanceHold"`
-	CanCancelBalancePayout   bool                                               `json:"canCancelBalancePayout"`
-	CanCancelBalanceTransfer bool                                               `json:"canCancelBalanceTransfer"`
-	CanCancelPaidMailPayment bool                                               `json:"canCancelPaidMailPayment"`
-	CanFinishBalanceHold     bool                                               `json:"canFinishBalanceHold"`
-	CanFinishBalancePayout   bool                                               `json:"canFinishBalancePayout"`
-	CanFinishBalanceTransfer bool                                               `json:"canFinishBalanceTransfer"`
-	Data                     PaymentsHistoryResponsePaymentsN1234567890Data     `json:"data"`
-	HoldEndDate              int64                                              `json:"hold_end_date"`
-	IncomingSum              string                                             `json:"incoming_sum"`
-	IsFinished               int64                                              `json:"is_finished"`
-	IsHold                   int64                                              `json:"is_hold"`
-	ItemID                   int64                                              `json:"item_id"`
-	Label                    PaymentsHistoryResponsePaymentsN1234567890Label    `json:"label"`
-	Merchant                 PaymentsHistoryResponsePaymentsN1234567890Merchant `json:"merchant"`
-	OperationDate            int64                                              `json:"operation_date"`
-	OperationEndDate         int64                                              `json:"operation_end_date"`
-	OperationID              int64                                              `json:"operation_id"`
-	OperationType            string                                             `json:"operation_type"`
-	OutgoingSum              string                                             `json:"outgoing_sum"`
-	PaymentSystemIcons       []any                                              `json:"paymentSystemIcons"`
-	PaymentStatus            string                                             `json:"payment_status"`
-	PaymentSystem            string                                             `json:"payment_system"`
-	Sum                      string                                             `json:"sum"`
-	SupportLink              any                                                `json:"supportLink"`
-	User                     PaymentsHistoryResponsePaymentsN1234567890User     `json:"user"`
-	Wallet                   string                                             `json:"wallet"`
-}
-
-// PaymentsHistoryResponsePaymentsN1234567890Data represents a component schema.
-type PaymentsHistoryResponsePaymentsN1234567890Data struct {
-	Avatar              string `json:"avatar"`
-	AvatarDate          int64  `json:"avatar_date"`
-	Comment             string `json:"comment"`
-	CommentPlain        string `json:"commentPlain"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	Fee                 int64  `json:"fee"`
-	InvoiceID           int64  `json:"invoice_id"`
-	IsBanned            int64  `json:"is_banned"`
-	IsTest              bool   `json:"is_test"`
-	PaymentID           string `json:"payment_id"`
-	UniqBanner          string `json:"uniq_banner"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	UsernameHTML        string `json:"username_html"`
-}
-
-// PaymentsHistoryResponsePaymentsN1234567890Label represents a component schema.
-type PaymentsHistoryResponsePaymentsN1234567890Label struct {
-	Title string `json:"title"`
-}
-
-// PaymentsHistoryResponsePaymentsN1234567890Merchant represents a component schema.
-type PaymentsHistoryResponsePaymentsN1234567890Merchant struct {
-	AvatarData  string `json:"avatar_data"`
-	CreatedDate int64  `json:"created_date"`
-	MerchantID  int64  `json:"merchant_id"`
-	Name        string `json:"name"`
-	SecretKey   string `json:"secret_key"`
-	URL         string `json:"url"`
-	UserID      int64  `json:"user_id"`
-}
-
-// PaymentsHistoryResponsePaymentsN1234567890User represents a component schema.
-type PaymentsHistoryResponsePaymentsN1234567890User struct {
-	UserBalance         string  `json:"user_balance"`
-	UserBalanceWithHold float64 `json:"user_balance_with_hold"`
-	UserHold            string  `json:"user_hold"`
-	UserID              int64   `json:"user_id"`
-}
-
 // PaymentsHistoryResponseSystemInfo represents a component schema.
 type PaymentsHistoryResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PaymentsInvoiceCreateResponseInvoice represents a component schema.
 type PaymentsInvoiceCreateResponseInvoice struct {
-	AdditionalData string `json:"additional_data"`
-	Amount         int64  `json:"amount"`
-	Comment        string `json:"comment"`
-	ExpiresAt      int64  `json:"expires_at"`
-	InvoiceDate    int64  `json:"invoice_date"`
-	InvoiceID      int64  `json:"invoice_id"`
-	IsTest         bool   `json:"is_test"`
-	MerchantID     int64  `json:"merchant_id"`
-	PaidDate       int64  `json:"paid_date"`
-	PayerUserID    int64  `json:"payer_user_id"`
-	PaymentID      string `json:"payment_id"`
-	ResendAttempts int64  `json:"resend_attempts"`
-	Status         string `json:"status"`
-	URL            string `json:"url"`
-	URLCallback    string `json:"url_callback"`
-	URLSuccess     string `json:"url_success"`
-	UserID         int64  `json:"user_id"`
+	AdditionalData string  `json:"additional_data"`
+	Amount         float64 `json:"amount"`
+	Comment        string  `json:"comment"`
+	ExpiresAt      float64 `json:"expires_at"`
+	InvoiceDate    float64 `json:"invoice_date"`
+	InvoiceID      float64 `json:"invoice_id"`
+	IsTest         bool    `json:"is_test"`
+	MerchantID     float64 `json:"merchant_id"`
+	PaidDate       float64 `json:"paid_date"`
+	PayerUserID    float64 `json:"payer_user_id"`
+	PaymentID      string  `json:"payment_id"`
+	ResendAttempts float64 `json:"resend_attempts"`
+	Status         string  `json:"status"`
+	URL            string  `json:"url"`
+	URLCallback    string  `json:"url_callback"`
+	URLSuccess     string  `json:"url_success"`
+	UserID         float64 `json:"user_id"`
 }
 
 // PaymentsInvoiceCreateResponseSystemInfo represents a component schema.
 type PaymentsInvoiceCreateResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PaymentsInvoiceGetResponseInvoice represents a component schema.
 type PaymentsInvoiceGetResponseInvoice struct {
-	AdditionalData string `json:"additional_data"`
-	Amount         int64  `json:"amount"`
-	Comment        string `json:"comment"`
-	ExpiresAt      int64  `json:"expires_at"`
-	InvoiceDate    int64  `json:"invoice_date"`
-	InvoiceID      int64  `json:"invoice_id"`
-	IsTest         bool   `json:"is_test"`
-	MerchantID     int64  `json:"merchant_id"`
-	PaidDate       int64  `json:"paid_date"`
-	PayerUserID    int64  `json:"payer_user_id"`
-	PaymentID      string `json:"payment_id"`
-	ResendAttempts int64  `json:"resend_attempts"`
-	Status         string `json:"status"`
-	URL            string `json:"url"`
-	URLCallback    string `json:"url_callback"`
-	URLSuccess     string `json:"url_success"`
-	UserID         int64  `json:"user_id"`
+	AdditionalData string  `json:"additional_data"`
+	Amount         float64 `json:"amount"`
+	Comment        string  `json:"comment"`
+	ExpiresAt      float64 `json:"expires_at"`
+	InvoiceDate    float64 `json:"invoice_date"`
+	InvoiceID      float64 `json:"invoice_id"`
+	IsTest         bool    `json:"is_test"`
+	MerchantID     float64 `json:"merchant_id"`
+	PaidDate       float64 `json:"paid_date"`
+	PayerUserID    float64 `json:"payer_user_id"`
+	PaymentID      string  `json:"payment_id"`
+	ResendAttempts float64 `json:"resend_attempts"`
+	Status         string  `json:"status"`
+	URL            string  `json:"url"`
+	URLCallback    string  `json:"url_callback"`
+	URLSuccess     string  `json:"url_success"`
+	UserID         float64 `json:"user_id"`
 }
 
 // PaymentsInvoiceGetResponseSystemInfo represents a component schema.
 type PaymentsInvoiceGetResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PaymentsInvoiceListResponseSystemInfo represents a component schema.
 type PaymentsInvoiceListResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PaymentsPayoutBodyExtra represents a component schema.
 type PaymentsPayoutBodyExtra struct {
-	Provider *string `json:"provider,omitempty"`
+	Provider any `json:"provider,omitempty"`
 }
 
 // PaymentsPayoutResponseSystemInfo represents a component schema.
 type PaymentsPayoutResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PaymentsPayoutServicesResponseSystemInfo represents a component schema.
 type PaymentsPayoutServicesResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PaymentsTransferResponseSystemInfo represents a component schema.
 type PaymentsTransferResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ProfileClaimsResponseStats represents a component schema.
 type ProfileClaimsResponseStats struct {
-	Market   ProfileClaimsResponseStatsMarket   `json:"market"`
-	NoMarket ProfileClaimsResponseStatsNoMarket `json:"noMarket"`
+	Market   any `json:"market"`
+	NoMarket any `json:"noMarket"`
 }
 
 // ProfileClaimsResponseStatsMarket represents a component schema.
 type ProfileClaimsResponseStatsMarket struct {
-	Rejected int64 `json:"rejected"`
-	Settled  int64 `json:"settled"`
-	Solved   int64 `json:"solved"`
-	Total    int64 `json:"total"`
+	Rejected float64 `json:"rejected"`
+	Settled  float64 `json:"settled"`
+	Solved   float64 `json:"solved"`
+	Total    float64 `json:"total"`
 }
 
 // ProfileClaimsResponseStatsNoMarket represents a component schema.
 type ProfileClaimsResponseStatsNoMarket struct {
-	Rejected int64 `json:"rejected"`
-	Settled  int64 `json:"settled"`
-	Solved   int64 `json:"solved"`
-	Total    int64 `json:"total"`
+	Rejected float64 `json:"rejected"`
+	Settled  float64 `json:"settled"`
+	Solved   float64 `json:"solved"`
+	Total    float64 `json:"total"`
 }
 
 // ProfileClaimsResponseSystemInfo represents a component schema.
 type ProfileClaimsResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ProfileEditBodyOption represents a component schema.
 type ProfileEditBodyOption struct {
-	ChangePasswordOnPurchase     *bool `json:"change_password_on_purchase,omitempty"`
-	DeauthorizeSteam             *bool `json:"deauthorize_steam,omitempty"`
-	DisableSteamGuard            *bool `json:"disable_steam_guard,omitempty"`
-	HideFavourites               *bool `json:"hide_favourites,omitempty"`
-	ShowTooLowPriceChangeWarning *bool `json:"show_too_low_price_change_warning,omitempty"`
+	ChangePasswordOnPurchase     any `json:"change_password_on_purchase,omitempty"`
+	DeauthorizeSteam             any `json:"deauthorize_steam,omitempty"`
+	DisableSteamGuard            any `json:"disable_steam_guard,omitempty"`
+	HideFavourites               any `json:"hide_favourites,omitempty"`
+	ShowTooLowPriceChangeWarning any `json:"show_too_low_price_change_warning,omitempty"`
 }
 
 // ProfileEditBodyUser represents a component schema.
 type ProfileEditBodyUser struct {
-	Currency             *string `json:"currency,omitempty"`
-	MarketCustomTitle    *string `json:"market_custom_title,omitempty"`
-	MaxDiscountPercent   *int64  `json:"max_discount_percent,omitempty"`
-	UserAllowAskDiscount *bool   `json:"user_allow_ask_discount,omitempty"`
+	Currency             any `json:"currency,omitempty"`
+	MarketCustomTitle    any `json:"market_custom_title,omitempty"`
+	MaxDiscountPercent   any `json:"max_discount_percent,omitempty"`
+	UserAllowAskDiscount any `json:"user_allow_ask_discount,omitempty"`
 }
 
 // ProfileEditResponseSystemInfo represents a component schema.
 type ProfileEditResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ProfileGetResponseSystemInfo represents a component schema.
 type ProfileGetResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ProfileGetResponseUser represents a component schema.
 type ProfileGetResponseUser struct {
-	ActiveItemsCount            int64                                `json:"active_items_count"`
-	ActivityVisible             bool                                 `json:"activity_visible"`
-	Age                         int64                                `json:"age"`
-	Balance                     string                               `json:"balance"`
-	Balances                    []any                                `json:"balances"`
-	BumpItemPeriod              int64                                `json:"bump_item_period"`
-	CanEdit                     bool                                 `json:"can_edit"`
-	CanFollow                   bool                                 `json:"can_follow"`
-	CanIgnore                   bool                                 `json:"can_ignore"`
-	CanPostProfile              bool                                 `json:"can_post_profile"`
-	CanViewProfile              bool                                 `json:"can_view_profile"`
-	CanViewProfilePosts         bool                                 `json:"can_view_profile_posts"`
-	CanWarn                     bool                                 `json:"can_warn"`
-	ContestCount                int64                                `json:"contest_count"`
-	ConvWelcomeMessage          string                               `json:"conv_welcome_message"`
-	ConvertedBalance            int64                                `json:"convertedBalance"`
-	ConvertedDeposit            int64                                `json:"convertedDeposit"`
-	ConvertedHold               int64                                `json:"convertedHold"`
-	Currency                    string                               `json:"currency"`
-	CurrencyPhrase              string                               `json:"currencyPhrase"`
-	CustomAccountDownloadFormat string                               `json:"custom_account_download_format"`
-	CustomFields                ProfileGetResponseUserCustomFields   `json:"custom_fields"`
-	CustomTitle                 string                               `json:"custom_title"`
-	Deposit                     int64                                `json:"deposit"`
-	Dob                         ProfileGetResponseUserDob            `json:"dob"`
-	FeedbackData                ProfileGetResponseUserFeedbackData   `json:"feedback_data"`
-	Hold                        string                               `json:"hold"`
-	Homepage                    string                               `json:"homepage"`
-	ImapData                    ProfileGetResponseUserImapData       `json:"imap_data"`
-	IsAdmin                     bool                                 `json:"is_admin"`
-	IsBanned                    bool                                 `json:"is_banned"`
-	IsFollowed                  bool                                 `json:"is_followed"`
-	IsIgnored                   bool                                 `json:"is_ignored"`
-	IsModerator                 bool                                 `json:"is_moderator"`
-	IsStaff                     bool                                 `json:"is_staff"`
-	IsSuperAdmin                bool                                 `json:"is_super_admin"`
-	JoinedDate                  int64                                `json:"joined_date"`
-	LastActivity                int64                                `json:"last_activity"`
-	Like2Count                  int64                                `json:"like2_count"`
-	LikeCount                   int64                                `json:"like_count"`
-	Location                    string                               `json:"location"`
-	MarketCustomTitle           string                               `json:"market_custom_title"`
-	MaxDiscountPercent          int64                                `json:"max_discount_percent"`
-	MessageCount                int64                                `json:"message_count"`
-	PaidMailLeft                int64                                `json:"paid_mail_left"`
-	PublicTags                  []any                                `json:"public_tags"`
-	RegisterDate                int64                                `json:"register_date"`
-	Rendered                    ProfileGetResponseUserRendered       `json:"rendered"`
-	RestoreCount                int64                                `json:"restore_count"`
-	RestoreData                 ProfileGetResponseUserRestoreData    `json:"restore_data"`
-	ShortLink                   string                               `json:"short_link"`
-	SoldItemsCount              int64                                `json:"sold_items_count"`
-	Tags                        []any                                `json:"tags"`
-	TelegramClient              ProfileGetResponseUserTelegramClient `json:"telegram_client"`
-	TrophyPoints                int64                                `json:"trophy_points"`
-	UserAllowAskDiscount        bool                                 `json:"user_allow_ask_discount"`
-	UserID                      int64                                `json:"user_id"`
-	UserTitle                   string                               `json:"user_title"`
-	Username                    string                               `json:"username"`
-	ViewURL                     string                               `json:"view_url"`
-	Visible                     bool                                 `json:"visible"`
-	WarningPoints               int64                                `json:"warning_points"`
+	ActiveItemsCount            float64 `json:"active_items_count"`
+	ActivityVisible             bool    `json:"activity_visible"`
+	Age                         float64 `json:"age"`
+	Balance                     string  `json:"balance"`
+	Balances                    any     `json:"balances"`
+	BumpItemPeriod              float64 `json:"bump_item_period"`
+	CanEdit                     bool    `json:"can_edit"`
+	CanFollow                   bool    `json:"can_follow"`
+	CanIgnore                   bool    `json:"can_ignore"`
+	CanPostProfile              bool    `json:"can_post_profile"`
+	CanViewProfile              bool    `json:"can_view_profile"`
+	CanViewProfilePosts         bool    `json:"can_view_profile_posts"`
+	CanWarn                     bool    `json:"can_warn"`
+	ContestCount                float64 `json:"contest_count"`
+	ConvWelcomeMessage          string  `json:"conv_welcome_message"`
+	ConvertedBalance            float64 `json:"convertedBalance"`
+	ConvertedDeposit            float64 `json:"convertedDeposit"`
+	ConvertedHold               float64 `json:"convertedHold"`
+	Currency                    string  `json:"currency"`
+	CurrencyPhrase              string  `json:"currencyPhrase"`
+	CustomAccountDownloadFormat string  `json:"custom_account_download_format"`
+	CustomFields                any     `json:"custom_fields"`
+	CustomTitle                 string  `json:"custom_title"`
+	Deposit                     float64 `json:"deposit"`
+	Dob                         any     `json:"dob"`
+	FeedbackData                any     `json:"feedback_data"`
+	Hold                        string  `json:"hold"`
+	Homepage                    string  `json:"homepage"`
+	ImapData                    any     `json:"imap_data"`
+	IsAdmin                     bool    `json:"is_admin"`
+	IsBanned                    bool    `json:"is_banned"`
+	IsFollowed                  bool    `json:"is_followed"`
+	IsIgnored                   bool    `json:"is_ignored"`
+	IsModerator                 bool    `json:"is_moderator"`
+	IsStaff                     bool    `json:"is_staff"`
+	IsSuperAdmin                bool    `json:"is_super_admin"`
+	JoinedDate                  float64 `json:"joined_date"`
+	LastActivity                float64 `json:"last_activity"`
+	Like2Count                  float64 `json:"like2_count"`
+	LikeCount                   float64 `json:"like_count"`
+	Location                    string  `json:"location"`
+	MarketCustomTitle           string  `json:"market_custom_title"`
+	MaxDiscountPercent          float64 `json:"max_discount_percent"`
+	MessageCount                float64 `json:"message_count"`
+	PaidMailLeft                float64 `json:"paid_mail_left"`
+	PublicTags                  any     `json:"public_tags"`
+	RegisterDate                float64 `json:"register_date"`
+	Rendered                    any     `json:"rendered"`
+	RestoreCount                float64 `json:"restore_count"`
+	RestoreData                 any     `json:"restore_data"`
+	ShortLink                   string  `json:"short_link"`
+	SoldItemsCount              float64 `json:"sold_items_count"`
+	Tags                        any     `json:"tags"`
+	TelegramClient              any     `json:"telegram_client"`
+	TrophyPoints                float64 `json:"trophy_points"`
+	UserAllowAskDiscount        bool    `json:"user_allow_ask_discount"`
+	UserID                      float64 `json:"user_id"`
+	UserTitle                   string  `json:"user_title"`
+	Username                    string  `json:"username"`
+	ViewURL                     string  `json:"view_url"`
+	Visible                     bool    `json:"visible"`
+	WarningPoints               float64 `json:"warning_points"`
 }
 
 // ProfileGetResponseUserCustomFields represents a component schema.
 type ProfileGetResponseUserCustomFields struct {
 	N4                    string `json:"_4"`
-	AllowSelfUnban        []any  `json:"allowSelfUnban"`
+	AllowSelfUnban        any    `json:"allowSelfUnban"`
 	BanReason             string `json:"ban_reason"`
 	Discord               string `json:"discord"`
 	FavoriteAnime         string `json:"favoriteAnime"`
@@ -18256,41 +17882,30 @@ type ProfileGetResponseUserCustomFields struct {
 
 // ProfileGetResponseUserDob represents a component schema.
 type ProfileGetResponseUserDob struct {
-	Day   int64 `json:"day"`
-	Month int64 `json:"month"`
-	Year  int64 `json:"year"`
-}
-
-// ProfileGetResponseUserFeedbackData represents a component schema.
-type ProfileGetResponseUserFeedbackData struct {
-	N12345 ProfileGetResponseUserFeedbackDataN12345 `json:"12345"`
-}
-
-// ProfileGetResponseUserFeedbackDataN12345 represents a component schema.
-type ProfileGetResponseUserFeedbackDataN12345 struct {
-	Negative int64 `json:"negative"`
-	Positive int64 `json:"positive"`
+	Day   float64 `json:"day"`
+	Month float64 `json:"month"`
+	Year  float64 `json:"year"`
 }
 
 // ProfileGetResponseUserImapData represents a component schema.
 type ProfileGetResponseUserImapData struct {
-	Domainzone ProfileGetResponseUserImapDataDomainzone `json:"domain.zone"`
+	Domainzone any `json:"domain.zone"`
 }
 
 // ProfileGetResponseUserImapDataDomainzone represents a component schema.
 type ProfileGetResponseUserImapDataDomainzone struct {
-	Domain     string `json:"domain"`
-	ImapServer string `json:"imap_server"`
-	Port       int64  `json:"port"`
-	Secure     bool   `json:"secure"`
+	Domain     string  `json:"domain"`
+	ImapServer string  `json:"imap_server"`
+	Port       float64 `json:"port"`
+	Secure     bool    `json:"secure"`
 }
 
 // ProfileGetResponseUserRendered represents a component schema.
 type ProfileGetResponseUserRendered struct {
-	Avatars     ProfileGetResponseUserRenderedAvatars     `json:"avatars"`
-	Backgrounds ProfileGetResponseUserRenderedBackgrounds `json:"backgrounds"`
-	Link        string                                    `json:"link"`
-	Username    string                                    `json:"username"`
+	Avatars     any    `json:"avatars"`
+	Backgrounds any    `json:"backgrounds"`
+	Link        string `json:"link"`
+	Username    string `json:"username"`
 }
 
 // ProfileGetResponseUserRenderedAvatars represents a component schema.
@@ -18304,11 +17919,6 @@ type ProfileGetResponseUserRenderedAvatars struct {
 type ProfileGetResponseUserRenderedBackgrounds struct {
 	L string `json:"l"`
 	M string `json:"m"`
-}
-
-// ProfileGetResponseUserRestoreData represents a component schema.
-type ProfileGetResponseUserRestoreData struct {
-	N12345 int64 `json:"12345"`
 }
 
 // ProfileGetResponseUserTelegramClient represents a component schema.
@@ -18325,127 +17935,127 @@ type ProfileGetResponseUserTelegramClient struct {
 
 // ProxyAddResponseSystemInfo represents a component schema.
 type ProxyAddResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ProxyDeleteResponseSystemInfo represents a component schema.
 type ProxyDeleteResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // ProxyGetResponseSystemInfo represents a component schema.
 type ProxyGetResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PublishingAddResponseItem represents a component schema.
 type PublishingAddResponseItem struct {
-	AccountLink                       string                                  `json:"accountLink"`
-	AccountLinks                      []any                                   `json:"accountLinks"`
-	AccountLastActivity               int64                                   `json:"account_last_activity"`
-	AIPrice                           int64                                   `json:"aiPrice"`
-	AIPriceCheckDate                  int64                                   `json:"aiPriceCheckDate"`
-	AllowAskDiscount                  int64                                   `json:"allow_ask_discount"`
-	AutoBuyPrice                      int64                                   `json:"autoBuyPrice"`
-	AutoBuyPriceCheckDate             int64                                   `json:"autoBuyPriceCheckDate"`
-	BumpSettings                      PublishingAddResponseItemBumpSettings   `json:"bumpSettings"`
-	Buyer                             PublishingAddResponseItemBuyer          `json:"buyer"`
-	BuyerAvatarDate                   int64                                   `json:"buyer_avatar_date"`
-	BuyerDisplayIconGroupID           int64                                   `json:"buyer_display_icon_group_id"`
-	BuyerUniqBanner                   string                                  `json:"buyer_uniq_banner"`
-	BuyerUserGroupID                  int64                                   `json:"buyer_user_group_id"`
-	CanAskDiscount                    bool                                    `json:"canAskDiscount"`
-	CanChangeEmailPassword            bool                                    `json:"canChangeEmailPassword"`
-	CanChangePassword                 bool                                    `json:"canChangePassword"`
-	CanCheckAIPrice                   bool                                    `json:"canCheckAiPrice"`
-	CanCheckAutoBuyPrice              bool                                    `json:"canCheckAutoBuyPrice"`
-	CanCheckGuarantee                 bool                                    `json:"canCheckGuarantee"`
-	CanReportItem                     bool                                    `json:"canReportItem"`
-	CanResellItem                     bool                                    `json:"canResellItem"`
-	CanResellItemAfterPurchase        bool                                    `json:"canResellItemAfterPurchase"`
-	CanShareItem                      bool                                    `json:"canShareItem"`
-	CanUpdateItemStats                bool                                    `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                                    `json:"canValidateAccount"`
-	CanViewAccountLink                bool                                    `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                                    `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                                    `json:"canViewEmailLoginData"`
-	CanViewItemViews                  bool                                    `json:"canViewItemViews"`
-	CanViewLoginData                  bool                                    `json:"canViewLoginData"`
-	CartPrice                         any                                     `json:"cart_price"`
-	CategoryID                        int64                                   `json:"category_id"`
-	ContentID                         any                                     `json:"content_id"`
-	ContentType                       any                                     `json:"content_type"`
-	CopyFormatData                    PublishingAddResponseItemCopyFormatData `json:"copyFormatData"`
-	CustomFields                      PublishingAddResponseItemCustomFields   `json:"customFields"`
-	DeleteDate                        int64                                   `json:"delete_date"`
-	DeleteReason                      string                                  `json:"delete_reason"`
-	DeleteUserID                      int64                                   `json:"delete_user_id"`
-	DeleteUsername                    string                                  `json:"delete_username"`
-	Deposit                           int64                                   `json:"deposit"`
-	Description                       string                                  `json:"description"`
-	DescriptionEnHTML                 string                                  `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                                  `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                                  `json:"descriptionHtml"`
-	DescriptionPlain                  string                                  `json:"descriptionPlain"`
-	DescriptionEn                     string                                  `json:"description_en"`
-	EditDate                          int64                                   `json:"edit_date"`
-	EmailProvider                     string                                  `json:"email_provider"`
-	EmailType                         string                                  `json:"email_type"`
-	ExtendedGuarantee                 int64                                   `json:"extended_guarantee"`
-	ExternalAuth                      []any                                   `json:"externalAuth"`
-	ExtraPrices                       []any                                   `json:"extraPrices"`
-	FeedbackData                      string                                  `json:"feedback_data"`
-	GetEmailCodeDisplayLogin          any                                     `json:"getEmailCodeDisplayLogin"`
-	Guarantee                         PublishingAddResponseItemGuarantee      `json:"guarantee"`
-	ImagePreviewLinks                 []string                                `json:"imagePreviewLinks"`
-	InCart                            any                                     `json:"in_cart"`
-	Information                       string                                  `json:"information"`
-	InformationEn                     string                                  `json:"information_en"`
-	IsBirthdayToday                   bool                                    `json:"isBirthdayToday"`
-	IsIgnored                         bool                                    `json:"isIgnored"`
-	IsPersonalAccount                 bool                                    `json:"isPersonalAccount"`
-	IsSmallExf                        bool                                    `json:"isSmallExf"`
-	IsTrusted                         bool                                    `json:"isTrusted"`
-	IsFave                            any                                     `json:"is_fave"`
-	IsSticky                          int64                                   `json:"is_sticky"`
-	ItemOriginPhrase                  string                                  `json:"itemOriginPhrase"`
-	ItemDomain                        string                                  `json:"item_domain"`
-	ItemID                            int64                                   `json:"item_id"`
-	ItemOrigin                        string                                  `json:"item_origin"`
-	ItemState                         string                                  `json:"item_state"`
-	Login                             string                                  `json:"login"`
-	LoginData                         PublishingAddResponseItemLoginData      `json:"loginData"`
-	MarketCustomTitle                 string                                  `json:"market_custom_title"`
-	MaxDiscountPercent                int64                                   `json:"max_discount_percent"`
-	NeedToRequireVideoToViewLoginData bool                                    `json:"needToRequireVideoToViewLoginData"`
-	NoteText                          string                                  `json:"note_text"`
-	Nsb                               int64                                   `json:"nsb"`
-	PendingDeletionDate               int64                                   `json:"pending_deletion_date"`
-	Price                             int64                                   `json:"price"`
-	PriceWithSellerFee                float64                                 `json:"priceWithSellerFee"`
-	PriceWithSellerFeeLabel           string                                  `json:"priceWithSellerFeeLabel"`
-	PriceCurrency                     string                                  `json:"price_currency"`
-	PublishedDate                     int64                                   `json:"published_date"`
-	RefreshedDate                     int64                                   `json:"refreshed_date"`
-	ResaleItemOrigin                  string                                  `json:"resale_item_origin"`
-	RubPrice                          int64                                   `json:"rub_price"`
-	Seller                            PublishingAddResponseItemSeller         `json:"seller"`
-	ShowGetEmailCodeButton            bool                                    `json:"showGetEmailCodeButton"`
-	Tags                              PublishingAddResponseItemTags           `json:"tags"`
-	TempEmail                         string                                  `json:"temp_email"`
-	Title                             string                                  `json:"title"`
-	TitleEn                           string                                  `json:"title_en"`
-	UniqueKeyExists                   bool                                    `json:"uniqueKeyExists"`
-	UpdateStatDate                    int64                                   `json:"update_stat_date"`
-	UserAllowAskDiscount              int64                                   `json:"user_allow_ask_discount"`
-	ViewCount                         int64                                   `json:"view_count"`
-	VisitorIsAuthor                   bool                                    `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AIPrice                           float64 `json:"aiPrice"`
+	AIPriceCheckDate                  float64 `json:"aiPriceCheckDate"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	AutoBuyPrice                      float64 `json:"autoBuyPrice"`
+	AutoBuyPriceCheckDate             float64 `json:"autoBuyPriceCheckDate"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	Buyer                             any     `json:"buyer"`
+	BuyerAvatarDate                   float64 `json:"buyer_avatar_date"`
+	BuyerDisplayIconGroupID           float64 `json:"buyer_display_icon_group_id"`
+	BuyerUniqBanner                   string  `json:"buyer_uniq_banner"`
+	BuyerUserGroupID                  float64 `json:"buyer_user_group_id"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangeEmailPassword            bool    `json:"canChangeEmailPassword"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckAIPrice                   bool    `json:"canCheckAiPrice"`
+	CanCheckAutoBuyPrice              bool    `json:"canCheckAutoBuyPrice"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItem                     bool    `json:"canResellItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanShareItem                      bool    `json:"canShareItem"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewItemViews                  bool    `json:"canViewItemViews"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CartPrice                         any     `json:"cart_price"`
+	CategoryID                        float64 `json:"category_id"`
+	ContentID                         any     `json:"content_id"`
+	ContentType                       any     `json:"content_type"`
+	CopyFormatData                    any     `json:"copyFormatData"`
+	CustomFields                      any     `json:"customFields"`
+	DeleteDate                        float64 `json:"delete_date"`
+	DeleteReason                      string  `json:"delete_reason"`
+	DeleteUserID                      float64 `json:"delete_user_id"`
+	DeleteUsername                    string  `json:"delete_username"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	GetEmailCodeDisplayLogin          any     `json:"getEmailCodeDisplayLogin"`
+	Guarantee                         any     `json:"guarantee"`
+	ImagePreviewLinks                 any     `json:"imagePreviewLinks"`
+	InCart                            any     `json:"in_cart"`
+	Information                       string  `json:"information"`
+	InformationEn                     string  `json:"information_en"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsSmallExf                        bool    `json:"isSmallExf"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsFave                            any     `json:"is_fave"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	Login                             string  `json:"login"`
+	LoginData                         any     `json:"loginData"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	NoteText                          string  `json:"note_text"`
+	Nsb                               float64 `json:"nsb"`
+	PendingDeletionDate               float64 `json:"pending_deletion_date"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceWithSellerFeeLabel           string  `json:"priceWithSellerFeeLabel"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	Tags                              any     `json:"tags"`
+	TempEmail                         string  `json:"temp_email"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UniqueKeyExists                   bool    `json:"uniqueKeyExists"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // PublishingAddResponseItemBumpSettings represents a component schema.
@@ -18459,16 +18069,16 @@ type PublishingAddResponseItemBumpSettings struct {
 
 // PublishingAddResponseItemBuyer represents a component schema.
 type PublishingAddResponseItemBuyer struct {
-	DisplayIconGroupID  int64  `json:"display_icon_group_id"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsBanned            int64  `json:"is_banned"`
-	OperationDate       int64  `json:"operation_date"`
-	UniqBanner          string `json:"uniq_banner"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	VisitorIsBuyer      bool   `json:"visitorIsBuyer"`
+	DisplayIconGroupID  float64 `json:"display_icon_group_id"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsBanned            float64 `json:"is_banned"`
+	OperationDate       float64 `json:"operation_date"`
+	UniqBanner          string  `json:"uniq_banner"`
+	UniqUsernameCSS     string  `json:"uniq_username_css"`
+	UserGroupID         float64 `json:"user_group_id"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
+	VisitorIsBuyer      bool    `json:"visitorIsBuyer"`
 }
 
 // PublishingAddResponseItemCopyFormatData represents a component schema.
@@ -18481,7 +18091,7 @@ type PublishingAddResponseItemCopyFormatData struct {
 // PublishingAddResponseItemCustomFields represents a component schema.
 type PublishingAddResponseItemCustomFields struct {
 	N4             string `json:"_4"`
-	AllowSelfUnban []any  `json:"allowSelfUnban"`
+	AllowSelfUnban any    `json:"allowSelfUnban"`
 	BanReason      string `json:"ban_reason"`
 	Discord        string `json:"discord"`
 	Github         string `json:"github"`
@@ -18494,16 +18104,16 @@ type PublishingAddResponseItemCustomFields struct {
 
 // PublishingAddResponseItemGuarantee represents a component schema.
 type PublishingAddResponseItemGuarantee struct {
-	Active                bool   `json:"active"`
-	Cancelled             bool   `json:"cancelled"`
-	CancelledReason       string `json:"cancelledReason"`
-	CancelledReasonPhrase string `json:"cancelledReasonPhrase"`
-	Class                 string `json:"class"`
-	Duration              int64  `json:"duration"`
-	DurationPhrase        string `json:"durationPhrase"`
-	EndDate               int64  `json:"endDate"`
-	RemainingTime         int64  `json:"remainingTime"`
-	RemainingTimePhrase   string `json:"remainingTimePhrase"`
+	Active                bool    `json:"active"`
+	Cancelled             bool    `json:"cancelled"`
+	CancelledReason       string  `json:"cancelledReason"`
+	CancelledReasonPhrase string  `json:"cancelledReasonPhrase"`
+	Class                 string  `json:"class"`
+	Duration              float64 `json:"duration"`
+	DurationPhrase        string  `json:"durationPhrase"`
+	EndDate               float64 `json:"endDate"`
+	RemainingTime         float64 `json:"remainingTime"`
+	RemainingTimePhrase   string  `json:"remainingTimePhrase"`
 }
 
 // PublishingAddResponseItemLoginData represents a component schema.
@@ -18519,19 +18129,19 @@ type PublishingAddResponseItemLoginData struct {
 
 // PublishingAddResponseItemSeller represents a component schema.
 type PublishingAddResponseItemSeller struct {
-	ActiveItemsCount      int64                                   `json:"active_items_count"`
-	AvatarDate            int64                                   `json:"avatar_date"`
-	Contacts              PublishingAddResponseItemSellerContacts `json:"contacts"`
-	DisplayStyleGroupID   int64                                   `json:"display_style_group_id"`
-	EffectiveLastActivity int64                                   `json:"effective_last_activity"`
-	IsOnline              bool                                    `json:"isOnline"`
-	IsBanned              int64                                   `json:"is_banned"`
-	JoinedDate            int64                                   `json:"joined_date"`
-	RestoreData           string                                  `json:"restore_data"`
-	RestorePercents       any                                     `json:"restore_percents"`
-	SoldItemsCount        int64                                   `json:"sold_items_count"`
-	UserID                int64                                   `json:"user_id"`
-	Username              string                                  `json:"username"`
+	ActiveItemsCount      float64 `json:"active_items_count"`
+	AvatarDate            float64 `json:"avatar_date"`
+	Contacts              any     `json:"contacts"`
+	DisplayStyleGroupID   float64 `json:"display_style_group_id"`
+	EffectiveLastActivity float64 `json:"effective_last_activity"`
+	IsOnline              bool    `json:"isOnline"`
+	IsBanned              float64 `json:"is_banned"`
+	JoinedDate            float64 `json:"joined_date"`
+	RestoreData           string  `json:"restore_data"`
+	RestorePercents       any     `json:"restore_percents"`
+	SoldItemsCount        float64 `json:"sold_items_count"`
+	UserID                float64 `json:"user_id"`
+	Username              string  `json:"username"`
 }
 
 // PublishingAddResponseItemSellerContacts represents a component schema.
@@ -18540,136 +18150,122 @@ type PublishingAddResponseItemSellerContacts struct {
 	Telegram  string `json:"telegram"`
 }
 
-// PublishingAddResponseItemTags represents a component schema.
-type PublishingAddResponseItemTags struct {
-	N1234567890 PublishingAddResponseItemTagsN1234567890 `json:"1234567890"`
-}
-
-// PublishingAddResponseItemTagsN1234567890 represents a component schema.
-type PublishingAddResponseItemTagsN1234567890 struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
-}
-
 // PublishingAddResponseSystemInfo represents a component schema.
 type PublishingAddResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PublishingCheckBodyExtra represents a component schema.
 type PublishingCheckBodyExtra struct {
-	Ark                 *bool   `json:"ark,omitempty"`
-	ArkAscended         *bool   `json:"ark_ascended,omitempty"`
-	CheckChannels       *bool   `json:"checkChannels,omitempty"`
-	CheckHypixelBan     *bool   `json:"checkHypixelBan,omitempty"`
-	CheckSpam           *bool   `json:"checkSpam,omitempty"`
-	CloseItem           *bool   `json:"close_item,omitempty"`
-	ConfirmationCode    *string `json:"confirmationCode,omitempty"`
-	CookieLogin         *bool   `json:"cookie_login,omitempty"`
-	Cookies             *string `json:"cookies,omitempty"`
-	Dota2Mmr            *int64  `json:"dota2_mmr,omitempty"`
-	EAGames             *bool   `json:"ea_games,omitempty"`
-	GenshinCurrency     *int64  `json:"genshin_currency,omitempty"`
-	HonkaiCurrency      *int64  `json:"honkai_currency,omitempty"`
-	LoginWithoutCookies *bool   `json:"login_without_cookies,omitempty"`
-	MfaFile             *string `json:"mfa_file,omitempty"`
-	Password            *string `json:"password,omitempty"`
-	Proxy               *string `json:"proxy,omitempty"`
-	Region              *string `json:"region,omitempty"`
-	Service             *string `json:"service,omitempty"`
-	System              *string `json:"system,omitempty"`
-	TelegramClient      *string `json:"telegramClient,omitempty"`
-	TelegramJSON        *string `json:"telegramJson,omitempty"`
-	TheQuarry           *bool   `json:"the_quarry,omitempty"`
-	UplayGames          *bool   `json:"uplay_games,omitempty"`
-	Warframe            *bool   `json:"warframe,omitempty"`
-	ZenlessCurrency     *int64  `json:"zenless_currency,omitempty"`
+	Ark                 any `json:"ark,omitempty"`
+	ArkAscended         any `json:"ark_ascended,omitempty"`
+	CheckChannels       any `json:"checkChannels,omitempty"`
+	CheckHypixelBan     any `json:"checkHypixelBan,omitempty"`
+	CheckSpam           any `json:"checkSpam,omitempty"`
+	CloseItem           any `json:"close_item,omitempty"`
+	ConfirmationCode    any `json:"confirmationCode,omitempty"`
+	CookieLogin         any `json:"cookie_login,omitempty"`
+	Cookies             any `json:"cookies,omitempty"`
+	Dota2Mmr            any `json:"dota2_mmr,omitempty"`
+	EAGames             any `json:"ea_games,omitempty"`
+	GenshinCurrency     any `json:"genshin_currency,omitempty"`
+	HonkaiCurrency      any `json:"honkai_currency,omitempty"`
+	LoginWithoutCookies any `json:"login_without_cookies,omitempty"`
+	MfaFile             any `json:"mfa_file,omitempty"`
+	Password            any `json:"password,omitempty"`
+	Proxy               any `json:"proxy,omitempty"`
+	Region              any `json:"region,omitempty"`
+	Service             any `json:"service,omitempty"`
+	System              any `json:"system,omitempty"`
+	TelegramClient      any `json:"telegramClient,omitempty"`
+	TelegramJSON        any `json:"telegramJson,omitempty"`
+	TheQuarry           any `json:"the_quarry,omitempty"`
+	UplayGames          any `json:"uplay_games,omitempty"`
+	Warframe            any `json:"warframe,omitempty"`
+	ZenlessCurrency     any `json:"zenless_currency,omitempty"`
 }
 
 // PublishingCheckResponseItem represents a component schema.
 type PublishingCheckResponseItem struct {
-	AccountLink                       string                                    `json:"accountLink"`
-	AccountLinks                      []any                                     `json:"accountLinks"`
-	AccountLastActivity               int64                                     `json:"account_last_activity"`
-	AllowAskDiscount                  int64                                     `json:"allow_ask_discount"`
-	BumpSettings                      PublishingCheckResponseItemBumpSettings   `json:"bumpSettings"`
-	Buyer                             PublishingCheckResponseItemBuyer          `json:"buyer"`
-	BuyerAvatarDate                   int64                                     `json:"buyer_avatar_date"`
-	BuyerUserGroupID                  int64                                     `json:"buyer_user_group_id"`
-	CanAskDiscount                    bool                                      `json:"canAskDiscount"`
-	CanChangePassword                 bool                                      `json:"canChangePassword"`
-	CanCheckGuarantee                 bool                                      `json:"canCheckGuarantee"`
-	CanReportItem                     bool                                      `json:"canReportItem"`
-	CanResellItemAfterPurchase        bool                                      `json:"canResellItemAfterPurchase"`
-	CanUpdateItemStats                bool                                      `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                                      `json:"canValidateAccount"`
-	CanViewAccountLink                bool                                      `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                                      `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                                      `json:"canViewEmailLoginData"`
-	CanViewLoginData                  bool                                      `json:"canViewLoginData"`
-	CategoryID                        int64                                     `json:"category_id"`
-	CustomFields                      []any                                     `json:"customFields"`
-	Deposit                           int64                                     `json:"deposit"`
-	Description                       string                                    `json:"description"`
-	DescriptionEnHTML                 string                                    `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                                    `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                                    `json:"descriptionHtml"`
-	DescriptionPlain                  string                                    `json:"descriptionPlain"`
-	DescriptionEn                     string                                    `json:"description_en"`
-	DisplayConvertedBalance           bool                                      `json:"displayConvertedBalance"`
-	EditDate                          int64                                     `json:"edit_date"`
-	EmailLoginData                    PublishingCheckResponseItemEmailLoginData `json:"emailLoginData"`
-	EmailLoginURL                     string                                    `json:"emailLoginUrl"`
-	EmailProvider                     string                                    `json:"email_provider"`
-	EmailType                         string                                    `json:"email_type"`
-	ExtendedGuarantee                 int64                                     `json:"extended_guarantee"`
-	ExternalAuth                      []any                                     `json:"externalAuth"`
-	ExtraPrices                       []any                                     `json:"extraPrices"`
-	FeedbackData                      string                                    `json:"feedback_data"`
-	GetEmailCodeDisplayLogin          string                                    `json:"getEmailCodeDisplayLogin"`
-	Guarantee                         PublishingCheckResponseItemGuarantee      `json:"guarantee"`
-	Information                       string                                    `json:"information"`
-	InformationEn                     string                                    `json:"information_en"`
-	IsBirthdayToday                   bool                                      `json:"isBirthdayToday"`
-	IsIgnored                         bool                                      `json:"isIgnored"`
-	IsPersonalAccount                 bool                                      `json:"isPersonalAccount"`
-	IsTrusted                         bool                                      `json:"isTrusted"`
-	IsSticky                          int64                                     `json:"is_sticky"`
-	ItemOriginPhrase                  string                                    `json:"itemOriginPhrase"`
-	ItemDomain                        string                                    `json:"item_domain"`
-	ItemID                            int64                                     `json:"item_id"`
-	ItemOrigin                        string                                    `json:"item_origin"`
-	ItemState                         string                                    `json:"item_state"`
-	Login                             string                                    `json:"login"`
-	LoginData                         PublishingCheckResponseItemLoginData      `json:"loginData"`
-	MarketCustomTitle                 string                                    `json:"market_custom_title"`
-	MaxDiscountPercent                int64                                     `json:"max_discount_percent"`
-	NeedToRequireVideoToViewLoginData bool                                      `json:"needToRequireVideoToViewLoginData"`
-	Nsb                               int64                                     `json:"nsb"`
-	Price                             int64                                     `json:"price"`
-	PriceWithSellerFee                int64                                     `json:"priceWithSellerFee"`
-	PriceCurrency                     string                                    `json:"price_currency"`
-	PublishedDate                     int64                                     `json:"published_date"`
-	RefreshedDate                     int64                                     `json:"refreshed_date"`
-	ResaleItemOrigin                  string                                    `json:"resale_item_origin"`
-	RestoreItemsCategoryCount         int64                                     `json:"restore_items_category_count"`
-	RubPrice                          int64                                     `json:"rub_price"`
-	Seller                            PublishingCheckResponseItemSeller         `json:"seller"`
-	ShowGetEmailCodeButton            bool                                      `json:"showGetEmailCodeButton"`
-	SoldItemsCategoryCount            int64                                     `json:"sold_items_category_count"`
-	Tags                              PublishingCheckResponseItemTags           `json:"tags"`
-	TempEmail                         string                                    `json:"temp_email"`
-	Title                             string                                    `json:"title"`
-	TitleEn                           string                                    `json:"title_en"`
-	UpdateStatDate                    int64                                     `json:"update_stat_date"`
-	UserAllowAskDiscount              int64                                     `json:"user_allow_ask_discount"`
-	ViewCount                         int64                                     `json:"view_count"`
-	VisitorIsAuthor                   bool                                      `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	Buyer                             any     `json:"buyer"`
+	BuyerAvatarDate                   float64 `json:"buyer_avatar_date"`
+	BuyerUserGroupID                  float64 `json:"buyer_user_group_id"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CategoryID                        float64 `json:"category_id"`
+	CustomFields                      any     `json:"customFields"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	DisplayConvertedBalance           bool    `json:"displayConvertedBalance"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailLoginData                    any     `json:"emailLoginData"`
+	EmailLoginURL                     string  `json:"emailLoginUrl"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	GetEmailCodeDisplayLogin          string  `json:"getEmailCodeDisplayLogin"`
+	Guarantee                         any     `json:"guarantee"`
+	Information                       string  `json:"information"`
+	InformationEn                     string  `json:"information_en"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	Login                             string  `json:"login"`
+	LoginData                         any     `json:"loginData"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	Nsb                               float64 `json:"nsb"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RestoreItemsCategoryCount         float64 `json:"restore_items_category_count"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	SoldItemsCategoryCount            float64 `json:"sold_items_category_count"`
+	Tags                              any     `json:"tags"`
+	TempEmail                         string  `json:"temp_email"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // PublishingCheckResponseItemBumpSettings represents a component schema.
@@ -18682,14 +18278,14 @@ type PublishingCheckResponseItemBumpSettings struct {
 
 // PublishingCheckResponseItemBuyer represents a component schema.
 type PublishingCheckResponseItemBuyer struct {
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsBanned            int64  `json:"is_banned"`
-	OperationDate       int64  `json:"operation_date"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	VisitorIsBuyer      bool   `json:"visitorIsBuyer"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsBanned            float64 `json:"is_banned"`
+	OperationDate       float64 `json:"operation_date"`
+	UniqUsernameCSS     string  `json:"uniq_username_css"`
+	UserGroupID         float64 `json:"user_group_id"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
+	VisitorIsBuyer      bool    `json:"visitorIsBuyer"`
 }
 
 // PublishingCheckResponseItemEmailLoginData represents a component schema.
@@ -18705,14 +18301,14 @@ type PublishingCheckResponseItemEmailLoginData struct {
 
 // PublishingCheckResponseItemGuarantee represents a component schema.
 type PublishingCheckResponseItemGuarantee struct {
-	Active              bool   `json:"active"`
-	Cancelled           bool   `json:"cancelled"`
-	Class               string `json:"class"`
-	Duration            int64  `json:"duration"`
-	DurationPhrase      string `json:"durationPhrase"`
-	EndDate             int64  `json:"endDate"`
-	RemainingTime       int64  `json:"remainingTime"`
-	RemainingTimePhrase string `json:"remainingTimePhrase"`
+	Active              bool    `json:"active"`
+	Cancelled           bool    `json:"cancelled"`
+	Class               string  `json:"class"`
+	Duration            float64 `json:"duration"`
+	DurationPhrase      string  `json:"durationPhrase"`
+	EndDate             float64 `json:"endDate"`
+	RemainingTime       float64 `json:"remainingTime"`
+	RemainingTimePhrase string  `json:"remainingTimePhrase"`
 }
 
 // PublishingCheckResponseItemLoginData represents a component schema.
@@ -18728,179 +18324,165 @@ type PublishingCheckResponseItemLoginData struct {
 
 // PublishingCheckResponseItemSeller represents a component schema.
 type PublishingCheckResponseItemSeller struct {
-	ActiveItemsCount    int64  `json:"active_items_count"`
-	AvatarDate          int64  `json:"avatar_date"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsOnline            bool   `json:"isOnline"`
-	IsBanned            int64  `json:"is_banned"`
-	JoinedDate          int64  `json:"joined_date"`
-	RestoreData         string `json:"restore_data"`
-	RestorePercents     int64  `json:"restore_percents"`
-	SoldItemsCount      int64  `json:"sold_items_count"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-}
-
-// PublishingCheckResponseItemTags represents a component schema.
-type PublishingCheckResponseItemTags struct {
-	N1 PublishingCheckResponseItemTagsN1 `json:"1"`
-}
-
-// PublishingCheckResponseItemTagsN1 represents a component schema.
-type PublishingCheckResponseItemTagsN1 struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
+	ActiveItemsCount    float64 `json:"active_items_count"`
+	AvatarDate          float64 `json:"avatar_date"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsOnline            bool    `json:"isOnline"`
+	IsBanned            float64 `json:"is_banned"`
+	JoinedDate          float64 `json:"joined_date"`
+	RestoreData         string  `json:"restore_data"`
+	RestorePercents     float64 `json:"restore_percents"`
+	SoldItemsCount      float64 `json:"sold_items_count"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
 }
 
 // PublishingCheckResponseSystemInfo represents a component schema.
 type PublishingCheckResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PublishingExternalResponseSystemInfo represents a component schema.
 type PublishingExternalResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PublishingFastSellBodyExtra represents a component schema.
 type PublishingFastSellBodyExtra struct {
-	Ark                 *bool   `json:"ark,omitempty"`
-	ArkAscended         *bool   `json:"ark_ascended,omitempty"`
-	CheckChannels       *bool   `json:"checkChannels,omitempty"`
-	CheckHypixelBan     *bool   `json:"checkHypixelBan,omitempty"`
-	CheckSpam           *bool   `json:"checkSpam,omitempty"`
-	CloseItem           *bool   `json:"close_item,omitempty"`
-	ConfirmationCode    *string `json:"confirmationCode,omitempty"`
-	CookieLogin         *bool   `json:"cookie_login,omitempty"`
-	Cookies             *string `json:"cookies,omitempty"`
-	Dota2Mmr            *int64  `json:"dota2_mmr,omitempty"`
-	EAGames             *bool   `json:"ea_games,omitempty"`
-	GenshinCurrency     *int64  `json:"genshin_currency,omitempty"`
-	HonkaiCurrency      *int64  `json:"honkai_currency,omitempty"`
-	LoginWithoutCookies *bool   `json:"login_without_cookies,omitempty"`
-	MfaFile             *string `json:"mfa_file,omitempty"`
-	Password            *string `json:"password,omitempty"`
-	Proxy               *string `json:"proxy,omitempty"`
-	Region              *string `json:"region,omitempty"`
-	Service             *string `json:"service,omitempty"`
-	System              *string `json:"system,omitempty"`
-	TelegramClient      *string `json:"telegramClient,omitempty"`
-	TelegramJSON        *string `json:"telegramJson,omitempty"`
-	TheQuarry           *bool   `json:"the_quarry,omitempty"`
-	UplayGames          *bool   `json:"uplay_games,omitempty"`
-	Warframe            *bool   `json:"warframe,omitempty"`
-	ZenlessCurrency     *int64  `json:"zenless_currency,omitempty"`
+	Ark                 any `json:"ark,omitempty"`
+	ArkAscended         any `json:"ark_ascended,omitempty"`
+	CheckChannels       any `json:"checkChannels,omitempty"`
+	CheckHypixelBan     any `json:"checkHypixelBan,omitempty"`
+	CheckSpam           any `json:"checkSpam,omitempty"`
+	CloseItem           any `json:"close_item,omitempty"`
+	ConfirmationCode    any `json:"confirmationCode,omitempty"`
+	CookieLogin         any `json:"cookie_login,omitempty"`
+	Cookies             any `json:"cookies,omitempty"`
+	Dota2Mmr            any `json:"dota2_mmr,omitempty"`
+	EAGames             any `json:"ea_games,omitempty"`
+	GenshinCurrency     any `json:"genshin_currency,omitempty"`
+	HonkaiCurrency      any `json:"honkai_currency,omitempty"`
+	LoginWithoutCookies any `json:"login_without_cookies,omitempty"`
+	MfaFile             any `json:"mfa_file,omitempty"`
+	Password            any `json:"password,omitempty"`
+	Proxy               any `json:"proxy,omitempty"`
+	Region              any `json:"region,omitempty"`
+	Service             any `json:"service,omitempty"`
+	System              any `json:"system,omitempty"`
+	TelegramClient      any `json:"telegramClient,omitempty"`
+	TelegramJSON        any `json:"telegramJson,omitempty"`
+	TheQuarry           any `json:"the_quarry,omitempty"`
+	UplayGames          any `json:"uplay_games,omitempty"`
+	Warframe            any `json:"warframe,omitempty"`
+	ZenlessCurrency     any `json:"zenless_currency,omitempty"`
 }
 
 // PublishingFastSellResponseItem represents a component schema.
 type PublishingFastSellResponseItem struct {
-	AccountLink                       string                                       `json:"accountLink"`
-	AccountLinks                      []any                                        `json:"accountLinks"`
-	AccountLastActivity               int64                                        `json:"account_last_activity"`
-	AIPrice                           int64                                        `json:"aiPrice"`
-	AIPriceCheckDate                  int64                                        `json:"aiPriceCheckDate"`
-	AllowAskDiscount                  int64                                        `json:"allow_ask_discount"`
-	AutoBuyPrice                      int64                                        `json:"autoBuyPrice"`
-	AutoBuyPriceCheckDate             int64                                        `json:"autoBuyPriceCheckDate"`
-	BumpSettings                      PublishingFastSellResponseItemBumpSettings   `json:"bumpSettings"`
-	Buyer                             PublishingFastSellResponseItemBuyer          `json:"buyer"`
-	BuyerAvatarDate                   int64                                        `json:"buyer_avatar_date"`
-	BuyerDisplayIconGroupID           int64                                        `json:"buyer_display_icon_group_id"`
-	BuyerUniqBanner                   string                                       `json:"buyer_uniq_banner"`
-	BuyerUserGroupID                  int64                                        `json:"buyer_user_group_id"`
-	CanAskDiscount                    bool                                         `json:"canAskDiscount"`
-	CanChangeEmailPassword            bool                                         `json:"canChangeEmailPassword"`
-	CanChangePassword                 bool                                         `json:"canChangePassword"`
-	CanCheckAIPrice                   bool                                         `json:"canCheckAiPrice"`
-	CanCheckAutoBuyPrice              bool                                         `json:"canCheckAutoBuyPrice"`
-	CanCheckGuarantee                 bool                                         `json:"canCheckGuarantee"`
-	CanReportItem                     bool                                         `json:"canReportItem"`
-	CanResellItem                     bool                                         `json:"canResellItem"`
-	CanResellItemAfterPurchase        bool                                         `json:"canResellItemAfterPurchase"`
-	CanShareItem                      bool                                         `json:"canShareItem"`
-	CanUpdateItemStats                bool                                         `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                                         `json:"canValidateAccount"`
-	CanViewAccountLink                bool                                         `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                                         `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                                         `json:"canViewEmailLoginData"`
-	CanViewItemViews                  bool                                         `json:"canViewItemViews"`
-	CanViewLoginData                  bool                                         `json:"canViewLoginData"`
-	CartPrice                         any                                          `json:"cart_price"`
-	CategoryID                        int64                                        `json:"category_id"`
-	ContentID                         any                                          `json:"content_id"`
-	ContentType                       any                                          `json:"content_type"`
-	CopyFormatData                    PublishingFastSellResponseItemCopyFormatData `json:"copyFormatData"`
-	CustomFields                      PublishingFastSellResponseItemCustomFields   `json:"customFields"`
-	DeleteDate                        int64                                        `json:"delete_date"`
-	DeleteReason                      string                                       `json:"delete_reason"`
-	DeleteUserID                      int64                                        `json:"delete_user_id"`
-	DeleteUsername                    string                                       `json:"delete_username"`
-	Deposit                           int64                                        `json:"deposit"`
-	Description                       string                                       `json:"description"`
-	DescriptionEnHTML                 string                                       `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                                       `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                                       `json:"descriptionHtml"`
-	DescriptionPlain                  string                                       `json:"descriptionPlain"`
-	DescriptionEn                     string                                       `json:"description_en"`
-	EditDate                          int64                                        `json:"edit_date"`
-	EmailProvider                     string                                       `json:"email_provider"`
-	EmailType                         string                                       `json:"email_type"`
-	ExtendedGuarantee                 int64                                        `json:"extended_guarantee"`
-	ExternalAuth                      []any                                        `json:"externalAuth"`
-	ExtraPrices                       []any                                        `json:"extraPrices"`
-	FeedbackData                      string                                       `json:"feedback_data"`
-	GetEmailCodeDisplayLogin          any                                          `json:"getEmailCodeDisplayLogin"`
-	Guarantee                         PublishingFastSellResponseItemGuarantee      `json:"guarantee"`
-	ImagePreviewLinks                 []string                                     `json:"imagePreviewLinks"`
-	InCart                            any                                          `json:"in_cart"`
-	Information                       string                                       `json:"information"`
-	InformationEn                     string                                       `json:"information_en"`
-	IsBirthdayToday                   bool                                         `json:"isBirthdayToday"`
-	IsIgnored                         bool                                         `json:"isIgnored"`
-	IsPersonalAccount                 bool                                         `json:"isPersonalAccount"`
-	IsSmallExf                        bool                                         `json:"isSmallExf"`
-	IsTrusted                         bool                                         `json:"isTrusted"`
-	IsFave                            any                                          `json:"is_fave"`
-	IsSticky                          int64                                        `json:"is_sticky"`
-	ItemOriginPhrase                  string                                       `json:"itemOriginPhrase"`
-	ItemDomain                        string                                       `json:"item_domain"`
-	ItemID                            int64                                        `json:"item_id"`
-	ItemOrigin                        string                                       `json:"item_origin"`
-	ItemState                         string                                       `json:"item_state"`
-	Login                             string                                       `json:"login"`
-	LoginData                         PublishingFastSellResponseItemLoginData      `json:"loginData"`
-	MarketCustomTitle                 string                                       `json:"market_custom_title"`
-	MaxDiscountPercent                int64                                        `json:"max_discount_percent"`
-	NeedToRequireVideoToViewLoginData bool                                         `json:"needToRequireVideoToViewLoginData"`
-	NoteText                          string                                       `json:"note_text"`
-	Nsb                               int64                                        `json:"nsb"`
-	PendingDeletionDate               int64                                        `json:"pending_deletion_date"`
-	Price                             int64                                        `json:"price"`
-	PriceWithSellerFee                float64                                      `json:"priceWithSellerFee"`
-	PriceWithSellerFeeLabel           string                                       `json:"priceWithSellerFeeLabel"`
-	PriceCurrency                     string                                       `json:"price_currency"`
-	PublishedDate                     int64                                        `json:"published_date"`
-	RefreshedDate                     int64                                        `json:"refreshed_date"`
-	ResaleItemOrigin                  string                                       `json:"resale_item_origin"`
-	RubPrice                          int64                                        `json:"rub_price"`
-	Seller                            PublishingFastSellResponseItemSeller         `json:"seller"`
-	ShowGetEmailCodeButton            bool                                         `json:"showGetEmailCodeButton"`
-	Tags                              PublishingFastSellResponseItemTags           `json:"tags"`
-	TempEmail                         string                                       `json:"temp_email"`
-	Title                             string                                       `json:"title"`
-	TitleEn                           string                                       `json:"title_en"`
-	UniqueKeyExists                   bool                                         `json:"uniqueKeyExists"`
-	UpdateStatDate                    int64                                        `json:"update_stat_date"`
-	UserAllowAskDiscount              int64                                        `json:"user_allow_ask_discount"`
-	ViewCount                         int64                                        `json:"view_count"`
-	VisitorIsAuthor                   bool                                         `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AIPrice                           float64 `json:"aiPrice"`
+	AIPriceCheckDate                  float64 `json:"aiPriceCheckDate"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	AutoBuyPrice                      float64 `json:"autoBuyPrice"`
+	AutoBuyPriceCheckDate             float64 `json:"autoBuyPriceCheckDate"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	Buyer                             any     `json:"buyer"`
+	BuyerAvatarDate                   float64 `json:"buyer_avatar_date"`
+	BuyerDisplayIconGroupID           float64 `json:"buyer_display_icon_group_id"`
+	BuyerUniqBanner                   string  `json:"buyer_uniq_banner"`
+	BuyerUserGroupID                  float64 `json:"buyer_user_group_id"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangeEmailPassword            bool    `json:"canChangeEmailPassword"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckAIPrice                   bool    `json:"canCheckAiPrice"`
+	CanCheckAutoBuyPrice              bool    `json:"canCheckAutoBuyPrice"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItem                     bool    `json:"canResellItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanShareItem                      bool    `json:"canShareItem"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewItemViews                  bool    `json:"canViewItemViews"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CartPrice                         any     `json:"cart_price"`
+	CategoryID                        float64 `json:"category_id"`
+	ContentID                         any     `json:"content_id"`
+	ContentType                       any     `json:"content_type"`
+	CopyFormatData                    any     `json:"copyFormatData"`
+	CustomFields                      any     `json:"customFields"`
+	DeleteDate                        float64 `json:"delete_date"`
+	DeleteReason                      string  `json:"delete_reason"`
+	DeleteUserID                      float64 `json:"delete_user_id"`
+	DeleteUsername                    string  `json:"delete_username"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	GetEmailCodeDisplayLogin          any     `json:"getEmailCodeDisplayLogin"`
+	Guarantee                         any     `json:"guarantee"`
+	ImagePreviewLinks                 any     `json:"imagePreviewLinks"`
+	InCart                            any     `json:"in_cart"`
+	Information                       string  `json:"information"`
+	InformationEn                     string  `json:"information_en"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsSmallExf                        bool    `json:"isSmallExf"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsFave                            any     `json:"is_fave"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	Login                             string  `json:"login"`
+	LoginData                         any     `json:"loginData"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	NoteText                          string  `json:"note_text"`
+	Nsb                               float64 `json:"nsb"`
+	PendingDeletionDate               float64 `json:"pending_deletion_date"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceWithSellerFeeLabel           string  `json:"priceWithSellerFeeLabel"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	Tags                              any     `json:"tags"`
+	TempEmail                         string  `json:"temp_email"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UniqueKeyExists                   bool    `json:"uniqueKeyExists"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // PublishingFastSellResponseItemBumpSettings represents a component schema.
@@ -18914,16 +18496,16 @@ type PublishingFastSellResponseItemBumpSettings struct {
 
 // PublishingFastSellResponseItemBuyer represents a component schema.
 type PublishingFastSellResponseItemBuyer struct {
-	DisplayIconGroupID  int64  `json:"display_icon_group_id"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsBanned            int64  `json:"is_banned"`
-	OperationDate       int64  `json:"operation_date"`
-	UniqBanner          string `json:"uniq_banner"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	VisitorIsBuyer      bool   `json:"visitorIsBuyer"`
+	DisplayIconGroupID  float64 `json:"display_icon_group_id"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsBanned            float64 `json:"is_banned"`
+	OperationDate       float64 `json:"operation_date"`
+	UniqBanner          string  `json:"uniq_banner"`
+	UniqUsernameCSS     string  `json:"uniq_username_css"`
+	UserGroupID         float64 `json:"user_group_id"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
+	VisitorIsBuyer      bool    `json:"visitorIsBuyer"`
 }
 
 // PublishingFastSellResponseItemCopyFormatData represents a component schema.
@@ -18936,7 +18518,7 @@ type PublishingFastSellResponseItemCopyFormatData struct {
 // PublishingFastSellResponseItemCustomFields represents a component schema.
 type PublishingFastSellResponseItemCustomFields struct {
 	N4             string `json:"_4"`
-	AllowSelfUnban []any  `json:"allowSelfUnban"`
+	AllowSelfUnban any    `json:"allowSelfUnban"`
 	BanReason      string `json:"ban_reason"`
 	Discord        string `json:"discord"`
 	Github         string `json:"github"`
@@ -18949,16 +18531,16 @@ type PublishingFastSellResponseItemCustomFields struct {
 
 // PublishingFastSellResponseItemGuarantee represents a component schema.
 type PublishingFastSellResponseItemGuarantee struct {
-	Active                bool   `json:"active"`
-	Cancelled             bool   `json:"cancelled"`
-	CancelledReason       string `json:"cancelledReason"`
-	CancelledReasonPhrase string `json:"cancelledReasonPhrase"`
-	Class                 string `json:"class"`
-	Duration              int64  `json:"duration"`
-	DurationPhrase        string `json:"durationPhrase"`
-	EndDate               int64  `json:"endDate"`
-	RemainingTime         int64  `json:"remainingTime"`
-	RemainingTimePhrase   string `json:"remainingTimePhrase"`
+	Active                bool    `json:"active"`
+	Cancelled             bool    `json:"cancelled"`
+	CancelledReason       string  `json:"cancelledReason"`
+	CancelledReasonPhrase string  `json:"cancelledReasonPhrase"`
+	Class                 string  `json:"class"`
+	Duration              float64 `json:"duration"`
+	DurationPhrase        string  `json:"durationPhrase"`
+	EndDate               float64 `json:"endDate"`
+	RemainingTime         float64 `json:"remainingTime"`
+	RemainingTimePhrase   string  `json:"remainingTimePhrase"`
 }
 
 // PublishingFastSellResponseItemLoginData represents a component schema.
@@ -18974,19 +18556,19 @@ type PublishingFastSellResponseItemLoginData struct {
 
 // PublishingFastSellResponseItemSeller represents a component schema.
 type PublishingFastSellResponseItemSeller struct {
-	ActiveItemsCount      int64                                        `json:"active_items_count"`
-	AvatarDate            int64                                        `json:"avatar_date"`
-	Contacts              PublishingFastSellResponseItemSellerContacts `json:"contacts"`
-	DisplayStyleGroupID   int64                                        `json:"display_style_group_id"`
-	EffectiveLastActivity int64                                        `json:"effective_last_activity"`
-	IsOnline              bool                                         `json:"isOnline"`
-	IsBanned              int64                                        `json:"is_banned"`
-	JoinedDate            int64                                        `json:"joined_date"`
-	RestoreData           string                                       `json:"restore_data"`
-	RestorePercents       any                                          `json:"restore_percents"`
-	SoldItemsCount        int64                                        `json:"sold_items_count"`
-	UserID                int64                                        `json:"user_id"`
-	Username              string                                       `json:"username"`
+	ActiveItemsCount      float64 `json:"active_items_count"`
+	AvatarDate            float64 `json:"avatar_date"`
+	Contacts              any     `json:"contacts"`
+	DisplayStyleGroupID   float64 `json:"display_style_group_id"`
+	EffectiveLastActivity float64 `json:"effective_last_activity"`
+	IsOnline              bool    `json:"isOnline"`
+	IsBanned              float64 `json:"is_banned"`
+	JoinedDate            float64 `json:"joined_date"`
+	RestoreData           string  `json:"restore_data"`
+	RestorePercents       any     `json:"restore_percents"`
+	SoldItemsCount        float64 `json:"sold_items_count"`
+	UserID                float64 `json:"user_id"`
+	Username              string  `json:"username"`
 }
 
 // PublishingFastSellResponseItemSellerContacts represents a component schema.
@@ -18995,115 +18577,101 @@ type PublishingFastSellResponseItemSellerContacts struct {
 	Telegram  string `json:"telegram"`
 }
 
-// PublishingFastSellResponseItemTags represents a component schema.
-type PublishingFastSellResponseItemTags struct {
-	N1234567890 PublishingFastSellResponseItemTagsN1234567890 `json:"1234567890"`
-}
-
-// PublishingFastSellResponseItemTagsN1234567890 represents a component schema.
-type PublishingFastSellResponseItemTagsN1234567890 struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
-}
-
 // PublishingFastSellResponseSystemInfo represents a component schema.
 type PublishingFastSellResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PurchasingCheckResponseItem represents a component schema.
 type PurchasingCheckResponseItem struct {
-	AccountLink                       string                                  `json:"accountLink"`
-	AccountLinks                      []any                                   `json:"accountLinks"`
-	AccountLastActivity               int64                                   `json:"account_last_activity"`
-	AllowAskDiscount                  int64                                   `json:"allow_ask_discount"`
-	AskDate                           any                                     `json:"ask_date"`
-	AskItemID                         any                                     `json:"ask_item_id"`
-	AskUserID                         any                                     `json:"ask_user_id"`
-	AvailableTempEmail                int64                                   `json:"available_temp_email"`
-	BumpSettings                      PurchasingCheckResponseItemBumpSettings `json:"bumpSettings"`
-	BuyWithoutValidation              int64                                   `json:"buy_without_validation"`
-	CanAskDiscount                    bool                                    `json:"canAskDiscount"`
-	CanChangePassword                 bool                                    `json:"canChangePassword"`
-	CanCheckGuarantee                 bool                                    `json:"canCheckGuarantee"`
-	CanReportItem                     bool                                    `json:"canReportItem"`
-	CanResellItemAfterPurchase        bool                                    `json:"canResellItemAfterPurchase"`
-	CanUpdateItemStats                bool                                    `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                                    `json:"canValidateAccount"`
-	CanViewAccountLink                bool                                    `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                                    `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                                    `json:"canViewEmailLoginData"`
-	CanViewLoginData                  bool                                    `json:"canViewLoginData"`
-	CanBeResold                       int64                                   `json:"can_be_resold"`
-	CategoryID                        int64                                   `json:"category_id"`
-	CategoryPrefixID                  int64                                   `json:"category_prefix_id"`
-	CategoryTitle                     string                                  `json:"category_title"`
-	CategoryURL                       string                                  `json:"category_url"`
-	CheckButtonEnabled                int64                                   `json:"check_button_enabled"`
-	CheckerEnabled                    int64                                   `json:"checker_enabled"`
-	CustomFields                      []any                                   `json:"customFields"`
-	Deposit                           int64                                   `json:"deposit"`
-	Description                       string                                  `json:"description"`
-	DescriptionEnHTML                 string                                  `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                                  `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                                  `json:"descriptionHtml"`
-	DescriptionPlain                  string                                  `json:"descriptionPlain"`
-	DescriptionEn                     string                                  `json:"description_en"`
-	DiscountAccepted                  any                                     `json:"discount_accepted"`
-	DiscountPrice                     any                                     `json:"discount_price"`
-	EditDate                          int64                                   `json:"edit_date"`
-	EmailLoginURL                     string                                  `json:"emailLoginUrl"`
-	EmailProvider                     string                                  `json:"email_provider"`
-	EmailType                         string                                  `json:"email_type"`
-	ExtendedGuarantee                 int64                                   `json:"extended_guarantee"`
-	ExternalAuth                      []any                                   `json:"externalAuth"`
-	ExtraPrices                       []any                                   `json:"extraPrices"`
-	FeedbackData                      string                                  `json:"feedback_data"`
-	Guarantee                         PurchasingCheckResponseItemGuarantee    `json:"guarantee"`
-	HasGuarantee                      int64                                   `json:"has_guarantee"`
-	IsBirthdayToday                   bool                                    `json:"isBirthdayToday"`
-	IsIgnored                         bool                                    `json:"isIgnored"`
-	IsPersonalAccount                 bool                                    `json:"isPersonalAccount"`
-	IsSmallExf                        bool                                    `json:"isSmallExf"`
-	IsTrusted                         bool                                    `json:"isTrusted"`
-	IsSticky                          int64                                   `json:"is_sticky"`
-	ItemOriginPhrase                  string                                  `json:"itemOriginPhrase"`
-	ItemDomain                        string                                  `json:"item_domain"`
-	ItemID                            int64                                   `json:"item_id"`
-	ItemOrigin                        string                                  `json:"item_origin"`
-	ItemState                         string                                  `json:"item_state"`
-	LoginType                         string                                  `json:"login_type"`
-	MarketCustomTitle                 string                                  `json:"market_custom_title"`
-	MaxDiscountPercent                int64                                   `json:"max_discount_percent"`
-	Message                           any                                     `json:"message"`
-	MinPrice                          int64                                   `json:"min_price"`
-	NeedToRequireVideoToViewLoginData bool                                    `json:"needToRequireVideoToViewLoginData"`
-	Nsb                               int64                                   `json:"nsb"`
-	Price                             int64                                   `json:"price"`
-	PriceWithSellerFee                int64                                   `json:"priceWithSellerFee"`
-	PriceCurrency                     string                                  `json:"price_currency"`
-	PublishedDate                     int64                                   `json:"published_date"`
-	RefreshedDate                     int64                                   `json:"refreshed_date"`
-	RequireEmailLoginData             int64                                   `json:"require_email_login_data"`
-	RequireTempEmail                  int64                                   `json:"require_temp_email"`
-	RequireVideoRecording             int64                                   `json:"require_video_recording"`
-	ResaleItemOrigin                  string                                  `json:"resale_item_origin"`
-	RubPrice                          int64                                   `json:"rub_price"`
-	Seller                            PurchasingCheckResponseItemSeller       `json:"seller"`
-	ShowGetEmailCodeButton            bool                                    `json:"showGetEmailCodeButton"`
-	Tags                              []any                                   `json:"tags"`
-	Title                             string                                  `json:"title"`
-	TitleEn                           string                                  `json:"title_en"`
-	UpdateStatDate                    int64                                   `json:"update_stat_date"`
-	UserAlerted                       any                                     `json:"user_alerted"`
-	UserAllowAskDiscount              int64                                   `json:"user_allow_ask_discount"`
-	ViewCount                         int64                                   `json:"view_count"`
-	VisitorIsAuthor                   bool                                    `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	AskDate                           any     `json:"ask_date"`
+	AskItemID                         any     `json:"ask_item_id"`
+	AskUserID                         any     `json:"ask_user_id"`
+	AvailableTempEmail                float64 `json:"available_temp_email"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	BuyWithoutValidation              float64 `json:"buy_without_validation"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CanBeResold                       float64 `json:"can_be_resold"`
+	CategoryID                        float64 `json:"category_id"`
+	CategoryPrefixID                  float64 `json:"category_prefix_id"`
+	CategoryTitle                     string  `json:"category_title"`
+	CategoryURL                       string  `json:"category_url"`
+	CheckButtonEnabled                float64 `json:"check_button_enabled"`
+	CheckerEnabled                    float64 `json:"checker_enabled"`
+	CustomFields                      any     `json:"customFields"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	DiscountAccepted                  any     `json:"discount_accepted"`
+	DiscountPrice                     any     `json:"discount_price"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailLoginURL                     string  `json:"emailLoginUrl"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	Guarantee                         any     `json:"guarantee"`
+	HasGuarantee                      float64 `json:"has_guarantee"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsSmallExf                        bool    `json:"isSmallExf"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	LoginType                         string  `json:"login_type"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	Message                           any     `json:"message"`
+	MinPrice                          float64 `json:"min_price"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	Nsb                               float64 `json:"nsb"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	RequireEmailLoginData             float64 `json:"require_email_login_data"`
+	RequireTempEmail                  float64 `json:"require_temp_email"`
+	RequireVideoRecording             float64 `json:"require_video_recording"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	Tags                              any     `json:"tags"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAlerted                       any     `json:"user_alerted"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // PurchasingCheckResponseItemBumpSettings represents a component schema.
@@ -19116,40 +18684,40 @@ type PurchasingCheckResponseItemBumpSettings struct {
 
 // PurchasingCheckResponseItemGuarantee represents a component schema.
 type PurchasingCheckResponseItemGuarantee struct {
-	Active         any    `json:"active"`
-	Cancelled      any    `json:"cancelled"`
-	Class          string `json:"class"`
-	Duration       int64  `json:"duration"`
-	DurationPhrase string `json:"durationPhrase"`
-	EndDate        any    `json:"endDate"`
-	RemainingTime  any    `json:"remainingTime"`
+	Active         any     `json:"active"`
+	Cancelled      any     `json:"cancelled"`
+	Class          string  `json:"class"`
+	Duration       float64 `json:"duration"`
+	DurationPhrase string  `json:"durationPhrase"`
+	EndDate        any     `json:"endDate"`
+	RemainingTime  any     `json:"remainingTime"`
 }
 
 // PurchasingCheckResponseItemSeller represents a component schema.
 type PurchasingCheckResponseItemSeller struct {
-	ActiveItemsCount    int64  `json:"active_items_count"`
-	AvatarDate          int64  `json:"avatar_date"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsOnline            bool   `json:"isOnline"`
-	IsBanned            int64  `json:"is_banned"`
-	JoinedDate          int64  `json:"joined_date"`
-	RestoreData         string `json:"restore_data"`
-	RestorePercents     any    `json:"restore_percents"`
-	SoldItemsCount      int64  `json:"sold_items_count"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
+	ActiveItemsCount    float64 `json:"active_items_count"`
+	AvatarDate          float64 `json:"avatar_date"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsOnline            bool    `json:"isOnline"`
+	IsBanned            float64 `json:"is_banned"`
+	JoinedDate          float64 `json:"joined_date"`
+	RestoreData         string  `json:"restore_data"`
+	RestorePercents     any     `json:"restore_percents"`
+	SoldItemsCount      float64 `json:"sold_items_count"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
 }
 
 // PurchasingCheckResponseSystemInfo represents a component schema.
 type PurchasingCheckResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PurchasingConfirmResponseItem represents a component schema.
 type PurchasingConfirmResponseItem struct {
-	LoginData PurchasingConfirmResponseItemLoginData `json:"loginData"`
+	LoginData any `json:"loginData"`
 }
 
 // PurchasingConfirmResponseItemLoginData represents a component schema.
@@ -19166,104 +18734,104 @@ type PurchasingConfirmResponseItemLoginData struct {
 
 // PurchasingConfirmResponseSystemInfo represents a component schema.
 type PurchasingConfirmResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PurchasingDiscountCancelResponseSystemInfo represents a component schema.
 type PurchasingDiscountCancelResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PurchasingDiscountRequestResponseSystemInfo represents a component schema.
 type PurchasingDiscountRequestResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // PurchasingFastBuyResponseItem represents a component schema.
 type PurchasingFastBuyResponseItem struct {
-	AccountLink                       string                                      `json:"accountLink"`
-	AccountLinks                      []any                                       `json:"accountLinks"`
-	AccountLastActivity               int64                                       `json:"account_last_activity"`
-	AllowAskDiscount                  int64                                       `json:"allow_ask_discount"`
-	BumpSettings                      PurchasingFastBuyResponseItemBumpSettings   `json:"bumpSettings"`
-	Buyer                             PurchasingFastBuyResponseItemBuyer          `json:"buyer"`
-	BuyerAvatarDate                   int64                                       `json:"buyer_avatar_date"`
-	BuyerUserGroupID                  int64                                       `json:"buyer_user_group_id"`
-	CanAskDiscount                    bool                                        `json:"canAskDiscount"`
-	CanChangePassword                 bool                                        `json:"canChangePassword"`
-	CanCheckGuarantee                 bool                                        `json:"canCheckGuarantee"`
-	CanReportItem                     bool                                        `json:"canReportItem"`
-	CanResellItemAfterPurchase        bool                                        `json:"canResellItemAfterPurchase"`
-	CanUpdateItemStats                bool                                        `json:"canUpdateItemStats"`
-	CanValidateAccount                bool                                        `json:"canValidateAccount"`
-	CanViewAccountLink                bool                                        `json:"canViewAccountLink"`
-	CanViewAccountLoginAndTempEmail   bool                                        `json:"canViewAccountLoginAndTempEmail"`
-	CanViewEmailLoginData             bool                                        `json:"canViewEmailLoginData"`
-	CanViewLoginData                  bool                                        `json:"canViewLoginData"`
-	CategoryID                        int64                                       `json:"category_id"`
-	CustomFields                      []any                                       `json:"customFields"`
-	Deposit                           int64                                       `json:"deposit"`
-	Description                       string                                      `json:"description"`
-	DescriptionEnHTML                 string                                      `json:"descriptionEnHtml"`
-	DescriptionEnPlain                string                                      `json:"descriptionEnPlain"`
-	DescriptionHTML                   string                                      `json:"descriptionHtml"`
-	DescriptionPlain                  string                                      `json:"descriptionPlain"`
-	DescriptionEn                     string                                      `json:"description_en"`
-	DisplayConvertedBalance           bool                                        `json:"displayConvertedBalance"`
-	EditDate                          int64                                       `json:"edit_date"`
-	EmailLoginData                    PurchasingFastBuyResponseItemEmailLoginData `json:"emailLoginData"`
-	EmailLoginURL                     string                                      `json:"emailLoginUrl"`
-	EmailProvider                     string                                      `json:"email_provider"`
-	EmailType                         string                                      `json:"email_type"`
-	ExtendedGuarantee                 int64                                       `json:"extended_guarantee"`
-	ExternalAuth                      []any                                       `json:"externalAuth"`
-	ExtraPrices                       []any                                       `json:"extraPrices"`
-	FeedbackData                      string                                      `json:"feedback_data"`
-	GetEmailCodeDisplayLogin          string                                      `json:"getEmailCodeDisplayLogin"`
-	Guarantee                         PurchasingFastBuyResponseItemGuarantee      `json:"guarantee"`
-	Information                       string                                      `json:"information"`
-	InformationEn                     string                                      `json:"information_en"`
-	IsBirthdayToday                   bool                                        `json:"isBirthdayToday"`
-	IsIgnored                         bool                                        `json:"isIgnored"`
-	IsPersonalAccount                 bool                                        `json:"isPersonalAccount"`
-	IsTrusted                         bool                                        `json:"isTrusted"`
-	IsSticky                          int64                                       `json:"is_sticky"`
-	ItemOriginPhrase                  string                                      `json:"itemOriginPhrase"`
-	ItemDomain                        string                                      `json:"item_domain"`
-	ItemID                            int64                                       `json:"item_id"`
-	ItemOrigin                        string                                      `json:"item_origin"`
-	ItemState                         string                                      `json:"item_state"`
-	Login                             string                                      `json:"login"`
-	LoginData                         PurchasingFastBuyResponseItemLoginData      `json:"loginData"`
-	MarketCustomTitle                 string                                      `json:"market_custom_title"`
-	MaxDiscountPercent                int64                                       `json:"max_discount_percent"`
-	NeedToRequireVideoToViewLoginData bool                                        `json:"needToRequireVideoToViewLoginData"`
-	Nsb                               int64                                       `json:"nsb"`
-	Price                             int64                                       `json:"price"`
-	PriceWithSellerFee                int64                                       `json:"priceWithSellerFee"`
-	PriceCurrency                     string                                      `json:"price_currency"`
-	PublishedDate                     int64                                       `json:"published_date"`
-	RefreshedDate                     int64                                       `json:"refreshed_date"`
-	ResaleItemOrigin                  string                                      `json:"resale_item_origin"`
-	RestoreItemsCategoryCount         int64                                       `json:"restore_items_category_count"`
-	RubPrice                          int64                                       `json:"rub_price"`
-	Seller                            PurchasingFastBuyResponseItemSeller         `json:"seller"`
-	ShowGetEmailCodeButton            bool                                        `json:"showGetEmailCodeButton"`
-	SoldItemsCategoryCount            int64                                       `json:"sold_items_category_count"`
-	Tags                              PurchasingFastBuyResponseItemTags           `json:"tags"`
-	TempEmail                         string                                      `json:"temp_email"`
-	Title                             string                                      `json:"title"`
-	TitleEn                           string                                      `json:"title_en"`
-	UpdateStatDate                    int64                                       `json:"update_stat_date"`
-	UserAllowAskDiscount              int64                                       `json:"user_allow_ask_discount"`
-	ViewCount                         int64                                       `json:"view_count"`
-	VisitorIsAuthor                   bool                                        `json:"visitorIsAuthor"`
+	AccountLink                       string  `json:"accountLink"`
+	AccountLinks                      any     `json:"accountLinks"`
+	AccountLastActivity               float64 `json:"account_last_activity"`
+	AllowAskDiscount                  float64 `json:"allow_ask_discount"`
+	BumpSettings                      any     `json:"bumpSettings"`
+	Buyer                             any     `json:"buyer"`
+	BuyerAvatarDate                   float64 `json:"buyer_avatar_date"`
+	BuyerUserGroupID                  float64 `json:"buyer_user_group_id"`
+	CanAskDiscount                    bool    `json:"canAskDiscount"`
+	CanChangePassword                 bool    `json:"canChangePassword"`
+	CanCheckGuarantee                 bool    `json:"canCheckGuarantee"`
+	CanReportItem                     bool    `json:"canReportItem"`
+	CanResellItemAfterPurchase        bool    `json:"canResellItemAfterPurchase"`
+	CanUpdateItemStats                bool    `json:"canUpdateItemStats"`
+	CanValidateAccount                bool    `json:"canValidateAccount"`
+	CanViewAccountLink                bool    `json:"canViewAccountLink"`
+	CanViewAccountLoginAndTempEmail   bool    `json:"canViewAccountLoginAndTempEmail"`
+	CanViewEmailLoginData             bool    `json:"canViewEmailLoginData"`
+	CanViewLoginData                  bool    `json:"canViewLoginData"`
+	CategoryID                        float64 `json:"category_id"`
+	CustomFields                      any     `json:"customFields"`
+	Deposit                           float64 `json:"deposit"`
+	Description                       string  `json:"description"`
+	DescriptionEnHTML                 string  `json:"descriptionEnHtml"`
+	DescriptionEnPlain                string  `json:"descriptionEnPlain"`
+	DescriptionHTML                   string  `json:"descriptionHtml"`
+	DescriptionPlain                  string  `json:"descriptionPlain"`
+	DescriptionEn                     string  `json:"description_en"`
+	DisplayConvertedBalance           bool    `json:"displayConvertedBalance"`
+	EditDate                          float64 `json:"edit_date"`
+	EmailLoginData                    any     `json:"emailLoginData"`
+	EmailLoginURL                     string  `json:"emailLoginUrl"`
+	EmailProvider                     string  `json:"email_provider"`
+	EmailType                         string  `json:"email_type"`
+	ExtendedGuarantee                 float64 `json:"extended_guarantee"`
+	ExternalAuth                      any     `json:"externalAuth"`
+	ExtraPrices                       any     `json:"extraPrices"`
+	FeedbackData                      string  `json:"feedback_data"`
+	GetEmailCodeDisplayLogin          string  `json:"getEmailCodeDisplayLogin"`
+	Guarantee                         any     `json:"guarantee"`
+	Information                       string  `json:"information"`
+	InformationEn                     string  `json:"information_en"`
+	IsBirthdayToday                   bool    `json:"isBirthdayToday"`
+	IsIgnored                         bool    `json:"isIgnored"`
+	IsPersonalAccount                 bool    `json:"isPersonalAccount"`
+	IsTrusted                         bool    `json:"isTrusted"`
+	IsSticky                          float64 `json:"is_sticky"`
+	ItemOriginPhrase                  string  `json:"itemOriginPhrase"`
+	ItemDomain                        string  `json:"item_domain"`
+	ItemID                            float64 `json:"item_id"`
+	ItemOrigin                        string  `json:"item_origin"`
+	ItemState                         string  `json:"item_state"`
+	Login                             string  `json:"login"`
+	LoginData                         any     `json:"loginData"`
+	MarketCustomTitle                 string  `json:"market_custom_title"`
+	MaxDiscountPercent                float64 `json:"max_discount_percent"`
+	NeedToRequireVideoToViewLoginData bool    `json:"needToRequireVideoToViewLoginData"`
+	Nsb                               float64 `json:"nsb"`
+	Price                             float64 `json:"price"`
+	PriceWithSellerFee                float64 `json:"priceWithSellerFee"`
+	PriceCurrency                     string  `json:"price_currency"`
+	PublishedDate                     float64 `json:"published_date"`
+	RefreshedDate                     float64 `json:"refreshed_date"`
+	ResaleItemOrigin                  string  `json:"resale_item_origin"`
+	RestoreItemsCategoryCount         float64 `json:"restore_items_category_count"`
+	RubPrice                          float64 `json:"rub_price"`
+	Seller                            any     `json:"seller"`
+	ShowGetEmailCodeButton            bool    `json:"showGetEmailCodeButton"`
+	SoldItemsCategoryCount            float64 `json:"sold_items_category_count"`
+	Tags                              any     `json:"tags"`
+	TempEmail                         string  `json:"temp_email"`
+	Title                             string  `json:"title"`
+	TitleEn                           string  `json:"title_en"`
+	UpdateStatDate                    float64 `json:"update_stat_date"`
+	UserAllowAskDiscount              float64 `json:"user_allow_ask_discount"`
+	ViewCount                         float64 `json:"view_count"`
+	VisitorIsAuthor                   bool    `json:"visitorIsAuthor"`
 }
 
 // PurchasingFastBuyResponseItemBumpSettings represents a component schema.
@@ -19276,14 +18844,14 @@ type PurchasingFastBuyResponseItemBumpSettings struct {
 
 // PurchasingFastBuyResponseItemBuyer represents a component schema.
 type PurchasingFastBuyResponseItemBuyer struct {
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsBanned            int64  `json:"is_banned"`
-	OperationDate       int64  `json:"operation_date"`
-	UniqUsernameCSS     string `json:"uniq_username_css"`
-	UserGroupID         int64  `json:"user_group_id"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-	VisitorIsBuyer      bool   `json:"visitorIsBuyer"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsBanned            float64 `json:"is_banned"`
+	OperationDate       float64 `json:"operation_date"`
+	UniqUsernameCSS     string  `json:"uniq_username_css"`
+	UserGroupID         float64 `json:"user_group_id"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
+	VisitorIsBuyer      bool    `json:"visitorIsBuyer"`
 }
 
 // PurchasingFastBuyResponseItemEmailLoginData represents a component schema.
@@ -19299,14 +18867,14 @@ type PurchasingFastBuyResponseItemEmailLoginData struct {
 
 // PurchasingFastBuyResponseItemGuarantee represents a component schema.
 type PurchasingFastBuyResponseItemGuarantee struct {
-	Active              bool   `json:"active"`
-	Cancelled           bool   `json:"cancelled"`
-	Class               string `json:"class"`
-	Duration            int64  `json:"duration"`
-	DurationPhrase      string `json:"durationPhrase"`
-	EndDate             int64  `json:"endDate"`
-	RemainingTime       int64  `json:"remainingTime"`
-	RemainingTimePhrase string `json:"remainingTimePhrase"`
+	Active              bool    `json:"active"`
+	Cancelled           bool    `json:"cancelled"`
+	Class               string  `json:"class"`
+	Duration            float64 `json:"duration"`
+	DurationPhrase      string  `json:"durationPhrase"`
+	EndDate             float64 `json:"endDate"`
+	RemainingTime       float64 `json:"remainingTime"`
+	RemainingTimePhrase string  `json:"remainingTimePhrase"`
 }
 
 // PurchasingFastBuyResponseItemLoginData represents a component schema.
@@ -19322,117 +18890,103 @@ type PurchasingFastBuyResponseItemLoginData struct {
 
 // PurchasingFastBuyResponseItemSeller represents a component schema.
 type PurchasingFastBuyResponseItemSeller struct {
-	ActiveItemsCount    int64  `json:"active_items_count"`
-	AvatarDate          int64  `json:"avatar_date"`
-	DisplayStyleGroupID int64  `json:"display_style_group_id"`
-	IsOnline            bool   `json:"isOnline"`
-	IsBanned            int64  `json:"is_banned"`
-	JoinedDate          int64  `json:"joined_date"`
-	RestoreData         string `json:"restore_data"`
-	RestorePercents     int64  `json:"restore_percents"`
-	SoldItemsCount      int64  `json:"sold_items_count"`
-	UserID              int64  `json:"user_id"`
-	Username            string `json:"username"`
-}
-
-// PurchasingFastBuyResponseItemTags represents a component schema.
-type PurchasingFastBuyResponseItemTags struct {
-	N1 PurchasingFastBuyResponseItemTagsN1 `json:"1"`
-}
-
-// PurchasingFastBuyResponseItemTagsN1 represents a component schema.
-type PurchasingFastBuyResponseItemTagsN1 struct {
-	Bc                   string `json:"bc"`
-	ForOwnedAccountsOnly bool   `json:"forOwnedAccountsOnly"`
-	IsDefault            bool   `json:"isDefault"`
-	TagID                int64  `json:"tag_id"`
-	Title                string `json:"title"`
+	ActiveItemsCount    float64 `json:"active_items_count"`
+	AvatarDate          float64 `json:"avatar_date"`
+	DisplayStyleGroupID float64 `json:"display_style_group_id"`
+	IsOnline            bool    `json:"isOnline"`
+	IsBanned            float64 `json:"is_banned"`
+	JoinedDate          float64 `json:"joined_date"`
+	RestoreData         string  `json:"restore_data"`
+	RestorePercents     float64 `json:"restore_percents"`
+	SoldItemsCount      float64 `json:"sold_items_count"`
+	UserID              float64 `json:"user_id"`
+	Username            string  `json:"username"`
 }
 
 // PurchasingFastBuyResponseSystemInfo represents a component schema.
 type PurchasingFastBuyResponseSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // RespSystemInfo represents a component schema.
 type RespSystemInfo struct {
-	LogID     int64 `json:"log_id"`
-	Time      int64 `json:"time"`
-	VisitorID int64 `json:"visitor_id"`
+	LogID     float64 `json:"log_id"`
+	Time      float64 `json:"time"`
+	VisitorID float64 `json:"visitor_id"`
 }
 
 // UserModel represents a component schema.
 type UserModel struct {
-	ActiveItemsCount            int64                   `json:"active_items_count"`
-	ActivityVisible             bool                    `json:"activity_visible"`
-	Age                         int64                   `json:"age"`
-	Balance                     string                  `json:"balance"`
-	Balances                    []any                   `json:"balances"`
-	BumpItemPeriod              int64                   `json:"bump_item_period"`
-	CanEdit                     bool                    `json:"can_edit"`
-	CanFollow                   bool                    `json:"can_follow"`
-	CanIgnore                   bool                    `json:"can_ignore"`
-	CanPostProfile              bool                    `json:"can_post_profile"`
-	CanViewProfile              bool                    `json:"can_view_profile"`
-	CanViewProfilePosts         bool                    `json:"can_view_profile_posts"`
-	CanWarn                     bool                    `json:"can_warn"`
-	ContestCount                int64                   `json:"contest_count"`
-	ConvWelcomeMessage          string                  `json:"conv_welcome_message"`
-	ConvertedBalance            int64                   `json:"convertedBalance"`
-	ConvertedDeposit            int64                   `json:"convertedDeposit"`
-	ConvertedHold               int64                   `json:"convertedHold"`
-	Currency                    string                  `json:"currency"`
-	CurrencyPhrase              string                  `json:"currencyPhrase"`
-	CustomAccountDownloadFormat string                  `json:"custom_account_download_format"`
-	CustomFields                UserModelCustomFields   `json:"custom_fields"`
-	CustomTitle                 string                  `json:"custom_title"`
-	Deposit                     int64                   `json:"deposit"`
-	Dob                         UserModelDob            `json:"dob"`
-	FeedbackData                UserModelFeedbackData   `json:"feedback_data"`
-	Hold                        string                  `json:"hold"`
-	Homepage                    string                  `json:"homepage"`
-	ImapData                    UserModelImapData       `json:"imap_data"`
-	IsAdmin                     bool                    `json:"is_admin"`
-	IsBanned                    bool                    `json:"is_banned"`
-	IsFollowed                  bool                    `json:"is_followed"`
-	IsIgnored                   bool                    `json:"is_ignored"`
-	IsModerator                 bool                    `json:"is_moderator"`
-	IsStaff                     bool                    `json:"is_staff"`
-	IsSuperAdmin                bool                    `json:"is_super_admin"`
-	JoinedDate                  int64                   `json:"joined_date"`
-	LastActivity                int64                   `json:"last_activity"`
-	Like2Count                  int64                   `json:"like2_count"`
-	LikeCount                   int64                   `json:"like_count"`
-	Location                    string                  `json:"location"`
-	MarketCustomTitle           string                  `json:"market_custom_title"`
-	MaxDiscountPercent          int64                   `json:"max_discount_percent"`
-	MessageCount                int64                   `json:"message_count"`
-	PaidMailLeft                int64                   `json:"paid_mail_left"`
-	PublicTags                  []any                   `json:"public_tags"`
-	RegisterDate                int64                   `json:"register_date"`
-	Rendered                    UserModelRendered       `json:"rendered"`
-	RestoreCount                int64                   `json:"restore_count"`
-	RestoreData                 UserModelRestoreData    `json:"restore_data"`
-	ShortLink                   string                  `json:"short_link"`
-	SoldItemsCount              int64                   `json:"sold_items_count"`
-	Tags                        []any                   `json:"tags"`
-	TelegramClient              UserModelTelegramClient `json:"telegram_client"`
-	TrophyPoints                int64                   `json:"trophy_points"`
-	UserAllowAskDiscount        bool                    `json:"user_allow_ask_discount"`
-	UserID                      int64                   `json:"user_id"`
-	UserTitle                   string                  `json:"user_title"`
-	Username                    string                  `json:"username"`
-	ViewURL                     string                  `json:"view_url"`
-	Visible                     bool                    `json:"visible"`
-	WarningPoints               int64                   `json:"warning_points"`
+	ActiveItemsCount            float64 `json:"active_items_count"`
+	ActivityVisible             bool    `json:"activity_visible"`
+	Age                         float64 `json:"age"`
+	Balance                     string  `json:"balance"`
+	Balances                    any     `json:"balances"`
+	BumpItemPeriod              float64 `json:"bump_item_period"`
+	CanEdit                     bool    `json:"can_edit"`
+	CanFollow                   bool    `json:"can_follow"`
+	CanIgnore                   bool    `json:"can_ignore"`
+	CanPostProfile              bool    `json:"can_post_profile"`
+	CanViewProfile              bool    `json:"can_view_profile"`
+	CanViewProfilePosts         bool    `json:"can_view_profile_posts"`
+	CanWarn                     bool    `json:"can_warn"`
+	ContestCount                float64 `json:"contest_count"`
+	ConvWelcomeMessage          string  `json:"conv_welcome_message"`
+	ConvertedBalance            float64 `json:"convertedBalance"`
+	ConvertedDeposit            float64 `json:"convertedDeposit"`
+	ConvertedHold               float64 `json:"convertedHold"`
+	Currency                    string  `json:"currency"`
+	CurrencyPhrase              string  `json:"currencyPhrase"`
+	CustomAccountDownloadFormat string  `json:"custom_account_download_format"`
+	CustomFields                any     `json:"custom_fields"`
+	CustomTitle                 string  `json:"custom_title"`
+	Deposit                     float64 `json:"deposit"`
+	Dob                         any     `json:"dob"`
+	FeedbackData                any     `json:"feedback_data"`
+	Hold                        string  `json:"hold"`
+	Homepage                    string  `json:"homepage"`
+	ImapData                    any     `json:"imap_data"`
+	IsAdmin                     bool    `json:"is_admin"`
+	IsBanned                    bool    `json:"is_banned"`
+	IsFollowed                  bool    `json:"is_followed"`
+	IsIgnored                   bool    `json:"is_ignored"`
+	IsModerator                 bool    `json:"is_moderator"`
+	IsStaff                     bool    `json:"is_staff"`
+	IsSuperAdmin                bool    `json:"is_super_admin"`
+	JoinedDate                  float64 `json:"joined_date"`
+	LastActivity                float64 `json:"last_activity"`
+	Like2Count                  float64 `json:"like2_count"`
+	LikeCount                   float64 `json:"like_count"`
+	Location                    string  `json:"location"`
+	MarketCustomTitle           string  `json:"market_custom_title"`
+	MaxDiscountPercent          float64 `json:"max_discount_percent"`
+	MessageCount                float64 `json:"message_count"`
+	PaidMailLeft                float64 `json:"paid_mail_left"`
+	PublicTags                  any     `json:"public_tags"`
+	RegisterDate                float64 `json:"register_date"`
+	Rendered                    any     `json:"rendered"`
+	RestoreCount                float64 `json:"restore_count"`
+	RestoreData                 any     `json:"restore_data"`
+	ShortLink                   string  `json:"short_link"`
+	SoldItemsCount              float64 `json:"sold_items_count"`
+	Tags                        any     `json:"tags"`
+	TelegramClient              any     `json:"telegram_client"`
+	TrophyPoints                float64 `json:"trophy_points"`
+	UserAllowAskDiscount        bool    `json:"user_allow_ask_discount"`
+	UserID                      float64 `json:"user_id"`
+	UserTitle                   string  `json:"user_title"`
+	Username                    string  `json:"username"`
+	ViewURL                     string  `json:"view_url"`
+	Visible                     bool    `json:"visible"`
+	WarningPoints               float64 `json:"warning_points"`
 }
 
 // UserModelCustomFields represents a component schema.
 type UserModelCustomFields struct {
 	N4                    string `json:"_4"`
-	AllowSelfUnban        []any  `json:"allowSelfUnban"`
+	AllowSelfUnban        any    `json:"allowSelfUnban"`
 	BanReason             string `json:"ban_reason"`
 	Discord               string `json:"discord"`
 	FavoriteAnime         string `json:"favoriteAnime"`
@@ -19456,41 +19010,30 @@ type UserModelCustomFields struct {
 
 // UserModelDob represents a component schema.
 type UserModelDob struct {
-	Day   int64 `json:"day"`
-	Month int64 `json:"month"`
-	Year  int64 `json:"year"`
-}
-
-// UserModelFeedbackData represents a component schema.
-type UserModelFeedbackData struct {
-	N12345 UserModelFeedbackDataN12345 `json:"12345"`
-}
-
-// UserModelFeedbackDataN12345 represents a component schema.
-type UserModelFeedbackDataN12345 struct {
-	Negative int64 `json:"negative"`
-	Positive int64 `json:"positive"`
+	Day   float64 `json:"day"`
+	Month float64 `json:"month"`
+	Year  float64 `json:"year"`
 }
 
 // UserModelImapData represents a component schema.
 type UserModelImapData struct {
-	Domainzone UserModelImapDataDomainzone `json:"domain.zone"`
+	Domainzone any `json:"domain.zone"`
 }
 
 // UserModelImapDataDomainzone represents a component schema.
 type UserModelImapDataDomainzone struct {
-	Domain     string `json:"domain"`
-	ImapServer string `json:"imap_server"`
-	Port       int64  `json:"port"`
-	Secure     bool   `json:"secure"`
+	Domain     string  `json:"domain"`
+	ImapServer string  `json:"imap_server"`
+	Port       float64 `json:"port"`
+	Secure     bool    `json:"secure"`
 }
 
 // UserModelRendered represents a component schema.
 type UserModelRendered struct {
-	Avatars     UserModelRenderedAvatars     `json:"avatars"`
-	Backgrounds UserModelRenderedBackgrounds `json:"backgrounds"`
-	Link        string                       `json:"link"`
-	Username    string                       `json:"username"`
+	Avatars     any    `json:"avatars"`
+	Backgrounds any    `json:"backgrounds"`
+	Link        string `json:"link"`
+	Username    string `json:"username"`
 }
 
 // UserModelRenderedAvatars represents a component schema.
@@ -19504,11 +19047,6 @@ type UserModelRenderedAvatars struct {
 type UserModelRenderedBackgrounds struct {
 	L string `json:"l"`
 	M string `json:"m"`
-}
-
-// UserModelRestoreData represents a component schema.
-type UserModelRestoreData struct {
-	N12345 int64 `json:"12345"`
 }
 
 // UserModelTelegramClient represents a component schema.
@@ -19525,38 +19063,44 @@ type UserModelTelegramClient struct {
 
 // AutoPaymentsCreateBody holds the request body for AutoPayments.Create.
 type AutoPaymentsCreateBody struct {
-	Amount           float64   `json:"amount"`
-	Currency         *Currency `json:"currency,omitempty"`
-	Day              Day       `json:"day"`
-	Description      *string   `json:"description,omitempty"`
-	SecretAnswer     *string   `json:"secret_answer,omitempty"`
-	UsernameReceiver string    `json:"username_receiver"`
+	// Amount - Amount to be transferred.
+	Amount   float64   `json:"amount"`
+	Currency *Currency `json:"currency,omitempty"`
+	// Day - Day of the month for the payment. (Use "0" for the last day of the month)
+	Day Day `json:"day"`
+	// Description - Payment description.
+	Description *string `json:"description,omitempty"`
+	// SecretAnswer - Secret answer.
+	SecretAnswer *string `json:"secret_answer,omitempty"`
+	// UsernameReceiver - Username of the payment receiver.
+	UsernameReceiver string `json:"username_receiver"`
 }
 
 // AutoPaymentsCreateResponse is the response for the endpoint.
 type AutoPaymentsCreateResponse struct {
-	AutoPaymentID int64                                `json:"auto_payment_id"`
-	Message       string                               `json:"message"`
-	Status        string                               `json:"status"`
-	SystemInfo    AutoPaymentsCreateResponseSystemInfo `json:"system_info"`
+	AutoPaymentID float64                               `json:"auto_payment_id"`
+	Message       string                                `json:"message"`
+	Status        string                                `json:"status"`
+	SystemInfo    *AutoPaymentsCreateResponseSystemInfo `json:"system_info"`
 }
 
 // AutoPaymentsDeleteBody holds the request body for AutoPayments.Delete.
 type AutoPaymentsDeleteBody struct {
+	// AutoPaymentID - Auto payment ID.
 	AutoPaymentID int64 `json:"auto_payment_id"`
 }
 
 // AutoPaymentsDeleteResponse is the response for the endpoint.
 type AutoPaymentsDeleteResponse struct {
-	Message    string                               `json:"message"`
-	Status     string                               `json:"status"`
-	SystemInfo AutoPaymentsDeleteResponseSystemInfo `json:"system_info"`
+	Message    string                                `json:"message"`
+	Status     string                                `json:"status"`
+	SystemInfo *AutoPaymentsDeleteResponseSystemInfo `json:"system_info"`
 }
 
 // AutoPaymentsListResponse is the response for the endpoint.
 type AutoPaymentsListResponse struct {
-	Payments   AutoPaymentsListResponsePayments   `json:"payments"`
-	SystemInfo AutoPaymentsListResponseSystemInfo `json:"system_info"`
+	Payments   any                                 `json:"payments"`
+	SystemInfo *AutoPaymentsListResponseSystemInfo `json:"system_info"`
 }
 
 // BatchBatchItem represents a single item in the Batch.Batch request body.
@@ -19569,571 +19113,933 @@ type BatchBatchItem struct {
 
 // BatchBatchResponse is the response for the endpoint.
 type BatchBatchResponse struct {
-	Jobs       BatchBatchResponseJobs        `json:"jobs"`
+	Jobs       *BatchBatchResponseJobs       `json:"jobs"`
 	SystemInfo *BatchBatchResponseSystemInfo `json:"system_info,omitempty"`
 }
 
 // CartAddBody holds the request body for Cart.Add.
 type CartAddBody struct {
+	// ItemID - Item id.
 	ItemID int64 `json:"item_id"`
 }
 
 // CartAddResponse is the response for the endpoint.
 type CartAddResponse struct {
-	Success    bool                      `json:"success"`
-	SystemInfo CartAddResponseSystemInfo `json:"system_info"`
+	Success    bool                       `json:"success"`
+	SystemInfo *CartAddResponseSystemInfo `json:"system_info"`
 }
 
 // CartDeleteBody holds the request body for Cart.Delete.
 type CartDeleteBody struct {
+	// ItemID - Item id.
 	ItemID *int64 `json:"item_id,omitempty"`
 }
 
 // CartDeleteResponse is the response for the endpoint.
 type CartDeleteResponse struct {
-	Success    bool                         `json:"success"`
-	SystemInfo CartDeleteResponseSystemInfo `json:"system_info"`
+	Success    bool                          `json:"success"`
+	SystemInfo *CartDeleteResponseSystemInfo `json:"system_info"`
 }
 
 // CartGetParams holds query parameters for Cart.Get.
 type CartGetParams struct {
-	CategoryID       *CategoryID       `query:"category_id"`
-	Page             *int64            `query:"page"`
-	Pmin             *int64            `query:"pmin"`
-	Pmax             *int64            `query:"pmax"`
-	Title            *string           `query:"title"`
-	OrderBy          *OrderBy          `query:"order_by"`
-	TagID            []int64           `query:"tag_id[]"`
-	NotTagID         []int64           `query:"not_tag_id[]"`
-	PublicTagID      []int64           `query:"public_tag_id[]"`
-	NotPublicTagID   []int64           `query:"not_public_tag_id[]"`
-	Origin           []CartOrigin      `query:"origin[]"`
-	NotOrigin        []CartNotOrigin   `query:"not_origin[]"`
-	UserID           *int64            `query:"user_id"`
-	Nsb              *bool             `query:"nsb"`
-	Sb               *bool             `query:"sb"`
-	NsbByMe          *bool             `query:"nsb_by_me"`
-	SbByMe           *bool             `query:"sb_by_me"`
-	Currency         *Currency         `query:"currency"`
-	EmailLoginData   *bool             `query:"email_login_data"`
-	EmailProvider    []EmailProvider   `query:"email_provider[]"`
+	// CategoryID - Accounts category.
+	CategoryID *CategoryID `query:"category_id"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
 	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
-	ParseSameItemIds *bool             `query:"parse_same_item_ids"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
 }
 
 // CartGetResponse is the response for the endpoint.
 type CartGetResponse struct {
-	HasNextPage     bool                      `json:"hasNextPage"`
-	Items           []ItemFromListModel       `json:"items"`
-	Page            int64                     `json:"page"`
-	PerPage         int64                     `json:"perPage"`
-	SearchURL       string                    `json:"searchUrl"`
-	StickyItems     []ItemFromListModel       `json:"stickyItems"`
-	SystemInfo      CartGetResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                     `json:"totalItems"`
-	TotalItemsPrice any                       `json:"totalItemsPrice"`
+	HasNextPage     bool                       `json:"hasNextPage"`
+	Items           []ItemFromListModel        `json:"items"`
+	Page            float64                    `json:"page"`
+	PerPage         float64                    `json:"perPage"`
+	SearchURL       string                     `json:"searchUrl"`
+	StickyItems     []ItemFromListModel        `json:"stickyItems"`
+	SystemInfo      *CartGetResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                    `json:"totalItems"`
+	TotalItemsPrice any                        `json:"totalItemsPrice"`
 }
 
 // CategoryAllParams holds query parameters for Category.All.
 type CategoryAllParams struct {
-	Page             *int64            `query:"page"`
-	Pmin             *int64            `query:"pmin"`
-	Pmax             *int64            `query:"pmax"`
-	Title            *string           `query:"title"`
-	OrderBy          *OrderBy          `query:"order_by"`
-	TagID            []int64           `query:"tag_id[]"`
-	NotTagID         []int64           `query:"not_tag_id[]"`
-	PublicTagID      []int64           `query:"public_tag_id[]"`
-	NotPublicTagID   []int64           `query:"not_public_tag_id[]"`
-	Origin           []CartOrigin      `query:"origin[]"`
-	NotOrigin        []CartNotOrigin   `query:"not_origin[]"`
-	UserID           *int64            `query:"user_id"`
-	Nsb              *bool             `query:"nsb"`
-	Sb               *bool             `query:"sb"`
-	NsbByMe          *bool             `query:"nsb_by_me"`
-	SbByMe           *bool             `query:"sb_by_me"`
-	Currency         *Currency         `query:"currency"`
-	EmailLoginData   *bool             `query:"email_login_data"`
-	EmailProvider    []EmailProvider   `query:"email_provider[]"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
 	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
-	ParseSameItemIds *bool             `query:"parse_same_item_ids"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
 }
 
 // CategoryAllResponse is the response for the endpoint.
 type CategoryAllResponse struct {
-	HasNextPage     bool                          `json:"hasNextPage"`
-	Items           []ItemFromListModel           `json:"items"`
-	Page            int64                         `json:"page"`
-	PerPage         int64                         `json:"perPage"`
-	SearchURL       string                        `json:"searchUrl"`
-	StickyItems     []ItemFromListModel           `json:"stickyItems"`
-	SystemInfo      CategoryAllResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                         `json:"totalItems"`
-	TotalItemsPrice any                           `json:"totalItemsPrice"`
+	HasNextPage     bool                           `json:"hasNextPage"`
+	Items           []ItemFromListModel            `json:"items"`
+	Page            float64                        `json:"page"`
+	PerPage         float64                        `json:"perPage"`
+	SearchURL       string                         `json:"searchUrl"`
+	StickyItems     []ItemFromListModel            `json:"stickyItems"`
+	SystemInfo      *CategoryAllResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                        `json:"totalItems"`
+	TotalItemsPrice any                            `json:"totalItemsPrice"`
 }
 
 // CategoryBattleNetParams holds query parameters for Category.BattleNet.
 type CategoryBattleNetParams struct {
-	Page             *int64               `query:"page"`
-	Pmin             *int64               `query:"pmin"`
-	Pmax             *int64               `query:"pmax"`
-	Title            *string              `query:"title"`
-	OrderBy          *OrderBy             `query:"order_by"`
-	TagID            []int64              `query:"tag_id[]"`
-	NotTagID         []int64              `query:"not_tag_id[]"`
-	PublicTagID      []int64              `query:"public_tag_id[]"`
-	NotPublicTagID   []int64              `query:"not_public_tag_id[]"`
-	Origin           []CartOrigin         `query:"origin[]"`
-	NotOrigin        []CartNotOrigin      `query:"not_origin[]"`
-	UserID           *int64               `query:"user_id"`
-	Nsb              *bool                `query:"nsb"`
-	Sb               *bool                `query:"sb"`
-	NsbByMe          *bool                `query:"nsb_by_me"`
-	SbByMe           *bool                `query:"sb_by_me"`
-	Currency         *Currency            `query:"currency"`
-	EmailLoginData   *bool                `query:"email_login_data"`
-	EmailProvider    []EmailProvider      `query:"email_provider[]"`
-	NotEmailProvider *NotEmailProvider    `query:"not_email_provider[]"`
-	ParseSameItemIds *bool                `query:"parse_same_item_ids"`
-	EmailType        []CategoryEmailType4 `query:"email_type[]"`
-	ItemDomain       *string              `query:"item_domain"`
-	Eg               *CategoryEg3         `query:"eg"`
-	Game             []int64              `query:"game[]"`
-	Daybreak         *int64               `query:"daybreak"`
-	Country          []string             `query:"country[]"`
-	NotCountry       []string             `query:"not_country[]"`
-	Tel              *Tel                 `query:"tel"`
-	EditBtag         *EditBtag            `query:"edit_btag"`
-	ChangeableFn     *ChangeableFn        `query:"changeable_fn"`
-	RealID           *RealID              `query:"real_id"`
-	ParentControl    *ParentControl       `query:"parent_control"`
-	NoBans           *NoBans              `query:"no_bans"`
-	BalanceMin       *int64               `query:"balance_min"`
-	BalanceMax       *int64               `query:"balance_max"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType4 `query:"email_type[]"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Eg - Guarantee type.
+	Eg *CategoryEg3 `query:"eg"`
+	// Game - List of games.
+	Game []int64 `query:"game[]"`
+	// Daybreak - Number of days the account has been offline.
+	Daybreak *int64 `query:"daybreak"`
+	// Country - List of allowed countries.
+	Country []string `query:"country[]"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country[]"`
+	// Tel - Has linked mobile.
+	Tel *Tel `query:"tel"`
+	// EditBtag - Can edit BattleTag.
+	EditBtag *EditBtag `query:"edit_btag"`
+	// ChangeableFn - Can edit full name.
+	ChangeableFn *ChangeableFn `query:"changeable_fn"`
+	// RealID - Real id.
+	RealID *RealID `query:"real_id"`
+	// ParentControl - Has disabled parent control.
+	ParentControl *ParentControl `query:"parent_control"`
+	// NoBans - Has no bans.
+	NoBans *NoBans `query:"no_bans"`
+	// BalanceMin - Minimum balance.
+	BalanceMin *int64 `query:"balance_min"`
+	// BalanceMax - Maximum balance.
+	BalanceMax *int64 `query:"balance_max"`
 }
 
 // CategoryBattleNetResponse is the response for the endpoint.
 type CategoryBattleNetResponse struct {
-	CacheTTL        int64                               `json:"cacheTTL"`
-	HasNextPage     bool                                `json:"hasNextPage"`
-	Items           []any                               `json:"items"`
-	LastModified    int64                               `json:"lastModified"`
-	Page            int64                               `json:"page"`
-	PerPage         int64                               `json:"perPage"`
-	SearchURL       string                              `json:"searchUrl"`
-	ServerTime      int64                               `json:"serverTime"`
-	StickyItems     []any                               `json:"stickyItems"`
-	SystemInfo      CategoryBattleNetResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                               `json:"totalItems"`
-	TotalItemsPrice any                                 `json:"totalItemsPrice"`
-	WasCached       bool                                `json:"wasCached"`
+	CacheTTL        float64                              `json:"cacheTTL"`
+	HasNextPage     bool                                 `json:"hasNextPage"`
+	Items           []any                                `json:"items"`
+	LastModified    float64                              `json:"lastModified"`
+	Page            float64                              `json:"page"`
+	PerPage         float64                              `json:"perPage"`
+	SearchURL       string                               `json:"searchUrl"`
+	ServerTime      float64                              `json:"serverTime"`
+	StickyItems     []any                                `json:"stickyItems"`
+	SystemInfo      *CategoryBattleNetResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                              `json:"totalItems"`
+	TotalItemsPrice any                                  `json:"totalItemsPrice"`
+	WasCached       bool                                 `json:"wasCached"`
 }
 
 // CategoryChatGPTParams holds query parameters for Category.ChatGPT.
 type CategoryChatGPTParams struct {
-	Page               *int64               `query:"page"`
-	Pmin               *int64               `query:"pmin"`
-	Pmax               *int64               `query:"pmax"`
-	Title              *string              `query:"title"`
-	OrderBy            *OrderBy             `query:"order_by"`
-	TagID              []int64              `query:"tag_id[]"`
-	NotTagID           []int64              `query:"not_tag_id[]"`
-	PublicTagID        []int64              `query:"public_tag_id[]"`
-	NotPublicTagID     []int64              `query:"not_public_tag_id[]"`
-	Origin             []CartOrigin         `query:"origin[]"`
-	NotOrigin          []CartNotOrigin      `query:"not_origin[]"`
-	UserID             *int64               `query:"user_id"`
-	Nsb                *bool                `query:"nsb"`
-	Sb                 *bool                `query:"sb"`
-	NsbByMe            *bool                `query:"nsb_by_me"`
-	SbByMe             *bool                `query:"sb_by_me"`
-	Currency           *Currency            `query:"currency"`
-	EmailLoginData     *bool                `query:"email_login_data"`
-	EmailProvider      []EmailProvider      `query:"email_provider[]"`
-	NotEmailProvider   *NotEmailProvider    `query:"not_email_provider[]"`
-	ParseSameItemIds   *bool                `query:"parse_same_item_ids"`
-	EmailType          []CategoryEmailType4 `query:"email_type[]"`
-	ItemDomain         *string              `query:"item_domain"`
-	Subscription       []Subscription       `query:"subscription[]"`
-	SubscriptionLength *int64               `query:"subscription_length"`
-	SubscriptionPeriod *SubscriptionPeriod  `query:"subscription_period"`
-	Autorenewal        *Autorenewal         `query:"autorenewal"`
-	Tel                *Tel                 `query:"tel"`
-	Transactions       *Transactions        `query:"transactions"`
-	Reg                *int64               `query:"reg"`
-	RegPeriod          *RegPeriod           `query:"reg_period"`
-	OpenaiTier         []OpenaiTier         `query:"openai_tier[]"`
-	OpenaiBalanceMin   *int64               `query:"openai_balance_min"`
-	OpenaiBalanceMax   *int64               `query:"openai_balance_max"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType4 `query:"email_type[]"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Subscription - List of allowed subscriptions.
+	Subscription []Subscription `query:"subscription[]"`
+	// SubscriptionLength - Length of subscription.
+	SubscriptionLength *int64 `query:"subscription_length"`
+	// SubscriptionPeriod - In what notation is time measured.
+	SubscriptionPeriod *SubscriptionPeriod `query:"subscription_period"`
+	// Autorenewal - Is auto renewal enabled.
+	Autorenewal *Autorenewal `query:"autorenewal"`
+	// Tel - Has linked mobile.
+	Tel *Tel `query:"tel"`
+	// Transactions - Has transactions.
+	Transactions *Transactions `query:"transactions"`
+	// Reg - How old is the account.
+	Reg *int64 `query:"reg"`
+	// RegPeriod - In what notation is time measured.
+	RegPeriod *RegPeriod `query:"reg_period"`
+	// OpenaiTier - List of allowed tiers.
+	OpenaiTier []OpenaiTier `query:"openai_tier[]"`
+	// OpenaiBalanceMin - Minimum OpenAI credit balance.
+	OpenaiBalanceMin *int64 `query:"openai_balance_min"`
+	// OpenaiBalanceMax - Maximum OpenAI credit balance.
+	OpenaiBalanceMax *int64 `query:"openai_balance_max"`
 }
 
 // CategoryChatGPTResponse is the response for the endpoint.
 type CategoryChatGPTResponse struct {
-	CacheTTL        int64                             `json:"cacheTTL"`
-	HasNextPage     bool                              `json:"hasNextPage"`
-	Items           []any                             `json:"items"`
-	LastModified    int64                             `json:"lastModified"`
-	Page            int64                             `json:"page"`
-	PerPage         int64                             `json:"perPage"`
-	SearchURL       string                            `json:"searchUrl"`
-	ServerTime      int64                             `json:"serverTime"`
-	StickyItems     []any                             `json:"stickyItems"`
-	SystemInfo      CategoryChatGPTResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                             `json:"totalItems"`
-	TotalItemsPrice any                               `json:"totalItemsPrice"`
-	WasCached       bool                              `json:"wasCached"`
+	CacheTTL        float64                            `json:"cacheTTL"`
+	HasNextPage     bool                               `json:"hasNextPage"`
+	Items           []any                              `json:"items"`
+	LastModified    float64                            `json:"lastModified"`
+	Page            float64                            `json:"page"`
+	PerPage         float64                            `json:"perPage"`
+	SearchURL       string                             `json:"searchUrl"`
+	ServerTime      float64                            `json:"serverTime"`
+	StickyItems     []any                              `json:"stickyItems"`
+	SystemInfo      *CategoryChatGPTResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                            `json:"totalItems"`
+	TotalItemsPrice any                                `json:"totalItemsPrice"`
+	WasCached       bool                               `json:"wasCached"`
 }
 
 // CategoryDiscordParams holds query parameters for Category.Discord.
 type CategoryDiscordParams struct {
-	Page             *int64               `query:"page"`
-	Pmin             *int64               `query:"pmin"`
-	Pmax             *int64               `query:"pmax"`
-	Title            *string              `query:"title"`
-	OrderBy          *OrderBy             `query:"order_by"`
-	TagID            []int64              `query:"tag_id[]"`
-	NotTagID         []int64              `query:"not_tag_id[]"`
-	PublicTagID      []int64              `query:"public_tag_id[]"`
-	NotPublicTagID   []int64              `query:"not_public_tag_id[]"`
-	Origin           []CartOrigin         `query:"origin[]"`
-	NotOrigin        []CartNotOrigin      `query:"not_origin[]"`
-	UserID           *int64               `query:"user_id"`
-	Nsb              *bool                `query:"nsb"`
-	Sb               *bool                `query:"sb"`
-	NsbByMe          *bool                `query:"nsb_by_me"`
-	SbByMe           *bool                `query:"sb_by_me"`
-	Currency         *Currency            `query:"currency"`
-	EmailLoginData   *bool                `query:"email_login_data"`
-	EmailProvider    []EmailProvider      `query:"email_provider[]"`
-	NotEmailProvider *NotEmailProvider    `query:"not_email_provider[]"`
-	ParseSameItemIds *bool                `query:"parse_same_item_ids"`
-	EmailType        []CategoryEmailType2 `query:"email_type[]"`
-	ItemDomain       *string              `query:"item_domain"`
-	Tel              *Tel                 `query:"tel"`
-	Nitro            *Nitro               `query:"nitro"`
-	NitroType        []NitroType          `query:"nitro_type[]"`
-	NitroLength      *int64               `query:"nitro_length"`
-	NitroPeriod      *NitroPeriod         `query:"nitro_period"`
-	BoostsMin        *int64               `query:"boosts_min"`
-	BoostsMax        *int64               `query:"boosts_max"`
-	Billing          *Billing             `query:"billing"`
-	Gifts            *Gifts               `query:"gifts"`
-	Transactions     *Transactions        `query:"transactions"`
-	Badge            []Badge              `query:"badge[]"`
-	Condition        []Condition          `query:"condition[]"`
-	ChatMin          *int64               `query:"chat_min"`
-	ChatMax          *int64               `query:"chat_max"`
-	MinAdminMembers  *int64               `query:"min_admin_members"`
-	MaxAdminMembers  *int64               `query:"max_admin_members"`
-	MinAdmin         *int64               `query:"min_admin"`
-	MaxAdmin         *int64               `query:"max_admin"`
-	Reg              *int64               `query:"reg"`
-	RegPeriod        *RegPeriod           `query:"reg_period"`
-	Language         []string             `query:"language[]"`
-	NotLanguage      []string             `query:"not_language[]"`
-	Clans            *Clans               `query:"clans"`
-	MinAdminClans    *int64               `query:"min_admin_clans"`
-	MaxAdminClans    *int64               `query:"max_admin_clans"`
-	MinOwnerClans    *int64               `query:"min_owner_clans"`
-	MaxOwnerClans    *int64               `query:"max_owner_clans"`
-	Country          []string             `query:"country[]"`
-	NotCountry       []string             `query:"not_country[]"`
-	MinServers       *int64               `query:"min_servers"`
-	MaxServers       *int64               `query:"max_servers"`
-	N2FA             *N2FA                `query:"2fa"`
-	MinFullCredits   *int64               `query:"min_full_credits"`
-	MaxFullCredits   *int64               `query:"max_full_credits"`
-	MinBasicCredits  *int64               `query:"min_basic_credits"`
-	MaxBasicCredits  *int64               `query:"max_basic_credits"`
-	MinOrbs          *int64               `query:"min_orbs"`
-	MaxOrbs          *int64               `query:"max_orbs"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType2 `query:"email_type[]"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Tel - Has linked mobile.
+	Tel *Tel `query:"tel"`
+	// Nitro - Has nitro.
+	Nitro *Nitro `query:"nitro"`
+	// NitroType - Nitro type.
+	NitroType []NitroType `query:"nitro_type[]"`
+	// NitroLength - Length of nitro.
+	NitroLength *int64 `query:"nitro_length"`
+	// NitroPeriod - In what notation is time measured.
+	NitroPeriod *NitroPeriod `query:"nitro_period"`
+	// BoostsMin - Minimum number of boosts.
+	BoostsMin *int64 `query:"boosts_min"`
+	// BoostsMax - Maximum number of boosts.
+	BoostsMax *int64 `query:"boosts_max"`
+	// Billing - Has billing.
+	Billing *Billing `query:"billing"`
+	// Gifts - Has gifts.
+	Gifts *Gifts `query:"gifts"`
+	// Transactions - Has transactions.
+	Transactions *Transactions `query:"transactions"`
+	// Badge - List of badges.
+	Badge []Badge `query:"badge[]"`
+	// Condition - List of account conditions.
+	Condition []Condition `query:"condition[]"`
+	// ChatMin - Minimum number of chats.
+	ChatMin *int64 `query:"chat_min"`
+	// ChatMax - Maximum number of chats.
+	ChatMax *int64 `query:"chat_max"`
+	// MinAdminMembers - Minimum number of subscribers in server, where account is administrator/owner.
+	MinAdminMembers *int64 `query:"min_admin_members"`
+	// MaxAdminMembers - Maximum number of subscribers in server, where account is administrator/owner.
+	MaxAdminMembers *int64 `query:"max_admin_members"`
+	// MinAdmin - Minimum number of servers, where account is administrator/owner.
+	MinAdmin *int64 `query:"min_admin"`
+	// MaxAdmin - Maximum number of servers, where account is administrator/owner.
+	MaxAdmin *int64 `query:"max_admin"`
+	// Reg - How old is the account.
+	Reg *int64 `query:"reg"`
+	// RegPeriod - In what notation is time measured.
+	RegPeriod *RegPeriod `query:"reg_period"`
+	// Language - List of languages.
+	Language []string `query:"language[]"`
+	// NotLanguage - List of languages that won't be included.
+	NotLanguage []string `query:"not_language[]"`
+	// Clans - Has clans.
+	Clans *Clans `query:"clans"`
+	// MinAdminClans - Minimum number of clans, where account is administrator.
+	MinAdminClans *int64 `query:"min_admin_clans"`
+	// MaxAdminClans - Maximum number of clans, where account is administrator.
+	MaxAdminClans *int64 `query:"max_admin_clans"`
+	// MinOwnerClans - Minimum number of clans, where account is owner.
+	MinOwnerClans *int64 `query:"min_owner_clans"`
+	// MaxOwnerClans - Maximum number of clans, where account is owner.
+	MaxOwnerClans *int64 `query:"max_owner_clans"`
+	// Country - List of allowed countries.
+	Country []string `query:"country[]"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country[]"`
+	// MinServers - Minimum count of servers.
+	MinServers *int64 `query:"min_servers"`
+	// MaxServers - Maximum count of servers.
+	MaxServers *int64 `query:"max_servers"`
+	// N2FA - Has two-factor authentication.
+	N2FA *N2FA `query:"2fa"`
+	// MinFullCredits - Minimum number of Nitro full credits.
+	MinFullCredits *int64 `query:"min_full_credits"`
+	// MaxFullCredits - Maximum number of Nitro full credits.
+	MaxFullCredits *int64 `query:"max_full_credits"`
+	// MinBasicCredits - Minimum number of Nitro basic credits.
+	MinBasicCredits *int64 `query:"min_basic_credits"`
+	// MaxBasicCredits - Maximum number of Nitro basic credits.
+	MaxBasicCredits *int64 `query:"max_basic_credits"`
+	// MinOrbs - Minimum number of Discord Orbs.
+	MinOrbs *int64 `query:"min_orbs"`
+	// MaxOrbs - Maximum number of Discord Orbs.
+	MaxOrbs *int64 `query:"max_orbs"`
 }
 
 // CategoryDiscordResponse is the response for the endpoint.
 type CategoryDiscordResponse struct {
-	CacheTTL        int64                             `json:"cacheTTL"`
-	HasNextPage     bool                              `json:"hasNextPage"`
-	Items           []any                             `json:"items"`
-	LastModified    int64                             `json:"lastModified"`
-	Page            int64                             `json:"page"`
-	PerPage         int64                             `json:"perPage"`
-	SearchURL       string                            `json:"searchUrl"`
-	ServerTime      int64                             `json:"serverTime"`
-	StickyItems     []any                             `json:"stickyItems"`
-	SystemInfo      CategoryDiscordResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                             `json:"totalItems"`
-	TotalItemsPrice any                               `json:"totalItemsPrice"`
-	WasCached       bool                              `json:"wasCached"`
+	CacheTTL        float64                            `json:"cacheTTL"`
+	HasNextPage     bool                               `json:"hasNextPage"`
+	Items           []any                              `json:"items"`
+	LastModified    float64                            `json:"lastModified"`
+	Page            float64                            `json:"page"`
+	PerPage         float64                            `json:"perPage"`
+	SearchURL       string                             `json:"searchUrl"`
+	ServerTime      float64                            `json:"serverTime"`
+	StickyItems     []any                              `json:"stickyItems"`
+	SystemInfo      *CategoryDiscordResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                            `json:"totalItems"`
+	TotalItemsPrice any                                `json:"totalItemsPrice"`
+	WasCached       bool                               `json:"wasCached"`
 }
 
 // CategoryEAParams holds query parameters for Category.EA.
 type CategoryEAParams struct {
-	Page               *int64                `query:"page"`
-	Pmin               *int64                `query:"pmin"`
-	Pmax               *int64                `query:"pmax"`
-	Title              *string               `query:"title"`
-	OrderBy            *OrderBy              `query:"order_by"`
-	TagID              []int64               `query:"tag_id[]"`
-	NotTagID           []int64               `query:"not_tag_id[]"`
-	PublicTagID        []int64               `query:"public_tag_id[]"`
-	NotPublicTagID     []int64               `query:"not_public_tag_id[]"`
-	Origin             []CartOrigin          `query:"origin[]"`
-	NotOrigin          []CartNotOrigin       `query:"not_origin[]"`
-	UserID             *int64                `query:"user_id"`
-	Nsb                *bool                 `query:"nsb"`
-	Sb                 *bool                 `query:"sb"`
-	NsbByMe            *bool                 `query:"nsb_by_me"`
-	SbByMe             *bool                 `query:"sb_by_me"`
-	Currency           *Currency             `query:"currency"`
-	EmailLoginData     *bool                 `query:"email_login_data"`
-	EmailProvider      []EmailProvider       `query:"email_provider[]"`
-	NotEmailProvider   *NotEmailProvider     `query:"not_email_provider[]"`
-	ParseSameItemIds   *bool                 `query:"parse_same_item_ids"`
-	EmailType          []CategoryEmailType2  `query:"email_type[]"`
-	ItemDomain         *string               `query:"item_domain"`
-	Game               []string              `query:"game[]"`
-	Country            []string              `query:"country[]"`
-	NotCountry         []string              `query:"not_country[]"`
-	Gmin               *int64                `query:"gmin"`
-	Gmax               *int64                `query:"gmax"`
-	AlRankMin          *int64                `query:"al_rank_min"`
-	AlRankMax          *int64                `query:"al_rank_max"`
-	AlLevelMin         *int64                `query:"al_level_min"`
-	AlLevelMax         *int64                `query:"al_level_max"`
-	HasBan             *HasBan               `query:"has_ban"`
-	XboxConnected      *XboxConnected        `query:"xbox_connected"`
-	SteamConnected     *SteamConnected       `query:"steam_connected"`
-	PsnConnected       *PsnConnected         `query:"psn_connected"`
-	Subscription       *CategorySubscription `query:"subscription"`
-	SubscriptionLength *int64                `query:"subscription_length"`
-	SubscriptionPeriod *SubscriptionPeriod   `query:"subscription_period"`
-	HoursPlayed        map[string]int64      `query:"hours_played"`
-	HoursPlayedMax     map[string]int64      `query:"hours_played_max"`
-	Transactions       *Transactions         `query:"transactions"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType2 `query:"email_type[]"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Game - List of games.
+	Game []string `query:"game[]"`
+	// Country - List of allowed countries.
+	Country []string `query:"country[]"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country[]"`
+	// Gmin - Minimum count of games.
+	Gmin *int64 `query:"gmin"`
+	// Gmax - Maximum count of games.
+	Gmax *int64 `query:"gmax"`
+	// AlRankMin - Minimum rank points in Apex Legends.
+	AlRankMin *int64 `query:"al_rank_min"`
+	// AlRankMax - Maximum rank points in Apex Legends.
+	AlRankMax *int64 `query:"al_rank_max"`
+	// AlLevelMin - Minimum level in Apex Legends.
+	AlLevelMin *int64 `query:"al_level_min"`
+	// AlLevelMax - Maximum level in Apex Legends.
+	AlLevelMax *int64 `query:"al_level_max"`
+	// HasBan - Has a ban in any game.
+	HasBan *HasBan `query:"has_ban"`
+	// XboxConnected - Xbox connected to account.
+	XboxConnected *XboxConnected `query:"xbox_connected"`
+	// SteamConnected - Steam connected to account.
+	SteamConnected *SteamConnected `query:"steam_connected"`
+	// PsnConnected - PSN connected to account.
+	PsnConnected *PsnConnected `query:"psn_connected"`
+	// Subscription - Name of subscription.
+	Subscription *CategorySubscription `query:"subscription"`
+	// SubscriptionLength - Length of subscription.
+	SubscriptionLength *int64 `query:"subscription_length"`
+	// SubscriptionPeriod - In what notation is time measured.
+	SubscriptionPeriod *SubscriptionPeriod `query:"subscription_period"`
+	// HoursPlayed - List of minimum hours played by game.
+	HoursPlayed map[string]int64 `query:"hours_played"`
+	// HoursPlayedMax - List of maximum hours played by game.
+	HoursPlayedMax map[string]int64 `query:"hours_played_max"`
+	// Transactions - Has transactions.
+	Transactions *Transactions `query:"transactions"`
 }
 
 // CategoryEAResponse is the response for the endpoint.
 type CategoryEAResponse struct {
-	CacheTTL        int64                        `json:"cacheTTL"`
-	HasNextPage     bool                         `json:"hasNextPage"`
-	Items           []any                        `json:"items"`
-	LastModified    int64                        `json:"lastModified"`
-	Page            int64                        `json:"page"`
-	PerPage         int64                        `json:"perPage"`
-	SearchURL       string                       `json:"searchUrl"`
-	ServerTime      int64                        `json:"serverTime"`
-	StickyItems     []any                        `json:"stickyItems"`
-	SystemInfo      CategoryEAResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                        `json:"totalItems"`
-	TotalItemsPrice any                          `json:"totalItemsPrice"`
-	WasCached       bool                         `json:"wasCached"`
+	CacheTTL        float64                       `json:"cacheTTL"`
+	HasNextPage     bool                          `json:"hasNextPage"`
+	Items           []any                         `json:"items"`
+	LastModified    float64                       `json:"lastModified"`
+	Page            float64                       `json:"page"`
+	PerPage         float64                       `json:"perPage"`
+	SearchURL       string                        `json:"searchUrl"`
+	ServerTime      float64                       `json:"serverTime"`
+	StickyItems     []any                         `json:"stickyItems"`
+	SystemInfo      *CategoryEAResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                       `json:"totalItems"`
+	TotalItemsPrice any                           `json:"totalItemsPrice"`
+	WasCached       bool                          `json:"wasCached"`
 }
 
 // CategoryEpicGamesParams holds query parameters for Category.EpicGames.
 type CategoryEpicGamesParams struct {
-	Page              *int64              `query:"page"`
-	Pmin              *int64              `query:"pmin"`
-	Pmax              *int64              `query:"pmax"`
-	Title             *string             `query:"title"`
-	OrderBy           *OrderBy            `query:"order_by"`
-	TagID             []int64             `query:"tag_id[]"`
-	NotTagID          []int64             `query:"not_tag_id[]"`
-	PublicTagID       []int64             `query:"public_tag_id[]"`
-	NotPublicTagID    []int64             `query:"not_public_tag_id[]"`
-	Origin            []CartOrigin        `query:"origin[]"`
-	NotOrigin         []CartNotOrigin     `query:"not_origin[]"`
-	UserID            *int64              `query:"user_id"`
-	Nsb               *bool               `query:"nsb"`
-	Sb                *bool               `query:"sb"`
-	NsbByMe           *bool               `query:"nsb_by_me"`
-	SbByMe            *bool               `query:"sb_by_me"`
-	Currency          *Currency           `query:"currency"`
-	EmailLoginData    *bool               `query:"email_login_data"`
-	EmailProvider     []EmailProvider     `query:"email_provider[]"`
-	NotEmailProvider  *NotEmailProvider   `query:"not_email_provider[]"`
-	ParseSameItemIds  *bool               `query:"parse_same_item_ids"`
-	EmailType         []CategoryEmailType `query:"email_type[]"`
-	ItemDomain        *string             `query:"item_domain"`
-	Eg                *CategoryEg2        `query:"eg"`
-	Game              []string            `query:"game[]"`
-	ChangeEmail       *ChangeEmail        `query:"change_email"`
-	RlPurchases       *bool               `query:"rl_purchases"`
-	BalanceMin        *float64            `query:"balance_min"`
-	BalanceMax        *float64            `query:"balance_max"`
-	RewardsBalanceMin *float64            `query:"rewards_balance_min"`
-	RewardsBalanceMax *float64            `query:"rewards_balance_max"`
-	Gmin              *int64              `query:"gmin"`
-	Gmax              *int64              `query:"gmax"`
-	Country           []string            `query:"country[]"`
-	NotCountry        []string            `query:"not_country[]"`
-	Daybreak          *int64              `query:"daybreak"`
-	HoursPlayed       map[string]int64    `query:"hours_played"`
-	HoursPlayedMax    map[string]int64    `query:"hours_played_max"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType `query:"email_type[]"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Eg - Guarantee type.
+	Eg *CategoryEg2 `query:"eg"`
+	// Game - List of games.
+	Game []string `query:"game[]"`
+	// ChangeEmail - Can change email.
+	ChangeEmail *ChangeEmail `query:"change_email"`
+	// RlPurchases - Has Rocket League purchases.
+	RlPurchases *bool `query:"rl_purchases"`
+	// BalanceMin - Minimum epic wallet balance.
+	BalanceMin *float64 `query:"balance_min"`
+	// BalanceMax - Maximum epic wallet balance.
+	BalanceMax *float64 `query:"balance_max"`
+	// RewardsBalanceMin - Minimum rewards balance.
+	RewardsBalanceMin *float64 `query:"rewards_balance_min"`
+	// RewardsBalanceMax - Maximum rewards balance.
+	RewardsBalanceMax *float64 `query:"rewards_balance_max"`
+	// Gmin - Minimum number of games.
+	Gmin *int64 `query:"gmin"`
+	// Gmax - Maximum number of games.
+	Gmax *int64 `query:"gmax"`
+	// Country - List of allowed countries.
+	Country []string `query:"country[]"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country[]"`
+	// Daybreak - Number of days the account has been offline.
+	Daybreak *int64 `query:"daybreak"`
+	// HoursPlayed - List of minimum hours played by game.
+	HoursPlayed map[string]int64 `query:"hours_played"`
+	// HoursPlayedMax - List of maximum hours played by game.
+	HoursPlayedMax map[string]int64 `query:"hours_played_max"`
 }
 
 // CategoryEpicGamesResponse is the response for the endpoint.
 type CategoryEpicGamesResponse struct {
-	CacheTTL        int64                               `json:"cacheTTL"`
-	HasNextPage     bool                                `json:"hasNextPage"`
-	Items           []any                               `json:"items"`
-	LastModified    int64                               `json:"lastModified"`
-	Page            int64                               `json:"page"`
-	PerPage         int64                               `json:"perPage"`
-	SearchURL       string                              `json:"searchUrl"`
-	ServerTime      int64                               `json:"serverTime"`
-	StickyItems     []any                               `json:"stickyItems"`
-	SystemInfo      CategoryEpicGamesResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                               `json:"totalItems"`
-	TotalItemsPrice any                                 `json:"totalItemsPrice"`
-	WasCached       bool                                `json:"wasCached"`
+	CacheTTL        float64                              `json:"cacheTTL"`
+	HasNextPage     bool                                 `json:"hasNextPage"`
+	Items           []any                                `json:"items"`
+	LastModified    float64                              `json:"lastModified"`
+	Page            float64                              `json:"page"`
+	PerPage         float64                              `json:"perPage"`
+	SearchURL       string                               `json:"searchUrl"`
+	ServerTime      float64                              `json:"serverTime"`
+	StickyItems     []any                                `json:"stickyItems"`
+	SystemInfo      *CategoryEpicGamesResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                              `json:"totalItems"`
+	TotalItemsPrice any                                  `json:"totalItemsPrice"`
+	WasCached       bool                                 `json:"wasCached"`
 }
 
 // CategoryEscapeFromTarkovParams holds query parameters for Category.EscapeFromTarkov.
 type CategoryEscapeFromTarkovParams struct {
-	Page             *int64               `query:"page"`
-	Pmin             *int64               `query:"pmin"`
-	Pmax             *int64               `query:"pmax"`
-	Title            *string              `query:"title"`
-	OrderBy          *OrderBy             `query:"order_by"`
-	TagID            []int64              `query:"tag_id[]"`
-	NotTagID         []int64              `query:"not_tag_id[]"`
-	PublicTagID      []int64              `query:"public_tag_id[]"`
-	NotPublicTagID   []int64              `query:"not_public_tag_id[]"`
-	Origin           []CartOrigin         `query:"origin[]"`
-	NotOrigin        []CartNotOrigin      `query:"not_origin[]"`
-	UserID           *int64               `query:"user_id"`
-	Nsb              *bool                `query:"nsb"`
-	Sb               *bool                `query:"sb"`
-	NsbByMe          *bool                `query:"nsb_by_me"`
-	SbByMe           *bool                `query:"sb_by_me"`
-	Currency         *Currency            `query:"currency"`
-	EmailLoginData   *bool                `query:"email_login_data"`
-	EmailProvider    []EmailProvider      `query:"email_provider[]"`
-	NotEmailProvider *NotEmailProvider    `query:"not_email_provider[]"`
-	ParseSameItemIds *bool                `query:"parse_same_item_ids"`
-	EmailType        []CategoryEmailType2 `query:"email_type[]"`
-	ItemDomain       *string              `query:"item_domain"`
-	Region           *CategoryRegion      `query:"region"`
-	Version          []Version            `query:"version[]"`
-	Reg              *int64               `query:"reg"`
-	RegPeriod        *RegPeriod           `query:"reg_period"`
-	LevelMin         *int64               `query:"level_min"`
-	LevelMax         *int64               `query:"level_max"`
-	Pve              *Pve                 `query:"pve"`
-	Side             *Side                `query:"side"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType2 `query:"email_type[]"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Region - Region.
+	Region *CategoryRegion `query:"region"`
+	// Version - List of versions.
+	Version []Version `query:"version[]"`
+	// Reg - How old is the account.
+	Reg *int64 `query:"reg"`
+	// RegPeriod - In what notation is time measured.
+	RegPeriod *RegPeriod `query:"reg_period"`
+	// LevelMin - Minimum level.
+	LevelMin *int64 `query:"level_min"`
+	// LevelMax - Maximum level.
+	LevelMax *int64 `query:"level_max"`
+	// Pve - Access to pve.
+	Pve *Pve `query:"pve"`
+	// Side - Side in current wipe.
+	Side *Side `query:"side"`
 }
 
 // CategoryEscapeFromTarkovResponse is the response for the endpoint.
 type CategoryEscapeFromTarkovResponse struct {
-	CacheTTL        int64                                      `json:"cacheTTL"`
-	HasNextPage     bool                                       `json:"hasNextPage"`
-	Items           []any                                      `json:"items"`
-	LastModified    int64                                      `json:"lastModified"`
-	Page            int64                                      `json:"page"`
-	PerPage         int64                                      `json:"perPage"`
-	SearchURL       string                                     `json:"searchUrl"`
-	ServerTime      int64                                      `json:"serverTime"`
-	StickyItems     []any                                      `json:"stickyItems"`
-	SystemInfo      CategoryEscapeFromTarkovResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                                      `json:"totalItems"`
-	TotalItemsPrice any                                        `json:"totalItemsPrice"`
-	WasCached       bool                                       `json:"wasCached"`
+	CacheTTL        float64                                     `json:"cacheTTL"`
+	HasNextPage     bool                                        `json:"hasNextPage"`
+	Items           []any                                       `json:"items"`
+	LastModified    float64                                     `json:"lastModified"`
+	Page            float64                                     `json:"page"`
+	PerPage         float64                                     `json:"perPage"`
+	SearchURL       string                                      `json:"searchUrl"`
+	ServerTime      float64                                     `json:"serverTime"`
+	StickyItems     []any                                       `json:"stickyItems"`
+	SystemInfo      *CategoryEscapeFromTarkovResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                                     `json:"totalItems"`
+	TotalItemsPrice any                                         `json:"totalItemsPrice"`
+	WasCached       bool                                        `json:"wasCached"`
 }
 
 // CategoryFortniteParams holds query parameters for Category.Fortnite.
 type CategoryFortniteParams struct {
-	Page                *int64               `query:"page"`
-	Pmin                *int64               `query:"pmin"`
-	Pmax                *int64               `query:"pmax"`
-	Title               *string              `query:"title"`
-	OrderBy             *OrderBy             `query:"order_by"`
-	TagID               []int64              `query:"tag_id[]"`
-	NotTagID            []int64              `query:"not_tag_id[]"`
-	PublicTagID         []int64              `query:"public_tag_id[]"`
-	NotPublicTagID      []int64              `query:"not_public_tag_id[]"`
-	Origin              []CartOrigin         `query:"origin[]"`
-	NotOrigin           []CartNotOrigin      `query:"not_origin[]"`
-	UserID              *int64               `query:"user_id"`
-	Nsb                 *bool                `query:"nsb"`
-	Sb                  *bool                `query:"sb"`
-	NsbByMe             *bool                `query:"nsb_by_me"`
-	SbByMe              *bool                `query:"sb_by_me"`
-	Currency            *Currency            `query:"currency"`
-	EmailLoginData      *bool                `query:"email_login_data"`
-	EmailProvider       []EmailProvider      `query:"email_provider[]"`
-	EmailType           []CategoryEmailType  `query:"email_type[]"`
-	NotEmailProvider    *NotEmailProvider    `query:"not_email_provider[]"`
-	ParseSameItemIds    *bool                `query:"parse_same_item_ids"`
-	TempEmail           *TempEmail           `query:"temp_email"`
-	ItemDomain          *string              `query:"item_domain"`
-	Eg                  *CategoryEg2         `query:"eg"`
-	Smin                *int64               `query:"smin"`
-	Smax                *int64               `query:"smax"`
-	Vbmin               *int64               `query:"vbmin"`
-	Vbmax               *int64               `query:"vbmax"`
-	Skin                []Skin               `query:"skin[]"`
-	Pickaxe             []Pickaxe            `query:"pickaxe[]"`
-	Glider              []Glider             `query:"glider[]"`
-	Dance               []Dance              `query:"dance[]"`
-	ChangeEmail         *ChangeEmail         `query:"change_email"`
-	Platform            []Platform           `query:"platform[]"`
-	SkinsShopMin        *int64               `query:"skins_shop_min"`
-	SkinsShopMax        *int64               `query:"skins_shop_max"`
-	PickaxesShopMin     *int64               `query:"pickaxes_shop_min"`
-	PickaxesShopMax     *int64               `query:"pickaxes_shop_max"`
-	DancesShopMin       *int64               `query:"dances_shop_min"`
-	DancesShopMax       *int64               `query:"dances_shop_max"`
-	GlidersShopMin      *int64               `query:"gliders_shop_min"`
-	GlidersShopMax      *int64               `query:"gliders_shop_max"`
-	SkinsShopVbmin      *int64               `query:"skins_shop_vbmin"`
-	SkinsShopVbmax      *int64               `query:"skins_shop_vbmax"`
-	PickaxesShopVbmin   *int64               `query:"pickaxes_shop_vbmin"`
-	PickaxesShopVbmax   *int64               `query:"pickaxes_shop_vbmax"`
-	DancesShopVbmin     *int64               `query:"dances_shop_vbmin"`
-	DancesShopVbmax     *int64               `query:"dances_shop_vbmax"`
-	GlidersShopVbmin    *int64               `query:"gliders_shop_vbmin"`
-	GlidersShopVbmax    *int64               `query:"gliders_shop_vbmax"`
-	Bp                  *Bp                  `query:"bp"`
-	Lmin                *int64               `query:"lmin"`
-	Lmax                *int64               `query:"lmax"`
-	BpLmin              *int64               `query:"bp_lmin"`
-	BpLmax              *int64               `query:"bp_lmax"`
-	LastTransDate       *int64               `query:"last_trans_date"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType `query:"email_type[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// TempEmail - Access to market temp mail.
+	TempEmail *TempEmail `query:"temp_email"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Eg - Guarantee type.
+	Eg *CategoryEg2 `query:"eg"`
+	// Smin - Minimum number of skins.
+	Smin *int64 `query:"smin"`
+	// Smax - Maximum number of skins.
+	Smax *int64 `query:"smax"`
+	// Vbmin - Minimum number of V-Bucks.
+	Vbmin *int64 `query:"vbmin"`
+	// Vbmax - Maximum number of V-Bucks.
+	Vbmax *int64 `query:"vbmax"`
+	// Skin - Skins.
+	Skin []Skin `query:"skin[]"`
+	// Pickaxe - Pickaxes.
+	Pickaxe []Pickaxe `query:"pickaxe[]"`
+	// Glider - Gliders.
+	Glider []Glider `query:"glider[]"`
+	// Dance - Dances.
+	Dance []Dance `query:"dance[]"`
+	// ChangeEmail - Can change email.
+	ChangeEmail *ChangeEmail `query:"change_email"`
+	// Platform - Platform.
+	Platform []Platform `query:"platform[]"`
+	// SkinsShopMin - Minimum number of shop skins.
+	SkinsShopMin *int64 `query:"skins_shop_min"`
+	// SkinsShopMax - Maximum number of shop skins.
+	SkinsShopMax *int64 `query:"skins_shop_max"`
+	// PickaxesShopMin - Minimum number of shop pickaxes.
+	PickaxesShopMin *int64 `query:"pickaxes_shop_min"`
+	// PickaxesShopMax - Maximum number of shop pickaxes.
+	PickaxesShopMax *int64 `query:"pickaxes_shop_max"`
+	// DancesShopMin - Minimum number of shop dances.
+	DancesShopMin *int64 `query:"dances_shop_min"`
+	// DancesShopMax - Maximum number of shop dances.
+	DancesShopMax *int64 `query:"dances_shop_max"`
+	// GlidersShopMin - Minimum number of shop gliders.
+	GlidersShopMin *int64 `query:"gliders_shop_min"`
+	// GlidersShopMax - Maximum number of shop gliders.
+	GlidersShopMax *int64 `query:"gliders_shop_max"`
+	// SkinsShopVbmin - Minimum total cost of all skins in the shop in V-Bucks.
+	SkinsShopVbmin *int64 `query:"skins_shop_vbmin"`
+	// SkinsShopVbmax - Maximum total cost of all skins in the shop in V-Bucks.
+	SkinsShopVbmax *int64 `query:"skins_shop_vbmax"`
+	// PickaxesShopVbmin - Minimum total cost of all pickaxes in the shop in V-Bucks.
+	PickaxesShopVbmin *int64 `query:"pickaxes_shop_vbmin"`
+	// PickaxesShopVbmax - Maximum total cost of all pickaxes in the shop in V-Bucks.
+	PickaxesShopVbmax *int64 `query:"pickaxes_shop_vbmax"`
+	// DancesShopVbmin - Minimum total cost of all dances in the shop in V-Bucks.
+	DancesShopVbmin *int64 `query:"dances_shop_vbmin"`
+	// DancesShopVbmax - Maximum total cost of all dances in the shop in V-Bucks.
+	DancesShopVbmax *int64 `query:"dances_shop_vbmax"`
+	// GlidersShopVbmin - Minimum total cost of all gliders in the shop in V-Bucks.
+	GlidersShopVbmin *int64 `query:"gliders_shop_vbmin"`
+	// GlidersShopVbmax - Maximum total cost of all gliders in the shop in V-Bucks.
+	GlidersShopVbmax *int64 `query:"gliders_shop_vbmax"`
+	// Bp - Has Battle Pass.
+	Bp *Bp `query:"bp"`
+	// Lmin - Minimum level.
+	Lmin *int64 `query:"lmin"`
+	// Lmax - Maximum level.
+	Lmax *int64 `query:"lmax"`
+	// BpLmin - Minimum level of Battle Pass.
+	BpLmin *int64 `query:"bp_lmin"`
+	// BpLmax - Maximum level of Battle Pass.
+	BpLmax *int64 `query:"bp_lmax"`
+	// LastTransDate - How old is last transaction.
+	LastTransDate *int64 `query:"last_trans_date"`
+	// LastTransDatePeriod - In what notation is time measured.
 	LastTransDatePeriod *LastTransDatePeriod `query:"last_trans_date_period"`
-	NoTrans             *bool                `query:"no_trans"`
-	XboxLinkable        *XboxLinkable        `query:"xbox_linkable"`
-	PsnLinkable         *PsnLinkable         `query:"psn_linkable"`
-	Daybreak            *int64               `query:"daybreak"`
-	RlPurchases         *bool                `query:"rl_purchases"`
-	Reg                 *int64               `query:"reg"`
-	RegPeriod           *RegPeriod           `query:"reg_period"`
-	RefundCreditsMin    *int64               `query:"refund_credits_min"`
-	RefundCreditsMax    *int64               `query:"refund_credits_max"`
-	PickaxeMin          *int64               `query:"pickaxe_min"`
-	PickaxeMax          *int64               `query:"pickaxe_max"`
-	Dmin                *int64               `query:"dmin"`
-	Dmax                *int64               `query:"dmax"`
-	Gmin                *int64               `query:"gmin"`
-	Gmax                *int64               `query:"gmax"`
-	Country             []string             `query:"country[]"`
-	NotCountry          []string             `query:"not_country[]"`
+	// NoTrans - Has no transactions.
+	NoTrans *bool `query:"no_trans"`
+	// XboxLinkable - Can be linked to Xbox.
+	XboxLinkable *XboxLinkable `query:"xbox_linkable"`
+	// PsnLinkable - Can be linked to PSN.
+	PsnLinkable *PsnLinkable `query:"psn_linkable"`
+	// Daybreak - Number of days the account has been offline.
+	Daybreak *int64 `query:"daybreak"`
+	// RlPurchases - Has Rocket League purchases.
+	RlPurchases *bool `query:"rl_purchases"`
+	// Reg - How old is the account.
+	Reg *int64 `query:"reg"`
+	// RegPeriod - In what notation is time measured.
+	RegPeriod *RegPeriod `query:"reg_period"`
+	// RefundCreditsMin - Minimum number of available refund credits.
+	RefundCreditsMin *int64 `query:"refund_credits_min"`
+	// RefundCreditsMax - Maximum number of available refund credits.
+	RefundCreditsMax *int64 `query:"refund_credits_max"`
+	// PickaxeMin - Minimum number of pickaxes.
+	PickaxeMin *int64 `query:"pickaxe_min"`
+	// PickaxeMax - Maximum number of pickaxes.
+	PickaxeMax *int64 `query:"pickaxe_max"`
+	// Dmin - Minimum number of dances.
+	Dmin *int64 `query:"dmin"`
+	// Dmax - Maximum number of dances.
+	Dmax *int64 `query:"dmax"`
+	// Gmin - Minimum number of gliders.
+	Gmin *int64 `query:"gmin"`
+	// Gmax - Maximum number of gliders.
+	Gmax *int64 `query:"gmax"`
+	// Country - List of allowed countries.
+	Country []string `query:"country[]"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country[]"`
 }
 
 // CategoryFortniteResponse is the response for the endpoint.
 type CategoryFortniteResponse struct {
-	CacheTTL        int64                              `json:"cacheTTL"`
-	HasNextPage     bool                               `json:"hasNextPage"`
-	Items           []any                              `json:"items"`
-	LastModified    int64                              `json:"lastModified"`
-	Page            int64                              `json:"page"`
-	PerPage         int64                              `json:"perPage"`
-	SearchURL       string                             `json:"searchUrl"`
-	ServerTime      int64                              `json:"serverTime"`
-	StickyItems     []any                              `json:"stickyItems"`
-	SystemInfo      CategoryFortniteResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                              `json:"totalItems"`
-	TotalItemsPrice any                                `json:"totalItemsPrice"`
-	WasCached       bool                               `json:"wasCached"`
+	CacheTTL        float64                             `json:"cacheTTL"`
+	HasNextPage     bool                                `json:"hasNextPage"`
+	Items           []any                               `json:"items"`
+	LastModified    float64                             `json:"lastModified"`
+	Page            float64                             `json:"page"`
+	PerPage         float64                             `json:"perPage"`
+	SearchURL       string                              `json:"searchUrl"`
+	ServerTime      float64                             `json:"serverTime"`
+	StickyItems     []any                               `json:"stickyItems"`
+	SystemInfo      *CategoryFortniteResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                             `json:"totalItems"`
+	TotalItemsPrice any                                 `json:"totalItemsPrice"`
+	WasCached       bool                                `json:"wasCached"`
 }
 
 // CategoryGamesResponse is the response for the endpoint.
@@ -20144,343 +20050,564 @@ type CategoryGamesResponse struct {
 
 // CategoryGiftsParams holds query parameters for Category.Gifts.
 type CategoryGiftsParams struct {
-	Page               *int64                 `query:"page"`
-	Pmin               *int64                 `query:"pmin"`
-	Pmax               *int64                 `query:"pmax"`
-	Title              *string                `query:"title"`
-	OrderBy            *OrderBy               `query:"order_by"`
-	TagID              []int64                `query:"tag_id[]"`
-	NotTagID           []int64                `query:"not_tag_id[]"`
-	PublicTagID        []int64                `query:"public_tag_id[]"`
-	NotPublicTagID     []int64                `query:"not_public_tag_id[]"`
-	Origin             []CartOrigin           `query:"origin[]"`
-	NotOrigin          []CartNotOrigin        `query:"not_origin[]"`
-	UserID             *int64                 `query:"user_id"`
-	Nsb                *bool                  `query:"nsb"`
-	Sb                 *bool                  `query:"sb"`
-	NsbByMe            *bool                  `query:"nsb_by_me"`
-	SbByMe             *bool                  `query:"sb_by_me"`
-	Currency           *Currency              `query:"currency"`
-	EmailLoginData     *bool                  `query:"email_login_data"`
-	EmailProvider      []EmailProvider        `query:"email_provider[]"`
-	NotEmailProvider   *NotEmailProvider      `query:"not_email_provider[]"`
-	ParseSameItemIds   *bool                  `query:"parse_same_item_ids"`
-	Subscription       *CategorySubscription5 `query:"subscription"`
-	SubscriptionLength *int64                 `query:"subscription_length"`
-	SubscriptionPeriod *SubscriptionPeriod    `query:"subscription_period"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// Subscription - Name of subscription.
+	Subscription *CategorySubscription5 `query:"subscription"`
+	// SubscriptionLength - Length of subscription.
+	SubscriptionLength *int64 `query:"subscription_length"`
+	// SubscriptionPeriod - In what notation is time measured.
+	SubscriptionPeriod *SubscriptionPeriod `query:"subscription_period"`
 }
 
 // CategoryGiftsResponse is the response for the endpoint.
 type CategoryGiftsResponse struct {
-	CacheTTL        int64                           `json:"cacheTTL"`
-	HasNextPage     bool                            `json:"hasNextPage"`
-	Items           []any                           `json:"items"`
-	LastModified    int64                           `json:"lastModified"`
-	Page            int64                           `json:"page"`
-	PerPage         int64                           `json:"perPage"`
-	SearchURL       string                          `json:"searchUrl"`
-	ServerTime      int64                           `json:"serverTime"`
-	StickyItems     []any                           `json:"stickyItems"`
-	SystemInfo      CategoryGiftsResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                           `json:"totalItems"`
-	TotalItemsPrice any                             `json:"totalItemsPrice"`
-	WasCached       bool                            `json:"wasCached"`
-}
-
-// CategoryHytaleParams holds query parameters for Category.Hytale.
-type CategoryHytaleParams struct {
-	Page             *int64            `query:"page"`
-	Pmin             *int64            `query:"pmin"`
-	Pmax             *int64            `query:"pmax"`
-	Title            *string           `query:"title"`
-	OrderBy          *OrderBy          `query:"order_by"`
-	TagID            []int64           `query:"tag_id[]"`
-	NotTagID         []int64           `query:"not_tag_id[]"`
-	PublicTagID      []int64           `query:"public_tag_id[]"`
-	NotPublicTagID   []int64           `query:"not_public_tag_id[]"`
-	Origin           []CartOrigin      `query:"origin[]"`
-	NotOrigin        []CartNotOrigin   `query:"not_origin[]"`
-	UserID           *int64            `query:"user_id"`
-	Nsb              *bool             `query:"nsb"`
-	Sb               *bool             `query:"sb"`
-	NsbByMe          *bool             `query:"nsb_by_me"`
-	SbByMe           *bool             `query:"sb_by_me"`
-	Currency         *Currency         `query:"currency"`
-	EmailLoginData   *bool             `query:"email_login_data"`
-	EmailProvider    []EmailProvider   `query:"email_provider[]"`
-	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
-	ParseSameItemIds *bool             `query:"parse_same_item_ids"`
-	Edition          []Edition         `query:"edition[]"`
-	ProfilesMin      *int64            `query:"profiles_min"`
-	ProfilesMax      *int64            `query:"profiles_max"`
-}
-
-// CategoryHytaleResponse is the response for the endpoint.
-type CategoryHytaleResponse struct {
-	CacheTTL        int64                            `json:"cacheTTL"`
+	CacheTTL        float64                          `json:"cacheTTL"`
 	HasNextPage     bool                             `json:"hasNextPage"`
 	Items           []any                            `json:"items"`
-	LastModified    int64                            `json:"lastModified"`
-	Page            int64                            `json:"page"`
-	PerPage         int64                            `json:"perPage"`
+	LastModified    float64                          `json:"lastModified"`
+	Page            float64                          `json:"page"`
+	PerPage         float64                          `json:"perPage"`
 	SearchURL       string                           `json:"searchUrl"`
-	ServerTime      int64                            `json:"serverTime"`
+	ServerTime      float64                          `json:"serverTime"`
 	StickyItems     []any                            `json:"stickyItems"`
-	SystemInfo      CategoryHytaleResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                            `json:"totalItems"`
+	SystemInfo      *CategoryGiftsResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                          `json:"totalItems"`
 	TotalItemsPrice any                              `json:"totalItemsPrice"`
 	WasCached       bool                             `json:"wasCached"`
 }
 
+// CategoryHytaleParams holds query parameters for Category.Hytale.
+type CategoryHytaleParams struct {
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// Edition - List of allowed editions.
+	Edition []Edition `query:"edition[]"`
+	// ProfilesMin - Minimum number of profiles with game.
+	ProfilesMin *int64 `query:"profiles_min"`
+	// ProfilesMax - Maximum number of profiles with game.
+	ProfilesMax *int64 `query:"profiles_max"`
+}
+
+// CategoryHytaleResponse is the response for the endpoint.
+type CategoryHytaleResponse struct {
+	CacheTTL        float64                           `json:"cacheTTL"`
+	HasNextPage     bool                              `json:"hasNextPage"`
+	Items           []any                             `json:"items"`
+	LastModified    float64                           `json:"lastModified"`
+	Page            float64                           `json:"page"`
+	PerPage         float64                           `json:"perPage"`
+	SearchURL       string                            `json:"searchUrl"`
+	ServerTime      float64                           `json:"serverTime"`
+	StickyItems     []any                             `json:"stickyItems"`
+	SystemInfo      *CategoryHytaleResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                           `json:"totalItems"`
+	TotalItemsPrice any                               `json:"totalItemsPrice"`
+	WasCached       bool                              `json:"wasCached"`
+}
+
 // CategoryInstagramParams holds query parameters for Category.Instagram.
 type CategoryInstagramParams struct {
-	Page                *int64               `query:"page"`
-	Pmin                *int64               `query:"pmin"`
-	Pmax                *int64               `query:"pmax"`
-	Title               *string              `query:"title"`
-	OrderBy             *OrderBy             `query:"order_by"`
-	TagID               []int64              `query:"tag_id[]"`
-	NotTagID            []int64              `query:"not_tag_id[]"`
-	PublicTagID         []int64              `query:"public_tag_id[]"`
-	NotPublicTagID      []int64              `query:"not_public_tag_id[]"`
-	Origin              []CartOrigin         `query:"origin[]"`
-	NotOrigin           []CartNotOrigin      `query:"not_origin[]"`
-	UserID              *int64               `query:"user_id"`
-	Nsb                 *bool                `query:"nsb"`
-	Sb                  *bool                `query:"sb"`
-	NsbByMe             *bool                `query:"nsb_by_me"`
-	SbByMe              *bool                `query:"sb_by_me"`
-	Currency            *Currency            `query:"currency"`
-	EmailLoginData      *bool                `query:"email_login_data"`
-	EmailProvider       []EmailProvider      `query:"email_provider[]"`
-	NotEmailProvider    *NotEmailProvider    `query:"not_email_provider[]"`
-	ParseSameItemIds    *bool                `query:"parse_same_item_ids"`
-	EmailType           []CategoryEmailType2 `query:"email_type[]"`
-	ItemDomain          *string              `query:"item_domain"`
-	Tel                 *Tel                 `query:"tel"`
-	Country             []string             `query:"country[]"`
-	NotCountry          []string             `query:"not_country[]"`
-	Cookies             *Cookies             `query:"cookies"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType2 `query:"email_type[]"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Tel - Has linked mobile.
+	Tel *Tel `query:"tel"`
+	// Country - List of allowed countries.
+	Country []string `query:"country[]"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country[]"`
+	// Cookies - Login by cookies.
+	Cookies *Cookies `query:"cookies"`
+	// LoginWithoutCookies - Login without cookies.
 	LoginWithoutCookies *LoginWithoutCookies `query:"login_without_cookies"`
-	FollowersMin        *int64               `query:"followers_min"`
-	FollowersMax        *int64               `query:"followers_max"`
-	PostMin             *int64               `query:"post_min"`
-	PostMax             *int64               `query:"post_max"`
-	Reg                 *int64               `query:"reg"`
-	RegPeriod           *RegPeriod           `query:"reg_period"`
+	// FollowersMin - Minimum number of followers.
+	FollowersMin *int64 `query:"followers_min"`
+	// FollowersMax - Maximum number of followers.
+	FollowersMax *int64 `query:"followers_max"`
+	// PostMin - Minimum number of posts.
+	PostMin *int64 `query:"post_min"`
+	// PostMax - Maximum number of posts.
+	PostMax *int64 `query:"post_max"`
+	// Reg - How old is the account.
+	Reg *int64 `query:"reg"`
+	// RegPeriod - In what notation is time measured.
+	RegPeriod *RegPeriod `query:"reg_period"`
 }
 
 // CategoryInstagramResponse is the response for the endpoint.
 type CategoryInstagramResponse struct {
-	CacheTTL        int64                               `json:"cacheTTL"`
-	HasNextPage     bool                                `json:"hasNextPage"`
-	Items           []any                               `json:"items"`
-	LastModified    int64                               `json:"lastModified"`
-	Page            int64                               `json:"page"`
-	PerPage         int64                               `json:"perPage"`
-	SearchURL       string                              `json:"searchUrl"`
-	ServerTime      int64                               `json:"serverTime"`
-	StickyItems     []any                               `json:"stickyItems"`
-	SystemInfo      CategoryInstagramResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                               `json:"totalItems"`
-	TotalItemsPrice any                                 `json:"totalItemsPrice"`
-	WasCached       bool                                `json:"wasCached"`
+	CacheTTL        float64                              `json:"cacheTTL"`
+	HasNextPage     bool                                 `json:"hasNextPage"`
+	Items           []any                                `json:"items"`
+	LastModified    float64                              `json:"lastModified"`
+	Page            float64                              `json:"page"`
+	PerPage         float64                              `json:"perPage"`
+	SearchURL       string                               `json:"searchUrl"`
+	ServerTime      float64                              `json:"serverTime"`
+	StickyItems     []any                                `json:"stickyItems"`
+	SystemInfo      *CategoryInstagramResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                              `json:"totalItems"`
+	TotalItemsPrice any                                  `json:"totalItemsPrice"`
+	WasCached       bool                                 `json:"wasCached"`
 }
 
 // CategoryListParams holds query parameters for Category.List.
 type CategoryListParams struct {
+	// TopQueries - Display top queries for per category.
 	TopQueries *bool `query:"top_queries"`
 }
 
 // CategoryListResponse is the response for the endpoint.
 type CategoryListResponse struct {
-	Category   CategoryListResponseCategory   `json:"category"`
-	SystemInfo CategoryListResponseSystemInfo `json:"system_info"`
+	Category   *CategoryListResponseCategory   `json:"category"`
+	SystemInfo *CategoryListResponseSystemInfo `json:"system_info"`
 }
 
 // CategoryMihoyoParams holds query parameters for Category.Mihoyo.
 type CategoryMihoyoParams struct {
-	Page                              *int64               `query:"page"`
-	Pmin                              *int64               `query:"pmin"`
-	Pmax                              *int64               `query:"pmax"`
-	Title                             *string              `query:"title"`
-	OrderBy                           *OrderBy             `query:"order_by"`
-	TagID                             []int64              `query:"tag_id[]"`
-	NotTagID                          []int64              `query:"not_tag_id[]"`
-	PublicTagID                       []int64              `query:"public_tag_id[]"`
-	NotPublicTagID                    []int64              `query:"not_public_tag_id[]"`
-	Origin                            []CartOrigin         `query:"origin[]"`
-	NotOrigin                         []CartNotOrigin      `query:"not_origin[]"`
-	UserID                            *int64               `query:"user_id"`
-	Nsb                               *bool                `query:"nsb"`
-	Sb                                *bool                `query:"sb"`
-	NsbByMe                           *bool                `query:"nsb_by_me"`
-	SbByMe                            *bool                `query:"sb_by_me"`
-	Currency                          *Currency            `query:"currency"`
-	EmailLoginData                    *bool                `query:"email_login_data"`
-	EmailProvider                     []EmailProvider      `query:"email_provider[]"`
-	NotEmailProvider                  *NotEmailProvider    `query:"not_email_provider[]"`
-	EmailType                         []CategoryEmailType2 `query:"email_type[]"`
-	ParseSameItemIds                  *bool                `query:"parse_same_item_ids"`
-	ItemDomain                        *string              `query:"item_domain"`
-	Email                             *Email               `query:"email"`
-	EA                                *EA                  `query:"ea"`
-	Region                            []CategoryRegion2    `query:"region"`
-	NotRegion                         []NotRegion          `query:"not_region"`
-	GenshinCharacter                  []GenshinCharacter   `query:"genshin_character[]"`
-	GenshinCharacterConstellations    map[string]int64     `query:"genshin_character_constellations"`
-	GenshinCharacterConstellationsMax map[string]int64     `query:"genshin_character_constellations_max"`
-	GenshinWeapon                     []GenshinWeapon      `query:"genshin_weapon[]"`
-	GenshinCharMin                    *int64               `query:"genshin_char_min"`
-	GenshinCharMax                    *int64               `query:"genshin_char_max"`
-	GenshinLegendaryMin               *int64               `query:"genshin_legendary_min"`
-	GenshinLegendaryMax               *int64               `query:"genshin_legendary_max"`
-	GenshinLevelMin                   *int64               `query:"genshin_level_min"`
-	GenshinLevelMax                   *int64               `query:"genshin_level_max"`
-	GenshinLegendaryWeaponMin         *int64               `query:"genshin_legendary_weapon_min"`
-	GenshinLegendaryWeaponMax         *int64               `query:"genshin_legendary_weapon_max"`
-	ConstellationsMin                 *int64               `query:"constellations_min"`
-	ConstellationsMax                 *int64               `query:"constellations_max"`
-	GenshinAchievementMin             *int64               `query:"genshin_achievement_min"`
-	GenshinAchievementMax             *int64               `query:"genshin_achievement_max"`
-	GenshinCurrencyMin                *int64               `query:"genshin_currency_min"`
-	GenshinCurrencyMax                *int64               `query:"genshin_currency_max"`
-	HonkaiCharacter                   []HonkaiCharacter    `query:"honkai_character[]"`
-	HonkaiCharacterEidolons           map[string]int64     `query:"honkai_character_eidolons"`
-	HonkaiCharacterEidolonsMax        map[string]int64     `query:"honkai_character_eidolons_max"`
-	HonkaiWeapon                      []HonkaiWeapon       `query:"honkai_weapon[]"`
-	HonkaiCharMin                     *int64               `query:"honkai_char_min"`
-	HonkaiCharMax                     *int64               `query:"honkai_char_max"`
-	HonkaiLegendaryMin                *int64               `query:"honkai_legendary_min"`
-	HonkaiLegendaryMax                *int64               `query:"honkai_legendary_max"`
-	HonkaiLevelMin                    *int64               `query:"honkai_level_min"`
-	HonkaiLevelMax                    *int64               `query:"honkai_level_max"`
-	HonkaiLegendaryWeaponMin          *int64               `query:"honkai_legendary_weapon_min"`
-	HonkaiLegendaryWeaponMax          *int64               `query:"honkai_legendary_weapon_max"`
-	EidolonsMin                       *int64               `query:"eidolons_min"`
-	EidolonsMax                       *int64               `query:"eidolons_max"`
-	HonkaiAchievementMin              *int64               `query:"honkai_achievement_min"`
-	HonkaiAchievementMax              *int64               `query:"honkai_achievement_max"`
-	HonkaiCurrencyMin                 *int64               `query:"honkai_currency_min"`
-	HonkaiCurrencyMax                 *int64               `query:"honkai_currency_max"`
-	ZenlessCharacter                  []ZenlessCharacter   `query:"zenless_character[]"`
-	ZenlessCharacterCinemas           map[string]int64     `query:"zenless_character_cinemas"`
-	ZenlessCharacterCinemasMax        map[string]int64     `query:"zenless_character_cinemas_max"`
-	ZenlessWeapon                     []ZenlessWeapon      `query:"zenless_weapon[]"`
-	ZenlessLegendaryMin               *int64               `query:"zenless_legendary_min"`
-	ZenlessLegendaryMax               *int64               `query:"zenless_legendary_max"`
-	CinemasMin                        *int64               `query:"cinemas_min"`
-	CinemasMax                        *int64               `query:"cinemas_max"`
-	ZenlessLegendaryWeaponMin         *int64               `query:"zenless_legendary_weapon_min"`
-	ZenlessLegendaryWeaponMax         *int64               `query:"zenless_legendary_weapon_max"`
-	ZenlessCharMin                    *int64               `query:"zenless_char_min"`
-	ZenlessCharMax                    *int64               `query:"zenless_char_max"`
-	ZenlessLevelMin                   *int64               `query:"zenless_level_min"`
-	ZenlessLevelMax                   *int64               `query:"zenless_level_max"`
-	ZenlessAchievementMin             *int64               `query:"zenless_achievement_min"`
-	ZenlessAchievementMax             *int64               `query:"zenless_achievement_max"`
-	ZenlessCurrencyMin                *int64               `query:"zenless_currency_min"`
-	ZenlessCurrencyMax                *int64               `query:"zenless_currency_max"`
-	Daybreak                          *int64               `query:"daybreak"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType2 `query:"email_type[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Email - Has linked email.
+	Email *Email `query:"email"`
+	// EA - Has linked external accounts.
+	EA *EA `query:"ea"`
+	// Region - Region.
+	Region []CategoryRegion2 `query:"region"`
+	// NotRegion - List of disallowed regions.
+	NotRegion []NotRegion `query:"not_region"`
+	// GenshinCharacter - List of characters.
+	GenshinCharacter []GenshinCharacter `query:"genshin_character[]"`
+	// GenshinCharacterConstellations - List of minimum constellations on characters.
+	GenshinCharacterConstellations map[string]int64 `query:"genshin_character_constellations"`
+	// GenshinCharacterConstellationsMax - List of maximum constellations on characters.
+	GenshinCharacterConstellationsMax map[string]int64 `query:"genshin_character_constellations_max"`
+	// GenshinWeapon - List of weapons.
+	GenshinWeapon []GenshinWeapon `query:"genshin_weapon[]"`
+	// GenshinCharMin - Minimum number of characters.
+	GenshinCharMin *int64 `query:"genshin_char_min"`
+	// GenshinCharMax - Maximum number of characters.
+	GenshinCharMax *int64 `query:"genshin_char_max"`
+	// GenshinLegendaryMin - Minimum number of legendary characters.
+	GenshinLegendaryMin *int64 `query:"genshin_legendary_min"`
+	// GenshinLegendaryMax - Maximum number of legendary characters.
+	GenshinLegendaryMax *int64 `query:"genshin_legendary_max"`
+	// GenshinLevelMin - Minimum level.
+	GenshinLevelMin *int64 `query:"genshin_level_min"`
+	// GenshinLevelMax - Maximum level.
+	GenshinLevelMax *int64 `query:"genshin_level_max"`
+	// GenshinLegendaryWeaponMin - Minimum number of legendary weapon characters.
+	GenshinLegendaryWeaponMin *int64 `query:"genshin_legendary_weapon_min"`
+	// GenshinLegendaryWeaponMax - Maximum number of legendary weapon characters.
+	GenshinLegendaryWeaponMax *int64 `query:"genshin_legendary_weapon_max"`
+	// ConstellationsMin - Minimum number of constellations on legendary characters.
+	ConstellationsMin *int64 `query:"constellations_min"`
+	// ConstellationsMax - Maximum number of constellations on legendary characters.
+	ConstellationsMax *int64 `query:"constellations_max"`
+	// GenshinAchievementMin - Minimum number of achievements.
+	GenshinAchievementMin *int64 `query:"genshin_achievement_min"`
+	// GenshinAchievementMax - Maximum number of achievements.
+	GenshinAchievementMax *int64 `query:"genshin_achievement_max"`
+	// GenshinCurrencyMin - Minimum number of primogems.
+	GenshinCurrencyMin *int64 `query:"genshin_currency_min"`
+	// GenshinCurrencyMax - Maximum number of primogems.
+	GenshinCurrencyMax *int64 `query:"genshin_currency_max"`
+	// HonkaiCharacter - List of characters.
+	HonkaiCharacter []HonkaiCharacter `query:"honkai_character[]"`
+	// HonkaiCharacterEidolons - List of minimum eidolons on characters.
+	HonkaiCharacterEidolons map[string]int64 `query:"honkai_character_eidolons"`
+	// HonkaiCharacterEidolonsMax - List of maximum eidolons on characters.
+	HonkaiCharacterEidolonsMax map[string]int64 `query:"honkai_character_eidolons_max"`
+	// HonkaiWeapon - List of weapons.
+	HonkaiWeapon []HonkaiWeapon `query:"honkai_weapon[]"`
+	// HonkaiCharMin - Minimum number of characters.
+	HonkaiCharMin *int64 `query:"honkai_char_min"`
+	// HonkaiCharMax - Maximum number of characters.
+	HonkaiCharMax *int64 `query:"honkai_char_max"`
+	// HonkaiLegendaryMin - Minimum number of legendary characters.
+	HonkaiLegendaryMin *int64 `query:"honkai_legendary_min"`
+	// HonkaiLegendaryMax - Maximum number of legendary characters.
+	HonkaiLegendaryMax *int64 `query:"honkai_legendary_max"`
+	// HonkaiLevelMin - Minimum level.
+	HonkaiLevelMin *int64 `query:"honkai_level_min"`
+	// HonkaiLevelMax - Maximum level.
+	HonkaiLevelMax *int64 `query:"honkai_level_max"`
+	// HonkaiLegendaryWeaponMin - Minimum number of legendary weapon characters.
+	HonkaiLegendaryWeaponMin *int64 `query:"honkai_legendary_weapon_min"`
+	// HonkaiLegendaryWeaponMax - Maximum number of legendary weapon characters.
+	HonkaiLegendaryWeaponMax *int64 `query:"honkai_legendary_weapon_max"`
+	// EidolonsMin - Minimum number of constellations on Honkai: Star Rail legendary characters.
+	EidolonsMin *int64 `query:"eidolons_min"`
+	// EidolonsMax - Maximum number of legendary Honkai: Star Rail weapon characters.
+	EidolonsMax *int64 `query:"eidolons_max"`
+	// HonkaiAchievementMin - Minimum number of achievements.
+	HonkaiAchievementMin *int64 `query:"honkai_achievement_min"`
+	// HonkaiAchievementMax - Maximum number of achievements.
+	HonkaiAchievementMax *int64 `query:"honkai_achievement_max"`
+	// HonkaiCurrencyMin - Minimum number of Stellar Jade.
+	HonkaiCurrencyMin *int64 `query:"honkai_currency_min"`
+	// HonkaiCurrencyMax - Maximum number of Stellar Jade.
+	HonkaiCurrencyMax *int64 `query:"honkai_currency_max"`
+	// ZenlessCharacter - List of Zenless Zone Zero characters.
+	ZenlessCharacter []ZenlessCharacter `query:"zenless_character[]"`
+	// ZenlessCharacterCinemas - List of minimum cinemas on characters.
+	ZenlessCharacterCinemas map[string]int64 `query:"zenless_character_cinemas"`
+	// ZenlessCharacterCinemasMax - List of maximum cinemas on characters.
+	ZenlessCharacterCinemasMax map[string]int64 `query:"zenless_character_cinemas_max"`
+	// ZenlessWeapon - List of Zenless Zone Zero weapons.
+	ZenlessWeapon []ZenlessWeapon `query:"zenless_weapon[]"`
+	// ZenlessLegendaryMin - Minimum number of Zenless Zone Zero legendary characters.
+	ZenlessLegendaryMin *int64 `query:"zenless_legendary_min"`
+	// ZenlessLegendaryMax - Maximum number of Zenless Zone Zero legendary characters.
+	ZenlessLegendaryMax *int64 `query:"zenless_legendary_max"`
+	// CinemasMin - Minimum number of cinemas on Zenless Zone Zero characters.
+	CinemasMin *int64 `query:"cinemas_min"`
+	// CinemasMax - Maximum number of cinemas on Zenless Zone Zero characters.
+	CinemasMax *int64 `query:"cinemas_max"`
+	// ZenlessLegendaryWeaponMin - Minimum number of legendary Zenless Zone Zero weapon characters.
+	ZenlessLegendaryWeaponMin *int64 `query:"zenless_legendary_weapon_min"`
+	// ZenlessLegendaryWeaponMax - Maximum number of legendary Zenless Zone Zero weapon characters.
+	ZenlessLegendaryWeaponMax *int64 `query:"zenless_legendary_weapon_max"`
+	// ZenlessCharMin - Minimum number of Zenless Zone Zero characters.
+	ZenlessCharMin *int64 `query:"zenless_char_min"`
+	// ZenlessCharMax - Maximum number of Zenless Zone Zero characters.
+	ZenlessCharMax *int64 `query:"zenless_char_max"`
+	// ZenlessLevelMin - Minimum Zenless Zone Zero level.
+	ZenlessLevelMin *int64 `query:"zenless_level_min"`
+	// ZenlessLevelMax - Maximum Zenless Zone Zero level.
+	ZenlessLevelMax *int64 `query:"zenless_level_max"`
+	// ZenlessAchievementMin - Minimum count of Zenless Zone Zero achievements.
+	ZenlessAchievementMin *int64 `query:"zenless_achievement_min"`
+	// ZenlessAchievementMax - Maximum count of Zenless Zone Zero achievements.
+	ZenlessAchievementMax *int64 `query:"zenless_achievement_max"`
+	// ZenlessCurrencyMin - Minimum count of Zenless Zone Zero polychrome.
+	ZenlessCurrencyMin *int64 `query:"zenless_currency_min"`
+	// ZenlessCurrencyMax - Maximum count of Zenless Zone Zero polychrome.
+	ZenlessCurrencyMax *int64 `query:"zenless_currency_max"`
+	// Daybreak - Number of days the account has been offline.
+	Daybreak *int64 `query:"daybreak"`
 }
 
 // CategoryMihoyoResponse is the response for the endpoint.
 type CategoryMihoyoResponse struct {
-	CacheTTL        int64                            `json:"cacheTTL"`
-	HasNextPage     bool                             `json:"hasNextPage"`
-	Items           []any                            `json:"items"`
-	LastModified    int64                            `json:"lastModified"`
-	Page            int64                            `json:"page"`
-	PerPage         int64                            `json:"perPage"`
-	SearchURL       string                           `json:"searchUrl"`
-	ServerTime      int64                            `json:"serverTime"`
-	StickyItems     []any                            `json:"stickyItems"`
-	SystemInfo      CategoryMihoyoResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                            `json:"totalItems"`
-	TotalItemsPrice any                              `json:"totalItemsPrice"`
-	WasCached       bool                             `json:"wasCached"`
+	CacheTTL        float64                           `json:"cacheTTL"`
+	HasNextPage     bool                              `json:"hasNextPage"`
+	Items           []any                             `json:"items"`
+	LastModified    float64                           `json:"lastModified"`
+	Page            float64                           `json:"page"`
+	PerPage         float64                           `json:"perPage"`
+	SearchURL       string                            `json:"searchUrl"`
+	ServerTime      float64                           `json:"serverTime"`
+	StickyItems     []any                             `json:"stickyItems"`
+	SystemInfo      *CategoryMihoyoResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                           `json:"totalItems"`
+	TotalItemsPrice any                               `json:"totalItemsPrice"`
+	WasCached       bool                              `json:"wasCached"`
 }
 
 // CategoryMinecraftParams holds query parameters for Category.Minecraft.
 type CategoryMinecraftParams struct {
-	Page                       *int64                     `query:"page"`
-	Pmin                       *int64                     `query:"pmin"`
-	Pmax                       *int64                     `query:"pmax"`
-	Title                      *string                    `query:"title"`
-	OrderBy                    *OrderBy                   `query:"order_by"`
-	TagID                      []int64                    `query:"tag_id[]"`
-	NotTagID                   []int64                    `query:"not_tag_id[]"`
-	PublicTagID                []int64                    `query:"public_tag_id[]"`
-	NotPublicTagID             []int64                    `query:"not_public_tag_id[]"`
-	Origin                     []CartOrigin               `query:"origin[]"`
-	NotOrigin                  []CartNotOrigin            `query:"not_origin[]"`
-	UserID                     *int64                     `query:"user_id"`
-	Nsb                        *bool                      `query:"nsb"`
-	Sb                         *bool                      `query:"sb"`
-	NsbByMe                    *bool                      `query:"nsb_by_me"`
-	SbByMe                     *bool                      `query:"sb_by_me"`
-	Currency                   *Currency                  `query:"currency"`
-	EmailLoginData             *bool                      `query:"email_login_data"`
-	EmailProvider              []EmailProvider            `query:"email_provider[]"`
-	NotEmailProvider           *NotEmailProvider          `query:"not_email_provider[]"`
-	ParseSameItemIds           *bool                      `query:"parse_same_item_ids"`
-	Subscription               *CategorySubscription2     `query:"subscription"`
-	SubscriptionLength         *int64                     `query:"subscription_length"`
-	SubscriptionPeriod         *SubscriptionPeriod        `query:"subscription_period"`
-	Autorenewal                *Autorenewal               `query:"autorenewal"`
-	Java                       *Java                      `query:"java"`
-	Bedrock                    *Bedrock                   `query:"bedrock"`
-	Dungeons                   *Dungeons                  `query:"dungeons"`
-	Legends                    *Legends                   `query:"legends"`
-	ChangeNickname             *ChangeNickname            `query:"change_nickname"`
-	Capes                      []string                   `query:"capes[]"`
-	CapesMin                   *int64                     `query:"capes_min"`
-	CapesMax                   *int64                     `query:"capes_max"`
-	Country                    []string                   `query:"country[]"`
-	NotCountry                 []string                   `query:"not_country[]"`
-	HypixelBan                 *HypixelBan                `query:"hypixel_ban"`
-	HypixelSkyblockAPIEnabled  *HypixelSkyblockAPIEnabled `query:"hypixel_skyblock_api_enabled"`
-	RankHypixel                []RankHypixel              `query:"rank_hypixel[]"`
-	LevelHypixelMin            *int64                     `query:"level_hypixel_min"`
-	LevelHypixelMax            *int64                     `query:"level_hypixel_max"`
-	AchievementHypixelMin      *int64                     `query:"achievement_hypixel_min"`
-	AchievementHypixelMax      *int64                     `query:"achievement_hypixel_max"`
-	LevelHypixelSkyblockMin    *int64                     `query:"level_hypixel_skyblock_min"`
-	LevelHypixelSkyblockMax    *int64                     `query:"level_hypixel_skyblock_max"`
-	NetWorthHypixelSkyblockMin *int64                     `query:"net_worth_hypixel_skyblock_min"`
-	NetWorthHypixelSkyblockMax *int64                     `query:"net_worth_hypixel_skyblock_max"`
-	Reg                        *int64                     `query:"reg"`
-	RegPeriod                  *RegPeriod                 `query:"reg_period"`
-	LastLoginHypixel           *int64                     `query:"last_login_hypixel"`
-	LastLoginHypixelPeriod     *LastLoginHypixelPeriod    `query:"last_login_hypixel_period"`
-	CanChangeDetails           *CanChangeDetails          `query:"can_change_details"`
-	NicknameLengthMin          *int64                     `query:"nickname_length_min"`
-	NicknameLengthMax          *int64                     `query:"nickname_length_max"`
-	HypixelBanParsed           *HypixelBanParsed          `query:"hypixel_ban_parsed"`
-	MinecoinsMin               *int64                     `query:"minecoins_min"`
-	MinecoinsMax               *int64                     `query:"minecoins_max"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// Subscription - Name of subscription.
+	Subscription *CategorySubscription2 `query:"subscription"`
+	// SubscriptionLength - Length of subscription.
+	SubscriptionLength *int64 `query:"subscription_length"`
+	// SubscriptionPeriod - In what notation is time measured.
+	SubscriptionPeriod *SubscriptionPeriod `query:"subscription_period"`
+	// Autorenewal - Is auto renewal enabled.
+	Autorenewal *Autorenewal `query:"autorenewal"`
+	// Java - Has java edition.
+	Java *Java `query:"java"`
+	// Bedrock - Has bedrock edition.
+	Bedrock *Bedrock `query:"bedrock"`
+	// Dungeons - Has Minecraft Dungeons.
+	Dungeons *Dungeons `query:"dungeons"`
+	// Legends - Has Minecraft Legends.
+	Legends *Legends `query:"legends"`
+	// ChangeNickname - Can change nickname.
+	ChangeNickname *ChangeNickname `query:"change_nickname"`
+	// Capes - List of capes.
+	Capes []string `query:"capes[]"`
+	// CapesMin - Minimum number of capes.
+	CapesMin *int64 `query:"capes_min"`
+	// CapesMax - Maximum number of capes.
+	CapesMax *int64 `query:"capes_max"`
+	// Country - List of allowed countries.
+	Country []string `query:"country[]"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country[]"`
+	// HypixelBan - Has active Hypixel ban.
+	HypixelBan *HypixelBan `query:"hypixel_ban"`
+	// HypixelSkyblockAPIEnabled - Is API enabled in Hypixel Skyblock.
+	HypixelSkyblockAPIEnabled *HypixelSkyblockAPIEnabled `query:"hypixel_skyblock_api_enabled"`
+	// RankHypixel - Rank on hypixel.
+	RankHypixel []RankHypixel `query:"rank_hypixel[]"`
+	// LevelHypixelMin - Minimum number of level hypixel.
+	LevelHypixelMin *int64 `query:"level_hypixel_min"`
+	// LevelHypixelMax - Maximum number of level hypixel.
+	LevelHypixelMax *int64 `query:"level_hypixel_max"`
+	// AchievementHypixelMin - Minimum number of achievement hypixel.
+	AchievementHypixelMin *int64 `query:"achievement_hypixel_min"`
+	// AchievementHypixelMax - Maximum number of achievement hypixel.
+	AchievementHypixelMax *int64 `query:"achievement_hypixel_max"`
+	// LevelHypixelSkyblockMin - Minimum level on Hypixel SkyBlock.
+	LevelHypixelSkyblockMin *int64 `query:"level_hypixel_skyblock_min"`
+	// LevelHypixelSkyblockMax - Maximum level on Hypixel SkyBlock.
+	LevelHypixelSkyblockMax *int64 `query:"level_hypixel_skyblock_max"`
+	// NetWorthHypixelSkyblockMin - Minimum net worth on Hypixel SkyBlock.
+	NetWorthHypixelSkyblockMin *int64 `query:"net_worth_hypixel_skyblock_min"`
+	// NetWorthHypixelSkyblockMax - Maximum net worth on Hypixel SkyBlock.
+	NetWorthHypixelSkyblockMax *int64 `query:"net_worth_hypixel_skyblock_max"`
+	// Reg - How old is the account.
+	Reg *int64 `query:"reg"`
+	// RegPeriod - In what notation is time measured.
+	RegPeriod *RegPeriod `query:"reg_period"`
+	// LastLoginHypixel - How old is the last login account.
+	LastLoginHypixel *int64 `query:"last_login_hypixel"`
+	// LastLoginHypixelPeriod - In what notation is time measured.
+	LastLoginHypixelPeriod *LastLoginHypixelPeriod `query:"last_login_hypixel_period"`
+	// CanChangeDetails - Can change details.
+	CanChangeDetails *CanChangeDetails `query:"can_change_details"`
+	// NicknameLengthMin - Minimum number of characters in nickname.
+	NicknameLengthMin *int64 `query:"nickname_length_min"`
+	// NicknameLengthMax - Maximum number of characters in nickname.
+	NicknameLengthMax *int64 `query:"nickname_length_max"`
+	// HypixelBanParsed - Was Hypixel ban parsed by Market.
+	HypixelBanParsed *HypixelBanParsed `query:"hypixel_ban_parsed"`
+	// MinecoinsMin - Minimum number of Minecoins.
+	MinecoinsMin *int64 `query:"minecoins_min"`
+	// MinecoinsMax - Maximum number of Minecoins.
+	MinecoinsMax *int64 `query:"minecoins_max"`
 }
 
 // CategoryMinecraftResponse is the response for the endpoint.
 type CategoryMinecraftResponse struct {
-	CacheTTL        int64                               `json:"cacheTTL"`
-	HasNextPage     bool                                `json:"hasNextPage"`
-	Items           []any                               `json:"items"`
-	LastModified    int64                               `json:"lastModified"`
-	Page            int64                               `json:"page"`
-	PerPage         int64                               `json:"perPage"`
-	SearchURL       string                              `json:"searchUrl"`
-	ServerTime      int64                               `json:"serverTime"`
-	StickyItems     []any                               `json:"stickyItems"`
-	SystemInfo      CategoryMinecraftResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                               `json:"totalItems"`
-	TotalItemsPrice any                                 `json:"totalItemsPrice"`
-	WasCached       bool                                `json:"wasCached"`
+	CacheTTL        float64                              `json:"cacheTTL"`
+	HasNextPage     bool                                 `json:"hasNextPage"`
+	Items           []any                                `json:"items"`
+	LastModified    float64                              `json:"lastModified"`
+	Page            float64                              `json:"page"`
+	PerPage         float64                              `json:"perPage"`
+	SearchURL       string                               `json:"searchUrl"`
+	ServerTime      float64                              `json:"serverTime"`
+	StickyItems     []any                                `json:"stickyItems"`
+	SystemInfo      *CategoryMinecraftResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                              `json:"totalItems"`
+	TotalItemsPrice any                                  `json:"totalItemsPrice"`
+	WasCached       bool                                 `json:"wasCached"`
 }
 
 // CategoryParamsResponse is the response for the endpoint.
 type CategoryParamsResponse struct {
-	BaseParams *CategoryParamsResponseBaseParams `json:"base_params,omitempty"`
+	BaseParams any                               `json:"base_params,omitempty"`
 	Category   *CategoryParamsResponseCategory   `json:"category,omitempty"`
 	Params     []any                             `json:"params,omitempty"`
 	SystemInfo *CategoryParamsResponseSystemInfo `json:"system_info,omitempty"`
@@ -20488,955 +20615,1639 @@ type CategoryParamsResponse struct {
 
 // CategoryRiotParams holds query parameters for Category.Riot.
 type CategoryRiotParams struct {
-	Page              *int64               `query:"page"`
-	Pmin              *int64               `query:"pmin"`
-	Pmax              *int64               `query:"pmax"`
-	Title             *string              `query:"title"`
-	OrderBy           *OrderBy             `query:"order_by"`
-	TagID             []int64              `query:"tag_id[]"`
-	NotTagID          []int64              `query:"not_tag_id[]"`
-	PublicTagID       []int64              `query:"public_tag_id[]"`
-	NotPublicTagID    []int64              `query:"not_public_tag_id[]"`
-	Origin            []CartOrigin         `query:"origin[]"`
-	NotOrigin         []CartNotOrigin      `query:"not_origin[]"`
-	UserID            *int64               `query:"user_id"`
-	Nsb               *bool                `query:"nsb"`
-	Sb                *bool                `query:"sb"`
-	NsbByMe           *bool                `query:"nsb_by_me"`
-	SbByMe            *bool                `query:"sb_by_me"`
-	Currency          *Currency            `query:"currency"`
-	EmailLoginData    *bool                `query:"email_login_data"`
-	EmailProvider     []EmailProvider      `query:"email_provider[]"`
-	NotEmailProvider  *NotEmailProvider    `query:"not_email_provider[]"`
-	ParseSameItemIds  *bool                `query:"parse_same_item_ids"`
-	EmailType         []CategoryEmailType2 `query:"email_type[]"`
-	ItemDomain        *string              `query:"item_domain"`
-	Rmin              *int64               `query:"rmin"`
-	Rmax              *int64               `query:"rmax"`
-	LastRmin          *int64               `query:"last_rmin"`
-	LastRmax          *int64               `query:"last_rmax"`
-	PreviousRmin      *int64               `query:"previous_rmin"`
-	PreviousRmax      *int64               `query:"previous_rmax"`
-	WeaponSkin        []string             `query:"weaponSkin[]"`
-	Buddy             []string             `query:"buddy[]"`
-	Agent             []string             `query:"agent[]"`
-	Champion          []string             `query:"champion[]"`
-	Skin              []string             `query:"skin[]"`
-	Country           []string             `query:"country[]"`
-	NotCountry        []string             `query:"not_country[]"`
-	Daybreak          *int64               `query:"daybreak"`
-	ValorantLevelMin  *int64               `query:"valorant_level_min"`
-	ValorantLevelMax  *int64               `query:"valorant_level_max"`
-	LolLevelMin       *int64               `query:"lol_level_min"`
-	LolLevelMax       *int64               `query:"lol_level_max"`
-	InvMin            *int64               `query:"inv_min"`
-	InvMax            *int64               `query:"inv_max"`
-	VpMin             *int64               `query:"vp_min"`
-	VpMax             *int64               `query:"vp_max"`
-	ValorantSmin      *int64               `query:"valorant_smin"`
-	ValorantSmax      *int64               `query:"valorant_smax"`
-	ValorantRankType  []ValorantRankType   `query:"valorant_rank_type[]"`
-	Amin              *int64               `query:"amin"`
-	Amax              *int64               `query:"amax"`
-	ValorantRegion    []string             `query:"valorant_region[]"`
-	ValorantNotRegion []string             `query:"valorant_not_region[]"`
-	LolRegion         []string             `query:"lol_region[]"`
-	LolNotRegion      []string             `query:"lol_not_region[]"`
-	Knife             *bool                `query:"knife"`
-	LolSmin           *int64               `query:"lol_smin"`
-	LolSmax           *int64               `query:"lol_smax"`
-	ChampionMin       *int64               `query:"champion_min"`
-	ChampionMax       *int64               `query:"champion_max"`
-	WinRateMin        *int64               `query:"win_rate_min"`
-	WinRateMax        *int64               `query:"win_rate_max"`
-	BlueMin           *int64               `query:"blue_min"`
-	BlueMax           *int64               `query:"blue_max"`
-	OrangeMin         *int64               `query:"orange_min"`
-	OrangeMax         *int64               `query:"orange_max"`
-	MythicMin         *int64               `query:"mythic_min"`
-	MythicMax         *int64               `query:"mythic_max"`
-	RiotMin           *int64               `query:"riot_min"`
-	RiotMax           *int64               `query:"riot_max"`
-	Email             *Email               `query:"email"`
-	Tel               *Tel                 `query:"tel"`
-	ValorantKnifeMin  *int64               `query:"valorant_knife_min"`
-	ValorantKnifeMax  *int64               `query:"valorant_knife_max"`
-	RpMin             *int64               `query:"rp_min"`
-	RpMax             *int64               `query:"rp_max"`
-	FAMin             *int64               `query:"fa_min"`
-	FAMax             *int64               `query:"fa_max"`
-	LolRank           []LolRank            `query:"lol_rank[]"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType2 `query:"email_type[]"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Rmin - Minimum valorant rank.
+	Rmin *int64 `query:"rmin"`
+	// Rmax - Maximum valorant rank.
+	Rmax *int64 `query:"rmax"`
+	// LastRmin - Last minimum valorant rank.
+	LastRmin *int64 `query:"last_rmin"`
+	// LastRmax - Last maximum valorant rank.
+	LastRmax *int64 `query:"last_rmax"`
+	// PreviousRmin - Previous minimum rank.
+	PreviousRmin *int64 `query:"previous_rmin"`
+	// PreviousRmax - Previous maximum rank.
+	PreviousRmax *int64 `query:"previous_rmax"`
+	// WeaponSkin - List of weapon skins.
+	WeaponSkin []string `query:"weaponSkin[]"`
+	// Buddy - List of buddies.
+	Buddy []string `query:"buddy[]"`
+	// Agent - List of agents.
+	Agent []string `query:"agent[]"`
+	// Champion - List of champions.
+	Champion []string `query:"champion[]"`
+	// Skin - List of LoL skins.
+	Skin []string `query:"skin[]"`
+	// Country - List of allowed countries.
+	Country []string `query:"country[]"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country[]"`
+	// Daybreak - Number of days the account has been offline.
+	Daybreak *int64 `query:"daybreak"`
+	// ValorantLevelMin - Minimum level in Valorant.
+	ValorantLevelMin *int64 `query:"valorant_level_min"`
+	// ValorantLevelMax - Maximum level in Valorant.
+	ValorantLevelMax *int64 `query:"valorant_level_max"`
+	// LolLevelMin - Minimum level in LoL.
+	LolLevelMin *int64 `query:"lol_level_min"`
+	// LolLevelMax - Maximum level in LoL.
+	LolLevelMax *int64 `query:"lol_level_max"`
+	// InvMin - Minimum inventory value.
+	InvMin *int64 `query:"inv_min"`
+	// InvMax - Maximum inventory value.
+	InvMax *int64 `query:"inv_max"`
+	// VpMin - Minimum number of Valorant points.
+	VpMin *int64 `query:"vp_min"`
+	// VpMax - Maximum number of Valorant points.
+	VpMax *int64 `query:"vp_max"`
+	// ValorantSmin - Minimum number of skins.
+	ValorantSmin *int64 `query:"valorant_smin"`
+	// ValorantSmax - Maximum number of skins.
+	ValorantSmax *int64 `query:"valorant_smax"`
+	// ValorantRankType - List of allowed rank types.
+	ValorantRankType []ValorantRankType `query:"valorant_rank_type[]"`
+	// Amin - Minimum amount of agents.
+	Amin *int64 `query:"amin"`
+	// Amax - Maximum amount of agents.
+	Amax *int64 `query:"amax"`
+	// ValorantRegion - List of allowed regions in Valorant.
+	ValorantRegion []string `query:"valorant_region[]"`
+	// ValorantNotRegion - List of disallowed regions in Valorant.
+	ValorantNotRegion []string `query:"valorant_not_region[]"`
+	// LolRegion - List of allowed regions in LoL.
+	LolRegion []string `query:"lol_region[]"`
+	// LolNotRegion - List of disallowed regions in LoL.
+	LolNotRegion []string `query:"lol_not_region[]"`
+	// Knife - Has any knife.
+	Knife *bool `query:"knife"`
+	// LolSmin - Minimum number of skins in LoL.
+	LolSmin *int64 `query:"lol_smin"`
+	// LolSmax - Maximum number of skins in LoL.
+	LolSmax *int64 `query:"lol_smax"`
+	// ChampionMin - Minimum number of champions.
+	ChampionMin *int64 `query:"champion_min"`
+	// ChampionMax - Maximum number of champions.
+	ChampionMax *int64 `query:"champion_max"`
+	// WinRateMin - Minimum win-rate.
+	WinRateMin *int64 `query:"win_rate_min"`
+	// WinRateMax - Maximum win-rate.
+	WinRateMax *int64 `query:"win_rate_max"`
+	// BlueMin - Minimum wallet blue balance.
+	BlueMin *int64 `query:"blue_min"`
+	// BlueMax - Maximum wallet blue balance.
+	BlueMax *int64 `query:"blue_max"`
+	// OrangeMin - Minimum wallet orange balance.
+	OrangeMin *int64 `query:"orange_min"`
+	// OrangeMax - Maximum wallet orange balance.
+	OrangeMax *int64 `query:"orange_max"`
+	// MythicMin - Minimum wallet mythic balance.
+	MythicMin *int64 `query:"mythic_min"`
+	// MythicMax - Maximum wallet mythic balance.
+	MythicMax *int64 `query:"mythic_max"`
+	// RiotMin - Minimum wallet riot balance.
+	RiotMin *int64 `query:"riot_min"`
+	// RiotMax - Maximum wallet riot balance.
+	RiotMax *int64 `query:"riot_max"`
+	// Email - Has linked email.
+	Email *Email `query:"email"`
+	// Tel - Has linked mobile.
+	Tel *Tel `query:"tel"`
+	// ValorantKnifeMin - Minimum knifes in Valorant.
+	ValorantKnifeMin *int64 `query:"valorant_knife_min"`
+	// ValorantKnifeMax - Maximum knifes in Valorant.
+	ValorantKnifeMax *int64 `query:"valorant_knife_max"`
+	// RpMin - Minimum number of Valorant Radiant Points.
+	RpMin *int64 `query:"rp_min"`
+	// RpMax - Maximum number of Valorant Radiant Points.
+	RpMax *int64 `query:"rp_max"`
+	// FAMin - Minimum number of Valorant free agents.
+	FAMin *int64 `query:"fa_min"`
+	// FAMax - Maximum number of Valorant free agents.
+	FAMax *int64 `query:"fa_max"`
+	// LolRank - List of allowed ranks in LoL.
+	LolRank []LolRank `query:"lol_rank[]"`
 }
 
 // CategoryRiotResponse is the response for the endpoint.
 type CategoryRiotResponse struct {
-	CacheTTL        int64                          `json:"cacheTTL"`
-	HasNextPage     bool                           `json:"hasNextPage"`
-	Items           []any                          `json:"items"`
-	LastModified    int64                          `json:"lastModified"`
-	Page            int64                          `json:"page"`
-	PerPage         int64                          `json:"perPage"`
-	SearchURL       string                         `json:"searchUrl"`
-	ServerTime      int64                          `json:"serverTime"`
-	StickyItems     []any                          `json:"stickyItems"`
-	SystemInfo      CategoryRiotResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                          `json:"totalItems"`
-	TotalItemsPrice any                            `json:"totalItemsPrice"`
-	WasCached       bool                           `json:"wasCached"`
+	CacheTTL        float64                         `json:"cacheTTL"`
+	HasNextPage     bool                            `json:"hasNextPage"`
+	Items           []any                           `json:"items"`
+	LastModified    float64                         `json:"lastModified"`
+	Page            float64                         `json:"page"`
+	PerPage         float64                         `json:"perPage"`
+	SearchURL       string                          `json:"searchUrl"`
+	ServerTime      float64                         `json:"serverTime"`
+	StickyItems     []any                           `json:"stickyItems"`
+	SystemInfo      *CategoryRiotResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                         `json:"totalItems"`
+	TotalItemsPrice any                             `json:"totalItemsPrice"`
+	WasCached       bool                            `json:"wasCached"`
 }
 
 // CategoryRobloxParams holds query parameters for Category.Roblox.
 type CategoryRobloxParams struct {
-	Page                  *int64                 `query:"page"`
-	Pmin                  *int64                 `query:"pmin"`
-	Pmax                  *int64                 `query:"pmax"`
-	Title                 *string                `query:"title"`
-	OrderBy               *OrderBy               `query:"order_by"`
-	TagID                 []int64                `query:"tag_id[]"`
-	NotTagID              []int64                `query:"not_tag_id[]"`
-	PublicTagID           []int64                `query:"public_tag_id[]"`
-	NotPublicTagID        []int64                `query:"not_public_tag_id[]"`
-	Origin                []CartOrigin           `query:"origin[]"`
-	NotOrigin             []CartNotOrigin        `query:"not_origin[]"`
-	UserID                *int64                 `query:"user_id"`
-	Nsb                   *bool                  `query:"nsb"`
-	Sb                    *bool                  `query:"sb"`
-	NsbByMe               *bool                  `query:"nsb_by_me"`
-	SbByMe                *bool                  `query:"sb_by_me"`
-	Currency              *Currency              `query:"currency"`
-	EmailLoginData        *bool                  `query:"email_login_data"`
-	EmailProvider         []EmailProvider        `query:"email_provider[]"`
-	NotEmailProvider      *NotEmailProvider      `query:"not_email_provider[]"`
-	ParseSameItemIds      *bool                  `query:"parse_same_item_ids"`
-	Email                 *Email                 `query:"email"`
-	RobuxMin              *int64                 `query:"robux_min"`
-	RobuxMax              *int64                 `query:"robux_max"`
-	FriendsMin            *int64                 `query:"friends_min"`
-	FriendsMax            *int64                 `query:"friends_max"`
-	FollowersMin          *int64                 `query:"followers_min"`
-	FollowersMax          *int64                 `query:"followers_max"`
-	Country               []string               `query:"country"`
-	NotCountry            []string               `query:"not_country"`
-	Reg                   *int64                 `query:"reg"`
-	RegPeriod             *RegPeriod             `query:"reg_period"`
-	Subscription          *CategorySubscription3 `query:"subscription"`
-	SubscriptionLength    *int64                 `query:"subscription_length"`
-	SubscriptionPeriod    *SubscriptionPeriod    `query:"subscription_period"`
-	Autorenewal           *Autorenewal           `query:"autorenewal"`
-	XboxConnected         *XboxConnected         `query:"xbox_connected"`
-	PsnConnected          *PsnConnected          `query:"psn_connected"`
-	Verified              *Verified              `query:"verified"`
-	AgeVerified           *AgeVerified           `query:"age_verified"`
-	IncomingRobuxTotalMin *int64                 `query:"incoming_robux_total_min"`
-	IncomingRobuxTotalMax *int64                 `query:"incoming_robux_total_max"`
-	LimitedPriceMin       *int64                 `query:"limited_price_min"`
-	LimitedPriceMax       *int64                 `query:"limited_price_max"`
-	GamepassMin           *int64                 `query:"gamepass_min"`
-	GamepassMax           *int64                 `query:"gamepass_max"`
-	GameDonations         *GameDonations         `query:"game_donations"`
-	InvMin                *int64                 `query:"inv_min"`
-	InvMax                *int64                 `query:"inv_max"`
-	UgcLimitedPriceMin    *int64                 `query:"ugc_limited_price_min"`
-	UgcLimitedPriceMax    *int64                 `query:"ugc_limited_price_max"`
-	CreditBalanceMin      *int64                 `query:"credit_balance_min"`
-	CreditBalanceMax      *int64                 `query:"credit_balance_max"`
-	OffsaleMin            *int64                 `query:"offsale_min"`
-	OffsaleMax            *int64                 `query:"offsale_max"`
-	Voice                 *Voice                 `query:"voice"`
-	AgeGroup              []string               `query:"age_group[]"`
-	NotAgeGroup           []string               `query:"not_age_group[]"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// Email - Has verified email.
+	Email *Email `query:"email"`
+	// RobuxMin - Minimum robux.
+	RobuxMin *int64 `query:"robux_min"`
+	// RobuxMax - Maximum robux.
+	RobuxMax *int64 `query:"robux_max"`
+	// FriendsMin - Minimum friends.
+	FriendsMin *int64 `query:"friends_min"`
+	// FriendsMax - Maximum friends.
+	FriendsMax *int64 `query:"friends_max"`
+	// FollowersMin - Minimum number of followers.
+	FollowersMin *int64 `query:"followers_min"`
+	// FollowersMax - Maximum number of followers.
+	FollowersMax *int64 `query:"followers_max"`
+	// Country - List of allowed countries.
+	Country []string `query:"country"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country"`
+	// Reg - How old is the account.
+	Reg *int64 `query:"reg"`
+	// RegPeriod - In what notation is time measured.
+	RegPeriod *RegPeriod `query:"reg_period"`
+	// Subscription - Name of subscription.
+	Subscription *CategorySubscription3 `query:"subscription"`
+	// SubscriptionLength - Length of subscription.
+	SubscriptionLength *int64 `query:"subscription_length"`
+	// SubscriptionPeriod - In what notation is time measured.
+	SubscriptionPeriod *SubscriptionPeriod `query:"subscription_period"`
+	// Autorenewal - Is auto renewal enabled.
+	Autorenewal *Autorenewal `query:"autorenewal"`
+	// XboxConnected - Xbox connected to account.
+	XboxConnected *XboxConnected `query:"xbox_connected"`
+	// PsnConnected - PSN connected to account.
+	PsnConnected *PsnConnected `query:"psn_connected"`
+	// Verified - Has verified.
+	Verified *Verified `query:"verified"`
+	// AgeVerified - Account is age verified via documents.
+	AgeVerified *AgeVerified `query:"age_verified"`
+	// IncomingRobuxTotalMin - Minimum amount of incoming robux.
+	IncomingRobuxTotalMin *int64 `query:"incoming_robux_total_min"`
+	// IncomingRobuxTotalMax - Maximum amount of incoming robux.
+	IncomingRobuxTotalMax *int64 `query:"incoming_robux_total_max"`
+	// LimitedPriceMin - Minimum limited items value.
+	LimitedPriceMin *int64 `query:"limited_price_min"`
+	// LimitedPriceMax - Maximum limited items value.
+	LimitedPriceMax *int64 `query:"limited_price_max"`
+	// GamepassMin - Minimum total Robux cost of all game passes in popular Roblox games..
+	GamepassMin *int64 `query:"gamepass_min"`
+	// GamepassMax - Maximum total Robux cost of all game passes in popular Roblox games..
+	GamepassMax *int64 `query:"gamepass_max"`
+	// GameDonations - Has game donations.
+	GameDonations *GameDonations `query:"game_donations"`
+	// InvMin - Minimum inventory value.
+	InvMin *int64 `query:"inv_min"`
+	// InvMax - Maximum inventory value.
+	InvMax *int64 `query:"inv_max"`
+	// UgcLimitedPriceMin - Minimum UGC limited items value.
+	UgcLimitedPriceMin *int64 `query:"ugc_limited_price_min"`
+	// UgcLimitedPriceMax - Maximum UGC limited items value.
+	UgcLimitedPriceMax *int64 `query:"ugc_limited_price_max"`
+	// CreditBalanceMin - Minimum credit balance.
+	CreditBalanceMin *int64 `query:"credit_balance_min"`
+	// CreditBalanceMax - Maximum credit balance.
+	CreditBalanceMax *int64 `query:"credit_balance_max"`
+	// OffsaleMin - Minimum offsale items count.
+	OffsaleMin *int64 `query:"offsale_min"`
+	// OffsaleMax - Maximum offsale items count.
+	OffsaleMax *int64 `query:"offsale_max"`
+	// Voice - Voice chat is available.
+	Voice *Voice `query:"voice"`
+	// AgeGroup - List of allowed age groups.
+	AgeGroup []string `query:"age_group[]"`
+	// NotAgeGroup - List of disallowed age groups.
+	NotAgeGroup []string `query:"not_age_group[]"`
 }
 
 // CategoryRobloxResponse is the response for the endpoint.
 type CategoryRobloxResponse struct {
-	CacheTTL        int64                            `json:"cacheTTL"`
-	HasNextPage     bool                             `json:"hasNextPage"`
-	Items           []any                            `json:"items"`
-	LastModified    int64                            `json:"lastModified"`
-	Page            int64                            `json:"page"`
-	PerPage         int64                            `json:"perPage"`
-	SearchURL       string                           `json:"searchUrl"`
-	ServerTime      int64                            `json:"serverTime"`
-	StickyItems     []any                            `json:"stickyItems"`
-	SystemInfo      CategoryRobloxResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                            `json:"totalItems"`
-	TotalItemsPrice any                              `json:"totalItemsPrice"`
-	WasCached       bool                             `json:"wasCached"`
-}
-
-// CategorySocialClubParams holds query parameters for Category.SocialClub.
-type CategorySocialClubParams struct {
-	Page             *int64            `query:"page"`
-	Pmin             *int64            `query:"pmin"`
-	Pmax             *int64            `query:"pmax"`
-	Title            *string           `query:"title"`
-	OrderBy          *OrderBy          `query:"order_by"`
-	TagID            []int64           `query:"tag_id[]"`
-	NotTagID         []int64           `query:"not_tag_id[]"`
-	PublicTagID      []int64           `query:"public_tag_id[]"`
-	NotPublicTagID   []int64           `query:"not_public_tag_id[]"`
-	Origin           []CartOrigin      `query:"origin[]"`
-	NotOrigin        []CartNotOrigin   `query:"not_origin[]"`
-	UserID           *int64            `query:"user_id"`
-	Nsb              *bool             `query:"nsb"`
-	Sb               *bool             `query:"sb"`
-	NsbByMe          *bool             `query:"nsb_by_me"`
-	SbByMe           *bool             `query:"sb_by_me"`
-	Currency         *Currency         `query:"currency"`
-	EmailLoginData   *bool             `query:"email_login_data"`
-	EmailProvider    []EmailProvider   `query:"email_provider[]"`
-	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
-	ParseSameItemIds *bool             `query:"parse_same_item_ids"`
-	Daybreak         *int64            `query:"daybreak"`
-	LevelMin         *int64            `query:"level_min"`
-	LevelMax         *int64            `query:"level_max"`
-	CashMin          *int64            `query:"cash_min"`
-	CashMax          *int64            `query:"cash_max"`
-	BankCashMin      *int64            `query:"bank_cash_min"`
-	BankCashMax      *int64            `query:"bank_cash_max"`
-	Game             []string          `query:"game[]"`
-}
-
-// CategorySocialClubResponse is the response for the endpoint.
-type CategorySocialClubResponse struct {
-	CacheTTL        int64                                `json:"cacheTTL"`
-	HasNextPage     bool                                 `json:"hasNextPage"`
-	Items           []any                                `json:"items"`
-	LastModified    int64                                `json:"lastModified"`
-	Page            int64                                `json:"page"`
-	PerPage         int64                                `json:"perPage"`
-	SearchURL       string                               `json:"searchUrl"`
-	ServerTime      int64                                `json:"serverTime"`
-	StickyItems     []any                                `json:"stickyItems"`
-	SystemInfo      CategorySocialClubResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                                `json:"totalItems"`
-	TotalItemsPrice any                                  `json:"totalItemsPrice"`
-	WasCached       bool                                 `json:"wasCached"`
-}
-
-// CategorySteamParams holds query parameters for Category.Steam.
-type CategorySteamParams struct {
-	Page             *int64               `query:"page"`
-	Pmin             *int64               `query:"pmin"`
-	Pmax             *int64               `query:"pmax"`
-	Title            *string              `query:"title"`
-	OrderBy          *OrderBy             `query:"order_by"`
-	TagID            []int64              `query:"tag_id[]"`
-	NotTagID         []int64              `query:"not_tag_id[]"`
-	PublicTagID      []int64              `query:"public_tag_id[]"`
-	NotPublicTagID   []int64              `query:"not_public_tag_id[]"`
-	Origin           []CartOrigin         `query:"origin[]"`
-	NotOrigin        []CartNotOrigin      `query:"not_origin[]"`
-	UserID           *int64               `query:"user_id"`
-	Nsb              *bool                `query:"nsb"`
-	Sb               *bool                `query:"sb"`
-	NsbByMe          *bool                `query:"nsb_by_me"`
-	SbByMe           *bool                `query:"sb_by_me"`
-	Currency         *Currency            `query:"currency"`
-	EmailLoginData   *bool                `query:"email_login_data"`
-	EmailType        []CategoryEmailType3 `query:"email_type[]"`
-	EmailProvider    []EmailProvider      `query:"email_provider[]"`
-	NotEmailProvider *NotEmailProvider    `query:"not_email_provider[]"`
-	ParseSameItemIds *bool                `query:"parse_same_item_ids"`
-	ItemDomain       *string              `query:"item_domain"`
-	Game             []int64              `query:"game[]"`
-	HoursPlayed      map[string]int64     `query:"hours_played"`
-	HoursPlayedMax   map[string]int64     `query:"hours_played_max"`
-	Eg               *CategoryEg          `query:"eg"`
-	Vac              []int64              `query:"vac[]"`
-	VacSkipGameCheck *bool                `query:"vac_skip_game_check"`
-	// Rt - Default: "no"
-	Rt                       *Rt                       `query:"rt" default:"no"`
-	TradeBan                 *TradeBan                 `query:"trade_ban"`
-	TradeLimit               *TradeLimit               `query:"trade_limit"`
-	Daybreak                 *int64                    `query:"daybreak"`
-	Limit                    *Limit                    `query:"limit"`
-	Mafile                   *Mafile                   `query:"mafile"`
-	Reg                      *int64                    `query:"reg"`
-	RegPeriod                *RegPeriod                `query:"reg_period"`
-	Lmin                     *int64                    `query:"lmin"`
-	Lmax                     *int64                    `query:"lmax"`
-	Rmin                     *int64                    `query:"rmin"`
-	Rmax                     *int64                    `query:"rmax"`
-	WingmanRmin              *int64                    `query:"wingman_rmin"`
-	WingmanRmax              *int64                    `query:"wingman_rmax"`
-	NoVac                    *bool                     `query:"no_vac"`
-	MmBan                    *MmBan                    `query:"mm_ban"`
-	BalanceMin               *int64                    `query:"balance_min"`
-	BalanceMax               *int64                    `query:"balance_max"`
-	InvGame                  *int64                    `query:"inv_game"`
-	InvMin                   *float64                  `query:"inv_min"`
-	InvMax                   *float64                  `query:"inv_max"`
-	FriendsMin               *int64                    `query:"friends_min"`
-	FriendsMax               *int64                    `query:"friends_max"`
-	Gmin                     *int64                    `query:"gmin"`
-	Gmax                     *int64                    `query:"gmax"`
-	WinCountMin              *int64                    `query:"win_count_min"`
-	WinCountMax              *int64                    `query:"win_count_max"`
-	MedalID                  []MedalID                 `query:"medal_id[]"`
-	MedalOperatorOr          *bool                     `query:"medal_operator_or"`
-	MedalMin                 *int64                    `query:"medal_min"`
-	MedalMax                 *int64                    `query:"medal_max"`
-	Gift                     []Gift                    `query:"gift[]"`
-	GiftMin                  *int64                    `query:"gift_min"`
-	GiftMax                  *int64                    `query:"gift_max"`
-	RecentlyHoursMin         *int64                    `query:"recently_hours_min"`
-	RecentlyHoursMax         *int64                    `query:"recently_hours_max"`
-	Country                  []string                  `query:"country[]"`
-	NotCountry               []string                  `query:"not_country[]"`
-	Cs2ProfileRankMin        *int64                    `query:"cs2_profile_rank_min"`
-	Cs2ProfileRankMax        *int64                    `query:"cs2_profile_rank_max"`
-	SolommrMin               *int64                    `query:"solommr_min"`
-	SolommrMax               *int64                    `query:"solommr_max"`
-	D2GameCountMin           *int64                    `query:"d2_game_count_min"`
-	D2GameCountMax           *int64                    `query:"d2_game_count_max"`
-	D2WinCountMin            *int64                    `query:"d2_win_count_min"`
-	D2WinCountMax            *int64                    `query:"d2_win_count_max"`
-	D2BehaviorMin            *int64                    `query:"d2_behavior_min"`
-	D2BehaviorMax            *int64                    `query:"d2_behavior_max"`
-	FaceitLvlMin             *int64                    `query:"faceit_lvl_min"`
-	FaceitLvlMax             *int64                    `query:"faceit_lvl_max"`
-	PointsMin                *int64                    `query:"points_min"`
-	PointsMax                *int64                    `query:"points_max"`
-	RelevantGmin             *int64                    `query:"relevant_gmin"`
-	RelevantGmax             *int64                    `query:"relevant_gmax"`
-	LastTransDate            *int64                    `query:"last_trans_date"`
-	LastTransDatePeriod      *LastTransDatePeriod      `query:"last_trans_date_period"`
-	LastTransDateLater       *int64                    `query:"last_trans_date_later"`
-	LastTransDatePeriodLater *LastTransDatePeriodLater `query:"last_trans_date_period_later"`
-	NoTrans                  *bool                     `query:"no_trans"`
-	Trans                    *bool                     `query:"trans"`
-	GiftsPurchaseMin         *float64                  `query:"gifts_purchase_min"`
-	GiftsPurchaseMax         *float64                  `query:"gifts_purchase_max"`
-	RefundsPurchaseMin       *float64                  `query:"refunds_purchase_min"`
-	RefundsPurchaseMax       *float64                  `query:"refunds_purchase_max"`
-	IngamePurchaseMin        *float64                  `query:"ingame_purchase_min"`
-	IngamePurchaseMax        *float64                  `query:"ingame_purchase_max"`
-	GamesPurchaseMin         *float64                  `query:"games_purchase_min"`
-	GamesPurchaseMax         *float64                  `query:"games_purchase_max"`
-	PurchaseMin              *float64                  `query:"purchase_min"`
-	PurchaseMax              *float64                  `query:"purchase_max"`
-	HasActivatedKeys         *HasActivatedKeys         `query:"has_activated_keys"`
-	EloMin                   *int64                    `query:"elo_min"`
-	EloMax                   *int64                    `query:"elo_max"`
-	Cs2MapRank               *Cs2MapRank               `query:"cs2_map_rank"`
-	Cs2MapRmin               *int64                    `query:"cs2_map_rmin"`
-	Cs2MapRmax               *int64                    `query:"cs2_map_rmax"`
-	HasFaceit                *HasFaceit                `query:"has_faceit"`
-	FaceitCsgoLvlMin         *int64                    `query:"faceit_csgo_lvl_min"`
-	FaceitCsgoLvlMax         *int64                    `query:"faceit_csgo_lvl_max"`
-	RustDeathsMin            *int64                    `query:"rust_deaths_min"`
-	RustDeathsMax            *int64                    `query:"rust_deaths_max"`
-	RustKillsMin             *int64                    `query:"rust_kills_min"`
-	RustKillsMax             *int64                    `query:"rust_kills_max"`
-	D2LastMatchDate          *int64                    `query:"d2_last_match_date"`
-	D2LastMatchDatePeriod    *D2LastMatchDatePeriod    `query:"d2_last_match_date_period"`
-	CardsMin                 *int64                    `query:"cards_min"`
-	CardsMax                 *int64                    `query:"cards_max"`
-	CardsGamesMin            *int64                    `query:"cards_games_min"`
-	CardsGamesMax            *int64                    `query:"cards_games_max"`
-	SkipVacInv               *bool                     `query:"skip_vac_inv"`
-}
-
-// CategorySteamResponse is the response for the endpoint.
-type CategorySteamResponse struct {
-	CacheTTL        int64                           `json:"cacheTTL"`
-	HasNextPage     bool                            `json:"hasNextPage"`
-	Items           []any                           `json:"items"`
-	LastModified    int64                           `json:"lastModified"`
-	Page            int64                           `json:"page"`
-	PerPage         int64                           `json:"perPage"`
-	SearchURL       string                          `json:"searchUrl"`
-	ServerTime      int64                           `json:"serverTime"`
-	StickyItems     []any                           `json:"stickyItems"`
-	SystemInfo      CategorySteamResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                           `json:"totalItems"`
-	TotalItemsPrice any                             `json:"totalItemsPrice"`
-	WasCached       bool                            `json:"wasCached"`
-}
-
-// CategorySupercellParams holds query parameters for Category.Supercell.
-type CategorySupercellParams struct {
-	Page                       *int64               `query:"page"`
-	Pmin                       *int64               `query:"pmin"`
-	Pmax                       *int64               `query:"pmax"`
-	Title                      *string              `query:"title"`
-	OrderBy                    *OrderBy             `query:"order_by"`
-	TagID                      []int64              `query:"tag_id[]"`
-	NotTagID                   []int64              `query:"not_tag_id[]"`
-	PublicTagID                []int64              `query:"public_tag_id[]"`
-	NotPublicTagID             []int64              `query:"not_public_tag_id[]"`
-	Origin                     []CartOrigin         `query:"origin[]"`
-	NotOrigin                  []CartNotOrigin      `query:"not_origin[]"`
-	UserID                     *int64               `query:"user_id"`
-	Nsb                        *bool                `query:"nsb"`
-	Sb                         *bool                `query:"sb"`
-	NsbByMe                    *bool                `query:"nsb_by_me"`
-	SbByMe                     *bool                `query:"sb_by_me"`
-	Currency                   *Currency            `query:"currency"`
-	EmailLoginData             *bool                `query:"email_login_data"`
-	EmailProvider              []EmailProvider      `query:"email_provider[]"`
-	NotEmailProvider           *NotEmailProvider    `query:"not_email_provider[]"`
-	ParseSameItemIds           *bool                `query:"parse_same_item_ids"`
-	Daybreak                   *int64               `query:"daybreak"`
-	EmailType                  []CategoryEmailType2 `query:"email_type[]"`
-	ItemDomain                 *string              `query:"item_domain"`
-	Eg                         *CategoryEg2         `query:"eg"`
-	Tel                        *Tel                 `query:"tel"`
-	BrawlLevelMin              *int64               `query:"brawl_level_min"`
-	BrawlLevelMax              *int64               `query:"brawl_level_max"`
-	BrawlCupMin                *int64               `query:"brawl_cup_min"`
-	BrawlCupMax                *int64               `query:"brawl_cup_max"`
-	BrawlWinsMin               *int64               `query:"brawl_wins_min"`
-	BrawlWinsMax               *int64               `query:"brawl_wins_max"`
-	BrawlPass                  *BrawlPass           `query:"brawl_pass"`
-	Brawler                    []Brawler            `query:"brawler[]"`
-	BrawlersMin                *int64               `query:"brawlers_min"`
-	BrawlersMax                *int64               `query:"brawlers_max"`
-	LegendaryBrawlersMin       *int64               `query:"legendary_brawlers_min"`
-	LegendaryBrawlersMax       *int64               `query:"legendary_brawlers_max"`
-	RoyaleLevelMin             *int64               `query:"royale_level_min"`
-	RoyaleLevelMax             *int64               `query:"royale_level_max"`
-	RoyaleCupMin               *int64               `query:"royale_cup_min"`
-	RoyaleCupMax               *int64               `query:"royale_cup_max"`
-	RoyaleWinsMin              *int64               `query:"royale_wins_min"`
-	RoyaleWinsMax              *int64               `query:"royale_wins_max"`
-	KingLevelMin               *int64               `query:"king_level_min"`
-	KingLevelMax               *int64               `query:"king_level_max"`
-	RoyalePass                 *RoyalePass          `query:"royale_pass"`
-	ClashLevelMin              *int64               `query:"clash_level_min"`
-	ClashLevelMax              *int64               `query:"clash_level_max"`
-	ClashCupMin                *int64               `query:"clash_cup_min"`
-	ClashCupMax                *int64               `query:"clash_cup_max"`
-	ClashWinsMin               *int64               `query:"clash_wins_min"`
-	ClashWinsMax               *int64               `query:"clash_wins_max"`
-	ClashPass                  *ClashPass           `query:"clash_pass"`
-	TotalHeroesLevelMin        *int64               `query:"total_heroes_level_min"`
-	TotalHeroesLevelMax        *int64               `query:"total_heroes_level_max"`
-	TotalTroopsLevelMin        *int64               `query:"total_troops_level_min"`
-	TotalTroopsLevelMax        *int64               `query:"total_troops_level_max"`
-	TotalSpellsLevelMin        *int64               `query:"total_spells_level_min"`
-	TotalSpellsLevelMax        *int64               `query:"total_spells_level_max"`
-	TotalBuilderHeroesLevelMin *int64               `query:"total_builder_heroes_level_min"`
-	TotalBuilderHeroesLevelMax *int64               `query:"total_builder_heroes_level_max"`
-	TotalBuilderTroopsLevelMin *int64               `query:"total_builder_troops_level_min"`
-	TotalBuilderTroopsLevelMax *int64               `query:"total_builder_troops_level_max"`
-	TownHallLevelMin           *int64               `query:"town_hall_level_min"`
-	TownHallLevelMax           *int64               `query:"town_hall_level_max"`
-	BuilderHallLevelMin        *int64               `query:"builder_hall_level_min"`
-	BuilderHallLevelMax        *int64               `query:"builder_hall_level_max"`
-	BuilderHallCupMin          *int64               `query:"builder_hall_cup_min"`
-	BuilderHallCupMax          *int64               `query:"builder_hall_cup_max"`
-	CreationYearMin            *int64               `query:"creation_year_min"`
-	CreationYearMax            *int64               `query:"creation_year_max"`
-}
-
-// CategorySupercellResponse is the response for the endpoint.
-type CategorySupercellResponse struct {
-	CacheTTL        int64                               `json:"cacheTTL"`
-	HasNextPage     bool                                `json:"hasNextPage"`
-	Items           []any                               `json:"items"`
-	LastModified    int64                               `json:"lastModified"`
-	Page            int64                               `json:"page"`
-	PerPage         int64                               `json:"perPage"`
-	SearchURL       string                              `json:"searchUrl"`
-	ServerTime      int64                               `json:"serverTime"`
-	StickyItems     []any                               `json:"stickyItems"`
-	SystemInfo      CategorySupercellResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                               `json:"totalItems"`
-	TotalItemsPrice any                                 `json:"totalItemsPrice"`
-	WasCached       bool                                `json:"wasCached"`
-}
-
-// CategoryTelegramParams holds query parameters for Category.Telegram.
-type CategoryTelegramParams struct {
-	Page                    *int64                   `query:"page"`
-	Pmin                    *int64                   `query:"pmin"`
-	Pmax                    *int64                   `query:"pmax"`
-	Title                   *string                  `query:"title"`
-	OrderBy                 *OrderBy                 `query:"order_by"`
-	TagID                   []int64                  `query:"tag_id[]"`
-	NotTagID                []int64                  `query:"not_tag_id[]"`
-	PublicTagID             []int64                  `query:"public_tag_id[]"`
-	NotPublicTagID          []int64                  `query:"not_public_tag_id[]"`
-	Origin                  []CategoryOrigin         `query:"origin[]"`
-	NotOrigin               []CategoryNotOrigin      `query:"not_origin[]"`
-	UserID                  *int64                   `query:"user_id"`
-	Nsb                     *bool                    `query:"nsb"`
-	Sb                      *bool                    `query:"sb"`
-	NsbByMe                 *bool                    `query:"nsb_by_me"`
-	SbByMe                  *bool                    `query:"sb_by_me"`
-	Currency                *Currency                `query:"currency"`
-	EmailLoginData          *bool                    `query:"email_login_data"`
-	EmailProvider           []EmailProvider          `query:"email_provider[]"`
-	NotEmailProvider        *NotEmailProvider        `query:"not_email_provider[]"`
-	ParseSameItemIds        *bool                    `query:"parse_same_item_ids"`
-	Spam                    *Spam                    `query:"spam"`
-	Password                *Password                `query:"password"`
-	Premium                 *Premium                 `query:"premium"`
-	PremiumExpiration       *int64                   `query:"premium_expiration"`
-	PremiumExpirationPeriod *PremiumExpirationPeriod `query:"premium_expiration_period"`
-	Country                 []string                 `query:"country[]"`
-	NotCountry              []string                 `query:"not_country[]"`
-	Daybreak                *int64                   `query:"daybreak"`
-	MinChannels             *int64                   `query:"min_channels"`
-	MaxChannels             *int64                   `query:"max_channels"`
-	MinChats                *int64                   `query:"min_chats"`
-	MaxChats                *int64                   `query:"max_chats"`
-	MinConversations        *int64                   `query:"min_conversations"`
-	MaxConversations        *int64                   `query:"max_conversations"`
-	MinAdmin                *int64                   `query:"min_admin"`
-	MaxAdmin                *int64                   `query:"max_admin"`
-	MinAdminSub             *int64                   `query:"min_admin_sub"`
-	MaxAdminSub             *int64                   `query:"max_admin_sub"`
-	DigMin                  *int64                   `query:"dig_min"`
-	DigMax                  *int64                   `query:"dig_max"`
-	MinContacts             *int64                   `query:"min_contacts"`
-	MaxContacts             *int64                   `query:"max_contacts"`
-	MinStars                *int64                   `query:"min_stars"`
-	MaxStars                *int64                   `query:"max_stars"`
-	Birthday                *int64                   `query:"birthday"`
-	BirthdayPeriod          *BirthdayPeriod          `query:"birthday_period"`
-	BirthdayAfter           *int64                   `query:"birthday_after"`
-	BirthdayAfterPeriod     *BirthdayAfterPeriod     `query:"birthday_after_period"`
-	MinID                   *int64                   `query:"min_id"`
-	MaxID                   *int64                   `query:"max_id"`
-	AllowGeoSpamblock       *bool                    `query:"allow_geo_spamblock"`
-	MinGifts                *int64                   `query:"min_gifts"`
-	MaxGifts                *int64                   `query:"max_gifts"`
-	MinNftGifts             *int64                   `query:"min_nft_gifts"`
-	MaxNftGifts             *int64                   `query:"max_nft_gifts"`
-	MinGiftsStars           *int64                   `query:"min_gifts_stars"`
-	MaxGiftsStars           *int64                   `query:"max_gifts_stars"`
-	MinGiftsConvertStars    *int64                   `query:"min_gifts_convert_stars"`
-	MaxGiftsConvertStars    *int64                   `query:"max_gifts_convert_stars"`
-	DcID                    []int64                  `query:"dc_id[]"`
-	NotDcID                 []int64                  `query:"not_dc_id[]"`
-	Email                   *Email                   `query:"email"`
-	MinBots                 *int64                   `query:"min_bots"`
-	MaxBots                 *int64                   `query:"max_bots"`
-	MinBotActiveUsers       *int64                   `query:"min_bot_active_users"`
-	MaxBotActiveUsers       *int64                   `query:"max_bot_active_users"`
-}
-
-// CategoryTelegramResponse is the response for the endpoint.
-type CategoryTelegramResponse struct {
-	CacheTTL        int64                              `json:"cacheTTL"`
-	HasNextPage     bool                               `json:"hasNextPage"`
-	Items           []any                              `json:"items"`
-	LastModified    int64                              `json:"lastModified"`
-	Page            int64                              `json:"page"`
-	PerPage         int64                              `json:"perPage"`
-	SearchURL       string                             `json:"searchUrl"`
-	ServerTime      int64                              `json:"serverTime"`
-	StickyItems     []any                              `json:"stickyItems"`
-	SystemInfo      CategoryTelegramResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                              `json:"totalItems"`
-	TotalItemsPrice any                                `json:"totalItemsPrice"`
-	WasCached       bool                               `json:"wasCached"`
-}
-
-// CategoryTikTokParams holds query parameters for Category.TikTok.
-type CategoryTikTokParams struct {
-	Page             *int64               `query:"page"`
-	Pmin             *int64               `query:"pmin"`
-	Pmax             *int64               `query:"pmax"`
-	Title            *string              `query:"title"`
-	OrderBy          *OrderBy             `query:"order_by"`
-	TagID            []int64              `query:"tag_id[]"`
-	NotTagID         []int64              `query:"not_tag_id[]"`
-	PublicTagID      []int64              `query:"public_tag_id[]"`
-	NotPublicTagID   []int64              `query:"not_public_tag_id[]"`
-	Origin           []CartOrigin         `query:"origin[]"`
-	NotOrigin        []CartNotOrigin      `query:"not_origin[]"`
-	UserID           *int64               `query:"user_id"`
-	Nsb              *bool                `query:"nsb"`
-	Sb               *bool                `query:"sb"`
-	NsbByMe          *bool                `query:"nsb_by_me"`
-	SbByMe           *bool                `query:"sb_by_me"`
-	Currency         *Currency            `query:"currency"`
-	EmailLoginData   *bool                `query:"email_login_data"`
-	EmailProvider    []EmailProvider      `query:"email_provider[]"`
-	NotEmailProvider *NotEmailProvider    `query:"not_email_provider[]"`
-	ParseSameItemIds *bool                `query:"parse_same_item_ids"`
-	EmailType        []CategoryEmailType2 `query:"email_type[]"`
-	ItemDomain       *string              `query:"item_domain"`
-	Tel              *Tel                 `query:"tel"`
-	Reg              *int64               `query:"reg"`
-	RegPeriod        *RegPeriod           `query:"reg_period"`
-	FollowersMin     *int64               `query:"followers_min"`
-	FollowersMax     *int64               `query:"followers_max"`
-	PostMin          *int64               `query:"post_min"`
-	PostMax          *int64               `query:"post_max"`
-	LikeMin          *int64               `query:"like_min"`
-	LikeMax          *int64               `query:"like_max"`
-	CoinsMin         *int64               `query:"coins_min"`
-	CoinsMax         *int64               `query:"coins_max"`
-	CookieLogin      *CookieLogin         `query:"cookie_login"`
-	Verified         *Verified            `query:"verified"`
-	Email            *Email               `query:"email"`
-}
-
-// CategoryTikTokResponse is the response for the endpoint.
-type CategoryTikTokResponse struct {
-	CacheTTL        int64                            `json:"cacheTTL"`
-	HasNextPage     bool                             `json:"hasNextPage"`
-	Items           []any                            `json:"items"`
-	LastModified    int64                            `json:"lastModified"`
-	Page            int64                            `json:"page"`
-	PerPage         int64                            `json:"perPage"`
-	SearchURL       string                           `json:"searchUrl"`
-	ServerTime      int64                            `json:"serverTime"`
-	StickyItems     []any                            `json:"stickyItems"`
-	SystemInfo      CategoryTikTokResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                            `json:"totalItems"`
-	TotalItemsPrice any                              `json:"totalItemsPrice"`
-	WasCached       bool                             `json:"wasCached"`
-}
-
-// CategoryUplayParams holds query parameters for Category.Uplay.
-type CategoryUplayParams struct {
-	Page               *int64                 `query:"page"`
-	Pmin               *int64                 `query:"pmin"`
-	Pmax               *int64                 `query:"pmax"`
-	Title              *string                `query:"title"`
-	OrderBy            *OrderBy               `query:"order_by"`
-	TagID              []int64                `query:"tag_id[]"`
-	NotTagID           []int64                `query:"not_tag_id[]"`
-	PublicTagID        []int64                `query:"public_tag_id[]"`
-	NotPublicTagID     []int64                `query:"not_public_tag_id[]"`
-	Origin             []CartOrigin           `query:"origin[]"`
-	NotOrigin          []CartNotOrigin        `query:"not_origin[]"`
-	UserID             *int64                 `query:"user_id"`
-	Nsb                *bool                  `query:"nsb"`
-	Sb                 *bool                  `query:"sb"`
-	NsbByMe            *bool                  `query:"nsb_by_me"`
-	SbByMe             *bool                  `query:"sb_by_me"`
-	Currency           *Currency              `query:"currency"`
-	EmailLoginData     *bool                  `query:"email_login_data"`
-	EmailProvider      []EmailProvider        `query:"email_provider[]"`
-	NotEmailProvider   *NotEmailProvider      `query:"not_email_provider[]"`
-	ParseSameItemIds   *bool                  `query:"parse_same_item_ids"`
-	EmailType          []CategoryEmailType2   `query:"email_type[]"`
-	ItemDomain         *string                `query:"item_domain"`
-	Game               []string               `query:"game[]"`
-	Country            []string               `query:"country[]"`
-	NotCountry         []string               `query:"not_country[]"`
-	Daybreak           *int64                 `query:"daybreak"`
-	Gmin               *int64                 `query:"gmin"`
-	Gmax               *int64                 `query:"gmax"`
-	Subscription       *CategorySubscription4 `query:"subscription"`
-	SubscriptionLength *int64                 `query:"subscription_length"`
-	SubscriptionPeriod *SubscriptionPeriod    `query:"subscription_period"`
-	R6LevelMin         *int64                 `query:"r6_level_min"`
-	R6LevelMax         *int64                 `query:"r6_level_max"`
-	R6RankMin          *int64                 `query:"r6_rank_min"`
-	R6RankMax          *int64                 `query:"r6_rank_max"`
-	R6OperatorsMin     *int64                 `query:"r6_operators_min"`
-	R6OperatorsMax     *int64                 `query:"r6_operators_max"`
-	R6Ban              *R6Ban                 `query:"r6_ban"`
-	R6Smin             *int64                 `query:"r6_smin"`
-	R6Smax             *int64                 `query:"r6_smax"`
-	R6Skin             []string               `query:"r6_skin[]"`
-	R6Operator         []string               `query:"r6_operator[]"`
-	XboxConnected      *XboxConnected         `query:"xbox_connected"`
-	PsnConnected       *PsnConnected          `query:"psn_connected"`
-	SteamConnected     *SteamConnected        `query:"steam_connected"`
-	BalanceMin         *float64               `query:"balance_min"`
-	BalanceMax         *float64               `query:"balance_max"`
-	Transactions       *Transactions          `query:"transactions"`
-	Reg                *int64                 `query:"reg"`
-	RegPeriod          *RegPeriod             `query:"reg_period"`
-}
-
-// CategoryUplayResponse is the response for the endpoint.
-type CategoryUplayResponse struct {
-	CacheTTL        int64                           `json:"cacheTTL"`
-	HasNextPage     bool                            `json:"hasNextPage"`
-	Items           []any                           `json:"items"`
-	LastModified    int64                           `json:"lastModified"`
-	Page            int64                           `json:"page"`
-	PerPage         int64                           `json:"perPage"`
-	SearchURL       string                          `json:"searchUrl"`
-	ServerTime      int64                           `json:"serverTime"`
-	StickyItems     []any                           `json:"stickyItems"`
-	SystemInfo      CategoryUplayResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                           `json:"totalItems"`
-	TotalItemsPrice any                             `json:"totalItemsPrice"`
-	WasCached       bool                            `json:"wasCached"`
-}
-
-// CategoryVPNParams holds query parameters for Category.VPN.
-type CategoryVPNParams struct {
-	Page               *int64              `query:"page"`
-	Pmin               *int64              `query:"pmin"`
-	Pmax               *int64              `query:"pmax"`
-	Title              *string             `query:"title"`
-	OrderBy            *OrderBy            `query:"order_by"`
-	TagID              []int64             `query:"tag_id[]"`
-	NotTagID           []int64             `query:"not_tag_id[]"`
-	PublicTagID        []int64             `query:"public_tag_id[]"`
-	NotPublicTagID     []int64             `query:"not_public_tag_id[]"`
-	Origin             []CartOrigin        `query:"origin[]"`
-	NotOrigin          []CartNotOrigin     `query:"not_origin[]"`
-	UserID             *int64              `query:"user_id"`
-	Nsb                *bool               `query:"nsb"`
-	Sb                 *bool               `query:"sb"`
-	NsbByMe            *bool               `query:"nsb_by_me"`
-	SbByMe             *bool               `query:"sb_by_me"`
-	Currency           *Currency           `query:"currency"`
-	EmailLoginData     *bool               `query:"email_login_data"`
-	EmailProvider      []EmailProvider     `query:"email_provider[]"`
-	NotEmailProvider   *NotEmailProvider   `query:"not_email_provider[]"`
-	ParseSameItemIds   *bool               `query:"parse_same_item_ids"`
-	Service            []Service           `query:"service[]"`
-	SubscriptionLength *int64              `query:"subscription_length"`
-	SubscriptionPeriod *SubscriptionPeriod `query:"subscription_period"`
-	Autorenewal        *Autorenewal        `query:"autorenewal"`
-}
-
-// CategoryVPNResponse is the response for the endpoint.
-type CategoryVPNResponse struct {
-	CacheTTL        int64                         `json:"cacheTTL"`
-	HasNextPage     bool                          `json:"hasNextPage"`
-	Items           []any                         `json:"items"`
-	LastModified    int64                         `json:"lastModified"`
-	Page            int64                         `json:"page"`
-	PerPage         int64                         `json:"perPage"`
-	SearchURL       string                        `json:"searchUrl"`
-	ServerTime      int64                         `json:"serverTime"`
-	StickyItems     []any                         `json:"stickyItems"`
-	SystemInfo      CategoryVPNResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                         `json:"totalItems"`
-	TotalItemsPrice any                           `json:"totalItemsPrice"`
-	WasCached       bool                          `json:"wasCached"`
-}
-
-// CategoryWarfaceParams holds query parameters for Category.Warface.
-type CategoryWarfaceParams struct {
-	Page             *int64            `query:"page"`
-	Pmin             *int64            `query:"pmin"`
-	Pmax             *int64            `query:"pmax"`
-	Title            *string           `query:"title"`
-	OrderBy          *OrderBy          `query:"order_by"`
-	TagID            []int64           `query:"tag_id[]"`
-	NotTagID         []int64           `query:"not_tag_id[]"`
-	PublicTagID      []int64           `query:"public_tag_id[]"`
-	NotPublicTagID   []int64           `query:"not_public_tag_id[]"`
-	Origin           []CartOrigin      `query:"origin[]"`
-	NotOrigin        []CartNotOrigin   `query:"not_origin[]"`
-	UserID           *int64            `query:"user_id"`
-	Nsb              *bool             `query:"nsb"`
-	Sb               *bool             `query:"sb"`
-	NsbByMe          *bool             `query:"nsb_by_me"`
-	SbByMe           *bool             `query:"sb_by_me"`
-	Currency         *Currency         `query:"currency"`
-	EmailLoginData   *bool             `query:"email_login_data"`
-	EmailProvider    []EmailProvider   `query:"email_provider[]"`
-	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
-	ParseSameItemIds *bool             `query:"parse_same_item_ids"`
-	RankMin          *int64            `query:"rank_min"`
-	RankMax          *int64            `query:"rank_max"`
-	BonusRankMin     *int64            `query:"bonus_rank_min"`
-	BonusRankMax     *int64            `query:"bonus_rank_max"`
-	Tel              *Tel              `query:"tel"`
-	Daybreak         *int64            `query:"daybreak"`
-	KreditsMin       *int64            `query:"kredits_min"`
-	KreditsMax       *int64            `query:"kredits_max"`
-	TotalKreditsMin  *int64            `query:"total_kredits_min"`
-	TotalKreditsMax  *int64            `query:"total_kredits_max"`
-}
-
-// CategoryWarfaceResponse is the response for the endpoint.
-type CategoryWarfaceResponse struct {
-	CacheTTL        int64                             `json:"cacheTTL"`
+	CacheTTL        float64                           `json:"cacheTTL"`
 	HasNextPage     bool                              `json:"hasNextPage"`
 	Items           []any                             `json:"items"`
-	LastModified    int64                             `json:"lastModified"`
-	Page            int64                             `json:"page"`
-	PerPage         int64                             `json:"perPage"`
+	LastModified    float64                           `json:"lastModified"`
+	Page            float64                           `json:"page"`
+	PerPage         float64                           `json:"perPage"`
 	SearchURL       string                            `json:"searchUrl"`
-	ServerTime      int64                             `json:"serverTime"`
+	ServerTime      float64                           `json:"serverTime"`
 	StickyItems     []any                             `json:"stickyItems"`
-	SystemInfo      CategoryWarfaceResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                             `json:"totalItems"`
+	SystemInfo      *CategoryRobloxResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                           `json:"totalItems"`
 	TotalItemsPrice any                               `json:"totalItemsPrice"`
 	WasCached       bool                              `json:"wasCached"`
 }
 
-// CategoryWotParams holds query parameters for Category.Wot.
-type CategoryWotParams struct {
-	Page                    *int64                   `query:"page"`
-	Pmin                    *int64                   `query:"pmin"`
-	Pmax                    *int64                   `query:"pmax"`
-	Title                   *string                  `query:"title"`
-	OrderBy                 *OrderBy                 `query:"order_by"`
-	TagID                   []int64                  `query:"tag_id[]"`
-	NotTagID                []int64                  `query:"not_tag_id[]"`
-	PublicTagID             []int64                  `query:"public_tag_id[]"`
-	NotPublicTagID          []int64                  `query:"not_public_tag_id[]"`
-	Origin                  []CartOrigin             `query:"origin[]"`
-	NotOrigin               []CartNotOrigin          `query:"not_origin[]"`
-	UserID                  *int64                   `query:"user_id"`
-	Nsb                     *bool                    `query:"nsb"`
-	Sb                      *bool                    `query:"sb"`
-	NsbByMe                 *bool                    `query:"nsb_by_me"`
-	SbByMe                  *bool                    `query:"sb_by_me"`
-	Currency                *Currency                `query:"currency"`
-	EmailLoginData          *bool                    `query:"email_login_data"`
-	EmailProvider           []EmailProvider          `query:"email_provider[]"`
-	NotEmailProvider        *NotEmailProvider        `query:"not_email_provider[]"`
-	ParseSameItemIds        *bool                    `query:"parse_same_item_ids"`
-	EmailType               []CategoryEmailType2     `query:"email_type[]"`
-	ItemDomain              *string                  `query:"item_domain"`
-	Tel                     *Tel                     `query:"tel"`
-	Daybreak                *int64                   `query:"daybreak"`
-	BattlesMin              *int64                   `query:"battles_min"`
-	BattlesMax              *int64                   `query:"battles_max"`
-	GoldMin                 *int64                   `query:"gold_min"`
-	GoldMax                 *int64                   `query:"gold_max"`
-	SilverMin               *int64                   `query:"silver_min"`
-	SilverMax               *int64                   `query:"silver_max"`
-	TopMin                  *int64                   `query:"top_min"`
-	TopMax                  *int64                   `query:"top_max"`
-	PremMin                 *int64                   `query:"prem_min"`
-	PremMax                 *int64                   `query:"prem_max"`
-	TopPremMin              *int64                   `query:"top_prem_min"`
-	TopPremMax              *int64                   `query:"top_prem_max"`
-	WinPmin                 *int64                   `query:"win_pmin"`
-	WinPmax                 *int64                   `query:"win_pmax"`
-	Tank                    []int64                  `query:"tank[]"`
-	Region                  []Region                 `query:"region[]"`
-	NotRegion               []CategoryNotRegion      `query:"not_region[]"`
-	Premium                 *Premium                 `query:"premium"`
-	PremiumExpiration       *int64                   `query:"premium_expiration"`
+// CategorySocialClubParams holds query parameters for Category.SocialClub.
+type CategorySocialClubParams struct {
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// Daybreak - Number of days the account has been offline.
+	Daybreak *int64 `query:"daybreak"`
+	// LevelMin - Minimum number of Social Club level.
+	LevelMin *int64 `query:"level_min"`
+	// LevelMax - Maximum number of Social Club level.
+	LevelMax *int64 `query:"level_max"`
+	// CashMin - Minimum number of GTA V cash
+	CashMin *int64 `query:"cash_min"`
+	// CashMax - Maximum number of GTA V cash
+	CashMax *int64 `query:"cash_max"`
+	// BankCashMin - Minimum number of GTA V bank cash
+	BankCashMin *int64 `query:"bank_cash_min"`
+	// BankCashMax - Maximum number of GTA V bank cash
+	BankCashMax *int64 `query:"bank_cash_max"`
+	// Game - List of games.
+	Game []string `query:"game[]"`
+}
+
+// CategorySocialClubResponse is the response for the endpoint.
+type CategorySocialClubResponse struct {
+	CacheTTL        float64                               `json:"cacheTTL"`
+	HasNextPage     bool                                  `json:"hasNextPage"`
+	Items           []any                                 `json:"items"`
+	LastModified    float64                               `json:"lastModified"`
+	Page            float64                               `json:"page"`
+	PerPage         float64                               `json:"perPage"`
+	SearchURL       string                                `json:"searchUrl"`
+	ServerTime      float64                               `json:"serverTime"`
+	StickyItems     []any                                 `json:"stickyItems"`
+	SystemInfo      *CategorySocialClubResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                               `json:"totalItems"`
+	TotalItemsPrice any                                   `json:"totalItemsPrice"`
+	WasCached       bool                                  `json:"wasCached"`
+}
+
+// CategorySteamParams holds query parameters for Category.Steam.
+type CategorySteamParams struct {
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType3 `query:"email_type[]"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Game - List of games.
+	Game []int64 `query:"game[]"`
+	// HoursPlayed - List of minimum hours played by game.
+	HoursPlayed map[string]int64 `query:"hours_played"`
+	// HoursPlayedMax - List of maximum hours played by game.
+	HoursPlayedMax map[string]int64 `query:"hours_played_max"`
+	// Eg - Guarantee type.
+	Eg *CategoryEg `query:"eg"`
+	// Vac - List of VAC bans by game.
+	Vac []int64 `query:"vac[]"`
+	// VacSkipGameCheck - Don't check game existence while checking for vac.
+	VacSkipGameCheck *bool `query:"vac_skip_game_check"`
+	// Rt - Has community ban. Default: "no"
+	Rt *Rt `query:"rt" default:"no"`
+	// TradeBan - Has lifetime trade ban.
+	TradeBan *TradeBan `query:"trade_ban"`
+	// TradeLimit - Has temporary trade limit.
+	TradeLimit *TradeLimit `query:"trade_limit"`
+	// Daybreak - Number of days the account has been offline.
+	Daybreak *int64 `query:"daybreak"`
+	// Limit - Has 5 $ limit.
+	Limit *Limit `query:"limit"`
+	// Mafile - Has .mafile (Steam Guard Authenticator).
+	Mafile *Mafile `query:"mafile"`
+	// Reg - How old is the account.
+	Reg *int64 `query:"reg"`
+	// RegPeriod - In what notation is time measured.
+	RegPeriod *RegPeriod `query:"reg_period"`
+	// Lmin - Minimum level.
+	Lmin *int64 `query:"lmin"`
+	// Lmax - Maximum level.
+	Lmax *int64 `query:"lmax"`
+	// Rmin - Minimum rank in CS2 Matchmaking.
+	Rmin *int64 `query:"rmin"`
+	// Rmax - Maximum rank in CS2 Matchmaking.
+	Rmax *int64 `query:"rmax"`
+	// WingmanRmin - Minimum rank in CS2 Wingman.
+	WingmanRmin *int64 `query:"wingman_rmin"`
+	// WingmanRmax - Maximum rank in CS2 Wingman.
+	WingmanRmax *int64 `query:"wingman_rmax"`
+	// NoVac - Has no VAC ban.
+	NoVac *bool `query:"no_vac"`
+	// MmBan - Has CS2 Matchmaking ban.
+	MmBan *MmBan `query:"mm_ban"`
+	// BalanceMin - Minimum balance.
+	BalanceMin *int64 `query:"balance_min"`
+	// BalanceMax - Maximum balance.
+	BalanceMax *int64 `query:"balance_max"`
+	// InvGame - Game ID to check inventory price.
+	InvGame *int64 `query:"inv_game"`
+	// InvMin - Minimum inventory price for game.
+	InvMin *float64 `query:"inv_min"`
+	// InvMax - Maximum inventory price for game.
+	InvMax *float64 `query:"inv_max"`
+	// FriendsMin - Minimum number of friends.
+	FriendsMin *int64 `query:"friends_min"`
+	// FriendsMax - Maximum number of friends.
+	FriendsMax *int64 `query:"friends_max"`
+	// Gmin - Minimum number of games.
+	Gmin *int64 `query:"gmin"`
+	// Gmax - Maximum number of games.
+	Gmax *int64 `query:"gmax"`
+	// WinCountMin - Minimum number of wins.
+	WinCountMin *int64 `query:"win_count_min"`
+	// WinCountMax - Maximum number of wins.
+	WinCountMax *int64 `query:"win_count_max"`
+	// MedalID - List of medal IDs.
+	MedalID []MedalID `query:"medal_id[]"`
+	// MedalOperatorOr - Search for medals using "OR" instead of "AND".
+	MedalOperatorOr *bool `query:"medal_operator_or"`
+	// MedalMin - Minimum number of medals.
+	MedalMin *int64 `query:"medal_min"`
+	// MedalMax - Maximum number of medals.
+	MedalMax *int64 `query:"medal_max"`
+	// Gift - List of gifts.
+	Gift []Gift `query:"gift[]"`
+	// GiftMin - Minimum number of gifts.
+	GiftMin *int64 `query:"gift_min"`
+	// GiftMax - Maximum number of gifts.
+	GiftMax *int64 `query:"gift_max"`
+	// RecentlyHoursMin - Minimum number of recently played hours.
+	RecentlyHoursMin *int64 `query:"recently_hours_min"`
+	// RecentlyHoursMax - Maximum number of recently played hours.
+	RecentlyHoursMax *int64 `query:"recently_hours_max"`
+	// Country - List of allowed countries.
+	Country []string `query:"country[]"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country[]"`
+	// Cs2ProfileRankMin - Minimum CS2 rank.
+	Cs2ProfileRankMin *int64 `query:"cs2_profile_rank_min"`
+	// Cs2ProfileRankMax - Maximum CS2 rank.
+	Cs2ProfileRankMax *int64 `query:"cs2_profile_rank_max"`
+	// SolommrMin - Minimum number of Dota 2 MMR.
+	SolommrMin *int64 `query:"solommr_min"`
+	// SolommrMax - Maximum number of Dota 2 MMR.
+	SolommrMax *int64 `query:"solommr_max"`
+	// D2GameCountMin - Minimum number of Dota 2 games.
+	D2GameCountMin *int64 `query:"d2_game_count_min"`
+	// D2GameCountMax - Maximum number of Dota 2 games.
+	D2GameCountMax *int64 `query:"d2_game_count_max"`
+	// D2WinCountMin - Minimum number of Dota 2 wins.
+	D2WinCountMin *int64 `query:"d2_win_count_min"`
+	// D2WinCountMax - Maximum number of Dota 2 wins.
+	D2WinCountMax *int64 `query:"d2_win_count_max"`
+	// D2BehaviorMin - Minimum number of Dota 2 behavior.
+	D2BehaviorMin *int64 `query:"d2_behavior_min"`
+	// D2BehaviorMax - Maximum number of Dota 2 behavior.
+	D2BehaviorMax *int64 `query:"d2_behavior_max"`
+	// FaceitLvlMin - Minimum FACEIT level.
+	FaceitLvlMin *int64 `query:"faceit_lvl_min"`
+	// FaceitLvlMax - Maximum FACEIT level.
+	FaceitLvlMax *int64 `query:"faceit_lvl_max"`
+	// PointsMin - Minimum number of Steam points.
+	PointsMin *int64 `query:"points_min"`
+	// PointsMax - Maximum number of Steam points.
+	PointsMax *int64 `query:"points_max"`
+	// RelevantGmin - Minimum number of relevant games.
+	RelevantGmin *int64 `query:"relevant_gmin"`
+	// RelevantGmax - Maximum number of relevant games.
+	RelevantGmax *int64 `query:"relevant_gmax"`
+	// LastTransDate - How old is last transaction.
+	LastTransDate *int64 `query:"last_trans_date"`
+	// LastTransDatePeriod - In what notation is time measured.
+	LastTransDatePeriod *LastTransDatePeriod `query:"last_trans_date_period"`
+	// LastTransDateLater - How new is last transaction.
+	LastTransDateLater *int64 `query:"last_trans_date_later"`
+	// LastTransDatePeriodLater - In what notation is time measured.
+	LastTransDatePeriodLater *LastTransDatePeriodLater `query:"last_trans_date_period_later"`
+	// NoTrans - Has no transactions.
+	NoTrans *bool `query:"no_trans"`
+	// Trans - Has transactions.
+	Trans *bool `query:"trans"`
+	// GiftsPurchaseMin - Minimum amount spent on gifts.
+	GiftsPurchaseMin *float64 `query:"gifts_purchase_min"`
+	// GiftsPurchaseMax - Maximum amount spent on gifts.
+	GiftsPurchaseMax *float64 `query:"gifts_purchase_max"`
+	// RefundsPurchaseMin - Minimum amount of refunds.
+	RefundsPurchaseMin *float64 `query:"refunds_purchase_min"`
+	// RefundsPurchaseMax - Minimum amount of refunds.
+	RefundsPurchaseMax *float64 `query:"refunds_purchase_max"`
+	// IngamePurchaseMin - Minimum spend amount on in-game purchases.
+	IngamePurchaseMin *float64 `query:"ingame_purchase_min"`
+	// IngamePurchaseMax - Maximum spend amount on in-game purchases.
+	IngamePurchaseMax *float64 `query:"ingame_purchase_max"`
+	// GamesPurchaseMin - Minimum spend amount on all purchases.
+	GamesPurchaseMin *float64 `query:"games_purchase_min"`
+	// GamesPurchaseMax - Maximum spend amount on all purchases.
+	GamesPurchaseMax *float64 `query:"games_purchase_max"`
+	// PurchaseMin - Minimum spend amount on all purchases.
+	PurchaseMin *float64 `query:"purchase_min"`
+	// PurchaseMax - Maximum spend amount on all purchases.
+	PurchaseMax *float64 `query:"purchase_max"`
+	// HasActivatedKeys - Has activated keys.
+	HasActivatedKeys *HasActivatedKeys `query:"has_activated_keys"`
+	// EloMin - Minimum Premier ELO in CS2.
+	EloMin *int64 `query:"elo_min"`
+	// EloMax - Maximum Premier ELO in CS2.
+	EloMax *int64 `query:"elo_max"`
+	// Cs2MapRank - Map for rank in CS2.
+	Cs2MapRank *Cs2MapRank `query:"cs2_map_rank"`
+	// Cs2MapRmin - Minimum rank in CS2 on a certain map.
+	Cs2MapRmin *int64 `query:"cs2_map_rmin"`
+	// Cs2MapRmax - Maximum rank in CS2 on a certain map.
+	Cs2MapRmax *int64 `query:"cs2_map_rmax"`
+	// HasFaceit - Has FACEIT account.
+	HasFaceit *HasFaceit `query:"has_faceit"`
+	// FaceitCsgoLvlMin - Minimum FACEIT level.
+	FaceitCsgoLvlMin *int64 `query:"faceit_csgo_lvl_min"`
+	// FaceitCsgoLvlMax - Maximum FACEIT level.
+	FaceitCsgoLvlMax *int64 `query:"faceit_csgo_lvl_max"`
+	// RustDeathsMin - Minimum number of Rust deaths
+	RustDeathsMin *int64 `query:"rust_deaths_min"`
+	// RustDeathsMax - Maximum number of Rust deaths
+	RustDeathsMax *int64 `query:"rust_deaths_max"`
+	// RustKillsMin - Minimum number of Rust kills
+	RustKillsMin *int64 `query:"rust_kills_min"`
+	// RustKillsMax - Maximum number of Rust kills
+	RustKillsMax *int64 `query:"rust_kills_max"`
+	// D2LastMatchDate - How old is last match of Dota 2.
+	D2LastMatchDate *int64 `query:"d2_last_match_date"`
+	// D2LastMatchDatePeriod - In what notation is time measured.
+	D2LastMatchDatePeriod *D2LastMatchDatePeriod `query:"d2_last_match_date_period"`
+	// CardsMin - Minimum number of available to collect trading cards.
+	CardsMin *int64 `query:"cards_min"`
+	// CardsMax - Maximum number of available to collect trading cards.
+	CardsMax *int64 `query:"cards_max"`
+	// CardsGamesMin - Minimum number of available games with available to collect trading cards.
+	CardsGamesMin *int64 `query:"cards_games_min"`
+	// CardsGamesMax - Maximum number of available games with available to collect trading cards.
+	CardsGamesMax *int64 `query:"cards_games_max"`
+	// SkipVacInv - Ignore inventory value if game has VAC ban.
+	SkipVacInv *bool `query:"skip_vac_inv"`
+}
+
+// CategorySteamResponse is the response for the endpoint.
+type CategorySteamResponse struct {
+	CacheTTL        float64                          `json:"cacheTTL"`
+	HasNextPage     bool                             `json:"hasNextPage"`
+	Items           []any                            `json:"items"`
+	LastModified    float64                          `json:"lastModified"`
+	Page            float64                          `json:"page"`
+	PerPage         float64                          `json:"perPage"`
+	SearchURL       string                           `json:"searchUrl"`
+	ServerTime      float64                          `json:"serverTime"`
+	StickyItems     []any                            `json:"stickyItems"`
+	SystemInfo      *CategorySteamResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                          `json:"totalItems"`
+	TotalItemsPrice any                              `json:"totalItemsPrice"`
+	WasCached       bool                             `json:"wasCached"`
+}
+
+// CategorySupercellParams holds query parameters for Category.Supercell.
+type CategorySupercellParams struct {
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// Daybreak - Number of days the account has been offline.
+	Daybreak *int64 `query:"daybreak"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType2 `query:"email_type[]"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Eg - Guarantee type.
+	Eg *CategoryEg2 `query:"eg"`
+	// Tel - Has linked mobile.
+	Tel *Tel `query:"tel"`
+	// BrawlLevelMin - Minimum Brawl Stars level.
+	BrawlLevelMin *int64 `query:"brawl_level_min"`
+	// BrawlLevelMax - Maximum Brawl Stars level.
+	BrawlLevelMax *int64 `query:"brawl_level_max"`
+	// BrawlCupMin - Minimum number of Brawl Stars trophies.
+	BrawlCupMin *int64 `query:"brawl_cup_min"`
+	// BrawlCupMax - Maximum number of Brawl Stars trophies.
+	BrawlCupMax *int64 `query:"brawl_cup_max"`
+	// BrawlWinsMin - Minimum number of Brawl Stars wins.
+	BrawlWinsMin *int64 `query:"brawl_wins_min"`
+	// BrawlWinsMax - Maximum number of Brawl Stars wins.
+	BrawlWinsMax *int64 `query:"brawl_wins_max"`
+	// BrawlPass - Has Brawl Pass.
+	BrawlPass *BrawlPass `query:"brawl_pass"`
+	// Brawler - List of brawlers.
+	Brawler []Brawler `query:"brawler[]"`
+	// BrawlersMin - Minimum number of brawlers.
+	BrawlersMin *int64 `query:"brawlers_min"`
+	// BrawlersMax - Maximum number of brawlers.
+	BrawlersMax *int64 `query:"brawlers_max"`
+	// LegendaryBrawlersMin - Minimum number of legendary brawlers.
+	LegendaryBrawlersMin *int64 `query:"legendary_brawlers_min"`
+	// LegendaryBrawlersMax - Maximum number of legendary brawlers.
+	LegendaryBrawlersMax *int64 `query:"legendary_brawlers_max"`
+	// RoyaleLevelMin - Minimum Clash Royale level.
+	RoyaleLevelMin *int64 `query:"royale_level_min"`
+	// RoyaleLevelMax - Maximum Clash Royale level.
+	RoyaleLevelMax *int64 `query:"royale_level_max"`
+	// RoyaleCupMin - Minimum number of Clash Royale trophies.
+	RoyaleCupMin *int64 `query:"royale_cup_min"`
+	// RoyaleCupMax - Maximum number of Clash Royale trophies.
+	RoyaleCupMax *int64 `query:"royale_cup_max"`
+	// RoyaleWinsMin - Minimum number of Clash Royale wins.
+	RoyaleWinsMin *int64 `query:"royale_wins_min"`
+	// RoyaleWinsMax - Maximum number of Clash Royale wins.
+	RoyaleWinsMax *int64 `query:"royale_wins_max"`
+	// KingLevelMin - Minimum King level in Clash Royale.
+	KingLevelMin *int64 `query:"king_level_min"`
+	// KingLevelMax - Maximum King level in Clash Royale.
+	KingLevelMax *int64 `query:"king_level_max"`
+	// RoyalePass - Has Royale Pass.
+	RoyalePass *RoyalePass `query:"royale_pass"`
+	// ClashLevelMin - Minimum Clash of Clans level.
+	ClashLevelMin *int64 `query:"clash_level_min"`
+	// ClashLevelMax - Maximum Clash of Clans level.
+	ClashLevelMax *int64 `query:"clash_level_max"`
+	// ClashCupMin - Minimum number of Clash of Clans trophies.
+	ClashCupMin *int64 `query:"clash_cup_min"`
+	// ClashCupMax - Maximum number of Clash of Clans trophies.
+	ClashCupMax *int64 `query:"clash_cup_max"`
+	// ClashWinsMin - Minimum number of Clash of Clans wins.
+	ClashWinsMin *int64 `query:"clash_wins_min"`
+	// ClashWinsMax - Maximum number of Clash of Clans wins.
+	ClashWinsMax *int64 `query:"clash_wins_max"`
+	// ClashPass - Has Battle Pass.
+	ClashPass *ClashPass `query:"clash_pass"`
+	// TotalHeroesLevelMin - Minimum total heroes level count in Clash of Clans.
+	TotalHeroesLevelMin *int64 `query:"total_heroes_level_min"`
+	// TotalHeroesLevelMax - Maximum total heroes level count in Clash of Clans.
+	TotalHeroesLevelMax *int64 `query:"total_heroes_level_max"`
+	// TotalTroopsLevelMin - Minimum total troops level count in Clash of Clans.
+	TotalTroopsLevelMin *int64 `query:"total_troops_level_min"`
+	// TotalTroopsLevelMax - Maximum total troops level count in Clash of Clans.
+	TotalTroopsLevelMax *int64 `query:"total_troops_level_max"`
+	// TotalSpellsLevelMin - Minimum total spells level count in Clash of Clans.
+	TotalSpellsLevelMin *int64 `query:"total_spells_level_min"`
+	// TotalSpellsLevelMax - Maximum total spells level count in Clash of Clans.
+	TotalSpellsLevelMax *int64 `query:"total_spells_level_max"`
+	// TotalBuilderHeroesLevelMin - Minimum total builder village heroes level count in Clash of Clans.
+	TotalBuilderHeroesLevelMin *int64 `query:"total_builder_heroes_level_min"`
+	// TotalBuilderHeroesLevelMax - Maximum total builder village heroes level count in Clash of Clans.
+	TotalBuilderHeroesLevelMax *int64 `query:"total_builder_heroes_level_max"`
+	// TotalBuilderTroopsLevelMin - Minimum total builder village troops level count in Clash of Clans.
+	TotalBuilderTroopsLevelMin *int64 `query:"total_builder_troops_level_min"`
+	// TotalBuilderTroopsLevelMax - Maximum total builder village troops level count in Clash of Clans.
+	TotalBuilderTroopsLevelMax *int64 `query:"total_builder_troops_level_max"`
+	// TownHallLevelMin - Minimum level of town hall.
+	TownHallLevelMin *int64 `query:"town_hall_level_min"`
+	// TownHallLevelMax - Maximum level of town hall.
+	TownHallLevelMax *int64 `query:"town_hall_level_max"`
+	// BuilderHallLevelMin - Minimum level of builder hall.
+	BuilderHallLevelMin *int64 `query:"builder_hall_level_min"`
+	// BuilderHallLevelMax - Maximum level of builder hall.
+	BuilderHallLevelMax *int64 `query:"builder_hall_level_max"`
+	// BuilderHallCupMin - Minimum number of builder hall cups.
+	BuilderHallCupMin *int64 `query:"builder_hall_cup_min"`
+	// BuilderHallCupMax - Maximum number of builder hall cups.
+	BuilderHallCupMax *int64 `query:"builder_hall_cup_max"`
+	// CreationYearMin - Minimum account creation year (e.g. 2023).
+	CreationYearMin *int64 `query:"creation_year_min"`
+	// CreationYearMax - Maximum account creation year (e.g. 2024).
+	CreationYearMax *int64 `query:"creation_year_max"`
+}
+
+// CategorySupercellResponse is the response for the endpoint.
+type CategorySupercellResponse struct {
+	CacheTTL        float64                              `json:"cacheTTL"`
+	HasNextPage     bool                                 `json:"hasNextPage"`
+	Items           []any                                `json:"items"`
+	LastModified    float64                              `json:"lastModified"`
+	Page            float64                              `json:"page"`
+	PerPage         float64                              `json:"perPage"`
+	SearchURL       string                               `json:"searchUrl"`
+	ServerTime      float64                              `json:"serverTime"`
+	StickyItems     []any                                `json:"stickyItems"`
+	SystemInfo      *CategorySupercellResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                              `json:"totalItems"`
+	TotalItemsPrice any                                  `json:"totalItemsPrice"`
+	WasCached       bool                                 `json:"wasCached"`
+}
+
+// CategoryTelegramParams holds query parameters for Category.Telegram.
+type CategoryTelegramParams struct {
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CategoryOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CategoryNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// Spam - Has a spam ban.
+	Spam *Spam `query:"spam"`
+	// Password - Has a cloud password.
+	Password *Password `query:"password"`
+	// Premium - Has a premium subscription.
+	Premium *Premium `query:"premium"`
+	// PremiumExpiration - When premium subscription will be active
+	PremiumExpiration *int64 `query:"premium_expiration"`
+	// PremiumExpirationPeriod - In what notation is time measured
 	PremiumExpirationPeriod *PremiumExpirationPeriod `query:"premium_expiration_period"`
-	Clan                    *Clan                    `query:"clan"`
-	ClanRole                []ClanRole               `query:"clan_role[]"`
-	NotClanRole             []NotClanRole            `query:"not_clan_role[]"`
-	ClanGoldMin             *int64                   `query:"clan_gold_min"`
-	ClanGoldMax             *int64                   `query:"clan_gold_max"`
-	ClanCreditsMin          *int64                   `query:"clan_credits_min"`
-	ClanCreditsMax          *int64                   `query:"clan_credits_max"`
-	ClanCrystalMin          *int64                   `query:"clan_crystal_min"`
-	ClanCrystalMax          *int64                   `query:"clan_crystal_max"`
-	Country                 []string                 `query:"country[]"`
-	NotCountry              []string                 `query:"not_country[]"`
+	// Country - List of allowed countries.
+	Country []string `query:"country[]"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country[]"`
+	// Daybreak - Number of days the account has been offline.
+	Daybreak *int64 `query:"daybreak"`
+	// MinChannels - Minimum number of channels.
+	MinChannels *int64 `query:"min_channels"`
+	// MaxChannels - Maximum number of channels.
+	MaxChannels *int64 `query:"max_channels"`
+	// MinChats - Minimum number of chats.
+	MinChats *int64 `query:"min_chats"`
+	// MaxChats - Maximum number of chats.
+	MaxChats *int64 `query:"max_chats"`
+	// MinConversations - Minimum number of conversations.
+	MinConversations *int64 `query:"min_conversations"`
+	// MaxConversations - Maximum number of conversations.
+	MaxConversations *int64 `query:"max_conversations"`
+	// MinAdmin - Minimum number of channels, where account is administrator/owner.
+	MinAdmin *int64 `query:"min_admin"`
+	// MaxAdmin - Maximum number of channels, where account is administrator/owner.
+	MaxAdmin *int64 `query:"max_admin"`
+	// MinAdminSub - Minimum number of subscribers in channel, where account is administrator/owner.
+	MinAdminSub *int64 `query:"min_admin_sub"`
+	// MaxAdminSub - Maximum number of subscribers in channel, where account is administrator/owner.
+	MaxAdminSub *int64 `query:"max_admin_sub"`
+	// DigMin - Minimum number of digits in ID.
+	DigMin *int64 `query:"dig_min"`
+	// DigMax - Maximum number of digits in ID.
+	DigMax *int64 `query:"dig_max"`
+	// MinContacts - Minimum number of contacts.
+	MinContacts *int64 `query:"min_contacts"`
+	// MaxContacts - Maximum number of contacts.
+	MaxContacts *int64 `query:"max_contacts"`
+	// MinStars - Minimum number of Telegram Stars.
+	MinStars *int64 `query:"min_stars"`
+	// MaxStars - Maximum number of Telegram Stars.
+	MaxStars *int64 `query:"max_stars"`
+	// Birthday - Birthday was X time before.
+	Birthday *int64 `query:"birthday"`
+	// BirthdayPeriod - In what notation is time measured.
+	BirthdayPeriod *BirthdayPeriod `query:"birthday_period"`
+	// BirthdayAfter - Birthday was X time after.
+	BirthdayAfter *int64 `query:"birthday_after"`
+	// BirthdayAfterPeriod - In what notation is time measured.
+	BirthdayAfterPeriod *BirthdayAfterPeriod `query:"birthday_after_period"`
+	// MinID - Minimum ID of account, will be rounded down till nearest 10k. Available if your balance is higher than 100000 RUB.
+	MinID *int64 `query:"min_id"`
+	// MaxID - Maximum ID of account, will be rounded down till nearest 10k. Available if your balance is higher than 100000 RUB.
+	MaxID *int64 `query:"max_id"`
+	// AllowGeoSpamblock - Allow geo spam block in search with spam=no.
+	AllowGeoSpamblock *bool `query:"allow_geo_spamblock"`
+	// MinGifts - Minimum number of Telegram gifts on account.
+	MinGifts *int64 `query:"min_gifts"`
+	// MaxGifts - Maximum number of Telegram gifts on account.
+	MaxGifts *int64 `query:"max_gifts"`
+	// MinNftGifts - Minimum number of Telegram NFT gifts on account.
+	MinNftGifts *int64 `query:"min_nft_gifts"`
+	// MaxNftGifts - Maximum number of Telegram NFT gifts on account.
+	MaxNftGifts *int64 `query:"max_nft_gifts"`
+	// MinGiftsStars - Minimum value of all Stars gifts.
+	MinGiftsStars *int64 `query:"min_gifts_stars"`
+	// MaxGiftsStars - Maximum value of all Stars gifts.
+	MaxGiftsStars *int64 `query:"max_gifts_stars"`
+	// MinGiftsConvertStars - Minimum value of all Stars gifts after convert.
+	MinGiftsConvertStars *int64 `query:"min_gifts_convert_stars"`
+	// MaxGiftsConvertStars - Maximum value of all Stars gifts after convert.
+	MaxGiftsConvertStars *int64 `query:"max_gifts_convert_stars"`
+	// DcID - List of allowed DC ID.
+	DcID []int64 `query:"dc_id[]"`
+	// NotDcID - List of disallowed DC ID.
+	NotDcID []int64 `query:"not_dc_id[]"`
+	// Email - Has linked email.
+	Email *Email `query:"email"`
+	// MinBots - Minimum number of bots.
+	MinBots *int64 `query:"min_bots"`
+	// MaxBots - Maximum number of bots.
+	MaxBots *int64 `query:"max_bots"`
+	// MinBotActiveUsers - Minimum active users in bot.
+	MinBotActiveUsers *int64 `query:"min_bot_active_users"`
+	// MaxBotActiveUsers - Maximum active users in bot.
+	MaxBotActiveUsers *int64 `query:"max_bot_active_users"`
 }
 
-// CategoryWotResponse is the response for the endpoint.
-type CategoryWotResponse struct {
-	CacheTTL        int64                         `json:"cacheTTL"`
-	HasNextPage     bool                          `json:"hasNextPage"`
-	Items           []any                         `json:"items"`
-	LastModified    int64                         `json:"lastModified"`
-	Page            int64                         `json:"page"`
-	PerPage         int64                         `json:"perPage"`
-	SearchURL       string                        `json:"searchUrl"`
-	ServerTime      int64                         `json:"serverTime"`
-	StickyItems     []any                         `json:"stickyItems"`
-	SystemInfo      CategoryWotResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                         `json:"totalItems"`
-	TotalItemsPrice any                           `json:"totalItemsPrice"`
-	WasCached       bool                          `json:"wasCached"`
+// CategoryTelegramResponse is the response for the endpoint.
+type CategoryTelegramResponse struct {
+	CacheTTL        float64                             `json:"cacheTTL"`
+	HasNextPage     bool                                `json:"hasNextPage"`
+	Items           []any                               `json:"items"`
+	LastModified    float64                             `json:"lastModified"`
+	Page            float64                             `json:"page"`
+	PerPage         float64                             `json:"perPage"`
+	SearchURL       string                              `json:"searchUrl"`
+	ServerTime      float64                             `json:"serverTime"`
+	StickyItems     []any                               `json:"stickyItems"`
+	SystemInfo      *CategoryTelegramResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                             `json:"totalItems"`
+	TotalItemsPrice any                                 `json:"totalItemsPrice"`
+	WasCached       bool                                `json:"wasCached"`
 }
 
-// CategoryWotBlitzParams holds query parameters for Category.WotBlitz.
-type CategoryWotBlitzParams struct {
-	Page                    *int64                   `query:"page"`
-	Pmin                    *int64                   `query:"pmin"`
-	Pmax                    *int64                   `query:"pmax"`
-	Title                   *string                  `query:"title"`
-	OrderBy                 *OrderBy                 `query:"order_by"`
-	TagID                   []int64                  `query:"tag_id[]"`
-	NotTagID                []int64                  `query:"not_tag_id[]"`
-	PublicTagID             []int64                  `query:"public_tag_id[]"`
-	NotPublicTagID          []int64                  `query:"not_public_tag_id[]"`
-	Origin                  []CartOrigin             `query:"origin[]"`
-	NotOrigin               []CartNotOrigin          `query:"not_origin[]"`
-	UserID                  *int64                   `query:"user_id"`
-	Nsb                     *bool                    `query:"nsb"`
-	Sb                      *bool                    `query:"sb"`
-	NsbByMe                 *bool                    `query:"nsb_by_me"`
-	SbByMe                  *bool                    `query:"sb_by_me"`
-	Currency                *Currency                `query:"currency"`
-	EmailLoginData          *bool                    `query:"email_login_data"`
-	EmailProvider           []EmailProvider          `query:"email_provider[]"`
-	NotEmailProvider        *NotEmailProvider        `query:"not_email_provider[]"`
-	ParseSameItemIds        *bool                    `query:"parse_same_item_ids"`
-	EmailType               []CategoryEmailType2     `query:"email_type[]"`
-	ItemDomain              *string                  `query:"item_domain"`
-	Tel                     *Tel                     `query:"tel"`
-	Daybreak                *int64                   `query:"daybreak"`
-	BattlesMin              *int64                   `query:"battles_min"`
-	BattlesMax              *int64                   `query:"battles_max"`
-	GoldMin                 *int64                   `query:"gold_min"`
-	GoldMax                 *int64                   `query:"gold_max"`
-	SilverMin               *int64                   `query:"silver_min"`
-	SilverMax               *int64                   `query:"silver_max"`
-	TopMin                  *int64                   `query:"top_min"`
-	TopMax                  *int64                   `query:"top_max"`
-	PremMin                 *int64                   `query:"prem_min"`
-	PremMax                 *int64                   `query:"prem_max"`
-	TopPremMin              *int64                   `query:"top_prem_min"`
-	TopPremMax              *int64                   `query:"top_prem_max"`
-	WinPmin                 *int64                   `query:"win_pmin"`
-	WinPmax                 *int64                   `query:"win_pmax"`
-	Tank                    []int64                  `query:"tank[]"`
-	Region                  []Region                 `query:"region[]"`
-	NotRegion               []CategoryNotRegion      `query:"not_region[]"`
-	Premium                 *Premium                 `query:"premium"`
-	PremiumExpiration       *int64                   `query:"premium_expiration"`
-	PremiumExpirationPeriod *PremiumExpirationPeriod `query:"premium_expiration_period"`
-	Clan                    *Clan                    `query:"clan"`
-	ClanRole                []ClanRole               `query:"clan_role[]"`
-	NotClanRole             []NotClanRole            `query:"not_clan_role[]"`
-	ClanGoldMin             *int64                   `query:"clan_gold_min"`
-	ClanGoldMax             *int64                   `query:"clan_gold_max"`
-	ClanCreditsMin          *int64                   `query:"clan_credits_min"`
-	ClanCreditsMax          *int64                   `query:"clan_credits_max"`
-	ClanCrystalMin          *int64                   `query:"clan_crystal_min"`
-	ClanCrystalMax          *int64                   `query:"clan_crystal_max"`
-	Country                 []string                 `query:"country[]"`
-	NotCountry              []string                 `query:"not_country[]"`
+// CategoryTikTokParams holds query parameters for Category.TikTok.
+type CategoryTikTokParams struct {
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType2 `query:"email_type[]"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Tel - Has linked mobile.
+	Tel *Tel `query:"tel"`
+	// Reg - How old is the account.
+	Reg *int64 `query:"reg"`
+	// RegPeriod - In what notation is time measured.
+	RegPeriod *RegPeriod `query:"reg_period"`
+	// FollowersMin - Minimum number of followers.
+	FollowersMin *int64 `query:"followers_min"`
+	// FollowersMax - Maximum number of followers.
+	FollowersMax *int64 `query:"followers_max"`
+	// PostMin - Minimum number of posts.
+	PostMin *int64 `query:"post_min"`
+	// PostMax - Maximum number of posts.
+	PostMax *int64 `query:"post_max"`
+	// LikeMin - Minimum number of likes.
+	LikeMin *int64 `query:"like_min"`
+	// LikeMax - Maximum number of likes.
+	LikeMax *int64 `query:"like_max"`
+	// CoinsMin - Minimum number of coins.
+	CoinsMin *int64 `query:"coins_min"`
+	// CoinsMax - Maximum number of coins.
+	CoinsMax *int64 `query:"coins_max"`
+	// CookieLogin - Login by cookies.
+	CookieLogin *CookieLogin `query:"cookie_login"`
+	// Verified - Has verified.
+	Verified *Verified `query:"verified"`
+	// Email - Has linked email.
+	Email *Email `query:"email"`
 }
 
-// CategoryWotBlitzResponse is the response for the endpoint.
-type CategoryWotBlitzResponse struct {
-	CacheTTL        int64                              `json:"cacheTTL"`
+// CategoryTikTokResponse is the response for the endpoint.
+type CategoryTikTokResponse struct {
+	CacheTTL        float64                           `json:"cacheTTL"`
+	HasNextPage     bool                              `json:"hasNextPage"`
+	Items           []any                             `json:"items"`
+	LastModified    float64                           `json:"lastModified"`
+	Page            float64                           `json:"page"`
+	PerPage         float64                           `json:"perPage"`
+	SearchURL       string                            `json:"searchUrl"`
+	ServerTime      float64                           `json:"serverTime"`
+	StickyItems     []any                             `json:"stickyItems"`
+	SystemInfo      *CategoryTikTokResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                           `json:"totalItems"`
+	TotalItemsPrice any                               `json:"totalItemsPrice"`
+	WasCached       bool                              `json:"wasCached"`
+}
+
+// CategoryUplayParams holds query parameters for Category.Uplay.
+type CategoryUplayParams struct {
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType2 `query:"email_type[]"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Game - List of games.
+	Game []string `query:"game[]"`
+	// Country - List of allowed countries.
+	Country []string `query:"country[]"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country[]"`
+	// Daybreak - Number of days the account has been offline.
+	Daybreak *int64 `query:"daybreak"`
+	// Gmin - Minimum count of games.
+	Gmin *int64 `query:"gmin"`
+	// Gmax - Maximum count of games.
+	Gmax *int64 `query:"gmax"`
+	// Subscription - Name of subscription.
+	Subscription *CategorySubscription4 `query:"subscription"`
+	// SubscriptionLength - Length of subscription.
+	SubscriptionLength *int64 `query:"subscription_length"`
+	// SubscriptionPeriod - In what notation is time measured.
+	SubscriptionPeriod *SubscriptionPeriod `query:"subscription_period"`
+	// R6LevelMin - Minimum level in Tom Clancy's Rainbow Six Siege.
+	R6LevelMin *int64 `query:"r6_level_min"`
+	// R6LevelMax - Maximum level in Tom Clancy's Rainbow Six Siege.
+	R6LevelMax *int64 `query:"r6_level_max"`
+	// R6RankMin - Minimum rank points in Tom Clancy's Rainbow Six Siege.
+	R6RankMin *int64 `query:"r6_rank_min"`
+	// R6RankMax - Maximum rank points in Tom Clancy's Rainbow Six Siege.
+	R6RankMax *int64 `query:"r6_rank_max"`
+	// R6OperatorsMin - Minimum count of operators in Tom Clancy's Rainbow Six Siege.
+	R6OperatorsMin *int64 `query:"r6_operators_min"`
+	// R6OperatorsMax - Maximum count of operators in Tom Clancy's Rainbow Six Siege.
+	R6OperatorsMax *int64 `query:"r6_operators_max"`
+	// R6Ban - Is account banned in Tom Clancy's Rainbow Six Siege
+	R6Ban *R6Ban `query:"r6_ban"`
+	// R6Smin - Minimum number of skins in Tom Clancy's Rainbow Six Siege.
+	R6Smin *int64 `query:"r6_smin"`
+	// R6Smax - Maximum number of skins in Tom Clancy's Rainbow Six Siege.
+	R6Smax *int64 `query:"r6_smax"`
+	// R6Skin - List of weapon skins in Tom Clancy's Rainbow Six Siege.
+	R6Skin []string `query:"r6_skin[]"`
+	// R6Operator - List of operators in Tom Clancy's Rainbow Six Siege.
+	R6Operator []string `query:"r6_operator[]"`
+	// XboxConnected - Xbox connected to account.
+	XboxConnected *XboxConnected `query:"xbox_connected"`
+	// PsnConnected - PSN connected to account.
+	PsnConnected *PsnConnected `query:"psn_connected"`
+	// SteamConnected - Steam connected to account.
+	SteamConnected *SteamConnected `query:"steam_connected"`
+	// BalanceMin - Minimum balance.
+	BalanceMin *float64 `query:"balance_min"`
+	// BalanceMax - Maximum balance.
+	BalanceMax *float64 `query:"balance_max"`
+	// Transactions - Has transactions.
+	Transactions *Transactions `query:"transactions"`
+	// Reg - How old is the account.
+	Reg *int64 `query:"reg"`
+	// RegPeriod - In what notation is time measured.
+	RegPeriod *RegPeriod `query:"reg_period"`
+}
+
+// CategoryUplayResponse is the response for the endpoint.
+type CategoryUplayResponse struct {
+	CacheTTL        float64                          `json:"cacheTTL"`
+	HasNextPage     bool                             `json:"hasNextPage"`
+	Items           []any                            `json:"items"`
+	LastModified    float64                          `json:"lastModified"`
+	Page            float64                          `json:"page"`
+	PerPage         float64                          `json:"perPage"`
+	SearchURL       string                           `json:"searchUrl"`
+	ServerTime      float64                          `json:"serverTime"`
+	StickyItems     []any                            `json:"stickyItems"`
+	SystemInfo      *CategoryUplayResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                          `json:"totalItems"`
+	TotalItemsPrice any                              `json:"totalItemsPrice"`
+	WasCached       bool                             `json:"wasCached"`
+}
+
+// CategoryVPNParams holds query parameters for Category.VPN.
+type CategoryVPNParams struct {
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// Service - List of allowed VPN services.
+	Service []Service `query:"service[]"`
+	// SubscriptionLength - Length of subscription.
+	SubscriptionLength *int64 `query:"subscription_length"`
+	// SubscriptionPeriod - In what notation is time measured.
+	SubscriptionPeriod *SubscriptionPeriod `query:"subscription_period"`
+	// Autorenewal - Is auto renewal enabled.
+	Autorenewal *Autorenewal `query:"autorenewal"`
+}
+
+// CategoryVPNResponse is the response for the endpoint.
+type CategoryVPNResponse struct {
+	CacheTTL        float64                        `json:"cacheTTL"`
+	HasNextPage     bool                           `json:"hasNextPage"`
+	Items           []any                          `json:"items"`
+	LastModified    float64                        `json:"lastModified"`
+	Page            float64                        `json:"page"`
+	PerPage         float64                        `json:"perPage"`
+	SearchURL       string                         `json:"searchUrl"`
+	ServerTime      float64                        `json:"serverTime"`
+	StickyItems     []any                          `json:"stickyItems"`
+	SystemInfo      *CategoryVPNResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                        `json:"totalItems"`
+	TotalItemsPrice any                            `json:"totalItemsPrice"`
+	WasCached       bool                           `json:"wasCached"`
+}
+
+// CategoryWarfaceParams holds query parameters for Category.Warface.
+type CategoryWarfaceParams struct {
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// RankMin - Minimum rank.
+	RankMin *int64 `query:"rank_min"`
+	// RankMax - Maximum rank.
+	RankMax *int64 `query:"rank_max"`
+	// BonusRankMin - Minimum bonus rank.
+	BonusRankMin *int64 `query:"bonus_rank_min"`
+	// BonusRankMax - Maximum bonus rank.
+	BonusRankMax *int64 `query:"bonus_rank_max"`
+	// Tel - Has linked mobile.
+	Tel *Tel `query:"tel"`
+	// Daybreak - Number of days the account has been offline.
+	Daybreak *int64 `query:"daybreak"`
+	// KreditsMin - Minimum amount of Kredits.
+	KreditsMin *int64 `query:"kredits_min"`
+	// KreditsMax - Maximum amount of Kredits.
+	KreditsMax *int64 `query:"kredits_max"`
+	// TotalKreditsMin - Minimum total donated Kredits.
+	TotalKreditsMin *int64 `query:"total_kredits_min"`
+	// TotalKreditsMax - Maximum total donated Kredits.
+	TotalKreditsMax *int64 `query:"total_kredits_max"`
+}
+
+// CategoryWarfaceResponse is the response for the endpoint.
+type CategoryWarfaceResponse struct {
+	CacheTTL        float64                            `json:"cacheTTL"`
 	HasNextPage     bool                               `json:"hasNextPage"`
 	Items           []any                              `json:"items"`
-	LastModified    int64                              `json:"lastModified"`
-	Page            int64                              `json:"page"`
-	PerPage         int64                              `json:"perPage"`
+	LastModified    float64                            `json:"lastModified"`
+	Page            float64                            `json:"page"`
+	PerPage         float64                            `json:"perPage"`
 	SearchURL       string                             `json:"searchUrl"`
-	ServerTime      int64                              `json:"serverTime"`
+	ServerTime      float64                            `json:"serverTime"`
 	StickyItems     []any                              `json:"stickyItems"`
-	SystemInfo      CategoryWotBlitzResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                              `json:"totalItems"`
+	SystemInfo      *CategoryWarfaceResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                            `json:"totalItems"`
 	TotalItemsPrice any                                `json:"totalItemsPrice"`
 	WasCached       bool                               `json:"wasCached"`
 }
 
+// CategoryWotParams holds query parameters for Category.Wot.
+type CategoryWotParams struct {
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType2 `query:"email_type[]"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Tel - Has linked mobile.
+	Tel *Tel `query:"tel"`
+	// Daybreak - Number of days the account has been offline.
+	Daybreak *int64 `query:"daybreak"`
+	// BattlesMin - Minimum number of battles.
+	BattlesMin *int64 `query:"battles_min"`
+	// BattlesMax - Maximum number of battles.
+	BattlesMax *int64 `query:"battles_max"`
+	// GoldMin - Minimum number of gold.
+	GoldMin *int64 `query:"gold_min"`
+	// GoldMax - Maximum number of gold.
+	GoldMax *int64 `query:"gold_max"`
+	// SilverMin - Minimum number of silver.
+	SilverMin *int64 `query:"silver_min"`
+	// SilverMax - Maximum number of silver.
+	SilverMax *int64 `query:"silver_max"`
+	// TopMin - Minimum number of top tanks.
+	TopMin *int64 `query:"top_min"`
+	// TopMax - Maximum number of top tanks.
+	TopMax *int64 `query:"top_max"`
+	// PremMin - Minimum number of premium tanks.
+	PremMin *int64 `query:"prem_min"`
+	// PremMax - Maximum number of premium tanks.
+	PremMax *int64 `query:"prem_max"`
+	// TopPremMin - Minimum number of top premium tanks.
+	TopPremMin *int64 `query:"top_prem_min"`
+	// TopPremMax - Maximum number of top premium tanks.
+	TopPremMax *int64 `query:"top_prem_max"`
+	// WinPmin - Minimum number of wins.
+	WinPmin *int64 `query:"win_pmin"`
+	// WinPmax - Maximum number of wins.
+	WinPmax *int64 `query:"win_pmax"`
+	// Tank - List of tanks.
+	Tank []int64 `query:"tank[]"`
+	// Region - Region.
+	Region []Region `query:"region[]"`
+	// NotRegion - Exclude region.
+	NotRegion []CategoryNotRegion `query:"not_region[]"`
+	// Premium - Has a premium subscription.
+	Premium *Premium `query:"premium"`
+	// PremiumExpiration - When premium subscription will be active
+	PremiumExpiration *int64 `query:"premium_expiration"`
+	// PremiumExpirationPeriod - In what notation is time measured
+	PremiumExpirationPeriod *PremiumExpirationPeriod `query:"premium_expiration_period"`
+	// Clan - Has clan.
+	Clan *Clan `query:"clan"`
+	// ClanRole - List of allowed clan role.
+	ClanRole []ClanRole `query:"clan_role[]"`
+	// NotClanRole - List of disallowed clan role.
+	NotClanRole []NotClanRole `query:"not_clan_role[]"`
+	// ClanGoldMin - Minimum number of gold in clan treasure.
+	ClanGoldMin *int64 `query:"clan_gold_min"`
+	// ClanGoldMax - Maximum number of gold in clan treasure.
+	ClanGoldMax *int64 `query:"clan_gold_max"`
+	// ClanCreditsMin - Minimum number of credits in clan treasure.
+	ClanCreditsMin *int64 `query:"clan_credits_min"`
+	// ClanCreditsMax - Maximum number of credits in clan treasure.
+	ClanCreditsMax *int64 `query:"clan_credits_max"`
+	// ClanCrystalMin - Minimum number of crystal in clan treasure.
+	ClanCrystalMin *int64 `query:"clan_crystal_min"`
+	// ClanCrystalMax - Maximum number of crystal in clan treasure.
+	ClanCrystalMax *int64 `query:"clan_crystal_max"`
+	// Country - List of allowed countries.
+	Country []string `query:"country[]"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country[]"`
+}
+
+// CategoryWotResponse is the response for the endpoint.
+type CategoryWotResponse struct {
+	CacheTTL        float64                        `json:"cacheTTL"`
+	HasNextPage     bool                           `json:"hasNextPage"`
+	Items           []any                          `json:"items"`
+	LastModified    float64                        `json:"lastModified"`
+	Page            float64                        `json:"page"`
+	PerPage         float64                        `json:"perPage"`
+	SearchURL       string                         `json:"searchUrl"`
+	ServerTime      float64                        `json:"serverTime"`
+	StickyItems     []any                          `json:"stickyItems"`
+	SystemInfo      *CategoryWotResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                        `json:"totalItems"`
+	TotalItemsPrice any                            `json:"totalItemsPrice"`
+	WasCached       bool                           `json:"wasCached"`
+}
+
+// CategoryWotBlitzParams holds query parameters for Category.WotBlitz.
+type CategoryWotBlitzParams struct {
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// TagID - List of tag ids (Tag list is available via GET /me).
+	TagID []int64 `query:"tag_id[]"`
+	// NotTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotTagID []int64 `query:"not_tag_id[]"`
+	// PublicTagID - List of tag ids (Tag list is available via GET /me).
+	PublicTagID []int64 `query:"public_tag_id[]"`
+	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
+	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// UserID - Search accounts of user.
+	UserID *int64 `query:"user_id"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Currency - Currency in which the cost of the account will be searched.
+	Currency *Currency `query:"currency"`
+	// EmailLoginData - Has email login data.
+	EmailLoginData *bool `query:"email_login_data"`
+	// EmailProvider - Email provider.
+	EmailProvider []EmailProvider `query:"email_provider[]"`
+	// NotEmailProvider - Email provider.
+	NotEmailProvider *NotEmailProvider `query:"not_email_provider[]"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `query:"parse_same_item_ids"`
+	// EmailType - Email type.
+	EmailType []CategoryEmailType2 `query:"email_type[]"`
+	// ItemDomain - Domain of native/autoreg email.
+	ItemDomain *string `query:"item_domain"`
+	// Tel - Has linked mobile.
+	Tel *Tel `query:"tel"`
+	// Daybreak - Number of days the account has been offline.
+	Daybreak *int64 `query:"daybreak"`
+	// BattlesMin - Minimum number of battles.
+	BattlesMin *int64 `query:"battles_min"`
+	// BattlesMax - Maximum number of battles.
+	BattlesMax *int64 `query:"battles_max"`
+	// GoldMin - Minimum number of gold.
+	GoldMin *int64 `query:"gold_min"`
+	// GoldMax - Maximum number of gold.
+	GoldMax *int64 `query:"gold_max"`
+	// SilverMin - Minimum number of silver.
+	SilverMin *int64 `query:"silver_min"`
+	// SilverMax - Maximum number of silver.
+	SilverMax *int64 `query:"silver_max"`
+	// TopMin - Minimum number of top tanks.
+	TopMin *int64 `query:"top_min"`
+	// TopMax - Maximum number of top tanks.
+	TopMax *int64 `query:"top_max"`
+	// PremMin - Minimum number of premium tanks.
+	PremMin *int64 `query:"prem_min"`
+	// PremMax - Maximum number of premium tanks.
+	PremMax *int64 `query:"prem_max"`
+	// TopPremMin - Minimum number of top premium tanks.
+	TopPremMin *int64 `query:"top_prem_min"`
+	// TopPremMax - Maximum number of top premium tanks.
+	TopPremMax *int64 `query:"top_prem_max"`
+	// WinPmin - Minimum number of wins.
+	WinPmin *int64 `query:"win_pmin"`
+	// WinPmax - Maximum number of wins.
+	WinPmax *int64 `query:"win_pmax"`
+	// Tank - List of tanks.
+	Tank []int64 `query:"tank[]"`
+	// Region - Region.
+	Region []Region `query:"region[]"`
+	// NotRegion - Exclude region.
+	NotRegion []CategoryNotRegion `query:"not_region[]"`
+	// Premium - Has a premium subscription.
+	Premium *Premium `query:"premium"`
+	// PremiumExpiration - When premium subscription will be active
+	PremiumExpiration *int64 `query:"premium_expiration"`
+	// PremiumExpirationPeriod - In what notation is time measured
+	PremiumExpirationPeriod *PremiumExpirationPeriod `query:"premium_expiration_period"`
+	// Clan - Has clan.
+	Clan *Clan `query:"clan"`
+	// ClanRole - List of allowed clan role.
+	ClanRole []ClanRole `query:"clan_role[]"`
+	// NotClanRole - List of disallowed clan role.
+	NotClanRole []NotClanRole `query:"not_clan_role[]"`
+	// ClanGoldMin - Minimum number of gold in clan treasure.
+	ClanGoldMin *int64 `query:"clan_gold_min"`
+	// ClanGoldMax - Maximum number of gold in clan treasure.
+	ClanGoldMax *int64 `query:"clan_gold_max"`
+	// ClanCreditsMin - Minimum number of credits in clan treasure.
+	ClanCreditsMin *int64 `query:"clan_credits_min"`
+	// ClanCreditsMax - Maximum number of credits in clan treasure.
+	ClanCreditsMax *int64 `query:"clan_credits_max"`
+	// ClanCrystalMin - Minimum number of crystal in clan treasure.
+	ClanCrystalMin *int64 `query:"clan_crystal_min"`
+	// ClanCrystalMax - Maximum number of crystal in clan treasure.
+	ClanCrystalMax *int64 `query:"clan_crystal_max"`
+	// Country - List of allowed countries.
+	Country []string `query:"country[]"`
+	// NotCountry - List of disallowed countries.
+	NotCountry []string `query:"not_country[]"`
+}
+
+// CategoryWotBlitzResponse is the response for the endpoint.
+type CategoryWotBlitzResponse struct {
+	CacheTTL        float64                             `json:"cacheTTL"`
+	HasNextPage     bool                                `json:"hasNextPage"`
+	Items           []any                               `json:"items"`
+	LastModified    float64                             `json:"lastModified"`
+	Page            float64                             `json:"page"`
+	PerPage         float64                             `json:"perPage"`
+	SearchURL       string                              `json:"searchUrl"`
+	ServerTime      float64                             `json:"serverTime"`
+	StickyItems     []any                               `json:"stickyItems"`
+	SystemInfo      *CategoryWotBlitzResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                             `json:"totalItems"`
+	TotalItemsPrice any                                 `json:"totalItemsPrice"`
+	WasCached       bool                                `json:"wasCached"`
+}
+
 // CustomDiscountsCreateBody holds the request body for CustomDiscounts.Create.
 type CustomDiscountsCreateBody struct {
-	CategoryID      CategoryID `json:"category_id"`
-	Currency        *Currency  `json:"currency,omitempty"`
-	DiscountPercent float64    `json:"discount_percent"`
-	MaxPrice        *float64   `json:"max_price,omitempty"`
-	MinPrice        float64    `json:"min_price"`
-	UserID          int64      `json:"user_id"`
+	// CategoryID - Accounts category.
+	CategoryID CategoryID `json:"category_id"`
+	Currency   *Currency  `json:"currency,omitempty"`
+	// DiscountPercent - Discount percent to apply.
+	DiscountPercent float64 `json:"discount_percent"`
+	// MaxPrice - Maximum accounts price for which the discount applies.
+	MaxPrice *float64 `json:"max_price,omitempty"`
+	// MinPrice - Minimum accounts price for which the discount applies.
+	MinPrice float64 `json:"min_price"`
+	// UserID - User ID.
+	UserID int64 `json:"user_id"`
 }
 
 // CustomDiscountsCreateResponse is the response for the endpoint.
 type CustomDiscountsCreateResponse struct {
-	Discount   CustomDiscountsCreateResponseDiscount   `json:"discount"`
-	SystemInfo CustomDiscountsCreateResponseSystemInfo `json:"system_info"`
-	Total      int64                                   `json:"total"`
+	Discount   *CustomDiscountsCreateResponseDiscount   `json:"discount"`
+	SystemInfo *CustomDiscountsCreateResponseSystemInfo `json:"system_info"`
+	Total      float64                                  `json:"total"`
 }
 
 // CustomDiscountsDeleteBody holds the request body for CustomDiscounts.Delete.
 type CustomDiscountsDeleteBody struct {
+	// DiscountID - ID of the discount to delete.
 	DiscountID int64 `json:"discount_id"`
 }
 
@@ -21449,32 +22260,40 @@ type CustomDiscountsDeleteResponse struct {
 
 // CustomDiscountsEditBody holds the request body for CustomDiscounts.Edit.
 type CustomDiscountsEditBody struct {
-	DiscountID      int64    `json:"discount_id"`
+	// DiscountID - ID of the discount to edit.
+	DiscountID int64 `json:"discount_id"`
+	// DiscountPercent - Discount percent to apply.
 	DiscountPercent *float64 `json:"discount_percent,omitempty"`
-	MaxPrice        *float64 `json:"max_price,omitempty"`
-	MinPrice        *float64 `json:"min_price,omitempty"`
+	// MaxPrice - Maximum price for which the discount applies.
+	MaxPrice *float64 `json:"max_price,omitempty"`
+	// MinPrice - Minimum price for which the discount applies.
+	MinPrice *float64 `json:"min_price,omitempty"`
 }
 
 // CustomDiscountsEditResponse is the response for the endpoint.
 type CustomDiscountsEditResponse struct {
-	Discounts  []DiscountModel                       `json:"discounts"`
-	SystemInfo CustomDiscountsEditResponseSystemInfo `json:"system_info"`
-	Total      int64                                 `json:"total"`
+	Discounts  []DiscountModel                        `json:"discounts"`
+	SystemInfo *CustomDiscountsEditResponseSystemInfo `json:"system_info"`
+	Total      float64                                `json:"total"`
 }
 
 // CustomDiscountsGetResponse is the response for the endpoint.
 type CustomDiscountsGetResponse struct {
-	Discounts  []DiscountModel                      `json:"discounts"`
-	SystemInfo CustomDiscountsGetResponseSystemInfo `json:"system_info"`
-	Total      int64                                `json:"total"`
+	Discounts  []DiscountModel                       `json:"discounts"`
+	SystemInfo *CustomDiscountsGetResponseSystemInfo `json:"system_info"`
+	Total      float64                               `json:"total"`
 }
 
 // ImapCreateBody holds the request body for Imap.Create.
 type ImapCreateBody struct {
-	Domain     string `json:"domain"`
+	// Domain - Domain to delete IMAP configuration for.
+	Domain string `json:"domain"`
+	// ImapServer - IMAP server address.
 	ImapServer string `json:"imap_server"`
-	Port       int64  `json:"port"`
-	Secure     bool   `json:"secure"`
+	// Port - IMAP server port.
+	Port int64 `json:"port"`
+	// Secure - Whether to use a secure connection.
+	Secure bool `json:"secure"`
 }
 
 // ImapCreateResponse is the response for the endpoint.
@@ -21486,6 +22305,7 @@ type ImapCreateResponse struct {
 
 // ImapDeleteBody holds the request body for Imap.Delete.
 type ImapDeleteBody struct {
+	// Domain - Domain to delete IMAP configuration for.
 	Domain string `json:"domain"`
 }
 
@@ -21498,231 +22318,327 @@ type ImapDeleteResponse struct {
 
 // ListDownloadParams holds query parameters for List.Download.
 type ListDownloadParams struct {
-	Format                     *Format         `query:"format"`
-	CustomFormat               *string         `query:"custom_format"`
-	CategoryID                 *CategoryID     `query:"category_id"`
-	Page                       *int64          `query:"page"`
-	Show                       *Show           `query:"show"`
-	DeleteReason               *string         `query:"delete_reason"`
-	Title                      *string         `query:"title"`
-	Pmin                       *int64          `query:"pmin"`
-	Pmax                       *int64          `query:"pmax"`
-	Origin                     []CartOrigin    `query:"origin[]"`
-	NotOrigin                  []CartNotOrigin `query:"not_origin[]"`
-	OrderBy                    *OrderBy        `query:"order_by"`
-	Sb                         *bool           `query:"sb"`
-	SbByMe                     *bool           `query:"sb_by_me"`
-	Nsb                        *bool           `query:"nsb"`
-	NsbByMe                    *bool           `query:"nsb_by_me"`
-	Username                   *string         `query:"username"`
-	PublishedStartDate         *string         `query:"published_startDate"`
-	PublishedEndDate           *string         `query:"published_endDate"`
-	FilterByPublishedDate      *bool           `query:"filter_by_published_date"`
-	PaidStartDate              *string         `query:"paid_startDate"`
-	PaidEndDate                *string         `query:"paid_endDate"`
-	FilterByBuyerOperationDate *bool           `query:"filter_by_buyer_operation_date"`
-	DeleteStartDate            *string         `query:"delete_startDate"`
-	DeleteEndDate              *string         `query:"delete_endDate"`
-	FilterByDeleteDate         *bool           `query:"filter_by_delete_date"`
+	// Format - Format of the downloaded accounts.
+	Format *Format `query:"format"`
+	// CustomFormat - Custom format string for download. (Required if format is set to custom)
+	CustomFormat *string `query:"custom_format"`
+	// CategoryID - Accounts category.
+	CategoryID *CategoryID `query:"category_id"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Show - Account status.
+	Show *Show `query:"show"`
+	// DeleteReason - Delete reason. (Only if show is set to deleted)
+	DeleteReason *string `query:"delete_reason"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// Username - Username of buyer. (If show is paid)
+	Username *string `query:"username"`
+	// PublishedStartDate - Start date for filtering by publication date.
+	PublishedStartDate *string `query:"published_startDate"`
+	// PublishedEndDate - End date for filtering by publication date.
+	PublishedEndDate *string `query:"published_endDate"`
+	// FilterByPublishedDate - Enable filtering by publication date.
+	FilterByPublishedDate *bool `query:"filter_by_published_date"`
+	// PaidStartDate - Start date for filtering by buyer operation date.
+	PaidStartDate *string `query:"paid_startDate"`
+	// PaidEndDate - End date for filtering by buyer operation date.
+	PaidEndDate *string `query:"paid_endDate"`
+	// FilterByBuyerOperationDate - Enable filtering by buyer operation date.
+	FilterByBuyerOperationDate *bool `query:"filter_by_buyer_operation_date"`
+	// DeleteStartDate - Start date for filtering by deletion date.
+	DeleteStartDate *string `query:"delete_startDate"`
+	// DeleteEndDate - End date for filtering by deletion date.
+	DeleteEndDate *string `query:"delete_endDate"`
+	// FilterByDeleteDate - Enable filtering by deletion date.
+	FilterByDeleteDate *bool `query:"filter_by_delete_date"`
 }
 
 // ListFavoritesParams holds query parameters for List.Favorites.
 type ListFavoritesParams struct {
-	Page      *int64          `query:"page"`
-	Show      *Show           `query:"show"`
-	Title     *string         `query:"title"`
-	Pmin      *int64          `query:"pmin"`
-	Pmax      *int64          `query:"pmax"`
-	Origin    []CartOrigin    `query:"origin[]"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Show - Account status.
+	Show *Show `query:"show"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
 	NotOrigin []CartNotOrigin `query:"not_origin[]"`
-	OrderBy   *OrderBy        `query:"order_by"`
-	Sb        *bool           `query:"sb"`
-	SbByMe    *bool           `query:"sb_by_me"`
-	Nsb       *bool           `query:"nsb"`
-	NsbByMe   *bool           `query:"nsb_by_me"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
 }
 
 // ListFavoritesResponse is the response for the endpoint.
 type ListFavoritesResponse struct {
-	HasNextPage     bool                            `json:"hasNextPage"`
-	Items           []ItemFromListModel             `json:"items"`
-	Page            int64                           `json:"page"`
-	PerPage         int64                           `json:"perPage"`
-	SearchURL       string                          `json:"searchUrl"`
-	StickyItems     []ItemFromListModel             `json:"stickyItems"`
-	SystemInfo      ListFavoritesResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                           `json:"totalItems"`
-	TotalItemsPrice any                             `json:"totalItemsPrice"`
+	HasNextPage     bool                             `json:"hasNextPage"`
+	Items           []ItemFromListModel              `json:"items"`
+	Page            float64                          `json:"page"`
+	PerPage         float64                          `json:"perPage"`
+	SearchURL       string                           `json:"searchUrl"`
+	StickyItems     []ItemFromListModel              `json:"stickyItems"`
+	SystemInfo      *ListFavoritesResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                          `json:"totalItems"`
+	TotalItemsPrice any                              `json:"totalItemsPrice"`
 }
 
 // ListOrdersParams holds query parameters for List.Orders.
 type ListOrdersParams struct {
-	UserID     *int64          `query:"user_id"`
-	CategoryID *CategoryID     `query:"category_id"`
-	Page       *int64          `query:"page"`
-	Show       *Show           `query:"show"`
-	Title      *string         `query:"title"`
-	Pmin       *int64          `query:"pmin"`
-	Pmax       *int64          `query:"pmax"`
-	Login      *string         `query:"login"`
-	Origin     []CartOrigin    `query:"origin[]"`
-	NotOrigin  []CartNotOrigin `query:"not_origin[]"`
-	OrderBy    *OrderBy        `query:"order_by"`
-	Sb         *bool           `query:"sb"`
-	SbByMe     *bool           `query:"sb_by_me"`
-	Nsb        *bool           `query:"nsb"`
-	NsbByMe    *bool           `query:"nsb_by_me"`
+	// UserID - User id.
+	UserID *int64 `query:"user_id"`
+	// CategoryID - Accounts category.
+	CategoryID *CategoryID `query:"category_id"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Show - Account status.
+	Show *Show `query:"show"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Login - Login.
+	Login *string `query:"login"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
 }
 
 // ListOrdersResponse is the response for the endpoint.
 type ListOrdersResponse struct {
-	HasNextPage     bool                         `json:"hasNextPage"`
-	Items           []ItemFromListModel          `json:"items"`
-	Page            int64                        `json:"page"`
-	PerPage         int64                        `json:"perPage"`
-	SearchURL       string                       `json:"searchUrl"`
-	StickyItems     []ItemFromListModel          `json:"stickyItems"`
-	SystemInfo      ListOrdersResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                        `json:"totalItems"`
-	TotalItemsPrice any                          `json:"totalItemsPrice"`
+	HasNextPage     bool                          `json:"hasNextPage"`
+	Items           []ItemFromListModel           `json:"items"`
+	Page            float64                       `json:"page"`
+	PerPage         float64                       `json:"perPage"`
+	SearchURL       string                        `json:"searchUrl"`
+	StickyItems     []ItemFromListModel           `json:"stickyItems"`
+	SystemInfo      *ListOrdersResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                       `json:"totalItems"`
+	TotalItemsPrice any                           `json:"totalItemsPrice"`
 }
 
 // ListStatesParams holds query parameters for List.States.
 type ListStatesParams struct {
+	// UserID - User ID.
 	UserID *lolzteam.StringOrInt `query:"user_id"`
 }
 
 // ListStatesResponse is the response for the endpoint.
 type ListStatesResponse struct {
-	SystemInfo     ListStatesResponseSystemInfo     `json:"system_info"`
-	UserItemStates ListStatesResponseUserItemStates `json:"userItemStates"`
+	SystemInfo     *ListStatesResponseSystemInfo     `json:"system_info"`
+	UserItemStates *ListStatesResponseUserItemStates `json:"userItemStates"`
 }
 
 // ListUserParams holds query parameters for List.User.
 type ListUserParams struct {
-	UserID                     *int64          `query:"user_id"`
-	CategoryID                 *CategoryID     `query:"category_id"`
-	Page                       *int64          `query:"page"`
-	Show                       *Show           `query:"show"`
-	DeleteReason               *string         `query:"delete_reason"`
-	Title                      *string         `query:"title"`
-	Pmin                       *int64          `query:"pmin"`
-	Pmax                       *int64          `query:"pmax"`
-	Login                      *string         `query:"login"`
-	Origin                     []CartOrigin    `query:"origin[]"`
-	NotOrigin                  []CartNotOrigin `query:"not_origin[]"`
-	OrderBy                    *OrderBy        `query:"order_by"`
-	Sb                         *bool           `query:"sb"`
-	SbByMe                     *bool           `query:"sb_by_me"`
-	Nsb                        *bool           `query:"nsb"`
-	NsbByMe                    *bool           `query:"nsb_by_me"`
-	Username                   *string         `query:"username"`
-	PublishedStartDate         *string         `query:"published_startDate"`
-	PublishedEndDate           *string         `query:"published_endDate"`
-	FilterByPublishedDate      *bool           `query:"filter_by_published_date"`
-	PaidStartDate              *string         `query:"paid_startDate"`
-	PaidEndDate                *string         `query:"paid_endDate"`
-	FilterByBuyerOperationDate *bool           `query:"filter_by_buyer_operation_date"`
-	DeleteStartDate            *string         `query:"delete_startDate"`
-	DeleteEndDate              *string         `query:"delete_endDate"`
-	FilterByDeleteDate         *bool           `query:"filter_by_delete_date"`
+	// UserID - User id.
+	UserID *int64 `query:"user_id"`
+	// CategoryID - Accounts category.
+	CategoryID *CategoryID `query:"category_id"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Show - Account status.
+	Show *Show `query:"show"`
+	// DeleteReason - Delete reason. (Only if show is set to deleted)
+	DeleteReason *string `query:"delete_reason"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Login - Login.
+	Login *string `query:"login"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
+	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
+	// Username - Username of buyer. (If show is paid)
+	Username *string `query:"username"`
+	// PublishedStartDate - Start date for filtering by publication date.
+	PublishedStartDate *string `query:"published_startDate"`
+	// PublishedEndDate - End date for filtering by publication date.
+	PublishedEndDate *string `query:"published_endDate"`
+	// FilterByPublishedDate - Enable filtering by publication date.
+	FilterByPublishedDate *bool `query:"filter_by_published_date"`
+	// PaidStartDate - Start date for filtering by buyer operation date.
+	PaidStartDate *string `query:"paid_startDate"`
+	// PaidEndDate - End date for filtering by buyer operation date.
+	PaidEndDate *string `query:"paid_endDate"`
+	// FilterByBuyerOperationDate - Enable filtering by buyer operation date.
+	FilterByBuyerOperationDate *bool `query:"filter_by_buyer_operation_date"`
+	// DeleteStartDate - Start date for filtering by deletion date.
+	DeleteStartDate *string `query:"delete_startDate"`
+	// DeleteEndDate - End date for filtering by deletion date.
+	DeleteEndDate *string `query:"delete_endDate"`
+	// FilterByDeleteDate - Enable filtering by deletion date.
+	FilterByDeleteDate *bool `query:"filter_by_delete_date"`
 }
 
 // ListUserResponse is the response for the endpoint.
 type ListUserResponse struct {
-	HasNextPage     bool                       `json:"hasNextPage"`
-	Items           []ItemFromListModel        `json:"items"`
-	Page            int64                      `json:"page"`
-	PerPage         int64                      `json:"perPage"`
-	SearchURL       string                     `json:"searchUrl"`
-	StickyItems     []ItemFromListModel        `json:"stickyItems"`
-	SystemInfo      ListUserResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                      `json:"totalItems"`
-	TotalItemsPrice any                        `json:"totalItemsPrice"`
+	HasNextPage     bool                        `json:"hasNextPage"`
+	Items           []ItemFromListModel         `json:"items"`
+	Page            float64                     `json:"page"`
+	PerPage         float64                     `json:"perPage"`
+	SearchURL       string                      `json:"searchUrl"`
+	StickyItems     []ItemFromListModel         `json:"stickyItems"`
+	SystemInfo      *ListUserResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                     `json:"totalItems"`
+	TotalItemsPrice any                         `json:"totalItemsPrice"`
 }
 
 // ListViewedParams holds query parameters for List.Viewed.
 type ListViewedParams struct {
-	Page      *int64          `query:"page"`
-	Show      *Show           `query:"show"`
-	Title     *string         `query:"title"`
-	Pmin      *int64          `query:"pmin"`
-	Pmax      *int64          `query:"pmax"`
-	Origin    []CartOrigin    `query:"origin[]"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Show - Account status.
+	Show *Show `query:"show"`
+	// Title - The word or words contained in the account title.
+	Title *string `query:"title"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Origin - List of account origins.
+	Origin []CartOrigin `query:"origin[]"`
+	// NotOrigin - List of account origins that won't be included.
 	NotOrigin []CartNotOrigin `query:"not_origin[]"`
-	OrderBy   *OrderBy        `query:"order_by"`
-	Sb        *bool           `query:"sb"`
-	SbByMe    *bool           `query:"sb_by_me"`
-	Nsb       *bool           `query:"nsb"`
-	NsbByMe   *bool           `query:"nsb_by_me"`
+	// OrderBy - Order by.
+	OrderBy *OrderBy `query:"order_by"`
+	// Sb - Sold before.
+	Sb *bool `query:"sb"`
+	// SbByMe - Sold by me before.
+	SbByMe *bool `query:"sb_by_me"`
+	// Nsb - Not sold before.
+	Nsb *bool `query:"nsb"`
+	// NsbByMe - Not sold by me before.
+	NsbByMe *bool `query:"nsb_by_me"`
 }
 
 // ListViewedResponse is the response for the endpoint.
 type ListViewedResponse struct {
-	HasNextPage     bool                         `json:"hasNextPage"`
-	Items           []ItemFromListModel          `json:"items"`
-	Page            int64                        `json:"page"`
-	PerPage         int64                        `json:"perPage"`
-	SearchURL       string                       `json:"searchUrl"`
-	StickyItems     []ItemFromListModel          `json:"stickyItems"`
-	SystemInfo      ListViewedResponseSystemInfo `json:"system_info"`
-	TotalItems      int64                        `json:"totalItems"`
-	TotalItemsPrice any                          `json:"totalItemsPrice"`
+	HasNextPage     bool                          `json:"hasNextPage"`
+	Items           []ItemFromListModel           `json:"items"`
+	Page            float64                       `json:"page"`
+	PerPage         float64                       `json:"perPage"`
+	SearchURL       string                        `json:"searchUrl"`
+	StickyItems     []ItemFromListModel           `json:"stickyItems"`
+	SystemInfo      *ListViewedResponseSystemInfo `json:"system_info"`
+	TotalItems      float64                       `json:"totalItems"`
+	TotalItemsPrice any                           `json:"totalItemsPrice"`
 }
 
 // ManagingAIPriceResponse is the response for the endpoint.
 type ManagingAIPriceResponse struct {
-	Price      int64                             `json:"price"`
-	SystemInfo ManagingAIPriceResponseSystemInfo `json:"system_info"`
+	Price      float64                            `json:"price"`
+	SystemInfo *ManagingAIPriceResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingAutoBumpBody holds the request body for Managing.AutoBump.
 type ManagingAutoBumpBody struct {
+	// Hour - Interval in hours
 	Hour int64 `json:"hour"`
 }
 
 // ManagingAutoBumpResponse is the response for the endpoint.
 type ManagingAutoBumpResponse struct {
-	Message    string                             `json:"message"`
-	Status     string                             `json:"status"`
-	SystemInfo ManagingAutoBumpResponseSystemInfo `json:"system_info"`
+	Message    string                              `json:"message"`
+	Status     string                              `json:"status"`
+	SystemInfo *ManagingAutoBumpResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingAutoBumpDisableResponse is the response for the endpoint.
 type ManagingAutoBumpDisableResponse struct {
-	Message    string                                    `json:"message"`
-	Status     string                                    `json:"status"`
-	SystemInfo ManagingAutoBumpDisableResponseSystemInfo `json:"system_info"`
+	Message    string                                     `json:"message"`
+	Status     string                                     `json:"status"`
+	SystemInfo *ManagingAutoBumpDisableResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingAutoBuyPriceResponse is the response for the endpoint.
 type ManagingAutoBuyPriceResponse struct {
-	Price      int64                                  `json:"price"`
-	SystemInfo ManagingAutoBuyPriceResponseSystemInfo `json:"system_info"`
+	Price      float64                                 `json:"price"`
+	SystemInfo *ManagingAutoBuyPriceResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingBulkGetBody holds the request body for Managing.BulkGet.
 type ManagingBulkGetBody struct {
-	ItemID           []int64 `json:"item_id,omitempty"`
-	ParseSameItemIds *bool   `json:"parse_same_item_ids,omitempty"`
+	// ItemID - Item id.
+	ItemID []int64 `json:"item_id,omitempty"`
+	// ParseSameItemIds - Parse same item ids.
+	ParseSameItemIds *bool `json:"parse_same_item_ids,omitempty"`
 }
 
 // ManagingBulkGetResponse is the response for the endpoint.
 type ManagingBulkGetResponse struct {
-	Items      []any                             `json:"items"`
-	LeftItemID []int64                           `json:"left_item_id"`
-	SystemInfo ManagingBulkGetResponseSystemInfo `json:"system_info"`
+	Items      []any                              `json:"items"`
+	LeftItemID []float64                          `json:"left_item_id"`
+	SystemInfo *ManagingBulkGetResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingBumpResponse is the response for the endpoint.
 type ManagingBumpResponse struct {
-	Message    string                         `json:"message"`
-	Status     string                         `json:"status"`
-	SystemInfo ManagingBumpResponseSystemInfo `json:"system_info"`
+	Message    string                          `json:"message"`
+	Status     string                          `json:"status"`
+	SystemInfo *ManagingBumpResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingChangePasswordBody holds the request body for Managing.ChangePassword.
 type ManagingChangePasswordBody struct {
+	// Cancel - Cancel change password recommendation. It will be helpful, if you don't want to change password and get login data.
 	Cancel *int64 `json:"_cancel,omitempty"`
 }
 
@@ -21735,31 +22651,34 @@ type ManagingChangePasswordResponse struct {
 
 // ManagingCheckGuaranteeResponse is the response for the endpoint.
 type ManagingCheckGuaranteeResponse struct {
-	Message    string                                   `json:"message"`
-	SystemInfo ManagingCheckGuaranteeResponseSystemInfo `json:"system_info"`
+	Message    string                                    `json:"message"`
+	SystemInfo *ManagingCheckGuaranteeResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingCloseResponse is the response for the endpoint.
 type ManagingCloseResponse struct {
-	Message    string                          `json:"message"`
-	Status     string                          `json:"status"`
-	SystemInfo ManagingCloseResponseSystemInfo `json:"system_info"`
+	Message    string                           `json:"message"`
+	Status     string                           `json:"status"`
+	SystemInfo *ManagingCloseResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingCreateClaimBody holds the request body for Managing.CreateClaim.
 type ManagingCreateClaimBody struct {
-	ItemID   int64  `json:"item_id"`
+	// ItemID - Item id.
+	ItemID int64 `json:"item_id"`
+	// PostBody - You should describe what's happened. - describe the situation in a nutshell. If you wish, you can describe the situation in more detail using the "Spoiler" function. - attach screenshots of correspondence. You must upload to the site [Imgur](https://imgur.com/upload) - other evidence; - notify the respondent about the complaint you created, familiarize him with hidden content  Describe the situation in as much detail as possible.
 	PostBody string `json:"post_body"`
 }
 
 // ManagingCreateClaimResponse is the response for the endpoint.
 type ManagingCreateClaimResponse struct {
-	SystemInfo ManagingCreateClaimResponseSystemInfo `json:"system_info"`
-	Thread     ManagingCreateClaimResponseThread     `json:"thread"`
+	SystemInfo *ManagingCreateClaimResponseSystemInfo `json:"system_info"`
+	Thread     *ManagingCreateClaimResponseThread     `json:"thread"`
 }
 
 // ManagingDeclineVideoRecordingBody holds the request body for Managing.DeclineVideoRecording.
 type ManagingDeclineVideoRecordingBody struct {
+	// IVoluntarilyAndWithFullAwarenessOfMyActionsWaiveAnyClaimsRegardingThisItem - You voluntarily and with full awareness of your actions waive any claims regarding this account.
 	IVoluntarilyAndWithFullAwarenessOfMyActionsWaiveAnyClaimsRegardingThisItem bool `json:"i_voluntarily_and_with_full_awareness_of_my_actions_waive_any_claims_regarding_this_item"`
 }
 
@@ -21772,29 +22691,40 @@ type ManagingDeclineVideoRecordingResponse struct {
 
 // ManagingDeleteBody holds the request body for Managing.Delete.
 type ManagingDeleteBody struct {
+	// Reason - Delete reason.
 	Reason string `json:"reason"`
 }
 
 // ManagingDeleteResponse is the response for the endpoint.
 type ManagingDeleteResponse struct {
-	Message    string                           `json:"message"`
-	Status     string                           `json:"status"`
-	SystemInfo ManagingDeleteResponseSystemInfo `json:"system_info"`
+	Message    string                            `json:"message"`
+	Status     string                            `json:"status"`
+	SystemInfo *ManagingDeleteResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingEditBody holds the request body for Managing.Edit.
 type ManagingEditBody struct {
-	AllowAskDiscount *bool               `json:"allow_ask_discount,omitempty"`
-	Currency         *Currency           `json:"currency,omitempty"`
-	Description      *string             `json:"description,omitempty"`
-	EmailLoginData   *string             `json:"email_login_data,omitempty"`
-	EmailType        *EmailType          `json:"email_type,omitempty"`
-	Information      *string             `json:"information,omitempty"`
-	ItemOrigin       *ManagingItemOrigin `json:"item_origin,omitempty"`
-	Price            *int64              `json:"price,omitempty"`
-	ProxyID          *int64              `json:"proxy_id,omitempty"`
-	Title            *string             `json:"title,omitempty"`
-	TitleEn          *string             `json:"title_en,omitempty"`
+	// AllowAskDiscount - Allow users to ask discount for this account.
+	AllowAskDiscount *bool     `json:"allow_ask_discount,omitempty"`
+	Currency         *Currency `json:"currency,omitempty"`
+	// Description - Account public description.
+	Description *string `json:"description,omitempty"`
+	// EmailLoginData - Email login data (email:password format).
+	EmailLoginData *string `json:"email_login_data,omitempty"`
+	// EmailType - Email type.
+	EmailType *EmailType `json:"email_type,omitempty"`
+	// Information - Account private information (visible only for buyer).
+	Information *string `json:"information,omitempty"`
+	// ItemOrigin - Account origin. Where did you get it from.
+	ItemOrigin *ManagingItemOrigin `json:"item_origin,omitempty"`
+	// Price - Current price of account in your currency.
+	Price *int64 `json:"price,omitempty"`
+	// ProxyID - Using proxy id for account checking. See GET or POST /proxy to get or edit proxy list.
+	ProxyID *int64 `json:"proxy_id,omitempty"`
+	// Title - Title of account. If title specified and title_en is empty, title_en will be automatically translated to English language.
+	Title *string `json:"title,omitempty"`
+	// TitleEn - English title of account. If title_en specified and title is empty, title will be automatically translated to Russian language.
+	TitleEn *string `json:"title_en,omitempty"`
 }
 
 // ManagingEditResponse is the response for the endpoint.
@@ -21806,118 +22736,127 @@ type ManagingEditResponse struct {
 
 // ManagingEmailCodeResponse is the response for the endpoint.
 type ManagingEmailCodeResponse struct {
-	CodeData ManagingEmailCodeResponseCodeData `json:"codeData"`
-	Item     ManagingEmailCodeResponseItem     `json:"item"`
+	CodeData *ManagingEmailCodeResponseCodeData `json:"codeData"`
+	Item     *ManagingEmailCodeResponseItem     `json:"item"`
 }
 
 // ManagingFavoriteResponse is the response for the endpoint.
 type ManagingFavoriteResponse struct {
-	Message    string                             `json:"message"`
-	Status     string                             `json:"status"`
-	SystemInfo ManagingFavoriteResponseSystemInfo `json:"system_info"`
+	Message    string                              `json:"message"`
+	Status     string                              `json:"status"`
+	SystemInfo *ManagingFavoriteResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingGetParams holds query parameters for Managing.Get.
 type ManagingGetParams struct {
+	// ParseSameItemIds - Parse same item ids.
 	ParseSameItemIds *bool `query:"parse_same_item_ids"`
 }
 
 // ManagingGetResponse is the response for the endpoint.
 type ManagingGetResponse struct {
-	CanBuyItem             bool                          `json:"canBuyItem"`
-	CanCancelConfirmedBuy  bool                          `json:"canCancelConfirmedBuy"`
-	CanChangeOwner         bool                          `json:"canChangeOwner"`
-	CanCloseItem           bool                          `json:"canCloseItem"`
-	CanDeleteItem          bool                          `json:"canDeleteItem"`
-	CanEditItem            bool                          `json:"canEditItem"`
-	CanOpenItem            bool                          `json:"canOpenItem"`
-	CanReportItem          bool                          `json:"canReportItem"`
-	CanStickItem           bool                          `json:"canStickItem"`
-	CanUnstickItem         bool                          `json:"canUnstickItem"`
-	CanViewItemHistory     bool                          `json:"canViewItemHistory"`
-	CanViewLoginData       bool                          `json:"canViewLoginData"`
-	CannotBuyItemError     string                        `json:"cannotBuyItemError"`
-	FaveCount              bool                          `json:"faveCount"`
-	IsVisibleItem          bool                          `json:"isVisibleItem"`
-	Item                   ManagingGetResponseItem       `json:"item"`
-	ItemLink               string                        `json:"itemLink"`
-	SameItemsCount         int64                         `json:"sameItemsCount"`
-	SameItemsIds           []int64                       `json:"sameItemsIds"`
-	ShowToFavouritesButton bool                          `json:"showToFavouritesButton"`
-	SystemInfo             ManagingGetResponseSystemInfo `json:"system_info"`
+	CanBuyItem             bool                           `json:"canBuyItem"`
+	CanCancelConfirmedBuy  bool                           `json:"canCancelConfirmedBuy"`
+	CanChangeOwner         bool                           `json:"canChangeOwner"`
+	CanCloseItem           bool                           `json:"canCloseItem"`
+	CanDeleteItem          bool                           `json:"canDeleteItem"`
+	CanEditItem            bool                           `json:"canEditItem"`
+	CanOpenItem            bool                           `json:"canOpenItem"`
+	CanReportItem          bool                           `json:"canReportItem"`
+	CanStickItem           bool                           `json:"canStickItem"`
+	CanUnstickItem         bool                           `json:"canUnstickItem"`
+	CanViewItemHistory     bool                           `json:"canViewItemHistory"`
+	CanViewLoginData       bool                           `json:"canViewLoginData"`
+	CannotBuyItemError     string                         `json:"cannotBuyItemError"`
+	FaveCount              bool                           `json:"faveCount"`
+	IsVisibleItem          bool                           `json:"isVisibleItem"`
+	Item                   *ManagingGetResponseItem       `json:"item"`
+	ItemLink               string                         `json:"itemLink"`
+	SameItemsCount         float64                        `json:"sameItemsCount"`
+	SameItemsIds           []float64                      `json:"sameItemsIds"`
+	ShowToFavouritesButton bool                           `json:"showToFavouritesButton"`
+	SystemInfo             *ManagingGetResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingGetLetters2Params holds query parameters for Managing.GetLetters2.
 type ManagingGetLetters2Params struct {
+	// EmailPassword - Email login data (email:password format). Required if both *email* and *password* are not provided.
 	EmailPassword *string `query:"email_password"`
-	Email         *string `query:"email"`
-	Password      *string `query:"password"`
-	Limit         *int64  `query:"limit"`
+	// Email - Email. Required if *email_password* is not provided.
+	Email *string `query:"email"`
+	// Password - Password. Required if *email_password* is not provided.
+	Password *string `query:"password"`
+	// Limit - Number of letters to return.
+	Limit *int64 `query:"limit"`
 }
 
 // ManagingGetLetters2Response is the response for the endpoint.
 type ManagingGetLetters2Response struct {
-	Email      string                                `json:"email"`
-	Letters    []any                                 `json:"letters"`
-	SystemInfo ManagingGetLetters2ResponseSystemInfo `json:"system_info"`
+	Email      string                                 `json:"email"`
+	Letters    []any                                  `json:"letters"`
+	SystemInfo *ManagingGetLetters2ResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingImageParams holds query parameters for Managing.Image.
 type ManagingImageParams struct {
+	// Type - Type of image.
 	Type ManagingType `query:"type"`
 }
 
 // ManagingImageResponse is the response for the endpoint.
 type ManagingImageResponse struct {
-	Base64     string                          `json:"base64"`
-	SystemInfo ManagingImageResponseSystemInfo `json:"system_info"`
+	Base64     string                           `json:"base64"`
+	SystemInfo *ManagingImageResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingNoteBody holds the request body for Managing.Note.
 type ManagingNoteBody struct {
+	// Text - Text of note.
 	Text *string `json:"text,omitempty"`
 }
 
 // ManagingNoteResponse is the response for the endpoint.
 type ManagingNoteResponse struct {
-	Message    string                         `json:"message"`
-	Status     string                         `json:"status"`
-	SystemInfo ManagingNoteResponseSystemInfo `json:"system_info"`
+	Message    string                          `json:"message"`
+	Status     string                          `json:"status"`
+	SystemInfo *ManagingNoteResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingOpenResponse is the response for the endpoint.
 type ManagingOpenResponse struct {
-	Message    string                         `json:"message"`
-	Status     string                         `json:"status"`
-	SystemInfo ManagingOpenResponseSystemInfo `json:"system_info"`
+	Message    string                          `json:"message"`
+	Status     string                          `json:"status"`
+	SystemInfo *ManagingOpenResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingPublicTagBody holds the request body for Managing.PublicTag.
 type ManagingPublicTagBody struct {
+	// TagID - Tag ID.
 	TagID int64 `json:"tag_id"`
 }
 
 // ManagingPublicTagResponse is the response for the endpoint.
 type ManagingPublicTagResponse struct {
-	AddedTagID int64                               `json:"addedTagId"`
-	DeleteTags []int64                             `json:"deleteTags"`
-	ItemID     int64                               `json:"itemId"`
-	SystemInfo ManagingPublicTagResponseSystemInfo `json:"system_info"`
-	Tag        ManagingPublicTagResponseTag        `json:"tag"`
+	AddedTagID float64                              `json:"addedTagId"`
+	DeleteTags []float64                            `json:"deleteTags"`
+	ItemID     float64                              `json:"itemId"`
+	SystemInfo *ManagingPublicTagResponseSystemInfo `json:"system_info"`
+	Tag        *ManagingPublicTagResponseTag        `json:"tag"`
 }
 
 // ManagingPublicUntagBody holds the request body for Managing.PublicUntag.
 type ManagingPublicUntagBody struct {
+	// TagID - Tag ID.
 	TagID int64 `json:"tag_id"`
 }
 
 // ManagingPublicUntagResponse is the response for the endpoint.
 type ManagingPublicUntagResponse struct {
-	AddedTagID int64                                 `json:"addedTagId"`
-	DeleteTags []int64                               `json:"deleteTags"`
-	ItemID     int64                                 `json:"itemId"`
-	SystemInfo ManagingPublicUntagResponseSystemInfo `json:"system_info"`
-	Tag        ManagingPublicUntagResponseTag        `json:"tag"`
+	AddedTagID float64                                `json:"addedTagId"`
+	DeleteTags []float64                              `json:"deleteTags"`
+	ItemID     float64                                `json:"itemId"`
+	SystemInfo *ManagingPublicUntagResponseSystemInfo `json:"system_info"`
+	Tag        *ManagingPublicUntagResponseTag        `json:"tag"`
 }
 
 // ManagingRefuseGuaranteeResponse is the response for the endpoint.
@@ -21929,28 +22868,31 @@ type ManagingRefuseGuaranteeResponse struct {
 
 // ManagingSteamAddMafileResponse is the response for the endpoint.
 type ManagingSteamAddMafileResponse struct {
-	Item       ManagingSteamAddMafileResponseItem       `json:"item"`
-	Message    string                                   `json:"message"`
-	Status     string                                   `json:"status"`
-	SystemInfo ManagingSteamAddMafileResponseSystemInfo `json:"system_info"`
+	Item       *ManagingSteamAddMafileResponseItem       `json:"item"`
+	Message    string                                    `json:"message"`
+	Status     string                                    `json:"status"`
+	SystemInfo *ManagingSteamAddMafileResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingSteamGetMafileResponse is the response for the endpoint.
 type ManagingSteamGetMafileResponse struct {
-	MaFile     ManagingSteamGetMafileResponseMaFile     `json:"maFile"`
-	SystemInfo ManagingSteamGetMafileResponseSystemInfo `json:"system_info"`
+	MaFile     *ManagingSteamGetMafileResponseMaFile     `json:"maFile"`
+	SystemInfo *ManagingSteamGetMafileResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingSteamInventoryValueParams holds query parameters for Managing.SteamInventoryValue.
 type ManagingSteamInventoryValueParams struct {
-	AppID       *AppID    `query:"app_id"`
-	Currency    *Currency `query:"currency"`
-	IgnoreCache *bool     `query:"ignore_cache"`
+	// AppID - Application id.
+	AppID *AppID `query:"app_id"`
+	// Currency - Currency in which the inventory value will be returned
+	Currency *Currency `query:"currency"`
+	// IgnoreCache - Ignore cache.
+	IgnoreCache *bool `query:"ignore_cache"`
 }
 
 // ManagingSteamInventoryValueResponse is the response for the endpoint.
 type ManagingSteamInventoryValueResponse struct {
-	AppID      *int64                                         `json:"appId,omitempty"`
+	AppID      *float64                                       `json:"appId,omitempty"`
 	Data       *ManagingSteamInventoryValueResponseData       `json:"data,omitempty"`
 	Query      *string                                        `json:"query,omitempty"`
 	SystemInfo *ManagingSteamInventoryValueResponseSystemInfo `json:"system_info,omitempty"`
@@ -21958,61 +22900,71 @@ type ManagingSteamInventoryValueResponse struct {
 
 // ManagingSteamMafileCodeResponse is the response for the endpoint.
 type ManagingSteamMafileCodeResponse struct {
-	CodeData ManagingSteamMafileCodeResponseCodeData `json:"codeData"`
-	Item     ManagingSteamMafileCodeResponseItem     `json:"item"`
+	CodeData *ManagingSteamMafileCodeResponseCodeData `json:"codeData"`
+	Item     *ManagingSteamMafileCodeResponseItem     `json:"item"`
 }
 
 // ManagingSteamPreviewParams holds query parameters for Managing.SteamPreview.
 type ManagingSteamPreviewParams struct {
+	// Type - Type of page.
 	Type *ManagingType2 `query:"type"`
 }
 
 // ManagingSteamRemoveMafileResponse is the response for the endpoint.
 type ManagingSteamRemoveMafileResponse struct {
-	Item       ManagingSteamRemoveMafileResponseItem       `json:"item"`
-	Message    string                                      `json:"message"`
-	Status     string                                      `json:"status"`
-	SystemInfo ManagingSteamRemoveMafileResponseSystemInfo `json:"system_info"`
+	Item       *ManagingSteamRemoveMafileResponseItem       `json:"item"`
+	Message    string                                       `json:"message"`
+	Status     string                                       `json:"status"`
+	SystemInfo *ManagingSteamRemoveMafileResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingSteamSDABody holds the request body for Managing.SteamSDA.
 type ManagingSteamSDABody struct {
-	ID    *int64 `json:"id,omitempty"`
+	// ID - Confirmation id. (Required along with nonce if you want to confirm action).
+	ID *int64 `json:"id,omitempty"`
+	// Nonce - Confirmation nonce. (Required along with id if you want to confirm action).
 	Nonce *int64 `json:"nonce,omitempty"`
 }
 
 // ManagingSteamSDAResponse is the response for the endpoint.
 type ManagingSteamSDAResponse struct {
-	Message    string                             `json:"message"`
-	Status     string                             `json:"status"`
-	SystemInfo ManagingSteamSDAResponseSystemInfo `json:"system_info"`
+	Message    string                              `json:"message"`
+	Status     string                              `json:"status"`
+	SystemInfo *ManagingSteamSDAResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingSteamUpdateValueBody holds the request body for Managing.SteamUpdateValue.
 type ManagingSteamUpdateValueBody struct {
-	All       *bool  `json:"all,omitempty"`
-	AppID     *AppID `json:"app_id,omitempty"`
-	Authorize *bool  `json:"authorize,omitempty"`
+	// All - Update the entire Steam inventory.
+	All *bool `json:"all,omitempty"`
+	// AppID - Application id.
+	AppID *AppID `json:"app_id,omitempty"`
+	// Authorize - Parse inventory when authorized (Parse trade banned items).
+	Authorize *bool `json:"authorize,omitempty"`
 }
 
 // ManagingSteamUpdateValueResponse is the response for the endpoint.
 type ManagingSteamUpdateValueResponse struct {
-	Item       ManagingSteamUpdateValueResponseItem       `json:"item"`
-	Status     string                                     `json:"status"`
-	SystemInfo ManagingSteamUpdateValueResponseSystemInfo `json:"system_info"`
+	Item       *ManagingSteamUpdateValueResponseItem       `json:"item"`
+	Status     string                                      `json:"status"`
+	SystemInfo *ManagingSteamUpdateValueResponseSystemInfo `json:"system_info"`
 }
 
 // ManagingSteamValueParams holds query parameters for Managing.SteamValue.
 type ManagingSteamValueParams struct {
-	Link        string    `query:"link"`
-	AppID       *AppID    `query:"app_id"`
-	Currency    *Currency `query:"currency"`
-	IgnoreCache *bool     `query:"ignore_cache"`
+	// Link - Link or id of account. Can be [https://lzt.market/{item-id}/, https://steamcommunity.com/id/{steam-name}, https://steamcommunity.com/profiles/{steam-id}, {steam-id}].
+	Link string `query:"link"`
+	// AppID - Application id.
+	AppID *AppID `query:"app_id"`
+	// Currency - Currency in which the inventory value will be returned
+	Currency *Currency `query:"currency"`
+	// IgnoreCache - Ignore cache.
+	IgnoreCache *bool `query:"ignore_cache"`
 }
 
 // ManagingSteamValueResponse is the response for the endpoint.
 type ManagingSteamValueResponse struct {
-	AppID      *int64                                `json:"appId,omitempty"`
+	AppID      *float64                              `json:"appId,omitempty"`
 	Data       *ManagingSteamValueResponseData       `json:"data,omitempty"`
 	Query      *string                               `json:"query,omitempty"`
 	SystemInfo *ManagingSteamValueResponseSystemInfo `json:"system_info,omitempty"`
@@ -22027,22 +22979,23 @@ type ManagingStickResponse struct {
 
 // ManagingTagBody holds the request body for Managing.Tag.
 type ManagingTagBody struct {
+	// TagID - Tag ID.
 	TagID int64 `json:"tag_id"`
 }
 
 // ManagingTagResponse is the response for the endpoint.
 type ManagingTagResponse struct {
-	AddedTagID int64                         `json:"addedTagId"`
-	DeleteTags []int64                       `json:"deleteTags"`
-	ItemID     int64                         `json:"itemId"`
-	SystemInfo ManagingTagResponseSystemInfo `json:"system_info"`
-	Tag        ManagingTagResponseTag        `json:"tag"`
+	AddedTagID float64                        `json:"addedTagId"`
+	DeleteTags []float64                      `json:"deleteTags"`
+	ItemID     float64                        `json:"itemId"`
+	SystemInfo *ManagingTagResponseSystemInfo `json:"system_info"`
+	Tag        *ManagingTagResponseTag        `json:"tag"`
 }
 
 // ManagingTelegramCodeResponse is the response for the endpoint.
 type ManagingTelegramCodeResponse struct {
-	Codes ManagingTelegramCodeResponseCodes `json:"codes"`
-	Item  ManagingTelegramCodeResponseItem  `json:"item"`
+	Codes *ManagingTelegramCodeResponseCodes `json:"codes"`
+	Item  *ManagingTelegramCodeResponseItem  `json:"item"`
 }
 
 // ManagingTelegramResetAuthResponse is the response for the endpoint.
@@ -22054,13 +23007,15 @@ type ManagingTelegramResetAuthResponse struct {
 
 // ManagingTempEmailPasswordResponse is the response for the endpoint.
 type ManagingTempEmailPasswordResponse struct {
-	Item ManagingTempEmailPasswordResponseItem `json:"item"`
+	Item *ManagingTempEmailPasswordResponseItem `json:"item"`
 }
 
 // ManagingTransferBody holds the request body for Managing.Transfer.
 type ManagingTransferBody struct {
+	// SecretAnswer - Secret answer of your account.
 	SecretAnswer string `json:"secret_answer"`
-	Username     string `json:"username"`
+	// Username - The username of the new account owner.
+	Username string `json:"username"`
 }
 
 // ManagingTransferResponse is the response for the endpoint.
@@ -22086,160 +23041,198 @@ type ManagingUnstickResponse struct {
 
 // ManagingUntagBody holds the request body for Managing.Untag.
 type ManagingUntagBody struct {
+	// TagID - Tag ID.
 	TagID int64 `json:"tag_id"`
 }
 
 // ManagingUntagResponse is the response for the endpoint.
 type ManagingUntagResponse struct {
-	AddedTagID int64                           `json:"addedTagId"`
-	DeleteTags []int64                         `json:"deleteTags"`
-	ItemID     int64                           `json:"itemId"`
-	SystemInfo ManagingUntagResponseSystemInfo `json:"system_info"`
-	Tag        ManagingUntagResponseTag        `json:"tag"`
+	AddedTagID float64                          `json:"addedTagId"`
+	DeleteTags []float64                        `json:"deleteTags"`
+	ItemID     float64                          `json:"itemId"`
+	SystemInfo *ManagingUntagResponseSystemInfo `json:"system_info"`
+	Tag        *ManagingUntagResponseTag        `json:"tag"`
 }
 
 // PaymentsBalanceExchangeBody holds the request body for Payments.BalanceExchange.
 type PaymentsBalanceExchangeBody struct {
-	Amount      int64  `json:"amount"`
+	// Amount - Amount to exchange
+	Amount int64 `json:"amount"`
+	// FromBalance - Source balance type
 	FromBalance string `json:"from_balance"`
-	ToBalance   string `json:"to_balance"`
+	// ToBalance - Target balance type
+	ToBalance string `json:"to_balance"`
 }
 
 // PaymentsBalanceExchangeResponse is the response for the endpoint.
 type PaymentsBalanceExchangeResponse struct {
-	From       PaymentsBalanceExchangeResponseFrom       `json:"from"`
-	SystemInfo PaymentsBalanceExchangeResponseSystemInfo `json:"system_info"`
-	To         PaymentsBalanceExchangeResponseTo         `json:"to"`
+	From       *PaymentsBalanceExchangeResponseFrom       `json:"from"`
+	SystemInfo *PaymentsBalanceExchangeResponseSystemInfo `json:"system_info"`
+	To         *PaymentsBalanceExchangeResponseTo         `json:"to"`
 }
 
 // PaymentsBalanceListResponse is the response for the endpoint.
 type PaymentsBalanceListResponse struct {
-	From       PaymentsBalanceListResponseFrom       `json:"from"`
-	SystemInfo PaymentsBalanceListResponseSystemInfo `json:"system_info"`
-	To         PaymentsBalanceListResponseTo         `json:"to"`
+	From       *PaymentsBalanceListResponseFrom       `json:"from"`
+	SystemInfo *PaymentsBalanceListResponseSystemInfo `json:"system_info"`
+	To         *PaymentsBalanceListResponseTo         `json:"to"`
 }
 
 // PaymentsCancelBody holds the request body for Payments.Cancel.
 type PaymentsCancelBody struct {
+	// PaymentID - Payment id.
 	PaymentID int64 `json:"payment_id"`
 }
 
 // PaymentsCancelResponse is the response for the endpoint.
 type PaymentsCancelResponse struct {
-	Message    string                           `json:"message"`
-	Status     string                           `json:"status"`
-	SystemInfo PaymentsCancelResponseSystemInfo `json:"system_info"`
+	Message    string                            `json:"message"`
+	Status     string                            `json:"status"`
+	SystemInfo *PaymentsCancelResponseSystemInfo `json:"system_info"`
 }
 
 // PaymentsCurrencyResponse is the response for the endpoint.
 type PaymentsCurrencyResponse struct {
-	CurrencyList    PaymentsCurrencyResponseCurrencyList `json:"currencyList"`
-	LastUpdate      int64                                `json:"lastUpdate"`
-	SystemInfo      PaymentsCurrencyResponseSystemInfo   `json:"system_info"`
-	VisitorCurrency string                               `json:"visitorCurrency"`
+	CurrencyList    *PaymentsCurrencyResponseCurrencyList `json:"currencyList"`
+	LastUpdate      float64                               `json:"lastUpdate"`
+	SystemInfo      *PaymentsCurrencyResponseSystemInfo   `json:"system_info"`
+	VisitorCurrency string                                `json:"visitorCurrency"`
 }
 
 // PaymentsFeeParams holds query parameters for Payments.Fee.
 type PaymentsFeeParams struct {
+	// Amount - Amount you want to send in your currency.
 	Amount *float64 `query:"amount"`
 }
 
 // PaymentsFeeResponse is the response for the endpoint.
 type PaymentsFeeResponse struct {
-	Calculator           PaymentsFeeResponseCalculator `json:"calculator"`
-	CommissionPercentage int64                         `json:"commission_percentage"`
-	SpentCurrentMonth    int64                         `json:"spentCurrentMonth"`
-	SystemInfo           PaymentsFeeResponseSystemInfo `json:"system_info"`
+	Calculator           *PaymentsFeeResponseCalculator `json:"calculator"`
+	CommissionPercentage float64                        `json:"commission_percentage"`
+	SpentCurrentMonth    float64                        `json:"spentCurrentMonth"`
+	SystemInfo           *PaymentsFeeResponseSystemInfo `json:"system_info"`
 }
 
 // PaymentsHistoryParams holds query parameters for Payments.History.
 type PaymentsHistoryParams struct {
-	Type             *PaymentsType `query:"type"`
-	Pmin             *int64        `query:"pmin"`
-	Pmax             *int64        `query:"pmax"`
-	Currency         *Currency     `query:"currency"`
-	Page             *int64        `query:"page"`
-	OperationIDLt    *int64        `query:"operation_id_lt"`
-	Receiver         *string       `query:"receiver"`
-	Sender           *string       `query:"sender"`
-	IsAPI            *bool         `query:"is_api"`
-	StartDate        *string       `query:"startDate"`
-	EndDate          *string       `query:"endDate"`
-	Wallet           *string       `query:"wallet"`
-	Comment          *string       `query:"comment"`
-	IsHold           *bool         `query:"is_hold"`
-	ShowPaymentStats *bool         `query:"show_payment_stats"`
+	// Type - Type of operation.
+	Type *PaymentsType `query:"type"`
+	// Pmin - Minimal price of account (Inclusive).
+	Pmin *int64 `query:"pmin"`
+	// Pmax - Maximum price of account (Inclusive).
+	Pmax *int64 `query:"pmax"`
+	// Currency - Currency.
+	Currency *Currency `query:"currency"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// OperationIDLt - Id of the operation from which the result begins.
+	OperationIDLt *int64 `query:"operation_id_lt"`
+	// Receiver - Username of user, which receive money from you.
+	Receiver *string `query:"receiver"`
+	// Sender - Username of user, which sent money to you.
+	Sender *string `query:"sender"`
+	// IsAPI - Returns payments that are done via API.
+	IsAPI *bool `query:"is_api"`
+	// StartDate - Start date of operation (RFC 3339 date format).
+	StartDate *string `query:"startDate"`
+	// EndDate - End date of operation (RFC 3339 date format).
+	EndDate *string `query:"endDate"`
+	// Wallet - Wallet, which used for money payouts.
+	Wallet *string `query:"wallet"`
+	// Comment - Comment for money transfers.
+	Comment *string `query:"comment"`
+	// IsHold - Display hold operations.
+	IsHold *bool `query:"is_hold"`
+	// ShowPaymentStats - Display payment stats for selected period (outgoing value, incoming value).
+	ShowPaymentStats *bool `query:"show_payment_stats"`
 }
 
 // PaymentsHistoryResponse is the response for the endpoint.
 type PaymentsHistoryResponse struct {
-	FilterDatesDefault bool                                 `json:"filterDatesDefault"`
-	HasNextPage        bool                                 `json:"hasNextPage"`
-	Input              PaymentsHistoryResponseInput         `json:"input"`
-	LastOperationID    int64                                `json:"lastOperationId"`
-	NextPageHref       string                               `json:"nextPageHref"`
-	Page               int64                                `json:"page"`
-	PageNavLink        string                               `json:"pageNavLink"`
-	PageNavParams      PaymentsHistoryResponsePageNavParams `json:"pageNavParams"`
-	PaymentStats       any                                  `json:"paymentStats"`
-	Payments           PaymentsHistoryResponsePayments      `json:"payments"`
-	PerPage            string                               `json:"perPage"`
-	PeriodLabel        string                               `json:"periodLabel"`
-	PeriodLabelPhrase  string                               `json:"periodLabelPhrase"`
-	SystemInfo         PaymentsHistoryResponseSystemInfo    `json:"system_info"`
+	FilterDatesDefault bool                                  `json:"filterDatesDefault"`
+	HasNextPage        bool                                  `json:"hasNextPage"`
+	Input              *PaymentsHistoryResponseInput         `json:"input"`
+	LastOperationID    float64                               `json:"lastOperationId"`
+	NextPageHref       string                                `json:"nextPageHref"`
+	Page               float64                               `json:"page"`
+	PageNavLink        string                                `json:"pageNavLink"`
+	PageNavParams      *PaymentsHistoryResponsePageNavParams `json:"pageNavParams"`
+	PaymentStats       any                                   `json:"paymentStats"`
+	Payments           any                                   `json:"payments"`
+	PerPage            string                                `json:"perPage"`
+	PeriodLabel        string                                `json:"periodLabel"`
+	PeriodLabelPhrase  string                                `json:"periodLabelPhrase"`
+	SystemInfo         *PaymentsHistoryResponseSystemInfo    `json:"system_info"`
 }
 
 // PaymentsInvoiceCreateBody holds the request body for Payments.InvoiceCreate.
 type PaymentsInvoiceCreateBody struct {
-	AdditionalData *string  `json:"additional_data,omitempty"`
-	Amount         float64  `json:"amount"`
-	Comment        string   `json:"comment"`
-	Currency       Currency `json:"currency"`
-	IsTest         *bool    `json:"is_test,omitempty"`
-	// Lifetime - Default: 3600
-	Lifetime                 *float64 `json:"lifetime,omitempty" default:"3600"`
-	MerchantID               int64    `json:"merchant_id"`
-	PaymentID                string   `json:"payment_id"`
-	RequiredTelegramID       *int64   `json:"required_telegram_id,omitempty"`
-	RequiredTelegramUsername *string  `json:"required_telegram_username,omitempty"`
-	URLCallback              *string  `json:"url_callback,omitempty"`
-	URLSuccess               string   `json:"url_success"`
+	// AdditionalData - Additional information for you.
+	AdditionalData *string `json:"additional_data,omitempty"`
+	// Amount - Invoice amount.
+	Amount float64 `json:"amount"`
+	// Comment - Comment to the invoice.
+	Comment  string   `json:"comment"`
+	Currency Currency `json:"currency"`
+	// IsTest - Create a test invoice.
+	IsTest *bool `json:"is_test,omitempty"`
+	// Lifetime - Invoice lifetime. Default: 3600
+	Lifetime *float64 `json:"lifetime,omitempty" default:"3600"`
+	// MerchantID - Merchant ID.
+	MerchantID int64 `json:"merchant_id"`
+	// PaymentID - Payment ID in your system (must be unique within the merchant / invoices).
+	PaymentID string `json:"payment_id"`
+	// RequiredTelegramID - Telegram User ID for which the invoice was created.
+	RequiredTelegramID *int64 `json:"required_telegram_id,omitempty"`
+	// RequiredTelegramUsername - Telegram Username (including @) for which the invoice was created (if any).
+	RequiredTelegramUsername *string `json:"required_telegram_username,omitempty"`
+	// URLCallback - Callback url.
+	URLCallback *string `json:"url_callback,omitempty"`
+	// URLSuccess - URL to redirect to after successful payment.
+	URLSuccess string `json:"url_success"`
 }
 
 // PaymentsInvoiceCreateResponse is the response for the endpoint.
 type PaymentsInvoiceCreateResponse struct {
-	Invoice    PaymentsInvoiceCreateResponseInvoice    `json:"invoice"`
-	SystemInfo PaymentsInvoiceCreateResponseSystemInfo `json:"system_info"`
+	Invoice    *PaymentsInvoiceCreateResponseInvoice    `json:"invoice"`
+	SystemInfo *PaymentsInvoiceCreateResponseSystemInfo `json:"system_info"`
 }
 
 // PaymentsInvoiceGetParams holds query parameters for Payments.InvoiceGet.
 type PaymentsInvoiceGetParams struct {
-	InvoiceID *int64  `query:"invoice_id"`
+	// InvoiceID - Invoice ID.
+	InvoiceID *int64 `query:"invoice_id"`
+	// PaymentID - Payment ID.
 	PaymentID *string `query:"payment_id"`
 }
 
 // PaymentsInvoiceGetResponse is the response for the endpoint.
 type PaymentsInvoiceGetResponse struct {
-	Invoice    PaymentsInvoiceGetResponseInvoice    `json:"invoice"`
-	SystemInfo PaymentsInvoiceGetResponseSystemInfo `json:"system_info"`
+	Invoice    *PaymentsInvoiceGetResponseInvoice    `json:"invoice"`
+	SystemInfo *PaymentsInvoiceGetResponseSystemInfo `json:"system_info"`
 }
 
 // PaymentsInvoiceListParams holds query parameters for Payments.InvoiceList.
 type PaymentsInvoiceListParams struct {
-	Page       *int64    `query:"page"`
-	Currency   *Currency `query:"currency"`
-	Status     *Status   `query:"status"`
-	Amount     *float64  `query:"amount"`
-	MerchantID *int64    `query:"merchant_id"`
+	// Page - The number of the page to display results from.
+	Page *int64 `query:"page"`
+	// Currency - Currency of the created invoice.
+	Currency *Currency `query:"currency"`
+	// Status - Status of the invoice.
+	Status *Status `query:"status"`
+	// Amount - Invoice amount.
+	Amount *float64 `query:"amount"`
+	// MerchantID - Merchant ID.
+	MerchantID *int64 `query:"merchant_id"`
 }
 
 // PaymentsInvoiceListResponse is the response for the endpoint.
 type PaymentsInvoiceListResponse struct {
-	Count      int64                                 `json:"count"`
-	Invoices   []InvoiceModel                        `json:"invoices"`
-	Page       int64                                 `json:"page"`
-	PerPage    int64                                 `json:"perPage"`
-	SystemInfo PaymentsInvoiceListResponseSystemInfo `json:"system_info"`
+	Count      float64                                `json:"count"`
+	Invoices   []InvoiceModel                         `json:"invoices"`
+	Page       float64                                `json:"page"`
+	PerPage    float64                                `json:"perPage"`
+	SystemInfo *PaymentsInvoiceListResponseSystemInfo `json:"system_info"`
 }
 
 // PaymentsPayoutBody holds the request body for Payments.Payout.
@@ -22261,58 +23254,79 @@ type PaymentsPayoutResponse struct {
 
 // PaymentsPayoutServicesResponse is the response for the endpoint.
 type PaymentsPayoutServicesResponse struct {
-	SystemInfo PaymentsPayoutServicesResponseSystemInfo `json:"system_info"`
-	Systems    []any                                    `json:"systems"`
+	SystemInfo *PaymentsPayoutServicesResponseSystemInfo `json:"system_info"`
+	Systems    []any                                     `json:"systems"`
 }
 
 // PaymentsTransferBody holds the request body for Payments.Transfer.
 type PaymentsTransferBody struct {
-	Amount           int64             `json:"amount"`
-	Comment          *string           `json:"comment,omitempty"`
-	Currency         Currency          `json:"currency"`
+	// Amount - Amount to send in your currency.
+	Amount int64 `json:"amount"`
+	// Comment - Transfer comment.
+	Comment  *string  `json:"comment,omitempty"`
+	Currency Currency `json:"currency"`
+	// HoldLengthOption - Hold length option.
 	HoldLengthOption *HoldLengthOption `json:"hold_length_option,omitempty"`
-	HoldLengthValue  *int64            `json:"hold_length_value,omitempty"`
-	TelegramDeal     *bool             `json:"telegram_deal,omitempty"`
-	TelegramUsername *string           `json:"telegram_username,omitempty"`
-	TransferHold     *bool             `json:"transfer_hold,omitempty"`
-	UserID           *int64            `json:"user_id,omitempty"`
-	Username         *string           `json:"username,omitempty"`
+	// HoldLengthValue - Hold length value.
+	HoldLengthValue *int64 `json:"hold_length_value,omitempty"`
+	// TelegramDeal - Is the deal happening on Telegram?
+	TelegramDeal *bool `json:"telegram_deal,omitempty"`
+	// TelegramUsername - Telegram username of the user you are dialoguing with.
+	TelegramUsername *string `json:"telegram_username,omitempty"`
+	// TransferHold - Hold transfer or not.
+	TransferHold *bool `json:"transfer_hold,omitempty"`
+	// UserID - User id of receiver. If user_id specified, username is not required.
+	UserID *int64 `json:"user_id,omitempty"`
+	// Username - Username of receiver. If username specified, user_id is not required.
+	Username *string `json:"username,omitempty"`
 }
 
 // PaymentsTransferResponse is the response for the endpoint.
 type PaymentsTransferResponse struct {
-	Message    string                             `json:"message"`
-	Status     string                             `json:"status"`
-	SystemInfo PaymentsTransferResponseSystemInfo `json:"system_info"`
+	Message    string                              `json:"message"`
+	Status     string                              `json:"status"`
+	SystemInfo *PaymentsTransferResponseSystemInfo `json:"system_info"`
 }
 
 // ProfileClaimsParams holds query parameters for Profile.Claims.
 type ProfileClaimsParams struct {
-	Type       *ProfileType `query:"type"`
-	ClaimState *ClaimState  `query:"claim_state"`
+	// Type - Filter claims by their type.
+	Type *ProfileType `query:"type"`
+	// ClaimState - Filter claims by their state.
+	ClaimState *ClaimState `query:"claim_state"`
 }
 
 // ProfileClaimsResponse is the response for the endpoint.
 type ProfileClaimsResponse struct {
-	Claims     []any                           `json:"claims"`
-	Stats      ProfileClaimsResponseStats      `json:"stats"`
-	SystemInfo ProfileClaimsResponseSystemInfo `json:"system_info"`
+	Claims     []any                            `json:"claims"`
+	Stats      *ProfileClaimsResponseStats      `json:"stats"`
+	SystemInfo *ProfileClaimsResponseSystemInfo `json:"system_info"`
 }
 
 // ProfileEditBody holds the request body for Profile.Edit.
 type ProfileEditBody struct {
-	AllowAcceptAccounts    []string               `json:"allow_accept_accounts,omitempty"`
-	ClearTelegramClient    *bool                  `json:"clear_telegram_client,omitempty"`
-	Option                 *ProfileEditBodyOption `json:"option,omitempty"`
-	TelegramAPIHash        *string                `json:"telegram_api_hash,omitempty"`
-	TelegramAPIID          *string                `json:"telegram_api_id,omitempty"`
-	TelegramAppVersion     *string                `json:"telegram_app_version,omitempty"`
-	TelegramDeviceModel    *string                `json:"telegram_device_model,omitempty"`
-	TelegramLangCode       *string                `json:"telegram_lang_code,omitempty"`
-	TelegramLangPack       *string                `json:"telegram_lang_pack,omitempty"`
-	TelegramSystemLangCode *string                `json:"telegram_system_lang_code,omitempty"`
-	TelegramSystemVersion  *string                `json:"telegram_system_version,omitempty"`
-	User                   *ProfileEditBodyUser   `json:"user,omitempty"`
+	// AllowAcceptAccounts - Usernames who can transfer market accounts to you. Separate values with a comma.
+	AllowAcceptAccounts []string `json:"allow_accept_accounts,omitempty"`
+	// ClearTelegramClient - Clear Telegram data.
+	ClearTelegramClient *bool                  `json:"clear_telegram_client,omitempty"`
+	Option              *ProfileEditBodyOption `json:"option,omitempty"`
+	// TelegramAPIHash - Telegram api hash.
+	TelegramAPIHash *string `json:"telegram_api_hash,omitempty"`
+	// TelegramAPIID - Telegram api id.
+	TelegramAPIID *string `json:"telegram_api_id,omitempty"`
+	// TelegramAppVersion - Telegram app version.
+	TelegramAppVersion *string `json:"telegram_app_version,omitempty"`
+	// TelegramDeviceModel - Telegram device model.
+	TelegramDeviceModel *string `json:"telegram_device_model,omitempty"`
+	// TelegramLangCode - Telegram lang code.
+	TelegramLangCode *string `json:"telegram_lang_code,omitempty"`
+	// TelegramLangPack - Telegram lang pack.
+	TelegramLangPack *string `json:"telegram_lang_pack,omitempty"`
+	// TelegramSystemLangCode - Telegram system lang code.
+	TelegramSystemLangCode *string `json:"telegram_system_lang_code,omitempty"`
+	// TelegramSystemVersion - Telegram system version.
+	TelegramSystemVersion *string              `json:"telegram_system_version,omitempty"`
+	User                  *ProfileEditBodyUser `json:"user,omitempty"`
 }
 
 // ProfileEditResponse is the response for the endpoint.
@@ -22324,21 +23338,27 @@ type ProfileEditResponse struct {
 
 // ProfileGetParams holds query parameters for Profile.Get.
 type ProfileGetParams struct {
+	// FieldsInclude - List of hidden fields to include.
 	FieldsInclude []FieldsInclude `query:"fields_include"`
 }
 
 // ProfileGetResponse is the response for the endpoint.
 type ProfileGetResponse struct {
-	SystemInfo ProfileGetResponseSystemInfo `json:"system_info"`
-	User       ProfileGetResponseUser       `json:"user"`
+	SystemInfo *ProfileGetResponseSystemInfo `json:"system_info"`
+	User       *ProfileGetResponseUser       `json:"user"`
 }
 
 // ProxyAddBody holds the request body for Proxy.Add.
 type ProxyAddBody struct {
-	ProxyIP   *string `json:"proxy_ip,omitempty"`
+	// ProxyIP - Proxy ip or host. Required if proxy_row is not specified.
+	ProxyIP *string `json:"proxy_ip,omitempty"`
+	// ProxyPass - Proxy password. Required if proxy_row is not specified.
 	ProxyPass *string `json:"proxy_pass,omitempty"`
-	ProxyPort *int64  `json:"proxy_port,omitempty"`
-	ProxyRow  *string `json:"proxy_row,omitempty"`
+	// ProxyPort - Proxy port. Required if proxy_row is not specified.
+	ProxyPort *int64 `json:"proxy_port,omitempty"`
+	// ProxyRow - Proxy list in String format ip:port:user:pass. Each proxy must be start with new line (use \r\n separator)
+	ProxyRow *string `json:"proxy_row,omitempty"`
+	// ProxyUser - Proxy username. Required if proxy_row is not specified.
 	ProxyUser *string `json:"proxy_user,omitempty"`
 }
 
@@ -22351,8 +23371,10 @@ type ProxyAddResponse struct {
 
 // ProxyDeleteBody holds the request body for Proxy.Delete.
 type ProxyDeleteBody struct {
-	DeleteAll *bool  `json:"delete_all,omitempty"`
-	ProxyID   *int64 `json:"proxy_id,omitempty"`
+	// DeleteAll - Delete all proxies.
+	DeleteAll *bool `json:"delete_all,omitempty"`
+	// ProxyID - Id of an existing proxy.
+	ProxyID *int64 `json:"proxy_id,omitempty"`
 }
 
 // ProxyDeleteResponse is the response for the endpoint.
@@ -22364,64 +23386,92 @@ type ProxyDeleteResponse struct {
 
 // ProxyGetResponse is the response for the endpoint.
 type ProxyGetResponse struct {
-	Proxies    []any                      `json:"proxies"`
-	SystemInfo ProxyGetResponseSystemInfo `json:"system_info"`
+	Proxies    []any                       `json:"proxies"`
+	SystemInfo *ProxyGetResponseSystemInfo `json:"system_info"`
 }
 
 // PublishingAddBody holds the request body for Publishing.Add.
 type PublishingAddBody struct {
-	AllowAskDiscount  *bool                `json:"allow_ask_discount,omitempty"`
-	CategoryID        CategoryID           `json:"category_id"`
-	Currency          Currency             `json:"currency"`
-	Description       *string              `json:"description,omitempty"`
-	EmailLoginData    *string              `json:"email_login_data,omitempty"`
-	EmailType         *EmailType           `json:"email_type,omitempty"`
-	ExtendedGuarantee *ExtendedGuarantee   `json:"extended_guarantee,omitempty"`
-	ForceTempEmail    *bool                `json:"forceTempEmail,omitempty"`
-	HasEmailLoginData *bool                `json:"has_email_login_data,omitempty"`
-	Information       *string              `json:"information,omitempty"`
-	ItemOrigin        PublishingItemOrigin `json:"item_origin"`
-	Price             float64              `json:"price"`
-	ProxyID           *int64               `json:"proxy_id,omitempty"`
-	RandomProxy       *bool                `json:"random_proxy,omitempty"`
-	ResellItemID      *int64               `json:"resell_item_id,omitempty"`
-	Title             *string              `json:"title,omitempty"`
-	TitleEn           *string              `json:"title_en,omitempty"`
+	// AllowAskDiscount - Allow users to ask discount for this account.
+	AllowAskDiscount *bool `json:"allow_ask_discount,omitempty"`
+	// CategoryID - Accounts category.
+	CategoryID CategoryID `json:"category_id"`
+	Currency   Currency   `json:"currency"`
+	// Description - Account public description.
+	Description *string `json:"description,omitempty"`
+	// EmailLoginData - Required if a category is one of list of Required email login data categories. Email login data (email:password format).
+	EmailLoginData *string `json:"email_login_data,omitempty"`
+	// EmailType - Email type.
+	EmailType *EmailType `json:"email_type,omitempty"`
+	// ExtendedGuarantee - Guarantee type.
+	ExtendedGuarantee *ExtendedGuarantee `json:"extended_guarantee,omitempty"`
+	// ForceTempEmail - Get temporary email if not required by category. Available for Supercell, Fortnite and Epic Games categories.
+	ForceTempEmail *bool `json:"forceTempEmail,omitempty"`
+	// HasEmailLoginData - Required if a category is one of list of Required email login data categories.
+	HasEmailLoginData *bool `json:"has_email_login_data,omitempty"`
+	// Information - Account private information (visible only for buyer).
+	Information *string `json:"information,omitempty"`
+	// ItemOrigin - Account origin. Where did you get it from.
+	ItemOrigin PublishingItemOrigin `json:"item_origin"`
+	// Price - Current price of account in your currency.
+	Price float64 `json:"price"`
+	// ProxyID - Proxy id that will be used to check account.
+	ProxyID *int64 `json:"proxy_id,omitempty"`
+	// RandomProxy - Set this parameter to true so that the Market will take a random proxy from its pool for each of your requests. Otherwise, if this parameter is set to false or not set, the Market will take a specific proxy from its pool, which is predefined for each item. > This parameter only works with proxies from the Market pool. If you want to use your own proxies, use the proxy_id or extra[proxy] parameter.
+	RandomProxy *bool `json:"random_proxy,omitempty"`
+	// ResellItemID - Put item id, if you are trying to resell item. This is useful to pass temporary email from reselling item to new item. You will get same temporary email from reselling account.
+	ResellItemID *int64 `json:"resell_item_id,omitempty"`
+	// Title - Title of account. If title specified and title_en is empty, title_en will be automatically translated to English language.
+	Title *string `json:"title,omitempty"`
+	// TitleEn - English title of account. If title_en specified and title is empty, title will be automatically translated to Russian language.
+	TitleEn *string `json:"title_en,omitempty"`
 }
 
 // PublishingAddResponse is the response for the endpoint.
 type PublishingAddResponse struct {
-	Item       PublishingAddResponseItem       `json:"item"`
-	Status     string                          `json:"status"`
-	SystemInfo PublishingAddResponseSystemInfo `json:"system_info"`
+	Item       *PublishingAddResponseItem       `json:"item"`
+	Status     string                           `json:"status"`
+	SystemInfo *PublishingAddResponseSystemInfo `json:"system_info"`
 }
 
 // PublishingCheckBody holds the request body for Publishing.Check.
 type PublishingCheckBody struct {
-	EmailLoginData    *string                   `json:"email_login_data,omitempty"`
-	EmailType         *EmailType                `json:"email_type,omitempty"`
-	Extra             *PublishingCheckBodyExtra `json:"extra,omitempty"`
-	HasEmailLoginData *bool                     `json:"has_email_login_data,omitempty"`
-	Login             *string                   `json:"login,omitempty"`
-	LoginPassword     *string                   `json:"login_password,omitempty"`
-	Password          *string                   `json:"password,omitempty"`
-	RandomProxy       *bool                     `json:"random_proxy,omitempty"`
-	ResellItemID      *int64                    `json:"resell_item_id,omitempty"`
+	// EmailLoginData - Required if a category is one of list of Required email login data categories. Email login data (email:password format).
+	EmailLoginData *string `json:"email_login_data,omitempty"`
+	// EmailType - Email type.
+	EmailType *EmailType                `json:"email_type,omitempty"`
+	Extra     *PublishingCheckBodyExtra `json:"extra,omitempty"`
+	// HasEmailLoginData - Required if a category is one of list of Required email login data categories.
+	HasEmailLoginData *bool `json:"has_email_login_data,omitempty"`
+	// Login - Account login (or email).
+	Login *string `json:"login,omitempty"`
+	// LoginPassword - Account login data (login:password format).
+	LoginPassword *string `json:"login_password,omitempty"`
+	// Password - Account password.
+	Password *string `json:"password,omitempty"`
+	// RandomProxy - Set this parameter to true so that the Market will take a random proxy from its pool for each of your requests. Otherwise, if this parameter is set to false or not set, the Market will take a specific proxy from its pool, which is predefined for each item. > This parameter only works with proxies from the Market pool. If you want to use your own proxies, use the proxy_id or extra[proxy] parameter.
+	RandomProxy *bool `json:"random_proxy,omitempty"`
+	// ResellItemID - Put if you are trying to resell an account.
+	ResellItemID *int64 `json:"resell_item_id,omitempty"`
 }
 
 // PublishingCheckResponse is the response for the endpoint.
 type PublishingCheckResponse struct {
-	Item       PublishingCheckResponseItem       `json:"item"`
-	Status     string                            `json:"status"`
-	SystemInfo PublishingCheckResponseSystemInfo `json:"system_info"`
+	Item       *PublishingCheckResponseItem       `json:"item"`
+	Status     string                             `json:"status"`
+	SystemInfo *PublishingCheckResponseSystemInfo `json:"system_info"`
 }
 
 // PublishingExternalBody holds the request body for Publishing.External.
 type PublishingExternalBody struct {
-	Cookies        *string `json:"cookies,omitempty"`
+	// Cookies - Cookies.
+	Cookies *string `json:"cookies,omitempty"`
+	// EmailLoginData - Email login data (email:password format).
 	EmailLoginData *string `json:"email_login_data,omitempty"`
-	Login          *string `json:"login,omitempty"`
-	Type           string  `json:"type"`
+	// Login - Account login data (login:password format).
+	Login *string `json:"login,omitempty"`
+	// Type - External account type.
+	Type string `json:"type"`
 }
 
 // PublishingExternalResponse is the response for the endpoint.
@@ -22433,53 +23483,72 @@ type PublishingExternalResponse struct {
 
 // PublishingFastSellBody holds the request body for Publishing.FastSell.
 type PublishingFastSellBody struct {
-	AllowAskDiscount  *bool                        `json:"allow_ask_discount,omitempty"`
-	CategoryID        CategoryID                   `json:"category_id"`
-	Currency          Currency                     `json:"currency"`
-	Description       *string                      `json:"description,omitempty"`
-	EmailLoginData    *string                      `json:"email_login_data,omitempty"`
-	EmailType         *EmailType                   `json:"email_type,omitempty"`
+	// AllowAskDiscount - Allow users to ask discount for this account.
+	AllowAskDiscount *bool `json:"allow_ask_discount,omitempty"`
+	// CategoryID - Accounts category.
+	CategoryID CategoryID `json:"category_id"`
+	Currency   Currency   `json:"currency"`
+	// Description - Account public description.
+	Description *string `json:"description,omitempty"`
+	// EmailLoginData - Required if a category is one of list of Required email login data categories. Email login data (email:password format).
+	EmailLoginData *string `json:"email_login_data,omitempty"`
+	// EmailType - Email type.
+	EmailType *EmailType `json:"email_type,omitempty"`
+	// ExtendedGuarantee - Guarantee type.
 	ExtendedGuarantee *ExtendedGuarantee           `json:"extended_guarantee,omitempty"`
 	Extra             *PublishingFastSellBodyExtra `json:"extra,omitempty"`
-	HasEmailLoginData *bool                        `json:"has_email_login_data,omitempty"`
-	Information       *string                      `json:"information,omitempty"`
-	ItemOrigin        PublishingItemOrigin         `json:"item_origin"`
-	Login             *string                      `json:"login,omitempty"`
-	LoginPassword     *string                      `json:"login_password,omitempty"`
-	Password          *string                      `json:"password,omitempty"`
-	Price             float64                      `json:"price"`
-	ProxyID           *int64                       `json:"proxy_id,omitempty"`
-	RandomProxy       *bool                        `json:"random_proxy,omitempty"`
-	Title             *string                      `json:"title,omitempty"`
-	TitleEn           *string                      `json:"title_en,omitempty"`
+	// HasEmailLoginData - Required if a category is one of list of Required email login data categories.
+	HasEmailLoginData *bool `json:"has_email_login_data,omitempty"`
+	// Information - Account private information (visible only for buyer).
+	Information *string `json:"information,omitempty"`
+	// ItemOrigin - Account origin. Where did you get it from.
+	ItemOrigin PublishingItemOrigin `json:"item_origin"`
+	// Login - Account login (or email).
+	Login *string `json:"login,omitempty"`
+	// LoginPassword - Account login data (login:password format).
+	LoginPassword *string `json:"login_password,omitempty"`
+	// Password - Account password.
+	Password *string `json:"password,omitempty"`
+	// Price - Current price of account in your currency.
+	Price float64 `json:"price"`
+	// ProxyID - Proxy id that will be used to check account.
+	ProxyID *int64 `json:"proxy_id,omitempty"`
+	// RandomProxy - Set this parameter to true so that the Market will take a random proxy from its pool for each of your requests. Otherwise, if this parameter is set to false or not set, the Market will take a specific proxy from its pool, which is predefined for each item. > This parameter only works with proxies from the Market pool. If you want to use your own proxies, use the proxy_id or extra[proxy] parameter.
+	RandomProxy *bool `json:"random_proxy,omitempty"`
+	// Title - Title of account. If title specified and title_en is empty, title_en will be automatically translated to English language.
+	Title *string `json:"title,omitempty"`
+	// TitleEn - English title of account. If title_en specified and title is empty, title will be automatically translated to Russian language.
+	TitleEn *string `json:"title_en,omitempty"`
 }
 
 // PublishingFastSellResponse is the response for the endpoint.
 type PublishingFastSellResponse struct {
-	Item       PublishingFastSellResponseItem       `json:"item"`
-	ItemLink   string                               `json:"itemLink"`
-	SystemInfo PublishingFastSellResponseSystemInfo `json:"system_info"`
+	Item       *PublishingFastSellResponseItem       `json:"item"`
+	ItemLink   string                                `json:"itemLink"`
+	SystemInfo *PublishingFastSellResponseSystemInfo `json:"system_info"`
 }
 
 // PurchasingCheckResponse is the response for the endpoint.
 type PurchasingCheckResponse struct {
-	Item                  PurchasingCheckResponseItem       `json:"item"`
-	RequireVideoRecording bool                              `json:"requireVideoRecording"`
-	Status                string                            `json:"status"`
-	SystemInfo            PurchasingCheckResponseSystemInfo `json:"system_info"`
+	Item                  *PurchasingCheckResponseItem       `json:"item"`
+	RequireVideoRecording bool                               `json:"requireVideoRecording"`
+	Status                string                             `json:"status"`
+	SystemInfo            *PurchasingCheckResponseSystemInfo `json:"system_info"`
 }
 
 // PurchasingConfirmBody holds the request body for Purchasing.Confirm.
 type PurchasingConfirmBody struct {
+	// BalanceID - Balance ID that will be used to purchase specified item.
 	BalanceID *int64 `json:"balance_id,omitempty"`
-	Price     *int64 `json:"price,omitempty"`
+	// Price - Current price of account in your currency.
+	Price *int64 `json:"price,omitempty"`
 }
 
 // PurchasingConfirmResponse is the response for the endpoint.
 type PurchasingConfirmResponse struct {
-	Item       PurchasingConfirmResponseItem       `json:"item"`
-	Status     *string                             `json:"status,omitempty"`
-	SystemInfo PurchasingConfirmResponseSystemInfo `json:"system_info"`
+	Item       *PurchasingConfirmResponseItem       `json:"item"`
+	Status     *string                              `json:"status,omitempty"`
+	SystemInfo *PurchasingConfirmResponseSystemInfo `json:"system_info"`
 }
 
 // PurchasingDiscountCancelResponse is the response for the endpoint.
@@ -22491,8 +23560,10 @@ type PurchasingDiscountCancelResponse struct {
 
 // PurchasingDiscountRequestBody holds the request body for Purchasing.DiscountRequest.
 type PurchasingDiscountRequestBody struct {
+	// DiscountPrice - Requested discounted price.
 	DiscountPrice float64 `json:"discount_price"`
-	Message       *string `json:"message,omitempty"`
+	// Message - Message to the seller.
+	Message *string `json:"message,omitempty"`
 }
 
 // PurchasingDiscountRequestResponse is the response for the endpoint.
@@ -22504,13 +23575,15 @@ type PurchasingDiscountRequestResponse struct {
 
 // PurchasingFastBuyBody holds the request body for Purchasing.FastBuy.
 type PurchasingFastBuyBody struct {
-	BalanceID *int64   `json:"balance_id,omitempty"`
-	Price     *float64 `json:"price,omitempty"`
+	// BalanceID - Balance ID that will be used to purchase specified item.
+	BalanceID *int64 `json:"balance_id,omitempty"`
+	// Price - Current price of account in your currency.
+	Price *float64 `json:"price,omitempty"`
 }
 
 // PurchasingFastBuyResponse is the response for the endpoint.
 type PurchasingFastBuyResponse struct {
-	Item       PurchasingFastBuyResponseItem       `json:"item"`
-	Status     string                              `json:"status"`
-	SystemInfo PurchasingFastBuyResponseSystemInfo `json:"system_info"`
+	Item       *PurchasingFastBuyResponseItem       `json:"item"`
+	Status     string                               `json:"status"`
+	SystemInfo *PurchasingFastBuyResponseSystemInfo `json:"system_info"`
 }

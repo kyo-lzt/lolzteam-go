@@ -82,6 +82,8 @@ type AssetsService struct {
 }
 
 // CSS Get CSS
+//
+// Gets css rulesets for requested selectors.
 func (s *AssetsService) CSS(ctx context.Context, params *AssetsCSSParams) (*AssetsCSSResponse, error) {
 	var result AssetsCSSResponse
 	opts := lolzteam.RequestOptions{
@@ -103,6 +105,11 @@ type BatchService struct {
 }
 
 // Execute Batch
+//
+// Execute multiple API requests at once (Separated by comma). Maximum batch jobs is 10.
+//
+// Required scopes:
+// + Same as called API requests.
 func (s *BatchService) Execute(ctx context.Context, jobs []BatchExecuteItem) (*BatchExecuteResponse, error) {
 	var result BatchExecuteResponse
 	opts := lolzteam.RequestOptions{
@@ -122,6 +129,11 @@ type CategoriesService struct {
 }
 
 // Get Get Category
+//
+// Detail information of a category.
+//
+// Required scopes:
+// + read
 func (s *CategoriesService) Get(ctx context.Context, categoryID int64) (*CategoriesGetResponse, error) {
 	var result CategoriesGetResponse
 	opts := lolzteam.RequestOptions{
@@ -135,6 +147,11 @@ func (s *CategoriesService) Get(ctx context.Context, categoryID int64) (*Categor
 }
 
 // List Get Categories
+//
+// List of all categories in the system.
+//
+// Required scopes:
+// + read
 func (s *CategoriesService) List(ctx context.Context, params *CategoriesListParams) (*CategoriesListResponse, error) {
 	var result CategoriesListResponse
 	opts := lolzteam.RequestOptions{
@@ -156,6 +173,11 @@ type ChatboxService struct {
 }
 
 // DeleteIgnore Unignore Chat User
+//
+// Unignore chat user.
+//
+// Required scopes:
+// + chatbox
 func (s *ChatboxService) DeleteIgnore(ctx context.Context, body *ChatboxDeleteIgnoreBody) (*ChatboxDeleteIgnoreResponse, error) {
 	var result ChatboxDeleteIgnoreResponse
 	opts := lolzteam.RequestOptions{
@@ -172,6 +194,11 @@ func (s *ChatboxService) DeleteIgnore(ctx context.Context, body *ChatboxDeleteIg
 }
 
 // DeleteMessage Delete Chat Message
+//
+// Delete chat message.
+//
+// Required scopes:
+// + chatbox
 func (s *ChatboxService) DeleteMessage(ctx context.Context, body *ChatboxDeleteMessageBody) (*ChatboxDeleteMessageResponse, error) {
 	var result ChatboxDeleteMessageResponse
 	opts := lolzteam.RequestOptions{
@@ -188,6 +215,11 @@ func (s *ChatboxService) DeleteMessage(ctx context.Context, body *ChatboxDeleteM
 }
 
 // EditMessage Edit Chat Message
+//
+// Edit chat message.
+//
+// Required scopes:
+// + chatbox
 func (s *ChatboxService) EditMessage(ctx context.Context, body *ChatboxEditMessageBody) (*ChatboxEditMessageResponse, error) {
 	var result ChatboxEditMessageResponse
 	opts := lolzteam.RequestOptions{
@@ -204,6 +236,11 @@ func (s *ChatboxService) EditMessage(ctx context.Context, body *ChatboxEditMessa
 }
 
 // GetIgnore Get Ignored Chat Users
+//
+// Get list of ignored chat users.
+//
+// Required scopes:
+// + chatbox
 func (s *ChatboxService) GetIgnore(ctx context.Context) (*ChatboxGetIgnoreResponse, error) {
 	var result ChatboxGetIgnoreResponse
 	opts := lolzteam.RequestOptions{
@@ -217,6 +254,11 @@ func (s *ChatboxService) GetIgnore(ctx context.Context) (*ChatboxGetIgnoreRespon
 }
 
 // GetLeaderboard Get Chat Leaderboard
+//
+// Get chat leaderboard.
+//
+// Required scopes:
+// + chatbox
 func (s *ChatboxService) GetLeaderboard(ctx context.Context, params *ChatboxGetLeaderboardParams) (*ChatboxGetLeaderboardResponse, error) {
 	var result ChatboxGetLeaderboardResponse
 	opts := lolzteam.RequestOptions{
@@ -233,6 +275,11 @@ func (s *ChatboxService) GetLeaderboard(ctx context.Context, params *ChatboxGetL
 }
 
 // GetMessages Get Chat Messages
+//
+// Get chat messages.
+//
+// Required scopes:
+// + chatbox
 func (s *ChatboxService) GetMessages(ctx context.Context, params *ChatboxGetMessagesParams) (*ChatboxGetMessagesResponse, error) {
 	var result ChatboxGetMessagesResponse
 	opts := lolzteam.RequestOptions{
@@ -249,6 +296,11 @@ func (s *ChatboxService) GetMessages(ctx context.Context, params *ChatboxGetMess
 }
 
 // Index Get Chats
+//
+// Get chat rooms.
+//
+// Required scopes:
+// + chatbox
 func (s *ChatboxService) Index(ctx context.Context, params *ChatboxIndexParams) (*ChatboxIndexResponse, error) {
 	var result ChatboxIndexResponse
 	opts := lolzteam.RequestOptions{
@@ -265,6 +317,11 @@ func (s *ChatboxService) Index(ctx context.Context, params *ChatboxIndexParams) 
 }
 
 // Online Get Chat Online
+//
+// Get chat Online Users.
+//
+// Required scopes:
+// + chatbox
 func (s *ChatboxService) Online(ctx context.Context, params *ChatboxOnlineParams) (*ChatboxOnlineResponse, error) {
 	var result ChatboxOnlineResponse
 	opts := lolzteam.RequestOptions{
@@ -281,6 +338,11 @@ func (s *ChatboxService) Online(ctx context.Context, params *ChatboxOnlineParams
 }
 
 // PostIgnore Ignore Chat User
+//
+// Ignore chat user.
+//
+// Required scopes:
+// + chatbox
 func (s *ChatboxService) PostIgnore(ctx context.Context, body *ChatboxPostIgnoreBody) (*ChatboxPostIgnoreResponse, error) {
 	var result ChatboxPostIgnoreResponse
 	opts := lolzteam.RequestOptions{
@@ -297,6 +359,11 @@ func (s *ChatboxService) PostIgnore(ctx context.Context, body *ChatboxPostIgnore
 }
 
 // PostMessage Create Chat Message
+//
+// Create chat message.
+//
+// Required scopes:
+// + chatbox
 func (s *ChatboxService) PostMessage(ctx context.Context, body *ChatboxPostMessageBody) (*ChatboxPostMessageResponse, error) {
 	var result ChatboxPostMessageResponse
 	opts := lolzteam.RequestOptions{
@@ -313,6 +380,11 @@ func (s *ChatboxService) PostMessage(ctx context.Context, body *ChatboxPostMessa
 }
 
 // Report Report Chat Message
+//
+// Report chat message.
+//
+// Required scopes:
+// + chatbox
 func (s *ChatboxService) Report(ctx context.Context, body *ChatboxReportBody) (*ChatboxReportResponse, error) {
 	var result ChatboxReportResponse
 	opts := lolzteam.RequestOptions{
@@ -329,6 +401,11 @@ func (s *ChatboxService) Report(ctx context.Context, body *ChatboxReportBody) (*
 }
 
 // ReportReasons Get Chat Message Report Reasons
+//
+// Report chat message.
+//
+// Required scopes:
+// + chatbox
 func (s *ChatboxService) ReportReasons(ctx context.Context, params *ChatboxReportReasonsParams) (*ChatboxReportReasonsResponse, error) {
 	var result ChatboxReportReasonsResponse
 	opts := lolzteam.RequestOptions{
@@ -350,6 +427,12 @@ type ConversationsService struct {
 }
 
 // AlertsDisable Disable Conversation Alerts
+//
+// Disable alerts for conversation.
+//
+// Required scopes:
+// + post
+// + conversate
 func (s *ConversationsService) AlertsDisable(ctx context.Context, conversationID int64) (*ConversationsAlertsDisableResponse, error) {
 	var result ConversationsAlertsDisableResponse
 	opts := lolzteam.RequestOptions{
@@ -363,6 +446,12 @@ func (s *ConversationsService) AlertsDisable(ctx context.Context, conversationID
 }
 
 // AlertsEnable Enable Conversation Alerts
+//
+// Enable alerts for conversation.
+//
+// Required scopes:
+// + post
+// + conversate
 func (s *ConversationsService) AlertsEnable(ctx context.Context, conversationID int64) (*ConversationsAlertsEnableResponse, error) {
 	var result ConversationsAlertsEnableResponse
 	opts := lolzteam.RequestOptions{
@@ -376,6 +465,12 @@ func (s *ConversationsService) AlertsEnable(ctx context.Context, conversationID 
 }
 
 // Create Create Conversation
+//
+// Create a new conversation.
+//
+// Required scopes:
+// + post
+// + conversate
 func (s *ConversationsService) Create(ctx context.Context, body *ConversationsCreateBody) (*ConversationsCreateResponse, error) {
 	var result ConversationsCreateResponse
 	opts := lolzteam.RequestOptions{
@@ -392,6 +487,12 @@ func (s *ConversationsService) Create(ctx context.Context, body *ConversationsCr
 }
 
 // Delete Leave Conversation
+//
+// Leave the conversation.
+//
+// Required scopes:
+// + post
+// + conversate
 func (s *ConversationsService) Delete(ctx context.Context, body *ConversationsDeleteBody) (*ConversationsDeleteResponse, error) {
 	var result ConversationsDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -408,6 +509,12 @@ func (s *ConversationsService) Delete(ctx context.Context, body *ConversationsDe
 }
 
 // Get Get Conversation
+//
+// Detail information of a conversation.
+//
+// Required scopes:
+// + read
+// + conversate
 func (s *ConversationsService) Get(ctx context.Context, conversationID int64) (*ConversationsGetResponse, error) {
 	var result ConversationsGetResponse
 	opts := lolzteam.RequestOptions{
@@ -421,6 +528,12 @@ func (s *ConversationsService) Get(ctx context.Context, conversationID int64) (*
 }
 
 // Invite Invite Users to Conversation
+//
+// Invite one or more users to an existing conversation.
+//
+// Required scopes:
+// + conversate
+// + post
 func (s *ConversationsService) Invite(ctx context.Context, conversationID int64, body *ConversationsInviteBody) (*ConversationsInviteResponse, error) {
 	var result ConversationsInviteResponse
 	opts := lolzteam.RequestOptions{
@@ -437,6 +550,11 @@ func (s *ConversationsService) Invite(ctx context.Context, conversationID int64,
 }
 
 // Kick Kick User from Conversation
+//
+// Kicks a user from a conversation.
+//
+// Required scopes:
+// + conversate
 func (s *ConversationsService) Kick(ctx context.Context, conversationID int64, body *ConversationsKickBody) (*ConversationsKickResponse, error) {
 	var result ConversationsKickResponse
 	opts := lolzteam.RequestOptions{
@@ -453,6 +571,12 @@ func (s *ConversationsService) Kick(ctx context.Context, conversationID int64, b
 }
 
 // List Get Conversations
+//
+// List of conversations (with pagination).
+//
+// Required scopes:
+// + read
+// + conversate
 func (s *ConversationsService) List(ctx context.Context, params *ConversationsListParams) (*ConversationsListResponse, error) {
 	var result ConversationsListResponse
 	opts := lolzteam.RequestOptions{
@@ -469,6 +593,12 @@ func (s *ConversationsService) List(ctx context.Context, params *ConversationsLi
 }
 
 // MessagesCreate Create Conversation Message
+//
+// Create a new conversation message.
+//
+// Required scopes:
+// + post
+// + conversate
 func (s *ConversationsService) MessagesCreate(ctx context.Context, conversationID int64, body *ConversationsMessagesCreateBody) (*ConversationsMessagesCreateResponse, error) {
 	var result ConversationsMessagesCreateResponse
 	opts := lolzteam.RequestOptions{
@@ -485,6 +615,11 @@ func (s *ConversationsService) MessagesCreate(ctx context.Context, conversationI
 }
 
 // MessagesDelete Delete Conversation Message
+//
+// Deletes a message from a conversation.
+//
+// Required scopes:
+// + conversate
 func (s *ConversationsService) MessagesDelete(ctx context.Context, conversationID int64, messageID int64) (*ConversationsMessagesDeleteResponse, error) {
 	var result ConversationsMessagesDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -498,6 +633,12 @@ func (s *ConversationsService) MessagesDelete(ctx context.Context, conversationI
 }
 
 // MessagesEdit Edit Conversation Message
+//
+// Edit a message.
+//
+// Required scopes:
+// + post
+// + conversate
 func (s *ConversationsService) MessagesEdit(ctx context.Context, conversationID int64, messageID int64, body *ConversationsMessagesEditBody) (*ConversationsMessagesEditResponse, error) {
 	var result ConversationsMessagesEditResponse
 	opts := lolzteam.RequestOptions{
@@ -514,6 +655,12 @@ func (s *ConversationsService) MessagesEdit(ctx context.Context, conversationID 
 }
 
 // MessagesGet Get Conversation Message
+//
+// Detail information of a message.
+//
+// Required scopes:
+// + read
+// + conversate
 func (s *ConversationsService) MessagesGet(ctx context.Context, messageID int64) (*ConversationsMessagesGetResponse, error) {
 	var result ConversationsMessagesGetResponse
 	opts := lolzteam.RequestOptions{
@@ -527,6 +674,12 @@ func (s *ConversationsService) MessagesGet(ctx context.Context, messageID int64)
 }
 
 // MessagesList Get Conversation Messages
+//
+// List of messages in a conversation (with pagination).
+//
+// Required scopes:
+// + read
+// + conversate
 func (s *ConversationsService) MessagesList(ctx context.Context, conversationID int64, params *ConversationsMessagesListParams) (*ConversationsMessagesListResponse, error) {
 	var result ConversationsMessagesListResponse
 	opts := lolzteam.RequestOptions{
@@ -543,6 +696,12 @@ func (s *ConversationsService) MessagesList(ctx context.Context, conversationID 
 }
 
 // MessagesStick Stick Conversation Message
+//
+// Stick a message in a conversation.
+//
+// Required scopes:
+// + post
+// + conversate
 func (s *ConversationsService) MessagesStick(ctx context.Context, conversationID int64, messageID int64) (*ConversationsMessagesStickResponse, error) {
 	var result ConversationsMessagesStickResponse
 	opts := lolzteam.RequestOptions{
@@ -556,6 +715,12 @@ func (s *ConversationsService) MessagesStick(ctx context.Context, conversationID
 }
 
 // MessagesUnstick Unstick Conversation Message
+//
+// Unstick a message in a conversation.
+//
+// Required scopes:
+// + post
+// + conversate
 func (s *ConversationsService) MessagesUnstick(ctx context.Context, conversationID int64, messageID int64) (*ConversationsMessagesUnstickResponse, error) {
 	var result ConversationsMessagesUnstickResponse
 	opts := lolzteam.RequestOptions{
@@ -569,6 +734,11 @@ func (s *ConversationsService) MessagesUnstick(ctx context.Context, conversation
 }
 
 // Read Read a Conversation
+//
+// Read a specific conversation.
+//
+// Required scopes:
+// + conversate
 func (s *ConversationsService) Read(ctx context.Context, conversationID int64) (*ConversationsReadResponse, error) {
 	var result ConversationsReadResponse
 	opts := lolzteam.RequestOptions{
@@ -582,6 +752,12 @@ func (s *ConversationsService) Read(ctx context.Context, conversationID int64) (
 }
 
 // ReadAll Read All Conversations
+//
+// Mark all conversations as read.
+//
+// Required scopes:
+// + read
+// + conversate
 func (s *ConversationsService) ReadAll(ctx context.Context) (*ConversationsReadAllResponse, error) {
 	var result ConversationsReadAllResponse
 	opts := lolzteam.RequestOptions{
@@ -595,6 +771,11 @@ func (s *ConversationsService) ReadAll(ctx context.Context) (*ConversationsReadA
 }
 
 // Save Send Content To Saved Messages
+//
+// Send content to Saved Messages.
+//
+// Required scopes:
+// + conversate
 func (s *ConversationsService) Save(ctx context.Context, body *ConversationsSaveBody) (*ConversationsSaveResponse, error) {
 	var result ConversationsSaveResponse
 	opts := lolzteam.RequestOptions{
@@ -611,6 +792,12 @@ func (s *ConversationsService) Save(ctx context.Context, body *ConversationsSave
 }
 
 // Search Search Conversations Messages
+//
+// Search for conversations messages or recipients.
+//
+// Required scopes:
+// + read
+// + conversate
 func (s *ConversationsService) Search(ctx context.Context, body *ConversationsSearchBody) (*ConversationsSearchResponse, error) {
 	var result ConversationsSearchResponse
 	opts := lolzteam.RequestOptions{
@@ -627,6 +814,12 @@ func (s *ConversationsService) Search(ctx context.Context, body *ConversationsSe
 }
 
 // Star Star Conversation
+//
+// Star conversation.
+//
+// Required scopes:
+// + post
+// + conversate
 func (s *ConversationsService) Star(ctx context.Context, conversationID int64) (*ConversationsStarResponse, error) {
 	var result ConversationsStarResponse
 	opts := lolzteam.RequestOptions{
@@ -640,6 +833,11 @@ func (s *ConversationsService) Star(ctx context.Context, conversationID int64) (
 }
 
 // Start Start Conversation
+//
+// Start a new conversation with a user.
+//
+// Required scopes:
+// + conversate
 func (s *ConversationsService) Start(ctx context.Context, body *ConversationsStartBody) (*ConversationsStartResponse, error) {
 	var result ConversationsStartResponse
 	opts := lolzteam.RequestOptions{
@@ -656,6 +854,12 @@ func (s *ConversationsService) Start(ctx context.Context, body *ConversationsSta
 }
 
 // Unstar Unstar Conversation
+//
+// Unstar conversation.
+//
+// Required scopes:
+// + post
+// + conversate
 func (s *ConversationsService) Unstar(ctx context.Context, conversationID int64) (*ConversationsUnstarResponse, error) {
 	var result ConversationsUnstarResponse
 	opts := lolzteam.RequestOptions{
@@ -669,6 +873,11 @@ func (s *ConversationsService) Unstar(ctx context.Context, conversationID int64)
 }
 
 // Update Edit Conversation
+//
+// Edit conversation.
+//
+// Required scopes:
+// + conversate
 func (s *ConversationsService) Update(ctx context.Context, body *ConversationsUpdateBody) (*ConversationsUpdateResponse, error) {
 	var result ConversationsUpdateResponse
 	opts := lolzteam.RequestOptions{
@@ -690,6 +899,8 @@ type FormsService struct {
 }
 
 // Create Create Form
+//
+// Create Form.
 func (s *FormsService) Create(ctx context.Context, body FormsCreateBody) (*FormsCreateResponse, error) {
 	var result FormsCreateResponse
 	opts := lolzteam.RequestOptions{
@@ -706,6 +917,8 @@ func (s *FormsService) Create(ctx context.Context, body FormsCreateBody) (*Forms
 }
 
 // List Get Forms List
+//
+// Get Forms List
 func (s *FormsService) List(ctx context.Context, params *FormsListParams) (*FormsListResponse, error) {
 	var result FormsListResponse
 	opts := lolzteam.RequestOptions{
@@ -727,6 +940,11 @@ type ForumsService struct {
 }
 
 // EditFeedOptions Edit Feed Options
+//
+// Edit feed options.
+//
+// Required scopes:
+// + post
 func (s *ForumsService) EditFeedOptions(ctx context.Context, body *ForumsEditFeedOptionsBody) (*ForumsEditFeedOptionsResponse, error) {
 	var result ForumsEditFeedOptionsResponse
 	opts := lolzteam.RequestOptions{
@@ -743,6 +961,11 @@ func (s *ForumsService) EditFeedOptions(ctx context.Context, body *ForumsEditFee
 }
 
 // Follow Follow Forum
+//
+// Follow a forum.
+//
+// Required scopes:
+// + post
 func (s *ForumsService) Follow(ctx context.Context, forumID int64, body *ForumsFollowBody) (*ForumsFollowResponse, error) {
 	var result ForumsFollowResponse
 	opts := lolzteam.RequestOptions{
@@ -759,6 +982,11 @@ func (s *ForumsService) Follow(ctx context.Context, forumID int64, body *ForumsF
 }
 
 // Followed Get Followed Forums
+//
+// List of followed forums by current user.
+//
+// Required scopes:
+// + read
 func (s *ForumsService) Followed(ctx context.Context, params *ForumsFollowedParams) (*ForumsFollowedResponse, error) {
 	var result ForumsFollowedResponse
 	opts := lolzteam.RequestOptions{
@@ -775,6 +1003,11 @@ func (s *ForumsService) Followed(ctx context.Context, params *ForumsFollowedPara
 }
 
 // Followers Get Followers
+//
+// List of a forum's followers. For privacy reason, only the current user will be included in the list (if the user follows the specified forum).
+//
+// Required scopes:
+// + read
 func (s *ForumsService) Followers(ctx context.Context, forumID int64) (*ForumsFollowersResponse, error) {
 	var result ForumsFollowersResponse
 	opts := lolzteam.RequestOptions{
@@ -788,6 +1021,11 @@ func (s *ForumsService) Followers(ctx context.Context, forumID int64) (*ForumsFo
 }
 
 // Get Get Forum
+//
+// Detail information of a forum.
+//
+// Required scopes:
+// + read
 func (s *ForumsService) Get(ctx context.Context, forumID int64) (*ForumsGetResponse, error) {
 	var result ForumsGetResponse
 	opts := lolzteam.RequestOptions{
@@ -801,6 +1039,11 @@ func (s *ForumsService) Get(ctx context.Context, forumID int64) (*ForumsGetRespo
 }
 
 // GetFeedOptions Get Feed Options
+//
+// Returns available options for the forums feed.
+//
+// Required scopes:
+// + read
 func (s *ForumsService) GetFeedOptions(ctx context.Context) (*ForumsGetFeedOptionsResponse, error) {
 	var result ForumsGetFeedOptionsResponse
 	opts := lolzteam.RequestOptions{
@@ -814,6 +1057,11 @@ func (s *ForumsService) GetFeedOptions(ctx context.Context) (*ForumsGetFeedOptio
 }
 
 // Grouped Get Forums Tree
+//
+// Returns grouped forums.
+//
+// Required scopes:
+// + read
 func (s *ForumsService) Grouped(ctx context.Context) (*ForumsGroupedResponse, error) {
 	var result ForumsGroupedResponse
 	opts := lolzteam.RequestOptions{
@@ -827,6 +1075,11 @@ func (s *ForumsService) Grouped(ctx context.Context) (*ForumsGroupedResponse, er
 }
 
 // List Get Forums
+//
+// List of all forums in the system.
+//
+// Required scopes:
+// + read
 func (s *ForumsService) List(ctx context.Context, params *ForumsListParams) (*ForumsListResponse, error) {
 	var result ForumsListResponse
 	opts := lolzteam.RequestOptions{
@@ -843,6 +1096,11 @@ func (s *ForumsService) List(ctx context.Context, params *ForumsListParams) (*Fo
 }
 
 // Unfollow Unfollow Forum
+//
+// Unfollow a forum.
+//
+// Required scopes:
+// + post
 func (s *ForumsService) Unfollow(ctx context.Context, forumID int64) (*ForumsUnfollowResponse, error) {
 	var result ForumsUnfollowResponse
 	opts := lolzteam.RequestOptions{
@@ -861,6 +1119,11 @@ type LinksService struct {
 }
 
 // Get Get Link Forum
+//
+// Detail information of a link forum.
+//
+// Required scopes:
+// + read
 func (s *LinksService) Get(ctx context.Context, linkID int64) (*LinksGetResponse, error) {
 	var result LinksGetResponse
 	opts := lolzteam.RequestOptions{
@@ -874,6 +1137,11 @@ func (s *LinksService) Get(ctx context.Context, linkID int64) (*LinksGetResponse
 }
 
 // List Get Links Forum
+//
+// List of all link forums.
+//
+// Required scopes:
+// + read
 func (s *LinksService) List(ctx context.Context) (*LinksListResponse, error) {
 	var result LinksListResponse
 	opts := lolzteam.RequestOptions{
@@ -892,6 +1160,11 @@ type NavigationService struct {
 }
 
 // List Get Navigation
+//
+// List of navigation elements within the system.
+//
+// Required scopes:
+// + read
 func (s *NavigationService) List(ctx context.Context, params *NavigationListParams) (*NavigationListResponse, error) {
 	var result NavigationListResponse
 	opts := lolzteam.RequestOptions{
@@ -913,6 +1186,11 @@ type NotificationsService struct {
 }
 
 // Get Get Notification
+//
+// Get associated content of notification. The response depends on the content type.
+//
+// Required scopes:
+// + read
 func (s *NotificationsService) Get(ctx context.Context, notificationID int64) (*NotificationsGetResponse, error) {
 	var result NotificationsGetResponse
 	opts := lolzteam.RequestOptions{
@@ -926,6 +1204,11 @@ func (s *NotificationsService) Get(ctx context.Context, notificationID int64) (*
 }
 
 // List Get Notifications
+//
+// List of notifications (both read and unread).
+//
+// Required scopes:
+// + read
 func (s *NotificationsService) List(ctx context.Context, params *NotificationsListParams) (*NotificationsListResponse, error) {
 	var result NotificationsListResponse
 	opts := lolzteam.RequestOptions{
@@ -942,6 +1225,11 @@ func (s *NotificationsService) List(ctx context.Context, params *NotificationsLi
 }
 
 // Read Mark Notification Read
+//
+// Mark single notification or all existing notifications read.
+//
+// Required scopes:
+// + post
 func (s *NotificationsService) Read(ctx context.Context, body *NotificationsReadBody) (*NotificationsReadResponse, error) {
 	var result NotificationsReadResponse
 	opts := lolzteam.RequestOptions{
@@ -963,6 +1251,14 @@ type OAuthService struct {
 }
 
 // Token Get Access Token
+//
+// Obtain an access token using various grant types.
+//
+// Supports the following grant types:
+// - Client Credentials
+// - Authorization Code
+// - Refresh Token
+// - Password
 func (s *OAuthService) Token(ctx context.Context, body OAuthTokenBody) (*OAuthTokenResponse, error) {
 	var result OAuthTokenResponse
 	opts := lolzteam.RequestOptions{
@@ -984,6 +1280,11 @@ type PagesService struct {
 }
 
 // Get Get Page
+//
+// Detail information of a page.
+//
+// Required scopes:
+// + read
 func (s *PagesService) Get(ctx context.Context, pageID int64) (*PagesGetResponse, error) {
 	var result PagesGetResponse
 	opts := lolzteam.RequestOptions{
@@ -997,6 +1298,11 @@ func (s *PagesService) Get(ctx context.Context, pageID int64) (*PagesGetResponse
 }
 
 // List Get Pages
+//
+// List of all pages in the system.
+//
+// Required scopes:
+// + read
 func (s *PagesService) List(ctx context.Context, params *PagesListParams) (*PagesListResponse, error) {
 	var result PagesListResponse
 	opts := lolzteam.RequestOptions{
@@ -1018,6 +1324,11 @@ type PostsService struct {
 }
 
 // CommentsCreate Create Post Comment
+//
+// Create a post comment.
+//
+// Required scopes:
+// + post
 func (s *PostsService) CommentsCreate(ctx context.Context, body *PostsCommentsCreateBody) (*PostsCommentsCreateResponse, error) {
 	var result PostsCommentsCreateResponse
 	opts := lolzteam.RequestOptions{
@@ -1034,6 +1345,11 @@ func (s *PostsService) CommentsCreate(ctx context.Context, body *PostsCommentsCr
 }
 
 // CommentsDelete Delete Post Comment
+//
+// Delete a post comment.
+//
+// Required scopes:
+// + post
 func (s *PostsService) CommentsDelete(ctx context.Context, body *PostsCommentsDeleteBody) (*PostsCommentsDeleteResponse, error) {
 	var result PostsCommentsDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -1050,6 +1366,11 @@ func (s *PostsService) CommentsDelete(ctx context.Context, body *PostsCommentsDe
 }
 
 // CommentsEdit Edit Post Comment
+//
+// Edit a post comment.
+//
+// Required scopes:
+// + post
 func (s *PostsService) CommentsEdit(ctx context.Context, body *PostsCommentsEditBody) (*PostsCommentsEditResponse, error) {
 	var result PostsCommentsEditResponse
 	opts := lolzteam.RequestOptions{
@@ -1066,6 +1387,11 @@ func (s *PostsService) CommentsEdit(ctx context.Context, body *PostsCommentsEdit
 }
 
 // CommentsGet Get Post Comments
+//
+// List of post comments in a thread.
+//
+// Required scopes:
+// + read
 func (s *PostsService) CommentsGet(ctx context.Context, params *PostsCommentsGetParams) (*PostsCommentsGetResponse, error) {
 	var result PostsCommentsGetResponse
 	opts := lolzteam.RequestOptions{
@@ -1082,6 +1408,11 @@ func (s *PostsService) CommentsGet(ctx context.Context, params *PostsCommentsGet
 }
 
 // CommentsReport Report Post Comment
+//
+// Report a post comment.
+//
+// Required scopes:
+// + post
 func (s *PostsService) CommentsReport(ctx context.Context, body *PostsCommentsReportBody) (*PostsCommentsReportResponse, error) {
 	var result PostsCommentsReportResponse
 	opts := lolzteam.RequestOptions{
@@ -1098,6 +1429,11 @@ func (s *PostsService) CommentsReport(ctx context.Context, body *PostsCommentsRe
 }
 
 // Create Create Post
+//
+// Create a new post.
+//
+// Required scopes:
+// + post
 func (s *PostsService) Create(ctx context.Context, body *PostsCreateBody) (*PostsCreateResponse, error) {
 	var result PostsCreateResponse
 	opts := lolzteam.RequestOptions{
@@ -1114,6 +1450,11 @@ func (s *PostsService) Create(ctx context.Context, body *PostsCreateBody) (*Post
 }
 
 // Delete Delete Post
+//
+// Delete a post.
+//
+// Required scopes:
+// + post
 func (s *PostsService) Delete(ctx context.Context, postID int64, body *PostsDeleteBody) (*PostsDeleteResponse, error) {
 	var result PostsDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -1130,6 +1471,11 @@ func (s *PostsService) Delete(ctx context.Context, postID int64, body *PostsDele
 }
 
 // Edit Edit Post
+//
+// Edit a post.
+//
+// Required scopes:
+// + post
 func (s *PostsService) Edit(ctx context.Context, postID int64, body *PostsEditBody) (*PostsEditResponse, error) {
 	var result PostsEditResponse
 	opts := lolzteam.RequestOptions{
@@ -1146,6 +1492,11 @@ func (s *PostsService) Edit(ctx context.Context, postID int64, body *PostsEditBo
 }
 
 // Get Get Post
+//
+// Detail information of a post.
+//
+// Required scopes:
+// + read
 func (s *PostsService) Get(ctx context.Context, postID int64) (*PostsGetResponse, error) {
 	var result PostsGetResponse
 	opts := lolzteam.RequestOptions{
@@ -1159,6 +1510,11 @@ func (s *PostsService) Get(ctx context.Context, postID int64) (*PostsGetResponse
 }
 
 // Like Like Post
+//
+// Like a post.
+//
+// Required scopes:
+// + post
 func (s *PostsService) Like(ctx context.Context, postID int64) (*PostsLikeResponse, error) {
 	var result PostsLikeResponse
 	opts := lolzteam.RequestOptions{
@@ -1172,6 +1528,11 @@ func (s *PostsService) Like(ctx context.Context, postID int64) (*PostsLikeRespon
 }
 
 // Likes Get Post Likes
+//
+// List of users who liked a post.
+//
+// Required scopes:
+// + read
 func (s *PostsService) Likes(ctx context.Context, postID int64, params *PostsLikesParams) (*PostsLikesResponse, error) {
 	var result PostsLikesResponse
 	opts := lolzteam.RequestOptions{
@@ -1188,6 +1549,11 @@ func (s *PostsService) Likes(ctx context.Context, postID int64, params *PostsLik
 }
 
 // List Get Posts
+//
+// List of posts in a thread (with pagination).
+//
+// Required scopes:
+// + read
 func (s *PostsService) List(ctx context.Context, params *PostsListParams) (*PostsListResponse, error) {
 	var result PostsListResponse
 	opts := lolzteam.RequestOptions{
@@ -1204,6 +1570,11 @@ func (s *PostsService) List(ctx context.Context, params *PostsListParams) (*Post
 }
 
 // Report Report Post
+//
+// Report a post.
+//
+// Required scopes:
+// + post
 func (s *PostsService) Report(ctx context.Context, postID int64, body *PostsReportBody) (*PostsReportResponse, error) {
 	var result PostsReportResponse
 	opts := lolzteam.RequestOptions{
@@ -1220,6 +1591,11 @@ func (s *PostsService) Report(ctx context.Context, postID int64, body *PostsRepo
 }
 
 // ReportReasons Get Post Report Reasons
+//
+// Get post report reasons.
+//
+// Required scopes:
+// + read
 func (s *PostsService) ReportReasons(ctx context.Context, postID int64) (*PostsReportReasonsResponse, error) {
 	var result PostsReportReasonsResponse
 	opts := lolzteam.RequestOptions{
@@ -1233,6 +1609,11 @@ func (s *PostsService) ReportReasons(ctx context.Context, postID int64) (*PostsR
 }
 
 // Unlike Unlike Post
+//
+// Unlike a post.
+//
+// Required scopes:
+// + post
 func (s *PostsService) Unlike(ctx context.Context, postID int64) (*PostsUnlikeResponse, error) {
 	var result PostsUnlikeResponse
 	opts := lolzteam.RequestOptions{
@@ -1251,6 +1632,11 @@ type ProfilePostsService struct {
 }
 
 // CommentsCreate Create Profile Post Comment
+//
+// Create a new profile post comment.
+//
+// Required scopes:
+// + post
 func (s *ProfilePostsService) CommentsCreate(ctx context.Context, body *ProfilePostsCommentsCreateBody) (*ProfilePostsCommentsCreateResponse, error) {
 	var result ProfilePostsCommentsCreateResponse
 	opts := lolzteam.RequestOptions{
@@ -1267,6 +1653,11 @@ func (s *ProfilePostsService) CommentsCreate(ctx context.Context, body *ProfileP
 }
 
 // CommentsDelete Delete Profile Post Comment
+//
+// Delete a profile post comment.
+//
+// Required scopes:
+// + post
 func (s *ProfilePostsService) CommentsDelete(ctx context.Context, body *ProfilePostsCommentsDeleteBody) (*ProfilePostsCommentsDeleteResponse, error) {
 	var result ProfilePostsCommentsDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -1283,6 +1674,11 @@ func (s *ProfilePostsService) CommentsDelete(ctx context.Context, body *ProfileP
 }
 
 // CommentsEdit Edit Profile Post Comment
+//
+// Edit a profile post comment.
+//
+// Required scopes:
+// + post
 func (s *ProfilePostsService) CommentsEdit(ctx context.Context, body *ProfilePostsCommentsEditBody) (*ProfilePostsCommentsEditResponse, error) {
 	var result ProfilePostsCommentsEditResponse
 	opts := lolzteam.RequestOptions{
@@ -1299,6 +1695,11 @@ func (s *ProfilePostsService) CommentsEdit(ctx context.Context, body *ProfilePos
 }
 
 // CommentsGet Get Profile Post Comment
+//
+// Detail information of a profile post comment.
+//
+// Required scopes:
+// + read
 func (s *ProfilePostsService) CommentsGet(ctx context.Context, profilePostID int64, commentID int64) (*ProfilePostsCommentsGetResponse, error) {
 	var result ProfilePostsCommentsGetResponse
 	opts := lolzteam.RequestOptions{
@@ -1312,6 +1713,11 @@ func (s *ProfilePostsService) CommentsGet(ctx context.Context, profilePostID int
 }
 
 // CommentsList Get Profile Post Comments
+//
+// List of comments of a profile post.
+//
+// Required scopes:
+// + read
 func (s *ProfilePostsService) CommentsList(ctx context.Context, params *ProfilePostsCommentsListParams) (*ProfilePostsCommentsListResponse, error) {
 	var result ProfilePostsCommentsListResponse
 	opts := lolzteam.RequestOptions{
@@ -1328,6 +1734,11 @@ func (s *ProfilePostsService) CommentsList(ctx context.Context, params *ProfileP
 }
 
 // CommentsReport Report a Profile Post Comment
+//
+// Report a profile post comment.
+//
+// Required scopes:
+// + post
 func (s *ProfilePostsService) CommentsReport(ctx context.Context, commentID int64, body *ProfilePostsCommentsReportBody) (*ProfilePostsCommentsReportResponse, error) {
 	var result ProfilePostsCommentsReportResponse
 	opts := lolzteam.RequestOptions{
@@ -1344,6 +1755,11 @@ func (s *ProfilePostsService) CommentsReport(ctx context.Context, commentID int6
 }
 
 // Create Create Profile Post
+//
+// Create a profile post on a user profile.
+//
+// Required scopes:
+// + post
 func (s *ProfilePostsService) Create(ctx context.Context, body *ProfilePostsCreateBody) (*ProfilePostsCreateResponse, error) {
 	var result ProfilePostsCreateResponse
 	opts := lolzteam.RequestOptions{
@@ -1360,6 +1776,11 @@ func (s *ProfilePostsService) Create(ctx context.Context, body *ProfilePostsCrea
 }
 
 // Delete Delete Profile Post
+//
+// Delete a profile post.
+//
+// Required scopes:
+// + post
 func (s *ProfilePostsService) Delete(ctx context.Context, profilePostID int64, params *ProfilePostsDeleteParams) (*ProfilePostsDeleteResponse, error) {
 	var result ProfilePostsDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -1376,6 +1797,11 @@ func (s *ProfilePostsService) Delete(ctx context.Context, profilePostID int64, p
 }
 
 // Edit Edit Profile Post
+//
+// Edit a profile post.
+//
+// Required scopes:
+// + post
 func (s *ProfilePostsService) Edit(ctx context.Context, profilePostID int64, body *ProfilePostsEditBody) (*ProfilePostsEditResponse, error) {
 	var result ProfilePostsEditResponse
 	opts := lolzteam.RequestOptions{
@@ -1392,6 +1818,11 @@ func (s *ProfilePostsService) Edit(ctx context.Context, profilePostID int64, bod
 }
 
 // Get Get Profile Post
+//
+// Detail information of a profile post.
+//
+// Required scopes:
+// + read
 func (s *ProfilePostsService) Get(ctx context.Context, profilePostID int64) (*ProfilePostsGetResponse, error) {
 	var result ProfilePostsGetResponse
 	opts := lolzteam.RequestOptions{
@@ -1405,6 +1836,11 @@ func (s *ProfilePostsService) Get(ctx context.Context, profilePostID int64) (*Pr
 }
 
 // Like Like Profile Post
+//
+// Like a profile post.
+//
+// Required scopes:
+// + post
 func (s *ProfilePostsService) Like(ctx context.Context, profilePostID int64) (*ProfilePostsLikeResponse, error) {
 	var result ProfilePostsLikeResponse
 	opts := lolzteam.RequestOptions{
@@ -1418,6 +1854,11 @@ func (s *ProfilePostsService) Like(ctx context.Context, profilePostID int64) (*P
 }
 
 // Likes Get Profile Post Likes
+//
+// List of users who liked a profile post.
+//
+// Required scopes:
+// + read
 func (s *ProfilePostsService) Likes(ctx context.Context, profilePostID int64) (*ProfilePostsLikesResponse, error) {
 	var result ProfilePostsLikesResponse
 	opts := lolzteam.RequestOptions{
@@ -1431,6 +1872,11 @@ func (s *ProfilePostsService) Likes(ctx context.Context, profilePostID int64) (*
 }
 
 // List Get Profile Posts
+//
+// List of profile posts (with pagination).
+//
+// Required scopes:
+// + read
 func (s *ProfilePostsService) List(ctx context.Context, userID lolzteam.StringOrInt, params *ProfilePostsListParams) (*ProfilePostsListResponse, error) {
 	var result ProfilePostsListResponse
 	opts := lolzteam.RequestOptions{
@@ -1447,6 +1893,11 @@ func (s *ProfilePostsService) List(ctx context.Context, userID lolzteam.StringOr
 }
 
 // Report Report a Profile Post
+//
+// Report a profile post.
+//
+// Required scopes:
+// + post
 func (s *ProfilePostsService) Report(ctx context.Context, profilePostID int64, body *ProfilePostsReportBody) (*ProfilePostsReportResponse, error) {
 	var result ProfilePostsReportResponse
 	opts := lolzteam.RequestOptions{
@@ -1463,6 +1914,11 @@ func (s *ProfilePostsService) Report(ctx context.Context, profilePostID int64, b
 }
 
 // ReportReasons Get Profile Post Report Reasons
+//
+// Get Profile Post Report Reasons.
+//
+// Required scopes:
+// + read
 func (s *ProfilePostsService) ReportReasons(ctx context.Context, profilePostID int64) (*ProfilePostsReportReasonsResponse, error) {
 	var result ProfilePostsReportReasonsResponse
 	opts := lolzteam.RequestOptions{
@@ -1476,6 +1932,11 @@ func (s *ProfilePostsService) ReportReasons(ctx context.Context, profilePostID i
 }
 
 // Stick Stick Profile Post
+//
+// Stick a profile post.
+//
+// Required scopes:
+// + post
 func (s *ProfilePostsService) Stick(ctx context.Context, profilePostID int64) (*ProfilePostsStickResponse, error) {
 	var result ProfilePostsStickResponse
 	opts := lolzteam.RequestOptions{
@@ -1489,6 +1950,11 @@ func (s *ProfilePostsService) Stick(ctx context.Context, profilePostID int64) (*
 }
 
 // Unlike Unlike Profile Post
+//
+// Unlike a profile post.
+//
+// Required scopes:
+// + post
 func (s *ProfilePostsService) Unlike(ctx context.Context, profilePostID int64) (*ProfilePostsUnlikeResponse, error) {
 	var result ProfilePostsUnlikeResponse
 	opts := lolzteam.RequestOptions{
@@ -1502,6 +1968,11 @@ func (s *ProfilePostsService) Unlike(ctx context.Context, profilePostID int64) (
 }
 
 // Unstick Unstick Profile Post
+//
+// Unstick a profile post.
+//
+// Required scopes:
+// + post
 func (s *ProfilePostsService) Unstick(ctx context.Context, profilePostID int64) (*ProfilePostsUnstickResponse, error) {
 	var result ProfilePostsUnstickResponse
 	opts := lolzteam.RequestOptions{
@@ -1520,6 +1991,11 @@ type SearchService struct {
 }
 
 // All Search
+//
+// Search for all supported contents.
+//
+// Required scopes:
+// + post
 func (s *SearchService) All(ctx context.Context, body *SearchAllBody) (*SearchAllResponse, error) {
 	var result SearchAllResponse
 	opts := lolzteam.RequestOptions{
@@ -1536,6 +2012,11 @@ func (s *SearchService) All(ctx context.Context, body *SearchAllBody) (*SearchAl
 }
 
 // Posts Search Post
+//
+// Search for posts.
+//
+// Required scopes:
+// + post
 func (s *SearchService) Posts(ctx context.Context, body *SearchPostsBody) (*SearchPostsResponse, error) {
 	var result SearchPostsResponse
 	opts := lolzteam.RequestOptions{
@@ -1552,6 +2033,11 @@ func (s *SearchService) Posts(ctx context.Context, body *SearchPostsBody) (*Sear
 }
 
 // ProfilePosts Search Profile Posts
+//
+// Search for profile posts.
+//
+// Required scopes:
+// + post
 func (s *SearchService) ProfilePosts(ctx context.Context, body *SearchProfilePostsBody) (*SearchProfilePostsResponse, error) {
 	var result SearchProfilePostsResponse
 	opts := lolzteam.RequestOptions{
@@ -1568,6 +2054,11 @@ func (s *SearchService) ProfilePosts(ctx context.Context, body *SearchProfilePos
 }
 
 // Results Get Search Results
+//
+// List of search results (with pagination).
+//
+// Required scopes:
+// + get
 func (s *SearchService) Results(ctx context.Context, searchID lolzteam.StringOrInt, params *SearchResultsParams) (*SearchResultsResponse, error) {
 	var result SearchResultsResponse
 	opts := lolzteam.RequestOptions{
@@ -1584,6 +2075,11 @@ func (s *SearchService) Results(ctx context.Context, searchID lolzteam.StringOrI
 }
 
 // Tagged Search Tagged
+//
+// Search for tagged contents.
+//
+// Required scopes:
+// + post
 func (s *SearchService) Tagged(ctx context.Context, body *SearchTaggedBody) (*SearchTaggedResponse, error) {
 	var result SearchTaggedResponse
 	opts := lolzteam.RequestOptions{
@@ -1600,6 +2096,11 @@ func (s *SearchService) Tagged(ctx context.Context, body *SearchTaggedBody) (*Se
 }
 
 // Threads Search Thread
+//
+// Search for threads.
+//
+// Required scopes:
+// + post
 func (s *SearchService) Threads(ctx context.Context, body *SearchThreadsBody) (*SearchThreadsResponse, error) {
 	var result SearchThreadsResponse
 	opts := lolzteam.RequestOptions{
@@ -1616,6 +2117,11 @@ func (s *SearchService) Threads(ctx context.Context, body *SearchThreadsBody) (*
 }
 
 // Users Search Users
+//
+// Search for users.
+//
+// Required scopes:
+// + post
 func (s *SearchService) Users(ctx context.Context, body *SearchUsersBody) (*SearchUsersResponse, error) {
 	var result SearchUsersResponse
 	opts := lolzteam.RequestOptions{
@@ -1637,6 +2143,11 @@ type TagsService struct {
 }
 
 // Find Get Filtered Content
+//
+// Filtered list of tags.
+//
+// Required scopes:
+// + read
 func (s *TagsService) Find(ctx context.Context, params *TagsFindParams) (*TagsFindResponse, error) {
 	var result TagsFindResponse
 	opts := lolzteam.RequestOptions{
@@ -1653,6 +2164,11 @@ func (s *TagsService) Find(ctx context.Context, params *TagsFindParams) (*TagsFi
 }
 
 // Get Get Tagged Content
+//
+// List of tagged contents.
+//
+// Required scopes:
+// + read
 func (s *TagsService) Get(ctx context.Context, tagID int64, params *TagsGetParams) (*TagsGetResponse, error) {
 	var result TagsGetResponse
 	opts := lolzteam.RequestOptions{
@@ -1669,6 +2185,11 @@ func (s *TagsService) Get(ctx context.Context, tagID int64, params *TagsGetParam
 }
 
 // List Get Tags
+//
+// List of tags.
+//
+// Required scopes:
+// + read
 func (s *TagsService) List(ctx context.Context, params *TagsListParams) (*TagsListResponse, error) {
 	var result TagsListResponse
 	opts := lolzteam.RequestOptions{
@@ -1685,6 +2206,11 @@ func (s *TagsService) List(ctx context.Context, params *TagsListParams) (*TagsLi
 }
 
 // Popular Get Popular Tags
+//
+// List of popular tags (no pagination).
+//
+// Required scopes:
+// + read
 func (s *TagsService) Popular(ctx context.Context) (*TagsPopularResponse, error) {
 	var result TagsPopularResponse
 	opts := lolzteam.RequestOptions{
@@ -1703,6 +2229,11 @@ type ThreadsService struct {
 }
 
 // Bump Bump Thread
+//
+// Bump a thread.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) Bump(ctx context.Context, threadID int64) (*ThreadsBumpResponse, error) {
 	var result ThreadsBumpResponse
 	opts := lolzteam.RequestOptions{
@@ -1716,6 +2247,11 @@ func (s *ThreadsService) Bump(ctx context.Context, threadID int64) (*ThreadsBump
 }
 
 // Claim Create Claim
+//
+// Create a Claim.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) Claim(ctx context.Context, body *ThreadsClaimBody) (*ThreadsClaimResponse, error) {
 	var result ThreadsClaimResponse
 	opts := lolzteam.RequestOptions{
@@ -1732,6 +2268,11 @@ func (s *ThreadsService) Claim(ctx context.Context, body *ThreadsClaimBody) (*Th
 }
 
 // Create Create Thread
+//
+// Create a new thread.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) Create(ctx context.Context, body *ThreadsCreateBody) (*ThreadsCreateResponse, error) {
 	var result ThreadsCreateResponse
 	opts := lolzteam.RequestOptions{
@@ -1748,6 +2289,11 @@ func (s *ThreadsService) Create(ctx context.Context, body *ThreadsCreateBody) (*
 }
 
 // CreateContest Create Contest
+//
+// Create a new contest.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) CreateContest(ctx context.Context, body *ThreadsCreateContestBody) (*ThreadsCreateContestResponse, error) {
 	var result ThreadsCreateContestResponse
 	opts := lolzteam.RequestOptions{
@@ -1764,6 +2310,11 @@ func (s *ThreadsService) CreateContest(ctx context.Context, body *ThreadsCreateC
 }
 
 // Delete Delete Thread
+//
+// Delete a thread.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) Delete(ctx context.Context, threadID int64, body *ThreadsDeleteBody) (*ThreadsDeleteResponse, error) {
 	var result ThreadsDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -1780,6 +2331,11 @@ func (s *ThreadsService) Delete(ctx context.Context, threadID int64, body *Threa
 }
 
 // Edit Edit thread
+//
+// Edit a thread.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) Edit(ctx context.Context, threadID int64, body *ThreadsEditBody) (*ThreadsEditResponse, error) {
 	var result ThreadsEditResponse
 	opts := lolzteam.RequestOptions{
@@ -1796,6 +2352,11 @@ func (s *ThreadsService) Edit(ctx context.Context, threadID int64, body *Threads
 }
 
 // Finish Finish Contest
+//
+// Finishes a contest.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) Finish(ctx context.Context, threadID int64) (*ThreadsFinishResponse, error) {
 	var result ThreadsFinishResponse
 	opts := lolzteam.RequestOptions{
@@ -1809,6 +2370,11 @@ func (s *ThreadsService) Finish(ctx context.Context, threadID int64) (*ThreadsFi
 }
 
 // Follow Follow Thread
+//
+// Follow a thread.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) Follow(ctx context.Context, threadID int64, body *ThreadsFollowBody) (*ThreadsFollowResponse, error) {
 	var result ThreadsFollowResponse
 	opts := lolzteam.RequestOptions{
@@ -1825,6 +2391,11 @@ func (s *ThreadsService) Follow(ctx context.Context, threadID int64, body *Threa
 }
 
 // Followed Get Followed Threads
+//
+// List of followed threads by current user.
+//
+// Required scopes:
+// + read
 func (s *ThreadsService) Followed(ctx context.Context, params *ThreadsFollowedParams) (*ThreadsFollowedResponse, error) {
 	var result ThreadsFollowedResponse
 	opts := lolzteam.RequestOptions{
@@ -1841,6 +2412,11 @@ func (s *ThreadsService) Followed(ctx context.Context, params *ThreadsFollowedPa
 }
 
 // Followers Get Thread Followers
+//
+// List of a thread's followers. For privacy reason, only the current user will be included in the list.
+//
+// Required scopes:
+// + read
 func (s *ThreadsService) Followers(ctx context.Context, threadID int64) (*ThreadsFollowersResponse, error) {
 	var result ThreadsFollowersResponse
 	opts := lolzteam.RequestOptions{
@@ -1854,6 +2430,11 @@ func (s *ThreadsService) Followers(ctx context.Context, threadID int64) (*Thread
 }
 
 // Get Get Thread
+//
+// Detail information of a thread.
+//
+// Required scopes:
+// + read
 func (s *ThreadsService) Get(ctx context.Context, threadID int64, params *ThreadsGetParams) (*ThreadsGetResponse, error) {
 	var result ThreadsGetResponse
 	opts := lolzteam.RequestOptions{
@@ -1870,6 +2451,11 @@ func (s *ThreadsService) Get(ctx context.Context, threadID int64, params *Thread
 }
 
 // Hide Hide Thread
+//
+// Hide a thread from your feed.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) Hide(ctx context.Context, threadID int64) (*ThreadsHideResponse, error) {
 	var result ThreadsHideResponse
 	opts := lolzteam.RequestOptions{
@@ -1883,6 +2469,11 @@ func (s *ThreadsService) Hide(ctx context.Context, threadID int64) (*ThreadsHide
 }
 
 // List Get Threads
+//
+// List of threads in a forum (with pagination).
+//
+// Required scopes:
+// + read
 func (s *ThreadsService) List(ctx context.Context, params *ThreadsListParams) (*ThreadsListResponse, error) {
 	var result ThreadsListResponse
 	opts := lolzteam.RequestOptions{
@@ -1899,6 +2490,11 @@ func (s *ThreadsService) List(ctx context.Context, params *ThreadsListParams) (*
 }
 
 // Move Move Thread
+//
+// Move a thread to another forum.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) Move(ctx context.Context, threadID int64, body *ThreadsMoveBody) (*ThreadsMoveResponse, error) {
 	var result ThreadsMoveResponse
 	opts := lolzteam.RequestOptions{
@@ -1915,6 +2511,11 @@ func (s *ThreadsService) Move(ctx context.Context, threadID int64, body *Threads
 }
 
 // Navigation Get Navigation Elements
+//
+// List of navigation elements to reach the specified thread.
+//
+// Required scopes:
+// + read
 func (s *ThreadsService) Navigation(ctx context.Context, threadID int64) (*ThreadsNavigationResponse, error) {
 	var result ThreadsNavigationResponse
 	opts := lolzteam.RequestOptions{
@@ -1928,6 +2529,11 @@ func (s *ThreadsService) Navigation(ctx context.Context, threadID int64) (*Threa
 }
 
 // PollGet Get Poll
+//
+// Detail information of a poll.
+//
+// Required scopes:
+// + read
 func (s *ThreadsService) PollGet(ctx context.Context, threadID int64) (*ThreadsPollGetResponse, error) {
 	var result ThreadsPollGetResponse
 	opts := lolzteam.RequestOptions{
@@ -1941,6 +2547,11 @@ func (s *ThreadsService) PollGet(ctx context.Context, threadID int64) (*ThreadsP
 }
 
 // PollVote Vote Poll
+//
+// Vote on a thread poll.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) PollVote(ctx context.Context, threadID int64, body *ThreadsPollVoteBody) (*ThreadsPollVoteResponse, error) {
 	var result ThreadsPollVoteResponse
 	opts := lolzteam.RequestOptions{
@@ -1957,6 +2568,11 @@ func (s *ThreadsService) PollVote(ctx context.Context, threadID int64, body *Thr
 }
 
 // Recent Get Recent Threads
+//
+// List of recent threads.
+//
+// Required scopes:
+// + read
 func (s *ThreadsService) Recent(ctx context.Context, params *ThreadsRecentParams) (*ThreadsRecentResponse, error) {
 	var result ThreadsRecentResponse
 	opts := lolzteam.RequestOptions{
@@ -1973,6 +2589,11 @@ func (s *ThreadsService) Recent(ctx context.Context, params *ThreadsRecentParams
 }
 
 // Star Bookmark Thread
+//
+// Bookmark a thread.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) Star(ctx context.Context, threadID int64) (*ThreadsStarResponse, error) {
 	var result ThreadsStarResponse
 	opts := lolzteam.RequestOptions{
@@ -1986,6 +2607,11 @@ func (s *ThreadsService) Star(ctx context.Context, threadID int64) (*ThreadsStar
 }
 
 // Unfollow Unfollow Thread
+//
+// Unfollow a thread.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) Unfollow(ctx context.Context, threadID int64) (*ThreadsUnfollowResponse, error) {
 	var result ThreadsUnfollowResponse
 	opts := lolzteam.RequestOptions{
@@ -1999,6 +2625,11 @@ func (s *ThreadsService) Unfollow(ctx context.Context, threadID int64) (*Threads
 }
 
 // Unread Get Unread Threads
+//
+// List of unread threads (must be logged in).
+//
+// Required scopes:
+// + read
 func (s *ThreadsService) Unread(ctx context.Context, params *ThreadsUnreadParams) (*ThreadsUnreadResponse, error) {
 	var result ThreadsUnreadResponse
 	opts := lolzteam.RequestOptions{
@@ -2015,6 +2646,11 @@ func (s *ThreadsService) Unread(ctx context.Context, params *ThreadsUnreadParams
 }
 
 // Unstar Unbookmark Thread
+//
+// Unbookmark a thread.
+//
+// Required scopes:
+// + post
 func (s *ThreadsService) Unstar(ctx context.Context, threadID int64) (*ThreadsUnstarResponse, error) {
 	var result ThreadsUnstarResponse
 	opts := lolzteam.RequestOptions{
@@ -2033,6 +2669,11 @@ type UsersService struct {
 }
 
 // AvatarCrop Crop Avatar
+//
+// Crop avatar for a user.
+//
+// Required scopes:
+// + post
 func (s *UsersService) AvatarCrop(ctx context.Context, userID lolzteam.StringOrInt, body *UsersAvatarCropBody) (*UsersAvatarCropResponse, error) {
 	var result UsersAvatarCropResponse
 	opts := lolzteam.RequestOptions{
@@ -2049,6 +2690,11 @@ func (s *UsersService) AvatarCrop(ctx context.Context, userID lolzteam.StringOrI
 }
 
 // AvatarDelete Delete Avatar
+//
+// Delete avatar for a user.
+//
+// Required scopes:
+// + post
 func (s *UsersService) AvatarDelete(ctx context.Context, userID lolzteam.StringOrInt) (*UsersAvatarDeleteResponse, error) {
 	var result UsersAvatarDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -2062,6 +2708,11 @@ func (s *UsersService) AvatarDelete(ctx context.Context, userID lolzteam.StringO
 }
 
 // AvatarUpload Upload Avatar
+//
+// Upload avatar for a user.
+//
+// Required scopes:
+// + post
 func (s *UsersService) AvatarUpload(ctx context.Context, userID lolzteam.StringOrInt, body *UsersAvatarUploadBody) (*UsersAvatarUploadResponse, error) {
 	var result UsersAvatarUploadResponse
 	opts := lolzteam.RequestOptions{
@@ -2078,6 +2729,11 @@ func (s *UsersService) AvatarUpload(ctx context.Context, userID lolzteam.StringO
 }
 
 // BackgroundCrop Crop Background
+//
+// Crop background for a user.
+//
+// Required scopes:
+// + post
 func (s *UsersService) BackgroundCrop(ctx context.Context, userID lolzteam.StringOrInt, body *UsersBackgroundCropBody) (*UsersBackgroundCropResponse, error) {
 	var result UsersBackgroundCropResponse
 	opts := lolzteam.RequestOptions{
@@ -2094,6 +2750,11 @@ func (s *UsersService) BackgroundCrop(ctx context.Context, userID lolzteam.Strin
 }
 
 // BackgroundDelete Delete Background
+//
+// Delete background for a user.
+//
+// Required scopes:
+// + post
 func (s *UsersService) BackgroundDelete(ctx context.Context, userID lolzteam.StringOrInt) (*UsersBackgroundDeleteResponse, error) {
 	var result UsersBackgroundDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -2107,6 +2768,11 @@ func (s *UsersService) BackgroundDelete(ctx context.Context, userID lolzteam.Str
 }
 
 // BackgroundUpload Upload Background
+//
+// Upload background for a user.
+//
+// Required scopes:
+// + post
 func (s *UsersService) BackgroundUpload(ctx context.Context, userID lolzteam.StringOrInt, body *UsersBackgroundUploadBody) (*UsersBackgroundUploadResponse, error) {
 	var result UsersBackgroundUploadResponse
 	opts := lolzteam.RequestOptions{
@@ -2123,6 +2789,11 @@ func (s *UsersService) BackgroundUpload(ctx context.Context, userID lolzteam.Str
 }
 
 // Claims Get User Claims
+//
+// Get user claims.
+//
+// Required scopes:
+// + read
 func (s *UsersService) Claims(ctx context.Context, userID lolzteam.StringOrInt, params *UsersClaimsParams) (*UsersClaimsResponse, error) {
 	var result UsersClaimsResponse
 	opts := lolzteam.RequestOptions{
@@ -2139,6 +2810,11 @@ func (s *UsersService) Claims(ctx context.Context, userID lolzteam.StringOrInt, 
 }
 
 // Contents Get Contents
+//
+// List of contents created by user (with pagination).
+//
+// Required scopes:
+// + read
 func (s *UsersService) Contents(ctx context.Context, userID lolzteam.StringOrInt, params *UsersContentsParams) (*UsersContentsResponse, error) {
 	var result UsersContentsResponse
 	opts := lolzteam.RequestOptions{
@@ -2155,6 +2831,11 @@ func (s *UsersService) Contents(ctx context.Context, userID lolzteam.StringOrInt
 }
 
 // Edit Edit User
+//
+// Edit a user.
+//
+// Required scopes:
+// + post
 func (s *UsersService) Edit(ctx context.Context, userID lolzteam.StringOrInt, body *UsersEditBody) (*UsersEditResponse, error) {
 	var result UsersEditResponse
 	opts := lolzteam.RequestOptions{
@@ -2171,6 +2852,11 @@ func (s *UsersService) Edit(ctx context.Context, userID lolzteam.StringOrInt, bo
 }
 
 // Fields Get User Fields
+//
+// List of user fields.
+//
+// Required scopes:
+// + read
 func (s *UsersService) Fields(ctx context.Context) (*UsersFieldsResponse, error) {
 	var result UsersFieldsResponse
 	opts := lolzteam.RequestOptions{
@@ -2184,6 +2870,11 @@ func (s *UsersService) Fields(ctx context.Context) (*UsersFieldsResponse, error)
 }
 
 // Find Find Users
+//
+// List of users filtered by username, email or custom fields.
+//
+// Required scopes:
+// + read
 func (s *UsersService) Find(ctx context.Context, params *UsersFindParams) (*UsersFindResponse, error) {
 	var result UsersFindResponse
 	opts := lolzteam.RequestOptions{
@@ -2200,6 +2891,11 @@ func (s *UsersService) Find(ctx context.Context, params *UsersFindParams) (*User
 }
 
 // Follow Follow User
+//
+// Follow a user.
+//
+// Required scopes:
+// + post
 func (s *UsersService) Follow(ctx context.Context, userID lolzteam.StringOrInt) (*UsersFollowResponse, error) {
 	var result UsersFollowResponse
 	opts := lolzteam.RequestOptions{
@@ -2213,6 +2909,11 @@ func (s *UsersService) Follow(ctx context.Context, userID lolzteam.StringOrInt) 
 }
 
 // Followers Get User Followers
+//
+// List of a user's followers.
+//
+// Required scopes:
+// + read
 func (s *UsersService) Followers(ctx context.Context, userID lolzteam.StringOrInt, params *UsersFollowersParams) (*UsersFollowersResponse, error) {
 	var result UsersFollowersResponse
 	opts := lolzteam.RequestOptions{
@@ -2229,6 +2930,11 @@ func (s *UsersService) Followers(ctx context.Context, userID lolzteam.StringOrIn
 }
 
 // Followings Get Followed Users By User
+//
+// List of users whom are followed by a user.
+//
+// Required scopes:
+// + read
 func (s *UsersService) Followings(ctx context.Context, userID lolzteam.StringOrInt, params *UsersFollowingsParams) (*UsersFollowingsResponse, error) {
 	var result UsersFollowingsResponse
 	opts := lolzteam.RequestOptions{
@@ -2245,6 +2951,12 @@ func (s *UsersService) Followings(ctx context.Context, userID lolzteam.StringOrI
 }
 
 // Get Get User
+//
+// Detail information of a user.
+//
+// Required scopes:
+// + read
+// + basic
 func (s *UsersService) Get(ctx context.Context, userID lolzteam.StringOrInt, params *UsersGetParams) (*UsersGetResponse, error) {
 	var result UsersGetResponse
 	opts := lolzteam.RequestOptions{
@@ -2261,6 +2973,11 @@ func (s *UsersService) Get(ctx context.Context, userID lolzteam.StringOrInt, par
 }
 
 // Ignore Ignore User
+//
+// Ignore a user.
+//
+// Required scopes:
+// + post
 func (s *UsersService) Ignore(ctx context.Context, userID lolzteam.StringOrInt) (*UsersIgnoreResponse, error) {
 	var result UsersIgnoreResponse
 	opts := lolzteam.RequestOptions{
@@ -2274,6 +2991,11 @@ func (s *UsersService) Ignore(ctx context.Context, userID lolzteam.StringOrInt) 
 }
 
 // IgnoreEdit Edit Ignoring Options
+//
+// Edit ignoring options.
+//
+// Required scopes:
+// + post
 func (s *UsersService) IgnoreEdit(ctx context.Context, userID lolzteam.StringOrInt, params *UsersIgnoreEditParams) (*UsersIgnoreEditResponse, error) {
 	var result UsersIgnoreEditResponse
 	opts := lolzteam.RequestOptions{
@@ -2290,6 +3012,11 @@ func (s *UsersService) IgnoreEdit(ctx context.Context, userID lolzteam.StringOrI
 }
 
 // Ignored Get Ignored Users
+//
+// List of ignored users of current user.
+//
+// Required scopes:
+// + read
 func (s *UsersService) Ignored(ctx context.Context, params *UsersIgnoredParams) (*UsersIgnoredResponse, error) {
 	var result UsersIgnoredResponse
 	opts := lolzteam.RequestOptions{
@@ -2306,6 +3033,11 @@ func (s *UsersService) Ignored(ctx context.Context, params *UsersIgnoredParams) 
 }
 
 // Likes Get User Likes
+//
+// Get information about user likes.
+//
+// Required scopes:
+// + read
 func (s *UsersService) Likes(ctx context.Context, userID lolzteam.StringOrInt, params *UsersLikesParams) (*UsersLikesResponse, error) {
 	var result UsersLikesResponse
 	opts := lolzteam.RequestOptions{
@@ -2322,6 +3054,11 @@ func (s *UsersService) Likes(ctx context.Context, userID lolzteam.StringOrInt, p
 }
 
 // List Get Users
+//
+// List of users (with pagination).
+//
+// Required scopes:
+// + read
 func (s *UsersService) List(ctx context.Context, params *UsersListParams) (*UsersListResponse, error) {
 	var result UsersListResponse
 	opts := lolzteam.RequestOptions{
@@ -2338,6 +3075,11 @@ func (s *UsersService) List(ctx context.Context, params *UsersListParams) (*User
 }
 
 // SACancelReset Cancel Secret Answer Reset
+//
+// Cancel a pending secret answer reset request for the account.
+//
+// Required scopes:
+// + post
 func (s *UsersService) SACancelReset(ctx context.Context) (*UsersSACancelResetResponse, error) {
 	var result UsersSACancelResetResponse
 	opts := lolzteam.RequestOptions{
@@ -2351,6 +3093,11 @@ func (s *UsersService) SACancelReset(ctx context.Context) (*UsersSACancelResetRe
 }
 
 // SAReset Reset Secret Answer
+//
+// Request a reset of the secret answer for the account.
+//
+// Required scopes:
+// + post
 func (s *UsersService) SAReset(ctx context.Context) (*UsersSAResetResponse, error) {
 	var result UsersSAResetResponse
 	opts := lolzteam.RequestOptions{
@@ -2364,6 +3111,11 @@ func (s *UsersService) SAReset(ctx context.Context) (*UsersSAResetResponse, erro
 }
 
 // SecretAnswerTypes Get Secret Answer Types
+//
+// Get available secret answer types for user account security.
+//
+// Required scopes:
+// + read
 func (s *UsersService) SecretAnswerTypes(ctx context.Context) (*UsersSecretAnswerTypesResponse, error) {
 	var result UsersSecretAnswerTypesResponse
 	opts := lolzteam.RequestOptions{
@@ -2377,6 +3129,11 @@ func (s *UsersService) SecretAnswerTypes(ctx context.Context) (*UsersSecretAnswe
 }
 
 // Trophies Get Trophies
+//
+// List of user trophies.
+//
+// Required scopes:
+// + read
 func (s *UsersService) Trophies(ctx context.Context, userID lolzteam.StringOrInt) (*UsersTrophiesResponse, error) {
 	var result UsersTrophiesResponse
 	opts := lolzteam.RequestOptions{
@@ -2390,6 +3147,11 @@ func (s *UsersService) Trophies(ctx context.Context, userID lolzteam.StringOrInt
 }
 
 // Unfollow Unfollow User
+//
+// Unfollow a user.
+//
+// Required scopes:
+// + post
 func (s *UsersService) Unfollow(ctx context.Context, userID lolzteam.StringOrInt) (*UsersUnfollowResponse, error) {
 	var result UsersUnfollowResponse
 	opts := lolzteam.RequestOptions{
@@ -2403,6 +3165,11 @@ func (s *UsersService) Unfollow(ctx context.Context, userID lolzteam.StringOrInt
 }
 
 // Unignore Unignore User
+//
+// Stop ignoring a user.
+//
+// Required scopes:
+// + post
 func (s *UsersService) Unignore(ctx context.Context, userID lolzteam.StringOrInt) (*UsersUnignoreResponse, error) {
 	var result UsersUnignoreResponse
 	opts := lolzteam.RequestOptions{

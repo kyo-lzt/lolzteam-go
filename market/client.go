@@ -75,6 +75,11 @@ type AutoPaymentsService struct {
 }
 
 // Create Create Auto Payment
+//
+// Creates auto payment.
+//
+// Required scopes:
+// + payment
 func (s *AutoPaymentsService) Create(ctx context.Context, body *AutoPaymentsCreateBody) (*AutoPaymentsCreateResponse, error) {
 	var result AutoPaymentsCreateResponse
 	opts := lolzteam.RequestOptions{
@@ -91,6 +96,11 @@ func (s *AutoPaymentsService) Create(ctx context.Context, body *AutoPaymentsCrea
 }
 
 // Delete Delete Auto Payment
+//
+// Deletes an auto payment.
+//
+// Required scopes:
+// + payment
 func (s *AutoPaymentsService) Delete(ctx context.Context, body *AutoPaymentsDeleteBody) (*AutoPaymentsDeleteResponse, error) {
 	var result AutoPaymentsDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -107,6 +117,11 @@ func (s *AutoPaymentsService) Delete(ctx context.Context, body *AutoPaymentsDele
 }
 
 // List Get Auto Payments
+//
+// Get auto payments list.
+//
+// Required scopes:
+// + payment
 func (s *AutoPaymentsService) List(ctx context.Context) (*AutoPaymentsListResponse, error) {
 	var result AutoPaymentsListResponse
 	opts := lolzteam.RequestOptions{
@@ -125,6 +140,11 @@ type BatchService struct {
 }
 
 // Batch Batch
+//
+// Execute multiple API requests at once (separated by comma). Maximum batch jobs is 10.
+// Following methods are unavailable in Batch:
+// - GET /{item_id}/image
+// - /item/fast-sell
 func (s *BatchService) Batch(ctx context.Context, jobs []BatchBatchItem) (*BatchBatchResponse, error) {
 	var result BatchBatchResponse
 	opts := lolzteam.RequestOptions{
@@ -144,6 +164,8 @@ type CartService struct {
 }
 
 // Add Add Item to Cart
+//
+// Adds item to your cart.
 func (s *CartService) Add(ctx context.Context, body *CartAddBody) (*CartAddResponse, error) {
 	var result CartAddResponse
 	opts := lolzteam.RequestOptions{
@@ -160,6 +182,8 @@ func (s *CartService) Add(ctx context.Context, body *CartAddBody) (*CartAddRespo
 }
 
 // Delete Delete Item From Cart
+//
+// Deletes an item from the cart.
 func (s *CartService) Delete(ctx context.Context, body *CartDeleteBody) (*CartDeleteResponse, error) {
 	var result CartDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -176,6 +200,8 @@ func (s *CartService) Delete(ctx context.Context, body *CartDeleteBody) (*CartDe
 }
 
 // Get Get Cart Items
+//
+// Returns the list of items currently in your cart.
 func (s *CartService) Get(ctx context.Context, params *CartGetParams) (*CartGetResponse, error) {
 	var result CartGetResponse
 	opts := lolzteam.RequestOptions{
@@ -197,6 +223,8 @@ type CategoryService struct {
 }
 
 // All Get Last Accounts
+//
+// Displays a list of latest accounts.
 func (s *CategoryService) All(ctx context.Context, params *CategoryAllParams) (*CategoryAllResponse, error) {
 	var result CategoryAllResponse
 	opts := lolzteam.RequestOptions{
@@ -214,6 +242,8 @@ func (s *CategoryService) All(ctx context.Context, params *CategoryAllParams) (*
 }
 
 // BattleNet BattleNet
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) BattleNet(ctx context.Context, params *CategoryBattleNetParams) (*CategoryBattleNetResponse, error) {
 	var result CategoryBattleNetResponse
 	opts := lolzteam.RequestOptions{
@@ -231,6 +261,8 @@ func (s *CategoryService) BattleNet(ctx context.Context, params *CategoryBattleN
 }
 
 // ChatGPT ChatGPT
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) ChatGPT(ctx context.Context, params *CategoryChatGPTParams) (*CategoryChatGPTResponse, error) {
 	var result CategoryChatGPTResponse
 	opts := lolzteam.RequestOptions{
@@ -248,6 +280,8 @@ func (s *CategoryService) ChatGPT(ctx context.Context, params *CategoryChatGPTPa
 }
 
 // Discord Discord
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Discord(ctx context.Context, params *CategoryDiscordParams) (*CategoryDiscordResponse, error) {
 	var result CategoryDiscordResponse
 	opts := lolzteam.RequestOptions{
@@ -265,6 +299,8 @@ func (s *CategoryService) Discord(ctx context.Context, params *CategoryDiscordPa
 }
 
 // EA EA (Origin)
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) EA(ctx context.Context, params *CategoryEAParams) (*CategoryEAResponse, error) {
 	var result CategoryEAResponse
 	opts := lolzteam.RequestOptions{
@@ -282,6 +318,8 @@ func (s *CategoryService) EA(ctx context.Context, params *CategoryEAParams) (*Ca
 }
 
 // EpicGames Epic Games
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) EpicGames(ctx context.Context, params *CategoryEpicGamesParams) (*CategoryEpicGamesResponse, error) {
 	var result CategoryEpicGamesResponse
 	opts := lolzteam.RequestOptions{
@@ -299,6 +337,8 @@ func (s *CategoryService) EpicGames(ctx context.Context, params *CategoryEpicGam
 }
 
 // EscapeFromTarkov Escape from Tarkov
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) EscapeFromTarkov(ctx context.Context, params *CategoryEscapeFromTarkovParams) (*CategoryEscapeFromTarkovResponse, error) {
 	var result CategoryEscapeFromTarkovResponse
 	opts := lolzteam.RequestOptions{
@@ -316,6 +356,8 @@ func (s *CategoryService) EscapeFromTarkov(ctx context.Context, params *Category
 }
 
 // Fortnite Fortnite
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Fortnite(ctx context.Context, params *CategoryFortniteParams) (*CategoryFortniteResponse, error) {
 	var result CategoryFortniteResponse
 	opts := lolzteam.RequestOptions{
@@ -333,6 +375,8 @@ func (s *CategoryService) Fortnite(ctx context.Context, params *CategoryFortnite
 }
 
 // Games Get Category Games
+//
+// Displays a list of games in the category.
 func (s *CategoryService) Games(ctx context.Context, categoryName string) (*CategoryGamesResponse, error) {
 	var result CategoryGamesResponse
 	opts := lolzteam.RequestOptions{
@@ -347,6 +391,8 @@ func (s *CategoryService) Games(ctx context.Context, categoryName string) (*Cate
 }
 
 // Gifts Gifts
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Gifts(ctx context.Context, params *CategoryGiftsParams) (*CategoryGiftsResponse, error) {
 	var result CategoryGiftsResponse
 	opts := lolzteam.RequestOptions{
@@ -364,6 +410,8 @@ func (s *CategoryService) Gifts(ctx context.Context, params *CategoryGiftsParams
 }
 
 // Hytale Hytale
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Hytale(ctx context.Context, params *CategoryHytaleParams) (*CategoryHytaleResponse, error) {
 	var result CategoryHytaleResponse
 	opts := lolzteam.RequestOptions{
@@ -381,6 +429,8 @@ func (s *CategoryService) Hytale(ctx context.Context, params *CategoryHytalePara
 }
 
 // Instagram Instagram
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Instagram(ctx context.Context, params *CategoryInstagramParams) (*CategoryInstagramResponse, error) {
 	var result CategoryInstagramResponse
 	opts := lolzteam.RequestOptions{
@@ -398,6 +448,8 @@ func (s *CategoryService) Instagram(ctx context.Context, params *CategoryInstagr
 }
 
 // List Get Categories
+//
+// Display category list.
 func (s *CategoryService) List(ctx context.Context, params *CategoryListParams) (*CategoryListResponse, error) {
 	var result CategoryListResponse
 	opts := lolzteam.RequestOptions{
@@ -415,6 +467,8 @@ func (s *CategoryService) List(ctx context.Context, params *CategoryListParams) 
 }
 
 // Mihoyo miHoYo
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Mihoyo(ctx context.Context, params *CategoryMihoyoParams) (*CategoryMihoyoResponse, error) {
 	var result CategoryMihoyoResponse
 	opts := lolzteam.RequestOptions{
@@ -432,6 +486,8 @@ func (s *CategoryService) Mihoyo(ctx context.Context, params *CategoryMihoyoPara
 }
 
 // Minecraft Minecraft
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Minecraft(ctx context.Context, params *CategoryMinecraftParams) (*CategoryMinecraftResponse, error) {
 	var result CategoryMinecraftResponse
 	opts := lolzteam.RequestOptions{
@@ -449,6 +505,8 @@ func (s *CategoryService) Minecraft(ctx context.Context, params *CategoryMinecra
 }
 
 // Params Get Category Search Params
+//
+// Displays search parameters for a category.
 func (s *CategoryService) Params(ctx context.Context, categoryName string) (*CategoryParamsResponse, error) {
 	var result CategoryParamsResponse
 	opts := lolzteam.RequestOptions{
@@ -463,6 +521,8 @@ func (s *CategoryService) Params(ctx context.Context, categoryName string) (*Cat
 }
 
 // Riot Riot
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Riot(ctx context.Context, params *CategoryRiotParams) (*CategoryRiotResponse, error) {
 	var result CategoryRiotResponse
 	opts := lolzteam.RequestOptions{
@@ -480,6 +540,8 @@ func (s *CategoryService) Riot(ctx context.Context, params *CategoryRiotParams) 
 }
 
 // Roblox Roblox
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Roblox(ctx context.Context, params *CategoryRobloxParams) (*CategoryRobloxResponse, error) {
 	var result CategoryRobloxResponse
 	opts := lolzteam.RequestOptions{
@@ -497,6 +559,8 @@ func (s *CategoryService) Roblox(ctx context.Context, params *CategoryRobloxPara
 }
 
 // SocialClub Social Club
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) SocialClub(ctx context.Context, params *CategorySocialClubParams) (*CategorySocialClubResponse, error) {
 	var result CategorySocialClubResponse
 	opts := lolzteam.RequestOptions{
@@ -514,6 +578,8 @@ func (s *CategoryService) SocialClub(ctx context.Context, params *CategorySocial
 }
 
 // Steam Steam
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Steam(ctx context.Context, params *CategorySteamParams) (*CategorySteamResponse, error) {
 	var result CategorySteamResponse
 	opts := lolzteam.RequestOptions{
@@ -531,6 +597,8 @@ func (s *CategoryService) Steam(ctx context.Context, params *CategorySteamParams
 }
 
 // Supercell Supercell
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Supercell(ctx context.Context, params *CategorySupercellParams) (*CategorySupercellResponse, error) {
 	var result CategorySupercellResponse
 	opts := lolzteam.RequestOptions{
@@ -548,6 +616,8 @@ func (s *CategoryService) Supercell(ctx context.Context, params *CategorySuperce
 }
 
 // Telegram Telegram
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Telegram(ctx context.Context, params *CategoryTelegramParams) (*CategoryTelegramResponse, error) {
 	var result CategoryTelegramResponse
 	opts := lolzteam.RequestOptions{
@@ -565,6 +635,8 @@ func (s *CategoryService) Telegram(ctx context.Context, params *CategoryTelegram
 }
 
 // TikTok TikTok
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) TikTok(ctx context.Context, params *CategoryTikTokParams) (*CategoryTikTokResponse, error) {
 	var result CategoryTikTokResponse
 	opts := lolzteam.RequestOptions{
@@ -582,6 +654,8 @@ func (s *CategoryService) TikTok(ctx context.Context, params *CategoryTikTokPara
 }
 
 // Uplay Uplay
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Uplay(ctx context.Context, params *CategoryUplayParams) (*CategoryUplayResponse, error) {
 	var result CategoryUplayResponse
 	opts := lolzteam.RequestOptions{
@@ -599,6 +673,8 @@ func (s *CategoryService) Uplay(ctx context.Context, params *CategoryUplayParams
 }
 
 // VPN VPN
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) VPN(ctx context.Context, params *CategoryVPNParams) (*CategoryVPNResponse, error) {
 	var result CategoryVPNResponse
 	opts := lolzteam.RequestOptions{
@@ -616,6 +692,8 @@ func (s *CategoryService) VPN(ctx context.Context, params *CategoryVPNParams) (*
 }
 
 // Warface Warface
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Warface(ctx context.Context, params *CategoryWarfaceParams) (*CategoryWarfaceResponse, error) {
 	var result CategoryWarfaceResponse
 	opts := lolzteam.RequestOptions{
@@ -633,6 +711,8 @@ func (s *CategoryService) Warface(ctx context.Context, params *CategoryWarfacePa
 }
 
 // Wot World of Tanks
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) Wot(ctx context.Context, params *CategoryWotParams) (*CategoryWotResponse, error) {
 	var result CategoryWotResponse
 	opts := lolzteam.RequestOptions{
@@ -650,6 +730,8 @@ func (s *CategoryService) Wot(ctx context.Context, params *CategoryWotParams) (*
 }
 
 // WotBlitz WoT Blitz
+//
+// Displays a list of accounts in a specific category according to your parameters.
 func (s *CategoryService) WotBlitz(ctx context.Context, params *CategoryWotBlitzParams) (*CategoryWotBlitzResponse, error) {
 	var result CategoryWotBlitzResponse
 	opts := lolzteam.RequestOptions{
@@ -672,6 +754,8 @@ type CustomDiscountsService struct {
 }
 
 // Create Create Custom Discount
+//
+// Creates a new custom discount.
 func (s *CustomDiscountsService) Create(ctx context.Context, body *CustomDiscountsCreateBody) (*CustomDiscountsCreateResponse, error) {
 	var result CustomDiscountsCreateResponse
 	opts := lolzteam.RequestOptions{
@@ -688,6 +772,8 @@ func (s *CustomDiscountsService) Create(ctx context.Context, body *CustomDiscoun
 }
 
 // Delete Delete Custom Discount
+//
+// Delete an existing custom discount.
 func (s *CustomDiscountsService) Delete(ctx context.Context, body *CustomDiscountsDeleteBody) (*CustomDiscountsDeleteResponse, error) {
 	var result CustomDiscountsDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -704,6 +790,8 @@ func (s *CustomDiscountsService) Delete(ctx context.Context, body *CustomDiscoun
 }
 
 // Edit Edit Custom Discount
+//
+// Edit an existing custom discount.
 func (s *CustomDiscountsService) Edit(ctx context.Context, body *CustomDiscountsEditBody) (*CustomDiscountsEditResponse, error) {
 	var result CustomDiscountsEditResponse
 	opts := lolzteam.RequestOptions{
@@ -720,6 +808,8 @@ func (s *CustomDiscountsService) Edit(ctx context.Context, body *CustomDiscounts
 }
 
 // Get Get Custom Discounts
+//
+// Get a list of custom discounts.
 func (s *CustomDiscountsService) Get(ctx context.Context) (*CustomDiscountsGetResponse, error) {
 	var result CustomDiscountsGetResponse
 	opts := lolzteam.RequestOptions{
@@ -738,6 +828,8 @@ type ImapService struct {
 }
 
 // Create Create IMAP Configuration
+//
+// Create an IMAP configuration for a domain.
 func (s *ImapService) Create(ctx context.Context, body *ImapCreateBody) (*ImapCreateResponse, error) {
 	var result ImapCreateResponse
 	opts := lolzteam.RequestOptions{
@@ -754,6 +846,8 @@ func (s *ImapService) Create(ctx context.Context, body *ImapCreateBody) (*ImapCr
 }
 
 // Delete Delete IMAP Configuration
+//
+// Delete an IMAP configuration for a domain.
 func (s *ImapService) Delete(ctx context.Context, body *ImapDeleteBody) (*ImapDeleteResponse, error) {
 	var result ImapDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -775,6 +869,8 @@ type ListService struct {
 }
 
 // Download Download Accounts Data
+//
+// Download accounts data in the specified format.
 func (s *ListService) Download(ctx context.Context, typeVal string, params *ListDownloadParams) (string, error) {
 	opts := lolzteam.RequestOptions{
 		Method: "GET",
@@ -791,6 +887,8 @@ func (s *ListService) Download(ctx context.Context, typeVal string, params *List
 }
 
 // Favorites Get All Favourites Accounts
+//
+// Displays a list of favourites accounts.
 func (s *ListService) Favorites(ctx context.Context, params *ListFavoritesParams) (*ListFavoritesResponse, error) {
 	var result ListFavoritesResponse
 	opts := lolzteam.RequestOptions{
@@ -807,6 +905,8 @@ func (s *ListService) Favorites(ctx context.Context, params *ListFavoritesParams
 }
 
 // Orders Get All Purchased Accounts
+//
+// Displays a list of purchased accounts.
 func (s *ListService) Orders(ctx context.Context, params *ListOrdersParams) (*ListOrdersResponse, error) {
 	var result ListOrdersResponse
 	opts := lolzteam.RequestOptions{
@@ -823,6 +923,8 @@ func (s *ListService) Orders(ctx context.Context, params *ListOrdersParams) (*Li
 }
 
 // States Get User Items States
+//
+// Returns the states of user items.
 func (s *ListService) States(ctx context.Context, params *ListStatesParams) (*ListStatesResponse, error) {
 	var result ListStatesResponse
 	opts := lolzteam.RequestOptions{
@@ -839,6 +941,8 @@ func (s *ListService) States(ctx context.Context, params *ListStatesParams) (*Li
 }
 
 // User Get All User Accounts
+//
+// Displays a list of user accounts.
 func (s *ListService) User(ctx context.Context, params *ListUserParams) (*ListUserResponse, error) {
 	var result ListUserResponse
 	opts := lolzteam.RequestOptions{
@@ -855,6 +959,8 @@ func (s *ListService) User(ctx context.Context, params *ListUserParams) (*ListUs
 }
 
 // Viewed Get All Viewed Accounts
+//
+// Displays a list of viewed accounts.
 func (s *ListService) Viewed(ctx context.Context, params *ListViewedParams) (*ListViewedResponse, error) {
 	var result ListViewedResponse
 	opts := lolzteam.RequestOptions{
@@ -876,6 +982,8 @@ type ManagingService struct {
 }
 
 // AIPrice Get AI Price
+//
+// Get AI-suggested price for the account.
 func (s *ManagingService) AIPrice(ctx context.Context, itemID int64) (*ManagingAIPriceResponse, error) {
 	var result ManagingAIPriceResponse
 	opts := lolzteam.RequestOptions{
@@ -889,6 +997,8 @@ func (s *ManagingService) AIPrice(ctx context.Context, itemID int64) (*ManagingA
 }
 
 // AutoBump Auto Bump
+//
+// Enables/edits automatic bumping for the specified account.
 func (s *ManagingService) AutoBump(ctx context.Context, itemID int64, body *ManagingAutoBumpBody) (*ManagingAutoBumpResponse, error) {
 	var result ManagingAutoBumpResponse
 	opts := lolzteam.RequestOptions{
@@ -905,6 +1015,8 @@ func (s *ManagingService) AutoBump(ctx context.Context, itemID int64, body *Mana
 }
 
 // AutoBumpDisable Disable Auto Bump
+//
+// Disables automatic bumping for the specified account.
 func (s *ManagingService) AutoBumpDisable(ctx context.Context, itemID int64) (*ManagingAutoBumpDisableResponse, error) {
 	var result ManagingAutoBumpDisableResponse
 	opts := lolzteam.RequestOptions{
@@ -918,6 +1030,8 @@ func (s *ManagingService) AutoBumpDisable(ctx context.Context, itemID int64) (*M
 }
 
 // AutoBuyPrice Get Auto Buy Price
+//
+// Get auto buy price for the account.
 func (s *ManagingService) AutoBuyPrice(ctx context.Context, itemID int64) (*ManagingAutoBuyPriceResponse, error) {
 	var result ManagingAutoBuyPriceResponse
 	opts := lolzteam.RequestOptions{
@@ -931,6 +1045,8 @@ func (s *ManagingService) AutoBuyPrice(ctx context.Context, itemID int64) (*Mana
 }
 
 // BulkGet Bulk Get Accounts
+//
+// Bulk get up to 250 accounts.
 func (s *ManagingService) BulkGet(ctx context.Context, body *ManagingBulkGetBody) (*ManagingBulkGetResponse, error) {
 	var result ManagingBulkGetResponse
 	opts := lolzteam.RequestOptions{
@@ -947,6 +1063,8 @@ func (s *ManagingService) BulkGet(ctx context.Context, body *ManagingBulkGetBody
 }
 
 // Bump Bump Account
+//
+// Bumps account in the search.
 func (s *ManagingService) Bump(ctx context.Context, itemID int64) (*ManagingBumpResponse, error) {
 	var result ManagingBumpResponse
 	opts := lolzteam.RequestOptions{
@@ -960,6 +1078,8 @@ func (s *ManagingService) Bump(ctx context.Context, itemID int64) (*ManagingBump
 }
 
 // ChangePassword Change Password
+//
+// Changes password of account.
 func (s *ManagingService) ChangePassword(ctx context.Context, itemID int64, body *ManagingChangePasswordBody) (*ManagingChangePasswordResponse, error) {
 	var result ManagingChangePasswordResponse
 	opts := lolzteam.RequestOptions{
@@ -976,6 +1096,8 @@ func (s *ManagingService) ChangePassword(ctx context.Context, itemID int64, body
 }
 
 // CheckGuarantee Check Guarantee
+//
+// Checks the guarantee and cancels it if there are reasons to cancel it.
 func (s *ManagingService) CheckGuarantee(ctx context.Context, itemID int64) (*ManagingCheckGuaranteeResponse, error) {
 	var result ManagingCheckGuaranteeResponse
 	opts := lolzteam.RequestOptions{
@@ -989,6 +1111,8 @@ func (s *ManagingService) CheckGuarantee(ctx context.Context, itemID int64) (*Ma
 }
 
 // Close Close Account
+//
+// Closes account.
 func (s *ManagingService) Close(ctx context.Context, itemID int64) (*ManagingCloseResponse, error) {
 	var result ManagingCloseResponse
 	opts := lolzteam.RequestOptions{
@@ -1002,6 +1126,8 @@ func (s *ManagingService) Close(ctx context.Context, itemID int64) (*ManagingClo
 }
 
 // CreateClaim Create Claim
+//
+// Create a claim.
 func (s *ManagingService) CreateClaim(ctx context.Context, body *ManagingCreateClaimBody) (*ManagingCreateClaimResponse, error) {
 	var result ManagingCreateClaimResponse
 	opts := lolzteam.RequestOptions{
@@ -1018,6 +1144,8 @@ func (s *ManagingService) CreateClaim(ctx context.Context, body *ManagingCreateC
 }
 
 // DeclineVideoRecording Decline Video Recording Request
+//
+// Waiver of the requirement to record a video and any claims regarding this account.
 func (s *ManagingService) DeclineVideoRecording(ctx context.Context, itemID int64, body *ManagingDeclineVideoRecordingBody) (*ManagingDeclineVideoRecordingResponse, error) {
 	var result ManagingDeclineVideoRecordingResponse
 	opts := lolzteam.RequestOptions{
@@ -1034,6 +1162,8 @@ func (s *ManagingService) DeclineVideoRecording(ctx context.Context, itemID int6
 }
 
 // Delete Delete Account
+//
+// Deletes your account from public search. Deletion type is soft. You can restore account after deletion if you want.
 func (s *ManagingService) Delete(ctx context.Context, itemID int64, body *ManagingDeleteBody) (*ManagingDeleteResponse, error) {
 	var result ManagingDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -1050,6 +1180,8 @@ func (s *ManagingService) Delete(ctx context.Context, itemID int64, body *Managi
 }
 
 // Edit Edit Account
+//
+// Edits any details of account.
 func (s *ManagingService) Edit(ctx context.Context, itemID int64, body *ManagingEditBody) (*ManagingEditResponse, error) {
 	var result ManagingEditResponse
 	opts := lolzteam.RequestOptions{
@@ -1066,6 +1198,10 @@ func (s *ManagingService) Edit(ctx context.Context, itemID int64, body *Managing
 }
 
 // EmailCode Get Email Confirmation Code
+//
+// Gets confirmation code or link.
+//
+// > ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times)
 func (s *ManagingService) EmailCode(ctx context.Context, itemID int64) (*ManagingEmailCodeResponse, error) {
 	var result ManagingEmailCodeResponse
 	opts := lolzteam.RequestOptions{
@@ -1079,6 +1215,8 @@ func (s *ManagingService) EmailCode(ctx context.Context, itemID int64) (*Managin
 }
 
 // Favorite Favorite
+//
+// Adds account to favorites.
 func (s *ManagingService) Favorite(ctx context.Context, itemID int64) (*ManagingFavoriteResponse, error) {
 	var result ManagingFavoriteResponse
 	opts := lolzteam.RequestOptions{
@@ -1092,6 +1230,8 @@ func (s *ManagingService) Favorite(ctx context.Context, itemID int64) (*Managing
 }
 
 // Get Get Account
+//
+// Displays account information.
 func (s *ManagingService) Get(ctx context.Context, itemID int64, params *ManagingGetParams) (*ManagingGetResponse, error) {
 	var result ManagingGetResponse
 	opts := lolzteam.RequestOptions{
@@ -1108,6 +1248,10 @@ func (s *ManagingService) Get(ctx context.Context, itemID int64, params *Managin
 }
 
 // GetLetters2 Get Email Letters
+//
+// Returns account letters.
+//
+// > ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times)
 func (s *ManagingService) GetLetters2(ctx context.Context, params *ManagingGetLetters2Params) (*ManagingGetLetters2Response, error) {
 	var result ManagingGetLetters2Response
 	opts := lolzteam.RequestOptions{
@@ -1124,6 +1268,8 @@ func (s *ManagingService) GetLetters2(ctx context.Context, params *ManagingGetLe
 }
 
 // Image Get Account Image
+//
+// Get account image.
 func (s *ManagingService) Image(ctx context.Context, itemID int64, params *ManagingImageParams) (*ManagingImageResponse, error) {
 	var result ManagingImageResponse
 	opts := lolzteam.RequestOptions{
@@ -1140,6 +1286,8 @@ func (s *ManagingService) Image(ctx context.Context, itemID int64, params *Manag
 }
 
 // Note Edit Note
+//
+// Edits a note for the account.
 func (s *ManagingService) Note(ctx context.Context, itemID int64, body *ManagingNoteBody) (*ManagingNoteResponse, error) {
 	var result ManagingNoteResponse
 	opts := lolzteam.RequestOptions{
@@ -1156,6 +1304,8 @@ func (s *ManagingService) Note(ctx context.Context, itemID int64, body *Managing
 }
 
 // Open Open Account
+//
+// Opens account.
 func (s *ManagingService) Open(ctx context.Context, itemID int64) (*ManagingOpenResponse, error) {
 	var result ManagingOpenResponse
 	opts := lolzteam.RequestOptions{
@@ -1169,6 +1319,8 @@ func (s *ManagingService) Open(ctx context.Context, itemID int64) (*ManagingOpen
 }
 
 // PublicTag Add a Public Tag
+//
+// Adds a public tag to the specified account.
 func (s *ManagingService) PublicTag(ctx context.Context, itemID int64, body *ManagingPublicTagBody) (*ManagingPublicTagResponse, error) {
 	var result ManagingPublicTagResponse
 	opts := lolzteam.RequestOptions{
@@ -1185,6 +1337,8 @@ func (s *ManagingService) PublicTag(ctx context.Context, itemID int64, body *Man
 }
 
 // PublicUntag Remove a Public Tag
+//
+// Removes a public tag from the specified account.
 func (s *ManagingService) PublicUntag(ctx context.Context, itemID int64, body *ManagingPublicUntagBody) (*ManagingPublicUntagResponse, error) {
 	var result ManagingPublicUntagResponse
 	opts := lolzteam.RequestOptions{
@@ -1201,6 +1355,8 @@ func (s *ManagingService) PublicUntag(ctx context.Context, itemID int64, body *M
 }
 
 // RefuseGuarantee Cancel Guarantee
+//
+// Cancel guarantee of account. It can be useful for account reselling.
 func (s *ManagingService) RefuseGuarantee(ctx context.Context, itemID int64) (*ManagingRefuseGuaranteeResponse, error) {
 	var result ManagingRefuseGuaranteeResponse
 	opts := lolzteam.RequestOptions{
@@ -1214,6 +1370,8 @@ func (s *ManagingService) RefuseGuarantee(ctx context.Context, itemID int64) (*M
 }
 
 // SteamAddMafile Add Mafile
+//
+// Add a new Steam mafile to the account.
 func (s *ManagingService) SteamAddMafile(ctx context.Context, itemID int64) (*ManagingSteamAddMafileResponse, error) {
 	var result ManagingSteamAddMafileResponse
 	opts := lolzteam.RequestOptions{
@@ -1227,6 +1385,9 @@ func (s *ManagingService) SteamAddMafile(ctx context.Context, itemID int64) (*Ma
 }
 
 // SteamGetMafile Get Mafile
+//
+// Returns steam mafile.
+// > ❗️ This action is cancelling active account guarantee
 func (s *ManagingService) SteamGetMafile(ctx context.Context, itemID int64) (*ManagingSteamGetMafileResponse, error) {
 	var result ManagingSteamGetMafileResponse
 	opts := lolzteam.RequestOptions{
@@ -1240,6 +1401,8 @@ func (s *ManagingService) SteamGetMafile(ctx context.Context, itemID int64) (*Ma
 }
 
 // SteamInventoryValue Get Account Steam Inventory Value
+//
+// Gets Account steam inventory value.
 func (s *ManagingService) SteamInventoryValue(ctx context.Context, itemID int64, params *ManagingSteamInventoryValueParams) (*ManagingSteamInventoryValueResponse, error) {
 	var result ManagingSteamInventoryValueResponse
 	opts := lolzteam.RequestOptions{
@@ -1256,6 +1419,8 @@ func (s *ManagingService) SteamInventoryValue(ctx context.Context, itemID int64,
 }
 
 // SteamMafileCode Get Mafile Confirmation Code
+//
+// Gets confirmation code from MaFile (Only for Steam accounts).
 func (s *ManagingService) SteamMafileCode(ctx context.Context, itemID int64) (*ManagingSteamMafileCodeResponse, error) {
 	var result ManagingSteamMafileCodeResponse
 	opts := lolzteam.RequestOptions{
@@ -1269,6 +1434,8 @@ func (s *ManagingService) SteamMafileCode(ctx context.Context, itemID int64) (*M
 }
 
 // SteamPreview Get Steam HTML
+//
+// Returns Steam account profile/games preview.
 func (s *ManagingService) SteamPreview(ctx context.Context, itemID int64, params *ManagingSteamPreviewParams) (string, error) {
 	opts := lolzteam.RequestOptions{
 		Method: "GET",
@@ -1285,6 +1452,9 @@ func (s *ManagingService) SteamPreview(ctx context.Context, itemID int64, params
 }
 
 // SteamRemoveMafile Remove Mafile
+//
+// Remove steam mafile.
+// > ❗️ This will unlink the authenticator from the account and remove mafile from the item
 func (s *ManagingService) SteamRemoveMafile(ctx context.Context, itemID int64) (*ManagingSteamRemoveMafileResponse, error) {
 	var result ManagingSteamRemoveMafileResponse
 	opts := lolzteam.RequestOptions{
@@ -1298,6 +1468,12 @@ func (s *ManagingService) SteamRemoveMafile(ctx context.Context, itemID int64) (
 }
 
 // SteamSDA Confirm SDA
+//
+// Confirm steam action.
+//
+//	Don't set id and nonce parameters to get list of available confirmation requests.
+//
+// > ❗️ This action is cancelling active account guarantee
 func (s *ManagingService) SteamSDA(ctx context.Context, itemID int64, body *ManagingSteamSDABody) (*ManagingSteamSDAResponse, error) {
 	var result ManagingSteamSDAResponse
 	opts := lolzteam.RequestOptions{
@@ -1314,6 +1490,8 @@ func (s *ManagingService) SteamSDA(ctx context.Context, itemID int64, body *Mana
 }
 
 // SteamUpdateValue Update Inventory Value
+//
+// Update inventory value.
 func (s *ManagingService) SteamUpdateValue(ctx context.Context, itemID int64, body *ManagingSteamUpdateValueBody) (*ManagingSteamUpdateValueResponse, error) {
 	var result ManagingSteamUpdateValueResponse
 	opts := lolzteam.RequestOptions{
@@ -1330,6 +1508,9 @@ func (s *ManagingService) SteamUpdateValue(ctx context.Context, itemID int64, bo
 }
 
 // SteamValue Get Steam Inventory Value
+//
+// Gets steam inventory value.
+// > 📘 This method is rate limited. You can send 20 requests per minute (3s delay between requests)
 func (s *ManagingService) SteamValue(ctx context.Context, params *ManagingSteamValueParams) (*ManagingSteamValueResponse, error) {
 	var result ManagingSteamValueResponse
 	opts := lolzteam.RequestOptions{
@@ -1346,6 +1527,8 @@ func (s *ManagingService) SteamValue(ctx context.Context, params *ManagingSteamV
 }
 
 // Stick Stick Account
+//
+// Stick account in the top of search.
 func (s *ManagingService) Stick(ctx context.Context, itemID int64) (*ManagingStickResponse, error) {
 	var result ManagingStickResponse
 	opts := lolzteam.RequestOptions{
@@ -1359,6 +1542,8 @@ func (s *ManagingService) Stick(ctx context.Context, itemID int64) (*ManagingSti
 }
 
 // Tag Add a Tag
+//
+// Adds a tag to the specified account.
 func (s *ManagingService) Tag(ctx context.Context, itemID int64, body *ManagingTagBody) (*ManagingTagResponse, error) {
 	var result ManagingTagResponse
 	opts := lolzteam.RequestOptions{
@@ -1375,6 +1560,8 @@ func (s *ManagingService) Tag(ctx context.Context, itemID int64, body *ManagingT
 }
 
 // TelegramCode Get Telegram Confirmation Code
+//
+// Gets confirmation code from Telegram.
 func (s *ManagingService) TelegramCode(ctx context.Context, itemID int64) (*ManagingTelegramCodeResponse, error) {
 	var result ManagingTelegramCodeResponse
 	opts := lolzteam.RequestOptions{
@@ -1388,6 +1575,8 @@ func (s *ManagingService) TelegramCode(ctx context.Context, itemID int64) (*Mana
 }
 
 // TelegramResetAuth Telegram Reset Auth
+//
+// Resets Telegram authorizations.
 func (s *ManagingService) TelegramResetAuth(ctx context.Context, itemID int64) (*ManagingTelegramResetAuthResponse, error) {
 	var result ManagingTelegramResetAuthResponse
 	opts := lolzteam.RequestOptions{
@@ -1401,6 +1590,9 @@ func (s *ManagingService) TelegramResetAuth(ctx context.Context, itemID int64) (
 }
 
 // TempEmailPassword Get Temp Email Password
+//
+// Gets password from temp email of account. After calling of this method, the guarantee will be cancelled and you cannot automatically resell account.
+// > ❗️ This action is cancelling active account guarantee
 func (s *ManagingService) TempEmailPassword(ctx context.Context, itemID int64) (*ManagingTempEmailPasswordResponse, error) {
 	var result ManagingTempEmailPasswordResponse
 	opts := lolzteam.RequestOptions{
@@ -1414,6 +1606,8 @@ func (s *ManagingService) TempEmailPassword(ctx context.Context, itemID int64) (
 }
 
 // Transfer Change Account Owner
+//
+// Transfer account to another user.
 func (s *ManagingService) Transfer(ctx context.Context, itemID int64, body *ManagingTransferBody) (*ManagingTransferResponse, error) {
 	var result ManagingTransferResponse
 	opts := lolzteam.RequestOptions{
@@ -1430,6 +1624,8 @@ func (s *ManagingService) Transfer(ctx context.Context, itemID int64, body *Mana
 }
 
 // Unfavorite Unfavorite
+//
+// Delete account from favorites.
 func (s *ManagingService) Unfavorite(ctx context.Context, itemID int64) (*ManagingUnfavoriteResponse, error) {
 	var result ManagingUnfavoriteResponse
 	opts := lolzteam.RequestOptions{
@@ -1443,6 +1639,8 @@ func (s *ManagingService) Unfavorite(ctx context.Context, itemID int64) (*Managi
 }
 
 // Unstick Unstick Account
+//
+// Unstick account from the top of search.
 func (s *ManagingService) Unstick(ctx context.Context, itemID int64) (*ManagingUnstickResponse, error) {
 	var result ManagingUnstickResponse
 	opts := lolzteam.RequestOptions{
@@ -1456,6 +1654,8 @@ func (s *ManagingService) Unstick(ctx context.Context, itemID int64) (*ManagingU
 }
 
 // Untag Remove a Tag
+//
+// Removes a tag from from the specified account.
 func (s *ManagingService) Untag(ctx context.Context, itemID int64, body *ManagingUntagBody) (*ManagingUntagResponse, error) {
 	var result ManagingUntagResponse
 	opts := lolzteam.RequestOptions{
@@ -1477,6 +1677,8 @@ type PaymentsService struct {
 }
 
 // BalanceExchange Exchange Balance
+//
+// Transfer funds from one balance to another.
 func (s *PaymentsService) BalanceExchange(ctx context.Context, body *PaymentsBalanceExchangeBody) (*PaymentsBalanceExchangeResponse, error) {
 	var result PaymentsBalanceExchangeResponse
 	opts := lolzteam.RequestOptions{
@@ -1493,6 +1695,8 @@ func (s *PaymentsService) BalanceExchange(ctx context.Context, body *PaymentsBal
 }
 
 // BalanceList Get List Of Balances
+//
+// Returns list of balances.
 func (s *PaymentsService) BalanceList(ctx context.Context) (*PaymentsBalanceListResponse, error) {
 	var result PaymentsBalanceListResponse
 	opts := lolzteam.RequestOptions{
@@ -1506,6 +1710,11 @@ func (s *PaymentsService) BalanceList(ctx context.Context) (*PaymentsBalanceList
 }
 
 // Cancel Cancel Transfer
+//
+// Cancels a transfer with a hold that was sent to your account.
+//
+// Required scopes:
+// + payment
 func (s *PaymentsService) Cancel(ctx context.Context, body *PaymentsCancelBody) (*PaymentsCancelResponse, error) {
 	var result PaymentsCancelResponse
 	opts := lolzteam.RequestOptions{
@@ -1522,6 +1731,8 @@ func (s *PaymentsService) Cancel(ctx context.Context, body *PaymentsCancelBody) 
 }
 
 // Currency Get Currency
+//
+// Get currency list.
 func (s *PaymentsService) Currency(ctx context.Context) (*PaymentsCurrencyResponse, error) {
 	var result PaymentsCurrencyResponse
 	opts := lolzteam.RequestOptions{
@@ -1535,6 +1746,11 @@ func (s *PaymentsService) Currency(ctx context.Context) (*PaymentsCurrencyRespon
 }
 
 // Fee Check Transfer Fee
+//
+// Get transfer limits and get fee amount for transfer.
+//
+// Required scopes:
+// + payment
 func (s *PaymentsService) Fee(ctx context.Context, params *PaymentsFeeParams) (*PaymentsFeeResponse, error) {
 	var result PaymentsFeeResponse
 	opts := lolzteam.RequestOptions{
@@ -1551,6 +1767,11 @@ func (s *PaymentsService) Fee(ctx context.Context, params *PaymentsFeeParams) (*
 }
 
 // History Payments History
+//
+// Displays list of your payments.
+//
+// Required scopes:
+// + payment
 func (s *PaymentsService) History(ctx context.Context, params *PaymentsHistoryParams) (*PaymentsHistoryResponse, error) {
 	var result PaymentsHistoryResponse
 	opts := lolzteam.RequestOptions{
@@ -1567,6 +1788,11 @@ func (s *PaymentsService) History(ctx context.Context, params *PaymentsHistoryPa
 }
 
 // InvoiceCreate Create Invoice
+//
+// Create invoice.
+//
+// Required scopes:
+// + invoice
 func (s *PaymentsService) InvoiceCreate(ctx context.Context, body *PaymentsInvoiceCreateBody) (*PaymentsInvoiceCreateResponse, error) {
 	var result PaymentsInvoiceCreateResponse
 	opts := lolzteam.RequestOptions{
@@ -1583,6 +1809,11 @@ func (s *PaymentsService) InvoiceCreate(ctx context.Context, body *PaymentsInvoi
 }
 
 // InvoiceGet Get Invoice
+//
+// Get invoice.
+//
+// Required scopes:
+// + invoice
 func (s *PaymentsService) InvoiceGet(ctx context.Context, params *PaymentsInvoiceGetParams) (*PaymentsInvoiceGetResponse, error) {
 	var result PaymentsInvoiceGetResponse
 	opts := lolzteam.RequestOptions{
@@ -1599,6 +1830,11 @@ func (s *PaymentsService) InvoiceGet(ctx context.Context, params *PaymentsInvoic
 }
 
 // InvoiceList Get Invoice List
+//
+// Get invoice list.
+//
+// Required scopes:
+// + invoice
 func (s *PaymentsService) InvoiceList(ctx context.Context, params *PaymentsInvoiceListParams) (*PaymentsInvoiceListResponse, error) {
 	var result PaymentsInvoiceListResponse
 	opts := lolzteam.RequestOptions{
@@ -1615,6 +1851,8 @@ func (s *PaymentsService) InvoiceList(ctx context.Context, params *PaymentsInvoi
 }
 
 // Payout Create Payout
+//
+// Creates a payout request.
 func (s *PaymentsService) Payout(ctx context.Context, body *PaymentsPayoutBody) (*PaymentsPayoutResponse, error) {
 	var result PaymentsPayoutResponse
 	opts := lolzteam.RequestOptions{
@@ -1631,6 +1869,8 @@ func (s *PaymentsService) Payout(ctx context.Context, body *PaymentsPayoutBody) 
 }
 
 // PayoutServices Get Payout Services
+//
+// Get a list of available payout services.
 func (s *PaymentsService) PayoutServices(ctx context.Context) (*PaymentsPayoutServicesResponse, error) {
 	var result PaymentsPayoutServicesResponse
 	opts := lolzteam.RequestOptions{
@@ -1644,6 +1884,11 @@ func (s *PaymentsService) PayoutServices(ctx context.Context) (*PaymentsPayoutSe
 }
 
 // Transfer Transfer Money
+//
+// Transfer money to any user.
+//
+// Required scopes:
+// + payment
 func (s *PaymentsService) Transfer(ctx context.Context, body *PaymentsTransferBody) (*PaymentsTransferResponse, error) {
 	var result PaymentsTransferResponse
 	opts := lolzteam.RequestOptions{
@@ -1665,6 +1910,8 @@ type ProfileService struct {
 }
 
 // Claims Get Claims
+//
+// Returns a list of claims filed against you.
 func (s *ProfileService) Claims(ctx context.Context, params *ProfileClaimsParams) (*ProfileClaimsResponse, error) {
 	var result ProfileClaimsResponse
 	opts := lolzteam.RequestOptions{
@@ -1681,6 +1928,8 @@ func (s *ProfileService) Claims(ctx context.Context, params *ProfileClaimsParams
 }
 
 // Edit Edit Market Settings
+//
+// Change settings about your profile on the market.
 func (s *ProfileService) Edit(ctx context.Context, body *ProfileEditBody) (*ProfileEditResponse, error) {
 	var result ProfileEditResponse
 	opts := lolzteam.RequestOptions{
@@ -1697,6 +1946,8 @@ func (s *ProfileService) Edit(ctx context.Context, body *ProfileEditBody) (*Prof
 }
 
 // Get Get Profile
+//
+// Displays info about your profile.
 func (s *ProfileService) Get(ctx context.Context, params *ProfileGetParams) (*ProfileGetResponse, error) {
 	var result ProfileGetResponse
 	opts := lolzteam.RequestOptions{
@@ -1718,6 +1969,19 @@ type ProxyService struct {
 }
 
 // Add Add Proxy
+//
+// Add single proxy or proxy list.
+//
+// To add single proxy use this parameters:
+//
+// + proxy_ip (required) - proxy ip or host
+// + proxy_port (required) - proxy port
+// + proxy_user (optional) - proxy username
+// + proxy_pass (optional) - proxy password
+//
+// To add proxy list use this parameters:
+//
+// + proxy_row (required) - proxy list in String format ip:port:user:pass. Each proxy must be start with new line (use \n separator)
 func (s *ProxyService) Add(ctx context.Context, body *ProxyAddBody) (*ProxyAddResponse, error) {
 	var result ProxyAddResponse
 	opts := lolzteam.RequestOptions{
@@ -1734,6 +1998,8 @@ func (s *ProxyService) Add(ctx context.Context, body *ProxyAddBody) (*ProxyAddRe
 }
 
 // Delete Delete Proxy
+//
+// Delete single or all proxies.
 func (s *ProxyService) Delete(ctx context.Context, body *ProxyDeleteBody) (*ProxyDeleteResponse, error) {
 	var result ProxyDeleteResponse
 	opts := lolzteam.RequestOptions{
@@ -1750,6 +2016,8 @@ func (s *ProxyService) Delete(ctx context.Context, body *ProxyDeleteBody) (*Prox
 }
 
 // Get Get Proxy
+//
+// Gets your proxy list.
 func (s *ProxyService) Get(ctx context.Context) (*ProxyGetResponse, error) {
 	var result ProxyGetResponse
 	opts := lolzteam.RequestOptions{
@@ -1768,6 +2036,13 @@ type PublishingService struct {
 }
 
 // Add Add Account
+//
+// Adds account on the market.
+//
+// Required email login data categories:
+// + 9 - Fortnite
+// + 12 - Epic games
+// + 18 - Escape from Tarkov
 func (s *PublishingService) Add(ctx context.Context, body *PublishingAddBody) (*PublishingAddResponse, error) {
 	var result PublishingAddResponse
 	opts := lolzteam.RequestOptions{
@@ -1784,6 +2059,10 @@ func (s *PublishingService) Add(ctx context.Context, body *PublishingAddBody) (*
 }
 
 // Check Check Account Details
+//
+// Check and put up to sale not published account OR update account information existing account.
+//
+// > ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times).
 func (s *PublishingService) Check(ctx context.Context, itemID int64, body *PublishingCheckBody) (*PublishingCheckResponse, error) {
 	var result PublishingCheckResponse
 	opts := lolzteam.RequestOptions{
@@ -1800,6 +2079,10 @@ func (s *PublishingService) Check(ctx context.Context, itemID int64, body *Publi
 }
 
 // External Add an External Account
+//
+// Check and add an external account to your item.
+//
+// > ❗️ Please note that if you're linking a Social Club account to Steam, it will update the last activity on your account (This is a limitation of Steam). If Social Club Games does not have a linked account, do not enter any data.
 func (s *PublishingService) External(ctx context.Context, itemID int64, body *PublishingExternalBody) (*PublishingExternalResponse, error) {
 	var result PublishingExternalResponse
 	opts := lolzteam.RequestOptions{
@@ -1816,6 +2099,10 @@ func (s *PublishingService) External(ctx context.Context, itemID int64, body *Pu
 }
 
 // FastSell Fast Account Upload
+//
+// Adds and checks the account for validity.
+//
+// > ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times).
 func (s *PublishingService) FastSell(ctx context.Context, body *PublishingFastSellBody) (*PublishingFastSellResponse, error) {
 	var result PublishingFastSellResponse
 	opts := lolzteam.RequestOptions{
@@ -1837,6 +2124,10 @@ type PurchasingService struct {
 }
 
 // Check Check Account
+//
+// Checking account for validity.
+//
+// > ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times).
 func (s *PurchasingService) Check(ctx context.Context, itemID int64) (*PurchasingCheckResponse, error) {
 	var result PurchasingCheckResponse
 	opts := lolzteam.RequestOptions{
@@ -1850,6 +2141,10 @@ func (s *PurchasingService) Check(ctx context.Context, itemID int64) (*Purchasin
 }
 
 // Confirm Confirm Buy
+//
+// Confirm buy.
+//
+// > ❗️ This method doesn't check account for validity. If you want to confirm validity before buying, you should use [FastBuy](https://lzt-market.readme.io/reference/purchasingfastbuy) method
 func (s *PurchasingService) Confirm(ctx context.Context, itemID int64, body *PurchasingConfirmBody) (*PurchasingConfirmResponse, error) {
 	var result PurchasingConfirmResponse
 	opts := lolzteam.RequestOptions{
@@ -1866,6 +2161,8 @@ func (s *PurchasingService) Confirm(ctx context.Context, itemID int64, body *Pur
 }
 
 // DiscountCancel Cancel Discount Request
+//
+// Cancel a requested discount for the specified item.
 func (s *PurchasingService) DiscountCancel(ctx context.Context, itemID int64) (*PurchasingDiscountCancelResponse, error) {
 	var result PurchasingDiscountCancelResponse
 	opts := lolzteam.RequestOptions{
@@ -1879,6 +2176,8 @@ func (s *PurchasingService) DiscountCancel(ctx context.Context, itemID int64) (*
 }
 
 // DiscountRequest Discount Request
+//
+// Request a discount for the specified item.
 func (s *PurchasingService) DiscountRequest(ctx context.Context, itemID int64, body *PurchasingDiscountRequestBody) (*PurchasingDiscountRequestResponse, error) {
 	var result PurchasingDiscountRequestResponse
 	opts := lolzteam.RequestOptions{
@@ -1895,6 +2194,10 @@ func (s *PurchasingService) DiscountRequest(ctx context.Context, itemID int64, b
 }
 
 // FastBuy Fast Buy Account
+//
+// Check and buy account.
+//
+// > ❗️ If you receive a "retry_request" error, you should repeat the same request (up to a maximum of 100 times).
 func (s *PurchasingService) FastBuy(ctx context.Context, itemID int64, body *PurchasingFastBuyBody) (*PurchasingFastBuyResponse, error) {
 	var result PurchasingFastBuyResponse
 	opts := lolzteam.RequestOptions{

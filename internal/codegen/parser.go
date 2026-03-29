@@ -114,6 +114,7 @@ type Operation struct {
 	HTTPMethod     string
 	Path           string
 	Summary        string
+	Description    string
 	ContentKind    ContentKind
 	PathParams     []PathParam
 	QueryParams    []QueryParam
@@ -128,29 +129,32 @@ type Operation struct {
 }
 
 type PathParam struct {
-	Name      string
-	GoName    string
-	GoType    string
-	SchemaObj SchemaObj
+	Name        string
+	GoName      string
+	GoType      string
+	SchemaObj   SchemaObj
+	Description string
 }
 
 type QueryParam struct {
-	Name     string
-	GoName   string
-	GoType   string
-	Required bool
-	IsArray  bool
-	ItemType string
-	Default  string // formatted default value from schema, empty if none
+	Name        string
+	GoName      string
+	GoType      string
+	Required    bool
+	IsArray     bool
+	ItemType    string
+	Default     string // formatted default value from schema, empty if none
+	Description string
 }
 
 type BodyProp struct {
-	Name     string
-	GoName   string
-	GoType   string
-	Required bool
-	IsBinary bool
-	Default  string // formatted default value from schema, empty if none
+	Name        string
+	GoName      string
+	GoType      string
+	Required    bool
+	IsBinary    bool
+	Default     string // formatted default value from schema, empty if none
+	Description string
 }
 
 // EnumDef describes a named enum type to be generated.
@@ -218,11 +222,12 @@ func (g *Generator) ParseOperations() error {
 				group = "Managing"
 			}
 			parsed := Operation{
-				Group:      group,
-				Method:     method,
-				HTTPMethod: strings.ToUpper(httpMethod),
-				Path:       path,
-				Summary:    op.Summary,
+				Group:       group,
+				Method:      method,
+				HTTPMethod:  strings.ToUpper(httpMethod),
+				Path:        path,
+				Summary:     op.Summary,
+				Description: op.Description,
 			}
 
 			// Parse parameters
@@ -233,16 +238,18 @@ func (g *Generator) ParseOperations() error {
 				}
 				if param.In == "path" {
 					pp := PathParam{
-						Name:   param.Name,
-						GoName: ToPascalCase(param.Name),
-						GoType: g.SchemaToGoType(param.Schema),
+						Name:        param.Name,
+						GoName:      ToPascalCase(param.Name),
+						GoType:      g.SchemaToGoType(param.Schema),
+						Description: param.Description,
 					}
 					parsed.PathParams = append(parsed.PathParams, pp)
 				} else if param.In == "query" {
 					qp := QueryParam{
-						Name:     param.Name,
-						GoName:   ToPascalCase(param.Name),
-						Required: param.Required,
+						Name:        param.Name,
+						GoName:      ToPascalCase(param.Name),
+						Required:    param.Required,
+						Description: param.Description,
 					}
 					resolved := g.ResolveSchemaRef(param.Schema)
 					qp.Default = FormatDefault(resolved.Default)
@@ -302,11 +309,13 @@ func (g *Generator) ParseOperations() error {
 					reqFields := ToSet(itemResolved.Required)
 					for propName, propSchema := range itemResolved.Properties {
 						goType := g.ResolveGoType(propSchema)
+						resolvedItemProp := g.ResolveSchemaRef(propSchema)
 						bp := BodyProp{
-							Name:     propName,
-							GoName:   ToPascalCase(propName),
-							GoType:   goType,
-							Required: reqFields[propName],
+							Name:        propName,
+							GoName:      ToPascalCase(propName),
+							GoType:      goType,
+							Required:    reqFields[propName],
+							Description: resolvedItemProp.Description,
 						}
 						parsed.ArrayItemProps = append(parsed.ArrayItemProps, bp)
 					}
@@ -325,10 +334,11 @@ func (g *Generator) ParseOperations() error {
 						propSchema := resolved.Properties[propName]
 						resolvedProp := g.ResolveSchemaRef(propSchema)
 						qp := QueryParam{
-							Name:     propName,
-							GoName:   ToPascalCase(propName),
-							Required: false,
-							Default:  FormatDefault(resolvedProp.Default),
+							Name:        propName,
+							GoName:      ToPascalCase(propName),
+							Required:    false,
+							Default:     FormatDefault(resolvedProp.Default),
+							Description: resolvedProp.Description,
 						}
 						typeStrs := SchemaTypeStrings(resolvedProp)
 						if slices.Contains(typeStrs, "array") && resolvedProp.Items != nil {
@@ -385,13 +395,17 @@ func (g *Generator) ParseOperations() error {
 							if isBinary {
 								goType = "FileUpload"
 							}
-							// Inline objects with properties: generate named struct
+							// Inline objects with properties: generate named struct or map
 							if resolvedProp.Ref == "" && len(resolvedProp.Properties) > 0 {
-								goFieldName := ToPascalCase(propName)
-								inlineName := bodyStructName + goFieldName
-								inlineSD := g.SchemaToStructDef(inlineName, resolvedProp)
-								g.NamedTypes[inlineName] = inlineSD
-								goType = inlineName
+								if allNumericKeys(resolvedProp.Properties) {
+									goType = "any" // numeric-keyed objects: API may return [] or {"id":"val"}
+								} else {
+									goFieldName := ToPascalCase(propName)
+									inlineName := bodyStructName + goFieldName
+									inlineSD := g.SchemaToStructDef(inlineName, resolvedProp)
+									g.NamedTypes[inlineName] = inlineSD
+									goType = inlineName
+								}
 							}
 							// Enum detection for body properties
 							if !isBinary && len(resolvedProp.Enum) >= 2 {
@@ -401,12 +415,13 @@ func (g *Generator) ParseOperations() error {
 								}
 							}
 							bp := BodyProp{
-								Name:     propName,
-								GoName:   ToPascalCase(propName),
-								GoType:   goType,
-								Required: reqFields[propName],
-								IsBinary: isBinary,
-								Default:  FormatDefault(resolvedProp.Default),
+								Name:        propName,
+								GoName:      ToPascalCase(propName),
+								GoType:      goType,
+								Required:    reqFields[propName],
+								IsBinary:    isBinary,
+								Default:     FormatDefault(resolvedProp.Default),
+								Description: resolvedProp.Description,
 							}
 							parsed.BodyProps = append(parsed.BodyProps, bp)
 							if isBinary {
@@ -683,6 +698,9 @@ func (g *Generator) SchemaToGoType(s SchemaObj) string {
 			return "[]any"
 		case "object":
 			if len(s.Properties) > 0 {
+				if allNumericKeys(s.Properties) {
+					return "any" // numeric-keyed objects: API may return [] or {"id":"val"}
+				}
 				return "any" // inline objects in type context → any
 			}
 			if s.AdditionalProperties != nil {
@@ -852,13 +870,17 @@ func (g *Generator) BuildUnionDef(baseName string, variants []SchemaObj, content
 			if isBinary {
 				goType = "FileUpload"
 			}
-			// Inline objects with properties: generate named struct
+			// Inline objects with properties: generate named struct or map
 			if resolvedProp.Ref == "" && len(resolvedProp.Properties) > 0 {
-				goFieldName := ToPascalCase(propName)
-				inlineName := variantName + goFieldName
-				inlineSD := g.SchemaToStructDef(inlineName, resolvedProp)
-				g.NamedTypes[inlineName] = inlineSD
-				goType = inlineName
+				if allNumericKeys(resolvedProp.Properties) {
+					goType = "any" // numeric-keyed objects: API may return [] or {"id":"val"}
+				} else {
+					goFieldName := ToPascalCase(propName)
+					inlineName := variantName + goFieldName
+					inlineSD := g.SchemaToStructDef(inlineName, resolvedProp)
+					g.NamedTypes[inlineName] = inlineSD
+					goType = inlineName
+				}
 			}
 			// Enum detection for body properties
 			if !isBinary && len(resolvedProp.Enum) >= 2 {
@@ -868,12 +890,13 @@ func (g *Generator) BuildUnionDef(baseName string, variants []SchemaObj, content
 				}
 			}
 			bp := BodyProp{
-				Name:     propName,
-				GoName:   ToPascalCase(propName),
-				GoType:   goType,
-				Required: reqSet[propName],
-				IsBinary: isBinary,
-				Default:  FormatDefault(resolvedProp.Default),
+				Name:        propName,
+				GoName:      ToPascalCase(propName),
+				GoType:      goType,
+				Required:    reqSet[propName],
+				IsBinary:    isBinary,
+				Default:     FormatDefault(resolvedProp.Default),
+				Description: resolvedProp.Description,
 			}
 			fields = append(fields, bp)
 		}
@@ -945,10 +968,14 @@ func (g *Generator) SchemaToStructDef(name string, s SchemaObj) *StructDef {
 		// Inline objects → generate as nested struct type or map
 		resolved := g.ResolveSchemaRef(propSchema)
 		if resolved.Ref == "" && len(resolved.Properties) > 0 {
-			inlineName := name + goFieldName
-			inlineSD := g.SchemaToStructDef(inlineName, resolved)
-			g.NamedTypes[inlineName] = inlineSD
-			goType = inlineName
+			if allNumericKeys(resolved.Properties) {
+				goType = "any" // numeric-keyed objects: API may return [] or {"id":"val"}
+			} else {
+				inlineName := name + goFieldName
+				inlineSD := g.SchemaToStructDef(inlineName, resolved)
+				g.NamedTypes[inlineName] = inlineSD
+				goType = inlineName
+			}
 		}
 
 		isRequired := reqSet[propName]
@@ -1096,6 +1123,25 @@ func CleanComment(s string) string {
 	}
 	// Ensure it starts lowercase for godoc style after method name
 	return s
+}
+
+// StripMarkdownBold removes **bold** markers from a string.
+func StripMarkdownBold(s string) string {
+	return strings.ReplaceAll(s, "**", "")
+}
+
+// WriteDocComment writes a multi-line GoDoc comment from description text.
+// Each line is prefixed with "// " and markdown bold markers are stripped.
+func WriteDocComment(b *strings.Builder, desc string, indent string) {
+	desc = StripMarkdownBold(desc)
+	for _, line := range strings.Split(desc, "\n") {
+		line = strings.TrimRight(line, " \t")
+		if line == "" {
+			fmt.Fprintf(b, "%s//\n", indent)
+		} else {
+			fmt.Fprintf(b, "%s// %s\n", indent, line)
+		}
+	}
 }
 
 func RefName(ref string) string {
@@ -1429,6 +1475,72 @@ func DefaultTag(formatted string) string {
 	return fmt.Sprintf(` default:"%s"`, val)
 }
 
+// allNumericKeys returns true when every property name in the map is a numeric string.
+// Such objects represent dynamic maps (e.g. tag IDs) and should be emitted as map[string]T.
+func allNumericKeys(props map[string]SchemaObj) bool {
+	if len(props) == 0 {
+		return false
+	}
+	numRe := regexp.MustCompile(`^\d+$`)
+	for k := range props {
+		if !numRe.MatchString(k) {
+			return false
+		}
+	}
+	return true
+}
+
+// numericKeyValueType returns the Go type for the values in a numeric-keyed object.
+// All values are expected to share the same type; the first property's type is used.
+func (g *Generator) numericKeyValueType(props map[string]SchemaObj) string {
+	for _, v := range props {
+		return g.ResolveGoType(v)
+	}
+	return "any"
+}
+
+// responseIntToFloat replaces int64 with float64 in a Go type string for response models.
+// The API may return floating-point values for schema-declared integers.
+func responseIntToFloat(goType string) string {
+	if goType == "int64" {
+		return "float64"
+	}
+	if goType == "[]int64" {
+		return "[]float64"
+	}
+	return goType
+}
+
+// isStructType returns true if the Go type name refers to a generated struct
+// (not a primitive, slice, map, or any).
+func isStructType(goType string) bool {
+	switch goType {
+	case "string", "int64", "float64", "bool", "any":
+		return false
+	}
+	if strings.HasPrefix(goType, "[]") || strings.HasPrefix(goType, "map[") || strings.HasPrefix(goType, "*") {
+		return false
+	}
+	if strings.HasPrefix(goType, "lolzteam.") {
+		return false
+	}
+	// Must start with uppercase letter → generated struct type
+	if len(goType) > 0 && unicode.IsUpper(rune(goType[0])) {
+		return true
+	}
+	return false
+}
+
+// isPrimitiveType returns true for Go primitive types that may receive
+// mismatched JSON values from the API (e.g. string instead of number).
+func isPrimitiveType(goType string) bool {
+	switch goType {
+	case "string", "int64", "float64", "bool":
+		return true
+	}
+	return false
+}
+
 var PathParamRe = regexp.MustCompile(`\{([^}]+)\}`)
 
 func BuildPathExpr(path string, params []PathParam) string {
@@ -1512,8 +1624,27 @@ func WriteStructDef(b *strings.Builder, sd *StructDef) {
 	fmt.Fprintf(b, "type %s struct {\n", sd.Name)
 	for _, f := range sd.Fields {
 		typeName := f.Type.Name
+		// Issue 2: integer → float64 for response/component types
+		typeName = responseIntToFloat(typeName)
 		if rootPkgTypes[typeName] {
 			typeName = "lolzteam." + typeName
+		}
+		// Struct-typed fields use `any` — the API may return [] instead of an object
+		if isStructType(typeName) {
+			typeName = "any"
+			// Reset IsPtr since `any` doesn't need pointer wrapping
+			f.Type.IsPtr = false
+		}
+		// Optional primitive fields use `any` — the API may return mismatched
+		// types (e.g. string instead of number, object instead of bool).
+		if f.Type.IsPtr && isPrimitiveType(typeName) {
+			typeName = "any"
+			f.Type.IsPtr = false
+		}
+		// Slice fields use `any` — the API may return an object where an
+		// array is expected (e.g. {"key":"val"} instead of ["val"]).
+		if strings.HasPrefix(typeName, "[]") {
+			typeName = "any"
 		}
 		if f.Type.IsPtr {
 			typeName = PtrWrap(typeName)
