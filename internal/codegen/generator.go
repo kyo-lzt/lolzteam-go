@@ -445,18 +445,22 @@ func (g *Generator) WriteResponseStruct(b *strings.Builder, name string, s Schem
 			goType = "lolzteam." + goType
 		}
 
-		// Struct-typed response fields always use pointer to handle null/empty API responses
-		isStruct := isStructType(goType)
+		// Type-leniency: API may return mismatched types in responses
+		if isStructType(goType) {
+			goType = "any" // API may return [] instead of object
+		}
 		isRequired := reqSet[propName]
+		if !isRequired && isPrimitiveType(goType) {
+			goType = "any" // API may return mismatched types for optional fields
+		}
+		if strings.HasPrefix(goType, "[]") {
+			goType = "any" // API may return object where array expected
+		}
+
 		if isRequired {
-			if isStruct {
-				fmt.Fprintf(b, "\t%s *%s `json:\"%s\"`\n", goFieldName, goType, propName)
-			} else {
-				fmt.Fprintf(b, "\t%s %s `json:\"%s\"`\n", goFieldName, goType, propName)
-			}
+			fmt.Fprintf(b, "\t%s %s `json:\"%s\"`\n", goFieldName, goType, propName)
 		} else {
-			ptrType := PtrWrap(goType)
-			fmt.Fprintf(b, "\t%s %s `json:\"%s,omitempty\"`\n", goFieldName, ptrType, propName)
+			fmt.Fprintf(b, "\t%s %s `json:\"%s,omitempty\"`\n", goFieldName, goType, propName)
 		}
 	}
 

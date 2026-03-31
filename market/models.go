@@ -222,38 +222,6 @@ const (
 	CanChangeDetailsNomatter CanChangeDetails = "nomatter"
 )
 
-// CartNotOrigin is an enum type.
-type CartNotOrigin string
-
-const (
-	CartNotOriginBrute              CartNotOrigin = "brute"
-	CartNotOriginPhishing           CartNotOrigin = "phishing"
-	CartNotOriginStealer            CartNotOrigin = "stealer"
-	CartNotOriginPersonal           CartNotOrigin = "personal"
-	CartNotOriginResale             CartNotOrigin = "resale"
-	CartNotOriginAutoreg            CartNotOrigin = "autoreg"
-	CartNotOriginSelfRegistration   CartNotOrigin = "self_registration"
-	CartNotOriginRetrieve           CartNotOrigin = "retrieve"
-	CartNotOriginRetrieveViaSupport CartNotOrigin = "retrieve_via_support"
-	CartNotOriginDummy              CartNotOrigin = "dummy"
-)
-
-// CartOrigin is an enum type.
-type CartOrigin string
-
-const (
-	CartOriginBrute              CartOrigin = "brute"
-	CartOriginPhishing           CartOrigin = "phishing"
-	CartOriginStealer            CartOrigin = "stealer"
-	CartOriginPersonal           CartOrigin = "personal"
-	CartOriginResale             CartOrigin = "resale"
-	CartOriginAutoreg            CartOrigin = "autoreg"
-	CartOriginSelfRegistration   CartOrigin = "self_registration"
-	CartOriginRetrieve           CartOrigin = "retrieve"
-	CartOriginRetrieveViaSupport CartOrigin = "retrieve_via_support"
-	CartOriginDummy              CartOrigin = "dummy"
-)
-
 // CategoryEg is an enum type.
 type CategoryEg int64
 
@@ -378,20 +346,6 @@ const (
 	CategoryNameHytale           CategoryName = "hytale"
 )
 
-// CategoryNotOrigin is an enum type.
-type CategoryNotOrigin string
-
-const (
-	CategoryNotOriginBrute            CategoryNotOrigin = "brute"
-	CategoryNotOriginPhishing         CategoryNotOrigin = "phishing"
-	CategoryNotOriginStealer          CategoryNotOrigin = "stealer"
-	CategoryNotOriginPersonal         CategoryNotOrigin = "personal"
-	CategoryNotOriginResale           CategoryNotOrigin = "resale"
-	CategoryNotOriginAutoreg          CategoryNotOrigin = "autoreg"
-	CategoryNotOriginDummy            CategoryNotOrigin = "dummy"
-	CategoryNotOriginSelfRegistration CategoryNotOrigin = "self_registration"
-)
-
 // CategoryNotRegion is an enum type.
 type CategoryNotRegion string
 
@@ -400,20 +354,6 @@ const (
 	CategoryNotRegionEu   CategoryNotRegion = "eu"
 	CategoryNotRegionNa   CategoryNotRegion = "na"
 	CategoryNotRegionRu   CategoryNotRegion = "ru"
-)
-
-// CategoryOrigin is an enum type.
-type CategoryOrigin string
-
-const (
-	CategoryOriginBrute            CategoryOrigin = "brute"
-	CategoryOriginPhishing         CategoryOrigin = "phishing"
-	CategoryOriginStealer          CategoryOrigin = "stealer"
-	CategoryOriginPersonal         CategoryOrigin = "personal"
-	CategoryOriginResale           CategoryOrigin = "resale"
-	CategoryOriginAutoreg          CategoryOrigin = "autoreg"
-	CategoryOriginDummy            CategoryOrigin = "dummy"
-	CategoryOriginSelfRegistration CategoryOrigin = "self_registration"
 )
 
 // CategoryRegion is an enum type.
@@ -7781,6 +7721,21 @@ const (
 	HypixelSkyblockAPIEnabledNomatter HypixelSkyblockAPIEnabled = "nomatter"
 )
 
+// ItemOrigin is an enum type.
+type ItemOrigin string
+
+const (
+	ItemOriginBrute              ItemOrigin = "brute"
+	ItemOriginPhishing           ItemOrigin = "phishing"
+	ItemOriginStealer            ItemOrigin = "stealer"
+	ItemOriginAutoreg            ItemOrigin = "autoreg"
+	ItemOriginPersonal           ItemOrigin = "personal"
+	ItemOriginResale             ItemOrigin = "resale"
+	ItemOriginDummy              ItemOrigin = "dummy"
+	ItemOriginSelfRegistration   ItemOrigin = "self_registration"
+	ItemOriginRetrieveViaSupport ItemOrigin = "retrieve_via_support"
+)
+
 // Java is an enum type.
 type Java string
 
@@ -7897,19 +7852,6 @@ const (
 	MafileYes      Mafile = "yes"
 	MafileNo       Mafile = "no"
 	MafileNomatter Mafile = "nomatter"
-)
-
-// ManagingItemOrigin is an enum type.
-type ManagingItemOrigin string
-
-const (
-	ManagingItemOriginBrute    ManagingItemOrigin = "brute"
-	ManagingItemOriginPhishing ManagingItemOrigin = "phishing"
-	ManagingItemOriginStealer  ManagingItemOrigin = "stealer"
-	ManagingItemOriginPersonal ManagingItemOrigin = "personal"
-	ManagingItemOriginResale   ManagingItemOrigin = "resale"
-	ManagingItemOriginAutoreg  ManagingItemOrigin = "autoreg"
-	ManagingItemOriginDummy    ManagingItemOrigin = "dummy"
 )
 
 // ManagingType is an enum type.
@@ -8207,6 +8149,21 @@ const (
 	NotEmailProviderMailRu     NotEmailProvider = "mail_ru"
 )
 
+// NotOrigin is an enum type.
+type NotOrigin string
+
+const (
+	NotOriginBrute              NotOrigin = "brute"
+	NotOriginPhishing           NotOrigin = "phishing"
+	NotOriginStealer            NotOrigin = "stealer"
+	NotOriginAutoreg            NotOrigin = "autoreg"
+	NotOriginPersonal           NotOrigin = "personal"
+	NotOriginResale             NotOrigin = "resale"
+	NotOriginDummy              NotOrigin = "dummy"
+	NotOriginSelfRegistration   NotOrigin = "self_registration"
+	NotOriginRetrieveViaSupport NotOrigin = "retrieve_via_support"
+)
+
 // NotRegion is an enum type.
 type NotRegion string
 
@@ -8242,6 +8199,21 @@ const (
 	OrderByEdateToDown       OrderBy = "edate_to_down"
 	OrderByDdateToUp         OrderBy = "ddate_to_up"
 	OrderByDdateToDown       OrderBy = "ddate_to_down"
+)
+
+// Origin is an enum type.
+type Origin string
+
+const (
+	OriginBrute              Origin = "brute"
+	OriginPhishing           Origin = "phishing"
+	OriginStealer            Origin = "stealer"
+	OriginAutoreg            Origin = "autoreg"
+	OriginPersonal           Origin = "personal"
+	OriginResale             Origin = "resale"
+	OriginDummy              Origin = "dummy"
+	OriginSelfRegistration   Origin = "self_registration"
+	OriginRetrieveViaSupport Origin = "retrieve_via_support"
 )
 
 // ParentControl is an enum type.
@@ -10401,20 +10373,6 @@ const (
 	PsnLinkableYes      PsnLinkable = "yes"
 	PsnLinkableNo       PsnLinkable = "no"
 	PsnLinkableNomatter PsnLinkable = "nomatter"
-)
-
-// PublishingItemOrigin is an enum type.
-type PublishingItemOrigin string
-
-const (
-	PublishingItemOriginBrute            PublishingItemOrigin = "brute"
-	PublishingItemOriginPhishing         PublishingItemOrigin = "phishing"
-	PublishingItemOriginStealer          PublishingItemOrigin = "stealer"
-	PublishingItemOriginPersonal         PublishingItemOrigin = "personal"
-	PublishingItemOriginResale           PublishingItemOrigin = "resale"
-	PublishingItemOriginAutoreg          PublishingItemOrigin = "autoreg"
-	PublishingItemOriginDummy            PublishingItemOrigin = "dummy"
-	PublishingItemOriginSelfRegistration PublishingItemOrigin = "self_registration"
 )
 
 // Pve is an enum type.
@@ -19078,10 +19036,10 @@ type AutoPaymentsCreateBody struct {
 
 // AutoPaymentsCreateResponse is the response for the endpoint.
 type AutoPaymentsCreateResponse struct {
-	AutoPaymentID float64                               `json:"auto_payment_id"`
-	Message       string                                `json:"message"`
-	Status        string                                `json:"status"`
-	SystemInfo    *AutoPaymentsCreateResponseSystemInfo `json:"system_info"`
+	AutoPaymentID float64 `json:"auto_payment_id"`
+	Message       string  `json:"message"`
+	Status        string  `json:"status"`
+	SystemInfo    any     `json:"system_info"`
 }
 
 // AutoPaymentsDeleteBody holds the request body for AutoPayments.Delete.
@@ -19092,15 +19050,15 @@ type AutoPaymentsDeleteBody struct {
 
 // AutoPaymentsDeleteResponse is the response for the endpoint.
 type AutoPaymentsDeleteResponse struct {
-	Message    string                                `json:"message"`
-	Status     string                                `json:"status"`
-	SystemInfo *AutoPaymentsDeleteResponseSystemInfo `json:"system_info"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // AutoPaymentsListResponse is the response for the endpoint.
 type AutoPaymentsListResponse struct {
-	Payments   any                                 `json:"payments"`
-	SystemInfo *AutoPaymentsListResponseSystemInfo `json:"system_info"`
+	Payments   any `json:"payments"`
+	SystemInfo any `json:"system_info"`
 }
 
 // BatchBatchItem represents a single item in the Batch.Batch request body.
@@ -19113,8 +19071,8 @@ type BatchBatchItem struct {
 
 // BatchBatchResponse is the response for the endpoint.
 type BatchBatchResponse struct {
-	Jobs       *BatchBatchResponseJobs       `json:"jobs"`
-	SystemInfo *BatchBatchResponseSystemInfo `json:"system_info,omitempty"`
+	Jobs       any `json:"jobs"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // CartAddBody holds the request body for Cart.Add.
@@ -19125,8 +19083,8 @@ type CartAddBody struct {
 
 // CartAddResponse is the response for the endpoint.
 type CartAddResponse struct {
-	Success    bool                       `json:"success"`
-	SystemInfo *CartAddResponseSystemInfo `json:"system_info"`
+	Success    bool `json:"success"`
+	SystemInfo any  `json:"system_info"`
 }
 
 // CartDeleteBody holds the request body for Cart.Delete.
@@ -19137,8 +19095,8 @@ type CartDeleteBody struct {
 
 // CartDeleteResponse is the response for the endpoint.
 type CartDeleteResponse struct {
-	Success    bool                          `json:"success"`
-	SystemInfo *CartDeleteResponseSystemInfo `json:"system_info"`
+	Success    bool `json:"success"`
+	SystemInfo any  `json:"system_info"`
 }
 
 // CartGetParams holds query parameters for Cart.Get.
@@ -19164,9 +19122,9 @@ type CartGetParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -19191,15 +19149,15 @@ type CartGetParams struct {
 
 // CartGetResponse is the response for the endpoint.
 type CartGetResponse struct {
-	HasNextPage     bool                       `json:"hasNextPage"`
-	Items           []ItemFromListModel        `json:"items"`
-	Page            float64                    `json:"page"`
-	PerPage         float64                    `json:"perPage"`
-	SearchURL       string                     `json:"searchUrl"`
-	StickyItems     []ItemFromListModel        `json:"stickyItems"`
-	SystemInfo      *CartGetResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                    `json:"totalItems"`
-	TotalItemsPrice any                        `json:"totalItemsPrice"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
 }
 
 // CategoryAllParams holds query parameters for Category.All.
@@ -19223,9 +19181,9 @@ type CategoryAllParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -19250,15 +19208,15 @@ type CategoryAllParams struct {
 
 // CategoryAllResponse is the response for the endpoint.
 type CategoryAllResponse struct {
-	HasNextPage     bool                           `json:"hasNextPage"`
-	Items           []ItemFromListModel            `json:"items"`
-	Page            float64                        `json:"page"`
-	PerPage         float64                        `json:"perPage"`
-	SearchURL       string                         `json:"searchUrl"`
-	StickyItems     []ItemFromListModel            `json:"stickyItems"`
-	SystemInfo      *CategoryAllResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                        `json:"totalItems"`
-	TotalItemsPrice any                            `json:"totalItemsPrice"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
 }
 
 // CategoryBattleNetParams holds query parameters for Category.BattleNet.
@@ -19282,9 +19240,9 @@ type CategoryBattleNetParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -19339,19 +19297,19 @@ type CategoryBattleNetParams struct {
 
 // CategoryBattleNetResponse is the response for the endpoint.
 type CategoryBattleNetResponse struct {
-	CacheTTL        float64                              `json:"cacheTTL"`
-	HasNextPage     bool                                 `json:"hasNextPage"`
-	Items           []any                                `json:"items"`
-	LastModified    float64                              `json:"lastModified"`
-	Page            float64                              `json:"page"`
-	PerPage         float64                              `json:"perPage"`
-	SearchURL       string                               `json:"searchUrl"`
-	ServerTime      float64                              `json:"serverTime"`
-	StickyItems     []any                                `json:"stickyItems"`
-	SystemInfo      *CategoryBattleNetResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                              `json:"totalItems"`
-	TotalItemsPrice any                                  `json:"totalItemsPrice"`
-	WasCached       bool                                 `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryChatGPTParams holds query parameters for Category.ChatGPT.
@@ -19375,9 +19333,9 @@ type CategoryChatGPTParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -19428,19 +19386,19 @@ type CategoryChatGPTParams struct {
 
 // CategoryChatGPTResponse is the response for the endpoint.
 type CategoryChatGPTResponse struct {
-	CacheTTL        float64                            `json:"cacheTTL"`
-	HasNextPage     bool                               `json:"hasNextPage"`
-	Items           []any                              `json:"items"`
-	LastModified    float64                            `json:"lastModified"`
-	Page            float64                            `json:"page"`
-	PerPage         float64                            `json:"perPage"`
-	SearchURL       string                             `json:"searchUrl"`
-	ServerTime      float64                            `json:"serverTime"`
-	StickyItems     []any                              `json:"stickyItems"`
-	SystemInfo      *CategoryChatGPTResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                            `json:"totalItems"`
-	TotalItemsPrice any                                `json:"totalItemsPrice"`
-	WasCached       bool                               `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryDiscordParams holds query parameters for Category.Discord.
@@ -19464,9 +19422,9 @@ type CategoryDiscordParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -19571,19 +19529,19 @@ type CategoryDiscordParams struct {
 
 // CategoryDiscordResponse is the response for the endpoint.
 type CategoryDiscordResponse struct {
-	CacheTTL        float64                            `json:"cacheTTL"`
-	HasNextPage     bool                               `json:"hasNextPage"`
-	Items           []any                              `json:"items"`
-	LastModified    float64                            `json:"lastModified"`
-	Page            float64                            `json:"page"`
-	PerPage         float64                            `json:"perPage"`
-	SearchURL       string                             `json:"searchUrl"`
-	ServerTime      float64                            `json:"serverTime"`
-	StickyItems     []any                              `json:"stickyItems"`
-	SystemInfo      *CategoryDiscordResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                            `json:"totalItems"`
-	TotalItemsPrice any                                `json:"totalItemsPrice"`
-	WasCached       bool                               `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryEAParams holds query parameters for Category.EA.
@@ -19607,9 +19565,9 @@ type CategoryEAParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -19676,19 +19634,19 @@ type CategoryEAParams struct {
 
 // CategoryEAResponse is the response for the endpoint.
 type CategoryEAResponse struct {
-	CacheTTL        float64                       `json:"cacheTTL"`
-	HasNextPage     bool                          `json:"hasNextPage"`
-	Items           []any                         `json:"items"`
-	LastModified    float64                       `json:"lastModified"`
-	Page            float64                       `json:"page"`
-	PerPage         float64                       `json:"perPage"`
-	SearchURL       string                        `json:"searchUrl"`
-	ServerTime      float64                       `json:"serverTime"`
-	StickyItems     []any                         `json:"stickyItems"`
-	SystemInfo      *CategoryEAResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                       `json:"totalItems"`
-	TotalItemsPrice any                           `json:"totalItemsPrice"`
-	WasCached       bool                          `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryEpicGamesParams holds query parameters for Category.EpicGames.
@@ -19712,9 +19670,9 @@ type CategoryEpicGamesParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -19773,19 +19731,19 @@ type CategoryEpicGamesParams struct {
 
 // CategoryEpicGamesResponse is the response for the endpoint.
 type CategoryEpicGamesResponse struct {
-	CacheTTL        float64                              `json:"cacheTTL"`
-	HasNextPage     bool                                 `json:"hasNextPage"`
-	Items           []any                                `json:"items"`
-	LastModified    float64                              `json:"lastModified"`
-	Page            float64                              `json:"page"`
-	PerPage         float64                              `json:"perPage"`
-	SearchURL       string                               `json:"searchUrl"`
-	ServerTime      float64                              `json:"serverTime"`
-	StickyItems     []any                                `json:"stickyItems"`
-	SystemInfo      *CategoryEpicGamesResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                              `json:"totalItems"`
-	TotalItemsPrice any                                  `json:"totalItemsPrice"`
-	WasCached       bool                                 `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryEscapeFromTarkovParams holds query parameters for Category.EscapeFromTarkov.
@@ -19809,9 +19767,9 @@ type CategoryEscapeFromTarkovParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -19856,19 +19814,19 @@ type CategoryEscapeFromTarkovParams struct {
 
 // CategoryEscapeFromTarkovResponse is the response for the endpoint.
 type CategoryEscapeFromTarkovResponse struct {
-	CacheTTL        float64                                     `json:"cacheTTL"`
-	HasNextPage     bool                                        `json:"hasNextPage"`
-	Items           []any                                       `json:"items"`
-	LastModified    float64                                     `json:"lastModified"`
-	Page            float64                                     `json:"page"`
-	PerPage         float64                                     `json:"perPage"`
-	SearchURL       string                                      `json:"searchUrl"`
-	ServerTime      float64                                     `json:"serverTime"`
-	StickyItems     []any                                       `json:"stickyItems"`
-	SystemInfo      *CategoryEscapeFromTarkovResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                                     `json:"totalItems"`
-	TotalItemsPrice any                                         `json:"totalItemsPrice"`
-	WasCached       bool                                        `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryFortniteParams holds query parameters for Category.Fortnite.
@@ -19892,9 +19850,9 @@ type CategoryFortniteParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -20027,25 +19985,25 @@ type CategoryFortniteParams struct {
 
 // CategoryFortniteResponse is the response for the endpoint.
 type CategoryFortniteResponse struct {
-	CacheTTL        float64                             `json:"cacheTTL"`
-	HasNextPage     bool                                `json:"hasNextPage"`
-	Items           []any                               `json:"items"`
-	LastModified    float64                             `json:"lastModified"`
-	Page            float64                             `json:"page"`
-	PerPage         float64                             `json:"perPage"`
-	SearchURL       string                              `json:"searchUrl"`
-	ServerTime      float64                             `json:"serverTime"`
-	StickyItems     []any                               `json:"stickyItems"`
-	SystemInfo      *CategoryFortniteResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                             `json:"totalItems"`
-	TotalItemsPrice any                                 `json:"totalItemsPrice"`
-	WasCached       bool                                `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryGamesResponse is the response for the endpoint.
 type CategoryGamesResponse struct {
-	Games      []any                            `json:"games,omitempty"`
-	SystemInfo *CategoryGamesResponseSystemInfo `json:"system_info,omitempty"`
+	Games      any `json:"games,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // CategoryGiftsParams holds query parameters for Category.Gifts.
@@ -20069,9 +20027,9 @@ type CategoryGiftsParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -20102,19 +20060,19 @@ type CategoryGiftsParams struct {
 
 // CategoryGiftsResponse is the response for the endpoint.
 type CategoryGiftsResponse struct {
-	CacheTTL        float64                          `json:"cacheTTL"`
-	HasNextPage     bool                             `json:"hasNextPage"`
-	Items           []any                            `json:"items"`
-	LastModified    float64                          `json:"lastModified"`
-	Page            float64                          `json:"page"`
-	PerPage         float64                          `json:"perPage"`
-	SearchURL       string                           `json:"searchUrl"`
-	ServerTime      float64                          `json:"serverTime"`
-	StickyItems     []any                            `json:"stickyItems"`
-	SystemInfo      *CategoryGiftsResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                          `json:"totalItems"`
-	TotalItemsPrice any                              `json:"totalItemsPrice"`
-	WasCached       bool                             `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryHytaleParams holds query parameters for Category.Hytale.
@@ -20138,9 +20096,9 @@ type CategoryHytaleParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -20171,19 +20129,19 @@ type CategoryHytaleParams struct {
 
 // CategoryHytaleResponse is the response for the endpoint.
 type CategoryHytaleResponse struct {
-	CacheTTL        float64                           `json:"cacheTTL"`
-	HasNextPage     bool                              `json:"hasNextPage"`
-	Items           []any                             `json:"items"`
-	LastModified    float64                           `json:"lastModified"`
-	Page            float64                           `json:"page"`
-	PerPage         float64                           `json:"perPage"`
-	SearchURL       string                            `json:"searchUrl"`
-	ServerTime      float64                           `json:"serverTime"`
-	StickyItems     []any                             `json:"stickyItems"`
-	SystemInfo      *CategoryHytaleResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                           `json:"totalItems"`
-	TotalItemsPrice any                               `json:"totalItemsPrice"`
-	WasCached       bool                              `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryInstagramParams holds query parameters for Category.Instagram.
@@ -20207,9 +20165,9 @@ type CategoryInstagramParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -20260,19 +20218,19 @@ type CategoryInstagramParams struct {
 
 // CategoryInstagramResponse is the response for the endpoint.
 type CategoryInstagramResponse struct {
-	CacheTTL        float64                              `json:"cacheTTL"`
-	HasNextPage     bool                                 `json:"hasNextPage"`
-	Items           []any                                `json:"items"`
-	LastModified    float64                              `json:"lastModified"`
-	Page            float64                              `json:"page"`
-	PerPage         float64                              `json:"perPage"`
-	SearchURL       string                               `json:"searchUrl"`
-	ServerTime      float64                              `json:"serverTime"`
-	StickyItems     []any                                `json:"stickyItems"`
-	SystemInfo      *CategoryInstagramResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                              `json:"totalItems"`
-	TotalItemsPrice any                                  `json:"totalItemsPrice"`
-	WasCached       bool                                 `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryListParams holds query parameters for Category.List.
@@ -20283,8 +20241,8 @@ type CategoryListParams struct {
 
 // CategoryListResponse is the response for the endpoint.
 type CategoryListResponse struct {
-	Category   *CategoryListResponseCategory   `json:"category"`
-	SystemInfo *CategoryListResponseSystemInfo `json:"system_info"`
+	Category   any `json:"category"`
+	SystemInfo any `json:"system_info"`
 }
 
 // CategoryMihoyoParams holds query parameters for Category.Mihoyo.
@@ -20308,9 +20266,9 @@ type CategoryMihoyoParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -20457,19 +20415,19 @@ type CategoryMihoyoParams struct {
 
 // CategoryMihoyoResponse is the response for the endpoint.
 type CategoryMihoyoResponse struct {
-	CacheTTL        float64                           `json:"cacheTTL"`
-	HasNextPage     bool                              `json:"hasNextPage"`
-	Items           []any                             `json:"items"`
-	LastModified    float64                           `json:"lastModified"`
-	Page            float64                           `json:"page"`
-	PerPage         float64                           `json:"perPage"`
-	SearchURL       string                            `json:"searchUrl"`
-	ServerTime      float64                           `json:"serverTime"`
-	StickyItems     []any                             `json:"stickyItems"`
-	SystemInfo      *CategoryMihoyoResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                           `json:"totalItems"`
-	TotalItemsPrice any                               `json:"totalItemsPrice"`
-	WasCached       bool                              `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryMinecraftParams holds query parameters for Category.Minecraft.
@@ -20493,9 +20451,9 @@ type CategoryMinecraftParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -20590,27 +20548,27 @@ type CategoryMinecraftParams struct {
 
 // CategoryMinecraftResponse is the response for the endpoint.
 type CategoryMinecraftResponse struct {
-	CacheTTL        float64                              `json:"cacheTTL"`
-	HasNextPage     bool                                 `json:"hasNextPage"`
-	Items           []any                                `json:"items"`
-	LastModified    float64                              `json:"lastModified"`
-	Page            float64                              `json:"page"`
-	PerPage         float64                              `json:"perPage"`
-	SearchURL       string                               `json:"searchUrl"`
-	ServerTime      float64                              `json:"serverTime"`
-	StickyItems     []any                                `json:"stickyItems"`
-	SystemInfo      *CategoryMinecraftResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                              `json:"totalItems"`
-	TotalItemsPrice any                                  `json:"totalItemsPrice"`
-	WasCached       bool                                 `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryParamsResponse is the response for the endpoint.
 type CategoryParamsResponse struct {
-	BaseParams any                               `json:"base_params,omitempty"`
-	Category   *CategoryParamsResponseCategory   `json:"category,omitempty"`
-	Params     []any                             `json:"params,omitempty"`
-	SystemInfo *CategoryParamsResponseSystemInfo `json:"system_info,omitempty"`
+	BaseParams any `json:"base_params,omitempty"`
+	Category   any `json:"category,omitempty"`
+	Params     any `json:"params,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // CategoryRiotParams holds query parameters for Category.Riot.
@@ -20634,9 +20592,9 @@ type CategoryRiotParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -20775,19 +20733,19 @@ type CategoryRiotParams struct {
 
 // CategoryRiotResponse is the response for the endpoint.
 type CategoryRiotResponse struct {
-	CacheTTL        float64                         `json:"cacheTTL"`
-	HasNextPage     bool                            `json:"hasNextPage"`
-	Items           []any                           `json:"items"`
-	LastModified    float64                         `json:"lastModified"`
-	Page            float64                         `json:"page"`
-	PerPage         float64                         `json:"perPage"`
-	SearchURL       string                          `json:"searchUrl"`
-	ServerTime      float64                         `json:"serverTime"`
-	StickyItems     []any                           `json:"stickyItems"`
-	SystemInfo      *CategoryRiotResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                         `json:"totalItems"`
-	TotalItemsPrice any                             `json:"totalItemsPrice"`
-	WasCached       bool                            `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryRobloxParams holds query parameters for Category.Roblox.
@@ -20811,9 +20769,9 @@ type CategoryRobloxParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -20912,19 +20870,19 @@ type CategoryRobloxParams struct {
 
 // CategoryRobloxResponse is the response for the endpoint.
 type CategoryRobloxResponse struct {
-	CacheTTL        float64                           `json:"cacheTTL"`
-	HasNextPage     bool                              `json:"hasNextPage"`
-	Items           []any                             `json:"items"`
-	LastModified    float64                           `json:"lastModified"`
-	Page            float64                           `json:"page"`
-	PerPage         float64                           `json:"perPage"`
-	SearchURL       string                            `json:"searchUrl"`
-	ServerTime      float64                           `json:"serverTime"`
-	StickyItems     []any                             `json:"stickyItems"`
-	SystemInfo      *CategoryRobloxResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                           `json:"totalItems"`
-	TotalItemsPrice any                               `json:"totalItemsPrice"`
-	WasCached       bool                              `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategorySocialClubParams holds query parameters for Category.SocialClub.
@@ -20948,9 +20906,9 @@ type CategorySocialClubParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -20991,19 +20949,19 @@ type CategorySocialClubParams struct {
 
 // CategorySocialClubResponse is the response for the endpoint.
 type CategorySocialClubResponse struct {
-	CacheTTL        float64                               `json:"cacheTTL"`
-	HasNextPage     bool                                  `json:"hasNextPage"`
-	Items           []any                                 `json:"items"`
-	LastModified    float64                               `json:"lastModified"`
-	Page            float64                               `json:"page"`
-	PerPage         float64                               `json:"perPage"`
-	SearchURL       string                                `json:"searchUrl"`
-	ServerTime      float64                               `json:"serverTime"`
-	StickyItems     []any                                 `json:"stickyItems"`
-	SystemInfo      *CategorySocialClubResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                               `json:"totalItems"`
-	TotalItemsPrice any                                   `json:"totalItemsPrice"`
-	WasCached       bool                                  `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategorySteamParams holds query parameters for Category.Steam.
@@ -21027,9 +20985,9 @@ type CategorySteamParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -21250,19 +21208,19 @@ type CategorySteamParams struct {
 
 // CategorySteamResponse is the response for the endpoint.
 type CategorySteamResponse struct {
-	CacheTTL        float64                          `json:"cacheTTL"`
-	HasNextPage     bool                             `json:"hasNextPage"`
-	Items           []any                            `json:"items"`
-	LastModified    float64                          `json:"lastModified"`
-	Page            float64                          `json:"page"`
-	PerPage         float64                          `json:"perPage"`
-	SearchURL       string                           `json:"searchUrl"`
-	ServerTime      float64                          `json:"serverTime"`
-	StickyItems     []any                            `json:"stickyItems"`
-	SystemInfo      *CategorySteamResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                          `json:"totalItems"`
-	TotalItemsPrice any                              `json:"totalItemsPrice"`
-	WasCached       bool                             `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategorySupercellParams holds query parameters for Category.Supercell.
@@ -21286,9 +21244,9 @@ type CategorySupercellParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -21415,19 +21373,19 @@ type CategorySupercellParams struct {
 
 // CategorySupercellResponse is the response for the endpoint.
 type CategorySupercellResponse struct {
-	CacheTTL        float64                              `json:"cacheTTL"`
-	HasNextPage     bool                                 `json:"hasNextPage"`
-	Items           []any                                `json:"items"`
-	LastModified    float64                              `json:"lastModified"`
-	Page            float64                              `json:"page"`
-	PerPage         float64                              `json:"perPage"`
-	SearchURL       string                               `json:"searchUrl"`
-	ServerTime      float64                              `json:"serverTime"`
-	StickyItems     []any                                `json:"stickyItems"`
-	SystemInfo      *CategorySupercellResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                              `json:"totalItems"`
-	TotalItemsPrice any                                  `json:"totalItemsPrice"`
-	WasCached       bool                                 `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryTelegramParams holds query parameters for Category.Telegram.
@@ -21451,9 +21409,9 @@ type CategoryTelegramParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CategoryOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CategoryNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -21570,19 +21528,19 @@ type CategoryTelegramParams struct {
 
 // CategoryTelegramResponse is the response for the endpoint.
 type CategoryTelegramResponse struct {
-	CacheTTL        float64                             `json:"cacheTTL"`
-	HasNextPage     bool                                `json:"hasNextPage"`
-	Items           []any                               `json:"items"`
-	LastModified    float64                             `json:"lastModified"`
-	Page            float64                             `json:"page"`
-	PerPage         float64                             `json:"perPage"`
-	SearchURL       string                              `json:"searchUrl"`
-	ServerTime      float64                             `json:"serverTime"`
-	StickyItems     []any                               `json:"stickyItems"`
-	SystemInfo      *CategoryTelegramResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                             `json:"totalItems"`
-	TotalItemsPrice any                                 `json:"totalItemsPrice"`
-	WasCached       bool                                `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryTikTokParams holds query parameters for Category.TikTok.
@@ -21606,9 +21564,9 @@ type CategoryTikTokParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -21665,19 +21623,19 @@ type CategoryTikTokParams struct {
 
 // CategoryTikTokResponse is the response for the endpoint.
 type CategoryTikTokResponse struct {
-	CacheTTL        float64                           `json:"cacheTTL"`
-	HasNextPage     bool                              `json:"hasNextPage"`
-	Items           []any                             `json:"items"`
-	LastModified    float64                           `json:"lastModified"`
-	Page            float64                           `json:"page"`
-	PerPage         float64                           `json:"perPage"`
-	SearchURL       string                            `json:"searchUrl"`
-	ServerTime      float64                           `json:"serverTime"`
-	StickyItems     []any                             `json:"stickyItems"`
-	SystemInfo      *CategoryTikTokResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                           `json:"totalItems"`
-	TotalItemsPrice any                               `json:"totalItemsPrice"`
-	WasCached       bool                              `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryUplayParams holds query parameters for Category.Uplay.
@@ -21701,9 +21659,9 @@ type CategoryUplayParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -21788,19 +21746,19 @@ type CategoryUplayParams struct {
 
 // CategoryUplayResponse is the response for the endpoint.
 type CategoryUplayResponse struct {
-	CacheTTL        float64                          `json:"cacheTTL"`
-	HasNextPage     bool                             `json:"hasNextPage"`
-	Items           []any                            `json:"items"`
-	LastModified    float64                          `json:"lastModified"`
-	Page            float64                          `json:"page"`
-	PerPage         float64                          `json:"perPage"`
-	SearchURL       string                           `json:"searchUrl"`
-	ServerTime      float64                          `json:"serverTime"`
-	StickyItems     []any                            `json:"stickyItems"`
-	SystemInfo      *CategoryUplayResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                          `json:"totalItems"`
-	TotalItemsPrice any                              `json:"totalItemsPrice"`
-	WasCached       bool                             `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryVPNParams holds query parameters for Category.VPN.
@@ -21824,9 +21782,9 @@ type CategoryVPNParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -21859,19 +21817,19 @@ type CategoryVPNParams struct {
 
 // CategoryVPNResponse is the response for the endpoint.
 type CategoryVPNResponse struct {
-	CacheTTL        float64                        `json:"cacheTTL"`
-	HasNextPage     bool                           `json:"hasNextPage"`
-	Items           []any                          `json:"items"`
-	LastModified    float64                        `json:"lastModified"`
-	Page            float64                        `json:"page"`
-	PerPage         float64                        `json:"perPage"`
-	SearchURL       string                         `json:"searchUrl"`
-	ServerTime      float64                        `json:"serverTime"`
-	StickyItems     []any                          `json:"stickyItems"`
-	SystemInfo      *CategoryVPNResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                        `json:"totalItems"`
-	TotalItemsPrice any                            `json:"totalItemsPrice"`
-	WasCached       bool                           `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryWarfaceParams holds query parameters for Category.Warface.
@@ -21895,9 +21853,9 @@ type CategoryWarfaceParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -21942,19 +21900,19 @@ type CategoryWarfaceParams struct {
 
 // CategoryWarfaceResponse is the response for the endpoint.
 type CategoryWarfaceResponse struct {
-	CacheTTL        float64                            `json:"cacheTTL"`
-	HasNextPage     bool                               `json:"hasNextPage"`
-	Items           []any                              `json:"items"`
-	LastModified    float64                            `json:"lastModified"`
-	Page            float64                            `json:"page"`
-	PerPage         float64                            `json:"perPage"`
-	SearchURL       string                             `json:"searchUrl"`
-	ServerTime      float64                            `json:"serverTime"`
-	StickyItems     []any                              `json:"stickyItems"`
-	SystemInfo      *CategoryWarfaceResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                            `json:"totalItems"`
-	TotalItemsPrice any                                `json:"totalItemsPrice"`
-	WasCached       bool                               `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryWotParams holds query parameters for Category.Wot.
@@ -21978,9 +21936,9 @@ type CategoryWotParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -22075,19 +22033,19 @@ type CategoryWotParams struct {
 
 // CategoryWotResponse is the response for the endpoint.
 type CategoryWotResponse struct {
-	CacheTTL        float64                        `json:"cacheTTL"`
-	HasNextPage     bool                           `json:"hasNextPage"`
-	Items           []any                          `json:"items"`
-	LastModified    float64                        `json:"lastModified"`
-	Page            float64                        `json:"page"`
-	PerPage         float64                        `json:"perPage"`
-	SearchURL       string                         `json:"searchUrl"`
-	ServerTime      float64                        `json:"serverTime"`
-	StickyItems     []any                          `json:"stickyItems"`
-	SystemInfo      *CategoryWotResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                        `json:"totalItems"`
-	TotalItemsPrice any                            `json:"totalItemsPrice"`
-	WasCached       bool                           `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CategoryWotBlitzParams holds query parameters for Category.WotBlitz.
@@ -22111,9 +22069,9 @@ type CategoryWotBlitzParams struct {
 	// NotPublicTagID - List of tag ids that won't be included (Tag list is available via GET /me).
 	NotPublicTagID []int64 `query:"not_public_tag_id[]"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// UserID - Search accounts of user.
 	UserID *int64 `query:"user_id"`
 	// Nsb - Not sold before.
@@ -22208,19 +22166,19 @@ type CategoryWotBlitzParams struct {
 
 // CategoryWotBlitzResponse is the response for the endpoint.
 type CategoryWotBlitzResponse struct {
-	CacheTTL        float64                             `json:"cacheTTL"`
-	HasNextPage     bool                                `json:"hasNextPage"`
-	Items           []any                               `json:"items"`
-	LastModified    float64                             `json:"lastModified"`
-	Page            float64                             `json:"page"`
-	PerPage         float64                             `json:"perPage"`
-	SearchURL       string                              `json:"searchUrl"`
-	ServerTime      float64                             `json:"serverTime"`
-	StickyItems     []any                               `json:"stickyItems"`
-	SystemInfo      *CategoryWotBlitzResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                             `json:"totalItems"`
-	TotalItemsPrice any                                 `json:"totalItemsPrice"`
-	WasCached       bool                                `json:"wasCached"`
+	CacheTTL        float64 `json:"cacheTTL"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	LastModified    float64 `json:"lastModified"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	ServerTime      float64 `json:"serverTime"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
+	WasCached       bool    `json:"wasCached"`
 }
 
 // CustomDiscountsCreateBody holds the request body for CustomDiscounts.Create.
@@ -22240,9 +22198,9 @@ type CustomDiscountsCreateBody struct {
 
 // CustomDiscountsCreateResponse is the response for the endpoint.
 type CustomDiscountsCreateResponse struct {
-	Discount   *CustomDiscountsCreateResponseDiscount   `json:"discount"`
-	SystemInfo *CustomDiscountsCreateResponseSystemInfo `json:"system_info"`
-	Total      float64                                  `json:"total"`
+	Discount   any     `json:"discount"`
+	SystemInfo any     `json:"system_info"`
+	Total      float64 `json:"total"`
 }
 
 // CustomDiscountsDeleteBody holds the request body for CustomDiscounts.Delete.
@@ -22253,9 +22211,9 @@ type CustomDiscountsDeleteBody struct {
 
 // CustomDiscountsDeleteResponse is the response for the endpoint.
 type CustomDiscountsDeleteResponse struct {
-	Message    *string                                  `json:"message,omitempty"`
-	Status     *string                                  `json:"status,omitempty"`
-	SystemInfo *CustomDiscountsDeleteResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // CustomDiscountsEditBody holds the request body for CustomDiscounts.Edit.
@@ -22272,16 +22230,16 @@ type CustomDiscountsEditBody struct {
 
 // CustomDiscountsEditResponse is the response for the endpoint.
 type CustomDiscountsEditResponse struct {
-	Discounts  []DiscountModel                        `json:"discounts"`
-	SystemInfo *CustomDiscountsEditResponseSystemInfo `json:"system_info"`
-	Total      float64                                `json:"total"`
+	Discounts  any     `json:"discounts"`
+	SystemInfo any     `json:"system_info"`
+	Total      float64 `json:"total"`
 }
 
 // CustomDiscountsGetResponse is the response for the endpoint.
 type CustomDiscountsGetResponse struct {
-	Discounts  []DiscountModel                       `json:"discounts"`
-	SystemInfo *CustomDiscountsGetResponseSystemInfo `json:"system_info"`
-	Total      float64                               `json:"total"`
+	Discounts  any     `json:"discounts"`
+	SystemInfo any     `json:"system_info"`
+	Total      float64 `json:"total"`
 }
 
 // ImapCreateBody holds the request body for Imap.Create.
@@ -22298,9 +22256,9 @@ type ImapCreateBody struct {
 
 // ImapCreateResponse is the response for the endpoint.
 type ImapCreateResponse struct {
-	Message    *string                       `json:"message,omitempty"`
-	Status     *string                       `json:"status,omitempty"`
-	SystemInfo *ImapCreateResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ImapDeleteBody holds the request body for Imap.Delete.
@@ -22311,9 +22269,9 @@ type ImapDeleteBody struct {
 
 // ImapDeleteResponse is the response for the endpoint.
 type ImapDeleteResponse struct {
-	Message    *string                       `json:"message,omitempty"`
-	Status     *string                       `json:"status,omitempty"`
-	SystemInfo *ImapDeleteResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ListDownloadParams holds query parameters for List.Download.
@@ -22337,9 +22295,9 @@ type ListDownloadParams struct {
 	// Pmax - Maximum price of account (Inclusive).
 	Pmax *int64 `query:"pmax"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// OrderBy - Order by.
 	OrderBy *OrderBy `query:"order_by"`
 	// Sb - Sold before.
@@ -22385,9 +22343,9 @@ type ListFavoritesParams struct {
 	// Pmax - Maximum price of account (Inclusive).
 	Pmax *int64 `query:"pmax"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// OrderBy - Order by.
 	OrderBy *OrderBy `query:"order_by"`
 	// Sb - Sold before.
@@ -22402,15 +22360,15 @@ type ListFavoritesParams struct {
 
 // ListFavoritesResponse is the response for the endpoint.
 type ListFavoritesResponse struct {
-	HasNextPage     bool                             `json:"hasNextPage"`
-	Items           []ItemFromListModel              `json:"items"`
-	Page            float64                          `json:"page"`
-	PerPage         float64                          `json:"perPage"`
-	SearchURL       string                           `json:"searchUrl"`
-	StickyItems     []ItemFromListModel              `json:"stickyItems"`
-	SystemInfo      *ListFavoritesResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                          `json:"totalItems"`
-	TotalItemsPrice any                              `json:"totalItemsPrice"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
 }
 
 // ListOrdersParams holds query parameters for List.Orders.
@@ -22432,9 +22390,9 @@ type ListOrdersParams struct {
 	// Login - Login.
 	Login *string `query:"login"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// OrderBy - Order by.
 	OrderBy *OrderBy `query:"order_by"`
 	// Sb - Sold before.
@@ -22449,15 +22407,15 @@ type ListOrdersParams struct {
 
 // ListOrdersResponse is the response for the endpoint.
 type ListOrdersResponse struct {
-	HasNextPage     bool                          `json:"hasNextPage"`
-	Items           []ItemFromListModel           `json:"items"`
-	Page            float64                       `json:"page"`
-	PerPage         float64                       `json:"perPage"`
-	SearchURL       string                        `json:"searchUrl"`
-	StickyItems     []ItemFromListModel           `json:"stickyItems"`
-	SystemInfo      *ListOrdersResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                       `json:"totalItems"`
-	TotalItemsPrice any                           `json:"totalItemsPrice"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
 }
 
 // ListStatesParams holds query parameters for List.States.
@@ -22468,8 +22426,8 @@ type ListStatesParams struct {
 
 // ListStatesResponse is the response for the endpoint.
 type ListStatesResponse struct {
-	SystemInfo     *ListStatesResponseSystemInfo     `json:"system_info"`
-	UserItemStates *ListStatesResponseUserItemStates `json:"userItemStates"`
+	SystemInfo     any `json:"system_info"`
+	UserItemStates any `json:"userItemStates"`
 }
 
 // ListUserParams holds query parameters for List.User.
@@ -22493,9 +22451,9 @@ type ListUserParams struct {
 	// Login - Login.
 	Login *string `query:"login"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// OrderBy - Order by.
 	OrderBy *OrderBy `query:"order_by"`
 	// Sb - Sold before.
@@ -22530,15 +22488,15 @@ type ListUserParams struct {
 
 // ListUserResponse is the response for the endpoint.
 type ListUserResponse struct {
-	HasNextPage     bool                        `json:"hasNextPage"`
-	Items           []ItemFromListModel         `json:"items"`
-	Page            float64                     `json:"page"`
-	PerPage         float64                     `json:"perPage"`
-	SearchURL       string                      `json:"searchUrl"`
-	StickyItems     []ItemFromListModel         `json:"stickyItems"`
-	SystemInfo      *ListUserResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                     `json:"totalItems"`
-	TotalItemsPrice any                         `json:"totalItemsPrice"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
 }
 
 // ListViewedParams holds query parameters for List.Viewed.
@@ -22554,9 +22512,9 @@ type ListViewedParams struct {
 	// Pmax - Maximum price of account (Inclusive).
 	Pmax *int64 `query:"pmax"`
 	// Origin - List of account origins.
-	Origin []CartOrigin `query:"origin[]"`
+	Origin *Origin `query:"origin[]"`
 	// NotOrigin - List of account origins that won't be included.
-	NotOrigin []CartNotOrigin `query:"not_origin[]"`
+	NotOrigin []NotOrigin `query:"not_origin[]"`
 	// OrderBy - Order by.
 	OrderBy *OrderBy `query:"order_by"`
 	// Sb - Sold before.
@@ -22571,21 +22529,21 @@ type ListViewedParams struct {
 
 // ListViewedResponse is the response for the endpoint.
 type ListViewedResponse struct {
-	HasNextPage     bool                          `json:"hasNextPage"`
-	Items           []ItemFromListModel           `json:"items"`
-	Page            float64                       `json:"page"`
-	PerPage         float64                       `json:"perPage"`
-	SearchURL       string                        `json:"searchUrl"`
-	StickyItems     []ItemFromListModel           `json:"stickyItems"`
-	SystemInfo      *ListViewedResponseSystemInfo `json:"system_info"`
-	TotalItems      float64                       `json:"totalItems"`
-	TotalItemsPrice any                           `json:"totalItemsPrice"`
+	HasNextPage     bool    `json:"hasNextPage"`
+	Items           any     `json:"items"`
+	Page            float64 `json:"page"`
+	PerPage         float64 `json:"perPage"`
+	SearchURL       string  `json:"searchUrl"`
+	StickyItems     any     `json:"stickyItems"`
+	SystemInfo      any     `json:"system_info"`
+	TotalItems      float64 `json:"totalItems"`
+	TotalItemsPrice any     `json:"totalItemsPrice"`
 }
 
 // ManagingAIPriceResponse is the response for the endpoint.
 type ManagingAIPriceResponse struct {
-	Price      float64                            `json:"price"`
-	SystemInfo *ManagingAIPriceResponseSystemInfo `json:"system_info"`
+	Price      float64 `json:"price"`
+	SystemInfo any     `json:"system_info"`
 }
 
 // ManagingAutoBumpBody holds the request body for Managing.AutoBump.
@@ -22596,22 +22554,22 @@ type ManagingAutoBumpBody struct {
 
 // ManagingAutoBumpResponse is the response for the endpoint.
 type ManagingAutoBumpResponse struct {
-	Message    string                              `json:"message"`
-	Status     string                              `json:"status"`
-	SystemInfo *ManagingAutoBumpResponseSystemInfo `json:"system_info"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingAutoBumpDisableResponse is the response for the endpoint.
 type ManagingAutoBumpDisableResponse struct {
-	Message    string                                     `json:"message"`
-	Status     string                                     `json:"status"`
-	SystemInfo *ManagingAutoBumpDisableResponseSystemInfo `json:"system_info"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingAutoBuyPriceResponse is the response for the endpoint.
 type ManagingAutoBuyPriceResponse struct {
-	Price      float64                                 `json:"price"`
-	SystemInfo *ManagingAutoBuyPriceResponseSystemInfo `json:"system_info"`
+	Price      float64 `json:"price"`
+	SystemInfo any     `json:"system_info"`
 }
 
 // ManagingBulkGetBody holds the request body for Managing.BulkGet.
@@ -22624,16 +22582,16 @@ type ManagingBulkGetBody struct {
 
 // ManagingBulkGetResponse is the response for the endpoint.
 type ManagingBulkGetResponse struct {
-	Items      []any                              `json:"items"`
-	LeftItemID []float64                          `json:"left_item_id"`
-	SystemInfo *ManagingBulkGetResponseSystemInfo `json:"system_info"`
+	Items      any `json:"items"`
+	LeftItemID any `json:"left_item_id"`
+	SystemInfo any `json:"system_info"`
 }
 
 // ManagingBumpResponse is the response for the endpoint.
 type ManagingBumpResponse struct {
-	Message    string                          `json:"message"`
-	Status     string                          `json:"status"`
-	SystemInfo *ManagingBumpResponseSystemInfo `json:"system_info"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingChangePasswordBody holds the request body for Managing.ChangePassword.
@@ -22644,22 +22602,22 @@ type ManagingChangePasswordBody struct {
 
 // ManagingChangePasswordResponse is the response for the endpoint.
 type ManagingChangePasswordResponse struct {
-	Message     *string `json:"message,omitempty"`
-	NewPassword string  `json:"new_password"`
-	Status      *string `json:"status,omitempty"`
+	Message     any    `json:"message,omitempty"`
+	NewPassword string `json:"new_password"`
+	Status      any    `json:"status,omitempty"`
 }
 
 // ManagingCheckGuaranteeResponse is the response for the endpoint.
 type ManagingCheckGuaranteeResponse struct {
-	Message    string                                    `json:"message"`
-	SystemInfo *ManagingCheckGuaranteeResponseSystemInfo `json:"system_info"`
+	Message    string `json:"message"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingCloseResponse is the response for the endpoint.
 type ManagingCloseResponse struct {
-	Message    string                           `json:"message"`
-	Status     string                           `json:"status"`
-	SystemInfo *ManagingCloseResponseSystemInfo `json:"system_info"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingCreateClaimBody holds the request body for Managing.CreateClaim.
@@ -22672,8 +22630,8 @@ type ManagingCreateClaimBody struct {
 
 // ManagingCreateClaimResponse is the response for the endpoint.
 type ManagingCreateClaimResponse struct {
-	SystemInfo *ManagingCreateClaimResponseSystemInfo `json:"system_info"`
-	Thread     *ManagingCreateClaimResponseThread     `json:"thread"`
+	SystemInfo any `json:"system_info"`
+	Thread     any `json:"thread"`
 }
 
 // ManagingDeclineVideoRecordingBody holds the request body for Managing.DeclineVideoRecording.
@@ -22684,9 +22642,9 @@ type ManagingDeclineVideoRecordingBody struct {
 
 // ManagingDeclineVideoRecordingResponse is the response for the endpoint.
 type ManagingDeclineVideoRecordingResponse struct {
-	Message    *string                                          `json:"message,omitempty"`
-	Status     *string                                          `json:"status,omitempty"`
-	SystemInfo *ManagingDeclineVideoRecordingResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ManagingDeleteBody holds the request body for Managing.Delete.
@@ -22697,9 +22655,9 @@ type ManagingDeleteBody struct {
 
 // ManagingDeleteResponse is the response for the endpoint.
 type ManagingDeleteResponse struct {
-	Message    string                            `json:"message"`
-	Status     string                            `json:"status"`
-	SystemInfo *ManagingDeleteResponseSystemInfo `json:"system_info"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingEditBody holds the request body for Managing.Edit.
@@ -22715,8 +22673,8 @@ type ManagingEditBody struct {
 	EmailType *EmailType `json:"email_type,omitempty"`
 	// Information - Account private information (visible only for buyer).
 	Information *string `json:"information,omitempty"`
-	// ItemOrigin - Account origin. Where did you get it from.
-	ItemOrigin *ManagingItemOrigin `json:"item_origin,omitempty"`
+	// ItemOrigin - Account origin.
+	ItemOrigin *ItemOrigin `json:"item_origin,omitempty"`
 	// Price - Current price of account in your currency.
 	Price *int64 `json:"price,omitempty"`
 	// ProxyID - Using proxy id for account checking. See GET or POST /proxy to get or edit proxy list.
@@ -22729,22 +22687,22 @@ type ManagingEditBody struct {
 
 // ManagingEditResponse is the response for the endpoint.
 type ManagingEditResponse struct {
-	Message    *string                         `json:"message,omitempty"`
-	Status     *string                         `json:"status,omitempty"`
-	SystemInfo *ManagingEditResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ManagingEmailCodeResponse is the response for the endpoint.
 type ManagingEmailCodeResponse struct {
-	CodeData *ManagingEmailCodeResponseCodeData `json:"codeData"`
-	Item     *ManagingEmailCodeResponseItem     `json:"item"`
+	CodeData any `json:"codeData"`
+	Item     any `json:"item"`
 }
 
 // ManagingFavoriteResponse is the response for the endpoint.
 type ManagingFavoriteResponse struct {
-	Message    string                              `json:"message"`
-	Status     string                              `json:"status"`
-	SystemInfo *ManagingFavoriteResponseSystemInfo `json:"system_info"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingGetParams holds query parameters for Managing.Get.
@@ -22755,27 +22713,27 @@ type ManagingGetParams struct {
 
 // ManagingGetResponse is the response for the endpoint.
 type ManagingGetResponse struct {
-	CanBuyItem             bool                           `json:"canBuyItem"`
-	CanCancelConfirmedBuy  bool                           `json:"canCancelConfirmedBuy"`
-	CanChangeOwner         bool                           `json:"canChangeOwner"`
-	CanCloseItem           bool                           `json:"canCloseItem"`
-	CanDeleteItem          bool                           `json:"canDeleteItem"`
-	CanEditItem            bool                           `json:"canEditItem"`
-	CanOpenItem            bool                           `json:"canOpenItem"`
-	CanReportItem          bool                           `json:"canReportItem"`
-	CanStickItem           bool                           `json:"canStickItem"`
-	CanUnstickItem         bool                           `json:"canUnstickItem"`
-	CanViewItemHistory     bool                           `json:"canViewItemHistory"`
-	CanViewLoginData       bool                           `json:"canViewLoginData"`
-	CannotBuyItemError     string                         `json:"cannotBuyItemError"`
-	FaveCount              bool                           `json:"faveCount"`
-	IsVisibleItem          bool                           `json:"isVisibleItem"`
-	Item                   *ManagingGetResponseItem       `json:"item"`
-	ItemLink               string                         `json:"itemLink"`
-	SameItemsCount         float64                        `json:"sameItemsCount"`
-	SameItemsIds           []float64                      `json:"sameItemsIds"`
-	ShowToFavouritesButton bool                           `json:"showToFavouritesButton"`
-	SystemInfo             *ManagingGetResponseSystemInfo `json:"system_info"`
+	CanBuyItem             bool    `json:"canBuyItem"`
+	CanCancelConfirmedBuy  bool    `json:"canCancelConfirmedBuy"`
+	CanChangeOwner         bool    `json:"canChangeOwner"`
+	CanCloseItem           bool    `json:"canCloseItem"`
+	CanDeleteItem          bool    `json:"canDeleteItem"`
+	CanEditItem            bool    `json:"canEditItem"`
+	CanOpenItem            bool    `json:"canOpenItem"`
+	CanReportItem          bool    `json:"canReportItem"`
+	CanStickItem           bool    `json:"canStickItem"`
+	CanUnstickItem         bool    `json:"canUnstickItem"`
+	CanViewItemHistory     bool    `json:"canViewItemHistory"`
+	CanViewLoginData       bool    `json:"canViewLoginData"`
+	CannotBuyItemError     string  `json:"cannotBuyItemError"`
+	FaveCount              bool    `json:"faveCount"`
+	IsVisibleItem          bool    `json:"isVisibleItem"`
+	Item                   any     `json:"item"`
+	ItemLink               string  `json:"itemLink"`
+	SameItemsCount         float64 `json:"sameItemsCount"`
+	SameItemsIds           any     `json:"sameItemsIds"`
+	ShowToFavouritesButton bool    `json:"showToFavouritesButton"`
+	SystemInfo             any     `json:"system_info"`
 }
 
 // ManagingGetLetters2Params holds query parameters for Managing.GetLetters2.
@@ -22792,9 +22750,9 @@ type ManagingGetLetters2Params struct {
 
 // ManagingGetLetters2Response is the response for the endpoint.
 type ManagingGetLetters2Response struct {
-	Email      string                                 `json:"email"`
-	Letters    []any                                  `json:"letters"`
-	SystemInfo *ManagingGetLetters2ResponseSystemInfo `json:"system_info"`
+	Email      string `json:"email"`
+	Letters    any    `json:"letters"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingImageParams holds query parameters for Managing.Image.
@@ -22805,8 +22763,8 @@ type ManagingImageParams struct {
 
 // ManagingImageResponse is the response for the endpoint.
 type ManagingImageResponse struct {
-	Base64     string                           `json:"base64"`
-	SystemInfo *ManagingImageResponseSystemInfo `json:"system_info"`
+	Base64     string `json:"base64"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingNoteBody holds the request body for Managing.Note.
@@ -22817,16 +22775,16 @@ type ManagingNoteBody struct {
 
 // ManagingNoteResponse is the response for the endpoint.
 type ManagingNoteResponse struct {
-	Message    string                          `json:"message"`
-	Status     string                          `json:"status"`
-	SystemInfo *ManagingNoteResponseSystemInfo `json:"system_info"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingOpenResponse is the response for the endpoint.
 type ManagingOpenResponse struct {
-	Message    string                          `json:"message"`
-	Status     string                          `json:"status"`
-	SystemInfo *ManagingOpenResponseSystemInfo `json:"system_info"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingPublicTagBody holds the request body for Managing.PublicTag.
@@ -22837,11 +22795,11 @@ type ManagingPublicTagBody struct {
 
 // ManagingPublicTagResponse is the response for the endpoint.
 type ManagingPublicTagResponse struct {
-	AddedTagID float64                              `json:"addedTagId"`
-	DeleteTags []float64                            `json:"deleteTags"`
-	ItemID     float64                              `json:"itemId"`
-	SystemInfo *ManagingPublicTagResponseSystemInfo `json:"system_info"`
-	Tag        *ManagingPublicTagResponseTag        `json:"tag"`
+	AddedTagID float64 `json:"addedTagId"`
+	DeleteTags any     `json:"deleteTags"`
+	ItemID     float64 `json:"itemId"`
+	SystemInfo any     `json:"system_info"`
+	Tag        any     `json:"tag"`
 }
 
 // ManagingPublicUntagBody holds the request body for Managing.PublicUntag.
@@ -22852,32 +22810,32 @@ type ManagingPublicUntagBody struct {
 
 // ManagingPublicUntagResponse is the response for the endpoint.
 type ManagingPublicUntagResponse struct {
-	AddedTagID float64                                `json:"addedTagId"`
-	DeleteTags []float64                              `json:"deleteTags"`
-	ItemID     float64                                `json:"itemId"`
-	SystemInfo *ManagingPublicUntagResponseSystemInfo `json:"system_info"`
-	Tag        *ManagingPublicUntagResponseTag        `json:"tag"`
+	AddedTagID float64 `json:"addedTagId"`
+	DeleteTags any     `json:"deleteTags"`
+	ItemID     float64 `json:"itemId"`
+	SystemInfo any     `json:"system_info"`
+	Tag        any     `json:"tag"`
 }
 
 // ManagingRefuseGuaranteeResponse is the response for the endpoint.
 type ManagingRefuseGuaranteeResponse struct {
-	Message    *string                                    `json:"message,omitempty"`
-	Status     *string                                    `json:"status,omitempty"`
-	SystemInfo *ManagingRefuseGuaranteeResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ManagingSteamAddMafileResponse is the response for the endpoint.
 type ManagingSteamAddMafileResponse struct {
-	Item       *ManagingSteamAddMafileResponseItem       `json:"item"`
-	Message    string                                    `json:"message"`
-	Status     string                                    `json:"status"`
-	SystemInfo *ManagingSteamAddMafileResponseSystemInfo `json:"system_info"`
+	Item       any    `json:"item"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingSteamGetMafileResponse is the response for the endpoint.
 type ManagingSteamGetMafileResponse struct {
-	MaFile     *ManagingSteamGetMafileResponseMaFile     `json:"maFile"`
-	SystemInfo *ManagingSteamGetMafileResponseSystemInfo `json:"system_info"`
+	MaFile     any `json:"maFile"`
+	SystemInfo any `json:"system_info"`
 }
 
 // ManagingSteamInventoryValueParams holds query parameters for Managing.SteamInventoryValue.
@@ -22892,16 +22850,16 @@ type ManagingSteamInventoryValueParams struct {
 
 // ManagingSteamInventoryValueResponse is the response for the endpoint.
 type ManagingSteamInventoryValueResponse struct {
-	AppID      *float64                                       `json:"appId,omitempty"`
-	Data       *ManagingSteamInventoryValueResponseData       `json:"data,omitempty"`
-	Query      *string                                        `json:"query,omitempty"`
-	SystemInfo *ManagingSteamInventoryValueResponseSystemInfo `json:"system_info,omitempty"`
+	AppID      any `json:"appId,omitempty"`
+	Data       any `json:"data,omitempty"`
+	Query      any `json:"query,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ManagingSteamMafileCodeResponse is the response for the endpoint.
 type ManagingSteamMafileCodeResponse struct {
-	CodeData *ManagingSteamMafileCodeResponseCodeData `json:"codeData"`
-	Item     *ManagingSteamMafileCodeResponseItem     `json:"item"`
+	CodeData any `json:"codeData"`
+	Item     any `json:"item"`
 }
 
 // ManagingSteamPreviewParams holds query parameters for Managing.SteamPreview.
@@ -22912,10 +22870,10 @@ type ManagingSteamPreviewParams struct {
 
 // ManagingSteamRemoveMafileResponse is the response for the endpoint.
 type ManagingSteamRemoveMafileResponse struct {
-	Item       *ManagingSteamRemoveMafileResponseItem       `json:"item"`
-	Message    string                                       `json:"message"`
-	Status     string                                       `json:"status"`
-	SystemInfo *ManagingSteamRemoveMafileResponseSystemInfo `json:"system_info"`
+	Item       any    `json:"item"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingSteamSDABody holds the request body for Managing.SteamSDA.
@@ -22928,9 +22886,9 @@ type ManagingSteamSDABody struct {
 
 // ManagingSteamSDAResponse is the response for the endpoint.
 type ManagingSteamSDAResponse struct {
-	Message    string                              `json:"message"`
-	Status     string                              `json:"status"`
-	SystemInfo *ManagingSteamSDAResponseSystemInfo `json:"system_info"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingSteamUpdateValueBody holds the request body for Managing.SteamUpdateValue.
@@ -22945,9 +22903,9 @@ type ManagingSteamUpdateValueBody struct {
 
 // ManagingSteamUpdateValueResponse is the response for the endpoint.
 type ManagingSteamUpdateValueResponse struct {
-	Item       *ManagingSteamUpdateValueResponseItem       `json:"item"`
-	Status     string                                      `json:"status"`
-	SystemInfo *ManagingSteamUpdateValueResponseSystemInfo `json:"system_info"`
+	Item       any    `json:"item"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ManagingSteamValueParams holds query parameters for Managing.SteamValue.
@@ -22964,17 +22922,17 @@ type ManagingSteamValueParams struct {
 
 // ManagingSteamValueResponse is the response for the endpoint.
 type ManagingSteamValueResponse struct {
-	AppID      *float64                              `json:"appId,omitempty"`
-	Data       *ManagingSteamValueResponseData       `json:"data,omitempty"`
-	Query      *string                               `json:"query,omitempty"`
-	SystemInfo *ManagingSteamValueResponseSystemInfo `json:"system_info,omitempty"`
+	AppID      any `json:"appId,omitempty"`
+	Data       any `json:"data,omitempty"`
+	Query      any `json:"query,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ManagingStickResponse is the response for the endpoint.
 type ManagingStickResponse struct {
-	Message    *string                          `json:"message,omitempty"`
-	Status     *string                          `json:"status,omitempty"`
-	SystemInfo *ManagingStickResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ManagingTagBody holds the request body for Managing.Tag.
@@ -22985,29 +22943,29 @@ type ManagingTagBody struct {
 
 // ManagingTagResponse is the response for the endpoint.
 type ManagingTagResponse struct {
-	AddedTagID float64                        `json:"addedTagId"`
-	DeleteTags []float64                      `json:"deleteTags"`
-	ItemID     float64                        `json:"itemId"`
-	SystemInfo *ManagingTagResponseSystemInfo `json:"system_info"`
-	Tag        *ManagingTagResponseTag        `json:"tag"`
+	AddedTagID float64 `json:"addedTagId"`
+	DeleteTags any     `json:"deleteTags"`
+	ItemID     float64 `json:"itemId"`
+	SystemInfo any     `json:"system_info"`
+	Tag        any     `json:"tag"`
 }
 
 // ManagingTelegramCodeResponse is the response for the endpoint.
 type ManagingTelegramCodeResponse struct {
-	Codes *ManagingTelegramCodeResponseCodes `json:"codes"`
-	Item  *ManagingTelegramCodeResponseItem  `json:"item"`
+	Codes any `json:"codes"`
+	Item  any `json:"item"`
 }
 
 // ManagingTelegramResetAuthResponse is the response for the endpoint.
 type ManagingTelegramResetAuthResponse struct {
-	Message    *string                                      `json:"message,omitempty"`
-	Status     *string                                      `json:"status,omitempty"`
-	SystemInfo *ManagingTelegramResetAuthResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ManagingTempEmailPasswordResponse is the response for the endpoint.
 type ManagingTempEmailPasswordResponse struct {
-	Item *ManagingTempEmailPasswordResponseItem `json:"item"`
+	Item any `json:"item"`
 }
 
 // ManagingTransferBody holds the request body for Managing.Transfer.
@@ -23020,23 +22978,23 @@ type ManagingTransferBody struct {
 
 // ManagingTransferResponse is the response for the endpoint.
 type ManagingTransferResponse struct {
-	Message    *string                             `json:"message,omitempty"`
-	Status     *string                             `json:"status,omitempty"`
-	SystemInfo *ManagingTransferResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ManagingUnfavoriteResponse is the response for the endpoint.
 type ManagingUnfavoriteResponse struct {
-	Message    *string                               `json:"message,omitempty"`
-	Status     *string                               `json:"status,omitempty"`
-	SystemInfo *ManagingUnfavoriteResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ManagingUnstickResponse is the response for the endpoint.
 type ManagingUnstickResponse struct {
-	Message    *string                            `json:"message,omitempty"`
-	Status     *string                            `json:"status,omitempty"`
-	SystemInfo *ManagingUnstickResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ManagingUntagBody holds the request body for Managing.Untag.
@@ -23047,11 +23005,11 @@ type ManagingUntagBody struct {
 
 // ManagingUntagResponse is the response for the endpoint.
 type ManagingUntagResponse struct {
-	AddedTagID float64                          `json:"addedTagId"`
-	DeleteTags []float64                        `json:"deleteTags"`
-	ItemID     float64                          `json:"itemId"`
-	SystemInfo *ManagingUntagResponseSystemInfo `json:"system_info"`
-	Tag        *ManagingUntagResponseTag        `json:"tag"`
+	AddedTagID float64 `json:"addedTagId"`
+	DeleteTags any     `json:"deleteTags"`
+	ItemID     float64 `json:"itemId"`
+	SystemInfo any     `json:"system_info"`
+	Tag        any     `json:"tag"`
 }
 
 // PaymentsBalanceExchangeBody holds the request body for Payments.BalanceExchange.
@@ -23066,16 +23024,16 @@ type PaymentsBalanceExchangeBody struct {
 
 // PaymentsBalanceExchangeResponse is the response for the endpoint.
 type PaymentsBalanceExchangeResponse struct {
-	From       *PaymentsBalanceExchangeResponseFrom       `json:"from"`
-	SystemInfo *PaymentsBalanceExchangeResponseSystemInfo `json:"system_info"`
-	To         *PaymentsBalanceExchangeResponseTo         `json:"to"`
+	From       any `json:"from"`
+	SystemInfo any `json:"system_info"`
+	To         any `json:"to"`
 }
 
 // PaymentsBalanceListResponse is the response for the endpoint.
 type PaymentsBalanceListResponse struct {
-	From       *PaymentsBalanceListResponseFrom       `json:"from"`
-	SystemInfo *PaymentsBalanceListResponseSystemInfo `json:"system_info"`
-	To         *PaymentsBalanceListResponseTo         `json:"to"`
+	From       any `json:"from"`
+	SystemInfo any `json:"system_info"`
+	To         any `json:"to"`
 }
 
 // PaymentsCancelBody holds the request body for Payments.Cancel.
@@ -23086,17 +23044,17 @@ type PaymentsCancelBody struct {
 
 // PaymentsCancelResponse is the response for the endpoint.
 type PaymentsCancelResponse struct {
-	Message    string                            `json:"message"`
-	Status     string                            `json:"status"`
-	SystemInfo *PaymentsCancelResponseSystemInfo `json:"system_info"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // PaymentsCurrencyResponse is the response for the endpoint.
 type PaymentsCurrencyResponse struct {
-	CurrencyList    *PaymentsCurrencyResponseCurrencyList `json:"currencyList"`
-	LastUpdate      float64                               `json:"lastUpdate"`
-	SystemInfo      *PaymentsCurrencyResponseSystemInfo   `json:"system_info"`
-	VisitorCurrency string                                `json:"visitorCurrency"`
+	CurrencyList    any     `json:"currencyList"`
+	LastUpdate      float64 `json:"lastUpdate"`
+	SystemInfo      any     `json:"system_info"`
+	VisitorCurrency string  `json:"visitorCurrency"`
 }
 
 // PaymentsFeeParams holds query parameters for Payments.Fee.
@@ -23107,10 +23065,10 @@ type PaymentsFeeParams struct {
 
 // PaymentsFeeResponse is the response for the endpoint.
 type PaymentsFeeResponse struct {
-	Calculator           *PaymentsFeeResponseCalculator `json:"calculator"`
-	CommissionPercentage float64                        `json:"commission_percentage"`
-	SpentCurrentMonth    float64                        `json:"spentCurrentMonth"`
-	SystemInfo           *PaymentsFeeResponseSystemInfo `json:"system_info"`
+	Calculator           any     `json:"calculator"`
+	CommissionPercentage float64 `json:"commission_percentage"`
+	SpentCurrentMonth    float64 `json:"spentCurrentMonth"`
+	SystemInfo           any     `json:"system_info"`
 }
 
 // PaymentsHistoryParams holds query parameters for Payments.History.
@@ -23149,20 +23107,20 @@ type PaymentsHistoryParams struct {
 
 // PaymentsHistoryResponse is the response for the endpoint.
 type PaymentsHistoryResponse struct {
-	FilterDatesDefault bool                                  `json:"filterDatesDefault"`
-	HasNextPage        bool                                  `json:"hasNextPage"`
-	Input              *PaymentsHistoryResponseInput         `json:"input"`
-	LastOperationID    float64                               `json:"lastOperationId"`
-	NextPageHref       string                                `json:"nextPageHref"`
-	Page               float64                               `json:"page"`
-	PageNavLink        string                                `json:"pageNavLink"`
-	PageNavParams      *PaymentsHistoryResponsePageNavParams `json:"pageNavParams"`
-	PaymentStats       any                                   `json:"paymentStats"`
-	Payments           any                                   `json:"payments"`
-	PerPage            string                                `json:"perPage"`
-	PeriodLabel        string                                `json:"periodLabel"`
-	PeriodLabelPhrase  string                                `json:"periodLabelPhrase"`
-	SystemInfo         *PaymentsHistoryResponseSystemInfo    `json:"system_info"`
+	FilterDatesDefault bool    `json:"filterDatesDefault"`
+	HasNextPage        bool    `json:"hasNextPage"`
+	Input              any     `json:"input"`
+	LastOperationID    float64 `json:"lastOperationId"`
+	NextPageHref       string  `json:"nextPageHref"`
+	Page               float64 `json:"page"`
+	PageNavLink        string  `json:"pageNavLink"`
+	PageNavParams      any     `json:"pageNavParams"`
+	PaymentStats       any     `json:"paymentStats"`
+	Payments           any     `json:"payments"`
+	PerPage            string  `json:"perPage"`
+	PeriodLabel        string  `json:"periodLabel"`
+	PeriodLabelPhrase  string  `json:"periodLabelPhrase"`
+	SystemInfo         any     `json:"system_info"`
 }
 
 // PaymentsInvoiceCreateBody holds the request body for Payments.InvoiceCreate.
@@ -23194,8 +23152,8 @@ type PaymentsInvoiceCreateBody struct {
 
 // PaymentsInvoiceCreateResponse is the response for the endpoint.
 type PaymentsInvoiceCreateResponse struct {
-	Invoice    *PaymentsInvoiceCreateResponseInvoice    `json:"invoice"`
-	SystemInfo *PaymentsInvoiceCreateResponseSystemInfo `json:"system_info"`
+	Invoice    any `json:"invoice"`
+	SystemInfo any `json:"system_info"`
 }
 
 // PaymentsInvoiceGetParams holds query parameters for Payments.InvoiceGet.
@@ -23208,8 +23166,8 @@ type PaymentsInvoiceGetParams struct {
 
 // PaymentsInvoiceGetResponse is the response for the endpoint.
 type PaymentsInvoiceGetResponse struct {
-	Invoice    *PaymentsInvoiceGetResponseInvoice    `json:"invoice"`
-	SystemInfo *PaymentsInvoiceGetResponseSystemInfo `json:"system_info"`
+	Invoice    any `json:"invoice"`
+	SystemInfo any `json:"system_info"`
 }
 
 // PaymentsInvoiceListParams holds query parameters for Payments.InvoiceList.
@@ -23228,11 +23186,11 @@ type PaymentsInvoiceListParams struct {
 
 // PaymentsInvoiceListResponse is the response for the endpoint.
 type PaymentsInvoiceListResponse struct {
-	Count      float64                                `json:"count"`
-	Invoices   []InvoiceModel                         `json:"invoices"`
-	Page       float64                                `json:"page"`
-	PerPage    float64                                `json:"perPage"`
-	SystemInfo *PaymentsInvoiceListResponseSystemInfo `json:"system_info"`
+	Count      float64 `json:"count"`
+	Invoices   any     `json:"invoices"`
+	Page       float64 `json:"page"`
+	PerPage    float64 `json:"perPage"`
+	SystemInfo any     `json:"system_info"`
 }
 
 // PaymentsPayoutBody holds the request body for Payments.Payout.
@@ -23247,15 +23205,15 @@ type PaymentsPayoutBody struct {
 
 // PaymentsPayoutResponse is the response for the endpoint.
 type PaymentsPayoutResponse struct {
-	Message    *string                           `json:"message,omitempty"`
-	Status     *string                           `json:"status,omitempty"`
-	SystemInfo *PaymentsPayoutResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // PaymentsPayoutServicesResponse is the response for the endpoint.
 type PaymentsPayoutServicesResponse struct {
-	SystemInfo *PaymentsPayoutServicesResponseSystemInfo `json:"system_info"`
-	Systems    []any                                     `json:"systems"`
+	SystemInfo any `json:"system_info"`
+	Systems    any `json:"systems"`
 }
 
 // PaymentsTransferBody holds the request body for Payments.Transfer.
@@ -23283,9 +23241,9 @@ type PaymentsTransferBody struct {
 
 // PaymentsTransferResponse is the response for the endpoint.
 type PaymentsTransferResponse struct {
-	Message    string                              `json:"message"`
-	Status     string                              `json:"status"`
-	SystemInfo *PaymentsTransferResponseSystemInfo `json:"system_info"`
+	Message    string `json:"message"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // ProfileClaimsParams holds query parameters for Profile.Claims.
@@ -23298,9 +23256,9 @@ type ProfileClaimsParams struct {
 
 // ProfileClaimsResponse is the response for the endpoint.
 type ProfileClaimsResponse struct {
-	Claims     []any                            `json:"claims"`
-	Stats      *ProfileClaimsResponseStats      `json:"stats"`
-	SystemInfo *ProfileClaimsResponseSystemInfo `json:"system_info"`
+	Claims     any `json:"claims"`
+	Stats      any `json:"stats"`
+	SystemInfo any `json:"system_info"`
 }
 
 // ProfileEditBody holds the request body for Profile.Edit.
@@ -23331,9 +23289,9 @@ type ProfileEditBody struct {
 
 // ProfileEditResponse is the response for the endpoint.
 type ProfileEditResponse struct {
-	Message    *string                        `json:"message,omitempty"`
-	Status     *string                        `json:"status,omitempty"`
-	SystemInfo *ProfileEditResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ProfileGetParams holds query parameters for Profile.Get.
@@ -23344,8 +23302,8 @@ type ProfileGetParams struct {
 
 // ProfileGetResponse is the response for the endpoint.
 type ProfileGetResponse struct {
-	SystemInfo *ProfileGetResponseSystemInfo `json:"system_info"`
-	User       *ProfileGetResponseUser       `json:"user"`
+	SystemInfo any `json:"system_info"`
+	User       any `json:"user"`
 }
 
 // ProxyAddBody holds the request body for Proxy.Add.
@@ -23364,9 +23322,9 @@ type ProxyAddBody struct {
 
 // ProxyAddResponse is the response for the endpoint.
 type ProxyAddResponse struct {
-	Message    *string                     `json:"message,omitempty"`
-	Status     *string                     `json:"status,omitempty"`
-	SystemInfo *ProxyAddResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ProxyDeleteBody holds the request body for Proxy.Delete.
@@ -23379,15 +23337,15 @@ type ProxyDeleteBody struct {
 
 // ProxyDeleteResponse is the response for the endpoint.
 type ProxyDeleteResponse struct {
-	Message    *string                        `json:"message,omitempty"`
-	Status     *string                        `json:"status,omitempty"`
-	SystemInfo *ProxyDeleteResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // ProxyGetResponse is the response for the endpoint.
 type ProxyGetResponse struct {
-	Proxies    []any                       `json:"proxies"`
-	SystemInfo *ProxyGetResponseSystemInfo `json:"system_info"`
+	Proxies    any `json:"proxies"`
+	SystemInfo any `json:"system_info"`
 }
 
 // PublishingAddBody holds the request body for Publishing.Add.
@@ -23411,8 +23369,8 @@ type PublishingAddBody struct {
 	HasEmailLoginData *bool `json:"has_email_login_data,omitempty"`
 	// Information - Account private information (visible only for buyer).
 	Information *string `json:"information,omitempty"`
-	// ItemOrigin - Account origin. Where did you get it from.
-	ItemOrigin PublishingItemOrigin `json:"item_origin"`
+	// ItemOrigin - Account origin.
+	ItemOrigin ItemOrigin `json:"item_origin"`
 	// Price - Current price of account in your currency.
 	Price float64 `json:"price"`
 	// ProxyID - Proxy id that will be used to check account.
@@ -23429,9 +23387,9 @@ type PublishingAddBody struct {
 
 // PublishingAddResponse is the response for the endpoint.
 type PublishingAddResponse struct {
-	Item       *PublishingAddResponseItem       `json:"item"`
-	Status     string                           `json:"status"`
-	SystemInfo *PublishingAddResponseSystemInfo `json:"system_info"`
+	Item       any    `json:"item"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // PublishingCheckBody holds the request body for Publishing.Check.
@@ -23457,9 +23415,9 @@ type PublishingCheckBody struct {
 
 // PublishingCheckResponse is the response for the endpoint.
 type PublishingCheckResponse struct {
-	Item       *PublishingCheckResponseItem       `json:"item"`
-	Status     string                             `json:"status"`
-	SystemInfo *PublishingCheckResponseSystemInfo `json:"system_info"`
+	Item       any    `json:"item"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // PublishingExternalBody holds the request body for Publishing.External.
@@ -23476,9 +23434,9 @@ type PublishingExternalBody struct {
 
 // PublishingExternalResponse is the response for the endpoint.
 type PublishingExternalResponse struct {
-	Message    *string                               `json:"message,omitempty"`
-	Status     *string                               `json:"status,omitempty"`
-	SystemInfo *PublishingExternalResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // PublishingFastSellBody holds the request body for Publishing.FastSell.
@@ -23501,8 +23459,8 @@ type PublishingFastSellBody struct {
 	HasEmailLoginData *bool `json:"has_email_login_data,omitempty"`
 	// Information - Account private information (visible only for buyer).
 	Information *string `json:"information,omitempty"`
-	// ItemOrigin - Account origin. Where did you get it from.
-	ItemOrigin PublishingItemOrigin `json:"item_origin"`
+	// ItemOrigin - Account origin.
+	ItemOrigin ItemOrigin `json:"item_origin"`
 	// Login - Account login (or email).
 	Login *string `json:"login,omitempty"`
 	// LoginPassword - Account login data (login:password format).
@@ -23523,17 +23481,17 @@ type PublishingFastSellBody struct {
 
 // PublishingFastSellResponse is the response for the endpoint.
 type PublishingFastSellResponse struct {
-	Item       *PublishingFastSellResponseItem       `json:"item"`
-	ItemLink   string                                `json:"itemLink"`
-	SystemInfo *PublishingFastSellResponseSystemInfo `json:"system_info"`
+	Item       any    `json:"item"`
+	ItemLink   string `json:"itemLink"`
+	SystemInfo any    `json:"system_info"`
 }
 
 // PurchasingCheckResponse is the response for the endpoint.
 type PurchasingCheckResponse struct {
-	Item                  *PurchasingCheckResponseItem       `json:"item"`
-	RequireVideoRecording bool                               `json:"requireVideoRecording"`
-	Status                string                             `json:"status"`
-	SystemInfo            *PurchasingCheckResponseSystemInfo `json:"system_info"`
+	Item                  any    `json:"item"`
+	RequireVideoRecording bool   `json:"requireVideoRecording"`
+	Status                string `json:"status"`
+	SystemInfo            any    `json:"system_info"`
 }
 
 // PurchasingConfirmBody holds the request body for Purchasing.Confirm.
@@ -23546,16 +23504,16 @@ type PurchasingConfirmBody struct {
 
 // PurchasingConfirmResponse is the response for the endpoint.
 type PurchasingConfirmResponse struct {
-	Item       *PurchasingConfirmResponseItem       `json:"item"`
-	Status     *string                              `json:"status,omitempty"`
-	SystemInfo *PurchasingConfirmResponseSystemInfo `json:"system_info"`
+	Item       any `json:"item"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info"`
 }
 
 // PurchasingDiscountCancelResponse is the response for the endpoint.
 type PurchasingDiscountCancelResponse struct {
-	Message    *string                                     `json:"message,omitempty"`
-	Status     *string                                     `json:"status,omitempty"`
-	SystemInfo *PurchasingDiscountCancelResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // PurchasingDiscountRequestBody holds the request body for Purchasing.DiscountRequest.
@@ -23568,9 +23526,9 @@ type PurchasingDiscountRequestBody struct {
 
 // PurchasingDiscountRequestResponse is the response for the endpoint.
 type PurchasingDiscountRequestResponse struct {
-	Message    *string                                      `json:"message,omitempty"`
-	Status     *string                                      `json:"status,omitempty"`
-	SystemInfo *PurchasingDiscountRequestResponseSystemInfo `json:"system_info,omitempty"`
+	Message    any `json:"message,omitempty"`
+	Status     any `json:"status,omitempty"`
+	SystemInfo any `json:"system_info,omitempty"`
 }
 
 // PurchasingFastBuyBody holds the request body for Purchasing.FastBuy.
@@ -23583,7 +23541,7 @@ type PurchasingFastBuyBody struct {
 
 // PurchasingFastBuyResponse is the response for the endpoint.
 type PurchasingFastBuyResponse struct {
-	Item       *PurchasingFastBuyResponseItem       `json:"item"`
-	Status     string                               `json:"status"`
-	SystemInfo *PurchasingFastBuyResponseSystemInfo `json:"system_info"`
+	Item       any    `json:"item"`
+	Status     string `json:"status"`
+	SystemInfo any    `json:"system_info"`
 }

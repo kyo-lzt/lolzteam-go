@@ -517,16 +517,9 @@ type fileField struct {
 }
 
 // Encode writes the multipart body into a byte slice and returns it along with the content type.
-func (mb *MultipartBody) Encode() (data []byte, contentType string, err error) {
+func (mb *MultipartBody) Encode() ([]byte, string, error) {
 	var buf bytes.Buffer
 	w := multipart.NewWriter(&buf)
-	defer func() {
-		if closeErr := w.Close(); closeErr != nil && err == nil {
-			data = nil
-			contentType = ""
-			err = fmt.Errorf("failed to close multipart writer: %w", closeErr)
-		}
-	}()
 
 	for name, value := range mb.fields {
 		if err := w.WriteField(name, value); err != nil {
@@ -544,7 +537,13 @@ func (mb *MultipartBody) Encode() (data []byte, contentType string, err error) {
 		}
 	}
 
-	return buf.Bytes(), w.FormDataContentType(), nil
+	// Close must happen before buf.Bytes() so the final boundary is written first.
+	ct := w.FormDataContentType()
+	if err := w.Close(); err != nil {
+		return nil, "", fmt.Errorf("failed to close multipart writer: %w", err)
+	}
+
+	return buf.Bytes(), ct, nil
 }
 
 var fileUploadType = reflect.TypeOf(FileUpload{})
