@@ -132,12 +132,12 @@ func TestNewHttpError401(t *testing.T) {
 func TestNewHttpError403(t *testing.T) {
 	err := newHttpError(403, []byte("forbidden"), 0)
 
-	var authErr *AuthError
-	if !errors.As(err, &authErr) {
-		t.Fatalf("expected *AuthError for 403, got %T", err)
+	var forbiddenErr *ForbiddenError
+	if !errors.As(err, &forbiddenErr) {
+		t.Fatalf("expected *ForbiddenError for 403, got %T", err)
 	}
-	if authErr.StatusCode != 403 {
-		t.Errorf("StatusCode = %d, want 403", authErr.StatusCode)
+	if forbiddenErr.StatusCode != 403 {
+		t.Errorf("StatusCode = %d, want 403", forbiddenErr.StatusCode)
 	}
 }
 
@@ -973,12 +973,12 @@ func TestHTTPClient403AuthError(t *testing.T) {
 		t.Fatal("expected error for 403")
 	}
 
-	var authErr *AuthError
-	if !errors.As(err, &authErr) {
-		t.Errorf("expected *AuthError, got %T: %v", err, err)
+	var forbiddenErr *ForbiddenError
+	if !errors.As(err, &forbiddenErr) {
+		t.Errorf("expected *ForbiddenError, got %T: %v", err, err)
 	}
-	if authErr.StatusCode != 403 {
-		t.Errorf("StatusCode = %d, want 403", authErr.StatusCode)
+	if forbiddenErr.StatusCode != 403 {
+		t.Errorf("StatusCode = %d, want 403", forbiddenErr.StatusCode)
 	}
 }
 

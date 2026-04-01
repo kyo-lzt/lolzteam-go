@@ -42,7 +42,7 @@ func (e *RateLimitError) Unwrap() error {
 	return &e.HttpError
 }
 
-// AuthError indicates a 401 or 403 response.
+// AuthError indicates a 401 response.
 type AuthError struct {
 	HttpError
 }
@@ -52,6 +52,19 @@ func (e *AuthError) Error() string {
 }
 
 func (e *AuthError) Unwrap() error {
+	return &e.HttpError
+}
+
+// ForbiddenError indicates a 403 response.
+type ForbiddenError struct {
+	HttpError
+}
+
+func (e *ForbiddenError) Error() string {
+	return fmt.Sprintf("forbidden: %s", e.Message)
+}
+
+func (e *ForbiddenError) Unwrap() error {
 	return &e.HttpError
 }
 
@@ -129,8 +142,10 @@ func newHttpError(statusCode int, body []byte, retryAfter time.Duration) error {
 	switch {
 	case statusCode == 429:
 		return &RateLimitError{HttpError: base, RetryAfter: retryAfter}
-	case statusCode == 401 || statusCode == 403:
+	case statusCode == 401:
 		return &AuthError{HttpError: base}
+	case statusCode == 403:
+		return &ForbiddenError{HttpError: base}
 	case statusCode == 404:
 		return &NotFoundError{HttpError: base}
 	case statusCode == 500 || statusCode == 502 || statusCode == 503 || statusCode == 504:

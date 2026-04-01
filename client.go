@@ -214,6 +214,7 @@ func (c *Client) Request(ctx context.Context, opts RequestOptions, result any) e
 	// Pre-encode JSON body once, before retry loop
 	var rawJSONData []byte
 	if opts.RawJSON != nil {
+		ApplyJSONDefaults(opts.RawJSON)
 		var err error
 		rawJSONData, err = json.Marshal(opts.RawJSON)
 		if err != nil {
@@ -383,6 +384,57 @@ func StructToQuery(v any) url.Values {
 // Nil pointer fields are skipped.
 func StructToForm(v any) url.Values {
 	return structToValues(v, "form")
+}
+
+// ApplyJSONDefaults sets nil pointer fields to their `default` tag values.
+// Supports int, float, string, and bool element types.
+func ApplyJSONDefaults(v any) {
+	rv := reflect.ValueOf(v)
+	if rv.Kind() == reflect.Ptr {
+		rv = rv.Elem()
+	}
+	if rv.Kind() != reflect.Struct {
+		return
+	}
+	rt := rv.Type()
+	for i := range rt.NumField() {
+		field := rt.Field(i)
+		fieldVal := rv.Field(i)
+		if fieldVal.Kind() != reflect.Ptr || !fieldVal.IsNil() {
+			continue
+		}
+		def := field.Tag.Get("default")
+		if def == "" {
+			continue
+		}
+		elemType := field.Type.Elem()
+		newVal := reflect.New(elemType)
+		switch elemType.Kind() {
+		case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
+			n, err := strconv.ParseInt(def, 10, 64)
+			if err != nil {
+				continue
+			}
+			newVal.Elem().SetInt(n)
+		case reflect.Float32, reflect.Float64:
+			f, err := strconv.ParseFloat(def, 64)
+			if err != nil {
+				continue
+			}
+			newVal.Elem().SetFloat(f)
+		case reflect.String:
+			newVal.Elem().SetString(def)
+		case reflect.Bool:
+			b, err := strconv.ParseBool(def)
+			if err != nil {
+				continue
+			}
+			newVal.Elem().SetBool(b)
+		default:
+			continue
+		}
+		fieldVal.Set(newVal)
+	}
 }
 
 func structToValues(v any, tagName string) url.Values {

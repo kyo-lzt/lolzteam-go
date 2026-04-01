@@ -61,7 +61,7 @@ func TestNewHttpErrorStatusCodes(t *testing.T) {
 	}{
 		{429, "*lolzteam.RateLimitError"},
 		{401, "*lolzteam.AuthError"},
-		{403, "*lolzteam.AuthError"},
+		{403, "*lolzteam.ForbiddenError"},
 		{404, "*lolzteam.NotFoundError"},
 		{500, "*lolzteam.ServerError"},
 		{502, "*lolzteam.ServerError"},
@@ -87,6 +87,11 @@ func TestNewHttpErrorStatusCodes(t *testing.T) {
 				var target *AuthError
 				if !errors.As(err, &target) {
 					t.Errorf("status %d: expected *AuthError, got %T", tt.status, err)
+				}
+			case "*lolzteam.ForbiddenError":
+				var target *ForbiddenError
+				if !errors.As(err, &target) {
+					t.Errorf("status %d: expected *ForbiddenError, got %T", tt.status, err)
 				}
 			case "*lolzteam.NotFoundError":
 				var target *NotFoundError
