@@ -144,8 +144,12 @@ func NewClient(config Config) (*Client, error) {
 			if err != nil {
 				return nil, &ConfigError{LolzteamError{Message: fmt.Sprintf("failed to create SOCKS5 dialer: %v", err)}}
 			}
-			transport.DialContext = func(ctx context.Context, network, addr string) (net.Conn, error) {
-				return dialer.Dial(network, addr)
+			if ctxDialer, ok := dialer.(proxy.ContextDialer); ok {
+				transport.DialContext = ctxDialer.DialContext
+			} else {
+				transport.DialContext = func(ctx context.Context, network, addr string) (net.Conn, error) {
+					return dialer.Dial(network, addr)
+				}
 			}
 		default:
 			transport.Proxy = http.ProxyURL(proxyURL)
