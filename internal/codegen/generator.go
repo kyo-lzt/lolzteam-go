@@ -437,7 +437,6 @@ func (g *Generator) WriteResponseStruct(b *strings.Builder, name string, s Schem
 			}
 		}
 
-		// Issue 2: response integer → float64
 		goType = responseIntToFloat(goType)
 
 		// Qualify root package types
@@ -445,22 +444,12 @@ func (g *Generator) WriteResponseStruct(b *strings.Builder, name string, s Schem
 			goType = "lolzteam." + goType
 		}
 
-		// Type-leniency: API may return mismatched types in responses
-		if isStructType(goType) {
-			goType = "any" // API may return [] instead of object
-		}
 		isRequired := reqSet[propName]
-		if !isRequired && isPrimitiveType(goType) {
-			goType = "any" // API may return mismatched types for optional fields
-		}
-		if strings.HasPrefix(goType, "[]") {
-			goType = "any" // API may return object where array expected
-		}
-
 		if isRequired {
 			fmt.Fprintf(b, "\t%s %s `json:\"%s\"`\n", goFieldName, goType, propName)
 		} else {
-			fmt.Fprintf(b, "\t%s %s `json:\"%s,omitempty\"`\n", goFieldName, goType, propName)
+			ptrType := PtrWrap(goType)
+			fmt.Fprintf(b, "\t%s %s `json:\"%s,omitempty\"`\n", goFieldName, ptrType, propName)
 		}
 	}
 

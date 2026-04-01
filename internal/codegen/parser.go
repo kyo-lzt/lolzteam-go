@@ -1499,15 +1499,9 @@ func (g *Generator) numericKeyValueType(props map[string]SchemaObj) string {
 	return "any"
 }
 
-// responseIntToFloat replaces int64 with float64 in a Go type string for response models.
-// The API may return floating-point values for schema-declared integers.
+// responseIntToFloat is a no-op. Previously converted int64 → float64 in response models,
+// but integers should remain int64 to match the schema.
 func responseIntToFloat(goType string) string {
-	if goType == "int64" {
-		return "float64"
-	}
-	if goType == "[]int64" {
-		return "[]float64"
-	}
 	return goType
 }
 
@@ -1624,27 +1618,9 @@ func WriteStructDef(b *strings.Builder, sd *StructDef) {
 	fmt.Fprintf(b, "type %s struct {\n", sd.Name)
 	for _, f := range sd.Fields {
 		typeName := f.Type.Name
-		// Issue 2: integer → float64 for response/component types
 		typeName = responseIntToFloat(typeName)
 		if rootPkgTypes[typeName] {
 			typeName = "lolzteam." + typeName
-		}
-		// Struct-typed fields use `any` — the API may return [] instead of an object
-		if isStructType(typeName) {
-			typeName = "any"
-			// Reset IsPtr since `any` doesn't need pointer wrapping
-			f.Type.IsPtr = false
-		}
-		// Optional primitive fields use `any` — the API may return mismatched
-		// types (e.g. string instead of number, object instead of bool).
-		if f.Type.IsPtr && isPrimitiveType(typeName) {
-			typeName = "any"
-			f.Type.IsPtr = false
-		}
-		// Slice fields use `any` — the API may return an object where an
-		// array is expected (e.g. {"key":"val"} instead of ["val"]).
-		if strings.HasPrefix(typeName, "[]") {
-			typeName = "any"
 		}
 		if f.Type.IsPtr {
 			typeName = PtrWrap(typeName)
